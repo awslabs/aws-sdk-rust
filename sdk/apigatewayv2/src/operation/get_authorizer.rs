@@ -117,6 +117,7 @@ impl GetAuthorizerInput {
         request
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
             ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),

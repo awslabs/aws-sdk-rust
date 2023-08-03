@@ -7,6 +7,7 @@
 
 use aws_credential_types::time_source::TimeSource;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
@@ -38,7 +39,7 @@ use crate::profile::{ProfileFileLoadError, ProfileSet};
 pub struct ProviderConfig {
     env: Env,
     fs: Fs,
-    time_source: TimeSource,
+    time_source: SharedTimeSource,
     connector: HttpConnector,
     sleep: Option<Arc<dyn AsyncSleep>>,
     region: Option<Region>,
@@ -72,7 +73,7 @@ impl Default for ProviderConfig {
         Self {
             env: Env::default(),
             fs: Fs::default(),
-            time_source: TimeSource::default(),
+            time_source: SharedTimeSource::default(),
             connector,
             sleep: default_async_sleep(),
             region: None,
@@ -90,7 +91,6 @@ impl ProviderConfig {
     /// Unlike [`ProviderConfig::empty`] where `env` and `fs` will use their non-mocked implementations,
     /// this method will use an empty mock environment and an empty mock file system.
     pub fn no_configuration() -> Self {
-        use aws_credential_types::time_source::TestingTimeSource;
         use std::collections::HashMap;
         use std::time::UNIX_EPOCH;
         let fs = Fs::from_raw_map(HashMap::new());
@@ -100,7 +100,7 @@ impl ProviderConfig {
             profile_files: ProfileFiles::default(),
             env,
             fs,
-            time_source: TimeSource::testing(&TestingTimeSource::new(UNIX_EPOCH)),
+            time_source: SharedTimeSource::new(UNIX_EPOCH),
             connector: HttpConnector::Prebuilt(None),
             sleep: None,
             region: None,
@@ -140,7 +140,7 @@ impl ProviderConfig {
         ProviderConfig {
             env: Env::default(),
             fs: Fs::default(),
-            time_source: TimeSource::default(),
+            time_source: SharedTimeSource::default(),
             connector: HttpConnector::Prebuilt(None),
             sleep: None,
             region: None,
@@ -179,7 +179,7 @@ impl ProviderConfig {
     }
 
     #[allow(dead_code)]
-    pub(crate) fn time_source(&self) -> TimeSource {
+    pub(crate) fn time_source(&self) -> SharedTimeSource {
         self.time_source.clone()
     }
 
@@ -293,7 +293,7 @@ impl ProviderConfig {
     #[doc(hidden)]
     pub fn with_time_source(self, time_source: TimeSource) -> Self {
         ProviderConfig {
-            time_source,
+            time_source: SharedTimeSource::new(time_source),
             ..self
         }
     }

@@ -65,6 +65,7 @@ use crate::provider_config::ProviderConfig;
 use crate::sts;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_sdk_sts::Client as StsClient;
+use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
 use std::borrow::Cow;
@@ -80,6 +81,7 @@ const ENV_VAR_SESSION_NAME: &str = "AWS_ROLE_SESSION_NAME";
 #[derive(Debug)]
 pub struct WebIdentityTokenCredentialsProvider {
     source: Source,
+    time_source: SharedTimeSource,
     fs: Fs,
     sts_client: StsClient,
 }
@@ -131,9 +133,9 @@ impl WebIdentityTokenCredentialsProvider {
                         "AWS_ROLE_ARN environment variable must be set",
                     )
                 })?;
-                let session_name = env
-                    .get(ENV_VAR_SESSION_NAME)
-                    .unwrap_or_else(|_| sts::util::default_session_name("web-identity-token"));
+                let session_name = env.get(ENV_VAR_SESSION_NAME).unwrap_or_else(|_| {
+                    sts::util::default_session_name("web-identity-token", self.time_source.now())
+                });
                 Ok(Cow::Owned(StaticConfiguration {
                     web_identity_token_file: token_file.into(),
                     role_arn,
@@ -203,6 +205,7 @@ impl Builder {
             source,
             fs: conf.fs(),
             sts_client: StsClient::from_conf(conf.sts_client_config().build()),
+            time_source: conf.time_source(),
         }
     }
 }

@@ -16,6 +16,7 @@
 ///
 /// The service config can also be constructed manually using its builder.
 ///
+#[derive(::std::clone::Clone)]
 pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     pub(crate) endpoint_resolver:
@@ -23,6 +24,8 @@ pub struct Config {
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub(crate) time_source: ::aws_smithy_async::time::SharedTimeSource,
     app_name: Option<::aws_types::app_name::AppName>,
     #[allow(missing_docs)] // documentation missing in model
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
@@ -115,6 +118,7 @@ pub struct Builder {
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
+    time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
     app_name: Option<::aws_types::app_name::AppName>,
     endpoint_url: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<::std::primitive::bool>,
@@ -357,6 +361,22 @@ impl Builder {
         self.timeout_config = timeout_config;
         self
     }
+    /// Sets the time source used for this service
+    pub fn time_source(
+        mut self,
+        time_source: impl Into<::aws_smithy_async::time::SharedTimeSource>,
+    ) -> Self {
+        self.time_source = Some(time_source.into());
+        self
+    }
+    /// Sets the time source used for this service
+    pub fn set_time_source(
+        &mut self,
+        time_source: Option<::aws_smithy_async::time::SharedTimeSource>,
+    ) -> &mut Self {
+        self.time_source = time_source;
+        self
+    }
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -587,6 +607,7 @@ impl Builder {
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,
+            time_source: self.time_source.unwrap_or_default(),
             app_name: self.app_name,
             endpoint_url: self.endpoint_url,
             use_dual_stack: self.use_dual_stack,
@@ -634,6 +655,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_sleep_impl(input.sleep_impl());
 
         builder.set_http_connector(input.http_connector().cloned());
+        builder.set_time_source(input.time_source().cloned());
         builder.set_app_name(input.app_name().cloned());
 
         builder

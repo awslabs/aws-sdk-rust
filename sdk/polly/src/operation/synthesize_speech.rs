@@ -163,6 +163,7 @@ impl SynthesizeSpeechInput {
         request
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
             ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),
@@ -229,7 +230,9 @@ impl SynthesizeSpeechInput {
         {
             // Change signature type to query params and wire up presigning config
             let mut props = request.properties_mut();
-            props.insert(presigning_config.start_time());
+            props.insert(::aws_smithy_async::time::SharedTimeSource::new(
+                presigning_config.start_time(),
+            ));
             props.insert(::aws_sigv4::http_request::SignableBody::Bytes(b""));
             let mut config = props
                 .get_mut::<::aws_sig_auth::signer::OperationSigningConfig>()
@@ -332,6 +335,7 @@ impl SynthesizeSpeechInput {
         request
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
             ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),

@@ -22,6 +22,7 @@ impl crate::provider_config::ProviderConfig {
             .http_connector(expect_connector(self.connector(&Default::default())))
             .retry_config(RetryConfig::standard())
             .region(self.region())
+            .time_source(self.time_source())
             .credentials_cache(CredentialsCache::no_caching());
         builder.set_sleep_impl(self.sleep());
         builder

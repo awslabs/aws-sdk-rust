@@ -59,6 +59,7 @@ async fn test_checksum_on_streaming_response(
     );
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .time_source(UNIX_EPOCH + Duration::from_secs(1624036048))
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
         .build();
@@ -73,7 +74,6 @@ async fn test_checksum_on_streaming_response(
         .customize()
         .await
         .unwrap()
-        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests()
         .send()
         .await

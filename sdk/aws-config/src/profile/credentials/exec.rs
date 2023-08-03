@@ -14,6 +14,7 @@ use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentials
 use aws_credential_types::provider::{self, error::CredentialsError, ProvideCredentials};
 use aws_sdk_sts::config::{Builder as StsConfigBuilder, Credentials};
 use aws_sdk_sts::Client as StsClient;
+use aws_smithy_async::time::SharedTimeSource;
 use std::fmt::Debug;
 use std::sync::Arc;
 
@@ -22,6 +23,7 @@ pub(super) struct AssumeRoleProvider {
     role_arn: String,
     external_id: Option<String>,
     session_name: Option<String>,
+    time_source: SharedTimeSource,
 }
 
 impl AssumeRoleProvider {
@@ -35,11 +37,9 @@ impl AssumeRoleProvider {
             .credentials_provider(input_credentials)
             .build();
         let client = StsClient::from_conf(config);
-        let session_name = &self
-            .session_name
-            .as_ref()
-            .cloned()
-            .unwrap_or_else(|| sts::util::default_session_name("assume-role-from-profile"));
+        let session_name = &self.session_name.as_ref().cloned().unwrap_or_else(|| {
+            sts::util::default_session_name("assume-role-from-profile", self.time_source.now())
+        });
         let assume_role_creds = client
             .assume_role()
             .role_arn(&self.role_arn)
@@ -97,7 +97,12 @@ impl ProviderChain {
                         web_identity_token_file: web_identity_token_file.into(),
                         role_arn: role_arn.to_string(),
                         session_name: session_name.map(|sess| sess.to_string()).unwrap_or_else(
-                            || sts::util::default_session_name("web-identity-token-profile"),
+                            || {
+                                sts::util::default_session_name(
+                                    "web-identity-token-profile",
+                                    provider_config.time_source().now(),
+                                )
+                            },
                         ),
                     })
                     .configure(provider_config)
@@ -140,6 +145,7 @@ impl ProviderChain {
                     role_arn: role_arn.role_arn.into(),
                     external_id: role_arn.external_id.map(|id| id.into()),
                     session_name: role_arn.session_name.map(|id| id.into()),
+                    time_source: provider_config.time_source(),
                 }
             })
             .collect();

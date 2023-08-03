@@ -59,7 +59,7 @@ tracing-test = "0.2.1"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-features = ["rt-tokio"]
+features = ["rt-tokio", "test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.tokio]

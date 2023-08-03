@@ -309,7 +309,7 @@ impl HttpRequestSigner for SigV4HttpRequestSigner {
     ) -> Result<(), BoxError> {
         let operation_config =
             Self::extract_operation_config(auth_scheme_endpoint_config, config_bag)?;
-        let request_time = config_bag.request_time().unwrap_or_default().system_time();
+        let request_time = config_bag.request_time().unwrap_or_default().now();
 
         let credentials = if let Some(creds) = identity.data::<Credentials>() {
             creds
@@ -356,18 +356,17 @@ impl HttpRequestSigner for SigV4HttpRequestSigner {
         #[cfg(feature = "event-stream")]
         {
             use aws_smithy_eventstream::frame::DeferredSignerSender;
-            use aws_smithy_runtime_api::client::orchestrator::RequestTime;
             use event_stream::SigV4MessageSigner;
 
             if let Some(signer_sender) = config_bag.get::<DeferredSignerSender>() {
-                let time_override = config_bag.get::<RequestTime>().copied();
+                let time_source = config_bag.request_time().unwrap_or_default();
                 signer_sender
                     .send(Box::new(SigV4MessageSigner::new(
                         _signature,
                         credentials.clone(),
                         Region::new(signing_params.region().to_string()).into(),
                         signing_params.service_name().to_string().into(),
-                        time_override,
+                        time_source,
                     )) as _)
                     .expect("failed to send deferred signer");
             }
@@ -383,8 +382,8 @@ mod event_stream {
     use aws_credential_types::Credentials;
     use aws_sigv4::event_stream::{sign_empty_message, sign_message};
     use aws_sigv4::SigningParams;
+    use aws_smithy_async::time::SharedTimeSource;
     use aws_smithy_eventstream::frame::{Message, SignMessage, SignMessageError};
-    use aws_smithy_runtime_api::client::orchestrator::RequestTime;
     use aws_types::region::SigningRegion;
     use aws_types::SigningService;
 
@@ -395,7 +394,7 @@ mod event_stream {
         credentials: Credentials,
         signing_region: SigningRegion,
         signing_service: SigningService,
-        time: Option<RequestTime>,
+        time: SharedTimeSource,
     }
 
     impl SigV4MessageSigner {
@@ -404,7 +403,7 @@ mod event_stream {
             credentials: Credentials,
             signing_region: SigningRegion,
             signing_service: SigningService,
-            time: Option<RequestTime>,
+            time: SharedTimeSource,
         ) -> Self {
             Self {
                 last_signature,
@@ -421,7 +420,7 @@ mod event_stream {
                 .secret_key(self.credentials.secret_access_key())
                 .region(self.signing_region.as_ref())
                 .service_name(self.signing_service.as_ref())
-                .time(self.time.unwrap_or_default().system_time())
+                .time(self.time.now())
                 .settings(());
             builder.set_security_token(self.credentials.session_token());
             builder.build().unwrap()
@@ -470,7 +469,7 @@ mod event_stream {
                 Credentials::for_tests(),
                 SigningRegion::from(region),
                 SigningService::from_static("transcribe"),
-                Some(RequestTime::new(UNIX_EPOCH + Duration::new(1611160427, 0))),
+                SharedTimeSource::new(UNIX_EPOCH + Duration::new(1611160427, 0)),
             ));
             let mut signatures = Vec::new();
             for _ in 0..5 {

@@ -14,8 +14,8 @@ use crate::imds::client::LazyClient;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_credential_types::time_source::TimeSource;
 use aws_credential_types::Credentials;
+use aws_smithy_async::time::SharedTimeSource;
 use aws_types::os_shim_internal::Env;
 use std::borrow::Cow;
 use std::error::Error as StdError;
@@ -53,7 +53,7 @@ pub struct ImdsCredentialsProvider {
     client: LazyClient,
     env: Env,
     profile: Option<String>,
-    time_source: TimeSource,
+    time_source: SharedTimeSource,
     last_retrieved_credentials: Arc<RwLock<Option<Credentials>>>,
 }
 
@@ -390,7 +390,10 @@ mod test {
             .build();
         let creds = provider.provide_credentials().await.expect("valid creds");
         // The expiry should be equal to what is originally set (==2021-09-21T04:16:53Z).
-        assert!(creds.expiry() == UNIX_EPOCH.checked_add(Duration::from_secs(1632197813)));
+        assert_eq!(
+            creds.expiry(),
+            UNIX_EPOCH.checked_add(Duration::from_secs(1632197813))
+        );
         connection.assert_requests_match(&[]);
 
         // There should not be logs indicating credentials are extended for stability.

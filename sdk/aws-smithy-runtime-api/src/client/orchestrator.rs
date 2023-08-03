@@ -15,6 +15,7 @@ use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_types::endpoint::Endpoint;
 use bytes::Bytes;
@@ -22,7 +23,6 @@ use std::fmt;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
 use std::sync::Arc;
-use std::time::SystemTime;
 
 pub use error::OrchestratorError;
 
@@ -76,29 +76,6 @@ impl EndpointResolverParams {
 
 pub trait EndpointResolver: Send + Sync + fmt::Debug {
     fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError>;
-}
-
-/// Time that the request is being made (so that time can be overridden in the [`ConfigBag`]).
-#[non_exhaustive]
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub struct RequestTime(SystemTime);
-
-impl Default for RequestTime {
-    fn default() -> Self {
-        Self(SystemTime::now())
-    }
-}
-
-impl RequestTime {
-    /// Create a new [`RequestTime`].
-    pub fn new(time: SystemTime) -> Self {
-        Self(time)
-    }
-
-    /// Returns the request time as a [`SystemTime`].
-    pub fn system_time(&self) -> SystemTime {
-        self.0
-    }
 }
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
@@ -161,8 +138,8 @@ pub trait ConfigBagAccessors {
     fn retry_strategy(&self) -> &dyn RetryStrategy;
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static);
 
-    fn request_time(&self) -> Option<RequestTime>;
-    fn set_request_time(&mut self, request_time: RequestTime);
+    fn request_time(&self) -> Option<SharedTimeSource>;
+    fn set_request_time(&mut self, time_source: impl TimeSource + 'static);
 
     fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>>;
     fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>);
@@ -288,12 +265,12 @@ impl ConfigBagAccessors for ConfigBag {
         self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
     }
 
-    fn request_time(&self) -> Option<RequestTime> {
-        self.get::<RequestTime>().cloned()
+    fn request_time(&self) -> Option<SharedTimeSource> {
+        self.get::<SharedTimeSource>().cloned()
     }
 
-    fn set_request_time(&mut self, request_time: RequestTime) {
-        self.put::<RequestTime>(request_time);
+    fn set_request_time(&mut self, request_time: impl TimeSource + 'static) {
+        self.put::<SharedTimeSource>(SharedTimeSource::new(request_time));
     }
 
     fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>> {

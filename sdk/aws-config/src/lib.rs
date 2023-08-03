@@ -155,6 +155,7 @@ mod loader {
     use aws_credential_types::cache::CredentialsCache;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+    use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_client::http_connector::HttpConnector;
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
@@ -192,6 +193,7 @@ mod loader {
         profile_files_override: Option<ProfileFiles>,
         use_fips: Option<bool>,
         use_dual_stack: Option<bool>,
+        time_source: Option<SharedTimeSource>,
     }
 
     impl ConfigLoader {
@@ -259,6 +261,12 @@ mod loader {
         pub fn sleep_impl(mut self, sleep: impl AsyncSleep + 'static) -> Self {
             // it's possible that we could wrapping an `Arc in an `Arc` and that's OK
             self.sleep = Some(Arc::new(sleep));
+            self
+        }
+
+        /// Set the time source used for tasks like signing requests
+        pub fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
+            self.time_source = Some(SharedTimeSource::new(time_source));
             self
         }
 
@@ -563,7 +571,9 @@ mod loader {
                 .unwrap_or_else(|| HttpConnector::ConnectorFn(Arc::new(default_connector)));
 
             let credentials_cache = self.credentials_cache.unwrap_or_else(|| {
-                let mut builder = CredentialsCache::lazy_builder().time_source(conf.time_source());
+                let mut builder = CredentialsCache::lazy_builder().time_source(
+                    aws_credential_types::time_source::TimeSource::shared(conf.time_source()),
+                );
                 builder.set_sleep(conf.sleep());
                 builder.into_credentials_cache()
             });
@@ -588,12 +598,15 @@ mod loader {
                 SharedCredentialsProvider::new(builder.build().await)
             };
 
+            let ts = self.time_source.unwrap_or_default();
+
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
                 .timeout_config(timeout_config)
                 .credentials_cache(credentials_cache)
                 .credentials_provider(credentials_provider)
+                .time_source(ts)
                 .http_connector(http_connector);
 
             builder.set_app_name(app_name);

@@ -94,6 +94,7 @@ impl UpdateShardCountInput {
         request
             .properties_mut()
             .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
+        request.properties_mut().insert(_config.time_source.clone());
         let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
             ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),

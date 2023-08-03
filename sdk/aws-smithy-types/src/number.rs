@@ -3,11 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! A number type that implements Javascript / JSON semantics.
+
 use crate::error::{TryFromNumberError, TryFromNumberErrorKind};
+#[cfg(all(
+    aws_sdk_unstable,
+    any(feature = "serde-serialize", feature = "serde-deserialize")
+))]
+use serde;
 
 /// A number type that implements Javascript / JSON semantics, modeled on serde_json:
 /// <https://docs.serde.rs/src/serde_json/number.rs.html#20-22>
 #[derive(Debug, Clone, Copy, PartialEq)]
+#[cfg_attr(
+    all(aws_sdk_unstable, feature = "serde-deserialize"),
+    derive(serde::Deserialize)
+)]
+#[cfg_attr(
+    all(aws_sdk_unstable, feature = "serde-serialize"),
+    derive(serde::Serialize)
+)]
+#[cfg_attr(
+    any(
+        all(aws_sdk_unstable, feature = "serde-deserialize"),
+        all(aws_sdk_unstable, feature = "serde-serialize")
+    ),
+    serde(untagged)
+)]
 pub enum Number {
     /// Unsigned 64-bit integer value.
     PosInt(u64),
@@ -440,5 +462,32 @@ mod test {
             Number::Float(1452089033.7674935).to_f32_lossy(),
             1452089100f32
         );
+    }
+
+    #[test]
+    #[cfg(all(
+        test,
+        aws_sdk_unstable,
+        feature = "serde-deserialize",
+        feature = "serde-serialize"
+    ))]
+    /// ensures that numbers are deserialized as expected
+    /// 0 <= PosInt
+    /// 0 > NegInt
+    /// non integer values == Float
+    fn number_serde() {
+        let n: Number = serde_json::from_str("1.1").unwrap();
+        assert_eq!(n, Number::Float(1.1));
+        let n: Number = serde_json::from_str("1").unwrap();
+        assert_eq!(n, Number::PosInt(1));
+        let n: Number = serde_json::from_str("0").unwrap();
+        assert_eq!(n, Number::PosInt(0));
+        let n: Number = serde_json::from_str("-1").unwrap();
+        assert_eq!(n, Number::NegInt(-1));
+
+        assert_eq!("1.1", serde_json::to_string(&Number::Float(1.1)).unwrap());
+        assert_eq!("1", serde_json::to_string(&Number::PosInt(1)).unwrap());
+        assert_eq!("0", serde_json::to_string(&Number::PosInt(0)).unwrap());
+        assert_eq!("-1", serde_json::to_string(&Number::NegInt(-1)).unwrap());
     }
 }

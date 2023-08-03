@@ -3,31 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_async::time::{SharedTimeSource, TimeSource as TimeSourceTrait};
 use std::ops::Deref;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, SystemTime};
 
+impl TimeSourceTrait for TimeSource {
+    fn now(&self) -> SystemTime {
+        self.now()
+    }
+}
+
 /// Time source abstraction
 ///
 /// Simple abstraction representing time either real-time or manually-specified for testing
-///
-/// # Examples
-///
-/// ```rust
-/// # struct Client {
-/// #  // stub
-/// # }
-/// #
-/// # impl Client {
-/// #     fn with_timesource(ts: TimeSource) -> Self {
-/// #         Client { }
-/// #     }
-/// # }
-/// use aws_credential_types::time_source::TimeSource;
-/// let time = TimeSource::default();
-/// let client = Client::with_timesource(time);
-/// ```
 #[derive(Debug, Clone)]
+// TODO(breakingChangeWindow): Delete this struct
 pub struct TimeSource(Inner);
 
 impl TimeSource {
@@ -36,11 +27,17 @@ impl TimeSource {
         TimeSource(Inner::Testing(time_source.clone()))
     }
 
+    /// Creates `TimeSource` from a shared time source
+    pub fn shared(time_source: SharedTimeSource) -> Self {
+        TimeSource(Inner::Shared(time_source))
+    }
+
     /// Returns the current system time based on the mode.
     pub fn now(&self) -> SystemTime {
         match &self.0 {
             Inner::Default => SystemTime::now(),
             Inner::Testing(testing) => testing.now(),
+            Inner::Shared(ts) => ts.now(),
         }
     }
 }
@@ -53,6 +50,8 @@ impl Default for TimeSource {
 }
 
 /// Time Source that can be manually moved for tests
+/// > This has been superseded by [`aws_smithy_async::time::TimeSource`] and will be removed in a
+/// > future release.
 ///
 /// # Examples
 ///
@@ -112,12 +111,11 @@ impl TestingTimeSource {
     }
 }
 
-// In the future, if needed we can add a time source trait, however, the testing time source
-// should cover most test use cases.
 #[derive(Debug, Clone)]
 enum Inner {
     Default,
     Testing(TestingTimeSource),
+    Shared(SharedTimeSource),
 }
 
 #[cfg(test)]

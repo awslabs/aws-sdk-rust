@@ -47,7 +47,7 @@ mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-    use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, RequestTime};
+    use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
     use aws_smithy_runtime_api::type_erasure::TypedBox;
     use std::time::{Duration, UNIX_EPOCH};
 
@@ -64,15 +64,12 @@ mod tests {
         let interceptor = TestParamsSetterInterceptor::new({
             let request_time = request_time.clone();
             move |_: &mut BeforeTransmitInterceptorContextMut<'_>, cfg: &mut ConfigBag| {
-                cfg.set_request_time(RequestTime::new(request_time));
+                cfg.set_request_time(request_time);
             }
         });
         interceptor
             .modify_before_signing(&mut ctx, &mut cfg)
             .unwrap();
-        assert_eq!(
-            request_time,
-            cfg.get::<RequestTime>().unwrap().system_time()
-        );
+        assert_eq!(cfg.request_time().unwrap().now(), request_time);
     }
 }

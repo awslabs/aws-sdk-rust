@@ -14,6 +14,7 @@ use std::sync::Arc;
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
@@ -40,6 +41,8 @@ If no dual-stack endpoint is available the request MAY return an error.
 **Note**: Some services do not offer dual-stack as a configurable parameter (e.g. Code Catalyst). For
 these services, this setting has no effect"
         };
+
+        (time_source) => { "The time source use to use for this client. This only needs to be required for creating deterministic tests or platforms where `SystemTime::now()` is not supported." };
     }
 }
 
@@ -53,6 +56,7 @@ pub struct SdkConfig {
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
     http_connector: Option<HttpConnector>,
     use_fips: Option<bool>,
@@ -73,6 +77,7 @@ pub struct Builder {
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
     http_connector: Option<HttpConnector>,
     use_fips: Option<bool>,
@@ -499,6 +504,18 @@ impl Builder {
         self
     }
 
+    #[doc = docs_for!(time_source)]
+    pub fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
+        self.set_time_source(Some(SharedTimeSource::new(time_source)));
+        self
+    }
+
+    #[doc = docs_for!(time_source)]
+    pub fn set_time_source(&mut self, time_source: Option<SharedTimeSource>) -> &mut Self {
+        self.time_source = time_source;
+        self
+    }
+
     /// Build a [`SdkConfig`](SdkConfig) from this builder
     pub fn build(self) -> SdkConfig {
         SdkConfig {
@@ -513,6 +530,7 @@ impl Builder {
             http_connector: self.http_connector,
             use_fips: self.use_fips,
             use_dual_stack: self.use_dual_stack,
+            time_source: self.time_source,
         }
     }
 }
@@ -552,6 +570,11 @@ impl SdkConfig {
     /// Configured credentials provider
     pub fn credentials_provider(&self) -> Option<&SharedCredentialsProvider> {
         self.credentials_provider.as_ref()
+    }
+
+    /// Configured time source
+    pub fn time_source(&self) -> Option<&SharedTimeSource> {
+        self.time_source.as_ref()
     }
 
     /// Configured app name

@@ -211,13 +211,14 @@ impl AssumeRoleProviderBuilder {
         let mut config = aws_sdk_sts::Config::builder()
             .credentials_cache(credentials_cache)
             .credentials_provider(provider)
+            .time_source(conf.time_source())
             .region(self.region.clone())
             .http_connector(expect_connector(conf.connector(&Default::default())));
         config.set_sleep_impl(conf.sleep());
 
-        let session_name = self
-            .session_name
-            .unwrap_or_else(|| super::util::default_session_name("assume-role-provider"));
+        let session_name = self.session_name.unwrap_or_else(|| {
+            super::util::default_session_name("assume-role-provider", conf.time_source().now())
+        });
 
         let sts_client = StsClient::from_conf(config.build());
         let fluent_builder = sts_client

@@ -9,6 +9,7 @@ allowed_external_types = [
    "aws_credential_types::provider::SharedCredentialsProvider",
    "aws_sdk_sts::types::_policy_descriptor_type::PolicyDescriptorType",
    "aws_smithy_async::rt::sleep::AsyncSleep",
+   "aws_smithy_async::time::TimeSource",
    "aws_smithy_client::bounds::SmithyConnector",
    "aws_smithy_client::conns::default_connector::default_connector",
    "aws_smithy_client::erase::DynConnector",

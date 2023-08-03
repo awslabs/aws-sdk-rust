@@ -13,7 +13,7 @@ use tokio::sync::Barrier;
 use tokio::time::timeout;
 
 use crate::rt::sleep::{AsyncSleep, Sleep};
-use crate::time::TimeSource;
+use crate::time::{SharedTimeSource, TimeSource};
 
 /// Manually controlled time source
 #[derive(Debug, Clone)]
@@ -24,7 +24,7 @@ pub struct ManualTimeSource {
 
 impl TimeSource for ManualTimeSource {
     fn now(&self) -> SystemTime {
-        self.start_time + dbg!(self.log.lock().unwrap()).iter().sum()
+        self.start_time + self.log.lock().unwrap().iter().sum()
     }
 }
 
@@ -192,6 +192,49 @@ pub fn controlled_time_and_sleep(
     let log = Arc::new(Mutex::new(vec![]));
     let (sleep, gate) = ControlledSleep::new(log.clone());
     (ManualTimeSource { start_time, log }, sleep, gate)
+}
+
+#[derive(Debug)]
+/// Time source that always returns the same time
+pub struct StaticTimeSource {
+    time: SystemTime,
+}
+
+impl StaticTimeSource {
+    /// Creates a new static time source that always returns the same time
+    pub fn new(time: SystemTime) -> Self {
+        Self { time }
+    }
+}
+
+impl TimeSource for StaticTimeSource {
+    fn now(&self) -> SystemTime {
+        self.time
+    }
+}
+
+impl TimeSource for SystemTime {
+    fn now(&self) -> SystemTime {
+        *self
+    }
+}
+
+impl From<StaticTimeSource> for SharedTimeSource {
+    fn from(value: StaticTimeSource) -> Self {
+        SharedTimeSource::new(value)
+    }
+}
+
+impl From<SystemTime> for SharedTimeSource {
+    fn from(value: SystemTime) -> Self {
+        SharedTimeSource::new(value)
+    }
+}
+
+impl From<ManualTimeSource> for SharedTimeSource {
+    fn from(value: ManualTimeSource) -> Self {
+        SharedTimeSource::new(value)
+    }
 }
 
 #[cfg(test)]
