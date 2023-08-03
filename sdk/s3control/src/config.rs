@@ -497,7 +497,7 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + Send + Sync + 'static) -> Self {
+    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + 'static) -> Self {
         self.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(interceptor));
         self
     }

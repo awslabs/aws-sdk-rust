@@ -45,7 +45,7 @@ impl DefaultResponseRetryClassifier {
             Err(SdkError::DispatchFailure(err)) => {
                 if err.is_timeout() || err.is_io() {
                     Err(RetryKind::Error(ErrorKind::TransientError))
-                } else if let Some(ek) = err.is_other() {
+                } else if let Some(ek) = err.as_other() {
                     Err(RetryKind::Error(ek))
                 } else {
                     Err(RetryKind::UnretryableFailure)

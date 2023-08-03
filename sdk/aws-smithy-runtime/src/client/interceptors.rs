@@ -5,14 +5,245 @@
 
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::context::{
+    BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut,
+    FinalizerInterceptorContextMut, FinalizerInterceptorContextRef,
+};
+use aws_smithy_runtime_api::client::interceptors::context::{
+    Error, Input, InterceptorContext, Output,
+};
+use aws_smithy_runtime_api::client::interceptors::{
+    Interceptor, InterceptorError, SharedInterceptor,
+};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
+
+macro_rules! interceptor_impl_fn {
+    (mut $interceptor:ident) => {
+        pub(crate) fn $interceptor(
+            self,
+            ctx: &mut InterceptorContext,
+            runtime_components: &RuntimeComponents,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), InterceptorError> {
+            tracing::trace!(concat!(
+                "running `",
+                stringify!($interceptor),
+                "` interceptors"
+            ));
+            let mut result: Result<(), BoxError> = Ok(());
+            let mut ctx = ctx.into();
+            for interceptor in self.into_iter() {
+                if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                    if let Err(new_error) =
+                        interceptor.$interceptor(&mut ctx, runtime_components, cfg)
+                    {
+                        if let Err(last_error) = result {
+                            tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                        }
+                        result = Err(new_error);
+                    }
+                }
+            }
+            result.map_err(InterceptorError::$interceptor)
+        }
+    };
+    (ref $interceptor:ident) => {
+        pub(crate) fn $interceptor(
+            self,
+            ctx: &InterceptorContext,
+            runtime_components: &RuntimeComponents,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), InterceptorError> {
+            let mut result: Result<(), BoxError> = Ok(());
+            let ctx = ctx.into();
+            for interceptor in self.into_iter() {
+                if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                    if let Err(new_error) = interceptor.$interceptor(&ctx, runtime_components, cfg)
+                    {
+                        if let Err(last_error) = result {
+                            tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                        }
+                        result = Err(new_error);
+                    }
+                }
+            }
+            result.map_err(InterceptorError::$interceptor)
+        }
+    };
+}
+
+#[derive(Debug)]
+pub(crate) struct Interceptors<I> {
+    interceptors: I,
+}
+
+impl<I> Interceptors<I>
+where
+    I: Iterator<Item = SharedInterceptor>,
+{
+    pub(crate) fn new(interceptors: I) -> Self {
+        Self { interceptors }
+    }
+
+    fn into_iter(self) -> impl Iterator<Item = ConditionallyEnabledInterceptor> {
+        self.interceptors.map(ConditionallyEnabledInterceptor)
+    }
+
+    pub(crate) fn read_before_execution(
+        self,
+        operation: bool,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        tracing::trace!(
+            "running {} `read_before_execution` interceptors",
+            if operation { "operation" } else { "client" }
+        );
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: BeforeSerializationInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.into_iter() {
+            if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                if let Err(new_error) = interceptor.read_before_execution(&ctx, cfg) {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+        }
+        result.map_err(InterceptorError::read_before_execution)
+    }
+
+    interceptor_impl_fn!(mut modify_before_serialization);
+    interceptor_impl_fn!(ref read_before_serialization);
+    interceptor_impl_fn!(ref read_after_serialization);
+    interceptor_impl_fn!(mut modify_before_retry_loop);
+    interceptor_impl_fn!(ref read_before_attempt);
+    interceptor_impl_fn!(mut modify_before_signing);
+    interceptor_impl_fn!(ref read_before_signing);
+    interceptor_impl_fn!(ref read_after_signing);
+    interceptor_impl_fn!(mut modify_before_transmit);
+    interceptor_impl_fn!(ref read_before_transmit);
+    interceptor_impl_fn!(ref read_after_transmit);
+    interceptor_impl_fn!(mut modify_before_deserialization);
+    interceptor_impl_fn!(ref read_before_deserialization);
+    interceptor_impl_fn!(ref read_after_deserialization);
+
+    pub(crate) fn modify_before_attempt_completion(
+        self,
+        ctx: &mut InterceptorContext<Input, Output, Error>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `modify_before_attempt_completion` interceptors");
+        let mut result: Result<(), BoxError> = Ok(());
+        let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
+        for interceptor in self.into_iter() {
+            if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                if let Err(new_error) =
+                    interceptor.modify_before_attempt_completion(&mut ctx, runtime_components, cfg)
+                {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+        }
+        result.map_err(InterceptorError::modify_before_attempt_completion)
+    }
+
+    pub(crate) fn read_after_attempt(
+        self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `read_after_attempt` interceptors");
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.into_iter() {
+            if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                if let Err(new_error) =
+                    interceptor.read_after_attempt(&ctx, runtime_components, cfg)
+                {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+        }
+        result.map_err(InterceptorError::read_after_attempt)
+    }
+
+    pub(crate) fn modify_before_completion(
+        self,
+        ctx: &mut InterceptorContext<Input, Output, Error>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `modify_before_completion` interceptors");
+        let mut result: Result<(), BoxError> = Ok(());
+        let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
+        for interceptor in self.into_iter() {
+            if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                if let Err(new_error) =
+                    interceptor.modify_before_completion(&mut ctx, runtime_components, cfg)
+                {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+        }
+        result.map_err(InterceptorError::modify_before_completion)
+    }
+
+    pub(crate) fn read_after_execution(
+        self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `read_after_execution` interceptors");
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.into_iter() {
+            if let Some(interceptor) = interceptor.if_enabled(cfg) {
+                if let Err(new_error) =
+                    interceptor.read_after_execution(&ctx, runtime_components, cfg)
+                {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+        }
+        result.map_err(InterceptorError::read_after_execution)
+    }
+}
+
+/// A interceptor wrapper to conditionally enable the interceptor based on
+/// [`DisableInterceptor`](aws_smithy_runtime_api::client::interceptors::DisableInterceptor)
+struct ConditionallyEnabledInterceptor(SharedInterceptor);
+impl ConditionallyEnabledInterceptor {
+    fn if_enabled(&self, cfg: &ConfigBag) -> Option<&dyn Interceptor> {
+        if self.0.enabled(cfg) {
+            Some(self.0.as_ref())
+        } else {
+            None
+        }
+    }
+}
 
 pub struct MapRequestInterceptor<F, E> {
     f: F,
@@ -84,5 +315,73 @@ where
         (self.f)(request);
 
         Ok(())
+    }
+}
+
+#[cfg(all(test, feature = "test-util"))]
+mod tests {
+    use super::*;
+    use aws_smithy_runtime_api::box_error::BoxError;
+    use aws_smithy_runtime_api::client::interceptors::context::{
+        BeforeTransmitInterceptorContextRef, Input, InterceptorContext,
+    };
+    use aws_smithy_runtime_api::client::interceptors::{
+        disable_interceptor, Interceptor, SharedInterceptor,
+    };
+    use aws_smithy_runtime_api::client::runtime_components::{
+        RuntimeComponents, RuntimeComponentsBuilder,
+    };
+    use aws_smithy_types::config_bag::ConfigBag;
+
+    #[derive(Debug)]
+    struct TestInterceptor;
+    impl Interceptor for TestInterceptor {}
+
+    #[test]
+    fn test_disable_interceptors() {
+        #[derive(Debug)]
+        struct PanicInterceptor;
+        impl Interceptor for PanicInterceptor {
+            fn read_before_transmit(
+                &self,
+                _context: &BeforeTransmitInterceptorContextRef<'_>,
+                _rc: &RuntimeComponents,
+                _cfg: &mut ConfigBag,
+            ) -> Result<(), BoxError> {
+                Err("boom".into())
+            }
+        }
+        let rc = RuntimeComponentsBuilder::for_tests()
+            .with_interceptor(SharedInterceptor::new(PanicInterceptor))
+            .with_interceptor(SharedInterceptor::new(TestInterceptor))
+            .build()
+            .unwrap();
+
+        let mut cfg = ConfigBag::base();
+        let interceptors = Interceptors::new(rc.interceptors());
+        assert_eq!(
+            interceptors
+                .into_iter()
+                .filter(|i| i.if_enabled(&cfg).is_some())
+                .count(),
+            2
+        );
+
+        Interceptors::new(rc.interceptors())
+            .read_before_transmit(&InterceptorContext::new(Input::new(5)), &rc, &mut cfg)
+            .expect_err("interceptor returns error");
+        cfg.interceptor_state()
+            .store_put(disable_interceptor::<PanicInterceptor>("test"));
+        assert_eq!(
+            Interceptors::new(rc.interceptors())
+                .into_iter()
+                .filter(|i| i.if_enabled(&cfg).is_some())
+                .count(),
+            1
+        );
+        // shouldn't error because interceptors won't run
+        Interceptors::new(rc.interceptors())
+            .read_before_transmit(&InterceptorContext::new(Input::new(5)), &rc, &mut cfg)
+            .expect("interceptor is now disabled");
     }
 }

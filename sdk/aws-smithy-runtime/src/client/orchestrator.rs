@@ -7,6 +7,7 @@
 #![allow(unknown_lints)]
 
 use self::auth::orchestrate_auth;
+use crate::client::interceptors::Interceptors;
 use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::read_body;
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
@@ -19,7 +20,6 @@ use aws_smithy_runtime_api::client::connectors::HttpConnector;
 use aws_smithy_runtime_api::client::interceptors::context::{
     Error, Input, InterceptorContext, Output, RewindResult,
 };
-use aws_smithy_runtime_api::client::interceptors::Interceptors;
 use aws_smithy_runtime_api::client::orchestrator::{
     HttpResponse, LoadedRequestBody, OrchestratorError,
 };
@@ -200,7 +200,10 @@ async fn try_op(
         debug!("loading request body into memory");
         let mut body = SdkBody::taken();
         mem::swap(&mut body, ctx.request_mut().expect("set above").body_mut());
-        let loaded_body = halt_on_err!([ctx] => ByteStream::new(body).collect().await).into_bytes();
+        let loaded_body = halt_on_err!([ctx] =>
+            ByteStream::new(body).collect().await.map_err(OrchestratorError::other)
+        )
+        .into_bytes();
         *ctx.request_mut().as_mut().expect("set above").body_mut() =
             SdkBody::from(loaded_body.clone());
         cfg.interceptor_state()

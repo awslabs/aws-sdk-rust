@@ -27,10 +27,7 @@ pub mod orchestrator {
         /// `map_request`, and `mutate_request` (the last two are implemented via interceptors under the hood).
         /// The order in which those user-specified operation interceptors are invoked should not be relied upon
         /// as it is an implementation detail.
-        pub fn interceptor(
-            mut self,
-            interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + ::std::marker::Send + ::std::marker::Sync + 'static,
-        ) -> Self {
+        pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + 'static) -> Self {
             self.interceptors
                 .push(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(interceptor));
             self

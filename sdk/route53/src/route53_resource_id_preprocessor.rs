@@ -59,7 +59,7 @@ where
 
 impl<G, T> Interceptor for Route53ResourceIdInterceptor<G, T>
 where
-    G: for<'a> Fn(&'a mut T) -> &'a mut Option<String>,
+    G: for<'a> Fn(&'a mut T) -> &'a mut Option<String> + Send + Sync,
     T: fmt::Debug + Send + Sync + 'static,
 {
     fn modify_before_serialization(

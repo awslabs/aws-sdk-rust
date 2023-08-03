@@ -52,7 +52,7 @@ impl<VE> ResponseChecksumInterceptor<VE> {
 
 impl<VE> Interceptor for ResponseChecksumInterceptor<VE>
 where
-    VE: Fn(&Input) -> bool,
+    VE: Fn(&Input) -> bool + Send + Sync,
 {
     fn read_before_serialization(
         &self,

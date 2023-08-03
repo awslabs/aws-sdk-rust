@@ -45,42 +45,6 @@ impl UpdateBuildFluentBuilder {
     pub fn as_input(&self) -> &crate::operation::update_build::builders::UpdateBuildInputBuilder {
         &self.inner
     }
-    #[doc(hidden)]
-    pub async fn send_orchestrator(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_build::UpdateBuildOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_build::UpdateBuildError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_build::UpdateBuild::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_build::UpdateBuild::orchestrate(&runtime_plugins, input).await
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
-    pub async fn customize_orchestrator(
-        self,
-    ) -> crate::client::customize::orchestrator::CustomizableOperation<
-        crate::operation::update_build::UpdateBuildOutput,
-        crate::operation::update_build::UpdateBuildError,
-    > {
-        crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        }
-    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -98,7 +62,13 @@ impl UpdateBuildFluentBuilder {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        self.send_orchestrator().await
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let runtime_plugins = crate::operation::update_build::UpdateBuild::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        );
+        crate::operation::update_build::UpdateBuild::orchestrate(&runtime_plugins, input).await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
@@ -113,7 +83,14 @@ impl UpdateBuildFluentBuilder {
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_build::UpdateBuildError>,
     > {
-        ::std::result::Result::Ok(self.customize_orchestrator().await)
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        })
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

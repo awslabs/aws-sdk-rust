@@ -71,62 +71,110 @@ impl Storable for LoadedRequestBody {
     type Storer = StoreReplace<Self>;
 }
 
-// TODO(enableNewSmithyRuntimeLaunch): Make OrchestratorError adhere to the errors RFC
-/// Errors that can occur while running the orchestrator.
 #[derive(Debug)]
-#[non_exhaustive]
-pub enum OrchestratorError<E> {
+enum ErrorKind<E> {
     /// An error occurred within an interceptor.
-    Interceptor { err: InterceptorError },
+    Interceptor { source: InterceptorError },
     /// An error returned by a service.
     Operation { err: E },
     /// An error that occurs when a request times out.
-    Timeout { err: BoxError },
+    Timeout { source: BoxError },
     /// An error that occurs when request dispatch fails.
-    Connector { err: ConnectorError },
+    Connector { source: ConnectorError },
     /// An error that occurs when a response can't be deserialized.
-    Response { err: BoxError },
+    Response { source: BoxError },
     /// A general orchestrator error.
-    Other { err: BoxError },
+    Other { source: BoxError },
 }
 
-impl<E: Debug> OrchestratorError<E> {
-    /// Create a new `OrchestratorError` from a [`BoxError`].
-    pub fn other(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        let err = err.into();
-        Self::Other { err }
+/// Errors that can occur while running the orchestrator.
+#[derive(Debug)]
+pub struct OrchestratorError<E> {
+    kind: ErrorKind<E>,
+}
+
+impl<E> OrchestratorError<E> {
+    /// Create a new `OrchestratorError` from the given source.
+    pub fn other(source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ErrorKind::Other {
+                source: source.into(),
+            },
+        }
     }
 
-    /// Create a new `OrchestratorError` from an error received from a service.
+    /// Create an operation error.
     pub fn operation(err: E) -> Self {
-        Self::Operation { err }
+        Self {
+            kind: ErrorKind::Operation { err },
+        }
     }
 
-    /// Create a new `OrchestratorError::Interceptor` from an [`InterceptorError`].
-    pub fn interceptor(err: InterceptorError) -> Self {
-        Self::Interceptor { err }
+    /// True if the underlying error is an operation error.
+    pub fn is_operation_error(&self) -> bool {
+        matches!(self.kind, ErrorKind::Operation { .. })
     }
 
-    /// Create a new `OrchestratorError::Timeout` from a [`BoxError`].
-    pub fn timeout(err: BoxError) -> Self {
-        Self::Timeout { err }
-    }
-
-    /// Create a new `OrchestratorError::Response` from a [`BoxError`].
-    pub fn response(err: BoxError) -> Self {
-        Self::Response { err }
-    }
-
-    /// Create a new `OrchestratorError::Connector` from a [`ConnectorError`].
-    pub fn connector(err: ConnectorError) -> Self {
-        Self::Connector { err }
-    }
-
-    /// Convert the `OrchestratorError` into `Some` operation specific error if it is one. Otherwise,
-    /// return `None`.
+    /// Return this orchestrator error as an operation error if possible.
     pub fn as_operation_error(&self) -> Option<&E> {
-        match self {
-            Self::Operation { err } => Some(err),
+        match &self.kind {
+            ErrorKind::Operation { err } => Some(err),
+            _ => None,
+        }
+    }
+
+    /// Create an interceptor error with the given source.
+    pub fn interceptor(source: InterceptorError) -> Self {
+        Self {
+            kind: ErrorKind::Interceptor { source },
+        }
+    }
+
+    /// True if the underlying error is an interceptor error.
+    pub fn is_interceptor_error(&self) -> bool {
+        matches!(self.kind, ErrorKind::Interceptor { .. })
+    }
+
+    /// Create a timeout error with the given source.
+    pub fn timeout(source: BoxError) -> Self {
+        Self {
+            kind: ErrorKind::Timeout { source },
+        }
+    }
+
+    /// True if the underlying error is a timeout error.
+    pub fn is_timeout_error(&self) -> bool {
+        matches!(self.kind, ErrorKind::Timeout { .. })
+    }
+
+    /// Create a response error with the given source.
+    pub fn response(source: BoxError) -> Self {
+        Self {
+            kind: ErrorKind::Response { source },
+        }
+    }
+
+    /// True if the underlying error is a response error.
+    pub fn is_response_error(&self) -> bool {
+        matches!(self.kind, ErrorKind::Response { .. })
+    }
+
+    /// Create a connector error with the given source.
+    pub fn connector(source: ConnectorError) -> Self {
+        Self {
+            kind: ErrorKind::Connector { source },
+        }
+    }
+
+    /// True if the underlying error is a [`ConnectorError`].
+    pub fn is_connector_error(&self) -> bool {
+        matches!(self.kind, ErrorKind::Connector { .. })
+    }
+
+    /// Return this orchestrator error as a connector error if possible.
+    pub fn as_connector_error(&self) -> Option<&ConnectorError> {
+        match &self.kind {
+            ErrorKind::Connector { source } => Some(source),
             _ => None,
         }
     }
@@ -137,34 +185,36 @@ impl<E: Debug> OrchestratorError<E> {
         phase: &Phase,
         response: Option<HttpResponse>,
     ) -> SdkError<E, HttpResponse> {
-        match self {
-            Self::Interceptor { err } => {
+        match self.kind {
+            ErrorKind::Interceptor { source } => {
                 use Phase::*;
                 match phase {
-                    BeforeSerialization | Serialization => SdkError::construction_failure(err),
+                    BeforeSerialization | Serialization => SdkError::construction_failure(source),
                     BeforeTransmit | Transmit => match response {
-                        Some(response) => SdkError::response_error(err, response),
-                        None => SdkError::dispatch_failure(ConnectorError::other(err.into(), None)),
+                        Some(response) => SdkError::response_error(source, response),
+                        None => {
+                            SdkError::dispatch_failure(ConnectorError::other(source.into(), None))
+                        }
                     },
                     BeforeDeserialization | Deserialization | AfterDeserialization => {
-                        SdkError::response_error(err, response.expect("phase has a response"))
+                        SdkError::response_error(source, response.expect("phase has a response"))
                     }
                 }
             }
-            Self::Operation { err } => {
+            ErrorKind::Operation { err } => {
                 debug_assert!(phase.is_after_deserialization(), "operation errors are a result of successfully receiving and parsing a response from the server. Therefore, we must be in the 'After Deserialization' phase.");
                 SdkError::service_error(err, response.expect("phase has a response"))
             }
-            Self::Connector { err } => SdkError::dispatch_failure(err),
-            Self::Timeout { err } => SdkError::timeout_error(err),
-            Self::Response { err } => SdkError::response_error(err, response.unwrap()),
-            Self::Other { err } => {
+            ErrorKind::Connector { source } => SdkError::dispatch_failure(source),
+            ErrorKind::Timeout { source } => SdkError::timeout_error(source),
+            ErrorKind::Response { source } => SdkError::response_error(source, response.unwrap()),
+            ErrorKind::Other { source } => {
                 use Phase::*;
                 match phase {
-                    BeforeSerialization | Serialization => SdkError::construction_failure(err),
-                    BeforeTransmit | Transmit => convert_dispatch_error(err, response),
+                    BeforeSerialization | Serialization => SdkError::construction_failure(source),
+                    BeforeTransmit | Transmit => convert_dispatch_error(source, response),
                     BeforeDeserialization | Deserialization | AfterDeserialization => {
-                        SdkError::response_error(err, response.expect("phase has a response"))
+                        SdkError::response_error(source, response.expect("phase has a response"))
                     }
                 }
             }
@@ -200,14 +250,5 @@ where
 impl From<TypeErasedError> for OrchestratorError<TypeErasedError> {
     fn from(err: TypeErasedError) -> Self {
         Self::operation(err)
-    }
-}
-
-impl<E> From<aws_smithy_http::byte_stream::error::Error> for OrchestratorError<E>
-where
-    E: Debug + std::error::Error + 'static,
-{
-    fn from(err: aws_smithy_http::byte_stream::error::Error) -> Self {
-        Self::other(err)
     }
 }

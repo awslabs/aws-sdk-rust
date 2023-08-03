@@ -232,9 +232,14 @@ impl DispatchFailure {
         self.source.is_user()
     }
 
-    /// Returns the optional error kind associated with an unclassified error
-    pub fn is_other(&self) -> Option<ErrorKind> {
+    /// Returns true if the error is an unclassified error.
+    pub fn is_other(&self) -> bool {
         self.source.is_other()
+    }
+
+    /// Returns the optional error kind associated with an unclassified error
+    pub fn as_other(&self) -> Option<ErrorKind> {
+        self.source.as_other()
     }
 
     /// Returns the inner error if it is a connector error
@@ -633,8 +638,13 @@ impl ConnectorError {
         matches!(self.kind, ConnectorErrorKind::User)
     }
 
+    /// Returns true if the error is an unclassified error.
+    pub fn is_other(&self) -> bool {
+        matches!(self.kind, ConnectorErrorKind::Other(..))
+    }
+
     /// Returns the optional error kind associated with an unclassified error
-    pub fn is_other(&self) -> Option<ErrorKind> {
+    pub fn as_other(&self) -> Option<ErrorKind> {
         match &self.kind {
             ConnectorErrorKind::Other(ek) => *ek,
             _ => None,

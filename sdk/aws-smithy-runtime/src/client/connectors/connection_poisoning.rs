@@ -72,7 +72,7 @@ impl Interceptor for ConnectionPoisoningInterceptor {
             .ok_or("retry classifiers are required for connection poisoning to work")?;
 
         let error_is_transient = retry_classifiers
-            .classify_retry(context.into_inner())
+            .classify_retry(context.inner_mut())
             .map(|reason| reason == RetryReason::Error(ErrorKind::TransientError))
             .unwrap_or_default();
         let connection_poisoning_is_enabled =

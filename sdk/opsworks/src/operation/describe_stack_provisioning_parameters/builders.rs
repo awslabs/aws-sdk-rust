@@ -43,8 +43,15 @@ impl DescribeStackProvisioningParametersFluentBuilder {
     pub fn as_input(&self) -> &crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersInputBuilder {
         &self.inner
     }
-    #[doc(hidden)]
-    pub async fn send_orchestrator(
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput,
@@ -63,43 +70,6 @@ impl DescribeStackProvisioningParametersFluentBuilder {
         crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParameters::orchestrate(&runtime_plugins, input).await
     }
 
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` once we switch to orchestrator
-    pub async fn customize_orchestrator(
-        self,
-    ) -> crate::client::customize::orchestrator::CustomizableOperation<
-        crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput,
-        crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersError,
-    > {
-        crate::client::customize::orchestrator::CustomizableOperation {
-            customizable_send: ::std::boxed::Box::new(move |config_override| {
-                ::std::boxed::Box::pin(async { self.config_override(config_override).send_orchestrator().await })
-            }),
-            config_override: None,
-            interceptors: vec![],
-            runtime_plugins: vec![],
-        }
-    }
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        self.send_orchestrator().await
-    }
-
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent.
     // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
@@ -112,7 +82,14 @@ impl DescribeStackProvisioningParametersFluentBuilder {
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersError>,
     > {
-        ::std::result::Result::Ok(self.customize_orchestrator().await)
+        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation {
+            customizable_send: ::std::boxed::Box::new(move |config_override| {
+                ::std::boxed::Box::pin(async { self.config_override(config_override).send().await })
+            }),
+            config_override: None,
+            interceptors: vec![],
+            runtime_plugins: vec![],
+        })
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

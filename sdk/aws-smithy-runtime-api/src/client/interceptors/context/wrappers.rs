@@ -8,191 +8,222 @@ use crate::client::interceptors::context::{Request, Response};
 use crate::client::orchestrator::OrchestratorError;
 use std::fmt::Debug;
 
-macro_rules! output {
-    (&Option<Result<$o_ty:ty, $e_ty:ty>>) => {
-        Option<Result<&$o_ty, &$e_ty>>
-    };
-    (&Option<$ty:ty>) => {
-        Option<&$ty>
-    };
-    (&mut Option<$ty:ty>) => {
-        Option<&mut $ty>
-    };
-    (&Result<$o_ty:ty, $e_ty:ty>) => {
-        Result<&$o_ty, &$e_ty>
-    };
-    (&$($tt:tt)+) => {
-        &$($tt)+
-    };
-    (&mut $($tt:tt)+) => {
-        &mut $($tt)+
-    };
-}
-
-macro_rules! declare_method {
-    (&mut $name:ident, $inner_name:ident, $doc:literal, Option<$ty:ty>) => {
-        #[doc=$doc]
-        pub fn $name(&mut self) -> Option<&mut $ty> {
-            self.inner.$inner_name.as_ref()
-        }
-    };
-    (&$name:ident, $inner_name:ident, $doc:literal, Option<$ty:ty>) => {
-        #[doc=$doc]
-        pub fn $name(&self) -> Option<$ty> {
-            self.inner.$inner_name.as_mut()
-        }
-    };
-    (&mut $name:ident, $doc:literal, $($tt:tt)+) => {
-        #[doc=$doc]
-        pub fn $name(&mut self) -> output!(&mut $($tt)+) {
-            self.inner.$name().expect(concat!("`", stringify!($name), "` wasn't set in the underlying interceptor context. This is a bug."))
-        }
-    };
-    (&$name:ident, $doc:literal, $($tt:tt)+) => {
-        #[doc=$doc]
-        pub fn $name(&self) -> output!(&$($tt)+) {
-            self.inner.$name().expect(concat!("`", stringify!($name), "` wasn't set in the underlying interceptor context. This is a bug."))
-        }
-    };
-}
-
-macro_rules! declare_known_method {
-    (output_or_error: &mut $($tt:tt)+) => {
-        declare_method!(&mut output_or_error_mut, "Returns a mutable reference to the deserialized output or error.", $($tt)+);
-    };
-    (output_or_error: &$($tt:tt)+) => {
-        declare_method!(&output_or_error, "Returns a reference to the deserialized output or error.", $($tt)+);
-    };
-    (input: &mut $($tt:tt)+) => {
-        declare_method!(&mut input_mut, "Returns a mutable reference to the input.", $($tt)+);
-    };
-    (input: &$($tt:tt)+) => {
-        declare_method!(&input, "Returns a reference to the input.", $($tt)+);
-    };
-    (request: &mut $($tt:tt)+) => {
-        declare_method!(&mut request_mut, "Returns a mutable reference to the transmittable request for the operation being invoked.", $($tt)+);
-    };
-    (request: &$($tt:tt)+) => {
-        declare_method!(&request, "Returns a reference to the transmittable request for the operation being invoked.", $($tt)+);
-    };
-    (response: &mut $($tt:tt)+) => {
-        declare_method!(&mut response_mut, "Returns a mutable reference to the response.", $($tt)+);
-    };
-    (response: &$($tt:tt)+) => {
-        declare_method!(&response, "Returns a reference to the response.", $($tt)+);
-    };
-}
-
-macro_rules! declare_wrapper {
-    (($ref_struct_name:ident readonly)$($tt:tt)+) => {
-        pub struct $ref_struct_name<'a, I = Input, O = Output, E = Error> {
-            inner: &'a InterceptorContext<I, O, E>,
-        }
-
-        impl<'a, I, O, E: Debug> From<&'a InterceptorContext<I, O, E>> for $ref_struct_name<'a, I, O, E>
-        {
+macro_rules! impl_from_interceptor_context {
+    (ref $wrapper:ident) => {
+        impl<'a, I, O, E> From<&'a InterceptorContext<I, O, E>> for $wrapper<'a, I, O, E> {
             fn from(inner: &'a InterceptorContext<I, O, E>) -> Self {
                 Self { inner }
             }
         }
-
-        impl<'a, I, O, E: Debug> $ref_struct_name<'a, I, O, E> {
-            declare_ref_wrapper_methods!($($tt)+);
-        }
     };
-    (($ref_struct_name:ident $mut_struct_name:ident)$($tt:tt)+) => {
-        declare_wrapper!(($ref_struct_name readonly) $($tt)+);
-
-        pub struct $mut_struct_name<'a, I = Input, O = Output, E = Error> {
-            inner: &'a mut InterceptorContext<I, O, E>,
-        }
-
-        impl<'a, I, O, E: Debug> From<&'a mut InterceptorContext<I, O, E>> for $mut_struct_name<'a, I, O, E>
-        {
+    (mut $wrapper:ident) => {
+        impl<'a, I, O, E> From<&'a mut InterceptorContext<I, O, E>> for $wrapper<'a, I, O, E> {
             fn from(inner: &'a mut InterceptorContext<I, O, E>) -> Self {
                 Self { inner }
             }
         }
-
-        impl<'a, I, O, E: Debug> $mut_struct_name<'a, I, O, E> {
-            declare_ref_wrapper_methods!($($tt)+);
-            declare_mut_wrapper_methods!($($tt)+);
-        }
     };
 }
 
-macro_rules! declare_ref_wrapper_methods {
-    (($field:ident: $($head:tt)+)$($tail:tt)+) => {
-        declare_known_method!($field: &$($head)+);
-        declare_ref_wrapper_methods!($($tail)+);
-    };
-    (($field:ident: $($tt:tt)+)) => {
-        declare_known_method!($field: &$($tt)+);
-    };
-}
-
-macro_rules! declare_mut_wrapper_methods {
-    (($field:ident: $($head:tt)+)$($tail:tt)+) => {
-        declare_known_method!($field: &mut $($head)+);
-        declare_mut_wrapper_methods!($($tail)+);
-    };
-    (($field:ident: $($tt:tt)+)) => {
-        declare_known_method!($field: &mut $($tt)+);
+macro_rules! expect {
+    ($self:ident, $what:ident) => {
+        $self.inner.$what().expect(concat!(
+            "`",
+            stringify!($what),
+            "` wasn't set in the underlying interceptor context. This is a bug."
+        ))
     };
 }
 
-declare_wrapper!(
-    (BeforeSerializationInterceptorContextRef BeforeSerializationInterceptorContextMut)
-    (input: I)
-);
+//
+// BeforeSerializationInterceptorContextRef
+//
 
-declare_wrapper!(
-    (BeforeTransmitInterceptorContextRef BeforeTransmitInterceptorContextMut)
-    (request: Request)
-);
+/// Interceptor context for the `read_before_execution` and `read_before_serialization` hooks.
+///
+/// Only the input is available at this point in the operation.
+#[derive(Debug)]
+pub struct BeforeSerializationInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
+    inner: &'a InterceptorContext<I, O, E>,
+}
 
-declare_wrapper!(
-    (BeforeDeserializationInterceptorContextRef BeforeDeserializationInterceptorContextMut)
-    (input: I)
-    (request: Request)
-    (response: Response)
-);
+impl_from_interceptor_context!(ref BeforeSerializationInterceptorContextRef);
 
-impl<'a, I, O, E: Debug> BeforeDeserializationInterceptorContextMut<'a, I, O, E> {
+impl<'a, I, O, E> BeforeSerializationInterceptorContextRef<'a, I, O, E> {
+    /// Returns a reference to the input.
+    pub fn input(&self) -> &I {
+        expect!(self, input)
+    }
+}
+
+//
+// BeforeSerializationInterceptorContextMut
+//
+
+/// Interceptor context for the `modify_before_serialization` hook.
+///
+/// Only the input is available at this point in the operation.
+#[derive(Debug)]
+pub struct BeforeSerializationInterceptorContextMut<'a, I = Input, O = Output, E = Error> {
+    inner: &'a mut InterceptorContext<I, O, E>,
+}
+
+impl_from_interceptor_context!(mut BeforeSerializationInterceptorContextMut);
+
+impl<'a, I, O, E> BeforeSerializationInterceptorContextMut<'a, I, O, E> {
+    /// Returns a reference to the input.
+    pub fn input(&self) -> &I {
+        expect!(self, input)
+    }
+
+    /// Returns a mutable reference to the input.
+    pub fn input_mut(&mut self) -> &mut I {
+        expect!(self, input_mut)
+    }
+}
+
+//
+// BeforeSerializationInterceptorContextRef
+//
+
+/// Interceptor context for several hooks in between serialization and transmission.
+///
+/// Only the request is available at this point in the operation.
+#[derive(Debug)]
+pub struct BeforeTransmitInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
+    inner: &'a InterceptorContext<I, O, E>,
+}
+
+impl_from_interceptor_context!(ref BeforeTransmitInterceptorContextRef);
+
+impl<'a, I, O, E> BeforeTransmitInterceptorContextRef<'a, I, O, E> {
+    /// Returns a reference to the transmittable request for the operation being invoked.
+    pub fn request(&self) -> &Request {
+        expect!(self, request)
+    }
+}
+
+//
+// BeforeSerializationInterceptorContextMut
+//
+
+/// Interceptor context for several hooks in between serialization and transmission.
+///
+/// Only the request is available at this point in the operation.
+#[derive(Debug)]
+pub struct BeforeTransmitInterceptorContextMut<'a, I = Input, O = Output, E = Error> {
+    inner: &'a mut InterceptorContext<I, O, E>,
+}
+
+impl_from_interceptor_context!(mut BeforeTransmitInterceptorContextMut);
+
+impl<'a, I, O, E> BeforeTransmitInterceptorContextMut<'a, I, O, E> {
+    /// Returns a reference to the transmittable request for the operation being invoked.
+    pub fn request(&self) -> &Request {
+        expect!(self, request)
+    }
+
+    /// Returns a mutable reference to the transmittable request for the operation being invoked.
+    pub fn request_mut(&mut self) -> &mut Request {
+        expect!(self, request_mut)
+    }
+}
+
+//
+// BeforeDeserializationInterceptorContextRef
+//
+
+/// Interceptor context for hooks before deserializing the response.
+///
+/// Only the response is available at this point in the operation.
+#[derive(Debug)]
+pub struct BeforeDeserializationInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
+    inner: &'a InterceptorContext<I, O, E>,
+}
+
+impl_from_interceptor_context!(ref BeforeDeserializationInterceptorContextRef);
+
+impl<'a, I, O, E> BeforeDeserializationInterceptorContextRef<'a, I, O, E> {
+    /// Returns a reference to the response.
+    pub fn response(&self) -> &Response {
+        expect!(self, response)
+    }
+}
+
+//
+// BeforeDeserializationInterceptorContextMut
+//
+
+/// Interceptor context for hooks before deserializing the response.
+///
+/// Only the response is available at this point in the operation.
+pub struct BeforeDeserializationInterceptorContextMut<'a, I = Input, O = Output, E = Error> {
+    inner: &'a mut InterceptorContext<I, O, E>,
+}
+
+impl_from_interceptor_context!(mut BeforeDeserializationInterceptorContextMut);
+
+impl<'a, I, O, E> BeforeDeserializationInterceptorContextMut<'a, I, O, E> {
+    /// Returns a reference to the response.
+    pub fn response(&self) -> &Response {
+        expect!(self, response)
+    }
+
+    /// Returns a mutable reference to the response.
+    pub fn response_mut(&mut self) -> &mut Response {
+        expect!(self, response_mut)
+    }
+
     #[doc(hidden)]
     /// Downgrade this helper struct, returning the underlying InterceptorContext. There's no good
     /// reason to use this unless you're writing tests or you have to interact with an API that
     /// doesn't support the helper structs.
-    pub fn into_inner(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
+    pub fn inner_mut(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
         self.inner
     }
 }
 
-declare_wrapper!(
-    (AfterDeserializationInterceptorContextRef readonly)
-    (input: I)
-    (request: Request)
-    (response: Response)
-    (output_or_error: Result<O, OrchestratorError<E>>
-));
+//
+// AfterDeserializationInterceptorContextRef
+//
 
-// Why are all the rest of these defined with a macro but these last two aren't? I simply ran out of
-// time. Consider updating the macros to support these last two if you're looking for a challenge.
-// - Zelda
+/// Interceptor context for hooks after deserializing the response.
+///
+/// The response and the deserialized output or error are available at this point in the operation.
+pub struct AfterDeserializationInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
+    inner: &'a InterceptorContext<I, O, E>,
+}
 
+impl_from_interceptor_context!(ref AfterDeserializationInterceptorContextRef);
+
+impl<'a, I, O, E> AfterDeserializationInterceptorContextRef<'a, I, O, E> {
+    /// Returns a reference to the response.
+    pub fn response(&self) -> &Response {
+        expect!(self, response)
+    }
+
+    /// Returns a reference to the deserialized output or error.
+    pub fn output_or_error(&self) -> Result<&O, &OrchestratorError<E>> {
+        expect!(self, output_or_error)
+    }
+}
+
+//
+// FinalizerInterceptorContextRef
+//
+
+/// Interceptor context for finalization hooks.
+///
+/// This context is used by the `read_after_attempt` and `read_after_execution` hooks
+/// that are all called upon both success and failure, and may have varying levels
+/// of context available depending on where a failure occurred if the operation failed.
 pub struct FinalizerInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
     inner: &'a InterceptorContext<I, O, E>,
 }
 
-impl<'a, I, O, E: Debug> From<&'a InterceptorContext<I, O, E>>
-    for FinalizerInterceptorContextRef<'a, I, O, E>
-{
-    fn from(inner: &'a InterceptorContext<I, O, E>) -> Self {
-        Self { inner }
-    }
-}
+impl_from_interceptor_context!(ref FinalizerInterceptorContextRef);
 
-impl<'a, I, O, E: Debug> FinalizerInterceptorContextRef<'a, I, O, E> {
+impl<'a, I, O, E> FinalizerInterceptorContextRef<'a, I, O, E> {
     /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()
@@ -214,19 +245,22 @@ impl<'a, I, O, E: Debug> FinalizerInterceptorContextRef<'a, I, O, E> {
     }
 }
 
+//
+// FinalizerInterceptorContextMut
+//
+
+/// Interceptor context for finalization hooks.
+///
+/// This context is used by the `modify_before_attempt_completion` and `modify_before_completion` hooks
+/// that are all called upon both success and failure, and may have varying levels
+/// of context available depending on where a failure occurred if the operation failed.
 pub struct FinalizerInterceptorContextMut<'a, I = Input, O = Output, E = Error> {
     inner: &'a mut InterceptorContext<I, O, E>,
 }
 
-impl<'a, I, O, E: Debug> From<&'a mut InterceptorContext<I, O, E>>
-    for FinalizerInterceptorContextMut<'a, I, O, E>
-{
-    fn from(inner: &'a mut InterceptorContext<I, O, E>) -> Self {
-        Self { inner }
-    }
-}
+impl_from_interceptor_context!(mut FinalizerInterceptorContextMut);
 
-impl<'a, I, O, E: Debug> FinalizerInterceptorContextMut<'a, I, O, E> {
+impl<'a, I, O, E> FinalizerInterceptorContextMut<'a, I, O, E> {
     /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()
