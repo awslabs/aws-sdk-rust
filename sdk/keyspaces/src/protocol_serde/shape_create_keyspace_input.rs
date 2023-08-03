@@ -18,5 +18,14 @@ pub fn ser_create_keyspace_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.replication_specification {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("replicationSpecification").start_object();
+        crate::protocol_serde::shape_replication_specification::ser_replication_specification(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }

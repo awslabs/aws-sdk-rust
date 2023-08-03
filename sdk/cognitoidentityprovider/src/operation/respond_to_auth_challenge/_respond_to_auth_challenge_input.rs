@@ -125,10 +125,10 @@ impl ::std::fmt::Debug for RespondToAuthChallengeInput {
         let mut formatter = f.debug_struct("RespondToAuthChallengeInput");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_responses", &self.challenge_responses);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_responses", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }
@@ -343,10 +343,10 @@ impl ::std::fmt::Debug for RespondToAuthChallengeInputBuilder {
         let mut formatter = f.debug_struct("RespondToAuthChallengeInputBuilder");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("session", &self.session);
-        formatter.field("challenge_responses", &self.challenge_responses);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_responses", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }

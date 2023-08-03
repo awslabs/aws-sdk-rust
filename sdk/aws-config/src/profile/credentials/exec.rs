@@ -137,8 +137,8 @@ impl ProviderChain {
                 }
                 #[cfg(not(feature = "credentials-sso"))]
                 {
-                    Err(ProfileFileError::UnknownProvider {
-                        name: "sso".to_string(),
+                    Err(ProfileFileError::FeatureNotEnabled {
+                        feature: "credentials-sso".into(),
                     })?
                 }
             }

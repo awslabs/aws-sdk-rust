@@ -24,5 +24,10 @@ pub fn ser_batch_statement_request(
     if let Some(var_6) = &input.consistent_read {
         object.key("ConsistentRead").boolean(*var_6);
     }
+    if let Some(var_7) = &input.return_values_on_condition_check_failure {
+        object
+            .key("ReturnValuesOnConditionCheckFailure")
+            .string(var_7.as_str());
+    }
     Ok(())
 }

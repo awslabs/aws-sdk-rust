@@ -6,6 +6,7 @@ pub use crate::operation::delete_skill_authorization::_delete_skill_authorizatio
 /// Fluent builder constructing a request to `DeleteSkillAuthorization`.
 ///
 /// <p>Unlinks a third-party account from a skill.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSkillAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

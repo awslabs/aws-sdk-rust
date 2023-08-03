@@ -14,6 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
+    #[deprecated(note = "Replaced by CreateChannel in the Amazon Chime SDK Messaging Namespace")]
     pub fn create_channel(
         &self,
     ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {

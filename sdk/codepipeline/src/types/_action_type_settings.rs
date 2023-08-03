@@ -7,13 +7,13 @@ pub struct ActionTypeSettings {
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
     #[doc(hidden)]
     pub third_party_configuration_url: ::std::option::Option<::std::string::String>,
-    /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
     #[doc(hidden)]
     pub entity_url_template: ::std::option::Option<::std::string::String>,
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
     #[doc(hidden)]
     pub execution_url_template: ::std::option::Option<::std::string::String>,
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     #[doc(hidden)]
     pub revision_url_template: ::std::option::Option<::std::string::String>,
 }
@@ -22,15 +22,15 @@ impl ActionTypeSettings {
     pub fn third_party_configuration_url(&self) -> ::std::option::Option<&str> {
         self.third_party_configuration_url.as_deref()
     }
-    /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
     pub fn entity_url_template(&self) -> ::std::option::Option<&str> {
         self.entity_url_template.as_deref()
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
     pub fn execution_url_template(&self) -> ::std::option::Option<&str> {
         self.execution_url_template.as_deref()
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     pub fn revision_url_template(&self) -> ::std::option::Option<&str> {
         self.revision_url_template.as_deref()
     }
@@ -70,7 +70,7 @@ impl ActionTypeSettingsBuilder {
         self.third_party_configuration_url = input;
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
     pub fn entity_url_template(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -78,7 +78,7 @@ impl ActionTypeSettingsBuilder {
         self.entity_url_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
     pub fn set_entity_url_template(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -86,7 +86,7 @@ impl ActionTypeSettingsBuilder {
         self.entity_url_template = input;
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
     pub fn execution_url_template(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -94,7 +94,7 @@ impl ActionTypeSettingsBuilder {
         self.execution_url_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
     pub fn set_execution_url_template(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -102,7 +102,7 @@ impl ActionTypeSettingsBuilder {
         self.execution_url_template = input;
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     pub fn revision_url_template(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -110,7 +110,7 @@ impl ActionTypeSettingsBuilder {
         self.revision_url_template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     pub fn set_revision_url_template(
         mut self,
         input: ::std::option::Option<::std::string::String>,

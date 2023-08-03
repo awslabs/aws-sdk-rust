@@ -5,7 +5,7 @@ pub use crate::operation::assign_private_nat_gateway_address::_assign_private_na
 
 /// Fluent builder constructing a request to `AssignPrivateNatGatewayAddress`.
 ///
-/// <p>Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -73,7 +73,7 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
     >{
         self.customize_middleware().await
     }
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -81,7 +81,7 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     pub fn set_nat_gateway_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

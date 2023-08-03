@@ -11,7 +11,9 @@ pub use crate::operation::get_flow_logs_integration_template::_get_flow_logs_int
 /// <li> <p>Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis</p> </li>
 /// <li> <p>Create a table partitioned between two timestamps in the past</p> </li>
 /// <li> <p>Create a set of named queries in Athena that you can use to get started quickly</p> </li>
-/// </ul>
+/// </ul> <note>
+/// <p> <code>GetFlowLogsIntegrationTemplate</code> does not support integration between Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFlowLogsIntegrationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

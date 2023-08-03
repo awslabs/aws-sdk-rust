@@ -61,14 +61,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCustomLogSource`](crate::operation::create_custom_log_source) operation has
-/// a [`Client::create_custom_log_source`], function which returns a builder for that operation.
+/// For example, the [`CreateDataLakeExceptionSubscription`](crate::operation::create_data_lake_exception_subscription) operation has
+/// a [`Client::create_data_lake_exception_subscription`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_custom_log_source()
-///     .custom_source_name("example")
+/// let result = client.create_data_lake_exception_subscription()
+///     .subscription_protocol("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -216,17 +216,15 @@ mod create_aws_log_source;
 
 mod create_custom_log_source;
 
-mod create_datalake;
+mod create_data_lake;
 
-mod create_datalake_auto_enable;
+mod create_data_lake_exception_subscription;
 
-mod create_datalake_delegated_admin;
-
-mod create_datalake_exceptions_subscription;
+mod create_data_lake_organization_configuration;
 
 mod create_subscriber;
 
-mod create_subscription_notification_configuration;
+mod create_subscriber_notification;
 
 /// Operation customization and supporting types.
 ///
@@ -239,7 +237,7 @@ mod create_subscription_notification_configuration;
 /// # let client: aws_sdk_securitylake::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_aws_log_source()
+/// let result = client.create_data_lake_exception_subscription()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -260,42 +258,46 @@ mod delete_aws_log_source;
 
 mod delete_custom_log_source;
 
-mod delete_datalake;
+mod delete_data_lake;
 
-mod delete_datalake_auto_enable;
+mod delete_data_lake_exception_subscription;
 
-mod delete_datalake_delegated_admin;
-
-mod delete_datalake_exceptions_subscription;
+mod delete_data_lake_organization_configuration;
 
 mod delete_subscriber;
 
-mod delete_subscription_notification_configuration;
+mod delete_subscriber_notification;
 
-mod get_datalake;
+mod deregister_data_lake_delegated_administrator;
 
-mod get_datalake_auto_enable;
+mod get_data_lake_exception_subscription;
 
-mod get_datalake_exceptions_expiry;
+mod get_data_lake_organization_configuration;
 
-mod get_datalake_exceptions_subscription;
-
-mod get_datalake_status;
+mod get_data_lake_sources;
 
 mod get_subscriber;
 
-mod list_datalake_exceptions;
+mod list_data_lake_exceptions;
+
+mod list_data_lakes;
 
 mod list_log_sources;
 
 mod list_subscribers;
 
-mod update_datalake;
+mod list_tags_for_resource;
 
-mod update_datalake_exceptions_expiry;
+mod register_data_lake_delegated_administrator;
 
-mod update_datalake_exceptions_subscription;
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_data_lake;
+
+mod update_data_lake_exception_subscription;
 
 mod update_subscriber;
 
-mod update_subscription_notification_configuration;
+mod update_subscriber_notification;

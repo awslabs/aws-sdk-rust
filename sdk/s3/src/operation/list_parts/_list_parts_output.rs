@@ -22,7 +22,7 @@ pub struct ListPartsOutput {
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub part_number_marker: ::std::option::Option<::std::string::String>,
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
@@ -78,7 +78,7 @@ impl ListPartsOutput {
     pub fn part_number_marker(&self) -> ::std::option::Option<&str> {
         self.part_number_marker.as_deref()
     }
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     pub fn next_part_number_marker(&self) -> ::std::option::Option<&str> {
         self.next_part_number_marker.as_deref()
     }
@@ -234,7 +234,7 @@ impl ListPartsOutputBuilder {
         self.part_number_marker = input;
         self
     }
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     pub fn next_part_number_marker(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -242,7 +242,7 @@ impl ListPartsOutputBuilder {
         self.next_part_number_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     pub fn set_next_part_number_marker(
         mut self,
         input: ::std::option::Option<::std::string::String>,

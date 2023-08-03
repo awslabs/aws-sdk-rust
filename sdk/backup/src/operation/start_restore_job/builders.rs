@@ -190,6 +190,7 @@ impl StartRestoreJobFluentBuilder {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -197,8 +198,10 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn resource_type(
@@ -212,6 +215,7 @@ impl StartRestoreJobFluentBuilder {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -219,8 +223,10 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn set_resource_type(
@@ -228,6 +234,21 @@ impl StartRestoreJobFluentBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
+        self
+    }
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    pub fn copy_source_tags_to_restored_resource(mut self, input: bool) -> Self {
+        self.inner = self.inner.copy_source_tags_to_restored_resource(input);
+        self
+    }
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    pub fn set_copy_source_tags_to_restored_resource(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
+        self.inner = self.inner.set_copy_source_tags_to_restored_resource(input);
         self
     }
 }

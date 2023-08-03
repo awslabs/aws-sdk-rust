@@ -55,6 +55,8 @@ pub enum Error {
     ProvisionedConcurrencyConfigNotFoundException(
         crate::types::error::ProvisionedConcurrencyConfigNotFoundException,
     ),
+    /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
+    RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
     /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     RequestTooLargeException(crate::types::error::RequestTooLargeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
@@ -110,6 +112,7 @@ impl ::std::fmt::Display for Error {
             Error::PolicyLengthExceededException(inner) => inner.fmt(f),
             Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.fmt(f),
+            Error::RecursiveInvocationException(inner) => inner.fmt(f),
             Error::RequestTooLargeException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
@@ -593,6 +596,7 @@ impl From<crate::operation::delete_event_source_mapping::DeleteEventSourceMappin
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1587,6 +1591,9 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             }
             crate::operation::invoke::InvokeError::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
+            }
+            crate::operation::invoke::InvokeError::RecursiveInvocationException(inner) => {
+                Error::RecursiveInvocationException(inner)
             }
             crate::operation::invoke::InvokeError::SnapStartException(inner) => {
                 Error::SnapStartException(inner)
@@ -3040,6 +3047,7 @@ impl ::std::error::Error for Error {
             Error::PolicyLengthExceededException(inner) => inner.source(),
             Error::PreconditionFailedException(inner) => inner.source(),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.source(),
+            Error::RecursiveInvocationException(inner) => inner.source(),
             Error::RequestTooLargeException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
@@ -3084,6 +3092,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::PolicyLengthExceededException(e) => e.request_id(),
             Self::PreconditionFailedException(e) => e.request_id(),
             Self::ProvisionedConcurrencyConfigNotFoundException(e) => e.request_id(),
+            Self::RecursiveInvocationException(e) => e.request_id(),
             Self::RequestTooLargeException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),

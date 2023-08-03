@@ -24,6 +24,8 @@ pub(crate) mod shape_create_firewall_rule;
 
 pub(crate) mod shape_create_firewall_rule_group;
 
+pub(crate) mod shape_create_outpost_resolver;
+
 pub(crate) mod shape_create_resolver_endpoint;
 
 pub(crate) mod shape_create_resolver_query_log_config;
@@ -35,6 +37,8 @@ pub(crate) mod shape_delete_firewall_domain_list;
 pub(crate) mod shape_delete_firewall_rule;
 
 pub(crate) mod shape_delete_firewall_rule_group;
+
+pub(crate) mod shape_delete_outpost_resolver;
 
 pub(crate) mod shape_delete_resolver_endpoint;
 
@@ -59,6 +63,8 @@ pub(crate) mod shape_get_firewall_rule_group;
 pub(crate) mod shape_get_firewall_rule_group_association;
 
 pub(crate) mod shape_get_firewall_rule_group_policy;
+
+pub(crate) mod shape_get_outpost_resolver;
 
 pub(crate) mod shape_get_resolver_config;
 
@@ -91,6 +97,8 @@ pub(crate) mod shape_list_firewall_rule_group_associations;
 pub(crate) mod shape_list_firewall_rule_groups;
 
 pub(crate) mod shape_list_firewall_rules;
+
+pub(crate) mod shape_list_outpost_resolvers;
 
 pub(crate) mod shape_list_resolver_configs;
 
@@ -128,6 +136,8 @@ pub(crate) mod shape_update_firewall_rule;
 
 pub(crate) mod shape_update_firewall_rule_group_association;
 
+pub(crate) mod shape_update_outpost_resolver;
+
 pub(crate) mod shape_update_resolver_config;
 
 pub(crate) mod shape_update_resolver_dnssec_config;
@@ -162,6 +172,8 @@ pub(crate) mod shape_create_firewall_rule_group_input;
 
 pub(crate) mod shape_create_firewall_rule_input;
 
+pub(crate) mod shape_create_outpost_resolver_input;
+
 pub(crate) mod shape_create_resolver_endpoint_input;
 
 pub(crate) mod shape_create_resolver_query_log_config_input;
@@ -173,6 +185,8 @@ pub(crate) mod shape_delete_firewall_domain_list_input;
 pub(crate) mod shape_delete_firewall_rule_group_input;
 
 pub(crate) mod shape_delete_firewall_rule_input;
+
+pub(crate) mod shape_delete_outpost_resolver_input;
 
 pub(crate) mod shape_delete_resolver_endpoint_input;
 
@@ -197,6 +211,8 @@ pub(crate) mod shape_get_firewall_rule_group_association_input;
 pub(crate) mod shape_get_firewall_rule_group_input;
 
 pub(crate) mod shape_get_firewall_rule_group_policy_input;
+
+pub(crate) mod shape_get_outpost_resolver_input;
 
 pub(crate) mod shape_get_resolver_config_input;
 
@@ -244,6 +260,8 @@ pub(crate) mod shape_list_firewall_rule_groups_input;
 
 pub(crate) mod shape_list_firewall_rules_input;
 
+pub(crate) mod shape_list_outpost_resolvers_input;
+
 pub(crate) mod shape_list_resolver_configs_input;
 
 pub(crate) mod shape_list_resolver_dnssec_configs_input;
@@ -276,6 +294,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_unavailable_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -291,6 +311,8 @@ pub(crate) mod shape_update_firewall_domains_input;
 pub(crate) mod shape_update_firewall_rule_group_association_input;
 
 pub(crate) mod shape_update_firewall_rule_input;
+
+pub(crate) mod shape_update_outpost_resolver_input;
 
 pub(crate) mod shape_update_resolver_config_input;
 
@@ -331,6 +353,10 @@ pub(crate) mod shape_ip_address_request;
 pub(crate) mod shape_ip_address_update;
 
 pub(crate) mod shape_ip_addresses_response;
+
+pub(crate) mod shape_outpost_resolver;
+
+pub(crate) mod shape_outpost_resolver_list;
 
 pub(crate) mod shape_resolver_config;
 

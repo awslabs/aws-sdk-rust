@@ -27,5 +27,11 @@ pub fn ser_put_record_input(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.ttl_duration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("TtlDuration").start_object();
+        crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

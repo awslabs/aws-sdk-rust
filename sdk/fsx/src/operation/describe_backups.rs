@@ -160,6 +160,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for DescribeBackups {
             crate::protocol_serde::shape_describe_backups::de_describe_backups_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

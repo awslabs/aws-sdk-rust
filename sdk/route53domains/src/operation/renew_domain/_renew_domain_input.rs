@@ -13,7 +13,7 @@ pub struct RenewDomainInput {
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     #[doc(hidden)]
-    pub current_expiry_year: i32,
+    pub current_expiry_year: ::std::option::Option<i32>,
 }
 impl RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
@@ -26,7 +26,7 @@ impl RenewDomainInput {
         self.duration_in_years
     }
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
-    pub fn current_expiry_year(&self) -> i32 {
+    pub fn current_expiry_year(&self) -> ::std::option::Option<i32> {
         self.current_expiry_year
     }
 }
@@ -90,7 +90,7 @@ impl RenewDomainInputBuilder {
         ::std::result::Result::Ok(crate::operation::renew_domain::RenewDomainInput {
             domain_name: self.domain_name,
             duration_in_years: self.duration_in_years,
-            current_expiry_year: self.current_expiry_year.unwrap_or_default(),
+            current_expiry_year: self.current_expiry_year,
         })
     }
 }

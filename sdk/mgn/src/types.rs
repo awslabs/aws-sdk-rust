@@ -201,6 +201,8 @@ pub use crate::types::_application::Application;
 
 pub use crate::types::_list_applications_request_filters::ListApplicationsRequestFilters;
 
+pub use crate::types::_managed_account::ManagedAccount;
+
 mod _action_category;
 
 mod _application;
@@ -332,6 +334,8 @@ mod _list_exports_request_filters;
 mod _list_imports_request_filters;
 
 mod _list_waves_request_filters;
+
+mod _managed_account;
 
 mod _network_interface;
 

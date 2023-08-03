@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     #[doc(hidden)]
     pub timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
@@ -13,6 +14,7 @@ pub struct RegisterAccountInput {
 }
 impl RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     pub fn timestream_resources(
         &self,
     ) -> ::std::option::Option<&crate::types::TimestreamResources> {
@@ -42,11 +44,13 @@ pub struct RegisterAccountInputBuilder {
 }
 impl RegisterAccountInputBuilder {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     pub fn timestream_resources(mut self, input: crate::types::TimestreamResources) -> Self {
         self.timestream_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
     pub fn set_timestream_resources(
         mut self,
         input: ::std::option::Option<crate::types::TimestreamResources>,

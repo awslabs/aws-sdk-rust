@@ -2,9 +2,9 @@
 
 /// <p>Configuration for the FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OntapFileSystemConfiguration {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
@@ -42,9 +42,12 @@ pub struct OntapFileSystemConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
+    /// <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password value is always redacted in the response.</p>
+    #[doc(hidden)]
+    pub fsx_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfiguration {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
@@ -94,6 +97,36 @@ impl OntapFileSystemConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
+    /// <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password value is always redacted in the response.</p>
+    pub fn fsx_admin_password(&self) -> ::std::option::Option<&str> {
+        self.fsx_admin_password.as_deref()
+    }
+}
+impl ::std::fmt::Debug for OntapFileSystemConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OntapFileSystemConfiguration");
+        formatter.field(
+            "automatic_backup_retention_days",
+            &self.automatic_backup_retention_days,
+        );
+        formatter.field(
+            "daily_automatic_backup_start_time",
+            &self.daily_automatic_backup_start_time,
+        );
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("endpoint_ip_address_range", &self.endpoint_ip_address_range);
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
+        formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
+        formatter.field("route_table_ids", &self.route_table_ids);
+        formatter.field("throughput_capacity", &self.throughput_capacity);
+        formatter.field(
+            "weekly_maintenance_start_time",
+            &self.weekly_maintenance_start_time,
+        );
+        formatter.field("fsx_admin_password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl OntapFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::types::OntapFileSystemConfiguration).
@@ -104,9 +137,7 @@ impl OntapFileSystemConfiguration {
 
 /// A builder for [`OntapFileSystemConfiguration`](crate::types::OntapFileSystemConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct OntapFileSystemConfigurationBuilder {
     pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
     pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
@@ -118,14 +149,15 @@ pub struct OntapFileSystemConfigurationBuilder {
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) throughput_capacity: ::std::option::Option<i32>,
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) fsx_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfigurationBuilder {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
         self.automatic_backup_retention_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn set_automatic_backup_retention_days(
         mut self,
         input: ::std::option::Option<i32>,
@@ -284,6 +316,22 @@ impl OntapFileSystemConfigurationBuilder {
         self.weekly_maintenance_start_time = input;
         self
     }
+    /// <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password value is always redacted in the response.</p>
+    pub fn fsx_admin_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fsx_admin_password = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI and REST API. The password value is always redacted in the response.</p>
+    pub fn set_fsx_admin_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.fsx_admin_password = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OntapFileSystemConfiguration`](crate::types::OntapFileSystemConfiguration).
     pub fn build(self) -> crate::types::OntapFileSystemConfiguration {
         crate::types::OntapFileSystemConfiguration {
@@ -297,6 +345,33 @@ impl OntapFileSystemConfigurationBuilder {
             route_table_ids: self.route_table_ids,
             throughput_capacity: self.throughput_capacity,
             weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+            fsx_admin_password: self.fsx_admin_password,
         }
+    }
+}
+impl ::std::fmt::Debug for OntapFileSystemConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OntapFileSystemConfigurationBuilder");
+        formatter.field(
+            "automatic_backup_retention_days",
+            &self.automatic_backup_retention_days,
+        );
+        formatter.field(
+            "daily_automatic_backup_start_time",
+            &self.daily_automatic_backup_start_time,
+        );
+        formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("endpoint_ip_address_range", &self.endpoint_ip_address_range);
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
+        formatter.field("preferred_subnet_id", &self.preferred_subnet_id);
+        formatter.field("route_table_ids", &self.route_table_ids);
+        formatter.field("throughput_capacity", &self.throughput_capacity);
+        formatter.field(
+            "weekly_maintenance_start_time",
+            &self.weekly_maintenance_start_time,
+        );
+        formatter.field("fsx_admin_password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -35,7 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The storage type for your Amazon FSx file system.</p>
+/// <p>Specifies the file system's storage type.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

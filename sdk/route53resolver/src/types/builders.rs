@@ -13,6 +13,8 @@ pub use crate::types::_resolver_dnssec_config::ResolverDnssecConfigBuilder;
 
 pub use crate::types::_resolver_config::ResolverConfigBuilder;
 
+pub use crate::types::_outpost_resolver::OutpostResolverBuilder;
+
 pub use crate::types::_firewall_rule_group_association::FirewallRuleGroupAssociationBuilder;
 
 pub use crate::types::_firewall_rule::FirewallRuleBuilder;

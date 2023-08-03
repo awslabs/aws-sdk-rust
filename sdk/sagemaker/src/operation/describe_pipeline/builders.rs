@@ -99,7 +99,7 @@ impl DescribePipelineFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +107,7 @@ impl DescribePipelineFluentBuilder {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

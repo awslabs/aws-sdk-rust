@@ -9,6 +9,11 @@ pub struct UpdateWorkspaceConfigurationInput {
     /// <p>The ID of the workspace to update.</p>
     #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    #[doc(hidden)]
+    pub grafana_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceConfigurationInput {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
@@ -18,6 +23,12 @@ impl UpdateWorkspaceConfigurationInput {
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
+        self.grafana_version.as_deref()
     }
 }
 impl UpdateWorkspaceConfigurationInput {
@@ -35,6 +46,7 @@ impl UpdateWorkspaceConfigurationInput {
 pub struct UpdateWorkspaceConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
@@ -63,6 +75,26 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn grafana_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.grafana_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn set_grafana_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.grafana_version = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
     pub fn build(
         self,
@@ -74,6 +106,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
             crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
                 configuration: self.configuration,
                 workspace_id: self.workspace_id,
+                grafana_version: self.grafana_version,
             },
         )
     }

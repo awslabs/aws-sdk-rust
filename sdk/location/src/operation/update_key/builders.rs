@@ -5,9 +5,7 @@ pub use crate::operation::update_key::_update_key_input::UpdateKeyInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateKey`.
 ///
-/// <p>Updates the specified properties of a given API key resource.</p> <important>
-/// <p>The API keys feature is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.</p>
-/// </important>
+/// <p>Updates the specified properties of a given API key resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

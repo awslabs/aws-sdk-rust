@@ -5,7 +5,7 @@ pub use crate::operation::delete_fhir_datastore::_delete_fhir_datastore_input::D
 
 /// Fluent builder constructing a request to `DeleteFHIRDatastore`.
 ///
-/// <p>Deletes a Data Store. </p>
+/// <p>Deletes a data store. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFHIRDatastoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl DeleteFHIRDatastoreFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self

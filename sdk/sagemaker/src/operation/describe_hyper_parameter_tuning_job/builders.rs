@@ -5,7 +5,7 @@ pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_p
 
 /// Fluent builder constructing a request to `DescribeHyperParameterTuningJob`.
 ///
-/// <p>Gets a description of a hyperparameter tuning job.</p>
+/// <p>Returns a description of a hyperparameter tuning job, depending on the fields selected. These fields can include the name, Amazon Resource Name (ARN), job status of your tuning job and more.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

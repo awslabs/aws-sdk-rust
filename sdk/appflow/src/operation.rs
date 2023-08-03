@@ -49,6 +49,9 @@ pub mod list_tags_for_resource;
 /// Types for the `RegisterConnector` operation.
 pub mod register_connector;
 
+/// Types for the `ResetConnectorMetadataCache` operation.
+pub mod reset_connector_metadata_cache;
+
 /// Types for the `StartFlow` operation.
 pub mod start_flow;
 

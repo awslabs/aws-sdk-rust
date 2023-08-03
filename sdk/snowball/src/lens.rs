@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_long_term_pricing_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_pickup_locations_output_next_token(
+    input: &crate::operation::list_pickup_locations::ListPickupLocationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_addresses_output_addresses(
     input: crate::operation::describe_addresses::DescribeAddressesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Address>> {

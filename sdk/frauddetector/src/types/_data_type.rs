@@ -13,6 +13,7 @@
 /// # let datatype = unimplemented!();
 /// match datatype {
 ///     DataType::Boolean => { /* ... */ },
+///     DataType::Datetime => { /* ... */ },
 ///     DataType::Float => { /* ... */ },
 ///     DataType::Integer => { /* ... */ },
 ///     DataType::String => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum DataType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
     #[allow(missing_docs)] // documentation missing in model
+    Datetime,
+    #[allow(missing_docs)] // documentation missing in model
     Float,
     #[allow(missing_docs)] // documentation missing in model
     Integer,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for DataType {
     fn from(s: &str) -> Self {
         match s {
             "BOOLEAN" => DataType::Boolean,
+            "DATETIME" => DataType::Datetime,
             "FLOAT" => DataType::Float,
             "INTEGER" => DataType::Integer,
             "STRING" => DataType::String,
@@ -83,6 +87,7 @@ impl DataType {
     pub fn as_str(&self) -> &str {
         match self {
             DataType::Boolean => "BOOLEAN",
+            DataType::Datetime => "DATETIME",
             DataType::Float => "FLOAT",
             DataType::Integer => "INTEGER",
             DataType::String => "STRING",
@@ -91,7 +96,7 @@ impl DataType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BOOLEAN", "FLOAT", "INTEGER", "STRING"]
+        &["BOOLEAN", "DATETIME", "FLOAT", "INTEGER", "STRING"]
     }
 }
 impl ::std::convert::AsRef<str> for DataType {

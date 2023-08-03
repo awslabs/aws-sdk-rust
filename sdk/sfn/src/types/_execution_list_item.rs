@@ -7,7 +7,7 @@ pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
@@ -37,13 +37,22 @@ pub struct ExecutionListItem {
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
     #[doc(hidden)]
     pub item_count: ::std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
+    /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
+    #[doc(hidden)]
+    pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
+    #[doc(hidden)]
+    pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn execution_arn(&self) -> ::std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
@@ -80,6 +89,17 @@ impl ExecutionListItem {
     pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
+    /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_version_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_alias_arn.as_deref()
+    }
 }
 impl ExecutionListItem {
     /// Creates a new builder-style object to manufacture [`ExecutionListItem`](crate::types::ExecutionListItem).
@@ -102,6 +122,8 @@ pub struct ExecutionListItemBuilder {
     pub(crate) stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) item_count: ::std::option::Option<i32>,
+    pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -120,7 +142,7 @@ impl ExecutionListItemBuilder {
         self.execution_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -128,7 +150,7 @@ impl ExecutionListItemBuilder {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -223,6 +245,44 @@ impl ExecutionListItemBuilder {
         self.item_count = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
+    /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
+    pub fn state_machine_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
+    /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
+    pub fn set_state_machine_version_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
+    pub fn state_machine_alias_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+    /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
+    pub fn set_state_machine_alias_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ExecutionListItem`](crate::types::ExecutionListItem).
     pub fn build(self) -> crate::types::ExecutionListItem {
         crate::types::ExecutionListItem {
@@ -234,6 +294,8 @@ impl ExecutionListItemBuilder {
             stop_date: self.stop_date,
             map_run_arn: self.map_run_arn,
             item_count: self.item_count,
+            state_machine_version_arn: self.state_machine_version_arn,
+            state_machine_alias_arn: self.state_machine_alias_arn,
         }
     }
 }

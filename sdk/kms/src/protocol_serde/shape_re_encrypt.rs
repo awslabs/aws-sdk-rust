@@ -70,6 +70,23 @@ pub fn de_re_encrypt_http_error(
             }
             tmp
         }),
+        "DryRunOperationException" => {
+            crate::operation::re_encrypt::ReEncryptError::DryRunOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output).map_err(crate::operation::re_encrypt::ReEncryptError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "IncorrectKeyException" => {
             crate::operation::re_encrypt::ReEncryptError::IncorrectKeyException({
                 #[allow(unused_mut)]

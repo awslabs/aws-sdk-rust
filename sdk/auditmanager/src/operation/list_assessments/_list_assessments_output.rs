@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentsOutput {
-    /// <p> The metadata that's associated with the assessment. </p>
+    /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     #[doc(hidden)]
     pub assessment_metadata:
         ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
@@ -13,7 +13,7 @@ pub struct ListAssessmentsOutput {
     _request_id: Option<String>,
 }
 impl ListAssessmentsOutput {
-    /// <p> The metadata that's associated with the assessment. </p>
+    /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     pub fn assessment_metadata(
         &self,
     ) -> ::std::option::Option<&[crate::types::AssessmentMetadataItem]> {
@@ -52,14 +52,14 @@ impl ListAssessmentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_assessment_metadata`](Self::set_assessment_metadata).
     ///
-    /// <p> The metadata that's associated with the assessment. </p>
+    /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     pub fn assessment_metadata(mut self, input: crate::types::AssessmentMetadataItem) -> Self {
         let mut v = self.assessment_metadata.unwrap_or_default();
         v.push(input);
         self.assessment_metadata = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The metadata that's associated with the assessment. </p>
+    /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     pub fn set_assessment_metadata(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,

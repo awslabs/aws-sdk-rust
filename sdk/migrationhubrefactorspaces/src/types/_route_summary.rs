@@ -28,7 +28,7 @@ pub struct RouteSummary {
     /// <p>The unique identifier of the environment. </p>
     #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
@@ -59,6 +59,9 @@ pub struct RouteSummary {
     /// <p>A timestamp that indicates when the route is created. </p>
     #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    #[doc(hidden)]
+    pub append_source_path: ::std::option::Option<bool>,
 }
 impl RouteSummary {
     /// <p>The unique identifier of the route. </p>
@@ -93,7 +96,7 @@ impl RouteSummary {
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
@@ -137,6 +140,10 @@ impl RouteSummary {
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn append_source_path(&self) -> ::std::option::Option<bool> {
+        self.append_source_path
+    }
 }
 impl ::std::fmt::Debug for RouteSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -158,6 +165,7 @@ impl ::std::fmt::Debug for RouteSummary {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("append_source_path", &self.append_source_path);
         formatter.finish()
     }
 }
@@ -193,6 +201,7 @@ pub struct RouteSummaryBuilder {
     pub(crate) error: ::std::option::Option<crate::types::ErrorResponse>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) append_source_path: ::std::option::Option<bool>,
 }
 impl RouteSummaryBuilder {
     /// <p>The unique identifier of the route. </p>
@@ -299,12 +308,12 @@ impl RouteSummaryBuilder {
         self.environment_id = input;
         self
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
@@ -434,6 +443,16 @@ impl RouteSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn append_source_path(mut self, input: bool) -> Self {
+        self.append_source_path = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn set_append_source_path(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.append_source_path = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RouteSummary`](crate::types::RouteSummary).
     pub fn build(self) -> crate::types::RouteSummary {
         crate::types::RouteSummary {
@@ -454,6 +473,7 @@ impl RouteSummaryBuilder {
             error: self.error,
             last_updated_time: self.last_updated_time,
             created_time: self.created_time,
+            append_source_path: self.append_source_path,
         }
     }
 }
@@ -477,6 +497,7 @@ impl ::std::fmt::Debug for RouteSummaryBuilder {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("append_source_path", &self.append_source_path);
         formatter.finish()
     }
 }

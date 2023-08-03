@@ -16,6 +16,9 @@ pub struct UpdateMapInput {
     /// <p>Updates the description for the map resource.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    #[doc(hidden)]
+    pub configuration_update: ::std::option::Option<crate::types::MapConfigurationUpdate>,
 }
 impl UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
@@ -34,6 +37,12 @@ impl UpdateMapInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn configuration_update(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MapConfigurationUpdate> {
+        self.configuration_update.as_ref()
+    }
 }
 impl UpdateMapInput {
     /// Creates a new builder-style object to manufacture [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
@@ -51,6 +60,7 @@ pub struct UpdateMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_update: ::std::option::Option<crate::types::MapConfigurationUpdate>,
 }
 impl UpdateMapInputBuilder {
     /// <p>The name of the map resource to update.</p>
@@ -94,6 +104,19 @@ impl UpdateMapInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn configuration_update(mut self, input: crate::types::MapConfigurationUpdate) -> Self {
+        self.configuration_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn set_configuration_update(
+        mut self,
+        input: ::std::option::Option<crate::types::MapConfigurationUpdate>,
+    ) -> Self {
+        self.configuration_update = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
     pub fn build(
         self,
@@ -105,6 +128,7 @@ impl UpdateMapInputBuilder {
             map_name: self.map_name,
             pricing_plan: self.pricing_plan,
             description: self.description,
+            configuration_update: self.configuration_update,
         })
     }
 }

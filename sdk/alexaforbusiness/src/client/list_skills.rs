@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`skill_summaries(Option<Vec<SkillSummary>>)`](crate::operation::list_skills::ListSkillsOutput::skill_summaries): <p>The list of enabled skills requested. Required.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_skills::ListSkillsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     /// - On failure, responds with [`SdkError<ListSkillsError>`](crate::operation::list_skills::ListSkillsError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_skills(&self) -> crate::operation::list_skills::builders::ListSkillsFluentBuilder {
         crate::operation::list_skills::builders::ListSkillsFluentBuilder::new(self.handle.clone())
     }

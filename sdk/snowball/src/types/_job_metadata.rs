@@ -72,6 +72,15 @@ pub struct JobMetadata {
     #[doc(hidden)]
     pub on_device_service_configuration:
         ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    #[doc(hidden)]
+    pub impact_level: ::std::option::Option<crate::types::ImpactLevel>,
+    /// <p>Information identifying the person picking up the device.</p>
+    #[doc(hidden)]
+    pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
+    /// <p>Unique ID associated with a device.</p>
+    #[doc(hidden)]
+    pub snowball_id: ::std::option::Option<::std::string::String>,
 }
 impl JobMetadata {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -169,6 +178,18 @@ impl JobMetadata {
     ) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn impact_level(&self) -> ::std::option::Option<&crate::types::ImpactLevel> {
+        self.impact_level.as_ref()
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(&self) -> ::std::option::Option<&crate::types::PickupDetails> {
+        self.pickup_details.as_ref()
+    }
+    /// <p>Unique ID associated with a device.</p>
+    pub fn snowball_id(&self) -> ::std::option::Option<&str> {
+        self.snowball_id.as_deref()
+    }
 }
 impl JobMetadata {
     /// Creates a new builder-style object to manufacture [`JobMetadata`](crate::types::JobMetadata).
@@ -206,6 +227,9 @@ pub struct JobMetadataBuilder {
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
     pub(crate) on_device_service_configuration:
         ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub(crate) impact_level: ::std::option::Option<crate::types::ImpactLevel>,
+    pub(crate) pickup_details: ::std::option::Option<crate::types::PickupDetails>,
+    pub(crate) snowball_id: ::std::option::Option<::std::string::String>,
 }
 impl JobMetadataBuilder {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -478,6 +502,42 @@ impl JobMetadataBuilder {
         self.on_device_service_configuration = input;
         self
     }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn impact_level(mut self, input: crate::types::ImpactLevel) -> Self {
+        self.impact_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn set_impact_level(
+        mut self,
+        input: ::std::option::Option<crate::types::ImpactLevel>,
+    ) -> Self {
+        self.impact_level = input;
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
+        self.pickup_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn set_pickup_details(
+        mut self,
+        input: ::std::option::Option<crate::types::PickupDetails>,
+    ) -> Self {
+        self.pickup_details = input;
+        self
+    }
+    /// <p>Unique ID associated with a device.</p>
+    pub fn snowball_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snowball_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique ID associated with a device.</p>
+    pub fn set_snowball_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snowball_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`JobMetadata`](crate::types::JobMetadata).
     pub fn build(self) -> crate::types::JobMetadata {
         crate::types::JobMetadata {
@@ -503,6 +563,9 @@ impl JobMetadataBuilder {
             remote_management: self.remote_management,
             long_term_pricing_id: self.long_term_pricing_id,
             on_device_service_configuration: self.on_device_service_configuration,
+            impact_level: self.impact_level,
+            pickup_details: self.pickup_details,
+            snowball_id: self.snowball_id,
         }
     }
 }

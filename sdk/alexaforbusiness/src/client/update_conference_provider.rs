@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`meeting_setting(MeetingSetting)`](crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder::meeting_setting) / [`set_meeting_setting(Option<MeetingSetting>)`](crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder::set_meeting_setting): <p>The meeting settings for the conference provider.</p>
     /// - On success, responds with [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput)
     /// - On failure, responds with [`SdkError<UpdateConferenceProviderError>`](crate::operation::update_conference_provider::UpdateConferenceProviderError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_conference_provider(
         &self,
     ) -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder

@@ -16,7 +16,7 @@ pub struct GetDomainSuggestionsInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
     #[doc(hidden)]
-    pub suggestion_count: i32,
+    pub suggestion_count: ::std::option::Option<i32>,
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
     #[doc(hidden)]
     pub only_available: ::std::option::Option<bool>,
@@ -35,7 +35,7 @@ impl GetDomainSuggestionsInput {
         self.domain_name.as_deref()
     }
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
-    pub fn suggestion_count(&self) -> i32 {
+    pub fn suggestion_count(&self) -> ::std::option::Option<i32> {
         self.suggestion_count
     }
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
@@ -118,7 +118,7 @@ impl GetDomainSuggestionsInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::get_domain_suggestions::GetDomainSuggestionsInput {
                 domain_name: self.domain_name,
-                suggestion_count: self.suggestion_count.unwrap_or_default(),
+                suggestion_count: self.suggestion_count,
                 only_available: self.only_available,
             },
         )

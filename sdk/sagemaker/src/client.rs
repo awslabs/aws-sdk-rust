@@ -698,6 +698,8 @@ mod list_processing_jobs;
 
 mod list_projects;
 
+mod list_resource_catalogs;
+
 mod list_spaces;
 
 mod list_stage_devices;

@@ -147,6 +147,14 @@
 ///     InstanceType::C7gMedium => { /* ... */ },
 ///     InstanceType::C7gMetal => { /* ... */ },
 ///     InstanceType::C7gXlarge => { /* ... */ },
+///     InstanceType::C7gn12xlarge => { /* ... */ },
+///     InstanceType::C7gn16xlarge => { /* ... */ },
+///     InstanceType::C7gn2xlarge => { /* ... */ },
+///     InstanceType::C7gn4xlarge => { /* ... */ },
+///     InstanceType::C7gn8xlarge => { /* ... */ },
+///     InstanceType::C7gnLarge => { /* ... */ },
+///     InstanceType::C7gnMedium => { /* ... */ },
+///     InstanceType::C7gnXlarge => { /* ... */ },
 ///     InstanceType::Cc14xlarge => { /* ... */ },
 ///     InstanceType::Cc28xlarge => { /* ... */ },
 ///     InstanceType::Cg14xlarge => { /* ... */ },
@@ -208,6 +216,9 @@
 ///     InstanceType::Hi14xlarge => { /* ... */ },
 ///     InstanceType::Hpc6a48xlarge => { /* ... */ },
 ///     InstanceType::Hpc6id32xlarge => { /* ... */ },
+///     InstanceType::Hpc7g16xlarge => { /* ... */ },
+///     InstanceType::Hpc7g4xlarge => { /* ... */ },
+///     InstanceType::Hpc7g8xlarge => { /* ... */ },
 ///     InstanceType::Hs18xlarge => { /* ... */ },
 ///     InstanceType::I22xlarge => { /* ... */ },
 ///     InstanceType::I24xlarge => { /* ... */ },
@@ -970,6 +981,22 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C7gXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    C7gn12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gn16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gn2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gn4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gn8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gnLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gnMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     Cc14xlarge,
     #[allow(missing_docs)] // documentation missing in model
     Cc28xlarge,
@@ -1091,6 +1118,12 @@ pub enum InstanceType {
     Hpc6a48xlarge,
     #[allow(missing_docs)] // documentation missing in model
     Hpc6id32xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Hpc7g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Hpc7g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Hpc7g8xlarge,
     #[allow(missing_docs)] // documentation missing in model
     Hs18xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -2148,6 +2181,14 @@ impl ::std::convert::From<&str> for InstanceType {
             "c7g.medium" => InstanceType::C7gMedium,
             "c7g.metal" => InstanceType::C7gMetal,
             "c7g.xlarge" => InstanceType::C7gXlarge,
+            "c7gn.12xlarge" => InstanceType::C7gn12xlarge,
+            "c7gn.16xlarge" => InstanceType::C7gn16xlarge,
+            "c7gn.2xlarge" => InstanceType::C7gn2xlarge,
+            "c7gn.4xlarge" => InstanceType::C7gn4xlarge,
+            "c7gn.8xlarge" => InstanceType::C7gn8xlarge,
+            "c7gn.large" => InstanceType::C7gnLarge,
+            "c7gn.medium" => InstanceType::C7gnMedium,
+            "c7gn.xlarge" => InstanceType::C7gnXlarge,
             "cc1.4xlarge" => InstanceType::Cc14xlarge,
             "cc2.8xlarge" => InstanceType::Cc28xlarge,
             "cg1.4xlarge" => InstanceType::Cg14xlarge,
@@ -2209,6 +2250,9 @@ impl ::std::convert::From<&str> for InstanceType {
             "hi1.4xlarge" => InstanceType::Hi14xlarge,
             "hpc6a.48xlarge" => InstanceType::Hpc6a48xlarge,
             "hpc6id.32xlarge" => InstanceType::Hpc6id32xlarge,
+            "hpc7g.16xlarge" => InstanceType::Hpc7g16xlarge,
+            "hpc7g.4xlarge" => InstanceType::Hpc7g4xlarge,
+            "hpc7g.8xlarge" => InstanceType::Hpc7g8xlarge,
             "hs1.8xlarge" => InstanceType::Hs18xlarge,
             "i2.2xlarge" => InstanceType::I22xlarge,
             "i2.4xlarge" => InstanceType::I24xlarge,
@@ -2819,6 +2863,14 @@ impl InstanceType {
             InstanceType::C7gMedium => "c7g.medium",
             InstanceType::C7gMetal => "c7g.metal",
             InstanceType::C7gXlarge => "c7g.xlarge",
+            InstanceType::C7gn12xlarge => "c7gn.12xlarge",
+            InstanceType::C7gn16xlarge => "c7gn.16xlarge",
+            InstanceType::C7gn2xlarge => "c7gn.2xlarge",
+            InstanceType::C7gn4xlarge => "c7gn.4xlarge",
+            InstanceType::C7gn8xlarge => "c7gn.8xlarge",
+            InstanceType::C7gnLarge => "c7gn.large",
+            InstanceType::C7gnMedium => "c7gn.medium",
+            InstanceType::C7gnXlarge => "c7gn.xlarge",
             InstanceType::Cc14xlarge => "cc1.4xlarge",
             InstanceType::Cc28xlarge => "cc2.8xlarge",
             InstanceType::Cg14xlarge => "cg1.4xlarge",
@@ -2880,6 +2932,9 @@ impl InstanceType {
             InstanceType::Hi14xlarge => "hi1.4xlarge",
             InstanceType::Hpc6a48xlarge => "hpc6a.48xlarge",
             InstanceType::Hpc6id32xlarge => "hpc6id.32xlarge",
+            InstanceType::Hpc7g16xlarge => "hpc7g.16xlarge",
+            InstanceType::Hpc7g4xlarge => "hpc7g.4xlarge",
+            InstanceType::Hpc7g8xlarge => "hpc7g.8xlarge",
             InstanceType::Hs18xlarge => "hs1.8xlarge",
             InstanceType::I22xlarge => "i2.2xlarge",
             InstanceType::I24xlarge => "i2.4xlarge",
@@ -3479,6 +3534,14 @@ impl InstanceType {
             "c7g.medium",
             "c7g.metal",
             "c7g.xlarge",
+            "c7gn.12xlarge",
+            "c7gn.16xlarge",
+            "c7gn.2xlarge",
+            "c7gn.4xlarge",
+            "c7gn.8xlarge",
+            "c7gn.large",
+            "c7gn.medium",
+            "c7gn.xlarge",
             "cc1.4xlarge",
             "cc2.8xlarge",
             "cg1.4xlarge",
@@ -3540,6 +3603,9 @@ impl InstanceType {
             "hi1.4xlarge",
             "hpc6a.48xlarge",
             "hpc6id.32xlarge",
+            "hpc7g.16xlarge",
+            "hpc7g.4xlarge",
+            "hpc7g.8xlarge",
             "hs1.8xlarge",
             "i2.2xlarge",
             "i2.4xlarge",

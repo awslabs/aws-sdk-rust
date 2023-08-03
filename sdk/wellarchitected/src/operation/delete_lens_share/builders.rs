@@ -103,12 +103,12 @@ impl DeleteLensShareFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_id(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_id(input);
         self

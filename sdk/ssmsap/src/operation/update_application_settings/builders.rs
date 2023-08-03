@@ -152,4 +152,17 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner = self.inner.set_credentials_to_remove(input);
         self
     }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn backint(mut self, input: crate::types::BackintConfig) -> Self {
+        self.inner = self.inner.backint(input);
+        self
+    }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn set_backint(
+        mut self,
+        input: ::std::option::Option<crate::types::BackintConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_backint(input);
+        self
+    }
 }

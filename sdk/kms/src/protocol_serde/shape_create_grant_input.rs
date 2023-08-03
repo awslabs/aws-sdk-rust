@@ -42,5 +42,8 @@ pub fn ser_create_grant_input(
     if let Some(var_12) = &input.name {
         object.key("Name").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.dry_run {
+        object.key("DryRun").boolean(*var_13);
+    }
     Ok(())
 }

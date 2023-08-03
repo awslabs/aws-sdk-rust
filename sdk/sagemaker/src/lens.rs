@@ -539,6 +539,16 @@ pub(crate) fn reflens_list_projects_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_resource_catalogs_output_next_token(
+    input: &crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_spaces_output_next_token(
     input: &crate::operation::list_spaces::ListSpacesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1213,6 +1223,16 @@ pub(crate) fn lens_list_processing_jobs_output_processing_job_summaries(
     input: crate::operation::list_processing_jobs::ListProcessingJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>> {
     let input = match input.processing_job_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_catalogs_output_resource_catalogs(
+    input: crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>> {
+    let input = match input.resource_catalogs {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

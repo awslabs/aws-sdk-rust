@@ -126,7 +126,7 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner = self.inner.set_snapshot_arn(input);
         self
     }
-    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -134,7 +134,7 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
-    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,
         input: ::std::option::Option<::std::string::String>,

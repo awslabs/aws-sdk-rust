@@ -35,7 +35,7 @@ pub struct AdminCreateUserInput {
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
     /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
     #[doc(hidden)]
-    pub force_alias_creation: bool,
+    pub force_alias_creation: ::std::option::Option<bool>,
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
     #[doc(hidden)]
     pub message_action: ::std::option::Option<crate::types::MessageActionType>,
@@ -94,7 +94,7 @@ impl AdminCreateUserInput {
     /// <p>This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
     /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
-    pub fn force_alias_creation(&self) -> bool {
+    pub fn force_alias_creation(&self) -> ::std::option::Option<bool> {
         self.force_alias_creation
     }
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
@@ -365,7 +365,7 @@ impl AdminCreateUserInputBuilder {
             user_attributes: self.user_attributes,
             validation_data: self.validation_data,
             temporary_password: self.temporary_password,
-            force_alias_creation: self.force_alias_creation.unwrap_or_default(),
+            force_alias_creation: self.force_alias_creation,
             message_action: self.message_action,
             desired_delivery_mediums: self.desired_delivery_mediums,
             client_metadata: self.client_metadata,

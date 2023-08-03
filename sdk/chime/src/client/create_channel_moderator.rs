@@ -10,6 +10,9 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`channel_moderator(Option<Identity>)`](crate::operation::create_channel_moderator::CreateChannelModeratorOutput::channel_moderator): <p>The ARNs of the channel and the moderator.</p>
     /// - On failure, responds with [`SdkError<CreateChannelModeratorError>`](crate::operation::create_channel_moderator::CreateChannelModeratorError)
+    #[deprecated(
+        note = "Replaced by CreateChannelModerator in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn create_channel_moderator(
         &self,
     ) -> crate::operation::create_channel_moderator::builders::CreateChannelModeratorFluentBuilder

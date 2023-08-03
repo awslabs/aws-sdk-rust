@@ -77,6 +77,8 @@ pub use crate::types::_speaker_search_details::SpeakerSearchDetails;
 
 pub use crate::types::_speaker_search_result::SpeakerSearchResult;
 
+pub use crate::types::_call_leg_type::CallLegType;
+
 pub use crate::types::_credential::Credential;
 
 pub use crate::types::_termination::Termination;
@@ -136,6 +138,8 @@ mod _address;
 mod _alexa_skill_status;
 
 mod _call_details;
+
+mod _call_leg_type;
 
 mod _calling_name_status;
 

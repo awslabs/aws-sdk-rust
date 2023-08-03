@@ -9,7 +9,7 @@ pub struct CreatePipelineInput {
     /// <p>The display name of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_definition: ::std::option::Option<::std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
@@ -41,7 +41,7 @@ impl CreatePipelineInput {
     pub fn pipeline_display_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_display_name.as_deref()
     }
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn pipeline_definition(&self) -> ::std::option::Option<&str> {
         self.pipeline_definition.as_deref()
     }
@@ -132,7 +132,7 @@ impl CreatePipelineInputBuilder {
         self.pipeline_display_name = input;
         self
     }
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn pipeline_definition(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -140,7 +140,7 @@ impl CreatePipelineInputBuilder {
         self.pipeline_definition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn set_pipeline_definition(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -4,13 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateKmsKeyInput {
     /// <p>The name of the log group.</p>
+    /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the target for this operation. You must specify one of the following:</p>
+    /// <ul>
+    /// <li> <p>Specify the ARN of a log group to stop having CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. After you run this operation, CloudWatch Logs encrypts ingested log events with the default CloudWatch Logs method. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
+    /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
+    /// </ul>
+    /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
+    #[doc(hidden)]
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateKmsKeyInput {
     /// <p>The name of the log group.</p>
+    /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
+    }
+    /// <p>Specifies the target for this operation. You must specify one of the following:</p>
+    /// <ul>
+    /// <li> <p>Specify the ARN of a log group to stop having CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. After you run this operation, CloudWatch Logs encrypts ingested log events with the default CloudWatch Logs method. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
+    /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
+    /// </ul>
+    /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+        self.resource_identifier.as_deref()
     }
 }
 impl DisassociateKmsKeyInput {
@@ -28,9 +47,11 @@ impl DisassociateKmsKeyInput {
 )]
 pub struct DisassociateKmsKeyInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateKmsKeyInputBuilder {
     /// <p>The name of the log group.</p>
+    /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub fn log_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -39,11 +60,38 @@ impl DisassociateKmsKeyInputBuilder {
         self
     }
     /// <p>The name of the log group.</p>
+    /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub fn set_log_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.log_group_name = input;
+        self
+    }
+    /// <p>Specifies the target for this operation. You must specify one of the following:</p>
+    /// <ul>
+    /// <li> <p>Specify the ARN of a log group to stop having CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. After you run this operation, CloudWatch Logs encrypts ingested log events with the default CloudWatch Logs method. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
+    /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
+    /// </ul>
+    /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
+    pub fn resource_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the target for this operation. You must specify one of the following:</p>
+    /// <ul>
+    /// <li> <p>Specify the ARN of a log group to stop having CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. After you run this operation, CloudWatch Logs encrypts ingested log events with the default CloudWatch Logs method. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>
+    /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
+    /// </ul>
+    /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
+    pub fn set_resource_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
         self
     }
     /// Consumes the builder and constructs a [`DisassociateKmsKeyInput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyInput).
@@ -56,6 +104,7 @@ impl DisassociateKmsKeyInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::disassociate_kms_key::DisassociateKmsKeyInput {
                 log_group_name: self.log_group_name,
+                resource_identifier: self.resource_identifier,
             },
         )
     }

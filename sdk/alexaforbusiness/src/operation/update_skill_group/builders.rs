@@ -6,6 +6,7 @@ pub use crate::operation::update_skill_group::_update_skill_group_input::UpdateS
 /// Fluent builder constructing a request to `UpdateSkillGroup`.
 ///
 /// <p>Updates skill group details by skill group ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

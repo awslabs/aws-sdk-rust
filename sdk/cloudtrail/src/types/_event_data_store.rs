@@ -16,7 +16,7 @@ pub struct EventDataStore {
     )]
     #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
-    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
@@ -25,7 +25,7 @@ pub struct EventDataStore {
     #[doc(hidden)]
     pub advanced_event_selectors:
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
@@ -62,7 +62,7 @@ impl EventDataStore {
     pub fn termination_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.termination_protection_enabled
     }
-    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn status(&self) -> ::std::option::Option<&crate::types::EventDataStoreStatus> {
         self.status.as_ref()
@@ -74,7 +74,7 @@ impl EventDataStore {
     ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_region_enabled
@@ -171,13 +171,13 @@ impl EventDataStoreBuilder {
         self.termination_protection_enabled = input;
         self
     }
-    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn status(mut self, input: crate::types::EventDataStoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     #[deprecated(note = "Status is no longer returned by ListEventDataStores")]
     pub fn set_status(
         mut self,
@@ -207,13 +207,13 @@ impl EventDataStoreBuilder {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[deprecated(note = "MultiRegionEnabled is no longer returned by ListEventDataStores")]
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;

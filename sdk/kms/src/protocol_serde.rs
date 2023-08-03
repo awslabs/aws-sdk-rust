@@ -172,6 +172,8 @@ pub(crate) mod shape_disabled_exception;
 
 pub(crate) mod shape_disconnect_custom_key_store_input;
 
+pub(crate) mod shape_dry_run_operation_exception;
+
 pub(crate) mod shape_enable_key_input;
 
 pub(crate) mod shape_enable_key_rotation_input;

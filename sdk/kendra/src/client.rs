@@ -344,6 +344,8 @@ mod put_principal_mapping;
 
 mod query;
 
+mod retrieve;
+
 mod start_data_source_sync_job;
 
 mod stop_data_source_sync_job;

@@ -12,6 +12,9 @@ pub struct UpdateApplicationInput {
     /// <p>Application description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
     /// <p>Application ID.</p>
@@ -25,6 +28,10 @@ impl UpdateApplicationInput {
     /// <p>Application description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl UpdateApplicationInput {
@@ -44,6 +51,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>Application ID.</p>
@@ -82,6 +90,16 @@ impl UpdateApplicationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -94,6 +112,7 @@ impl UpdateApplicationInputBuilder {
                 application_id: self.application_id,
                 name: self.name,
                 description: self.description,
+                account_id: self.account_id,
             },
         )
     }

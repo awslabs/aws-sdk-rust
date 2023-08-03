@@ -7,7 +7,7 @@ pub struct ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::FilterKey>,
-    /// <p>The value of the key.</p>
+    /// <p>The values of the key.</p>
     #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used to compare the fields.</p>
@@ -19,7 +19,7 @@ impl ProjectListFilter {
     pub fn key(&self) -> ::std::option::Option<&crate::types::FilterKey> {
         self.key.as_ref()
     }
-    /// <p>The value of the key.</p>
+    /// <p>The values of the key.</p>
     pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
@@ -60,14 +60,14 @@ impl ProjectListFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>The value of the key.</p>
+    /// <p>The values of the key.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The value of the key.</p>
+    /// <p>The values of the key.</p>
     pub fn set_values(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

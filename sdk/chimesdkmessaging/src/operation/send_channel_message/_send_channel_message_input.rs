@@ -6,10 +6,12 @@ pub struct SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
@@ -38,17 +40,22 @@ pub struct SendChannelMessageInput {
     /// <p>The content type of the channel message.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    #[doc(hidden)]
+    pub target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl SendChannelMessageInput {
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMessageType> {
         self.r#type.as_ref()
     }
@@ -92,6 +99,10 @@ impl SendChannelMessageInput {
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn target(&self) -> ::std::option::Option<&[crate::types::Target]> {
+        self.target.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SendChannelMessageInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -107,6 +118,7 @@ impl ::std::fmt::Debug for SendChannelMessageInput {
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.finish()
     }
 }
@@ -136,6 +148,7 @@ pub struct SendChannelMessageInputBuilder {
     >,
     pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl SendChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
@@ -148,22 +161,26 @@ impl SendChannelMessageInputBuilder {
         self.channel_arn = input;
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn set_type(
         mut self,
         input: ::std::option::Option<crate::types::ChannelMessageType>,
@@ -284,6 +301,25 @@ impl SendChannelMessageInputBuilder {
         self.content_type = input;
         self
     }
+    /// Appends an item to `target`.
+    ///
+    /// To override the contents of this collection use [`set_target`](Self::set_target).
+    ///
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn target(mut self, input: crate::types::Target) -> Self {
+        let mut v = self.target.unwrap_or_default();
+        v.push(input);
+        self.target = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn set_target(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.target = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(
         self,
@@ -304,6 +340,7 @@ impl SendChannelMessageInputBuilder {
                 message_attributes: self.message_attributes,
                 sub_channel_id: self.sub_channel_id,
                 content_type: self.content_type,
+                target: self.target,
             },
         )
     }
@@ -322,6 +359,7 @@ impl ::std::fmt::Debug for SendChannelMessageInputBuilder {
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.finish()
     }
 }

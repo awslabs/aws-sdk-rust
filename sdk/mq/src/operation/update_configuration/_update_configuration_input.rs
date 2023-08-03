@@ -7,7 +7,7 @@ pub struct UpdateConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The description of the configuration.</p>
@@ -19,7 +19,7 @@ impl UpdateConfigurationInput {
     pub fn configuration_id(&self) -> ::std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
@@ -63,12 +63,12 @@ impl UpdateConfigurationInputBuilder {
         self.configuration_id = input;
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self

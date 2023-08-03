@@ -34,7 +34,7 @@ pub struct JobRunSummary {
     /// <p>The state details of the job run.</p>
     #[doc(hidden)]
     pub state_details: ::std::option::Option<::std::string::String>,
-    /// <p>The EMR release associated with the application your job is running on.</p>
+    /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The type of job run, such as Spark or Hive.</p>
@@ -82,7 +82,7 @@ impl JobRunSummary {
     pub fn state_details(&self) -> ::std::option::Option<&str> {
         self.state_details.as_deref()
     }
-    /// <p>The EMR release associated with the application your job is running on.</p>
+    /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -242,7 +242,7 @@ impl JobRunSummaryBuilder {
         self.state_details = input;
         self
     }
-    /// <p>The EMR release associated with the application your job is running on.</p>
+    /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     pub fn release_label(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -250,7 +250,7 @@ impl JobRunSummaryBuilder {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The EMR release associated with the application your job is running on.</p>
+    /// <p>The Amazon EMR release associated with the application your job is running on.</p>
     pub fn set_release_label(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -30,7 +30,7 @@ pub use crate::operation::get_channel_message_status::_get_channel_message_statu
 /// DENIED
 /// </dt>
 /// <dd>
-/// <p>Messasge denied by the processor</p>
+/// <p>Message denied by the processor</p>
 /// </dd>
 /// </dl> <note>
 /// <ul>

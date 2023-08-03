@@ -6,6 +6,7 @@ pub use crate::operation::list_skills_store_skills_by_category::_list_skills_sto
 /// Fluent builder constructing a request to `ListSkillsStoreSkillsByCategory`.
 ///
 /// <p>Lists all skills in the Alexa skill store by category.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

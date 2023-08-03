@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConferenceProviderOutput`](crate::operation::get_conference_provider::GetConferenceProviderOutput) with field(s):
     ///   - [`conference_provider(Option<ConferenceProvider>)`](crate::operation::get_conference_provider::GetConferenceProviderOutput::conference_provider): <p>The conference provider.</p>
     /// - On failure, responds with [`SdkError<GetConferenceProviderError>`](crate::operation::get_conference_provider::GetConferenceProviderError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_conference_provider(
         &self,
     ) -> crate::operation::get_conference_provider::builders::GetConferenceProviderFluentBuilder

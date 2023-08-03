@@ -8,6 +8,9 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagAttendeeOutput`](crate::operation::untag_attendee::UntagAttendeeOutput)
     /// - On failure, responds with [`SdkError<UntagAttendeeError>`](crate::operation::untag_attendee::UntagAttendeeError)
+    #[deprecated(
+        note = "Attendee Tags are not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
+    )]
     pub fn untag_attendee(
         &self,
     ) -> crate::operation::untag_attendee::builders::UntagAttendeeFluentBuilder {

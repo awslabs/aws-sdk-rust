@@ -49,6 +49,9 @@ pub struct PutSourceServerActionInput {
     /// <p>Source server post migration custom action category.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
+    /// <p>Source server post migration custom account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl PutSourceServerActionInput {
     /// <p>Source server ID.</p>
@@ -114,6 +117,10 @@ impl PutSourceServerActionInput {
     pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
         self.category.as_ref()
     }
+    /// <p>Source server post migration custom account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl PutSourceServerActionInput {
     /// Creates a new builder-style object to manufacture [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
@@ -150,6 +157,7 @@ pub struct PutSourceServerActionInputBuilder {
     >,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl PutSourceServerActionInputBuilder {
     /// <p>Source server ID.</p>
@@ -336,6 +344,16 @@ impl PutSourceServerActionInputBuilder {
         self.category = input;
         self
     }
+    /// <p>Source server post migration custom account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Source server post migration custom account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
     pub fn build(
         self,
@@ -358,6 +376,7 @@ impl PutSourceServerActionInputBuilder {
                 external_parameters: self.external_parameters,
                 description: self.description,
                 category: self.category,
+                account_id: self.account_id,
             },
         )
     }

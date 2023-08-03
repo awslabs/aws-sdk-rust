@@ -5,7 +5,17 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p>
+/// <p>Lists the tags applied to an Amazon Chime SDK meeting and messaging resources.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the applicable latest version in the Amazon Chime SDK.</p>
+/// <ul>
+/// <li> <p>For meetings: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li>
+/// <li> <p>For messaging: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListTagsForResource.html">ListTagsForResource</a>.</p> </li>
+/// </ul>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by ListTagsForResource in the Amazon Chime SDK Voice, Amazon Chime SDK Meetings, Amazon Chime SDK Identity, Amazon Chime SDK Messaging, and Amazon Chime SDK Media Pipelines Namespaces"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -29,6 +29,20 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "ParentComponent" => {
+                                builder = builder.set_parent_component(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ChildComponents" => {
+                                builder = builder.set_child_components(
+                                    crate::protocol_serde::shape_component_id_list::de_component_id_list(tokens)?
+                                );
+                            }
                             "ApplicationId" => {
                                 builder = builder.set_application_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -63,6 +77,43 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "SapHostname" => {
+                                builder = builder.set_sap_hostname(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SapKernelVersion" => {
+                                builder = builder.set_sap_kernel_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "HdbVersion" => {
+                                builder = builder.set_hdb_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Resilience" => {
+                                builder = builder.set_resilience(
+                                    crate::protocol_serde::shape_resilience::de_resilience(tokens)?,
+                                );
+                            }
+                            "AssociatedHost" => {
+                                builder = builder.set_associated_host(
+                                    crate::protocol_serde::shape_associated_host::de_associated_host(tokens)?
+                                );
+                            }
                             "Databases" => {
                                 builder = builder.set_databases(
                                     crate::protocol_serde::shape_database_id_list::de_database_id_list(tokens)?
@@ -85,6 +136,15 @@ where
                             "LastUpdated" => {
                                 builder = builder.set_last_updated(
                                     ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
+                                );
+                            }
+                            "Arn" => {
+                                builder = builder.set_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

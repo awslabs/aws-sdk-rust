@@ -54,6 +54,8 @@ pub(crate) mod shape_delete_schedule;
 
 pub(crate) mod shape_delete_tags;
 
+pub(crate) mod shape_describe_account_configuration;
+
 pub(crate) mod shape_describe_channel;
 
 pub(crate) mod shape_describe_input;
@@ -73,6 +75,8 @@ pub(crate) mod shape_describe_offering;
 pub(crate) mod shape_describe_reservation;
 
 pub(crate) mod shape_describe_schedule;
+
+pub(crate) mod shape_describe_thumbnails;
 
 pub(crate) mod shape_list_channels;
 
@@ -111,6 +115,8 @@ pub(crate) mod shape_stop_channel;
 pub(crate) mod shape_stop_multiplex;
 
 pub(crate) mod shape_transfer_input_device;
+
+pub(crate) mod shape_update_account_configuration;
 
 pub(crate) mod shape_update_channel;
 
@@ -183,6 +189,8 @@ pub(crate) mod shape_too_many_requests_exception;
 pub(crate) mod shape_transfer_input_device_input;
 
 pub(crate) mod shape_unprocessable_entity_exception;
+
+pub(crate) mod shape_update_account_configuration_input;
 
 pub(crate) mod shape_update_channel_class_input;
 
@@ -270,10 +278,15 @@ pub(crate) mod shape___list_of_reservation;
 pub(crate) mod shape___list_of_schedule_action;
 
 #[allow(non_snake_case)]
+pub(crate) mod shape___list_of_thumbnail_detail;
+
+#[allow(non_snake_case)]
 pub(crate) mod shape___list_of_transferring_input_device_summary;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_validation_error;
+
+pub(crate) mod shape_account_configuration;
 
 pub(crate) mod shape_batch_schedule_action_create_request;
 
@@ -432,6 +445,10 @@ pub(crate) mod shape_pipeline_detail;
 
 pub(crate) mod shape_schedule_action;
 
+pub(crate) mod shape_thumbnail_configuration;
+
+pub(crate) mod shape_thumbnail_detail;
+
 pub(crate) mod shape_timecode_config;
 
 pub(crate) mod shape_transferring_input_device_summary;
@@ -445,6 +462,9 @@ pub(crate) mod shape___list_of_media_package_output_destination_settings;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_output_destination_settings;
+
+#[allow(non_snake_case)]
+pub(crate) mod shape___list_of_thumbnail;
 
 pub(crate) mod shape_audio_codec_settings;
 
@@ -613,6 +633,8 @@ pub(crate) mod shape_static_image_activate_schedule_action_settings;
 pub(crate) mod shape_static_image_deactivate_schedule_action_settings;
 
 pub(crate) mod shape_teletext_destination_settings;
+
+pub(crate) mod shape_thumbnail;
 
 pub(crate) mod shape_ttml_destination_settings;
 

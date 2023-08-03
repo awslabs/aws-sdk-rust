@@ -20,7 +20,7 @@ pub struct ListSigningJobsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
     #[doc(hidden)]
-    pub is_revoked: bool,
+    pub is_revoked: ::std::option::Option<bool>,
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     #[doc(hidden)]
     pub signature_expires_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,7 +53,7 @@ impl ListSigningJobsInput {
         self.next_token.as_deref()
     }
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
-    pub fn is_revoked(&self) -> bool {
+    pub fn is_revoked(&self) -> ::std::option::Option<bool> {
         self.is_revoked
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
@@ -202,7 +202,7 @@ impl ListSigningJobsInputBuilder {
             requested_by: self.requested_by,
             max_results: self.max_results,
             next_token: self.next_token,
-            is_revoked: self.is_revoked.unwrap_or_default(),
+            is_revoked: self.is_revoked,
             signature_expires_before: self.signature_expires_before,
             signature_expires_after: self.signature_expires_after,
             job_invoker: self.job_invoker,

@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobV2Output {
-    /// <p>Returns the name of the AutoML V2 job.</p>
+    /// <p>Returns the name of the AutoML job V2.</p>
     #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
-    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML V2 job.</p>
+    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>
     #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of channel objects describing the input data and their location.</p>
@@ -22,32 +22,32 @@ pub struct DescribeAutoMlJobV2Output {
     /// <p>Returns the job's objective.</p>
     #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
-    /// <p>Returns the configuration settings of the problem type set for the AutoML V2 job.</p>
+    /// <p>Returns the configuration settings of the problem type set for the AutoML job V2.</p>
     #[doc(hidden)]
     pub auto_ml_problem_type_config: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>,
-    /// <p>Returns the creation time of the AutoML V2 job.</p>
+    /// <p>Returns the creation time of the AutoML job V2.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Returns the end time of the AutoML V2 job.</p>
+    /// <p>Returns the end time of the AutoML job V2.</p>
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the job's last modified time.</p>
     #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Returns the reason for the failure of the AutoML V2 job, when applicable.</p>
+    /// <p>Returns the reason for the failure of the AutoML job V2, when applicable.</p>
     #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Returns a list of reasons for partial failures within an AutoML V2 job.</p>
+    /// <p>Returns a list of reasons for partial failures within an AutoML job V2.</p>
     #[doc(hidden)]
     pub partial_failure_reasons:
         ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     /// <p>Information about the candidate produced by an AutoML training job V2, including its status, steps, and other properties.</p>
     #[doc(hidden)]
     pub best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
-    /// <p>Returns the status of the AutoML V2 job.</p>
+    /// <p>Returns the status of the AutoML job V2.</p>
     #[doc(hidden)]
     pub auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
-    /// <p>Returns the secondary status of the AutoML V2 job.</p>
+    /// <p>Returns the secondary status of the AutoML job V2.</p>
     #[doc(hidden)]
     pub auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
@@ -62,14 +62,24 @@ pub struct DescribeAutoMlJobV2Output {
     /// <p>Returns the security configuration for traffic encryption or Amazon VPC settings.</p>
     #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
+    /// <p>The artifacts that are generated during an AutoML job.</p>
+    #[doc(hidden)]
+    pub auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
+    /// <p>Returns the resolved attributes used by the AutoML job V2.</p>
+    #[doc(hidden)]
+    pub resolved_attributes: ::std::option::Option<crate::types::AutoMlResolvedAttributes>,
+    /// <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
+    #[doc(hidden)]
+    pub auto_ml_problem_type_config_name:
+        ::std::option::Option<crate::types::AutoMlProblemTypeConfigName>,
     _request_id: Option<String>,
 }
 impl DescribeAutoMlJobV2Output {
-    /// <p>Returns the name of the AutoML V2 job.</p>
+    /// <p>Returns the name of the AutoML job V2.</p>
     pub fn auto_ml_job_name(&self) -> ::std::option::Option<&str> {
         self.auto_ml_job_name.as_deref()
     }
-    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML V2 job.</p>
+    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>
     pub fn auto_ml_job_arn(&self) -> ::std::option::Option<&str> {
         self.auto_ml_job_arn.as_deref()
     }
@@ -95,17 +105,17 @@ impl DescribeAutoMlJobV2Output {
     ) -> ::std::option::Option<&crate::types::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
-    /// <p>Returns the configuration settings of the problem type set for the AutoML V2 job.</p>
+    /// <p>Returns the configuration settings of the problem type set for the AutoML job V2.</p>
     pub fn auto_ml_problem_type_config(
         &self,
     ) -> ::std::option::Option<&crate::types::AutoMlProblemTypeConfig> {
         self.auto_ml_problem_type_config.as_ref()
     }
-    /// <p>Returns the creation time of the AutoML V2 job.</p>
+    /// <p>Returns the creation time of the AutoML job V2.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Returns the end time of the AutoML V2 job.</p>
+    /// <p>Returns the end time of the AutoML job V2.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -113,11 +123,11 @@ impl DescribeAutoMlJobV2Output {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Returns the reason for the failure of the AutoML V2 job, when applicable.</p>
+    /// <p>Returns the reason for the failure of the AutoML job V2, when applicable.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Returns a list of reasons for partial failures within an AutoML V2 job.</p>
+    /// <p>Returns a list of reasons for partial failures within an AutoML job V2.</p>
     pub fn partial_failure_reasons(
         &self,
     ) -> ::std::option::Option<&[crate::types::AutoMlPartialFailureReason]> {
@@ -127,11 +137,11 @@ impl DescribeAutoMlJobV2Output {
     pub fn best_candidate(&self) -> ::std::option::Option<&crate::types::AutoMlCandidate> {
         self.best_candidate.as_ref()
     }
-    /// <p>Returns the status of the AutoML V2 job.</p>
+    /// <p>Returns the status of the AutoML job V2.</p>
     pub fn auto_ml_job_status(&self) -> ::std::option::Option<&crate::types::AutoMlJobStatus> {
         self.auto_ml_job_status.as_ref()
     }
-    /// <p>Returns the secondary status of the AutoML V2 job.</p>
+    /// <p>Returns the secondary status of the AutoML job V2.</p>
     pub fn auto_ml_job_secondary_status(
         &self,
     ) -> ::std::option::Option<&crate::types::AutoMlJobSecondaryStatus> {
@@ -152,6 +162,24 @@ impl DescribeAutoMlJobV2Output {
     /// <p>Returns the security configuration for traffic encryption or Amazon VPC settings.</p>
     pub fn security_config(&self) -> ::std::option::Option<&crate::types::AutoMlSecurityConfig> {
         self.security_config.as_ref()
+    }
+    /// <p>The artifacts that are generated during an AutoML job.</p>
+    pub fn auto_ml_job_artifacts(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AutoMlJobArtifacts> {
+        self.auto_ml_job_artifacts.as_ref()
+    }
+    /// <p>Returns the resolved attributes used by the AutoML job V2.</p>
+    pub fn resolved_attributes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AutoMlResolvedAttributes> {
+        self.resolved_attributes.as_ref()
+    }
+    /// <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
+    pub fn auto_ml_problem_type_config_name(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AutoMlProblemTypeConfigName> {
+        self.auto_ml_problem_type_config_name.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAutoMlJobV2Output {
@@ -196,10 +224,14 @@ pub struct DescribeAutoMlJobV2OutputBuilder {
     pub(crate) model_deploy_result: ::std::option::Option<crate::types::ModelDeployResult>,
     pub(crate) data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     pub(crate) security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
+    pub(crate) auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
+    pub(crate) resolved_attributes: ::std::option::Option<crate::types::AutoMlResolvedAttributes>,
+    pub(crate) auto_ml_problem_type_config_name:
+        ::std::option::Option<crate::types::AutoMlProblemTypeConfigName>,
     _request_id: Option<String>,
 }
 impl DescribeAutoMlJobV2OutputBuilder {
-    /// <p>Returns the name of the AutoML V2 job.</p>
+    /// <p>Returns the name of the AutoML job V2.</p>
     pub fn auto_ml_job_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -207,7 +239,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the name of the AutoML V2 job.</p>
+    /// <p>Returns the name of the AutoML job V2.</p>
     pub fn set_auto_ml_job_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -215,7 +247,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_name = input;
         self
     }
-    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML V2 job.</p>
+    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>
     pub fn auto_ml_job_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -223,7 +255,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML V2 job.</p>
+    /// <p>Returns the Amazon Resource Name (ARN) of the AutoML job V2.</p>
     pub fn set_auto_ml_job_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -286,7 +318,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_objective = input;
         self
     }
-    /// <p>Returns the configuration settings of the problem type set for the AutoML V2 job.</p>
+    /// <p>Returns the configuration settings of the problem type set for the AutoML job V2.</p>
     pub fn auto_ml_problem_type_config(
         mut self,
         input: crate::types::AutoMlProblemTypeConfig,
@@ -294,7 +326,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_problem_type_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the configuration settings of the problem type set for the AutoML V2 job.</p>
+    /// <p>Returns the configuration settings of the problem type set for the AutoML job V2.</p>
     pub fn set_auto_ml_problem_type_config(
         mut self,
         input: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>,
@@ -302,12 +334,12 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_problem_type_config = input;
         self
     }
-    /// <p>Returns the creation time of the AutoML V2 job.</p>
+    /// <p>Returns the creation time of the AutoML job V2.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the creation time of the AutoML V2 job.</p>
+    /// <p>Returns the creation time of the AutoML job V2.</p>
     pub fn set_creation_time(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -315,12 +347,12 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.creation_time = input;
         self
     }
-    /// <p>Returns the end time of the AutoML V2 job.</p>
+    /// <p>Returns the end time of the AutoML job V2.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the end time of the AutoML V2 job.</p>
+    /// <p>Returns the end time of the AutoML job V2.</p>
     pub fn set_end_time(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -341,7 +373,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.last_modified_time = input;
         self
     }
-    /// <p>Returns the reason for the failure of the AutoML V2 job, when applicable.</p>
+    /// <p>Returns the reason for the failure of the AutoML job V2, when applicable.</p>
     pub fn failure_reason(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -349,7 +381,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the reason for the failure of the AutoML V2 job, when applicable.</p>
+    /// <p>Returns the reason for the failure of the AutoML job V2, when applicable.</p>
     pub fn set_failure_reason(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -361,7 +393,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
     ///
     /// To override the contents of this collection use [`set_partial_failure_reasons`](Self::set_partial_failure_reasons).
     ///
-    /// <p>Returns a list of reasons for partial failures within an AutoML V2 job.</p>
+    /// <p>Returns a list of reasons for partial failures within an AutoML job V2.</p>
     pub fn partial_failure_reasons(
         mut self,
         input: crate::types::AutoMlPartialFailureReason,
@@ -371,7 +403,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.partial_failure_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns a list of reasons for partial failures within an AutoML V2 job.</p>
+    /// <p>Returns a list of reasons for partial failures within an AutoML job V2.</p>
     pub fn set_partial_failure_reasons(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
@@ -392,12 +424,12 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.best_candidate = input;
         self
     }
-    /// <p>Returns the status of the AutoML V2 job.</p>
+    /// <p>Returns the status of the AutoML job V2.</p>
     pub fn auto_ml_job_status(mut self, input: crate::types::AutoMlJobStatus) -> Self {
         self.auto_ml_job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the status of the AutoML V2 job.</p>
+    /// <p>Returns the status of the AutoML job V2.</p>
     pub fn set_auto_ml_job_status(
         mut self,
         input: ::std::option::Option<crate::types::AutoMlJobStatus>,
@@ -405,7 +437,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_status = input;
         self
     }
-    /// <p>Returns the secondary status of the AutoML V2 job.</p>
+    /// <p>Returns the secondary status of the AutoML job V2.</p>
     pub fn auto_ml_job_secondary_status(
         mut self,
         input: crate::types::AutoMlJobSecondaryStatus,
@@ -413,7 +445,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.auto_ml_job_secondary_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the secondary status of the AutoML V2 job.</p>
+    /// <p>Returns the secondary status of the AutoML job V2.</p>
     pub fn set_auto_ml_job_secondary_status(
         mut self,
         input: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
@@ -473,6 +505,48 @@ impl DescribeAutoMlJobV2OutputBuilder {
         self.security_config = input;
         self
     }
+    /// <p>The artifacts that are generated during an AutoML job.</p>
+    pub fn auto_ml_job_artifacts(mut self, input: crate::types::AutoMlJobArtifacts) -> Self {
+        self.auto_ml_job_artifacts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The artifacts that are generated during an AutoML job.</p>
+    pub fn set_auto_ml_job_artifacts(
+        mut self,
+        input: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
+    ) -> Self {
+        self.auto_ml_job_artifacts = input;
+        self
+    }
+    /// <p>Returns the resolved attributes used by the AutoML job V2.</p>
+    pub fn resolved_attributes(mut self, input: crate::types::AutoMlResolvedAttributes) -> Self {
+        self.resolved_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the resolved attributes used by the AutoML job V2.</p>
+    pub fn set_resolved_attributes(
+        mut self,
+        input: ::std::option::Option<crate::types::AutoMlResolvedAttributes>,
+    ) -> Self {
+        self.resolved_attributes = input;
+        self
+    }
+    /// <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
+    pub fn auto_ml_problem_type_config_name(
+        mut self,
+        input: crate::types::AutoMlProblemTypeConfigName,
+    ) -> Self {
+        self.auto_ml_problem_type_config_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the name of the problem type configuration set for the AutoML job V2.</p>
+    pub fn set_auto_ml_problem_type_config_name(
+        mut self,
+        input: ::std::option::Option<crate::types::AutoMlProblemTypeConfigName>,
+    ) -> Self {
+        self.auto_ml_problem_type_config_name = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -504,6 +578,9 @@ impl DescribeAutoMlJobV2OutputBuilder {
             model_deploy_result: self.model_deploy_result,
             data_split_config: self.data_split_config,
             security_config: self.security_config,
+            auto_ml_job_artifacts: self.auto_ml_job_artifacts,
+            resolved_attributes: self.resolved_attributes,
+            auto_ml_problem_type_config_name: self.auto_ml_problem_type_config_name,
             _request_id: self._request_id,
         }
     }

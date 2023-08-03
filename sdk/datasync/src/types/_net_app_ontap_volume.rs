@@ -47,6 +47,9 @@ pub struct NetAppOntapVolume {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
+    /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
+    #[doc(hidden)]
+    pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapVolume {
     /// <p>The name of the volume.</p>
@@ -108,6 +111,10 @@ impl NetAppOntapVolume {
     ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
+    /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
+    pub fn lun_count(&self) -> ::std::option::Option<i64> {
+        self.lun_count
+    }
 }
 impl NetAppOntapVolume {
     /// Creates a new builder-style object to manufacture [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
@@ -137,6 +144,7 @@ pub struct NetAppOntapVolumeBuilder {
     pub(crate) recommendations:
         ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
+    pub(crate) lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapVolumeBuilder {
     /// <p>The name of the volume.</p>
@@ -302,6 +310,16 @@ impl NetAppOntapVolumeBuilder {
         self.recommendation_status = input;
         self
     }
+    /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
+    pub fn lun_count(mut self, input: i64) -> Self {
+        self.lun_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
+    pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.lun_count = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
     pub fn build(self) -> crate::types::NetAppOntapVolume {
         crate::types::NetAppOntapVolume {
@@ -319,6 +337,7 @@ impl NetAppOntapVolumeBuilder {
             max_p95_performance: self.max_p95_performance,
             recommendations: self.recommendations,
             recommendation_status: self.recommendation_status,
+            lun_count: self.lun_count,
         }
     }
 }

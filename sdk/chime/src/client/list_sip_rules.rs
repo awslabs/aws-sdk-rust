@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`sip_rules(Option<Vec<SipRule>>)`](crate::operation::list_sip_rules::ListSipRulesOutput::sip_rules): <p>List of SIP rules and rule details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sip_rules::ListSipRulesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSipRulesError>`](crate::operation::list_sip_rules::ListSipRulesError)
+    #[deprecated(note = "Replaced by ListSipRules in the Amazon Chime SDK Voice Namespace")]
     pub fn list_sip_rules(
         &self,
     ) -> crate::operation::list_sip_rules::builders::ListSipRulesFluentBuilder {

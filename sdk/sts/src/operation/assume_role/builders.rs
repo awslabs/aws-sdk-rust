@@ -318,4 +318,21 @@ impl AssumeRoleFluentBuilder {
         self.inner = self.inner.set_source_identity(input);
         self
     }
+    /// Appends an item to `ProvidedContexts`.
+    ///
+    /// To override the contents of this collection use [`set_provided_contexts`](Self::set_provided_contexts).
+    ///
+    /// <p>Reserved for future use.</p>
+    pub fn provided_contexts(mut self, input: crate::types::ProvidedContext) -> Self {
+        self.inner = self.inner.provided_contexts(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_provided_contexts(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
+    ) -> Self {
+        self.inner = self.inner.set_provided_contexts(input);
+        self
+    }
 }

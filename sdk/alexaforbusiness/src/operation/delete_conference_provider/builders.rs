@@ -6,6 +6,7 @@ pub use crate::operation::delete_conference_provider::_delete_conference_provide
 /// Fluent builder constructing a request to `DeleteConferenceProvider`.
 ///
 /// <p>Deletes a conference provider.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

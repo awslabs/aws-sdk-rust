@@ -164,6 +164,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
             crate::protocol_serde::shape_update_snapshot::de_update_snapshot_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

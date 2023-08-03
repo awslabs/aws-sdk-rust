@@ -20,6 +20,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput) with field(s):
     ///   - [`profile_arn(Option<String>)`](crate::operation::create_profile::CreateProfileOutput::profile_arn): <p>The ARN of the newly created room profile in the response.</p>
     /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::operation::create_profile::CreateProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn create_profile(
         &self,
     ) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {

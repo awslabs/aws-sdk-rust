@@ -17,6 +17,12 @@ pub use crate::types::_network_site_status::NetworkSiteStatus;
 
 pub use crate::types::_network_resource::NetworkResource;
 
+pub use crate::types::_commitment_information::CommitmentInformation;
+
+pub use crate::types::_commitment_configuration::CommitmentConfiguration;
+
+pub use crate::types::_commitment_length::CommitmentLength;
+
 pub use crate::types::_return_information::ReturnInformation;
 
 pub use crate::types::_address::Address;
@@ -36,6 +42,8 @@ pub use crate::types::_network_resource_type::NetworkResourceType;
 pub use crate::types::_update_type::UpdateType;
 
 pub use crate::types::_order::Order;
+
+pub use crate::types::_ordered_resource_definition::OrderedResourceDefinition;
 
 pub use crate::types::_acknowledgment_status::AcknowledgmentStatus;
 
@@ -62,6 +70,12 @@ pub use crate::types::_device_identifier_filter_keys::DeviceIdentifierFilterKeys
 mod _acknowledgment_status;
 
 mod _address;
+
+mod _commitment_configuration;
+
+mod _commitment_information;
+
+mod _commitment_length;
 
 mod _device_identifier;
 
@@ -104,6 +118,8 @@ mod _network_status;
 mod _order;
 
 mod _order_filter_keys;
+
+mod _ordered_resource_definition;
 
 mod _position;
 

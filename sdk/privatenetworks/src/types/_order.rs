@@ -26,6 +26,10 @@ pub struct Order {
     /// <p>The creation time of the order.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of the network resources placed in the order.</p>
+    #[doc(hidden)]
+    pub ordered_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
 }
 impl Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
@@ -60,6 +64,12 @@ impl Order {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>A list of the network resources placed in the order.</p>
+    pub fn ordered_resources(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::OrderedResourceDefinition]> {
+        self.ordered_resources.as_deref()
+    }
 }
 impl Order {
     /// Creates a new builder-style object to manufacture [`Order`](crate::types::Order).
@@ -82,6 +92,8 @@ pub struct OrderBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
     pub(crate) acknowledgment_status: ::std::option::Option<crate::types::AcknowledgmentStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ordered_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
 }
 impl OrderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
@@ -178,6 +190,25 @@ impl OrderBuilder {
         self.created_at = input;
         self
     }
+    /// Appends an item to `ordered_resources`.
+    ///
+    /// To override the contents of this collection use [`set_ordered_resources`](Self::set_ordered_resources).
+    ///
+    /// <p>A list of the network resources placed in the order.</p>
+    pub fn ordered_resources(mut self, input: crate::types::OrderedResourceDefinition) -> Self {
+        let mut v = self.ordered_resources.unwrap_or_default();
+        v.push(input);
+        self.ordered_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of the network resources placed in the order.</p>
+    pub fn set_ordered_resources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
+    ) -> Self {
+        self.ordered_resources = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
@@ -188,6 +219,7 @@ impl OrderBuilder {
             tracking_information: self.tracking_information,
             acknowledgment_status: self.acknowledgment_status,
             created_at: self.created_at,
+            ordered_resources: self.ordered_resources,
         }
     }
 }

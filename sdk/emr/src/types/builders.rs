@@ -97,6 +97,8 @@ pub use crate::types::_instance_resize_policy::InstanceResizePolicyBuilder;
 
 pub use crate::types::_instance_fleet_modify_config::InstanceFleetModifyConfigBuilder;
 
+pub use crate::types::_supported_instance_type::SupportedInstanceTypeBuilder;
+
 pub use crate::types::_session_mapping_summary::SessionMappingSummaryBuilder;
 
 pub use crate::types::_studio_summary::StudioSummaryBuilder;

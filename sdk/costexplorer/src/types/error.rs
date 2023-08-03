@@ -13,11 +13,11 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_generation_exists_exception::GenerationExistsException;
 
+pub use crate::types::error::_data_unavailable_exception::DataUnavailableException;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_unresolvable_usage_unit_exception::UnresolvableUsageUnitException;
-
-pub use crate::types::error::_data_unavailable_exception::DataUnavailableException;
 
 pub use crate::types::error::_request_changed_exception::RequestChangedException;
 

@@ -21,6 +21,9 @@ pub struct SearchInput {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+    #[doc(hidden)]
+    pub cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
 }
 impl SearchInput {
     /// <p>The name of the SageMaker resource to search for.</p>
@@ -47,6 +50,12 @@ impl SearchInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+    pub fn cross_account_filter_option(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CrossAccountFilterOption> {
+        self.cross_account_filter_option.as_ref()
+    }
 }
 impl SearchInput {
     /// Creates a new builder-style object to manufacture [`SearchInput`](crate::operation::search::SearchInput).
@@ -67,6 +76,8 @@ pub struct SearchInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SearchSortOrder>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) cross_account_filter_option:
+        ::std::option::Option<crate::types::CrossAccountFilterOption>,
 }
 impl SearchInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
@@ -138,6 +149,22 @@ impl SearchInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+    pub fn cross_account_filter_option(
+        mut self,
+        input: crate::types::CrossAccountFilterOption,
+    ) -> Self {
+        self.cross_account_filter_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+    pub fn set_cross_account_filter_option(
+        mut self,
+        input: ::std::option::Option<crate::types::CrossAccountFilterOption>,
+    ) -> Self {
+        self.cross_account_filter_option = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
     pub fn build(
         self,
@@ -152,6 +179,7 @@ impl SearchInputBuilder {
             sort_order: self.sort_order,
             next_token: self.next_token,
             max_results: self.max_results,
+            cross_account_filter_option: self.cross_account_filter_option,
         })
     }
 }

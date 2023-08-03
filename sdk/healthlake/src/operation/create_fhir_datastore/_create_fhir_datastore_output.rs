@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFhirDatastoreOutput {
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
     #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    /// <p>The status of the FHIR data store.</p>
     #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    /// <p>The AWS endpoint for the created data store.</p>
     #[doc(hidden)]
     pub datastore_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateFhirDatastoreOutput {
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
     pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
         self.datastore_arn.as_deref()
     }
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    /// <p>The status of the FHIR data store.</p>
     pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    /// <p>The AWS endpoint for the created data store.</p>
     pub fn datastore_endpoint(&self) -> ::std::option::Option<&str> {
         self.datastore_endpoint.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct CreateFhirDatastoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFhirDatastoreOutputBuilder {
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    /// <p>The AWS-generated data store id. This id is in the output from the initial data store creation call.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
     pub fn datastore_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -80,7 +80,7 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
     pub fn set_datastore_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -88,12 +88,12 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_arn = input;
         self
     }
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    /// <p>The status of the FHIR data store.</p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    /// <p>The status of the FHIR data store.</p>
     pub fn set_datastore_status(
         mut self,
         input: ::std::option::Option<crate::types::DatastoreStatus>,
@@ -101,7 +101,7 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_status = input;
         self
     }
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    /// <p>The AWS endpoint for the created data store.</p>
     pub fn datastore_endpoint(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -109,7 +109,7 @@ impl CreateFhirDatastoreOutputBuilder {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    /// <p>The AWS endpoint for the created data store.</p>
     pub fn set_datastore_endpoint(
         mut self,
         input: ::std::option::Option<::std::string::String>,

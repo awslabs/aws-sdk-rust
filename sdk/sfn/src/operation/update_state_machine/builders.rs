@@ -6,9 +6,42 @@ pub use crate::operation::update_state_machine::_update_state_machine_input::Upd
 /// Fluent builder constructing a request to `UpdateStateMachine`.
 ///
 /// <p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p>
-/// <p>If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p>
-/// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
-/// <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p>
+/// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p>
+/// <p>A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine, a version ARN, or an alias ARN.</p>
+/// <p>The following are some examples of qualified and unqualified state machine ARNs:</p>
+/// <ul>
+/// <li> <p>The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails with <code>ValidationException</code>.</p>
+/// </note> </li>
+/// <li> <p>The following qualified state machine ARN refers to an alias named <code>PROD</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine:prod></mystatemachine:prod>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.</p>
+/// </note> </li>
+/// <li> <p>The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine></mystatemachine>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> </li>
+/// </ul>
+/// <p>After you update your state machine, you can set the <code>publish</code> parameter to <code>true</code> in the same action to publish a new <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. This way, you can opt-in to strict versioning of your state machine.</p> <note>
+/// <p>Step Functions assigns monotonically increasing integers for state machine versions, starting at version number 1.</p>
+/// </note> <note>
+/// <p>All <code>StartExecution</code> calls within a few seconds use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after you call <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStateMachineFluentBuilder {
@@ -139,12 +172,12 @@ impl UpdateStateMachineFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
         self
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn set_logging_configuration(
         mut self,
         input: ::std::option::Option<crate::types::LoggingConfiguration>,
@@ -163,6 +196,34 @@ impl UpdateStateMachineFluentBuilder {
         input: ::std::option::Option<crate::types::TracingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_tracing_configuration(input);
+        self
+    }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn publish(mut self, input: bool) -> Self {
+        self.inner = self.inner.publish(input);
+        self
+    }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_publish(input);
+        self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn version_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.version_description(input.into());
+        self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn set_version_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_version_description(input);
         self
     }
 }

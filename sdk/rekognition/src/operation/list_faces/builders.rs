@@ -134,4 +134,31 @@ impl ListFacesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.user_id(input.into());
+        self
+    }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_user_id(input);
+        self
+    }
+    /// Appends an item to `FaceIds`.
+    ///
+    /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
+    ///
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.face_ids(input.into());
+        self
+    }
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn set_face_ids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_face_ids(input);
+        self
+    }
 }

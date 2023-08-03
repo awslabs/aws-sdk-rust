@@ -6,5 +6,8 @@ pub fn ser_update_workspace_configuration_input(
     if let Some(var_1) = &input.configuration {
         object.key("configuration").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.grafana_version {
+        object.key("grafanaVersion").string(var_2.as_str());
+    }
     Ok(())
 }

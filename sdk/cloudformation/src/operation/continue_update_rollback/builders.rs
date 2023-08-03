@@ -158,7 +158,7 @@ impl ContinueUpdateRollbackFluentBuilder {
         self.inner = self.inner.set_resources_to_skip(input);
         self
     }
-    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn client_request_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -166,7 +166,7 @@ impl ContinueUpdateRollbackFluentBuilder {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormationknows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn set_client_request_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelBanError>`](crate::operation::delete_channel_ban::DeleteChannelBanError)
+    #[deprecated(note = "Replaced by DeleteChannelBan in the Amazon Chime SDK Messaging Namespace")]
     pub fn delete_channel_ban(
         &self,
     ) -> crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder {

@@ -43,6 +43,9 @@ pub struct PipelineExecution {
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     #[doc(hidden)]
     pub pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    #[doc(hidden)]
+    pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
 }
 impl PipelineExecution {
     /// <p>The Amazon Resource Name (ARN) of the pipeline that was executed.</p>
@@ -103,6 +106,12 @@ impl PipelineExecution {
     pub fn pipeline_parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
         self.pipeline_parameters.as_deref()
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SelectiveExecutionConfig> {
+        self.selective_execution_config.as_ref()
+    }
 }
 impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::types::PipelineExecution).
@@ -133,6 +142,8 @@ pub struct PipelineExecutionBuilder {
     pub(crate) parallelism_configuration:
         ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) selective_execution_config:
+        ::std::option::Option<crate::types::SelectiveExecutionConfig>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline that was executed.</p>
@@ -328,6 +339,22 @@ impl PipelineExecutionBuilder {
         self.pipeline_parameters = input;
         self
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        mut self,
+        input: crate::types::SelectiveExecutionConfig,
+    ) -> Self {
+        self.selective_execution_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn set_selective_execution_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    ) -> Self {
+        self.selective_execution_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
@@ -344,6 +371,7 @@ impl PipelineExecutionBuilder {
             last_modified_by: self.last_modified_by,
             parallelism_configuration: self.parallelism_configuration,
             pipeline_parameters: self.pipeline_parameters,
+            selective_execution_config: self.selective_execution_config,
         }
     }
 }

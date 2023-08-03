@@ -82,11 +82,15 @@ pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_restore_event_data_store;
 
+pub(crate) mod shape_start_event_data_store_ingestion;
+
 pub(crate) mod shape_start_import;
 
 pub(crate) mod shape_start_logging;
 
 pub(crate) mod shape_start_query;
+
+pub(crate) mod shape_stop_event_data_store_ingestion;
 
 pub(crate) mod shape_stop_import;
 
@@ -326,11 +330,15 @@ pub(crate) mod shape_restore_event_data_store_input;
 
 pub(crate) mod shape_s3_bucket_does_not_exist_exception;
 
+pub(crate) mod shape_start_event_data_store_ingestion_input;
+
 pub(crate) mod shape_start_import_input;
 
 pub(crate) mod shape_start_logging_input;
 
 pub(crate) mod shape_start_query_input;
+
+pub(crate) mod shape_stop_event_data_store_ingestion_input;
 
 pub(crate) mod shape_stop_import_input;
 

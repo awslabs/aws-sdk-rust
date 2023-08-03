@@ -32,6 +32,7 @@
 ///     ResourceType::ImportImageTask => { /* ... */ },
 ///     ResourceType::ImportSnapshotTask => { /* ... */ },
 ///     ResourceType::Instance => { /* ... */ },
+///     ResourceType::InstanceConnectEndpoint => { /* ... */ },
 ///     ResourceType::InstanceEventWindow => { /* ... */ },
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::Ipam => { /* ... */ },
@@ -170,6 +171,8 @@ pub enum ResourceType {
     ImportSnapshotTask,
     #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
+    InstanceConnectEndpoint,
     #[allow(missing_docs)] // documentation missing in model
     InstanceEventWindow,
     #[allow(missing_docs)] // documentation missing in model
@@ -326,6 +329,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "import-image-task" => ResourceType::ImportImageTask,
             "import-snapshot-task" => ResourceType::ImportSnapshotTask,
             "instance" => ResourceType::Instance,
+            "instance-connect-endpoint" => ResourceType::InstanceConnectEndpoint,
             "instance-event-window" => ResourceType::InstanceEventWindow,
             "internet-gateway" => ResourceType::InternetGateway,
             "ipam" => ResourceType::Ipam,
@@ -438,6 +442,7 @@ impl ResourceType {
             ResourceType::ImportImageTask => "import-image-task",
             ResourceType::ImportSnapshotTask => "import-snapshot-task",
             ResourceType::Instance => "instance",
+            ResourceType::InstanceConnectEndpoint => "instance-connect-endpoint",
             ResourceType::InstanceEventWindow => "instance-event-window",
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::Ipam => "ipam",
@@ -539,6 +544,7 @@ impl ResourceType {
             "import-image-task",
             "import-snapshot-task",
             "instance",
+            "instance-connect-endpoint",
             "instance-event-window",
             "internet-gateway",
             "ipam",

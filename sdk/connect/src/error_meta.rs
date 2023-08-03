@@ -27,6 +27,8 @@ pub enum Error {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The allowed limit for the resource has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>Maximum number (1000) of tags have been returned with current request. Consider changing request parameters to get more tags.</p>
+    MaximumResultReturnedException(crate::types::error::MaximumResultReturnedException),
     /// <p>The contact is not permitted.</p>
     OutboundContactNotPermittedException(crate::types::error::OutboundContactNotPermittedException),
     /// <p>The property is not valid.</p>
@@ -63,6 +65,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MaximumResultReturnedException(inner) => inner.fmt(f),
             Error::OutboundContactNotPermittedException(inner) => inner.fmt(f),
             Error::PropertyValidationException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
@@ -1996,6 +1999,61 @@ impl From<crate::operation::delete_prompt::DeletePromptError> for Error {
     }
 }
 impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::delete_queue::DeleteQueueError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_queue::DeleteQueueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_queue::DeleteQueueError> for Error {
+    fn from(err: crate::operation::delete_queue::DeleteQueueError) -> Self {
+        match err {
+            crate::operation::delete_queue::DeleteQueueError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_queue::DeleteQueueError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
             crate::operation::delete_quick_connect::DeleteQuickConnectError,
@@ -2036,6 +2094,51 @@ impl From<crate::operation::delete_quick_connect::DeleteQuickConnectError> for E
             crate::operation::delete_quick_connect::DeleteQuickConnectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_quick_connect::DeleteQuickConnectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_quick_connect::DeleteQuickConnectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_routing_profile::DeleteRoutingProfileError> for Error {
+    fn from(err: crate::operation::delete_routing_profile::DeleteRoutingProfileError) -> Self {
+        match err {
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6076,6 +6179,108 @@ impl From<crate::operation::search_available_phone_numbers::SearchAvailablePhone
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError> for Error {
+    fn from(
+        err: crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
+    ) -> Self {
+        match err {
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_prompts::SearchPromptsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::search_prompts::SearchPromptsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_prompts::SearchPromptsError> for Error {
+    fn from(err: crate::operation::search_prompts::SearchPromptsError) -> Self {
+        match err {
+            crate::operation::search_prompts::SearchPromptsError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::search_prompts::SearchPromptsError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::search_prompts::SearchPromptsError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::search_prompts::SearchPromptsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_prompts::SearchPromptsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_prompts::SearchPromptsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::search_queues::SearchQueuesError, R>>
     for Error
 where
@@ -6124,6 +6329,95 @@ impl From<crate::operation::search_queues::SearchQueuesError> for Error {
             crate::operation::search_queues::SearchQueuesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_quick_connects::SearchQuickConnectsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::search_quick_connects::SearchQuickConnectsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_quick_connects::SearchQuickConnectsError> for Error {
+    fn from(err: crate::operation::search_quick_connects::SearchQuickConnectsError) -> Self {
+        match err {
+            crate::operation::search_quick_connects::SearchQuickConnectsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_quick_connects::SearchQuickConnectsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_quick_connects::SearchQuickConnectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_quick_connects::SearchQuickConnectsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_quick_connects::SearchQuickConnectsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_quick_connects::SearchQuickConnectsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_resource_tags::SearchResourceTagsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::search_resource_tags::SearchResourceTagsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_resource_tags::SearchResourceTagsError> for Error {
+    fn from(err: crate::operation::search_resource_tags::SearchResourceTagsError) -> Self {
+        match err {
+            crate::operation::search_resource_tags::SearchResourceTagsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::MaximumResultReturnedException(inner) => Error::MaximumResultReturnedException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_resource_tags::SearchResourceTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8713,6 +9007,7 @@ impl ::std::error::Error for Error {
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
+            Error::MaximumResultReturnedException(inner) => inner.source(),
             Error::OutboundContactNotPermittedException(inner) => inner.source(),
             Error::PropertyValidationException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
@@ -8741,6 +9036,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
+            Self::MaximumResultReturnedException(e) => e.request_id(),
             Self::OutboundContactNotPermittedException(e) => e.request_id(),
             Self::PropertyValidationException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),

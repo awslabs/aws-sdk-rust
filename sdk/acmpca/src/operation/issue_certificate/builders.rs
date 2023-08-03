@@ -154,7 +154,7 @@ impl IssueCertificateFluentBuilder {
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
-    /// <p>The specified signing algorithm family (RSA or ECDSA) much match the algorithm family of the CA's secret key.</p>
+    /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
         self.inner = self.inner.signing_algorithm(input);
@@ -162,7 +162,7 @@ impl IssueCertificateFluentBuilder {
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
-    /// <p>The specified signing algorithm family (RSA or ECDSA) much match the algorithm family of the CA's secret key.</p>
+    /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn set_signing_algorithm(
         mut self,
@@ -204,7 +204,7 @@ impl IssueCertificateFluentBuilder {
     /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
     /// <p>By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
     /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
-    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
     pub fn validity_not_before(mut self, input: crate::types::Validity) -> Self {
         self.inner = self.inner.validity_not_before(input);
         self
@@ -212,7 +212,7 @@ impl IssueCertificateFluentBuilder {
     /// <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>
     /// <p>By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
     /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
-    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+    /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
     pub fn set_validity_not_before(
         mut self,
         input: ::std::option::Option<crate::types::Validity>,

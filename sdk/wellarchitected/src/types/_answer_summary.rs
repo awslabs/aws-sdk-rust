@@ -34,6 +34,9 @@ pub struct AnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
+    /// <p>The type of the question.</p>
+    #[doc(hidden)]
+    pub question_type: ::std::option::Option<crate::types::QuestionType>,
 }
 impl AnswerSummary {
     /// <p>The ID of the question.</p>
@@ -76,6 +79,10 @@ impl AnswerSummary {
     pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
         self.reason.as_ref()
     }
+    /// <p>The type of the question.</p>
+    pub fn question_type(&self) -> ::std::option::Option<&crate::types::QuestionType> {
+        self.question_type.as_ref()
+    }
 }
 impl AnswerSummary {
     /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::types::AnswerSummary).
@@ -100,6 +107,7 @@ pub struct AnswerSummaryBuilder {
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
+    pub(crate) question_type: ::std::option::Option<crate::types::QuestionType>,
 }
 impl AnswerSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -232,6 +240,19 @@ impl AnswerSummaryBuilder {
         self.reason = input;
         self
     }
+    /// <p>The type of the question.</p>
+    pub fn question_type(mut self, input: crate::types::QuestionType) -> Self {
+        self.question_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the question.</p>
+    pub fn set_question_type(
+        mut self,
+        input: ::std::option::Option<crate::types::QuestionType>,
+    ) -> Self {
+        self.question_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AnswerSummary`](crate::types::AnswerSummary).
     pub fn build(self) -> crate::types::AnswerSummary {
         crate::types::AnswerSummary {
@@ -244,6 +265,7 @@ impl AnswerSummaryBuilder {
             is_applicable: self.is_applicable.unwrap_or_default(),
             risk: self.risk,
             reason: self.reason,
+            question_type: self.question_type,
         }
     }
 }

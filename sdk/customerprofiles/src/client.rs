@@ -214,7 +214,11 @@ impl Client {
 
 mod add_profile_key;
 
+mod create_calculated_attribute_definition;
+
 mod create_domain;
+
+mod create_event_stream;
 
 mod create_integration_workflow;
 
@@ -248,7 +252,11 @@ mod create_profile;
 /// ```
 pub mod customize;
 
+mod delete_calculated_attribute_definition;
+
 mod delete_domain;
+
+mod delete_event_stream;
 
 mod delete_integration;
 
@@ -264,7 +272,13 @@ mod delete_workflow;
 
 mod get_auto_merging_preview;
 
+mod get_calculated_attribute_definition;
+
+mod get_calculated_attribute_for_profile;
+
 mod get_domain;
+
+mod get_event_stream;
 
 mod get_identity_resolution_job;
 
@@ -276,13 +290,21 @@ mod get_profile_object_type;
 
 mod get_profile_object_type_template;
 
+mod get_similar_profiles;
+
 mod get_workflow;
 
 mod get_workflow_steps;
 
 mod list_account_integrations;
 
+mod list_calculated_attribute_definitions;
+
+mod list_calculated_attributes_for_profile;
+
 mod list_domains;
+
+mod list_event_streams;
 
 mod list_identity_resolution_jobs;
 
@@ -293,6 +315,8 @@ mod list_profile_object_type_templates;
 mod list_profile_object_types;
 
 mod list_profile_objects;
+
+mod list_rule_based_matches;
 
 mod list_tags_for_resource;
 
@@ -311,6 +335,8 @@ mod search_profiles;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_calculated_attribute_definition;
 
 mod update_domain;
 

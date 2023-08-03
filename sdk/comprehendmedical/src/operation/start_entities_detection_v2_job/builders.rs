@@ -125,7 +125,7 @@ impl StartEntitiesDetectionV2JobFluentBuilder {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -133,7 +133,7 @@ impl StartEntitiesDetectionV2JobFluentBuilder {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -151,7 +151,7 @@ impl StartEntitiesDetectionV2JobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one for you.</p>
     pub fn client_request_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -159,7 +159,7 @@ impl StartEntitiesDetectionV2JobFluentBuilder {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one for you.</p>
     pub fn set_client_request_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -177,12 +177,12 @@ impl StartEntitiesDetectionV2JobFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
+    /// <p>The language of the input documents. All documents must be in the same language. Amazon Comprehend Medical processes files in US English (en).</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
         self
     }
-    /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
+    /// <p>The language of the input documents. All documents must be in the same language. Amazon Comprehend Medical processes files in US English (en).</p>
     pub fn set_language_code(
         mut self,
         input: ::std::option::Option<crate::types::LanguageCode>,

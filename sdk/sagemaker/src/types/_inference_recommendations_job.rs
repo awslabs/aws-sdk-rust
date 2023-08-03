@@ -34,6 +34,15 @@ pub struct InferenceRecommendationsJob {
     /// <p>If the job fails, provides information why the job failed.</p>
     #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the created model.</p>
+    #[doc(hidden)]
+    pub model_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    #[doc(hidden)]
+    pub sample_payload_url: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    #[doc(hidden)]
+    pub model_package_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationsJob {
     /// <p>The name of the job.</p>
@@ -76,6 +85,18 @@ impl InferenceRecommendationsJob {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(&self) -> ::std::option::Option<&str> {
+        self.sample_payload_url.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    pub fn model_package_version_arn(&self) -> ::std::option::Option<&str> {
+        self.model_package_version_arn.as_deref()
+    }
 }
 impl InferenceRecommendationsJob {
     /// Creates a new builder-style object to manufacture [`InferenceRecommendationsJob`](crate::types::InferenceRecommendationsJob).
@@ -100,6 +121,9 @@ pub struct InferenceRecommendationsJobBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationsJobBuilder {
     /// <p>The name of the job.</p>
@@ -229,6 +253,48 @@ impl InferenceRecommendationsJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the created model.</p>
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_name = input;
+        self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sample_payload_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn set_sample_payload_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.sample_payload_url = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    pub fn model_package_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    pub fn set_model_package_version_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.model_package_version_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InferenceRecommendationsJob`](crate::types::InferenceRecommendationsJob).
     pub fn build(self) -> crate::types::InferenceRecommendationsJob {
         crate::types::InferenceRecommendationsJob {
@@ -242,6 +308,9 @@ impl InferenceRecommendationsJobBuilder {
             role_arn: self.role_arn,
             last_modified_time: self.last_modified_time,
             failure_reason: self.failure_reason,
+            model_name: self.model_name,
+            sample_payload_url: self.sample_payload_url,
+            model_package_version_arn: self.model_package_version_arn,
         }
     }
 }

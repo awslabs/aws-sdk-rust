@@ -9,6 +9,9 @@ pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>Replication type to which to update source server.</p>
     #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    /// <p>Account ID on which to update replication type.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
@@ -18,6 +21,10 @@ impl UpdateSourceServerReplicationTypeInput {
     /// <p>Replication type to which to update source server.</p>
     pub fn replication_type(&self) -> ::std::option::Option<&crate::types::ReplicationType> {
         self.replication_type.as_ref()
+    }
+    /// <p>Account ID on which to update replication type.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl UpdateSourceServerReplicationTypeInput {
@@ -35,6 +42,7 @@ impl UpdateSourceServerReplicationTypeInput {
 pub struct UpdateSourceServerReplicationTypeInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerReplicationTypeInputBuilder {
     /// <p>ID of source server on which to update replication type.</p>
@@ -66,6 +74,16 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         self.replication_type = input;
         self
     }
+    /// <p>Account ID on which to update replication type.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID on which to update replication type.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -73,6 +91,8 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
                 source_server_id: self.source_server_id
                 ,
                 replication_type: self.replication_type
+                ,
+                account_id: self.account_id
                 ,
             }
         )

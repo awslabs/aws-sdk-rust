@@ -12,7 +12,9 @@
 /// ```text
 /// # let keywordinputtype = unimplemented!();
 /// match keywordinputtype {
+///     KeywordInputType::InputText => { /* ... */ },
 ///     KeywordInputType::SelectFromList => { /* ... */ },
+///     KeywordInputType::UploadFile => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,14 +49,20 @@
 )]
 pub enum KeywordInputType {
     #[allow(missing_docs)] // documentation missing in model
+    InputText,
+    #[allow(missing_docs)] // documentation missing in model
     SelectFromList,
+    #[allow(missing_docs)] // documentation missing in model
+    UploadFile,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for KeywordInputType {
     fn from(s: &str) -> Self {
         match s {
+            "INPUT_TEXT" => KeywordInputType::InputText,
             "SELECT_FROM_LIST" => KeywordInputType::SelectFromList,
+            "UPLOAD_FILE" => KeywordInputType::UploadFile,
             other => {
                 KeywordInputType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -72,13 +80,15 @@ impl KeywordInputType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeywordInputType::InputText => "INPUT_TEXT",
             KeywordInputType::SelectFromList => "SELECT_FROM_LIST",
+            KeywordInputType::UploadFile => "UPLOAD_FILE",
             KeywordInputType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SELECT_FROM_LIST"]
+        &["INPUT_TEXT", "SELECT_FROM_LIST", "UPLOAD_FILE"]
     }
 }
 impl ::std::convert::AsRef<str> for KeywordInputType {

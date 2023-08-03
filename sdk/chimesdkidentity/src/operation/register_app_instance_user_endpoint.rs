@@ -172,9 +172,6 @@ impl ::aws_smithy_http::response::ParseStrictResponse for RegisterAppInstanceUse
             crate::protocol_serde::shape_register_app_instance_user_endpoint::de_register_app_instance_user_endpoint_http_response_with_props(status, headers, body)
         }
     }
-    fn sensitive(&self) -> bool {
-        true
-    }
 }
 
 /// Do not use this.

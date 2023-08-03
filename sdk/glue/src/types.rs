@@ -79,11 +79,35 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
+pub use crate::types::_snowflake_target::SnowflakeTarget;
+
+pub use crate::types::_snowflake_node_data::SnowflakeNodeData;
+
+pub use crate::types::_option::Option;
+
+pub use crate::types::_snowflake_source::SnowflakeSource;
+
+pub use crate::types::_glue_schema::GlueSchema;
+
+pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
+
+pub use crate::types::_recipe::Recipe;
+
+pub use crate::types::_recipe_reference::RecipeReference;
+
+pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrame;
+
+pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptions;
+
+pub use crate::types::_dq_stop_job_on_failure_timing::DqStopJobOnFailureTiming;
+
+pub use crate::types::_additional_option_keys::AdditionalOptionKeys;
+
+pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptions;
+
 pub use crate::types::_amazon_redshift_target::AmazonRedshiftTarget;
 
 pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeData;
-
-pub use crate::types::_option::Option;
 
 pub use crate::types::_amazon_redshift_advanced_option::AmazonRedshiftAdvancedOption;
 
@@ -104,10 +128,6 @@ pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTarget;
 pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicy;
 
 pub use crate::types::_s3_delta_source::S3DeltaSource;
-
-pub use crate::types::_glue_schema::GlueSchema;
-
-pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
 
 pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptions;
 
@@ -132,12 +152,6 @@ pub use crate::types::_catalog_hudi_source::CatalogHudiSource;
 pub use crate::types::_s3_catalog_hudi_source::S3CatalogHudiSource;
 
 pub use crate::types::_evaluate_data_quality::EvaluateDataQuality;
-
-pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptions;
-
-pub use crate::types::_dq_stop_job_on_failure_timing::DqStopJobOnFailureTiming;
-
-pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptions;
 
 pub use crate::types::_dq_transform_output::DqTransformOutput;
 
@@ -343,6 +357,10 @@ pub use crate::types::_update_behavior::UpdateBehavior;
 
 pub use crate::types::_crawler_targets::CrawlerTargets;
 
+pub use crate::types::_hudi_target::HudiTarget;
+
+pub use crate::types::_iceberg_target::IcebergTarget;
+
 pub use crate::types::_delta_target::DeltaTarget;
 
 pub use crate::types::_catalog_target::CatalogTarget;
@@ -401,11 +419,11 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
 
-pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
-
 pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_glue_table::GlueTable;
+
+pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
 
 pub use crate::types::_table::Table;
 
@@ -701,6 +719,12 @@ pub use crate::types::_schema_version_error_item::SchemaVersionErrorItem;
 
 pub use crate::types::_error_details::ErrorDetails;
 
+pub use crate::types::_open_table_format_input::OpenTableFormatInput;
+
+pub use crate::types::_iceberg_input::IcebergInput;
+
+pub use crate::types::_metadata_operation::MetadataOperation;
+
 pub use crate::types::_partition_index::PartitionIndex;
 
 pub use crate::types::_create_csv_classifier_request::CreateCsvClassifierRequest;
@@ -728,6 +752,8 @@ pub use crate::types::_table_error::TableError;
 pub use crate::types::_partition_error::PartitionError;
 
 mod _action;
+
+mod _additional_option_keys;
 
 mod _agg_function;
 
@@ -989,6 +1015,8 @@ mod _error_details;
 
 mod _evaluate_data_quality;
 
+mod _evaluate_data_quality_multi_frame;
+
 mod _evaluation_metrics;
 
 mod _event_batching_condition;
@@ -1049,7 +1077,13 @@ mod _governed_catalog_target;
 
 mod _grok_classifier;
 
+mod _hudi_target;
+
 mod _hudi_target_compression_type;
+
+mod _iceberg_input;
+
+mod _iceberg_target;
 
 mod _import_labels_task_run_properties;
 
@@ -1131,6 +1165,8 @@ mod _metadata_info;
 
 mod _metadata_key_value_pair;
 
+mod _metadata_operation;
+
 mod _microsoft_sql_server_catalog_source;
 
 mod _microsoft_sql_server_catalog_target;
@@ -1156,6 +1192,8 @@ mod _notification_property;
 mod _null_check_box_list;
 
 mod _null_value_field;
+
+mod _open_table_format_input;
 
 mod _option;
 
@@ -1210,6 +1248,10 @@ mod _principal_type;
 mod _property_predicate;
 
 mod _quote_char;
+
+mod _recipe;
+
+mod _recipe_reference;
 
 mod _recrawl_behavior;
 
@@ -1320,6 +1362,12 @@ mod _session_command;
 mod _session_status;
 
 mod _skewed_info;
+
+mod _snowflake_node_data;
+
+mod _snowflake_source;
+
+mod _snowflake_target;
 
 mod _sort;
 

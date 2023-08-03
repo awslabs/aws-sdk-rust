@@ -5,8 +5,8 @@ pub use crate::operation::describe_stack_instance::_describe_stack_instance_inpu
 
 /// Fluent builder constructing a request to `DescribeStackInstance`.
 ///
-/// <p>Returns the stack instance that's associated with the specified stack set, Amazon Web Services account, and Region.</p>
-/// <p>For a list of stack instances that are associated with a specific stack set, use <code>ListStackInstances</code>.</p>
+/// <p>Returns the stack instance that's associated with the specified StackSet, Amazon Web Services account, and Amazon Web Services Region.</p>
+/// <p>For a list of stack instances that are associated with a specific StackSet, use <code>ListStackInstances</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

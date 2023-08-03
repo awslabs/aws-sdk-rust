@@ -6,6 +6,7 @@ pub use crate::operation::create_address_book::_create_address_book_input::Creat
 /// Fluent builder constructing a request to `CreateAddressBook`.
 ///
 /// <p>Creates an address book with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

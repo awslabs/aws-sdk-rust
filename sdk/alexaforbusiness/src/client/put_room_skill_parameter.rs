@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`room_skill_parameter(RoomSkillParameter)`](crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder::room_skill_parameter) / [`set_room_skill_parameter(Option<RoomSkillParameter>)`](crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder::set_room_skill_parameter): <p>The updated room skill parameter. Required.</p>
     /// - On success, responds with [`PutRoomSkillParameterOutput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput)
     /// - On failure, responds with [`SdkError<PutRoomSkillParameterError>`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn put_room_skill_parameter(
         &self,
     ) -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder

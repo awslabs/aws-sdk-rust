@@ -22,7 +22,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>
     #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     #[doc(hidden)]
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the cluster accepts connections.</p>
@@ -164,7 +164,7 @@ impl RestoreFromClusterSnapshotInput {
     pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_cluster_identifier.as_deref()
     }
@@ -427,7 +427,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.snapshot_arn = input;
         self
     }
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -435,7 +435,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,
         input: ::std::option::Option<::std::string::String>,

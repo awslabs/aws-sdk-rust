@@ -173,7 +173,7 @@ pub type PutConfigurationAggregatorErrorKind = PutConfigurationAggregatorError;
 pub enum PutConfigurationAggregatorError {
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>You have provided a null or empty role ARN.</p>
+    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the configuration recorder.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>

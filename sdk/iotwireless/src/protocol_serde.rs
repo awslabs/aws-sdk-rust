@@ -410,6 +410,8 @@ pub(crate) mod shape_multicast_wireless_metadata;
 
 pub(crate) mod shape_network_analyzer_configuration_list;
 
+pub(crate) mod shape_network_analyzer_multicast_group_list;
+
 pub(crate) mod shape_position_configuration_list;
 
 pub(crate) mod shape_position_coordinate;

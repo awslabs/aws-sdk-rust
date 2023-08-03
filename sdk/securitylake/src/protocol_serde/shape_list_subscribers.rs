@@ -45,14 +45,31 @@ pub fn de_list_subscribers_http_error(
                 tmp
             })
         }
-        "AccountNotFoundException" => {
-            crate::operation::list_subscribers::ListSubscribersError::AccountNotFoundException({
+        "BadRequestException" => {
+            crate::operation::list_subscribers::ListSubscribersError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::operation::list_subscribers::ListSubscribersError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -70,27 +87,6 @@ pub fn de_list_subscribers_http_error(
                     let mut output =
                         crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::list_subscribers::ListSubscribersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidInputException" => {
-            crate::operation::list_subscribers::ListSubscribersError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -117,14 +113,18 @@ pub fn de_list_subscribers_http_error(
                 tmp
             })
         }
-        "ValidationException" => {
-            crate::operation::list_subscribers::ListSubscribersError::ValidationException({
+        "ThrottlingException" => {
+            crate::operation::list_subscribers::ListSubscribersError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
+                                                .map_err(|_|crate::operation::list_subscribers::ListSubscribersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -191,9 +191,7 @@ pub(crate) fn de_list_subscribers(
                     }
                     "subscribers" => {
                         builder = builder.set_subscribers(
-                            crate::protocol_serde::shape_subscriber_list::de_subscriber_list(
-                                tokens,
-                            )?,
+                            crate::protocol_serde::shape_subscriber_resource_list::de_subscriber_resource_list(tokens)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

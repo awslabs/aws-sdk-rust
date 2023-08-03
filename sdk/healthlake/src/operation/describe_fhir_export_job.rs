@@ -173,7 +173,7 @@ pub type DescribeFHIRExportJobErrorKind = DescribeFHIRExportJobError;
 pub enum DescribeFHIRExportJobError {
     /// <p>Unknown error occurs in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The requested Data Store was not found.</p>
+    /// <p> The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
     ThrottlingException(crate::types::error::ThrottlingException),

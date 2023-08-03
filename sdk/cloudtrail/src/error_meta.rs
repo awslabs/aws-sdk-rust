@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
@@ -37,7 +37,7 @@ pub enum Error {
     CloudTrailInvalidClientTokenIdException(
         crate::types::error::CloudTrailInvalidClientTokenIdException,
     ),
-    /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
+    /// <p>Cannot set a CloudWatch Logs delivery for this Region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::types::error::CloudWatchLogsDeliveryUnavailableException,
     ),
@@ -112,7 +112,7 @@ pub enum Error {
     /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
-    /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
+    /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
     InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
     /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
     InvalidImportSourceException(crate::types::error::InvalidImportSourceException),
@@ -162,7 +162,7 @@ pub enum Error {
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
     KmsKeyDisabledException(crate::types::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
     /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
     MaxConcurrentQueriesException(crate::types::error::MaxConcurrentQueriesException),
@@ -2022,6 +2022,59 @@ impl From<crate::operation::restore_event_data_store::RestoreEventDataStoreError
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError,
+    ) -> Self {
+        match err {
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::InvalidEventDataStoreStatusException(inner) => Error::InvalidEventDataStoreStatusException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, R>>
     for Error
 where
@@ -2155,6 +2208,59 @@ impl From<crate::operation::start_query::StartQueryError> for Error {
             crate::operation::start_query::StartQueryError::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
             crate::operation::start_query::StartQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_query::StartQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidEventDataStoreStatusException(inner) => Error::InvalidEventDataStoreStatusException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2333,6 +2439,7 @@ impl From<crate::operation::update_event_data_store::UpdateEventDataStoreError> 
     fn from(err: crate::operation::update_event_data_store::UpdateEventDataStoreError) -> Self {
         match err {
             crate::operation::update_event_data_store::UpdateEventDataStoreError::CloudTrailAccessNotEnabledException(inner) => Error::CloudTrailAccessNotEnabledException(inner),
+            crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreAlreadyExistsException(inner) => Error::EventDataStoreAlreadyExistsException(inner),
             crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreHasOngoingImportException(inner) => Error::EventDataStoreHasOngoingImportException(inner),
             crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),

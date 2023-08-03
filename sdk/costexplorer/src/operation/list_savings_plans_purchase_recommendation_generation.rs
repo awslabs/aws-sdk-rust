@@ -156,6 +156,8 @@ pub type ListSavingsPlansPurchaseRecommendationGenerationErrorKind =
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListSavingsPlansPurchaseRecommendationGenerationError {
+    /// <p>The requested data is unavailable.</p>
+    DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>The pagination token is invalid. Try again without a pagination token.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
@@ -182,6 +184,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError
 impl ::std::fmt::Display for ListSavingsPlansPurchaseRecommendationGenerationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DataUnavailableException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -193,6 +196,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
 {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DataUnavailableException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidNextTokenException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -252,10 +258,15 @@ impl ListSavingsPlansPurchaseRecommendationGenerationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::DataUnavailableException(e) => e.meta(),
             Self::InvalidNextTokenException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ListSavingsPlansPurchaseRecommendationGenerationError::DataUnavailableException`.
+    pub fn is_data_unavailable_exception(&self) -> bool {
+        matches!(self, Self::DataUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListSavingsPlansPurchaseRecommendationGenerationError::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
@@ -269,6 +280,7 @@ impl ListSavingsPlansPurchaseRecommendationGenerationError {
 impl ::std::error::Error for ListSavingsPlansPurchaseRecommendationGenerationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DataUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

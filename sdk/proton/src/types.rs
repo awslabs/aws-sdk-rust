@@ -101,6 +101,22 @@ pub use crate::types::_environment_account_connection_summary::EnvironmentAccoun
 
 pub use crate::types::_environment_account_connection_requester_account_type::EnvironmentAccountConnectionRequesterAccountType;
 
+pub use crate::types::_deployment_summary::DeploymentSummary;
+
+pub use crate::types::_deployment_target_resource_type::DeploymentTargetResourceType;
+
+pub use crate::types::_deployment::Deployment;
+
+pub use crate::types::_deployment_state::DeploymentState;
+
+pub use crate::types::_component_state::ComponentState;
+
+pub use crate::types::_service_pipeline_state::ServicePipelineState;
+
+pub use crate::types::_environment_state::EnvironmentState;
+
+pub use crate::types::_service_instance_state::ServiceInstanceState;
+
 pub use crate::types::_component_summary::ComponentSummary;
 
 pub use crate::types::_component::Component;
@@ -147,11 +163,21 @@ mod _component;
 
 mod _component_deployment_update_type;
 
+mod _component_state;
+
 mod _component_summary;
 
 mod _counts_summary;
 
+mod _deployment;
+
+mod _deployment_state;
+
 mod _deployment_status;
+
+mod _deployment_summary;
+
+mod _deployment_target_resource_type;
 
 mod _deployment_update_type;
 
@@ -164,6 +190,8 @@ mod _environment_account_connection_requester_account_type;
 mod _environment_account_connection_status;
 
 mod _environment_account_connection_summary;
+
+mod _environment_state;
 
 mod _environment_summary;
 
@@ -227,9 +255,13 @@ mod _service;
 
 mod _service_instance;
 
+mod _service_instance_state;
+
 mod _service_instance_summary;
 
 mod _service_pipeline;
+
+mod _service_pipeline_state;
 
 mod _service_status;
 

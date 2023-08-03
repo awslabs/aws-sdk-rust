@@ -11,6 +11,14 @@ pub use crate::types::_type_::Type;
 
 pub use crate::types::_type_definition_format::TypeDefinitionFormat;
 
+pub use crate::types::_source_api_association::SourceApiAssociation;
+
+pub use crate::types::_source_api_association_status::SourceApiAssociationStatus;
+
+pub use crate::types::_source_api_association_config::SourceApiAssociationConfig;
+
+pub use crate::types::_merge_type::MergeType;
+
 pub use crate::types::_resolver::Resolver;
 
 pub use crate::types::_app_sync_runtime::AppSyncRuntime;
@@ -32,6 +40,8 @@ pub use crate::types::_pipeline_config::PipelineConfig;
 pub use crate::types::_resolver_kind::ResolverKind;
 
 pub use crate::types::_graphql_api::GraphqlApi;
+
+pub use crate::types::_graph_ql_api_type::GraphQlApiType;
 
 pub use crate::types::_graph_ql_api_visibility::GraphQlApiVisibility;
 
@@ -98,6 +108,10 @@ pub use crate::types::_api_cache_type::ApiCacheType;
 pub use crate::types::_api_caching_behavior::ApiCachingBehavior;
 
 pub use crate::types::_schema_status::SchemaStatus;
+
+pub use crate::types::_source_api_association_summary::SourceApiAssociationSummary;
+
+pub use crate::types::_ownership::Ownership;
 
 pub use crate::types::_output_type::OutputType;
 
@@ -175,6 +189,8 @@ mod _field_log_level;
 
 mod _function_configuration;
 
+mod _graph_ql_api_type;
+
 mod _graph_ql_api_visibility;
 
 mod _graphql_api;
@@ -189,11 +205,15 @@ mod _lambda_data_source_config;
 
 mod _log_config;
 
+mod _merge_type;
+
 mod _open_id_connect_config;
 
 mod _open_search_service_data_source_config;
 
 mod _output_type;
+
+mod _ownership;
 
 mod _pipeline_config;
 
@@ -210,6 +230,14 @@ mod _resolver_kind;
 mod _runtime_name;
 
 mod _schema_status;
+
+mod _source_api_association;
+
+mod _source_api_association_config;
+
+mod _source_api_association_status;
+
+mod _source_api_association_summary;
 
 mod _sync_config;
 

@@ -648,6 +648,46 @@ pub fn de_cluster(
                 builder = builder.set_reserved_node_exchange_status(var_52);
             }
             ,
+            s if s.matches("CustomDomainName") /* CustomDomainName com.amazonaws.redshift#Cluster$CustomDomainName */ =>  {
+                let var_53 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_custom_domain_name(var_53);
+            }
+            ,
+            s if s.matches("CustomDomainCertificateArn") /* CustomDomainCertificateArn com.amazonaws.redshift#Cluster$CustomDomainCertificateArn */ =>  {
+                let var_54 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_custom_domain_certificate_arn(var_54);
+            }
+            ,
+            s if s.matches("CustomDomainCertificateExpiryDate") /* CustomDomainCertificateExpiryDate com.amazonaws.redshift#Cluster$CustomDomainCertificateExpiryDate */ =>  {
+                let var_55 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_custom_domain_certificate_expiry_date(var_55);
+            }
+            ,
             _ => {}
         }
     }

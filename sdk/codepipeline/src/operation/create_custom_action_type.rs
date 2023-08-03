@@ -175,7 +175,7 @@ pub enum CreateCustomActionTypeError {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The specified resource tags are invalid.</p>
     InvalidTagsException(crate::types::error::InvalidTagsException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
+    /// <p>The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The tags limit for a resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),

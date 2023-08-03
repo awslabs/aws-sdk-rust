@@ -46,6 +46,11 @@ pub fn ser_get_cluster_credentials_input_input(
         }
         list_14.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("CustomDomainName");
+    if let Some(var_17) = &input.custom_domain_name {
+        scope_16.string(var_17);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

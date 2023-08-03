@@ -36,6 +36,24 @@ pub fn ser_list_objects_v2_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_5) = &input.optional_object_attributes {
+        for inner_6 in inner_5 {
+            let formatted_7 = ::aws_smithy_http::header::quote_header_value(inner_6.as_str());
+            if !formatted_7.is_empty() {
+                let header_value = formatted_7;
+                let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "optional_object_attributes",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+                builder = builder.header("x-amz-optional-object-attributes", header_value);
+            }
+        }
+    }
     Ok(builder)
 }
 
@@ -108,6 +126,16 @@ pub fn de_list_objects_v2_http_response_with_props(
             output,
         )
         .map_err(crate::operation::list_objects_v2::ListObjectsV2Error::unhandled)?;
+        output = output.set_request_charged(
+            crate::protocol_serde::shape_list_objects_v2_output::de_request_charged_header(
+                _response_headers,
+            )
+            .map_err(|_| {
+                crate::operation::list_objects_v2::ListObjectsV2Error::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
+        );
         output._set_extended_request_id(
             crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
                 .map(str::to_string),
@@ -143,42 +171,12 @@ pub fn de_list_objects_v2(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListObjectsV2Output$CommonPrefixes */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_6 = builder.common_prefixes.take().unwrap_or_default();
-                            list_6.push(
-                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
-                                ?
-                            );
-                            list_6
-                        })
-                        ?
-                    )
-                ;
-                builder = builder.set_common_prefixes(var_5);
-            }
-            ,
-            s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3.synthetic#ListObjectsV2Output$NextContinuationToken */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_next_continuation_token(var_7);
-            }
-            ,
-            s if s.matches("Contents") /* Contents com.amazonaws.s3.synthetic#ListObjectsV2Output$Contents */ =>  {
                 let var_8 =
                     Some(
-                        Result::<::std::vec::Vec<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_9 = builder.contents.take().unwrap_or_default();
+                        Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                            let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
                             list_9.push(
-                                crate::protocol_serde::shape_object::de_object(&mut tag)
+                                crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
                                 ?
                             );
                             list_9
@@ -186,10 +184,10 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_contents(var_8);
+                builder = builder.set_common_prefixes(var_8);
             }
             ,
-            s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListObjectsV2Output$ContinuationToken */ =>  {
+            s if s.matches("NextContinuationToken") /* NextContinuationToken com.amazonaws.s3.synthetic#ListObjectsV2Output$NextContinuationToken */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -199,10 +197,10 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_continuation_token(var_10);
+                builder = builder.set_next_continuation_token(var_10);
             }
             ,
-            s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3.synthetic#ListObjectsV2Output$Delimiter */ =>  {
+            s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListObjectsV2Output$ContinuationToken */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -212,11 +210,24 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_delimiter(var_11);
+                builder = builder.set_continuation_token(var_11);
+            }
+            ,
+            s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3.synthetic#ListObjectsV2Output$Delimiter */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_delimiter(var_12);
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3.synthetic#ListObjectsV2Output$EncodingType */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<crate::types::EncodingType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EncodingType::from(
@@ -226,11 +237,11 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_encoding_type(var_12);
+                builder = builder.set_encoding_type(var_13);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3.synthetic#ListObjectsV2Output$IsTruncated */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -241,20 +252,7 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_13);
-            }
-            ,
-            s if s.matches("StartAfter") /* StartAfter com.amazonaws.s3.synthetic#ListObjectsV2Output$StartAfter */ =>  {
-                let var_14 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_start_after(var_14);
+                builder = builder.set_is_truncated(var_14);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3.synthetic#ListObjectsV2Output$Prefix */ =>  {
@@ -270,8 +268,51 @@ pub fn de_list_objects_v2(
                 builder = builder.set_prefix(var_15);
             }
             ,
-            s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3.synthetic#ListObjectsV2Output$MaxKeys */ =>  {
+            s if s.matches("Name") /* Name com.amazonaws.s3.synthetic#ListObjectsV2Output$Name */ =>  {
                 let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_name(var_16);
+            }
+            ,
+            s if s.matches("Contents") /* Contents com.amazonaws.s3.synthetic#ListObjectsV2Output$Contents */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<::std::vec::Vec<crate::types::Object>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                            let mut list_18 = builder.contents.take().unwrap_or_default();
+                            list_18.push(
+                                crate::protocol_serde::shape_object::de_object(&mut tag)
+                                ?
+                            );
+                            list_18
+                        })
+                        ?
+                    )
+                ;
+                builder = builder.set_contents(var_17);
+            }
+            ,
+            s if s.matches("StartAfter") /* StartAfter com.amazonaws.s3.synthetic#ListObjectsV2Output$StartAfter */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_start_after(var_19);
+            }
+            ,
+            s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3.synthetic#ListObjectsV2Output$MaxKeys */ =>  {
+                let var_20 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -282,11 +323,11 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_max_keys(var_16);
+                builder = builder.set_max_keys(var_20);
             }
             ,
             s if s.matches("KeyCount") /* KeyCount com.amazonaws.s3.synthetic#ListObjectsV2Output$KeyCount */ =>  {
-                let var_17 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -297,20 +338,7 @@ pub fn de_list_objects_v2(
                         ?
                     )
                 ;
-                builder = builder.set_key_count(var_17);
-            }
-            ,
-            s if s.matches("Name") /* Name com.amazonaws.s3.synthetic#ListObjectsV2Output$Name */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_18);
+                builder = builder.set_key_count(var_21);
             }
             ,
             _ => {}

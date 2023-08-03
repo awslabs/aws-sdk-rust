@@ -175,6 +175,10 @@ pub use crate::types::_data_share_status_for_producer::DataShareStatusForProduce
 
 pub use crate::types::_data_share_status_for_consumer::DataShareStatusForConsumer;
 
+pub use crate::types::_association::Association;
+
+pub use crate::types::_certificate_association::CertificateAssociation;
+
 pub use crate::types::_cluster_version::ClusterVersion;
 
 pub use crate::types::_maintenance_track::MaintenanceTrack;
@@ -217,6 +221,8 @@ mod _aqua_configuration_status;
 
 mod _aqua_status;
 
+mod _association;
+
 mod _attribute_value_target;
 
 mod _authentication_profile;
@@ -224,6 +230,8 @@ mod _authentication_profile;
 mod _authorization_status;
 
 mod _availability_zone;
+
+mod _certificate_association;
 
 mod _cluster;
 

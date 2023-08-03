@@ -9,8 +9,8 @@ pub struct DedicatedIpPool {
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
-    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
@@ -22,8 +22,8 @@ impl DedicatedIpPool {
     }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
-    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
     pub fn scaling_mode(&self) -> ::std::option::Option<&crate::types::ScalingMode> {
         self.scaling_mode.as_ref()
@@ -58,8 +58,8 @@ impl DedicatedIpPoolBuilder {
     }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
-    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
     pub fn scaling_mode(mut self, input: crate::types::ScalingMode) -> Self {
         self.scaling_mode = ::std::option::Option::Some(input);
@@ -67,8 +67,8 @@ impl DedicatedIpPoolBuilder {
     }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
-    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where the customer can control which IPs are part of the pool.</p> </li>
-    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs is automatically managed by Amazon SES.</p> </li>
+    /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
+    /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
     pub fn set_scaling_mode(
         mut self,

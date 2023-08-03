@@ -6,6 +6,7 @@ pub use crate::operation::update_address_book::_update_address_book_input::Updat
 /// Fluent builder constructing a request to `UpdateAddressBook`.
 ///
 /// <p>Updates address book details by the address book ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

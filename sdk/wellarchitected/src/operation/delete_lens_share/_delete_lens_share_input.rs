@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLensShareInput {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -20,7 +20,7 @@ pub struct DeleteLensShareInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLensShareInput {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
@@ -57,12 +57,12 @@ pub struct DeleteLensShareInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLensShareInputBuilder {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self

@@ -268,6 +268,8 @@ mod put_resource_permission;
 
 mod register_application;
 
+mod start_application_refresh;
+
 mod tag_resource;
 
 mod untag_resource;

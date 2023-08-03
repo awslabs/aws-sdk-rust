@@ -43,8 +43,20 @@ pub fn ser_send_channel_message_input(
     if let Some(var_13) = &input.sub_channel_id {
         object.key("SubChannelId").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.r#type {
-        object.key("Type").string(var_14.as_str());
+    if let Some(var_14) = &input.target {
+        let mut array_15 = object.key("Target").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_target::ser_target(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.r#type {
+        object.key("Type").string(var_18.as_str());
     }
     Ok(())
 }

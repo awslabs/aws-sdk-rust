@@ -92,6 +92,8 @@ pub(crate) mod shape_export_job_properties;
 
 pub(crate) mod shape_export_job_properties_list;
 
+pub(crate) mod shape_identity_provider_configuration;
+
 pub(crate) mod shape_import_job_properties;
 
 pub(crate) mod shape_import_job_properties_list;

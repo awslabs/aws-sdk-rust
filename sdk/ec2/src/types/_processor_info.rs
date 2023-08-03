@@ -11,7 +11,7 @@ pub struct ProcessorInfo {
     /// <p>The speed of the processor, in GHz.</p>
     #[doc(hidden)]
     pub sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
-    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported.</p>
+    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     #[doc(hidden)]
     pub supported_features:
         ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
@@ -27,7 +27,7 @@ impl ProcessorInfo {
     pub fn sustained_clock_speed_in_ghz(&self) -> ::std::option::Option<f64> {
         self.sustained_clock_speed_in_ghz
     }
-    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported.</p>
+    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     pub fn supported_features(
         &self,
     ) -> ::std::option::Option<&[crate::types::SupportedAdditionalProcessorFeature]> {
@@ -87,7 +87,7 @@ impl ProcessorInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_features`](Self::set_supported_features).
     ///
-    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported.</p>
+    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     pub fn supported_features(
         mut self,
         input: crate::types::SupportedAdditionalProcessorFeature,
@@ -97,7 +97,7 @@ impl ProcessorInfoBuilder {
         self.supported_features = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported.</p>
+    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     pub fn set_supported_features(
         mut self,
         input: ::std::option::Option<

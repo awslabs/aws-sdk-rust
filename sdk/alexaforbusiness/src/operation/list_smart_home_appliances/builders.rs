@@ -6,6 +6,7 @@ pub use crate::operation::list_smart_home_appliances::_list_smart_home_appliance
 /// Fluent builder constructing a request to `ListSmartHomeAppliances`.
 ///
 /// <p>Lists all of the smart home appliances associated with a room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSmartHomeAppliancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -30,5 +30,14 @@ pub fn ser_create_meeting_room_configuration(
         )?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.proactive_join {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ProactiveJoin").start_object();
+        crate::protocol_serde::shape_create_proactive_join::ser_create_proactive_join(
+            &mut object_9,
+            var_8,
+        )?;
+        object_9.finish();
+    }
     Ok(())
 }

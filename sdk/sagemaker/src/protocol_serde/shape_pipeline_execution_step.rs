@@ -100,6 +100,11 @@ where
                                     crate::protocol_serde::shape_pipeline_execution_step_metadata::de_pipeline_execution_step_metadata(tokens)?
                                 );
                             }
+                            "SelectiveExecutionResult" => {
+                                builder = builder.set_selective_execution_result(
+                                    crate::protocol_serde::shape_selective_execution_result::de_selective_execution_result(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

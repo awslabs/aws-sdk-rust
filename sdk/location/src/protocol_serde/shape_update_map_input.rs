@@ -3,11 +3,20 @@ pub fn ser_update_map_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_map::UpdateMapInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_1) = &input.configuration_update {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("ConfigurationUpdate").start_object();
+        crate::protocol_serde::shape_map_configuration_update::ser_map_configuration_update(
+            &mut object_2,
+            var_1,
+        )?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_4.as_str());
     }
     Ok(())
 }

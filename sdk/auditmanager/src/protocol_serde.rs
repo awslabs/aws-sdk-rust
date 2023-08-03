@@ -64,6 +64,8 @@ pub(crate) mod shape_get_evidence;
 
 pub(crate) mod shape_get_evidence_by_evidence_folder;
 
+pub(crate) mod shape_get_evidence_file_upload_url;
+
 pub(crate) mod shape_get_evidence_folder;
 
 pub(crate) mod shape_get_evidence_folders_by_assessment;
@@ -249,6 +251,8 @@ pub(crate) mod shape_create_assessment_framework_control_set;
 pub(crate) mod shape_create_control_mapping_source;
 
 pub(crate) mod shape_create_delegation_request;
+
+pub(crate) mod shape_default_export_destination;
 
 pub(crate) mod shape_delegation_metadata_list;
 

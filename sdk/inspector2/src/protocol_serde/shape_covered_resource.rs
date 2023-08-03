@@ -21,65 +21,71 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
-                        "resourceType" => {
-                            builder = builder.set_resource_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::CoverageResourceType::from(u.as_ref())
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "resourceType" => {
+                                builder = builder.set_resource_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::CoverageResourceType::from(u.as_ref())
+                                        })
                                     })
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        "resourceId" => {
-                            builder = builder.set_resource_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "accountId" => {
-                            builder = builder.set_account_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "scanType" => {
-                            builder = builder.set_scan_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::ScanType::from(u.as_ref()))
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        "scanStatus" => {
-                            builder = builder.set_scan_status(
-                                crate::protocol_serde::shape_scan_status::de_scan_status(tokens)?,
-                            );
-                        }
-                        "resourceMetadata" => {
-                            builder = builder.set_resource_metadata(
+                                    .transpose()?,
+                                );
+                            }
+                            "resourceId" => {
+                                builder = builder.set_resource_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "accountId" => {
+                                builder = builder.set_account_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "scanType" => {
+                                builder = builder.set_scan_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ScanType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "scanStatus" => {
+                                builder = builder.set_scan_status(
+                                    crate::protocol_serde::shape_scan_status::de_scan_status(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "resourceMetadata" => {
+                                builder = builder.set_resource_metadata(
                                     crate::protocol_serde::shape_resource_scan_metadata::de_resource_scan_metadata(tokens)?
                                 );
+                            }
+                            "lastScannedAt" => {
+                                builder = builder.set_last_scanned_at(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(
                             ::aws_smithy_json::deserialize::error::DeserializeError::custom(

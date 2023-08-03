@@ -175,6 +175,12 @@ pub use crate::types::_resize_option::ResizeOption;
 
 pub use crate::types::_column_configuration::ColumnConfiguration;
 
+pub use crate::types::_colors_configuration::ColorsConfiguration;
+
+pub use crate::types::_custom_color::CustomColor;
+
+pub use crate::types::_special_value::SpecialValue;
+
 pub use crate::types::_column_role::ColumnRole;
 
 pub use crate::types::_format_configuration::FormatConfiguration;
@@ -234,6 +240,10 @@ pub use crate::types::_time_granularity::TimeGranularity;
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfiguration;
 
 pub use crate::types::_aggregation_function::AggregationFunction;
+
+pub use crate::types::_attribute_aggregation_function::AttributeAggregationFunction;
+
+pub use crate::types::_simple_attribute_aggregation_function::SimpleAttributeAggregationFunction;
 
 pub use crate::types::_date_aggregation_function::DateAggregationFunction;
 
@@ -438,6 +448,8 @@ pub use crate::types::_selected_field_options::SelectedFieldOptions;
 pub use crate::types::_visual_custom_action_trigger::VisualCustomActionTrigger;
 
 pub use crate::types::_radar_chart_configuration::RadarChartConfiguration;
+
+pub use crate::types::_radar_chart_axes_range_scale::RadarChartAxesRangeScale;
 
 pub use crate::types::_legend_options::LegendOptions;
 
@@ -811,6 +823,12 @@ pub use crate::types::_geospatial_map_configuration::GeospatialMapConfiguration;
 
 pub use crate::types::_geospatial_point_style_options::GeospatialPointStyleOptions;
 
+pub use crate::types::_geospatial_heatmap_configuration::GeospatialHeatmapConfiguration;
+
+pub use crate::types::_geospatial_heatmap_color_scale::GeospatialHeatmapColorScale;
+
+pub use crate::types::_geospatial_heatmap_data_color::GeospatialHeatmapDataColor;
+
 pub use crate::types::_cluster_marker_configuration::ClusterMarkerConfiguration;
 
 pub use crate::types::_cluster_marker::ClusterMarker;
@@ -882,6 +900,12 @@ pub use crate::types::_missing_data_configuration::MissingDataConfiguration;
 pub use crate::types::_missing_data_treatment_option::MissingDataTreatmentOption;
 
 pub use crate::types::_small_multiples_options::SmallMultiplesOptions;
+
+pub use crate::types::_small_multiples_axis_properties::SmallMultiplesAxisProperties;
+
+pub use crate::types::_small_multiples_axis_placement::SmallMultiplesAxisPlacement;
+
+pub use crate::types::_small_multiples_axis_scale::SmallMultiplesAxisScale;
 
 pub use crate::types::_panel_configuration::PanelConfiguration;
 
@@ -1031,6 +1055,12 @@ pub use crate::types::_pivot_table_paginated_report_options::PivotTablePaginated
 
 pub use crate::types::_pivot_table_field_options::PivotTableFieldOptions;
 
+pub use crate::types::_pivot_table_field_collapse_state_option::PivotTableFieldCollapseStateOption;
+
+pub use crate::types::_pivot_table_field_collapse_state::PivotTableFieldCollapseState;
+
+pub use crate::types::_pivot_table_field_collapse_state_target::PivotTableFieldCollapseStateTarget;
+
 pub use crate::types::_pivot_table_data_path_option::PivotTableDataPathOption;
 
 pub use crate::types::_pivot_table_field_option::PivotTableFieldOption;
@@ -1142,6 +1172,8 @@ pub use crate::types::_filter_control::FilterControl;
 pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTimeControl;
 
 pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptions;
+
+pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIconLabelOptions;
 
 pub use crate::types::_filter_slider_control::FilterSliderControl;
 
@@ -1459,6 +1491,90 @@ pub use crate::types::_account_customization::AccountCustomization;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_snapshot_configuration::SnapshotConfiguration;
+
+pub use crate::types::_snapshot_destination_configuration::SnapshotDestinationConfiguration;
+
+pub use crate::types::_snapshot_s3_destination_configuration::SnapshotS3DestinationConfiguration;
+
+pub use crate::types::_s3_bucket_configuration::S3BucketConfiguration;
+
+pub use crate::types::_snapshot_file_group::SnapshotFileGroup;
+
+pub use crate::types::_snapshot_file::SnapshotFile;
+
+pub use crate::types::_snapshot_file_format_type::SnapshotFileFormatType;
+
+pub use crate::types::_snapshot_file_sheet_selection::SnapshotFileSheetSelection;
+
+pub use crate::types::_snapshot_file_sheet_selection_scope::SnapshotFileSheetSelectionScope;
+
+pub use crate::types::_snapshot_user_configuration::SnapshotUserConfiguration;
+
+pub use crate::types::_snapshot_anonymous_user::SnapshotAnonymousUser;
+
+pub use crate::types::_session_tag::SessionTag;
+
+pub use crate::types::_asset_bundle_import_failure_action::AssetBundleImportFailureAction;
+
+pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::AssetBundleImportJobDashboardOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_parameters::AssetBundleImportJobAnalysisOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_parameters::AssetBundleImportJobThemeOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_parameters::AssetBundleImportJobDataSetOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_parameters::AssetBundleImportJobDataSourceOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credentials::AssetBundleImportJobDataSourceCredentials;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credential_pair::AssetBundleImportJobDataSourceCredentialPair;
+
+pub use crate::types::_asset_bundle_import_job_refresh_schedule_override_parameters::AssetBundleImportJobRefreshScheduleOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameters::AssetBundleImportJobVpcConnectionOverrideParameters;
+
+pub use crate::types::_asset_bundle_import_job_resource_id_override_configuration::AssetBundleImportJobResourceIdOverrideConfiguration;
+
+pub use crate::types::_asset_bundle_import_source::AssetBundleImportSource;
+
+pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfiguration;
+
+pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::AssetBundleExportJobDashboardOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_dashboard_property_to_override::AssetBundleExportJobDashboardPropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_analysis_override_properties::AssetBundleExportJobAnalysisOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_analysis_property_to_override::AssetBundleExportJobAnalysisPropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_theme_override_properties::AssetBundleExportJobThemeOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_theme_property_to_override::AssetBundleExportJobThemePropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_data_set_override_properties::AssetBundleExportJobDataSetOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_data_set_property_to_override::AssetBundleExportJobDataSetPropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_data_source_override_properties::AssetBundleExportJobDataSourceOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_data_source_property_to_override::AssetBundleExportJobDataSourcePropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_refresh_schedule_override_properties::AssetBundleExportJobRefreshScheduleOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_refresh_schedule_property_to_override::AssetBundleExportJobRefreshSchedulePropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_vpc_connection_override_properties::AssetBundleExportJobVpcConnectionOverrideProperties;
+
+pub use crate::types::_asset_bundle_export_job_vpc_connection_property_to_override::AssetBundleExportJobVpcConnectionPropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_resource_id_override_configuration::AssetBundleExportJobResourceIdOverrideConfiguration;
+
+pub use crate::types::_asset_bundle_export_format::AssetBundleExportFormat;
+
 pub use crate::types::_group_search_filter::GroupSearchFilter;
 
 pub use crate::types::_group_filter_attribute::GroupFilterAttribute;
@@ -1573,6 +1689,14 @@ pub use crate::types::_data_source_error_info_type::DataSourceErrorInfoType;
 
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummary;
 
+pub use crate::types::_asset_bundle_import_job_summary::AssetBundleImportJobSummary;
+
+pub use crate::types::_asset_bundle_import_job_status::AssetBundleImportJobStatus;
+
+pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSummary;
+
+pub use crate::types::_asset_bundle_export_job_status::AssetBundleExportJobStatus;
+
 pub use crate::types::_embedding_identity_type::EmbeddingIdentityType;
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfiguration;
@@ -1602,8 +1726,6 @@ pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::Anon
 pub use crate::types::_anonymous_user_dashboard_visual_embedding_configuration::AnonymousUserDashboardVisualEmbeddingConfiguration;
 
 pub use crate::types::_anonymous_user_dashboard_embedding_configuration::AnonymousUserDashboardEmbeddingConfiguration;
-
-pub use crate::types::_session_tag::SessionTag;
 
 pub use crate::types::_vpc_connection::VpcConnection;
 
@@ -1639,6 +1761,24 @@ pub use crate::types::_data_set::DataSet;
 
 pub use crate::types::_output_column::OutputColumn;
 
+pub use crate::types::_snapshot_job_error_info::SnapshotJobErrorInfo;
+
+pub use crate::types::_snapshot_job_result::SnapshotJobResult;
+
+pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResult;
+
+pub use crate::types::_snapshot_job_result_file_group::SnapshotJobResultFileGroup;
+
+pub use crate::types::_snapshot_job_s3_result::SnapshotJobS3Result;
+
+pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfo;
+
+pub use crate::types::_snapshot_job_status::SnapshotJobStatus;
+
+pub use crate::types::_snapshot_user_configuration_redacted::SnapshotUserConfigurationRedacted;
+
+pub use crate::types::_snapshot_anonymous_user_redacted::SnapshotAnonymousUserRedacted;
+
 pub use crate::types::_dashboard_error::DashboardError;
 
 pub use crate::types::_dashboard_error_type::DashboardErrorType;
@@ -1646,6 +1786,12 @@ pub use crate::types::_dashboard_error_type::DashboardErrorType;
 pub use crate::types::_dashboard::Dashboard;
 
 pub use crate::types::_dashboard_version::DashboardVersion;
+
+pub use crate::types::_asset_bundle_import_source_description::AssetBundleImportSourceDescription;
+
+pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobError;
+
+pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobError;
 
 pub use crate::types::_analysis_error::AnalysisError;
 
@@ -1717,6 +1863,8 @@ mod _anonymous_user_embedding_experience_configuration;
 
 mod _anonymous_user_q_search_bar_embedding_configuration;
 
+mod _anonymous_user_snapshot_job_result;
+
 mod _arc_axis_configuration;
 
 mod _arc_axis_display_range;
@@ -1729,9 +1877,85 @@ mod _arc_thickness;
 
 mod _arc_thickness_options;
 
+mod _asset_bundle_cloud_formation_override_property_configuration;
+
+mod _asset_bundle_export_format;
+
+mod _asset_bundle_export_job_analysis_override_properties;
+
+mod _asset_bundle_export_job_analysis_property_to_override;
+
+mod _asset_bundle_export_job_dashboard_override_properties;
+
+mod _asset_bundle_export_job_dashboard_property_to_override;
+
+mod _asset_bundle_export_job_data_set_override_properties;
+
+mod _asset_bundle_export_job_data_set_property_to_override;
+
+mod _asset_bundle_export_job_data_source_override_properties;
+
+mod _asset_bundle_export_job_data_source_property_to_override;
+
+mod _asset_bundle_export_job_error;
+
+mod _asset_bundle_export_job_refresh_schedule_override_properties;
+
+mod _asset_bundle_export_job_refresh_schedule_property_to_override;
+
+mod _asset_bundle_export_job_resource_id_override_configuration;
+
+mod _asset_bundle_export_job_status;
+
+mod _asset_bundle_export_job_summary;
+
+mod _asset_bundle_export_job_theme_override_properties;
+
+mod _asset_bundle_export_job_theme_property_to_override;
+
+mod _asset_bundle_export_job_vpc_connection_override_properties;
+
+mod _asset_bundle_export_job_vpc_connection_property_to_override;
+
+mod _asset_bundle_import_failure_action;
+
+mod _asset_bundle_import_job_analysis_override_parameters;
+
+mod _asset_bundle_import_job_dashboard_override_parameters;
+
+mod _asset_bundle_import_job_data_set_override_parameters;
+
+mod _asset_bundle_import_job_data_source_credential_pair;
+
+mod _asset_bundle_import_job_data_source_credentials;
+
+mod _asset_bundle_import_job_data_source_override_parameters;
+
+mod _asset_bundle_import_job_error;
+
+mod _asset_bundle_import_job_override_parameters;
+
+mod _asset_bundle_import_job_refresh_schedule_override_parameters;
+
+mod _asset_bundle_import_job_resource_id_override_configuration;
+
+mod _asset_bundle_import_job_status;
+
+mod _asset_bundle_import_job_summary;
+
+mod _asset_bundle_import_job_theme_override_parameters;
+
+mod _asset_bundle_import_job_vpc_connection_override_parameters;
+
+mod _asset_bundle_import_source;
+
+mod _asset_bundle_import_source_description;
+
 mod _assignment_status;
 
 mod _athena_parameters;
+
+mod _attribute_aggregation_function;
 
 mod _aurora_parameters;
 
@@ -1857,6 +2081,8 @@ mod _color_fill_type;
 
 mod _color_scale;
 
+mod _colors_configuration;
+
 mod _column_configuration;
 
 mod _column_data_role;
@@ -1950,6 +2176,8 @@ mod _custom_action_navigation_operation;
 mod _custom_action_set_parameters_operation;
 
 mod _custom_action_url_operation;
+
+mod _custom_color;
 
 mod _custom_content_configuration;
 
@@ -2345,6 +2573,12 @@ mod _geo_spatial_data_role;
 
 mod _geospatial_coordinate_bounds;
 
+mod _geospatial_heatmap_color_scale;
+
+mod _geospatial_heatmap_configuration;
+
+mod _geospatial_heatmap_data_color;
+
 mod _geospatial_map_aggregated_field_wells;
 
 mod _geospatial_map_configuration;
@@ -2727,6 +2961,12 @@ mod _pivot_table_configuration;
 
 mod _pivot_table_data_path_option;
 
+mod _pivot_table_field_collapse_state;
+
+mod _pivot_table_field_collapse_state_option;
+
+mod _pivot_table_field_collapse_state_target;
+
 mod _pivot_table_field_option;
 
 mod _pivot_table_field_options;
@@ -2774,6 +3014,8 @@ mod _queue_info;
 mod _radar_chart_aggregated_field_wells;
 
 mod _radar_chart_area_style_settings;
+
+mod _radar_chart_axes_range_scale;
 
 mod _radar_chart_configuration;
 
@@ -2875,6 +3117,8 @@ mod _row_level_permission_tag_configuration;
 
 mod _row_level_permission_tag_rule;
 
+mod _s3_bucket_configuration;
+
 mod _s3_parameters;
 
 mod _s3_source;
@@ -2951,6 +3195,8 @@ mod _sheet_content_type;
 
 mod _sheet_control_date_time_picker_type;
 
+mod _sheet_control_info_icon_label_options;
+
 mod _sheet_control_layout;
 
 mod _sheet_control_layout_configuration;
@@ -2979,13 +3225,57 @@ mod _short_format_text;
 
 mod _signup_response;
 
+mod _simple_attribute_aggregation_function;
+
 mod _simple_cluster_marker;
 
 mod _simple_numerical_aggregation_function;
 
 mod _slider_control_display_options;
 
+mod _small_multiples_axis_placement;
+
+mod _small_multiples_axis_properties;
+
+mod _small_multiples_axis_scale;
+
 mod _small_multiples_options;
+
+mod _snapshot_anonymous_user;
+
+mod _snapshot_anonymous_user_redacted;
+
+mod _snapshot_configuration;
+
+mod _snapshot_destination_configuration;
+
+mod _snapshot_file;
+
+mod _snapshot_file_format_type;
+
+mod _snapshot_file_group;
+
+mod _snapshot_file_sheet_selection;
+
+mod _snapshot_file_sheet_selection_scope;
+
+mod _snapshot_job_error_info;
+
+mod _snapshot_job_result;
+
+mod _snapshot_job_result_error_info;
+
+mod _snapshot_job_result_file_group;
+
+mod _snapshot_job_s3_result;
+
+mod _snapshot_job_status;
+
+mod _snapshot_s3_destination_configuration;
+
+mod _snapshot_user_configuration;
+
+mod _snapshot_user_configuration_redacted;
 
 mod _snowflake_parameters;
 
@@ -2994,6 +3284,8 @@ mod _sort_direction;
 mod _spacing;
 
 mod _spark_parameters;
+
+mod _special_value;
 
 mod _sql_server_parameters;
 

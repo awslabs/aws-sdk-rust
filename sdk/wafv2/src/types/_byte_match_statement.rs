@@ -9,6 +9,7 @@ pub struct ByteMatchStatement {
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
     /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
@@ -49,6 +50,7 @@ impl ByteMatchStatement {
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
     /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
@@ -115,6 +117,7 @@ impl ByteMatchStatementBuilder {
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
     /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>
@@ -131,6 +134,7 @@ impl ByteMatchStatementBuilder {
     /// <ul>
     /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
     /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
+    /// <li> <p> <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string. </p> </li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p> <b>If you're using the WAF API</b> </p>

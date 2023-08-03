@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresOutput {
-    /// <p>All properties associated with the listed Data Stores.</p>
+    /// <p>All properties associated with the listed data stores.</p>
     #[doc(hidden)]
     pub datastore_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
@@ -13,7 +13,7 @@ pub struct ListFhirDatastoresOutput {
     _request_id: Option<String>,
 }
 impl ListFhirDatastoresOutput {
-    /// <p>All properties associated with the listed Data Stores.</p>
+    /// <p>All properties associated with the listed data stores.</p>
     pub fn datastore_properties_list(
         &self,
     ) -> ::std::option::Option<&[crate::types::DatastoreProperties]> {
@@ -53,14 +53,14 @@ impl ListFhirDatastoresOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_datastore_properties_list`](Self::set_datastore_properties_list).
     ///
-    /// <p>All properties associated with the listed Data Stores.</p>
+    /// <p>All properties associated with the listed data stores.</p>
     pub fn datastore_properties_list(mut self, input: crate::types::DatastoreProperties) -> Self {
         let mut v = self.datastore_properties_list.unwrap_or_default();
         v.push(input);
         self.datastore_properties_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All properties associated with the listed Data Stores.</p>
+    /// <p>All properties associated with the listed data stores.</p>
     pub fn set_datastore_properties_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,

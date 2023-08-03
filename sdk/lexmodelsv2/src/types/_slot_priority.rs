@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotPriority {
-    /// <p>The priority that a slot should be elicited.</p>
+    /// <p>The priority that Amazon Lex should apply to the slot.</p>
     #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The unique identifier of the slot.</p>
@@ -12,7 +12,7 @@ pub struct SlotPriority {
     pub slot_id: ::std::option::Option<::std::string::String>,
 }
 impl SlotPriority {
-    /// <p>The priority that a slot should be elicited.</p>
+    /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -38,12 +38,12 @@ pub struct SlotPriorityBuilder {
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,
 }
 impl SlotPriorityBuilder {
-    /// <p>The priority that a slot should be elicited.</p>
+    /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority that a slot should be elicited.</p>
+    /// <p>The priority that Amazon Lex should apply to the slot.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self

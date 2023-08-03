@@ -23,8 +23,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
-                            "subscriptionId" => {
-                                builder = builder.set_subscription_id(
+                            "subscriberId" => {
+                                builder = builder.set_subscriber_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -32,18 +32,20 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "sourceTypes" => {
-                                builder = builder.set_source_types(
-                                    crate::protocol_serde::shape_source_type_list::de_source_type_list(tokens)?
-                                );
-                            }
-                            "accountId" => {
-                                builder = builder.set_account_id(
+                            "subscriberArn" => {
+                                builder = builder.set_subscriber_arn(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "subscriberIdentity" => {
+                                builder = builder.set_subscriber_identity(
+                                    crate::protocol_serde::shape_aws_identity::de_aws_identity(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "subscriberName" => {
@@ -64,30 +66,18 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "subscriptionStatus" => {
-                                builder = builder.set_subscription_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::SubscriptionStatus::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
+                            "sources" => {
+                                builder = builder.set_sources(
+                                    crate::protocol_serde::shape_log_source_resource_list::de_log_source_resource_list(tokens)?
+                                );
+                            }
+                            "accessTypes" => {
+                                builder = builder.set_access_types(
+                                    crate::protocol_serde::shape_access_type_list::de_access_type_list(tokens)?
                                 );
                             }
                             "roleArn" => {
                                 builder = builder.set_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "snsArn" => {
-                                builder = builder.set_sns_arn(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -104,13 +94,8 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "accessTypes" => {
-                                builder = builder.set_access_types(
-                                    crate::protocol_serde::shape_access_type_list::de_access_type_list(tokens)?
-                                );
-                            }
-                            "subscriptionEndpoint" => {
-                                builder = builder.set_subscription_endpoint(
+                            "subscriberEndpoint" => {
+                                builder = builder.set_subscriber_endpoint(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -118,36 +103,17 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "subscriptionProtocol" => {
-                                builder = builder.set_subscription_protocol(
+                            "subscriberStatus" => {
+                                builder = builder.set_subscriber_status(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::types::EndpointProtocol::from(u.as_ref())
+                                            crate::types::SubscriberStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
-                                );
-                            }
-                            "externalId" => {
-                                builder = builder.set_external_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "createdAt" => {
-                                builder = builder.set_created_at(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                                );
-                            }
-                            "updatedAt" => {
-                                builder = builder.set_updated_at(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "resourceShareArn" => {
@@ -166,6 +132,16 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "createdAt" => {
+                                builder = builder.set_created_at(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
+                                );
+                            }
+                            "updatedAt" => {
+                                builder = builder.set_updated_at(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

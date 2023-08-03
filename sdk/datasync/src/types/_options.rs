@@ -80,8 +80,7 @@ pub struct Options {
     /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     #[doc(hidden)]
     pub bytes_per_second: ::std::option::Option<i64>,
-    /// <p>Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which means the tasks will be queued.</p>
-    /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
+    /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     #[doc(hidden)]
     pub task_queueing: ::std::option::Option<crate::types::TaskQueueing>,
     /// <p>Specifies the type of logs that DataSync publishes to a Amazon CloudWatch Logs log group. To specify the log group, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.</p>
@@ -204,8 +203,7 @@ impl Options {
     pub fn bytes_per_second(&self) -> ::std::option::Option<i64> {
         self.bytes_per_second
     }
-    /// <p>Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which means the tasks will be queued.</p>
-    /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
+    /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub fn task_queueing(&self) -> ::std::option::Option<&crate::types::TaskQueueing> {
         self.task_queueing.as_ref()
     }
@@ -482,14 +480,12 @@ impl OptionsBuilder {
         self.bytes_per_second = input;
         self
     }
-    /// <p>Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which means the tasks will be queued.</p>
-    /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
+    /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub fn task_queueing(mut self, input: crate::types::TaskQueueing) -> Self {
         self.task_queueing = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether tasks should be queued before executing the tasks. The default is <code>ENABLED</code>, which means the tasks will be queued.</p>
-    /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
+    /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub fn set_task_queueing(
         mut self,
         input: ::std::option::Option<crate::types::TaskQueueing>,

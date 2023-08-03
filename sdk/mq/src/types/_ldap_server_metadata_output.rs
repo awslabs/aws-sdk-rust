@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LdapServerMetadataOutput {
-    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
     #[doc(hidden)]
     pub hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
@@ -36,7 +36,7 @@ pub struct LdapServerMetadataOutput {
     pub user_search_subtree: ::std::option::Option<bool>,
 }
 impl LdapServerMetadataOutput {
-    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
     pub fn hosts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.hosts.as_deref()
     }
@@ -106,14 +106,14 @@ impl LdapServerMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
-    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
     pub fn hosts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hosts.unwrap_or_default();
         v.push(input.into());
         self.hosts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
+    /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
     pub fn set_hosts(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

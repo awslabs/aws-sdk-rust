@@ -11,6 +11,24 @@ pub struct GridViewConfiguration {
     #[doc(hidden)]
     pub presenter_only_configuration:
         ::std::option::Option<crate::types::PresenterOnlyConfiguration>,
+    /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
+    #[doc(hidden)]
+    pub active_speaker_only_configuration:
+        ::std::option::Option<crate::types::ActiveSpeakerOnlyConfiguration>,
+    /// <p>The configuration settings for a horizontal layout.</p>
+    #[doc(hidden)]
+    pub horizontal_layout_configuration:
+        ::std::option::Option<crate::types::HorizontalLayoutConfiguration>,
+    /// <p>The configuration settings for a vertical layout.</p>
+    #[doc(hidden)]
+    pub vertical_layout_configuration:
+        ::std::option::Option<crate::types::VerticalLayoutConfiguration>,
+    /// <p>The attribute settings for the video tiles.</p>
+    #[doc(hidden)]
+    pub video_attribute: ::std::option::Option<crate::types::VideoAttribute>,
+    /// <p>The orientation setting, horizontal or vertical.</p>
+    #[doc(hidden)]
+    pub canvas_orientation: ::std::option::Option<crate::types::CanvasOrientation>,
 }
 impl GridViewConfiguration {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
@@ -24,6 +42,32 @@ impl GridViewConfiguration {
         &self,
     ) -> ::std::option::Option<&crate::types::PresenterOnlyConfiguration> {
         self.presenter_only_configuration.as_ref()
+    }
+    /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
+    pub fn active_speaker_only_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ActiveSpeakerOnlyConfiguration> {
+        self.active_speaker_only_configuration.as_ref()
+    }
+    /// <p>The configuration settings for a horizontal layout.</p>
+    pub fn horizontal_layout_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::HorizontalLayoutConfiguration> {
+        self.horizontal_layout_configuration.as_ref()
+    }
+    /// <p>The configuration settings for a vertical layout.</p>
+    pub fn vertical_layout_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VerticalLayoutConfiguration> {
+        self.vertical_layout_configuration.as_ref()
+    }
+    /// <p>The attribute settings for the video tiles.</p>
+    pub fn video_attribute(&self) -> ::std::option::Option<&crate::types::VideoAttribute> {
+        self.video_attribute.as_ref()
+    }
+    /// <p>The orientation setting, horizontal or vertical.</p>
+    pub fn canvas_orientation(&self) -> ::std::option::Option<&crate::types::CanvasOrientation> {
+        self.canvas_orientation.as_ref()
     }
 }
 impl GridViewConfiguration {
@@ -42,6 +86,14 @@ pub struct GridViewConfigurationBuilder {
     pub(crate) content_share_layout: ::std::option::Option<crate::types::ContentShareLayoutOption>,
     pub(crate) presenter_only_configuration:
         ::std::option::Option<crate::types::PresenterOnlyConfiguration>,
+    pub(crate) active_speaker_only_configuration:
+        ::std::option::Option<crate::types::ActiveSpeakerOnlyConfiguration>,
+    pub(crate) horizontal_layout_configuration:
+        ::std::option::Option<crate::types::HorizontalLayoutConfiguration>,
+    pub(crate) vertical_layout_configuration:
+        ::std::option::Option<crate::types::VerticalLayoutConfiguration>,
+    pub(crate) video_attribute: ::std::option::Option<crate::types::VideoAttribute>,
+    pub(crate) canvas_orientation: ::std::option::Option<crate::types::CanvasOrientation>,
 }
 impl GridViewConfigurationBuilder {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
@@ -73,11 +125,90 @@ impl GridViewConfigurationBuilder {
         self.presenter_only_configuration = input;
         self
     }
+    /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
+    pub fn active_speaker_only_configuration(
+        mut self,
+        input: crate::types::ActiveSpeakerOnlyConfiguration,
+    ) -> Self {
+        self.active_speaker_only_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
+    pub fn set_active_speaker_only_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ActiveSpeakerOnlyConfiguration>,
+    ) -> Self {
+        self.active_speaker_only_configuration = input;
+        self
+    }
+    /// <p>The configuration settings for a horizontal layout.</p>
+    pub fn horizontal_layout_configuration(
+        mut self,
+        input: crate::types::HorizontalLayoutConfiguration,
+    ) -> Self {
+        self.horizontal_layout_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for a horizontal layout.</p>
+    pub fn set_horizontal_layout_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::HorizontalLayoutConfiguration>,
+    ) -> Self {
+        self.horizontal_layout_configuration = input;
+        self
+    }
+    /// <p>The configuration settings for a vertical layout.</p>
+    pub fn vertical_layout_configuration(
+        mut self,
+        input: crate::types::VerticalLayoutConfiguration,
+    ) -> Self {
+        self.vertical_layout_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for a vertical layout.</p>
+    pub fn set_vertical_layout_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::VerticalLayoutConfiguration>,
+    ) -> Self {
+        self.vertical_layout_configuration = input;
+        self
+    }
+    /// <p>The attribute settings for the video tiles.</p>
+    pub fn video_attribute(mut self, input: crate::types::VideoAttribute) -> Self {
+        self.video_attribute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The attribute settings for the video tiles.</p>
+    pub fn set_video_attribute(
+        mut self,
+        input: ::std::option::Option<crate::types::VideoAttribute>,
+    ) -> Self {
+        self.video_attribute = input;
+        self
+    }
+    /// <p>The orientation setting, horizontal or vertical.</p>
+    pub fn canvas_orientation(mut self, input: crate::types::CanvasOrientation) -> Self {
+        self.canvas_orientation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The orientation setting, horizontal or vertical.</p>
+    pub fn set_canvas_orientation(
+        mut self,
+        input: ::std::option::Option<crate::types::CanvasOrientation>,
+    ) -> Self {
+        self.canvas_orientation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GridViewConfiguration`](crate::types::GridViewConfiguration).
     pub fn build(self) -> crate::types::GridViewConfiguration {
         crate::types::GridViewConfiguration {
             content_share_layout: self.content_share_layout,
             presenter_only_configuration: self.presenter_only_configuration,
+            active_speaker_only_configuration: self.active_speaker_only_configuration,
+            horizontal_layout_configuration: self.horizontal_layout_configuration,
+            vertical_layout_configuration: self.vertical_layout_configuration,
+            video_attribute: self.video_attribute,
+            canvas_orientation: self.canvas_orientation,
         }
     }
 }

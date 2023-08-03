@@ -32,7 +32,7 @@ pub struct StackSet {
     #[doc(hidden)]
     pub stack_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub administration_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
@@ -60,7 +60,7 @@ pub struct StackSet {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     #[doc(hidden)]
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
     #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -102,7 +102,7 @@ impl StackSet {
         self.stack_set_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(&self) -> ::std::option::Option<&str> {
         self.administration_role_arn.as_deref()
     }
@@ -138,7 +138,7 @@ impl StackSet {
     pub fn managed_execution(&self) -> ::std::option::Option<&crate::types::ManagedExecution> {
         self.managed_execution.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
     pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.regions.as_deref()
     }
@@ -316,7 +316,7 @@ impl StackSetBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -325,7 +325,7 @@ impl StackSetBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the stack set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_administration_role_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -442,13 +442,14 @@ impl StackSetBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
+    /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
     pub fn set_regions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

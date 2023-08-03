@@ -91,6 +91,10 @@ pub struct TranscriptionJob {
     pub language_id_settings: ::std::option::Option<
         ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
     >,
+    /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
+    #[doc(hidden)]
+    pub toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJob {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -207,6 +211,12 @@ impl TranscriptionJob {
     > {
         self.language_id_settings.as_ref()
     }
+    /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
+    pub fn toxicity_detection(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
+        self.toxicity_detection.as_deref()
+    }
 }
 impl TranscriptionJob {
     /// Creates a new builder-style object to manufacture [`TranscriptionJob`](crate::types::TranscriptionJob).
@@ -248,6 +258,8 @@ pub struct TranscriptionJobBuilder {
     pub(crate) language_id_settings: ::std::option::Option<
         ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
     >,
+    pub(crate) toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJobBuilder {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -598,6 +610,25 @@ impl TranscriptionJobBuilder {
         self.language_id_settings = input;
         self
     }
+    /// Appends an item to `toxicity_detection`.
+    ///
+    /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
+    ///
+    /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
+    pub fn toxicity_detection(mut self, input: crate::types::ToxicityDetectionSettings) -> Self {
+        let mut v = self.toxicity_detection.unwrap_or_default();
+        v.push(input);
+        self.toxicity_detection = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
+    pub fn set_toxicity_detection(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
+    ) -> Self {
+        self.toxicity_detection = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TranscriptionJob`](crate::types::TranscriptionJob).
     pub fn build(self) -> crate::types::TranscriptionJob {
         crate::types::TranscriptionJob {
@@ -624,6 +655,7 @@ impl TranscriptionJobBuilder {
             tags: self.tags,
             subtitles: self.subtitles,
             language_id_settings: self.language_id_settings,
+            toxicity_detection: self.toxicity_detection,
         }
     }
 }

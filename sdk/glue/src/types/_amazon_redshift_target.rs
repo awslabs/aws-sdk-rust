@@ -7,7 +7,7 @@ pub struct AmazonRedshiftTarget {
     /// <p>The name of the Amazon Redshift target.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the data of the Amazon Reshift target node.</p>
+    /// <p>Specifies the data of the Amazon Redshift target node.</p>
     #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
     /// <p>The nodes that are inputs to the data target.</p>
@@ -19,7 +19,7 @@ impl AmazonRedshiftTarget {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the data of the Amazon Reshift target node.</p>
+    /// <p>Specifies the data of the Amazon Redshift target node.</p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::AmazonRedshiftNodeData> {
         self.data.as_ref()
     }
@@ -56,12 +56,12 @@ impl AmazonRedshiftTargetBuilder {
         self.name = input;
         self
     }
-    /// <p>Specifies the data of the Amazon Reshift target node.</p>
+    /// <p>Specifies the data of the Amazon Redshift target node.</p>
     pub fn data(mut self, input: crate::types::AmazonRedshiftNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the data of the Amazon Reshift target node.</p>
+    /// <p>Specifies the data of the Amazon Redshift target node.</p>
     pub fn set_data(
         mut self,
         input: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,

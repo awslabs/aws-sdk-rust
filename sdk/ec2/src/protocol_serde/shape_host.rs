@@ -250,6 +250,19 @@ pub fn de_host(
                 builder = builder.set_host_maintenance(var_19);
             }
             ,
+            s if s.matches("assetId") /* AssetId com.amazonaws.ec2#Host$AssetId */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_asset_id(var_20);
+            }
+            ,
             _ => {}
         }
     }

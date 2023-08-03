@@ -105,12 +105,12 @@ impl ListStudioLifecycleConfigsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator{
         crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

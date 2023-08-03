@@ -20,8 +20,11 @@
 ///     EnvironmentStatus::Deleting => { /* ... */ },
 ///     EnvironmentStatus::FailedCreation => { /* ... */ },
 ///     EnvironmentStatus::FailedDeletion => { /* ... */ },
+///     EnvironmentStatus::FailedUpdatingNetwork => { /* ... */ },
 ///     EnvironmentStatus::RetryDeletion => { /* ... */ },
 ///     EnvironmentStatus::Suspended => { /* ... */ },
+///     EnvironmentStatus::UpdateNetworkRequested => { /* ... */ },
+///     EnvironmentStatus::UpdatingNetwork => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -72,9 +75,15 @@ pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedDeletion,
     #[allow(missing_docs)] // documentation missing in model
+    FailedUpdatingNetwork,
+    #[allow(missing_docs)] // documentation missing in model
     RetryDeletion,
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateNetworkRequested,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingNetwork,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -89,8 +98,11 @@ impl ::std::convert::From<&str> for EnvironmentStatus {
             "DELETING" => EnvironmentStatus::Deleting,
             "FAILED_CREATION" => EnvironmentStatus::FailedCreation,
             "FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
+            "FAILED_UPDATING_NETWORK" => EnvironmentStatus::FailedUpdatingNetwork,
             "RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
             "SUSPENDED" => EnvironmentStatus::Suspended,
+            "UPDATE_NETWORK_REQUESTED" => EnvironmentStatus::UpdateNetworkRequested,
+            "UPDATING_NETWORK" => EnvironmentStatus::UpdatingNetwork,
             other => {
                 EnvironmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -116,8 +128,11 @@ impl EnvironmentStatus {
             EnvironmentStatus::Deleting => "DELETING",
             EnvironmentStatus::FailedCreation => "FAILED_CREATION",
             EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
+            EnvironmentStatus::FailedUpdatingNetwork => "FAILED_UPDATING_NETWORK",
             EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
             EnvironmentStatus::Suspended => "SUSPENDED",
+            EnvironmentStatus::UpdateNetworkRequested => "UPDATE_NETWORK_REQUESTED",
+            EnvironmentStatus::UpdatingNetwork => "UPDATING_NETWORK",
             EnvironmentStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -132,8 +147,11 @@ impl EnvironmentStatus {
             "DELETING",
             "FAILED_CREATION",
             "FAILED_DELETION",
+            "FAILED_UPDATING_NETWORK",
             "RETRY_DELETION",
             "SUSPENDED",
+            "UPDATE_NETWORK_REQUESTED",
+            "UPDATING_NETWORK",
         ]
     }
 }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmbeddedSourceSettings {
-    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     #[doc(hidden)]
     pub convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -18,7 +18,7 @@ pub struct EmbeddedSourceSettings {
     pub terminate_captions: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
 }
 impl EmbeddedSourceSettings {
-    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn convert608_to708(
         &self,
     ) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
@@ -58,12 +58,12 @@ pub struct EmbeddedSourceSettingsBuilder {
     pub(crate) terminate_captions: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
 }
 impl EmbeddedSourceSettingsBuilder {
-    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn convert608_to708(mut self, input: crate::types::EmbeddedConvert608To708) -> Self {
         self.convert608_to708 = ::std::option::Option::Some(input);
         self
     }
-    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+    /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn set_convert608_to708(
         mut self,
         input: ::std::option::Option<crate::types::EmbeddedConvert608To708>,

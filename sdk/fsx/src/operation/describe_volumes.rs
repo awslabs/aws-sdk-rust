@@ -160,6 +160,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for DescribeVolumes {
             crate::protocol_serde::shape_describe_volumes::de_describe_volumes_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

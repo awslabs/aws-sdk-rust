@@ -7,6 +7,12 @@ pub use crate::types::_replication_task_stats::ReplicationTaskStats;
 
 pub use crate::types::_migration_type_value::MigrationTypeValue;
 
+pub use crate::types::_replication::Replication;
+
+pub use crate::types::_replication_stats::ReplicationStats;
+
+pub use crate::types::_provision_data::ProvisionData;
+
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRun;
 
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgress;
@@ -35,9 +41,15 @@ pub use crate::types::_availability_zone::AvailabilityZone;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
 
+pub use crate::types::_replication_config::ReplicationConfig;
+
+pub use crate::types::_compute_config::ComputeConfig;
+
 pub use crate::types::_event_subscription::EventSubscription;
 
 pub use crate::types::_endpoint::Endpoint;
+
+pub use crate::types::_timestream_settings::TimestreamSettings;
 
 pub use crate::types::_gcp_my_sql_settings::GcpMySqlSettings;
 
@@ -71,6 +83,10 @@ pub use crate::types::_my_sql_settings::MySqlSettings;
 
 pub use crate::types::_postgre_sql_settings::PostgreSqlSettings;
 
+pub use crate::types::_database_mode::DatabaseMode;
+
+pub use crate::types::_long_varchar_mapping_type::LongVarcharMappingType;
+
 pub use crate::types::_plugin_name_value::PluginNameValue;
 
 pub use crate::types::_redshift_settings::RedshiftSettings;
@@ -82,6 +98,8 @@ pub use crate::types::_neptune_settings::NeptuneSettings;
 pub use crate::types::_elasticsearch_settings::ElasticsearchSettings;
 
 pub use crate::types::_kafka_settings::KafkaSettings;
+
+pub use crate::types::_kafka_ssl_endpoint_identification_algorithm::KafkaSslEndpointIdentificationAlgorithm;
 
 pub use crate::types::_kafka_sasl_mechanism::KafkaSaslMechanism;
 
@@ -227,11 +245,15 @@ mod _collector_status;
 
 mod _compression_type_value;
 
+mod _compute_config;
+
 mod _connection;
 
 mod _data_format_value;
 
 mod _database_instance_software_details_response;
+
+mod _database_mode;
 
 mod _database_response;
 
@@ -285,9 +307,13 @@ mod _kafka_security_protocol;
 
 mod _kafka_settings;
 
+mod _kafka_ssl_endpoint_identification_algorithm;
+
 mod _kinesis_settings;
 
 mod _limitation;
+
+mod _long_varchar_mapping_type;
 
 mod _message_format_value;
 
@@ -315,6 +341,8 @@ mod _plugin_name_value;
 
 mod _postgre_sql_settings;
 
+mod _provision_data;
+
 mod _rds_configuration;
 
 mod _rds_recommendation;
@@ -341,6 +369,10 @@ mod _release_status_values;
 
 mod _reload_option_value;
 
+mod _replication;
+
+mod _replication_config;
+
 mod _replication_endpoint_type_value;
 
 mod _replication_instance;
@@ -348,6 +380,8 @@ mod _replication_instance;
 mod _replication_instance_task_log;
 
 mod _replication_pending_modified_values;
+
+mod _replication_stats;
 
 mod _replication_subnet_group;
 
@@ -396,6 +430,8 @@ mod _table_to_reload;
 mod _tag;
 
 mod _target_db_type;
+
+mod _timestream_settings;
 
 mod _tlog_access_mode;
 

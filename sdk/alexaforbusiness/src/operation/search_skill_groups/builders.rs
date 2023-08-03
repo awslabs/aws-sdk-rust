@@ -6,6 +6,7 @@ pub use crate::operation::search_skill_groups::_search_skill_groups_input::Searc
 /// Fluent builder constructing a request to `SearchSkillGroups`.
 ///
 /// <p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchSkillGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

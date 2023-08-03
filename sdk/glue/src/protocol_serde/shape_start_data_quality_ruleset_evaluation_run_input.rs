@@ -42,5 +42,21 @@ pub fn ser_start_data_quality_ruleset_evaluation_run_input(
         }
         array_10.finish();
     }
+    if let Some(var_12) = &input.additional_data_sources {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("AdditionalDataSources").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                crate::protocol_serde::shape_data_source::ser_data_source(
+                    &mut object_16,
+                    value_15,
+                )?;
+                object_16.finish();
+            }
+        }
+        object_13.finish();
+    }
     Ok(())
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlsOutput {
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     #[doc(hidden)]
     pub control_metadata_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
@@ -13,7 +13,7 @@ pub struct ListControlsOutput {
     _request_id: Option<String>,
 }
 impl ListControlsOutput {
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     pub fn control_metadata_list(&self) -> ::std::option::Option<&[crate::types::ControlMetadata]> {
         self.control_metadata_list.as_deref()
     }
@@ -50,14 +50,14 @@ impl ListControlsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_metadata_list`](Self::set_control_metadata_list).
     ///
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     pub fn control_metadata_list(mut self, input: crate::types::ControlMetadata) -> Self {
         let mut v = self.control_metadata_list.unwrap_or_default();
         v.push(input);
         self.control_metadata_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     pub fn set_control_metadata_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,

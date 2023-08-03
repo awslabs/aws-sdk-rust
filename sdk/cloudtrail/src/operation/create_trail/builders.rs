@@ -173,12 +173,12 @@ impl CreateTrailFluentBuilder {
         self.inner = self.inner.set_include_global_service_events(input);
         self
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn is_multi_region_trail(mut self, input: bool) -> Self {
         self.inner = self.inner.is_multi_region_trail(input);
         self
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_multi_region_trail(input);
         self

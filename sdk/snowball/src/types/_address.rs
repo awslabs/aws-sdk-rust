@@ -46,6 +46,9 @@ pub struct Address {
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
     #[doc(hidden)]
     pub is_restricted: bool,
+    /// <p>Differentiates between delivery address and pickup address in the customer account. Provided at job creation.</p>
+    #[doc(hidden)]
+    pub r#type: ::std::option::Option<crate::types::AddressType>,
 }
 impl Address {
     /// <p>The unique ID for an address.</p>
@@ -104,6 +107,10 @@ impl Address {
     pub fn is_restricted(&self) -> bool {
         self.is_restricted
     }
+    /// <p>Differentiates between delivery address and pickup address in the customer account. Provided at job creation.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AddressType> {
+        self.r#type.as_ref()
+    }
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::types::Address).
@@ -132,6 +139,7 @@ pub struct AddressBuilder {
     pub(crate) postal_code: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) is_restricted: ::std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AddressType>,
 }
 impl AddressBuilder {
     /// <p>The unique ID for an address.</p>
@@ -286,6 +294,16 @@ impl AddressBuilder {
         self.is_restricted = input;
         self
     }
+    /// <p>Differentiates between delivery address and pickup address in the customer account. Provided at job creation.</p>
+    pub fn r#type(mut self, input: crate::types::AddressType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Differentiates between delivery address and pickup address in the customer account. Provided at job creation.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
+        self.r#type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
@@ -303,6 +321,7 @@ impl AddressBuilder {
             postal_code: self.postal_code,
             phone_number: self.phone_number,
             is_restricted: self.is_restricted.unwrap_or_default(),
+            r#type: self.r#type,
         }
     }
 }

@@ -185,6 +185,8 @@ pub enum DeleteVolumeError {
     IncompatibleParameterError(crate::types::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
+    ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::types::error::VolumeNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -210,6 +212,7 @@ impl ::std::fmt::Display for DeleteVolumeError {
             Self::BadRequest(_inner) => _inner.fmt(f),
             Self::IncompatibleParameterError(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::ServiceLimitExceeded(_inner) => _inner.fmt(f),
             Self::VolumeNotFound(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -225,6 +228,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteVolumeE
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerError(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceLimitExceeded(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::VolumeNotFound(_inner) => {
@@ -284,6 +290,7 @@ impl DeleteVolumeError {
             Self::BadRequest(e) => e.meta(),
             Self::IncompatibleParameterError(e) => e.meta(),
             Self::InternalServerError(e) => e.meta(),
+            Self::ServiceLimitExceeded(e) => e.meta(),
             Self::VolumeNotFound(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -300,6 +307,10 @@ impl DeleteVolumeError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
     }
+    /// Returns `true` if the error kind is `DeleteVolumeError::ServiceLimitExceeded`.
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(self, Self::ServiceLimitExceeded(_))
+    }
     /// Returns `true` if the error kind is `DeleteVolumeError::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(self, Self::VolumeNotFound(_))
@@ -311,6 +322,7 @@ impl ::std::error::Error for DeleteVolumeError {
             Self::BadRequest(_inner) => ::std::option::Option::Some(_inner),
             Self::IncompatibleParameterError(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::VolumeNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

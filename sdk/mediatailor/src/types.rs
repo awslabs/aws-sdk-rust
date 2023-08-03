@@ -69,6 +69,8 @@ pub use crate::types::_response_output_item::ResponseOutputItem;
 
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettings;
 
+pub use crate::types::_ad_markup_type::AdMarkupType;
+
 pub use crate::types::_dash_playlist_settings::DashPlaylistSettings;
 
 pub use crate::types::_slate_source::SlateSource;
@@ -91,6 +93,8 @@ pub use crate::types::_clip_range::ClipRange;
 
 pub use crate::types::_ad_break::AdBreak;
 
+pub use crate::types::_key_value_pair::KeyValuePair;
+
 pub use crate::types::_time_signal_message::TimeSignalMessage;
 
 pub use crate::types::_segmentation_descriptor::SegmentationDescriptor;
@@ -111,6 +115,8 @@ pub use crate::types::_update_program_transition::UpdateProgramTransition;
 
 pub use crate::types::_alert::Alert;
 
+pub use crate::types::_alert_category::AlertCategory;
+
 mod _access_configuration;
 
 mod _access_type;
@@ -119,7 +125,11 @@ mod _ad_break;
 
 mod _ad_marker_passthrough;
 
+mod _ad_markup_type;
+
 mod _alert;
+
+mod _alert_category;
 
 mod _avail_matching_criteria;
 
@@ -152,6 +162,8 @@ mod _hls_playlist_settings;
 mod _http_configuration;
 
 mod _http_package_configuration;
+
+mod _key_value_pair;
 
 mod _live_pre_roll_configuration;
 

@@ -13,6 +13,7 @@ pub struct PublishLayerVersionInput {
     #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::LayerVersionContentInput>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     #[doc(hidden)]
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     /// <p>The layer's software license. It can be any of the following:</p>
@@ -42,6 +43,7 @@ impl PublishLayerVersionInput {
         self.content.as_ref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtimes(&self) -> ::std::option::Option<&[crate::types::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
@@ -121,6 +123,7 @@ impl PublishLayerVersionInputBuilder {
     /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
     ///
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtimes(mut self, input: crate::types::Runtime) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
         v.push(input);
@@ -128,6 +131,7 @@ impl PublishLayerVersionInputBuilder {
         self
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_compatible_runtimes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,

@@ -58,6 +58,22 @@ pub fn de_start_restore_job_http_error(
                                                     }
             tmp
         }),
+        "InvalidRequestException" => crate::operation::start_restore_job::StartRestoreJobError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::start_restore_job::StartRestoreJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "MissingParameterValueException" => crate::operation::start_restore_job::StartRestoreJobError::MissingParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =

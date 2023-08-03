@@ -6,6 +6,7 @@ pub use crate::operation::delete_gateway_group::_delete_gateway_group_input::Del
 /// Fluent builder constructing a request to `DeleteGatewayGroup`.
 ///
 /// <p>Deletes a gateway group.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGatewayGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

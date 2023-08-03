@@ -41,17 +41,26 @@ pub struct Place {
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     #[doc(hidden)]
     pub interpolated: ::std::option::Option<bool>,
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     #[doc(hidden)]
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
+    /// </note>
     #[doc(hidden)]
     pub unit_type: ::std::option::Option<::std::string::String>,
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub unit_number: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Location categories that describe this Place.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    #[doc(hidden)]
+    pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
@@ -101,19 +110,30 @@ impl Place {
     pub fn interpolated(&self) -> ::std::option::Option<bool> {
         self.interpolated
     }
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
+    /// </note>
     pub fn unit_type(&self) -> ::std::option::Option<&str> {
         self.unit_type.as_deref()
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(&self) -> ::std::option::Option<&str> {
         self.unit_number.as_deref()
+    }
+    /// <p>The Amazon Location categories that describe this Place.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn categories(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.categories.as_deref()
+    }
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn supplemental_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.supplemental_categories.as_deref()
     }
 }
 impl Place {
@@ -143,6 +163,9 @@ pub struct PlaceBuilder {
     pub(crate) time_zone: ::std::option::Option<crate::types::TimeZone>,
     pub(crate) unit_type: ::std::option::Option<::std::string::String>,
     pub(crate) unit_number: ::std::option::Option<::std::string::String>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supplemental_categories:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlaceBuilder {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
@@ -270,38 +293,85 @@ impl PlaceBuilder {
         self.interpolated = input;
         self
     }
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub fn time_zone(mut self, input: crate::types::TimeZone) -> Self {
         self.time_zone = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
+    /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<crate::types::TimeZone>) -> Self {
         self.time_zone = input;
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
+    /// </note>
     pub fn unit_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>Returned only for a place index that uses Esri as a data provider.</p>
+    /// </note>
     pub fn set_unit_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_type = input;
         self
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn set_unit_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_number = input;
+        self
+    }
+    /// Appends an item to `categories`.
+    ///
+    /// To override the contents of this collection use [`set_categories`](Self::set_categories).
+    ///
+    /// <p>The Amazon Location categories that describe this Place.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.categories.unwrap_or_default();
+        v.push(input.into());
+        self.categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Location categories that describe this Place.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn set_categories(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.categories = input;
+        self
+    }
+    /// Appends an item to `supplemental_categories`.
+    ///
+    /// To override the contents of this collection use [`set_supplemental_categories`](Self::set_supplemental_categories).
+    ///
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn supplemental_categories(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.supplemental_categories.unwrap_or_default();
+        v.push(input.into());
+        self.supplemental_categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
+    pub fn set_supplemental_categories(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.supplemental_categories = input;
         self
     }
     /// Consumes the builder and constructs a [`Place`](crate::types::Place).
@@ -321,6 +391,8 @@ impl PlaceBuilder {
             time_zone: self.time_zone,
             unit_type: self.unit_type,
             unit_number: self.unit_number,
+            categories: self.categories,
+            supplemental_categories: self.supplemental_categories,
         }
     }
 }

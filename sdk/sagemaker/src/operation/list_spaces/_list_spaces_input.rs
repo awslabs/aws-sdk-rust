@@ -6,7 +6,7 @@ pub struct ListSpacesInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Returns a list up to a specified limit.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -27,7 +27,7 @@ impl ListSpacesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Returns a list up to a specified limit.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -79,12 +79,12 @@ impl ListSpacesInputBuilder {
         self.next_token = input;
         self
     }
-    /// <p>Returns a list up to a specified limit.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns a list up to a specified limit.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

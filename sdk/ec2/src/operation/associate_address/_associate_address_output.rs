@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAddressOutput {
-    /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
     #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateAddressOutput {
-    /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
@@ -37,7 +37,7 @@ pub struct AssociateAddressOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateAddressOutputBuilder {
-    /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
     pub fn association_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -45,7 +45,7 @@ impl AssociateAddressOutputBuilder {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
+    /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
     pub fn set_association_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

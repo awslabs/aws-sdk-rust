@@ -7,32 +7,53 @@ pub struct DomainMembership {
     /// <p>The identifier of the Active Directory Domain.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
+    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>, and so on.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    /// <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
     #[doc(hidden)]
     pub fqdn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
     #[doc(hidden)]
     pub iam_role_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Active Directory organizational unit for the DB instance or cluster.</p>
+    #[doc(hidden)]
+    pub ou: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
+    #[doc(hidden)]
+    pub auth_secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
+    #[doc(hidden)]
+    pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainMembership {
     /// <p>The identifier of the Active Directory Domain.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
+    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>, and so on.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    /// <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
     pub fn fqdn(&self) -> ::std::option::Option<&str> {
         self.fqdn.as_deref()
     }
-    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
     pub fn iam_role_name(&self) -> ::std::option::Option<&str> {
         self.iam_role_name.as_deref()
+    }
+    /// <p>The Active Directory organizational unit for the DB instance or cluster.</p>
+    pub fn ou(&self) -> ::std::option::Option<&str> {
+        self.ou.as_deref()
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
+    pub fn auth_secret_arn(&self) -> ::std::option::Option<&str> {
+        self.auth_secret_arn.as_deref()
+    }
+    /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
+    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.dns_ips.as_deref()
     }
 }
 impl DomainMembership {
@@ -52,6 +73,9 @@ pub struct DomainMembershipBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) fqdn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ou: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainMembershipBuilder {
     /// <p>The identifier of the Active Directory Domain.</p>
@@ -64,27 +88,27 @@ impl DomainMembershipBuilder {
         self.domain = input;
         self
     }
-    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
+    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>, and so on.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
+    /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>, and so on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    /// <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
     pub fn fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fqdn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    /// <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
     pub fn set_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fqdn = input;
         self
     }
-    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
     pub fn iam_role_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -92,12 +116,57 @@ impl DomainMembershipBuilder {
         self.iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
     pub fn set_iam_role_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.iam_role_name = input;
+        self
+    }
+    /// <p>The Active Directory organizational unit for the DB instance or cluster.</p>
+    pub fn ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ou = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Active Directory organizational unit for the DB instance or cluster.</p>
+    pub fn set_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ou = input;
+        self
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
+    pub fn auth_secret_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auth_secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
+    pub fn set_auth_secret_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.auth_secret_arn = input;
+        self
+    }
+    /// Appends an item to `dns_ips`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+    ///
+    /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
+    pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ips.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ips = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
+    pub fn set_dns_ips(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.dns_ips = input;
         self
     }
     /// Consumes the builder and constructs a [`DomainMembership`](crate::types::DomainMembership).
@@ -107,6 +176,9 @@ impl DomainMembershipBuilder {
             status: self.status,
             fqdn: self.fqdn,
             iam_role_name: self.iam_role_name,
+            ou: self.ou,
+            auth_secret_arn: self.auth_secret_arn,
+            dns_ips: self.dns_ips,
         }
     }
 }

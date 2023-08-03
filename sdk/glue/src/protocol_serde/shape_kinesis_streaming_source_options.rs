@@ -87,6 +87,11 @@ pub fn ser_kinesis_streaming_source_options(
     if let Some(var_20) = &input.emit_consumer_lag_metrics {
         object.key("EmitConsumerLagMetrics").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.starting_timestamp {
+        object
+            .key("StartingTimestamp")
+            .date_time(var_21, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
     Ok(())
 }
 
@@ -293,6 +298,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "StartingTimestamp" => {
+                                builder = builder.set_starting_timestamp(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

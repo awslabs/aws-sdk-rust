@@ -99,6 +99,15 @@ impl ListIAMPolicyAssignmentsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_iam_policy_assignments::paginator::ListIamPolicyAssignmentsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_iam_policy_assignments::paginator::ListIamPolicyAssignmentsPaginator
+    {
+        crate::operation::list_iam_policy_assignments::paginator::ListIamPolicyAssignmentsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
     pub fn aws_account_id(
         mut self,

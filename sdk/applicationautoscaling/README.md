@@ -15,8 +15,8 @@ With Application Auto Scaling, you can configure automatic scaling for the follo
   - Lambda function provisioned concurrency
   - Amazon Managed Streaming for Apache Kafka broker storage
   - Amazon Neptune clusters
-  - Amazon SageMaker Serverless endpoint provisioned concurrency
   - Amazon SageMaker endpoint variants
+  - Amazon SageMaker Serverless endpoint provisioned concurrency
   - Spot Fleets (Amazon EC2)
   - Custom resources provided by your own applications or services
 
@@ -40,8 +40,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-applicationautoscaling = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-applicationautoscaling = "0.29.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

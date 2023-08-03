@@ -7,11 +7,18 @@ pub struct HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     #[doc(hidden)]
     pub manifest_window_seconds: i32,
+    /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
+    #[doc(hidden)]
+    pub ad_markup_type: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,
 }
 impl HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn manifest_window_seconds(&self) -> i32 {
         self.manifest_window_seconds
+    }
+    /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
+    pub fn ad_markup_type(&self) -> ::std::option::Option<&[crate::types::AdMarkupType]> {
+        self.ad_markup_type.as_deref()
     }
 }
 impl HlsPlaylistSettings {
@@ -28,6 +35,7 @@ impl HlsPlaylistSettings {
 )]
 pub struct HlsPlaylistSettingsBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
+    pub(crate) ad_markup_type: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,
 }
 impl HlsPlaylistSettingsBuilder {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
@@ -40,10 +48,30 @@ impl HlsPlaylistSettingsBuilder {
         self.manifest_window_seconds = input;
         self
     }
+    /// Appends an item to `ad_markup_type`.
+    ///
+    /// To override the contents of this collection use [`set_ad_markup_type`](Self::set_ad_markup_type).
+    ///
+    /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
+    pub fn ad_markup_type(mut self, input: crate::types::AdMarkupType) -> Self {
+        let mut v = self.ad_markup_type.unwrap_or_default();
+        v.push(input);
+        self.ad_markup_type = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
+    pub fn set_ad_markup_type(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,
+    ) -> Self {
+        self.ad_markup_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).
     pub fn build(self) -> crate::types::HlsPlaylistSettings {
         crate::types::HlsPlaylistSettings {
             manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
+            ad_markup_type: self.ad_markup_type,
         }
     }
 }

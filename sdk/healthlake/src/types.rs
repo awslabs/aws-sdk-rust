@@ -15,6 +15,10 @@ pub use crate::types::_export_job_properties::ExportJobProperties;
 
 pub use crate::types::_datastore_properties::DatastoreProperties;
 
+pub use crate::types::_identity_provider_configuration::IdentityProviderConfiguration;
+
+pub use crate::types::_authorization_strategy::AuthorizationStrategy;
+
 pub use crate::types::_preload_data_config::PreloadDataConfig;
 
 pub use crate::types::_preload_data_type::PreloadDataType;
@@ -31,6 +35,8 @@ pub use crate::types::_datastore_status::DatastoreStatus;
 
 pub use crate::types::_datastore_filter::DatastoreFilter;
 
+mod _authorization_strategy;
+
 mod _cmk_type;
 
 mod _datastore_filter;
@@ -42,6 +48,8 @@ mod _datastore_status;
 mod _export_job_properties;
 
 mod _fhir_version;
+
+mod _identity_provider_configuration;
 
 mod _import_job_properties;
 

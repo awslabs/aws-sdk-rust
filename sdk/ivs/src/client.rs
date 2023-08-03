@@ -216,6 +216,8 @@ mod batch_get_channel;
 
 mod batch_get_stream_key;
 
+mod batch_start_viewer_session_revocation;
+
 mod create_channel;
 
 mod create_recording_configuration;
@@ -287,6 +289,8 @@ mod list_streams;
 mod list_tags_for_resource;
 
 mod put_metadata;
+
+mod start_viewer_session_revocation;
 
 mod stop_stream;
 

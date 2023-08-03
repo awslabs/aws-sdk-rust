@@ -17,6 +17,10 @@ pub struct GetCertificatesInput {
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    #[doc(hidden)]
+    pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCertificatesInput {
     /// <p>The status of the certificates for which to return information.</p>
@@ -37,6 +41,11 @@ impl GetCertificatesInput {
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn page_token(&self) -> ::std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl GetCertificatesInput {
     /// Creates a new builder-style object to manufacture [`GetCertificatesInput`](crate::operation::get_certificates::GetCertificatesInput).
@@ -55,6 +64,7 @@ pub struct GetCertificatesInputBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     pub(crate) include_certificate_details: ::std::option::Option<bool>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
+    pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCertificatesInputBuilder {
     /// Appends an item to `certificate_statuses`.
@@ -110,6 +120,18 @@ impl GetCertificatesInputBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.page_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.page_token = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCertificatesInput`](crate::operation::get_certificates::GetCertificatesInput).
     pub fn build(
         self,
@@ -121,6 +143,7 @@ impl GetCertificatesInputBuilder {
             certificate_statuses: self.certificate_statuses,
             include_certificate_details: self.include_certificate_details,
             certificate_name: self.certificate_name,
+            page_token: self.page_token,
         })
     }
 }

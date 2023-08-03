@@ -13,6 +13,7 @@
 /// # let icd10cmrelationshiptype = unimplemented!();
 /// match icd10cmrelationshiptype {
 ///     Icd10CmRelationshipType::Overlap => { /* ... */ },
+///     Icd10CmRelationshipType::Quality => { /* ... */ },
 ///     Icd10CmRelationshipType::SystemOrganSite => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum Icd10CmRelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     Overlap,
     #[allow(missing_docs)] // documentation missing in model
+    Quality,
+    #[allow(missing_docs)] // documentation missing in model
     SystemOrganSite,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for Icd10CmRelationshipType {
     fn from(s: &str) -> Self {
         match s {
             "OVERLAP" => Icd10CmRelationshipType::Overlap,
+            "QUALITY" => Icd10CmRelationshipType::Quality,
             "SYSTEM_ORGAN_SITE" => Icd10CmRelationshipType::SystemOrganSite,
             other => Icd10CmRelationshipType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -77,13 +81,14 @@ impl Icd10CmRelationshipType {
     pub fn as_str(&self) -> &str {
         match self {
             Icd10CmRelationshipType::Overlap => "OVERLAP",
+            Icd10CmRelationshipType::Quality => "QUALITY",
             Icd10CmRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
             Icd10CmRelationshipType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OVERLAP", "SYSTEM_ORGAN_SITE"]
+        &["OVERLAP", "QUALITY", "SYSTEM_ORGAN_SITE"]
     }
 }
 impl ::std::convert::AsRef<str> for Icd10CmRelationshipType {

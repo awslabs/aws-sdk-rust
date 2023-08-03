@@ -5,7 +5,9 @@ pub use crate::operation::create_connector::_create_connector_input::CreateConne
 
 /// Fluent builder constructing a request to `CreateConnector`.
 ///
-/// <p>Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The connector is required for sending files to an externally hosted AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create AS2 connectors</a>.</p>
+/// <p>Creates the connector, which captures the parameters for an outbound connection for the AS2 or SFTP protocol. The connector is required for sending files to an externally hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create AS2 connectors</a>.</p> <note>
+/// <p>You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>) or SFTP (<code>SftpConfig</code>).</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,22 +101,22 @@ impl CreateConnectorFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
         self
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
     }
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn as2_config(mut self, input: crate::types::As2ConnectorConfig) -> Self {
         self.inner = self.inner.as2_config(input);
         self
     }
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn set_as2_config(
         mut self,
         input: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -123,11 +125,13 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_role(input.into());
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_role(input);
         self
@@ -157,6 +161,19 @@ impl CreateConnectorFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn sftp_config(mut self, input: crate::types::SftpConnectorConfig) -> Self {
+        self.inner = self.inner.sftp_config(input);
+        self
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn set_sftp_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_sftp_config(input);
         self
     }
 }

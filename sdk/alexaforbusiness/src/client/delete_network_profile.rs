@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`network_profile_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
     /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::operation::delete_network_profile::DeleteNetworkProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_network_profile(
         &self,
     ) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder {

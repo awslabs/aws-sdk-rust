@@ -48,7 +48,7 @@ pub struct CreateIntentInput {
     /// <p>The identifier of the bot associated with this intent.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
@@ -124,7 +124,7 @@ impl CreateIntentInput {
     pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -365,12 +365,12 @@ impl CreateIntentInputBuilder {
         self.bot_id = input;
         self
     }
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self

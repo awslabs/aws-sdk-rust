@@ -11,9 +11,9 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
-pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 mod _access_denied_exception;
 

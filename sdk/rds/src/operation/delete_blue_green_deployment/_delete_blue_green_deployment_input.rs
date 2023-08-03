@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBlueGreenDeploymentInput {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: </p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
+    /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     #[doc(hidden)]
     pub delete_target: ::std::option::Option<bool>,
 }
 impl DeleteBlueGreenDeploymentInput {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: </p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -23,7 +23,7 @@ impl DeleteBlueGreenDeploymentInput {
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
+    /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(&self) -> ::std::option::Option<bool> {
         self.delete_target
     }
@@ -45,7 +45,7 @@ pub struct DeleteBlueGreenDeploymentInputBuilder {
     pub(crate) delete_target: ::std::option::Option<bool>,
 }
 impl DeleteBlueGreenDeploymentInputBuilder {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: </p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -57,7 +57,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: </p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -69,12 +69,12 @@ impl DeleteBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = input;
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
+    /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(mut self, input: bool) -> Self {
         self.delete_target = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
+    /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn set_delete_target(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_target = input;
         self

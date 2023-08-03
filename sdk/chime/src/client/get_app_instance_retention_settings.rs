@@ -8,6 +8,9 @@ impl super::Client {
     ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The retention settings for the <code>AppInstance</code>.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     /// - On failure, responds with [`SdkError<GetAppInstanceRetentionSettingsError>`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError)
+    #[deprecated(
+        note = "Replaced by GetAppInstanceRetentionSettings in the Amazon Chime SDK Identity Namespace"
+    )]
     pub fn get_app_instance_retention_settings(&self) -> crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsFluentBuilder{
         crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsFluentBuilder::new(self.handle.clone())
     }

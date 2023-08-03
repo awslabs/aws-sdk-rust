@@ -12,6 +12,7 @@
 /// ```text
 /// # let updatetype = unimplemented!();
 /// match updatetype {
+///     UpdateType::Commitment => { /* ... */ },
 ///     UpdateType::Replace => { /* ... */ },
 ///     UpdateType::Return => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
+    Commitment,
+    #[allow(missing_docs)] // documentation missing in model
     Replace,
     #[allow(missing_docs)] // documentation missing in model
     Return,
@@ -57,6 +60,7 @@ pub enum UpdateType {
 impl ::std::convert::From<&str> for UpdateType {
     fn from(s: &str) -> Self {
         match s {
+            "COMMITMENT" => UpdateType::Commitment,
             "REPLACE" => UpdateType::Replace,
             "RETURN" => UpdateType::Return,
             other => UpdateType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl UpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UpdateType::Commitment => "COMMITMENT",
             UpdateType::Replace => "REPLACE",
             UpdateType::Return => "RETURN",
             UpdateType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl UpdateType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REPLACE", "RETURN"]
+        &["COMMITMENT", "REPLACE", "RETURN"]
     }
 }
 impl ::std::convert::AsRef<str> for UpdateType {

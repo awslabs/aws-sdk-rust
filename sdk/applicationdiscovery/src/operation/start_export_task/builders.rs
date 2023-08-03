@@ -5,9 +5,12 @@ pub use crate::operation::start_export_task::_start_export_task_input::StartExpo
 
 /// Fluent builder constructing a request to `StartExportTask`.
 ///
-/// <p> Begins the export of discovered data to an S3 bucket.</p>
-/// <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p>
-/// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both Amazon Web Services Agentless Discovery Connector data and summary data from Amazon Web Services Discovery Agents. Export of summary data is limited to two exports per day. </p>
+/// <p>Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.</p> <note>
+/// <p>Exports might provide an estimate of fees and savings based on certain information that you provide. Fee estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors, including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this report.</p>
+/// </note>
+/// <p>If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter, a summary of all servers, applications, tags, and performance is generated. This data is an aggregation of all server data collected through on-premises tooling, file import, application grouping and applying tags.</p>
+/// <p>If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. Export of detailed agent data is limited to two exports per day.</p>
+/// <p>If you enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code> , an Amazon EC2 instance matching the characteristics of each server in Application Discovery Service is generated. Changing the attributes of the <code>ec2RecommendationsPreferences</code> changes the criteria of the recommendation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,12 +125,12 @@ impl StartExportTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
     pub fn set_filters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
@@ -159,6 +162,19 @@ impl StartExportTaskFluentBuilder {
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
+        self
+    }
+    /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
+    pub fn preferences(mut self, input: crate::types::ExportPreferences) -> Self {
+        self.inner = self.inner.preferences(input);
+        self
+    }
+    /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
+    pub fn set_preferences(
+        mut self,
+        input: ::std::option::Option<crate::types::ExportPreferences>,
+    ) -> Self {
+        self.inner = self.inner.set_preferences(input);
         self
     }
 }

@@ -202,7 +202,7 @@ pub enum Error {
     OpsItemAlreadyExistsException(crate::types::error::OpsItemAlreadyExistsException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::types::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas.</p>
     OpsItemLimitExceededException(crate::types::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::types::error::OpsItemNotFoundException),

@@ -87,6 +87,55 @@ impl From<crate::operation::associate_browser_settings::AssociateBrowserSettings
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_network_settings::AssociateNetworkSettingsError,
             R,
         >,
@@ -335,6 +384,51 @@ impl From<crate::operation::create_identity_provider::CreateIdentityProviderErro
             crate::operation::create_identity_provider::CreateIdentityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_identity_provider::CreateIdentityProviderError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_identity_provider::CreateIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_ip_access_settings::CreateIpAccessSettingsError> for Error {
+    fn from(err: crate::operation::create_ip_access_settings::CreateIpAccessSettingsError) -> Self {
+        match err {
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -654,6 +748,50 @@ impl From<crate::operation::delete_identity_provider::DeleteIdentityProviderErro
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError> for Error {
+    fn from(err: crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError) -> Self {
+        match err {
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_network_settings::DeleteNetworkSettingsError,
             R,
         >,
@@ -917,6 +1055,54 @@ impl From<crate::operation::disassociate_browser_settings::DisassociateBrowserSe
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError,
             R,
         >,
@@ -1162,6 +1348,50 @@ impl From<crate::operation::get_identity_provider::GetIdentityProviderError> for
             crate::operation::get_identity_provider::GetIdentityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_identity_provider::GetIdentityProviderError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_identity_provider::GetIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_ip_access_settings::GetIpAccessSettingsError> for Error {
+    fn from(err: crate::operation::get_ip_access_settings::GetIpAccessSettingsError) -> Self {
+        match err {
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1559,6 +1789,49 @@ impl From<crate::operation::list_identity_providers::ListIdentityProvidersError>
             crate::operation::list_identity_providers::ListIdentityProvidersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_identity_providers::ListIdentityProvidersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_identity_providers::ListIdentityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_ip_access_settings::ListIpAccessSettingsError> for Error {
+    fn from(err: crate::operation::list_ip_access_settings::ListIpAccessSettingsError) -> Self {
+        match err {
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2091,6 +2364,50 @@ impl From<crate::operation::update_identity_provider::UpdateIdentityProviderErro
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError> for Error {
+    fn from(err: crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError) -> Self {
+        match err {
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_network_settings::UpdateNetworkSettingsError,
             R,
         >,
@@ -2165,6 +2482,9 @@ impl From<crate::operation::update_portal::UpdatePortalError> for Error {
         match err {
             crate::operation::update_portal::UpdatePortalError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_portal::UpdatePortalError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::update_portal::UpdatePortalError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)

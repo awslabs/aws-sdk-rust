@@ -12,6 +12,12 @@ pub struct ListFacesInput {
     /// <p>Maximum number of faces to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    #[doc(hidden)]
+    pub user_id: ::std::option::Option<::std::string::String>,
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    #[doc(hidden)]
+    pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
@@ -25,6 +31,14 @@ impl ListFacesInput {
     /// <p>Maximum number of faces to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.face_ids.as_deref()
     }
 }
 impl ListFacesInput {
@@ -43,6 +57,8 @@ pub struct ListFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFacesInputBuilder {
     /// <p>ID of the collection from which to list the faces.</p>
@@ -81,6 +97,35 @@ impl ListFacesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_id = input;
+        self
+    }
+    /// Appends an item to `face_ids`.
+    ///
+    /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
+    ///
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.face_ids.unwrap_or_default();
+        v.push(input.into());
+        self.face_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    pub fn set_face_ids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.face_ids = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
     pub fn build(
         self,
@@ -92,6 +137,8 @@ impl ListFacesInputBuilder {
             collection_id: self.collection_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            user_id: self.user_id,
+            face_ids: self.face_ids,
         })
     }
 }

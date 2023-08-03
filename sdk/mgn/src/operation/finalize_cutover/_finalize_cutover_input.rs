@@ -6,11 +6,18 @@ pub struct FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
+    /// <p>Request to finalize Cutover by Source Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
     pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
+    }
+    /// <p>Request to finalize Cutover by Source Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl FinalizeCutoverInput {
@@ -27,6 +34,7 @@ impl FinalizeCutoverInput {
 )]
 pub struct FinalizeCutoverInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl FinalizeCutoverInputBuilder {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
@@ -45,6 +53,16 @@ impl FinalizeCutoverInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Request to finalize Cutover by Source Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Request to finalize Cutover by Source Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FinalizeCutoverInput`](crate::operation::finalize_cutover::FinalizeCutoverInput).
     pub fn build(
         self,
@@ -54,6 +72,7 @@ impl FinalizeCutoverInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::finalize_cutover::FinalizeCutoverInput {
             source_server_id: self.source_server_id,
+            account_id: self.account_id,
         })
     }
 }

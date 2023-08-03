@@ -6,7 +6,7 @@ pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
@@ -57,7 +57,7 @@ impl CreateApplicationInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -177,7 +177,7 @@ impl CreateApplicationInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -185,7 +185,7 @@ impl CreateApplicationInputBuilder {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn set_release_label(
         mut self,
         input: ::std::option::Option<::std::string::String>,

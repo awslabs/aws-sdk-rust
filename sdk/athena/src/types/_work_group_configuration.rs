@@ -28,7 +28,7 @@ pub struct WorkGroupConfiguration {
     /// <p>Role used in a session for accessing the user's resources.</p>
     #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     #[doc(hidden)]
     pub customer_content_encryption_configuration:
         ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
@@ -72,7 +72,7 @@ impl WorkGroupConfiguration {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
@@ -214,7 +214,7 @@ impl WorkGroupConfigurationBuilder {
         self.execution_role = input;
         self
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(
         mut self,
         input: crate::types::CustomerContentEncryptionConfiguration,
@@ -222,7 +222,7 @@ impl WorkGroupConfigurationBuilder {
         self.customer_content_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn set_customer_content_encryption_configuration(
         mut self,
         input: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,

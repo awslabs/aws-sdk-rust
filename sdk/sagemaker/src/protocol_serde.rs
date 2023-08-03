@@ -468,6 +468,8 @@ pub(crate) mod shape_list_processing_jobs;
 
 pub(crate) mod shape_list_projects;
 
+pub(crate) mod shape_list_resource_catalogs;
+
 pub(crate) mod shape_list_spaces;
 
 pub(crate) mod shape_list_stage_devices;
@@ -1076,6 +1078,8 @@ pub(crate) mod shape_list_processing_jobs_input;
 
 pub(crate) mod shape_list_projects_input;
 
+pub(crate) mod shape_list_resource_catalogs_input;
+
 pub(crate) mod shape_list_spaces_input;
 
 pub(crate) mod shape_list_stage_devices_input;
@@ -1290,7 +1294,11 @@ pub(crate) mod shape_auto_ml_partial_failure_reasons;
 
 pub(crate) mod shape_auto_ml_problem_type_config;
 
+pub(crate) mod shape_auto_ml_resolved_attributes;
+
 pub(crate) mod shape_auto_ml_security_config;
+
+pub(crate) mod shape_autotune;
 
 pub(crate) mod shape_batch_data_capture_config;
 
@@ -1339,6 +1347,8 @@ pub(crate) mod shape_debug_rule_evaluation_statuses;
 pub(crate) mod shape_default_space_settings;
 
 pub(crate) mod shape_deployment_config;
+
+pub(crate) mod shape_deployment_recommendation;
 
 pub(crate) mod shape_deployment_stage;
 
@@ -1624,6 +1634,8 @@ pub(crate) mod shape_oidc_config;
 
 pub(crate) mod shape_online_store_config;
 
+pub(crate) mod shape_online_store_config_update;
+
 pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_output_data_config;
@@ -1696,6 +1708,8 @@ pub(crate) mod shape_rendering_error_list;
 
 pub(crate) mod shape_resolved_attributes;
 
+pub(crate) mod shape_resource_catalog_list;
+
 pub(crate) mod shape_resource_config;
 
 pub(crate) mod shape_resource_config_for_update;
@@ -1715,6 +1729,8 @@ pub(crate) mod shape_search_results_list;
 pub(crate) mod shape_secondary_status_transitions;
 
 pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_selective_execution_config;
 
 pub(crate) mod shape_service_catalog_provisioned_product_details;
 
@@ -1861,6 +1877,8 @@ pub(crate) mod shape_auto_ml_job_completion_criteria;
 pub(crate) mod shape_auto_ml_job_summary;
 
 pub(crate) mod shape_auto_ml_partial_failure_reason;
+
+pub(crate) mod shape_auto_ml_problem_type_resolved_attributes;
 
 pub(crate) mod shape_auto_rollback_config;
 
@@ -2076,6 +2094,8 @@ pub(crate) mod shape_model_card_version_summary;
 
 pub(crate) mod shape_model_data_quality;
 
+pub(crate) mod shape_model_data_source;
+
 pub(crate) mod shape_model_infrastructure_config;
 
 pub(crate) mod shape_model_latency_threshold;
@@ -2208,6 +2228,8 @@ pub(crate) mod shape_r_studio_server_pro_domain_settings;
 
 pub(crate) mod shape_r_studio_server_pro_domain_settings_for_update;
 
+pub(crate) mod shape_real_time_inference_recommendations;
+
 pub(crate) mod shape_realtime_inference_instance_types;
 
 pub(crate) mod shape_recommendation_job_compiled_output_config;
@@ -2220,9 +2242,13 @@ pub(crate) mod shape_recommendation_job_vpc_config;
 
 pub(crate) mod shape_rendering_error;
 
+pub(crate) mod shape_resource_catalog;
+
 pub(crate) mod shape_resource_limits;
 
 pub(crate) mod shape_response_mime_types;
+
+pub(crate) mod shape_rolling_update_policy;
 
 pub(crate) mod shape_s3_storage_config;
 
@@ -2231,6 +2257,10 @@ pub(crate) mod shape_schedule_config;
 pub(crate) mod shape_search_record;
 
 pub(crate) mod shape_secondary_status_transition;
+
+pub(crate) mod shape_selected_step;
+
+pub(crate) mod shape_selected_step_list;
 
 pub(crate) mod shape_shadow_model_variant_config;
 
@@ -2248,6 +2278,8 @@ pub(crate) mod shape_space_details;
 
 pub(crate) mod shape_studio_lifecycle_config_details;
 
+pub(crate) mod shape_tabular_job_config;
+
 pub(crate) mod shape_target_platform;
 
 pub(crate) mod shape_task_keywords;
@@ -2255,6 +2287,8 @@ pub(crate) mod shape_task_keywords;
 pub(crate) mod shape_tensor_board_app_settings;
 
 pub(crate) mod shape_text_classification_job_config;
+
+pub(crate) mod shape_time_series_forecasting_job_config;
 
 pub(crate) mod shape_traffic_pattern;
 
@@ -2279,6 +2313,8 @@ pub(crate) mod shape_trial_component_metric_summary;
 pub(crate) mod shape_trial_component_summary;
 
 pub(crate) mod shape_trial_summary;
+
+pub(crate) mod shape_ttl_duration;
 
 pub(crate) mod shape_tuning_job_completion_criteria;
 
@@ -2312,11 +2348,19 @@ pub(crate) mod shape_auto_ml_container_definition;
 
 pub(crate) mod shape_auto_mls3_data_source;
 
+pub(crate) mod shape_auto_parameter;
+
+pub(crate) mod shape_auto_parameters;
+
 pub(crate) mod shape_best_objective_not_improving;
 
 pub(crate) mod shape_cache_hit_result;
 
 pub(crate) mod shape_candidate_artifact_locations;
+
+pub(crate) mod shape_candidate_generation_config;
+
+pub(crate) mod shape_capacity_size;
 
 pub(crate) mod shape_categorical_parameter_range;
 
@@ -2367,6 +2411,8 @@ pub(crate) mod shape_feature_metadata;
 pub(crate) mod shape_file_source;
 
 pub(crate) mod shape_file_system_data_source;
+
+pub(crate) mod shape_forecast_quantiles;
 
 pub(crate) mod shape_hyper_parameter_tuning_instance_config;
 
@@ -2450,6 +2496,8 @@ pub(crate) mod shape_project;
 
 pub(crate) mod shape_real_time_inference_config;
 
+pub(crate) mod shape_real_time_inference_recommendation;
+
 pub(crate) mod shape_recommendation_job_inference_benchmark;
 
 pub(crate) mod shape_recommendation_job_payload_config;
@@ -2470,7 +2518,17 @@ pub(crate) mod shape_rule_parameters;
 
 pub(crate) mod shape_s3_data_source;
 
+pub(crate) mod shape_s3_model_data_source;
+
+pub(crate) mod shape_selective_execution_result;
+
+pub(crate) mod shape_tabular_resolved_attributes;
+
+pub(crate) mod shape_time_series_config;
+
 pub(crate) mod shape_time_series_forecasting_settings;
+
+pub(crate) mod shape_time_series_transformations;
 
 pub(crate) mod shape_traffic_routing_config;
 
@@ -2494,13 +2552,15 @@ pub(crate) mod shape_workforce_security_group_ids;
 
 pub(crate) mod shape_workforce_subnets;
 
+pub(crate) mod shape_workspace_settings;
+
+pub(crate) mod shape_aggregation_transformations;
+
 pub(crate) mod shape_async_notification_topic_type_list;
 
 pub(crate) mod shape_auto_ml_job_step_metadata;
 
 pub(crate) mod shape_callback_step_metadata;
-
-pub(crate) mod shape_capacity_size;
 
 pub(crate) mod shape_categorical_parameter;
 
@@ -2537,6 +2597,10 @@ pub(crate) mod shape_emr_step_metadata;
 pub(crate) mod shape_environment_parameters;
 
 pub(crate) mod shape_fail_step_metadata;
+
+pub(crate) mod shape_filling_transformations;
+
+pub(crate) mod shape_grouping_attribute_names;
 
 pub(crate) mod shape_input_modes;
 
@@ -2597,6 +2661,8 @@ pub(crate) mod shape_auto_ml_algorithms;
 pub(crate) mod shape_categorical_parameters;
 
 pub(crate) mod shape_environment_parameter;
+
+pub(crate) mod shape_filling_transformation_map;
 
 pub(crate) mod shape_groups;
 

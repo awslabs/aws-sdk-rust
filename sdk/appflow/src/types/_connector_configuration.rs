@@ -87,6 +87,28 @@ pub struct ConnectorConfiguration {
     /// <p>Information about who registered the connector.</p>
     #[doc(hidden)]
     pub registered_by: ::std::option::Option<::std::string::String>,
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub supported_data_transfer_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
+    #[doc(hidden)]
+    pub supported_data_transfer_apis:
+        ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
 }
 impl ConnectorConfiguration {
     /// <p> Specifies whether the connector can be used as a source. </p>
@@ -207,6 +229,32 @@ impl ConnectorConfiguration {
     pub fn registered_by(&self) -> ::std::option::Option<&str> {
         self.registered_by.as_deref()
     }
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn supported_data_transfer_types(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
+        self.supported_data_transfer_types.as_deref()
+    }
+    /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
+    pub fn supported_data_transfer_apis(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DataTransferApi]> {
+        self.supported_data_transfer_apis.as_deref()
+    }
 }
 impl ConnectorConfiguration {
     /// Creates a new builder-style object to manufacture [`ConnectorConfiguration`](crate::types::ConnectorConfiguration).
@@ -255,6 +303,10 @@ pub struct ConnectorConfigurationBuilder {
     pub(crate) logo_url: ::std::option::Option<::std::string::String>,
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_data_transfer_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    pub(crate) supported_data_transfer_apis:
+        ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
 }
 impl ConnectorConfigurationBuilder {
     /// <p> Specifies whether the connector can be used as a source. </p>
@@ -670,6 +722,75 @@ impl ConnectorConfigurationBuilder {
         self.registered_by = input;
         self
     }
+    /// Appends an item to `supported_data_transfer_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_data_transfer_types`](Self::set_supported_data_transfer_types).
+    ///
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn supported_data_transfer_types(
+        mut self,
+        input: crate::types::SupportedDataTransferType,
+    ) -> Self {
+        let mut v = self.supported_data_transfer_types.unwrap_or_default();
+        v.push(input);
+        self.supported_data_transfer_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_supported_data_transfer_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    ) -> Self {
+        self.supported_data_transfer_types = input;
+        self
+    }
+    /// Appends an item to `supported_data_transfer_apis`.
+    ///
+    /// To override the contents of this collection use [`set_supported_data_transfer_apis`](Self::set_supported_data_transfer_apis).
+    ///
+    /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
+    pub fn supported_data_transfer_apis(mut self, input: crate::types::DataTransferApi) -> Self {
+        let mut v = self.supported_data_transfer_apis.unwrap_or_default();
+        v.push(input);
+        self.supported_data_transfer_apis = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
+    pub fn set_supported_data_transfer_apis(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
+    ) -> Self {
+        self.supported_data_transfer_apis = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ConnectorConfiguration`](crate::types::ConnectorConfiguration).
     pub fn build(self) -> crate::types::ConnectorConfiguration {
         crate::types::ConnectorConfiguration {
@@ -701,6 +822,8 @@ impl ConnectorConfigurationBuilder {
             logo_url: self.logo_url,
             registered_at: self.registered_at,
             registered_by: self.registered_by,
+            supported_data_transfer_types: self.supported_data_transfer_types,
+            supported_data_transfer_apis: self.supported_data_transfer_apis,
         }
     }
 }

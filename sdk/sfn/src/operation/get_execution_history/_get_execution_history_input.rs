@@ -9,10 +9,10 @@ pub struct GetExecutionHistoryInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
     #[doc(hidden)]
-    pub reverse_order: bool,
+    pub reverse_order: ::std::option::Option<bool>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -27,11 +27,11 @@ impl GetExecutionHistoryInput {
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
-    pub fn reverse_order(&self) -> bool {
+    pub fn reverse_order(&self) -> ::std::option::Option<bool> {
         self.reverse_order
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -133,8 +133,8 @@ impl GetExecutionHistoryInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::get_execution_history::GetExecutionHistoryInput {
                 execution_arn: self.execution_arn,
-                max_results: self.max_results.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
+                max_results: self.max_results,
+                reverse_order: self.reverse_order,
                 next_token: self.next_token,
                 include_execution_data: self.include_execution_data,
             },

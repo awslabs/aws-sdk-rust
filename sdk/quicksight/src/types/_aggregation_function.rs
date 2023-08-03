@@ -26,6 +26,10 @@ pub struct AggregationFunction {
     /// </ul>
     #[doc(hidden)]
     pub date_aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
+    /// <p>Aggregation for attributes.</p>
+    #[doc(hidden)]
+    pub attribute_aggregation_function:
+        ::std::option::Option<crate::types::AttributeAggregationFunction>,
 }
 impl AggregationFunction {
     /// <p>Aggregation for numerical values.</p>
@@ -56,6 +60,12 @@ impl AggregationFunction {
     ) -> ::std::option::Option<&crate::types::DateAggregationFunction> {
         self.date_aggregation_function.as_ref()
     }
+    /// <p>Aggregation for attributes.</p>
+    pub fn attribute_aggregation_function(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AttributeAggregationFunction> {
+        self.attribute_aggregation_function.as_ref()
+    }
 }
 impl AggregationFunction {
     /// Creates a new builder-style object to manufacture [`AggregationFunction`](crate::types::AggregationFunction).
@@ -76,6 +86,8 @@ pub struct AggregationFunctionBuilder {
         ::std::option::Option<crate::types::CategoricalAggregationFunction>,
     pub(crate) date_aggregation_function:
         ::std::option::Option<crate::types::DateAggregationFunction>,
+    pub(crate) attribute_aggregation_function:
+        ::std::option::Option<crate::types::AttributeAggregationFunction>,
 }
 impl AggregationFunctionBuilder {
     /// <p>Aggregation for numerical values.</p>
@@ -146,12 +158,29 @@ impl AggregationFunctionBuilder {
         self.date_aggregation_function = input;
         self
     }
+    /// <p>Aggregation for attributes.</p>
+    pub fn attribute_aggregation_function(
+        mut self,
+        input: crate::types::AttributeAggregationFunction,
+    ) -> Self {
+        self.attribute_aggregation_function = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Aggregation for attributes.</p>
+    pub fn set_attribute_aggregation_function(
+        mut self,
+        input: ::std::option::Option<crate::types::AttributeAggregationFunction>,
+    ) -> Self {
+        self.attribute_aggregation_function = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AggregationFunction`](crate::types::AggregationFunction).
     pub fn build(self) -> crate::types::AggregationFunction {
         crate::types::AggregationFunction {
             numerical_aggregation_function: self.numerical_aggregation_function,
             categorical_aggregation_function: self.categorical_aggregation_function,
             date_aggregation_function: self.date_aggregation_function,
+            attribute_aggregation_function: self.attribute_aggregation_function,
         }
     }
 }

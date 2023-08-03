@@ -37,5 +37,14 @@ pub fn ser_start_export_task_input(
             .key("endTime")
             .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_10) = &input.preferences {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("preferences").start_object();
+        crate::protocol_serde::shape_export_preferences::ser_export_preferences(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
+    }
     Ok(())
 }

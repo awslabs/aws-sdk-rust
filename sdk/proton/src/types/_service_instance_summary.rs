@@ -40,6 +40,12 @@ pub struct ServiceInstanceSummary {
     /// <p>A service instance deployment status message.</p>
     #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last attempted deployment of this service instance.</p>
+    #[doc(hidden)]
+    pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last successful deployment of this service instance.</p>
+    #[doc(hidden)]
+    pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
@@ -94,6 +100,14 @@ impl ServiceInstanceSummary {
     pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
+    /// <p>The ID of the last attempted deployment of this service instance.</p>
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_attempted_deployment_id.as_deref()
+    }
+    /// <p>The ID of the last successful deployment of this service instance.</p>
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_succeeded_deployment_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ServiceInstanceSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -118,6 +132,14 @@ impl ::std::fmt::Debug for ServiceInstanceSummary {
         formatter.field(
             "deployment_status_message",
             &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
         );
         formatter.finish()
     }
@@ -145,6 +167,8 @@ pub struct ServiceInstanceSummaryBuilder {
     pub(crate) template_minor_version: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceSummaryBuilder {
     /// <p>The name of the service instance.</p>
@@ -309,6 +333,38 @@ impl ServiceInstanceSummaryBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this service instance.</p>
+    pub fn last_attempted_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last attempted deployment of this service instance.</p>
+    pub fn set_last_attempted_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = input;
+        self
+    }
+    /// <p>The ID of the last successful deployment of this service instance.</p>
+    pub fn last_succeeded_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last successful deployment of this service instance.</p>
+    pub fn set_last_succeeded_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ServiceInstanceSummary`](crate::types::ServiceInstanceSummary).
     pub fn build(self) -> crate::types::ServiceInstanceSummary {
         crate::types::ServiceInstanceSummary {
@@ -324,6 +380,8 @@ impl ServiceInstanceSummaryBuilder {
             template_minor_version: self.template_minor_version,
             deployment_status: self.deployment_status,
             deployment_status_message: self.deployment_status_message,
+            last_attempted_deployment_id: self.last_attempted_deployment_id,
+            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
         }
     }
 }
@@ -350,6 +408,14 @@ impl ::std::fmt::Debug for ServiceInstanceSummaryBuilder {
         formatter.field(
             "deployment_status_message",
             &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
         );
         formatter.finish()
     }

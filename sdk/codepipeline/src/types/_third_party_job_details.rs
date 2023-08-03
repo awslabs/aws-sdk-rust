@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyJobDetails {
-    /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    /// <p>The identifier used to identify the job details in CodePipeline.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data to be returned by the third party job worker.</p>
     #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::ThirdPartyJobData>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyJobDetails {
-    /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -23,7 +23,7 @@ impl ThirdPartyJobDetails {
     pub fn data(&self) -> ::std::option::Option<&crate::types::ThirdPartyJobData> {
         self.data.as_ref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn nonce(&self) -> ::std::option::Option<&str> {
         self.nonce.as_deref()
     }
@@ -46,12 +46,12 @@ pub struct ThirdPartyJobDetailsBuilder {
     pub(crate) nonce: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyJobDetailsBuilder {
-    /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    /// <p>The identifier used to identify the job details in CodePipeline.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
@@ -69,12 +69,12 @@ impl ThirdPartyJobDetailsBuilder {
         self.data = input;
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self

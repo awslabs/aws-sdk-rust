@@ -19,6 +19,9 @@ pub struct CreateUserInput {
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    #[doc(hidden)]
+    pub replication_user: ::std::option::Option<bool>,
 }
 impl CreateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -41,6 +44,10 @@ impl CreateUserInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn replication_user(&self) -> ::std::option::Option<bool> {
+        self.replication_user
+    }
 }
 impl CreateUserInput {
     /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
@@ -60,6 +67,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_user: ::std::option::Option<bool>,
 }
 impl CreateUserInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -121,6 +129,16 @@ impl CreateUserInputBuilder {
         self.username = input;
         self
     }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn replication_user(mut self, input: bool) -> Self {
+        self.replication_user = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replication_user = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(
         self,
@@ -134,6 +152,7 @@ impl CreateUserInputBuilder {
             groups: self.groups,
             password: self.password,
             username: self.username,
+            replication_user: self.replication_user,
         })
     }
 }

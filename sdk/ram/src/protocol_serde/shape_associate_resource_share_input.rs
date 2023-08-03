@@ -27,5 +27,14 @@ pub fn ser_associate_resource_share_input(
     if let Some(var_8) = &input.resource_share_arn {
         object.key("resourceShareArn").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.sources {
+        let mut array_10 = object.key("sources").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

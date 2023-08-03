@@ -14,7 +14,7 @@ pub use crate::operation::put_bucket_metrics_configuration::_put_bucket_metrics_
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a> </p> </li>
 /// </ul>
-/// <p> <code>GetBucketLifecycle</code> has the following special error:</p>
+/// <p> <code>PutBucketMetricsConfiguration</code> has the following special error:</p>
 /// <ul>
 /// <li> <p>Error code: <code>TooManyConfigurations</code> </p>
 /// <ul>

@@ -73,6 +73,15 @@ where
                                     .map(|v| v.to_f32_lossy()),
                                 );
                             }
+                            "ModelSetupTime" => {
+                                builder = builder.set_model_setup_time(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

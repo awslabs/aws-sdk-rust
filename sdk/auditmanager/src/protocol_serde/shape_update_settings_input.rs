@@ -11,35 +11,44 @@ pub fn ser_update_settings_input(
         crate::protocol_serde::shape_assessment_reports_destination::ser_assessment_reports_destination(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.default_process_owners {
-        let mut array_4 = object.key("defaultProcessOwners").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.default_export_destination {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("defaultExportDestination").start_object();
+        crate::protocol_serde::shape_default_export_destination::ser_default_export_destination(
+            &mut object_4,
+            var_3,
+        )?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.default_process_owners {
+        let mut array_6 = object.key("defaultProcessOwners").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_role::ser_role(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_role::ser_role(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.deregistration_policy {
+    if let Some(var_9) = &input.deregistration_policy {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("deregistrationPolicy").start_object();
+        let mut object_10 = object.key("deregistrationPolicy").start_object();
         crate::protocol_serde::shape_deregistration_policy::ser_deregistration_policy(
-            &mut object_8,
-            var_7,
+            &mut object_10,
+            var_9,
         )?;
-        object_8.finish();
+        object_10.finish();
     }
-    if let Some(var_9) = &input.evidence_finder_enabled {
-        object.key("evidenceFinderEnabled").boolean(*var_9);
+    if let Some(var_11) = &input.evidence_finder_enabled {
+        object.key("evidenceFinderEnabled").boolean(*var_11);
     }
-    if let Some(var_10) = &input.kms_key {
-        object.key("kmsKey").string(var_10.as_str());
+    if let Some(var_12) = &input.kms_key {
+        object.key("kmsKey").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.sns_topic {
-        object.key("snsTopic").string(var_11.as_str());
+    if let Some(var_13) = &input.sns_topic {
+        object.key("snsTopic").string(var_13.as_str());
     }
     Ok(())
 }

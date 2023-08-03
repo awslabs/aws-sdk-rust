@@ -338,4 +338,24 @@ impl UpdateReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_staging_area_tags(input);
         self
     }
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_fips_endpoint(input);
+        self
+    }
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_fips_endpoint(input);
+        self
+    }
+    /// <p>Update replication configuration Account ID request.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_id(input.into());
+        self
+    }
+    /// <p>Update replication configuration Account ID request.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_id(input);
+        self
+    }
 }

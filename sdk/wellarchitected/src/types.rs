@@ -11,13 +11,15 @@ pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_workload::Workload;
 
+pub use crate::types::_risk::Risk;
+
+pub use crate::types::_workload_profile::WorkloadProfile;
+
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfig;
 
 pub use crate::types::_definition_type::DefinitionType;
 
 pub use crate::types::_trusted_advisor_integration_status::TrustedAdvisorIntegrationStatus;
-
-pub use crate::types::_risk::Risk;
 
 pub use crate::types::_workload_improvement_status::WorkloadImprovementStatus;
 
@@ -28,6 +30,14 @@ pub use crate::types::_share_invitation::ShareInvitation;
 pub use crate::types::_share_resource_type::ShareResourceType;
 
 pub use crate::types::_share_invitation_action::ShareInvitationAction;
+
+pub use crate::types::_profile::Profile;
+
+pub use crate::types::_profile_question::ProfileQuestion;
+
+pub use crate::types::_profile_choice::ProfileChoice;
+
+pub use crate::types::_profile_question_update::ProfileQuestionUpdate;
 
 pub use crate::types::_lens_review::LensReview;
 
@@ -65,6 +75,16 @@ pub use crate::types::_workload_summary::WorkloadSummary;
 
 pub use crate::types::_share_invitation_summary::ShareInvitationSummary;
 
+pub use crate::types::_profile_share_summary::ProfileShareSummary;
+
+pub use crate::types::_profile_summary::ProfileSummary;
+
+pub use crate::types::_profile_owner_type::ProfileOwnerType;
+
+pub use crate::types::_profile_notification_summary::ProfileNotificationSummary;
+
+pub use crate::types::_profile_notification_type::ProfileNotificationType;
+
 pub use crate::types::_notification_summary::NotificationSummary;
 
 pub use crate::types::_lens_upgrade_summary::LensUpgradeSummary;
@@ -80,6 +100,8 @@ pub use crate::types::_lens_review_summary::LensReviewSummary;
 pub use crate::types::_improvement_summary::ImprovementSummary;
 
 pub use crate::types::_choice_improvement_plan::ChoiceImprovementPlan;
+
+pub use crate::types::_question_priority::QuestionPriority;
 
 pub use crate::types::_lens_summary::LensSummary;
 
@@ -99,9 +121,17 @@ pub use crate::types::_check_failure_reason::CheckFailureReason;
 
 pub use crate::types::_answer_summary::AnswerSummary;
 
+pub use crate::types::_question_type::QuestionType;
+
 pub use crate::types::_choice_answer_summary::ChoiceAnswerSummary;
 
 pub use crate::types::_import_lens_status::ImportLensStatus;
+
+pub use crate::types::_profile_template::ProfileTemplate;
+
+pub use crate::types::_profile_template_question::ProfileTemplateQuestion;
+
+pub use crate::types::_profile_template_choice::ProfileTemplateChoice;
 
 pub use crate::types::_milestone::Milestone;
 
@@ -223,9 +253,37 @@ mod _pillar_metric;
 
 mod _pillar_review_summary;
 
+mod _profile;
+
+mod _profile_choice;
+
+mod _profile_notification_summary;
+
+mod _profile_notification_type;
+
+mod _profile_owner_type;
+
+mod _profile_question;
+
+mod _profile_question_update;
+
+mod _profile_share_summary;
+
+mod _profile_summary;
+
+mod _profile_template;
+
+mod _profile_template_choice;
+
+mod _profile_template_question;
+
 mod _question_difference;
 
 mod _question_metric;
+
+mod _question_priority;
+
+mod _question_type;
 
 mod _report_format;
 
@@ -256,6 +314,8 @@ mod _workload_discovery_config;
 mod _workload_environment;
 
 mod _workload_improvement_status;
+
+mod _workload_profile;
 
 mod _workload_share;
 

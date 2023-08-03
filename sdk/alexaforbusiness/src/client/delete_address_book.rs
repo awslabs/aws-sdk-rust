@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`address_book_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::set_address_book_arn): <p>The ARN of the address book to delete.</p>
     /// - On success, responds with [`DeleteAddressBookOutput`](crate::operation::delete_address_book::DeleteAddressBookOutput)
     /// - On failure, responds with [`SdkError<DeleteAddressBookError>`](crate::operation::delete_address_book::DeleteAddressBookError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_address_book(
         &self,
     ) -> crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder {

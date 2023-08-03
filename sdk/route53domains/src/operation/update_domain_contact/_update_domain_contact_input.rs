@@ -16,7 +16,7 @@ pub struct UpdateDomainContactInput {
     /// <p>Provides detailed contact information.</p>
     #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
-    /// <p> Customer's consent for the owner change request. </p>
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     #[doc(hidden)]
     pub consent: ::std::option::Option<crate::types::Consent>,
 }
@@ -37,7 +37,7 @@ impl UpdateDomainContactInput {
     pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p> Customer's consent for the owner change request. </p>
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn consent(&self) -> ::std::option::Option<&crate::types::Consent> {
         self.consent.as_ref()
     }
@@ -122,12 +122,12 @@ impl UpdateDomainContactInputBuilder {
         self.tech_contact = input;
         self
     }
-    /// <p> Customer's consent for the owner change request. </p>
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn consent(mut self, input: crate::types::Consent) -> Self {
         self.consent = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Customer's consent for the owner change request. </p>
+    /// <p> Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
         self.consent = input;
         self

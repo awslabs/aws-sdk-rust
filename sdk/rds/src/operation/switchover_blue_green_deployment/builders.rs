@@ -7,7 +7,7 @@ pub use crate::operation::switchover_blue_green_deployment::_switchover_blue_gre
 ///
 /// <p>Switches over a blue/green deployment.</p>
 /// <p>Before you switch over, production traffic is routed to the databases in the blue environment. After you switch over, production traffic is routed to the databases in the green environment.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SwitchoverBlueGreenDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -101,7 +101,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -113,7 +113,7 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
         self.inner = self.inner.blue_green_deployment_identifier(input.into());
         self
     }
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -125,13 +125,15 @@ impl SwitchoverBlueGreenDeploymentFluentBuilder {
         self.inner = self.inner.set_blue_green_deployment_identifier(input);
         self
     }
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     pub fn switchover_timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.switchover_timeout(input);
         self
     }
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     pub fn set_switchover_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_switchover_timeout(input);

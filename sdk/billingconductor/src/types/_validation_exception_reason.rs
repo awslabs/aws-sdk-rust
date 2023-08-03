@@ -14,6 +14,7 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::AccountsAlreadyAssociated => { /* ... */ },
 ///     ValidationExceptionReason::AccountsNotAssociated => { /* ... */ },
+///     ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => { /* ... */ },
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
 ///     ValidationExceptionReason::CustomLineItemAssociationExists => { /* ... */ },
 ///     ValidationExceptionReason::DuplicateAccount => { /* ... */ },
@@ -67,6 +68,7 @@
 ///     ValidationExceptionReason::PrimaryCannotDisassociate => { /* ... */ },
 ///     ValidationExceptionReason::PrimaryNotAssociated => { /* ... */ },
 ///     ValidationExceptionReason::TooManyAccountsInRequest => { /* ... */ },
+///     ValidationExceptionReason::TooManyAutoAssociateBillingGroups => { /* ... */ },
 ///     ValidationExceptionReason::TooManyCustomlineitemsInRequest => { /* ... */ },
 ///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -106,6 +108,8 @@ pub enum ValidationExceptionReason {
     AccountsAlreadyAssociated,
     #[allow(missing_docs)] // documentation missing in model
     AccountsNotAssociated,
+    #[allow(missing_docs)] // documentation missing in model
+    CannotDeleteAutoAssociateBillingGroup,
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
     #[allow(missing_docs)] // documentation missing in model
@@ -213,6 +217,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     TooManyAccountsInRequest,
     #[allow(missing_docs)] // documentation missing in model
+    TooManyAutoAssociateBillingGroups,
+    #[allow(missing_docs)] // documentation missing in model
     TooManyCustomlineitemsInRequest,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
@@ -224,6 +230,9 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
             "ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
+            "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP" => {
+                ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup
+            }
             "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
             "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => {
                 ValidationExceptionReason::CustomLineItemAssociationExists
@@ -293,6 +302,9 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "PRIMARY_CANNOT_DISASSOCIATE" => ValidationExceptionReason::PrimaryCannotDisassociate,
             "PRIMARY_NOT_ASSOCIATED" => ValidationExceptionReason::PrimaryNotAssociated,
             "TOO_MANY_ACCOUNTS_IN_REQUEST" => ValidationExceptionReason::TooManyAccountsInRequest,
+            "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS" => {
+                ValidationExceptionReason::TooManyAutoAssociateBillingGroups
+            }
             "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST" => {
                 ValidationExceptionReason::TooManyCustomlineitemsInRequest
             }
@@ -316,6 +328,9 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
             ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
+            ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => {
+                "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP"
+            }
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
             ValidationExceptionReason::CustomLineItemAssociationExists => {
                 "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS"
@@ -385,6 +400,9 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::PrimaryCannotDisassociate => "PRIMARY_CANNOT_DISASSOCIATE",
             ValidationExceptionReason::PrimaryNotAssociated => "PRIMARY_NOT_ASSOCIATED",
             ValidationExceptionReason::TooManyAccountsInRequest => "TOO_MANY_ACCOUNTS_IN_REQUEST",
+            ValidationExceptionReason::TooManyAutoAssociateBillingGroups => {
+                "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS"
+            }
             ValidationExceptionReason::TooManyCustomlineitemsInRequest => {
                 "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST"
             }
@@ -397,6 +415,7 @@ impl ValidationExceptionReason {
         &[
             "ACCOUNTS_ALREADY_ASSOCIATED",
             "ACCOUNTS_NOT_ASSOCIATED",
+            "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
             "CANNOT_PARSE",
             "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
             "DUPLICATE_ACCOUNT",
@@ -450,6 +469,7 @@ impl ValidationExceptionReason {
             "PRIMARY_CANNOT_DISASSOCIATE",
             "PRIMARY_NOT_ASSOCIATED",
             "TOO_MANY_ACCOUNTS_IN_REQUEST",
+            "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS",
             "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
             "UNKNOWN_OPERATION",
         ]

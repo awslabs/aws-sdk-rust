@@ -14,9 +14,7 @@ pub struct SecurityProfileSearchCriteria {
     #[doc(hidden)]
     pub and_conditions:
         ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p>
     #[doc(hidden)]
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
@@ -33,9 +31,7 @@ impl SecurityProfileSearchCriteria {
     ) -> ::std::option::Option<&[crate::types::SecurityProfileSearchCriteria]> {
         self.and_conditions.as_deref()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -98,16 +94,12 @@ impl SecurityProfileSearchCriteriaBuilder {
         self.and_conditions = input;
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition. </p>
     pub fn set_string_condition(
         mut self,
         input: ::std::option::Option<crate::types::StringCondition>,

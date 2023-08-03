@@ -5,7 +5,7 @@ pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_in
 
 /// Fluent builder constructing a request to `DeleteCustomLogSource`.
 ///
-/// <p>Removes a custom log source from Amazon Security Lake.</p>
+/// <p>Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security Lake.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomLogSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,20 +99,30 @@ impl DeleteCustomLogSourceFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The custom source name for the custom log source.</p>
-    pub fn custom_source_name(
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_name(input.into());
+        self
+    }
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_name(input);
+        self
+    }
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn source_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.inner = self.inner.custom_source_name(input.into());
+        self.inner = self.inner.source_version(input.into());
         self
     }
-    /// <p>The custom source name for the custom log source.</p>
-    pub fn set_custom_source_name(
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn set_source_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
-        self.inner = self.inner.set_custom_source_name(input);
+        self.inner = self.inner.set_source_version(input);
         self
     }
 }

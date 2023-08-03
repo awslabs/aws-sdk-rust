@@ -519,6 +519,36 @@ pub fn ser_code_gen_configuration_node(
         )?;
         object_130.finish();
     }
+    if let Some(var_131) = &input.evaluate_data_quality_multi_frame {
+        #[allow(unused_mut)]
+        let mut object_132 = object.key("EvaluateDataQualityMultiFrame").start_object();
+        crate::protocol_serde::shape_evaluate_data_quality_multi_frame::ser_evaluate_data_quality_multi_frame(&mut object_132, var_131)?;
+        object_132.finish();
+    }
+    if let Some(var_133) = &input.recipe {
+        #[allow(unused_mut)]
+        let mut object_134 = object.key("Recipe").start_object();
+        crate::protocol_serde::shape_recipe::ser_recipe(&mut object_134, var_133)?;
+        object_134.finish();
+    }
+    if let Some(var_135) = &input.snowflake_source {
+        #[allow(unused_mut)]
+        let mut object_136 = object.key("SnowflakeSource").start_object();
+        crate::protocol_serde::shape_snowflake_source::ser_snowflake_source(
+            &mut object_136,
+            var_135,
+        )?;
+        object_136.finish();
+    }
+    if let Some(var_137) = &input.snowflake_target {
+        #[allow(unused_mut)]
+        let mut object_138 = object.key("SnowflakeTarget").start_object();
+        crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(
+            &mut object_138,
+            var_137,
+        )?;
+        object_138.finish();
+    }
     Ok(())
 }
 
@@ -890,6 +920,26 @@ where
                             "AmazonRedshiftTarget" => {
                                 builder = builder.set_amazon_redshift_target(
                                     crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens)?
+                                );
+                            }
+                            "EvaluateDataQualityMultiFrame" => {
+                                builder = builder.set_evaluate_data_quality_multi_frame(
+                                    crate::protocol_serde::shape_evaluate_data_quality_multi_frame::de_evaluate_data_quality_multi_frame(tokens)?
+                                );
+                            }
+                            "Recipe" => {
+                                builder = builder.set_recipe(
+                                    crate::protocol_serde::shape_recipe::de_recipe(tokens)?,
+                                );
+                            }
+                            "SnowflakeSource" => {
+                                builder = builder.set_snowflake_source(
+                                    crate::protocol_serde::shape_snowflake_source::de_snowflake_source(tokens)?
+                                );
+                            }
+                            "SnowflakeTarget" => {
+                                builder = builder.set_snowflake_target(
+                                    crate::protocol_serde::shape_snowflake_target::de_snowflake_target(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

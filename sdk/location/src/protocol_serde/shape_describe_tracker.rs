@@ -176,6 +176,13 @@ pub(crate) fn de_describe_tracker(
                             .transpose()?,
                         );
                     }
+                    "EventBridgeEnabled" => {
+                        builder = builder.set_event_bridge_enabled(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     "KmsKeyId" => {
                         builder = builder.set_kms_key_id(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

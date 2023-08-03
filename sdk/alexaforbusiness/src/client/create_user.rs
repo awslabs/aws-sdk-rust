@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput) with field(s):
     ///   - [`user_arn(Option<String>)`](crate::operation::create_user::CreateUserOutput::user_arn): <p>The ARN of the newly created user in the response.</p>
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::operation::create_user::CreateUserError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn create_user(&self) -> crate::operation::create_user::builders::CreateUserFluentBuilder {
         crate::operation::create_user::builders::CreateUserFluentBuilder::new(self.handle.clone())
     }

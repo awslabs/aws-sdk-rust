@@ -123,7 +123,7 @@ impl CreatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_display_name(input);
         self
     }
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn pipeline_definition(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -131,7 +131,7 @@ impl CreatePipelineFluentBuilder {
         self.inner = self.inner.pipeline_definition(input.into());
         self
     }
-    /// <p>The JSON pipeline definition of the pipeline.</p>
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn set_pipeline_definition(
         mut self,
         input: ::std::option::Option<::std::string::String>,

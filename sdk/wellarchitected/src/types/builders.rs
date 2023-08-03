@@ -5,9 +5,19 @@ pub use crate::types::_workload_share::WorkloadShareBuilder;
 
 pub use crate::types::_workload::WorkloadBuilder;
 
+pub use crate::types::_workload_profile::WorkloadProfileBuilder;
+
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfigBuilder;
 
 pub use crate::types::_share_invitation::ShareInvitationBuilder;
+
+pub use crate::types::_profile::ProfileBuilder;
+
+pub use crate::types::_profile_question::ProfileQuestionBuilder;
+
+pub use crate::types::_profile_choice::ProfileChoiceBuilder;
+
+pub use crate::types::_profile_question_update::ProfileQuestionUpdateBuilder;
 
 pub use crate::types::_lens_review::LensReviewBuilder;
 
@@ -30,6 +40,12 @@ pub use crate::types::_workload_share_summary::WorkloadShareSummaryBuilder;
 pub use crate::types::_workload_summary::WorkloadSummaryBuilder;
 
 pub use crate::types::_share_invitation_summary::ShareInvitationSummaryBuilder;
+
+pub use crate::types::_profile_share_summary::ProfileShareSummaryBuilder;
+
+pub use crate::types::_profile_summary::ProfileSummaryBuilder;
+
+pub use crate::types::_profile_notification_summary::ProfileNotificationSummaryBuilder;
 
 pub use crate::types::_notification_summary::NotificationSummaryBuilder;
 
@@ -54,6 +70,12 @@ pub use crate::types::_check_detail::CheckDetailBuilder;
 pub use crate::types::_answer_summary::AnswerSummaryBuilder;
 
 pub use crate::types::_choice_answer_summary::ChoiceAnswerSummaryBuilder;
+
+pub use crate::types::_profile_template::ProfileTemplateBuilder;
+
+pub use crate::types::_profile_template_question::ProfileTemplateQuestionBuilder;
+
+pub use crate::types::_profile_template_choice::ProfileTemplateChoiceBuilder;
 
 pub use crate::types::_milestone::MilestoneBuilder;
 

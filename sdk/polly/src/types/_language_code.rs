@@ -23,6 +23,7 @@
 ///     LanguageCode::EnAu => { /* ... */ },
 ///     LanguageCode::EnGb => { /* ... */ },
 ///     LanguageCode::EnGbWls => { /* ... */ },
+///     LanguageCode::EnIe => { /* ... */ },
 ///     LanguageCode::EnIn => { /* ... */ },
 ///     LanguageCode::EnNz => { /* ... */ },
 ///     LanguageCode::EnUs => { /* ... */ },
@@ -39,6 +40,7 @@
 ///     LanguageCode::JaJp => { /* ... */ },
 ///     LanguageCode::KoKr => { /* ... */ },
 ///     LanguageCode::NbNo => { /* ... */ },
+///     LanguageCode::NlBe => { /* ... */ },
 ///     LanguageCode::NlNl => { /* ... */ },
 ///     LanguageCode::PlPl => { /* ... */ },
 ///     LanguageCode::PtBr => { /* ... */ },
@@ -104,6 +106,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EnGbWls,
     #[allow(missing_docs)] // documentation missing in model
+    EnIe,
+    #[allow(missing_docs)] // documentation missing in model
     EnIn,
     #[allow(missing_docs)] // documentation missing in model
     EnNz,
@@ -135,6 +139,8 @@ pub enum LanguageCode {
     KoKr,
     #[allow(missing_docs)] // documentation missing in model
     NbNo,
+    #[allow(missing_docs)] // documentation missing in model
+    NlBe,
     #[allow(missing_docs)] // documentation missing in model
     NlNl,
     #[allow(missing_docs)] // documentation missing in model
@@ -170,6 +176,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "en-AU" => LanguageCode::EnAu,
             "en-GB" => LanguageCode::EnGb,
             "en-GB-WLS" => LanguageCode::EnGbWls,
+            "en-IE" => LanguageCode::EnIe,
             "en-IN" => LanguageCode::EnIn,
             "en-NZ" => LanguageCode::EnNz,
             "en-US" => LanguageCode::EnUs,
@@ -186,6 +193,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "ja-JP" => LanguageCode::JaJp,
             "ko-KR" => LanguageCode::KoKr,
             "nb-NO" => LanguageCode::NbNo,
+            "nl-BE" => LanguageCode::NlBe,
             "nl-NL" => LanguageCode::NlNl,
             "pl-PL" => LanguageCode::PlPl,
             "pt-BR" => LanguageCode::PtBr,
@@ -223,6 +231,7 @@ impl LanguageCode {
             LanguageCode::EnAu => "en-AU",
             LanguageCode::EnGb => "en-GB",
             LanguageCode::EnGbWls => "en-GB-WLS",
+            LanguageCode::EnIe => "en-IE",
             LanguageCode::EnIn => "en-IN",
             LanguageCode::EnNz => "en-NZ",
             LanguageCode::EnUs => "en-US",
@@ -239,6 +248,7 @@ impl LanguageCode {
             LanguageCode::JaJp => "ja-JP",
             LanguageCode::KoKr => "ko-KR",
             LanguageCode::NbNo => "nb-NO",
+            LanguageCode::NlBe => "nl-BE",
             LanguageCode::NlNl => "nl-NL",
             LanguageCode::PlPl => "pl-PL",
             LanguageCode::PtBr => "pt-BR",
@@ -265,6 +275,7 @@ impl LanguageCode {
             "en-AU",
             "en-GB",
             "en-GB-WLS",
+            "en-IE",
             "en-IN",
             "en-NZ",
             "en-US",
@@ -281,6 +292,7 @@ impl LanguageCode {
             "ja-JP",
             "ko-KR",
             "nb-NO",
+            "nl-BE",
             "nl-NL",
             "pl-PL",
             "pt-BR",

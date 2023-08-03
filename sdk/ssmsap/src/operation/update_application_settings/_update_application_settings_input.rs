@@ -14,6 +14,9 @@ pub struct UpdateApplicationSettingsInput {
     #[doc(hidden)]
     pub credentials_to_remove:
         ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    #[doc(hidden)]
+    pub backint: ::std::option::Option<crate::types::BackintConfig>,
 }
 impl UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
@@ -31,6 +34,10 @@ impl UpdateApplicationSettingsInput {
         &self,
     ) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
         self.credentials_to_remove.as_deref()
+    }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn backint(&self) -> ::std::option::Option<&crate::types::BackintConfig> {
+        self.backint.as_ref()
     }
 }
 impl UpdateApplicationSettingsInput {
@@ -51,6 +58,7 @@ pub struct UpdateApplicationSettingsInputBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) credentials_to_remove:
         ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) backint: ::std::option::Option<crate::types::BackintConfig>,
 }
 impl UpdateApplicationSettingsInputBuilder {
     /// <p>The ID of the application.</p>
@@ -110,6 +118,19 @@ impl UpdateApplicationSettingsInputBuilder {
         self.credentials_to_remove = input;
         self
     }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn backint(mut self, input: crate::types::BackintConfig) -> Self {
+        self.backint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
+    pub fn set_backint(
+        mut self,
+        input: ::std::option::Option<crate::types::BackintConfig>,
+    ) -> Self {
+        self.backint = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
     pub fn build(
         self,
@@ -122,6 +143,7 @@ impl UpdateApplicationSettingsInputBuilder {
                 application_id: self.application_id,
                 credentials_to_add_or_update: self.credentials_to_add_or_update,
                 credentials_to_remove: self.credentials_to_remove,
+                backint: self.backint,
             },
         )
     }

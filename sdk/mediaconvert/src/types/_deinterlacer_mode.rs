@@ -36,7 +36,10 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
+/// Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace.
+/// - Deinterlace converts interlaced to progressive.
+/// - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p.
+/// - Adaptive auto-detects and converts to progressive.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

@@ -176,4 +176,17 @@ impl CreateRecordingConfigurationFluentBuilder {
         self.inner = self.inner.set_recording_reconnect_window_seconds(input);
         self
     }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn rendition_configuration(mut self, input: crate::types::RenditionConfiguration) -> Self {
+        self.inner = self.inner.rendition_configuration(input);
+        self
+    }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn set_rendition_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RenditionConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_rendition_configuration(input);
+        self
+    }
 }

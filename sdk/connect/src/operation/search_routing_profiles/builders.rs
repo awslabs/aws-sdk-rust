@@ -5,7 +5,6 @@ pub use crate::operation::search_routing_profiles::_search_routing_profiles_inpu
 
 /// Fluent builder constructing a request to `SearchRoutingProfiles`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Searches routing profiles in an Amazon Connect instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRoutingProfilesFluentBuilder {

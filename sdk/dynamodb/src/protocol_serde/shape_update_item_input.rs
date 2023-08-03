@@ -97,5 +97,10 @@ pub fn ser_update_item_input(
         }
         object_28.finish();
     }
+    if let Some(var_32) = &input.return_values_on_condition_check_failure {
+        object
+            .key("ReturnValuesOnConditionCheckFailure")
+            .string(var_32.as_str());
+    }
     Ok(())
 }

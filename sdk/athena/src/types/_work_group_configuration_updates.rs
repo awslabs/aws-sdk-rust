@@ -26,7 +26,7 @@ pub struct WorkGroupConfigurationUpdates {
     /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
-    /// <p>Removes content encryption configuration for a workgroup.</p>
+    /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     #[doc(hidden)]
     pub remove_customer_content_encryption_configuration: ::std::option::Option<bool>,
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
@@ -35,7 +35,7 @@ pub struct WorkGroupConfigurationUpdates {
     /// <p>Contains the ARN of the execution role for the workgroup</p>
     #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     #[doc(hidden)]
     pub customer_content_encryption_configuration:
         ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
@@ -75,7 +75,7 @@ impl WorkGroupConfigurationUpdates {
     pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
-    /// <p>Removes content encryption configuration for a workgroup.</p>
+    /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     pub fn remove_customer_content_encryption_configuration(&self) -> ::std::option::Option<bool> {
         self.remove_customer_content_encryption_configuration
     }
@@ -87,7 +87,7 @@ impl WorkGroupConfigurationUpdates {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
@@ -216,12 +216,12 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self.engine_version = input;
         self
     }
-    /// <p>Removes content encryption configuration for a workgroup.</p>
+    /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     pub fn remove_customer_content_encryption_configuration(mut self, input: bool) -> Self {
         self.remove_customer_content_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Removes content encryption configuration for a workgroup.</p>
+    /// <p>Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.</p>
     pub fn set_remove_customer_content_encryption_configuration(
         mut self,
         input: ::std::option::Option<bool>,
@@ -261,7 +261,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self.execution_role = input;
         self
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(
         mut self,
         input: crate::types::CustomerContentEncryptionConfiguration,
@@ -269,7 +269,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
         self.customer_content_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
+    /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn set_customer_content_encryption_configuration(
         mut self,
         input: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,

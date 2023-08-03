@@ -6,11 +6,18 @@ pub struct DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
+    /// <p>Request to disconnect Source Server from service by Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
+    }
+    /// <p>Request to disconnect Source Server from service by Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DisconnectFromServiceInput {
@@ -29,6 +36,7 @@ impl DisconnectFromServiceInput {
 )]
 pub struct DisconnectFromServiceInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectFromServiceInputBuilder {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
@@ -47,6 +55,16 @@ impl DisconnectFromServiceInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Request to disconnect Source Server from service by Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Request to disconnect Source Server from service by Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
     pub fn build(
         self,
@@ -57,6 +75,7 @@ impl DisconnectFromServiceInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::disconnect_from_service::DisconnectFromServiceInput {
                 source_server_id: self.source_server_id,
+                account_id: self.account_id,
             },
         )
     }

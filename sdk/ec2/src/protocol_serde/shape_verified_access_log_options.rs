@@ -19,5 +19,15 @@ pub fn ser_verified_access_log_options(
     if let Some(var_6) = &input.kinesis_data_firehose {
         crate::protocol_serde::shape_verified_access_log_kinesis_data_firehose_destination_options::ser_verified_access_log_kinesis_data_firehose_destination_options(scope_5, var_6)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("LogVersion");
+    if let Some(var_8) = &input.log_version {
+        scope_7.string(var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("IncludeTrustContext");
+    if let Some(var_10) = &input.include_trust_context {
+        scope_9.boolean(*var_10);
+    }
     Ok(())
 }

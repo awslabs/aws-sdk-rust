@@ -25,6 +25,9 @@ pub struct DescribeProvisioningArtifactInput {
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     #[doc(hidden)]
     pub verbose: ::std::option::Option<bool>,
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    #[doc(hidden)]
+    pub include_provisioning_artifact_parameters: ::std::option::Option<bool>,
 }
 impl DescribeProvisioningArtifactInput {
     /// <p>The language code.</p>
@@ -55,6 +58,10 @@ impl DescribeProvisioningArtifactInput {
     pub fn verbose(&self) -> ::std::option::Option<bool> {
         self.verbose
     }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn include_provisioning_artifact_parameters(&self) -> ::std::option::Option<bool> {
+        self.include_provisioning_artifact_parameters
+    }
 }
 impl DescribeProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningArtifactInput`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactInput).
@@ -75,6 +82,7 @@ pub struct DescribeProvisioningArtifactInputBuilder {
     pub(crate) provisioning_artifact_name: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
     pub(crate) verbose: ::std::option::Option<bool>,
+    pub(crate) include_provisioning_artifact_parameters: ::std::option::Option<bool>,
 }
 impl DescribeProvisioningArtifactInputBuilder {
     /// <p>The language code.</p>
@@ -163,6 +171,19 @@ impl DescribeProvisioningArtifactInputBuilder {
         self.verbose = input;
         self
     }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn include_provisioning_artifact_parameters(mut self, input: bool) -> Self {
+        self.include_provisioning_artifact_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn set_include_provisioning_artifact_parameters(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
+        self.include_provisioning_artifact_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProvisioningArtifactInput`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactInput).
     pub fn build(
         self,
@@ -178,6 +199,8 @@ impl DescribeProvisioningArtifactInputBuilder {
                 provisioning_artifact_name: self.provisioning_artifact_name,
                 product_name: self.product_name,
                 verbose: self.verbose,
+                include_provisioning_artifact_parameters: self
+                    .include_provisioning_artifact_parameters,
             },
         )
     }

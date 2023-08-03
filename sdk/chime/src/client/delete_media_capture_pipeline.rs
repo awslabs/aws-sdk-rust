@@ -6,6 +6,9 @@ impl super::Client {
     ///   - [`media_pipeline_id(impl ::std::convert::Into<String>)`](crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineFluentBuilder::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineFluentBuilder::set_media_pipeline_id): <p>The ID of the media capture pipeline being deleted. </p>
     /// - On success, responds with [`DeleteMediaCapturePipelineOutput`](crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineOutput)
     /// - On failure, responds with [`SdkError<DeleteMediaCapturePipelineError>`](crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError)
+    #[deprecated(
+        note = "Replaced by DeleteMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace"
+    )]
     pub fn delete_media_capture_pipeline(&self) -> crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineFluentBuilder{
         crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineFluentBuilder::new(self.handle.clone())
     }

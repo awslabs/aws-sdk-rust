@@ -7,7 +7,7 @@ pub struct OutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
     #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl OutputDataConfig {
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
@@ -48,12 +48,12 @@ impl OutputDataConfigBuilder {
         self.s3_bucket = input;
         self
     }
-    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self

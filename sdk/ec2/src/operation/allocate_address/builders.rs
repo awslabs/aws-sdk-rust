@@ -7,12 +7,9 @@ pub use crate::operation::allocate_address::_allocate_address_input::AllocateAdd
 ///
 /// <p>Allocates an Elastic IP address to your Amazon Web Services account. After you allocate the Elastic IP address you can associate it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address pool and can be allocated to a different Amazon Web Services account.</p>
 /// <p>You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool created from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon Web Services resources using bring your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP address that you released after it is allocated to another Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>
-/// <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.</p>
+/// <p>If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP address that you released after it is allocated to another Amazon Web Services account. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance). </p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
+/// <p>You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocateAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -106,24 +103,22 @@ impl AllocateAddressFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.inner = self.inner.domain(input);
         self
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address(input.into());
         self
     }
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address(input);
         self

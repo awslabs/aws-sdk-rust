@@ -9,7 +9,7 @@ pub struct CreateConfiguredTableInput {
     /// <p>A description for the configured table.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     #[doc(hidden)]
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
@@ -33,7 +33,7 @@ impl CreateConfiguredTableInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     pub fn table_reference(&self) -> ::std::option::Option<&crate::types::TableReference> {
         self.table_reference.as_ref()
     }
@@ -99,12 +99,12 @@ impl CreateConfiguredTableInputBuilder {
         self.description = input;
         self
     }
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     pub fn set_table_reference(
         mut self,
         input: ::std::option::Option<crate::types::TableReference>,

@@ -23,5 +23,10 @@ pub fn ser_describe_provisioning_artifact_input(
     if let Some(var_6) = &input.verbose {
         object.key("Verbose").boolean(*var_6);
     }
+    if let Some(var_7) = &input.include_provisioning_artifact_parameters {
+        object
+            .key("IncludeProvisioningArtifactParameters")
+            .boolean(*var_7);
+    }
     Ok(())
 }

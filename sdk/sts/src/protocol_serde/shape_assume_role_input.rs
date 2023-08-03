@@ -84,6 +84,17 @@ pub fn ser_assume_role_input_input(
     if let Some(var_31) = &input.source_identity {
         scope_30.string(var_31);
     }
+    #[allow(unused_mut)]
+    let mut scope_32 = writer.prefix("ProvidedContexts");
+    if let Some(var_33) = &input.provided_contexts {
+        let mut list_35 = scope_32.start_list(false, None);
+        for item_34 in var_33 {
+            #[allow(unused_mut)]
+            let mut entry_36 = list_35.entry();
+            crate::protocol_serde::shape_provided_context::ser_provided_context(entry_36, item_34)?;
+        }
+        list_35.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

@@ -196,4 +196,17 @@ impl CreateMonitorFluentBuilder {
         self.inner = self.inner.set_traffic_percentage_to_monitor(input);
         self
     }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
+        self.inner = self.inner.health_events_config(input);
+        self
+    }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn set_health_events_config(
+        mut self,
+        input: ::std::option::Option<crate::types::HealthEventsConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_health_events_config(input);
+        self
+    }
 }

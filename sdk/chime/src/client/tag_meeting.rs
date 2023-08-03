@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_tags): <p>The tag key-value pairs.</p>
     /// - On success, responds with [`TagMeetingOutput`](crate::operation::tag_meeting::TagMeetingOutput)
     /// - On failure, responds with [`SdkError<TagMeetingError>`](crate::operation::tag_meeting::TagMeetingError)
+    #[deprecated(note = "Use TagResource in the Amazon Chime SDK Meetings Namespace.")]
     pub fn tag_meeting(&self) -> crate::operation::tag_meeting::builders::TagMeetingFluentBuilder {
         crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::new(self.handle.clone())
     }

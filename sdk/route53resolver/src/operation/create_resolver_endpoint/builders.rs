@@ -204,17 +204,43 @@ impl CreateResolverEndpointFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.inner = self.inner.resolver_endpoint_type(input);
         self
     }
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn set_resolver_endpoint_type(
         mut self,
         input: ::std::option::Option<crate::types::ResolverEndpointType>,
     ) -> Self {
         self.inner = self.inner.set_resolver_endpoint_type(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.outpost_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_outpost_arn(input);
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn preferred_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.preferred_instance_type(input.into());
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn set_preferred_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_preferred_instance_type(input);
         self
     }
 }

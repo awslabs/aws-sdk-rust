@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_name): <p>Wave name.</p>
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_description): <p>Wave description.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`UpdateWaveOutput`](crate::operation::update_wave::UpdateWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::arn): <p>Wave ARN.</p>

@@ -7,7 +7,13 @@ pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_
 ///
 /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
-/// </note>
+/// </note> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by ListChannelMembershipsForAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChannelMembershipsForAppInstanceUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -93,7 +93,7 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_egress_only_internet_gateway_ids`](Self::set_egress_only_internet_gateway_ids).
     ///
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     pub fn egress_only_internet_gateway_ids(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -101,7 +101,7 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
         self.inner = self.inner.egress_only_internet_gateway_ids(input.into());
         self
     }
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     pub fn set_egress_only_internet_gateway_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -133,7 +133,7 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
@@ -148,7 +148,7 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key

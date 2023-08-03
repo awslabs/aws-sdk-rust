@@ -329,7 +329,11 @@ pub use crate::types::_delete_marker_entry::DeleteMarkerEntry;
 
 pub use crate::types::_object_version::ObjectVersion;
 
+pub use crate::types::_restore_status::RestoreStatus;
+
 pub use crate::types::_object_version_storage_class::ObjectVersionStorageClass;
+
+pub use crate::types::_optional_object_attributes::OptionalObjectAttributes;
 
 pub use crate::types::_object::Object;
 
@@ -615,6 +619,8 @@ mod _object_version;
 
 mod _object_version_storage_class;
 
+mod _optional_object_attributes;
+
 mod _output_location;
 
 mod _output_serialization;
@@ -688,6 +694,8 @@ mod _request_progress;
 mod _restore_request;
 
 mod _restore_request_type;
+
+mod _restore_status;
 
 mod _routing_rule;
 

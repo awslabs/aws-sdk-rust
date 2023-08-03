@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainNamesInput {
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -11,7 +11,7 @@ pub struct ListDomainNamesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDomainNamesInput {
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct ListDomainNamesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListDomainNamesInputBuilder {
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self

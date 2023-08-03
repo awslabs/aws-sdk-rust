@@ -185,7 +185,7 @@ pub enum CreatePipelineError {
     InvalidStructureException(crate::types::error::InvalidStructureException),
     /// <p>The specified resource tags are invalid.</p>
     InvalidTagsException(crate::types::error::InvalidTagsException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
+    /// <p>The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified pipeline name is already in use.</p>
     PipelineNameInUseException(crate::types::error::PipelineNameInUseException),

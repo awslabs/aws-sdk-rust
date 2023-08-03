@@ -10,10 +10,10 @@ pub struct ShareInvitationSummary {
     /// <p>An Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub shared_by: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     #[doc(hidden)]
     pub shared_with: ::std::option::Option<::std::string::String>,
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The resource type of the share invitation.</p>
@@ -32,6 +32,12 @@ pub struct ShareInvitationSummary {
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The profile name.</p>
+    #[doc(hidden)]
+    pub profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>The profile ARN.</p>
+    #[doc(hidden)]
+    pub profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
@@ -42,11 +48,11 @@ impl ShareInvitationSummary {
     pub fn shared_by(&self) -> ::std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
@@ -71,6 +77,14 @@ impl ShareInvitationSummary {
     pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
+    /// <p>The profile name.</p>
+    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The profile ARN.</p>
+    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
 }
 impl ShareInvitationSummary {
     /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::types::ShareInvitationSummary).
@@ -94,6 +108,8 @@ pub struct ShareInvitationSummaryBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_name: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummaryBuilder {
     /// <p>The ID assigned to the share invitation.</p>
@@ -122,22 +138,22 @@ impl ShareInvitationSummaryBuilder {
         self.shared_by = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn set_permission_type(
         mut self,
         input: ::std::option::Option<crate::types::PermissionType>,
@@ -206,6 +222,26 @@ impl ShareInvitationSummaryBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The profile name.</p>
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The profile name.</p>
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_name = input;
+        self
+    }
+    /// <p>The profile ARN.</p>
+    pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The profile ARN.</p>
+    pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ShareInvitationSummary`](crate::types::ShareInvitationSummary).
     pub fn build(self) -> crate::types::ShareInvitationSummary {
         crate::types::ShareInvitationSummary {
@@ -218,6 +254,8 @@ impl ShareInvitationSummaryBuilder {
             workload_id: self.workload_id,
             lens_name: self.lens_name,
             lens_arn: self.lens_arn,
+            profile_name: self.profile_name,
+            profile_arn: self.profile_arn,
         }
     }
 }

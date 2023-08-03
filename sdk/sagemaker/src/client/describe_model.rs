@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_model::DescribeModelOutput::creation_time): <p>A timestamp that shows when the model was created.</p>
     ///   - [`model_arn(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model.</p>
     ///   - [`enable_network_isolation(bool)`](crate::operation::describe_model::DescribeModelOutput::enable_network_isolation): <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
+    ///   - [`deployment_recommendation(Option<DeploymentRecommendation>)`](crate::operation::describe_model::DescribeModelOutput::deployment_recommendation): <p>A set of recommended deployment configurations for the model.</p>
     /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::operation::describe_model::DescribeModelError)
     pub fn describe_model(
         &self,

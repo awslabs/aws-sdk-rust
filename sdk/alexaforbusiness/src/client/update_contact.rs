@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`sip_addresses(Vec<SipAddress>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::sip_addresses) / [`set_sip_addresses(Option<Vec<SipAddress>>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_sip_addresses): <p>The list of SIP addresses for the contact.</p>
     /// - On success, responds with [`UpdateContactOutput`](crate::operation::update_contact::UpdateContactOutput)
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::operation::update_contact::UpdateContactError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_contact(
         &self,
     ) -> crate::operation::update_contact::builders::UpdateContactFluentBuilder {

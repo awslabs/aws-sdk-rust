@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppImageConfigsInput {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
@@ -32,7 +32,7 @@ pub struct ListAppImageConfigsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListAppImageConfigsInput {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -95,12 +95,12 @@ pub struct ListAppImageConfigsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListAppImageConfigsInputBuilder {
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

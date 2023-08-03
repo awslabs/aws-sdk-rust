@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFileTransferOutput {
-    /// <p>Returns the unique identifier for this file transfer. </p>
+    /// <p>Returns the unique identifier for the file transfer.</p>
     #[doc(hidden)]
     pub transfer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartFileTransferOutput {
-    /// <p>Returns the unique identifier for this file transfer. </p>
+    /// <p>Returns the unique identifier for the file transfer.</p>
     pub fn transfer_id(&self) -> ::std::option::Option<&str> {
         self.transfer_id.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct StartFileTransferOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartFileTransferOutputBuilder {
-    /// <p>Returns the unique identifier for this file transfer. </p>
+    /// <p>Returns the unique identifier for the file transfer.</p>
     pub fn transfer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the unique identifier for this file transfer. </p>
+    /// <p>Returns the unique identifier for the file transfer.</p>
     pub fn set_transfer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_id = input;
         self

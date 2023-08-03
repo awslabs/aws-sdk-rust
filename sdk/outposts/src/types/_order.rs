@@ -37,7 +37,7 @@ pub struct Order {
     /// <p>The payment term.</p>
     #[doc(hidden)]
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
-    /// <p>The type of order.</p>
+    /// <p>Type of order.</p>
     #[doc(hidden)]
     pub order_type: ::std::option::Option<crate::types::OrderType>,
 }
@@ -83,7 +83,7 @@ impl Order {
     pub fn payment_term(&self) -> ::std::option::Option<&crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
-    /// <p>The type of order.</p>
+    /// <p>Type of order.</p>
     pub fn order_type(&self) -> ::std::option::Option<&crate::types::OrderType> {
         self.order_type.as_ref()
     }
@@ -231,12 +231,12 @@ impl OrderBuilder {
         self.payment_term = input;
         self
     }
-    /// <p>The type of order.</p>
+    /// <p>Type of order.</p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of order.</p>
+    /// <p>Type of order.</p>
     pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self

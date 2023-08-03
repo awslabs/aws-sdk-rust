@@ -91,6 +91,9 @@ pub struct CreateWorkloadInput {
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
     #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    #[doc(hidden)]
+    pub profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
@@ -201,6 +204,10 @@ impl CreateWorkloadInput {
     pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.applications.as_deref()
     }
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn profile_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.profile_arns.as_deref()
+    }
 }
 impl CreateWorkloadInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
@@ -234,6 +241,7 @@ pub struct CreateWorkloadInputBuilder {
     >,
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInputBuilder {
     /// <p>The name of the workload.</p>
@@ -579,6 +587,25 @@ impl CreateWorkloadInputBuilder {
         self.applications = input;
         self
     }
+    /// Appends an item to `profile_arns`.
+    ///
+    /// To override the contents of this collection use [`set_profile_arns`](Self::set_profile_arns).
+    ///
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn profile_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.profile_arns.unwrap_or_default();
+        v.push(input.into());
+        self.profile_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn set_profile_arns(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.profile_arns = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(
         self,
@@ -604,6 +631,7 @@ impl CreateWorkloadInputBuilder {
             tags: self.tags,
             discovery_config: self.discovery_config,
             applications: self.applications,
+            profile_arns: self.profile_arns,
         })
     }
 }

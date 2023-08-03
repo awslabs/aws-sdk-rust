@@ -14,7 +14,7 @@ pub struct QueryResultItem {
     /// <p>If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.</p>
     #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::QueryResultFormat>,
-    /// <p>One or more additional attributes associated with the query result.</p>
+    /// <p>One or more additional fields/attributes associated with the query result.</p>
     #[doc(hidden)]
     pub additional_attributes:
         ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
@@ -30,15 +30,15 @@ pub struct QueryResultItem {
     /// <p>The URI of the original location of the document.</p>
     #[doc(hidden)]
     pub document_uri: ::std::option::Option<::std::string::String>,
-    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     #[doc(hidden)]
     pub document_attributes:
         ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
-    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
+    /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
+    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
     #[doc(hidden)]
     pub score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     #[doc(hidden)]
     pub feedback_token: ::std::option::Option<::std::string::String>,
     /// <p>An excerpt from a table within a document.</p>
@@ -58,7 +58,7 @@ impl QueryResultItem {
     pub fn format(&self) -> ::std::option::Option<&crate::types::QueryResultFormat> {
         self.format.as_ref()
     }
-    /// <p>One or more additional attributes associated with the query result.</p>
+    /// <p>One or more additional fields/attributes associated with the query result.</p>
     pub fn additional_attributes(
         &self,
     ) -> ::std::option::Option<&[crate::types::AdditionalResultAttribute]> {
@@ -80,16 +80,16 @@ impl QueryResultItem {
     pub fn document_uri(&self) -> ::std::option::Option<&str> {
         self.document_uri.as_deref()
     }
-    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub fn document_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
         self.document_attributes.as_deref()
     }
-    /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
-    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
+    /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
+    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
     pub fn score_attributes(&self) -> ::std::option::Option<&crate::types::ScoreAttributes> {
         self.score_attributes.as_ref()
     }
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     pub fn feedback_token(&self) -> ::std::option::Option<&str> {
         self.feedback_token.as_deref()
     }
@@ -164,14 +164,14 @@ impl QueryResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
     ///
-    /// <p>One or more additional attributes associated with the query result.</p>
+    /// <p>One or more additional fields/attributes associated with the query result.</p>
     pub fn additional_attributes(mut self, input: crate::types::AdditionalResultAttribute) -> Self {
         let mut v = self.additional_attributes.unwrap_or_default();
         v.push(input);
         self.additional_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more additional attributes associated with the query result.</p>
+    /// <p>One or more additional fields/attributes associated with the query result.</p>
     pub fn set_additional_attributes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
@@ -229,14 +229,14 @@ impl QueryResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_document_attributes`](Self::set_document_attributes).
     ///
-    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub fn document_attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.document_attributes.unwrap_or_default();
         v.push(input);
         self.document_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of document attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub fn set_document_attributes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
@@ -244,14 +244,14 @@ impl QueryResultItemBuilder {
         self.document_attributes = input;
         self
     }
-    /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
-    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
+    /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
+    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
     pub fn score_attributes(mut self, input: crate::types::ScoreAttributes) -> Self {
         self.score_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
-    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.</p>
+    /// <p>Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your application.</p>
+    /// <p>The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.</p>
     pub fn set_score_attributes(
         mut self,
         input: ::std::option::Option<crate::types::ScoreAttributes>,
@@ -259,7 +259,7 @@ impl QueryResultItemBuilder {
         self.score_attributes = input;
         self
     }
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     pub fn feedback_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -267,7 +267,7 @@ impl QueryResultItemBuilder {
         self.feedback_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback </a>.</p>
+    /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     pub fn set_feedback_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

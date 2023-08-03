@@ -19,6 +19,9 @@ pub struct CreateDomainOutput {
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     #[doc(hidden)]
     pub matching: ::std::option::Option<crate::types::MatchingResponse>,
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    #[doc(hidden)]
+    pub rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,6 +56,12 @@ impl CreateDomainOutput {
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> ::std::option::Option<&crate::types::MatchingResponse> {
         self.matching.as_ref()
+    }
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn rule_based_matching(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RuleBasedMatchingResponse> {
+        self.rule_based_matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -94,6 +103,7 @@ pub struct CreateDomainOutputBuilder {
     pub(crate) default_encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) dead_letter_queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) matching: ::std::option::Option<crate::types::MatchingResponse>,
+    pub(crate) rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<
@@ -169,6 +179,19 @@ impl CreateDomainOutputBuilder {
         self.matching = input;
         self
     }
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn rule_based_matching(mut self, input: crate::types::RuleBasedMatchingResponse) -> Self {
+        self.rule_based_matching = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn set_rule_based_matching(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
+    ) -> Self {
+        self.rule_based_matching = input;
+        self
+    }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -237,6 +260,7 @@ impl CreateDomainOutputBuilder {
             default_encryption_key: self.default_encryption_key,
             dead_letter_queue_url: self.dead_letter_queue_url,
             matching: self.matching,
+            rule_based_matching: self.rule_based_matching,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             tags: self.tags,

@@ -6,6 +6,7 @@ pub use crate::operation::start_smart_home_appliance_discovery::_start_smart_hom
 /// Fluent builder constructing a request to `StartSmartHomeApplianceDiscovery`.
 ///
 /// <p>Initiates the discovery of any smart home appliances associated with the room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSmartHomeApplianceDiscoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

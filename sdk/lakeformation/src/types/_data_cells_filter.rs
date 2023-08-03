@@ -19,7 +19,7 @@ pub struct DataCellsFilter {
     /// <p>A PartiQL predicate.</p>
     #[doc(hidden)]
     pub row_filter: ::std::option::Option<crate::types::RowFilter>,
-    /// <p>A list of column names.</p>
+    /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
     #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A wildcard with exclusions.</p>
@@ -51,7 +51,7 @@ impl DataCellsFilter {
     pub fn row_filter(&self) -> ::std::option::Option<&crate::types::RowFilter> {
         self.row_filter.as_ref()
     }
-    /// <p>A list of column names.</p>
+    /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
     pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.column_names.as_deref()
     }
@@ -154,14 +154,14 @@ impl DataCellsFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
     ///
-    /// <p>A list of column names.</p>
+    /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
     pub fn column_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
         v.push(input.into());
         self.column_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of column names.</p>
+    /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
     pub fn set_column_names(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -122,45 +122,50 @@ pub fn ser_hls_group_settings(
             ::aws_smithy_types::Number::NegInt((*var_33).into()),
         );
     }
-    if let Some(var_34) = &input.segment_control {
-        object.key("segmentControl").string(var_34.as_str());
+    if let Some(var_34) = &input.progressive_write_hls_manifest {
+        object
+            .key("progressiveWriteHlsManifest")
+            .string(var_34.as_str());
     }
-    if let Some(var_35) = &input.segment_length {
+    if let Some(var_35) = &input.segment_control {
+        object.key("segmentControl").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_35).into()),
+            ::aws_smithy_types::Number::NegInt((*var_36).into()),
         );
     }
-    if let Some(var_36) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_36.as_str());
+    if let Some(var_37) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_37.as_str());
     }
-    if let Some(var_37) = &input.segments_per_subdirectory {
+    if let Some(var_38) = &input.segments_per_subdirectory {
         object.key("segmentsPerSubdirectory").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_38) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_38.as_str());
+    if let Some(var_39) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_39.as_str());
     }
-    if let Some(var_39) = &input.target_duration_compatibility_mode {
+    if let Some(var_40) = &input.target_duration_compatibility_mode {
         object
             .key("targetDurationCompatibilityMode")
-            .string(var_39.as_str());
+            .string(var_40.as_str());
     }
-    if let Some(var_40) = &input.timed_metadata_id3_frame {
-        object.key("timedMetadataId3Frame").string(var_40.as_str());
+    if let Some(var_41) = &input.timed_metadata_id3_frame {
+        object.key("timedMetadataId3Frame").string(var_41.as_str());
     }
-    if let Some(var_41) = &input.timed_metadata_id3_period {
+    if let Some(var_42) = &input.timed_metadata_id3_period {
         object.key("timedMetadataId3Period").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_41).into()),
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
-    if let Some(var_42) = &input.timestamp_delta_milliseconds {
+    if let Some(var_43) = &input.timestamp_delta_milliseconds {
         object.key("timestampDeltaMilliseconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_42).into()),
+            ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
     Ok(())
@@ -404,6 +409,21 @@ where
                                     tokens.next(),
                                 )?
                                 .map(i32::try_from)
+                                .transpose()?,
+                            );
+                        }
+                        "progressiveWriteHlsManifest" => {
+                            builder = builder.set_progressive_write_hls_manifest(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::types::HlsProgressiveWriteHlsManifest::from(
+                                            u.as_ref(),
+                                        )
+                                    })
+                                })
                                 .transpose()?,
                             );
                         }

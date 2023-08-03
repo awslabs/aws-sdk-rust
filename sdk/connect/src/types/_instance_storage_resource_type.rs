@@ -21,6 +21,7 @@
 ///     InstanceStorageResourceType::MediaStreams => { /* ... */ },
 ///     InstanceStorageResourceType::RealTimeContactAnalysisSegments => { /* ... */ },
 ///     InstanceStorageResourceType::ScheduledReports => { /* ... */ },
+///     InstanceStorageResourceType::ScreenRecordings => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -72,6 +73,8 @@ pub enum InstanceStorageResourceType {
     RealTimeContactAnalysisSegments,
     #[allow(missing_docs)] // documentation missing in model
     ScheduledReports,
+    #[allow(missing_docs)] // documentation missing in model
+    ScreenRecordings,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for InstanceStorageResourceType {
                 InstanceStorageResourceType::RealTimeContactAnalysisSegments
             }
             "SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
+            "SCREEN_RECORDINGS" => InstanceStorageResourceType::ScreenRecordings,
             other => InstanceStorageResourceType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -117,6 +121,7 @@ impl InstanceStorageResourceType {
                 "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
             }
             InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
+            InstanceStorageResourceType::ScreenRecordings => "SCREEN_RECORDINGS",
             InstanceStorageResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -132,6 +137,7 @@ impl InstanceStorageResourceType {
             "MEDIA_STREAMS",
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
             "SCHEDULED_REPORTS",
+            "SCREEN_RECORDINGS",
         ]
     }
 }

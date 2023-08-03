@@ -21,7 +21,7 @@ pub struct AllocateHostsInput {
     /// <p>If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
     #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The tags to apply to the Dedicated Host during creation.</p>
@@ -31,12 +31,20 @@ pub struct AllocateHostsInput {
     /// <p>Default: <code>off</code> </p>
     #[doc(hidden)]
     pub host_recovery: ::std::option::Option<crate::types::HostRecovery>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AllocateHostsInput {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -62,7 +70,7 @@ impl AllocateHostsInput {
     pub fn instance_family(&self) -> ::std::option::Option<&str> {
         self.instance_family.as_deref()
     }
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
@@ -75,13 +83,22 @@ impl AllocateHostsInput {
     pub fn host_recovery(&self) -> ::std::option::Option<&crate::types::HostRecovery> {
         self.host_recovery.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_maintenance(&self) -> ::std::option::Option<&crate::types::HostMaintenance> {
         self.host_maintenance.as_ref()
+    }
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    pub fn asset_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.asset_ids.as_deref()
     }
 }
 impl AllocateHostsInput {
@@ -108,6 +125,7 @@ pub struct AllocateHostsInputBuilder {
     pub(crate) host_recovery: ::std::option::Option<crate::types::HostRecovery>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
+    pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AllocateHostsInputBuilder {
     /// <p>Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"> Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -187,12 +205,12 @@ impl AllocateHostsInputBuilder {
         self.instance_family = input;
         self
     }
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
@@ -231,12 +249,14 @@ impl AllocateHostsInputBuilder {
         self.host_recovery = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
@@ -252,6 +272,33 @@ impl AllocateHostsInputBuilder {
         input: ::std::option::Option<crate::types::HostMaintenance>,
     ) -> Self {
         self.host_maintenance = input;
+        self
+    }
+    /// Appends an item to `asset_ids`.
+    ///
+    /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
+    ///
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    pub fn asset_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.asset_ids.unwrap_or_default();
+        v.push(input.into());
+        self.asset_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    pub fn set_asset_ids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.asset_ids = input;
         self
     }
     /// Consumes the builder and constructs a [`AllocateHostsInput`](crate::operation::allocate_hosts::AllocateHostsInput).
@@ -272,6 +319,7 @@ impl AllocateHostsInputBuilder {
             host_recovery: self.host_recovery,
             outpost_arn: self.outpost_arn,
             host_maintenance: self.host_maintenance,
+            asset_ids: self.asset_ids,
         })
     }
 }

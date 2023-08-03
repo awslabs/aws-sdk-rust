@@ -125,4 +125,24 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn grafana_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.grafana_version(input.into());
+        self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn set_grafana_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_grafana_version(input);
+        self
+    }
 }

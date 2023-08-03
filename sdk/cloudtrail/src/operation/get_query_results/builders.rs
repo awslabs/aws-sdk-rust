@@ -5,7 +5,7 @@ pub use crate::operation::get_query_results::_get_query_results_input::GetQueryR
 
 /// Fluent builder constructing a request to `GetQueryResults`.
 ///
-/// <p>Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.</p>
+/// <p>Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the <code>StartQuery</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueryResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

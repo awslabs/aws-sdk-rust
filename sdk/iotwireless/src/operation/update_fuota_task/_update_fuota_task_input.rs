@@ -21,13 +21,15 @@ pub struct UpdateFuotaTaskInput {
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     #[doc(hidden)]
     pub firmware_update_role: ::std::option::Option<::std::string::String>,
-    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     #[doc(hidden)]
     pub redundancy_percent: ::std::option::Option<i32>,
-    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     #[doc(hidden)]
     pub fragment_size_bytes: ::std::option::Option<i32>,
-    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
+    /// </note>
     #[doc(hidden)]
     pub fragment_interval_ms: ::std::option::Option<i32>,
 }
@@ -56,15 +58,17 @@ impl UpdateFuotaTaskInput {
     pub fn firmware_update_role(&self) -> ::std::option::Option<&str> {
         self.firmware_update_role.as_deref()
     }
-    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn redundancy_percent(&self) -> ::std::option::Option<i32> {
         self.redundancy_percent
     }
-    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn fragment_size_bytes(&self) -> ::std::option::Option<i32> {
         self.fragment_size_bytes
     }
-    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
+    /// </note>
     pub fn fragment_interval_ms(&self) -> ::std::option::Option<i32> {
         self.fragment_interval_ms
     }
@@ -168,32 +172,36 @@ impl UpdateFuotaTaskInputBuilder {
         self.firmware_update_role = input;
         self
     }
-    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn redundancy_percent(mut self, input: i32) -> Self {
         self.redundancy_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
+    /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn set_redundancy_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.redundancy_percent = input;
         self
     }
-    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn fragment_size_bytes(mut self, input: i32) -> Self {
         self.fragment_size_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
+    /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn set_fragment_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fragment_size_bytes = input;
         self
     }
-    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
+    /// </note>
     pub fn fragment_interval_ms(mut self, input: i32) -> Self {
         self.fragment_interval_ms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
+    /// </note>
     pub fn set_fragment_interval_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fragment_interval_ms = input;
         self

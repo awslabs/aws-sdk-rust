@@ -39,6 +39,9 @@ pub struct DescribePipelineExecutionOutput {
     /// <p>The parallelism configuration applied to the pipeline.</p>
     #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    #[doc(hidden)]
+    pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     _request_id: Option<String>,
 }
 impl DescribePipelineExecutionOutput {
@@ -96,6 +99,12 @@ impl DescribePipelineExecutionOutput {
     ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SelectiveExecutionConfig> {
+        self.selective_execution_config.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribePipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -130,6 +139,8 @@ pub struct DescribePipelineExecutionOutputBuilder {
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) parallelism_configuration:
         ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) selective_execution_config:
+        ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     _request_id: Option<String>,
 }
 impl DescribePipelineExecutionOutputBuilder {
@@ -307,6 +318,22 @@ impl DescribePipelineExecutionOutputBuilder {
         self.parallelism_configuration = input;
         self
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        mut self,
+        input: crate::types::SelectiveExecutionConfig,
+    ) -> Self {
+        self.selective_execution_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn set_selective_execution_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    ) -> Self {
+        self.selective_execution_config = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -333,6 +360,7 @@ impl DescribePipelineExecutionOutputBuilder {
             created_by: self.created_by,
             last_modified_by: self.last_modified_by,
             parallelism_configuration: self.parallelism_configuration,
+            selective_execution_config: self.selective_execution_config,
             _request_id: self._request_id,
         }
     }

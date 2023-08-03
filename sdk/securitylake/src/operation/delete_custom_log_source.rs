@@ -43,7 +43,31 @@ impl DeleteCustomLogSourceInput {
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/v1/logsources/custom").expect("formatting should succeed");
+                let input_1 = &_input.source_name;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let source_name = ::aws_smithy_http::label::fmt_string(
+                    input_1,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if source_name.is_empty() {
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
+                            "source_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                ::std::write!(
+                    output,
+                    "/v1/datalake/logsources/custom/{sourceName}",
+                    sourceName = source_name
+                )
+                .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
@@ -52,25 +76,14 @@ impl DeleteCustomLogSourceInput {
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.custom_source_name;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "custom_source_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "custom_source_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                if let ::std::option::Option::Some(inner_2) = &_input.source_version {
+                    {
+                        query.push_kv(
+                            "sourceVersion",
+                            &::aws_smithy_http::query::fmt_string(&inner_2),
+                        );
+                    }
                 }
-                query.push_kv(
-                    "customSourceName",
-                    &::aws_smithy_http::query::fmt_string(&inner_1),
-                );
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -182,18 +195,16 @@ pub type DeleteCustomLogSourceErrorKind = DeleteCustomLogSourceError;
 pub enum DeleteCustomLogSourceError {
     /// <p>You do not have sufficient access to perform this action. Access denied errors appear when Amazon Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs when there is no applicable Deny statement and also no applicable Allow statement.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
-    AccountNotFoundException(crate::types::error::AccountNotFoundException),
-    /// <p>Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.</p>
-    BucketNotFoundException(crate::types::error::BucketNotFoundException),
-    /// <p>There was a conflict when you attempted to modify a Security Lake source name. </p>
-    ConflictSourceNamesException(crate::types::error::ConflictSourceNamesException),
-    /// <p>Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting, perform the operation again. </p>
+    /// <p>The request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequestException(crate::types::error::BadRequestException),
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting, perform the operation again.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Your signing certificate could not be validated. </p>
-    ValidationException(crate::types::error::ValidationException),
+    /// <p>The limit on the number of requests per second was exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -215,12 +226,11 @@ impl ::std::fmt::Display for DeleteCustomLogSourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::AccountNotFoundException(_inner) => _inner.fmt(f),
-            Self::BucketNotFoundException(_inner) => _inner.fmt(f),
-            Self::ConflictSourceNamesException(_inner) => _inner.fmt(f),
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -231,13 +241,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteCustomL
             Self::AccessDeniedException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::AccountNotFoundException(_inner) => {
+            Self::BadRequestException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::BucketNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ConflictSourceNamesException(_inner) => {
+            Self::ConflictException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
@@ -246,7 +253,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteCustomL
             Self::ResourceNotFoundException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::ValidationException(_inner) => {
+            Self::ThrottlingException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -269,6 +276,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteCustomLogSourceError 
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
             Self::InternalServerException(inner) => {
+                ::std::option::Option::Some(inner.retryable_error_kind())
+            }
+            Self::ThrottlingException(inner) => {
                 ::std::option::Option::Some(inner.retryable_error_kind())
             }
             _ => ::std::option::Option::None,
@@ -308,12 +318,11 @@ impl DeleteCustomLogSourceError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
-            Self::AccountNotFoundException(e) => e.meta(),
-            Self::BucketNotFoundException(e) => e.meta(),
-            Self::ConflictSourceNamesException(e) => e.meta(),
+            Self::BadRequestException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
-            Self::ValidationException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -321,17 +330,13 @@ impl DeleteCustomLogSourceError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::AccountNotFoundException`.
-    pub fn is_account_not_found_exception(&self) -> bool {
-        matches!(self, Self::AccountNotFoundException(_))
+    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(self, Self::BadRequestException(_))
     }
-    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::BucketNotFoundException`.
-    pub fn is_bucket_not_found_exception(&self) -> bool {
-        matches!(self, Self::BucketNotFoundException(_))
-    }
-    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::ConflictSourceNamesException`.
-    pub fn is_conflict_source_names_exception(&self) -> bool {
-        matches!(self, Self::ConflictSourceNamesException(_))
+    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomLogSourceError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -341,21 +346,20 @@ impl DeleteCustomLogSourceError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
-    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::ValidationException`.
-    pub fn is_validation_exception(&self) -> bool {
-        matches!(self, Self::ValidationException(_))
+    /// Returns `true` if the error kind is `DeleteCustomLogSourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
     }
 }
 impl ::std::error::Error for DeleteCustomLogSourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::AccountNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::BucketNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConflictSourceNamesException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

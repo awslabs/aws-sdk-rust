@@ -13,6 +13,9 @@ pub struct GetClusterCredentialsWithIamInput {
     /// <p>Range: 900-3600. Default: 900.</p>
     #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>The custom domain name for the IAM message cluster credentials.</p>
+    #[doc(hidden)]
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsWithIamInput {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
@@ -27,6 +30,10 @@ impl GetClusterCredentialsWithIamInput {
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
+    }
+    /// <p>The custom domain name for the IAM message cluster credentials.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
     }
 }
 impl GetClusterCredentialsWithIamInput {
@@ -45,6 +52,7 @@ pub struct GetClusterCredentialsWithIamInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsWithIamInputBuilder {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
@@ -85,6 +93,22 @@ impl GetClusterCredentialsWithIamInputBuilder {
         self.duration_seconds = input;
         self
     }
+    /// <p>The custom domain name for the IAM message cluster credentials.</p>
+    pub fn custom_domain_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name for the IAM message cluster credentials.</p>
+    pub fn set_custom_domain_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamInput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput).
     pub fn build(
         self,
@@ -97,6 +121,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
                 db_name: self.db_name,
                 cluster_identifier: self.cluster_identifier,
                 duration_seconds: self.duration_seconds,
+                custom_domain_name: self.custom_domain_name,
             },
         )
     }

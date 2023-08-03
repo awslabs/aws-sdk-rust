@@ -101,6 +101,11 @@ impl GetPlaceInput {
                         query.push_kv("language", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.key {
+                    {
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

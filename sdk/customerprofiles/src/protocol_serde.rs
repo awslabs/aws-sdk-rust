@@ -12,13 +12,21 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_calculated_attribute_definition;
+
 pub(crate) mod shape_create_domain;
+
+pub(crate) mod shape_create_event_stream;
 
 pub(crate) mod shape_create_integration_workflow;
 
 pub(crate) mod shape_create_profile;
 
+pub(crate) mod shape_delete_calculated_attribute_definition;
+
 pub(crate) mod shape_delete_domain;
+
+pub(crate) mod shape_delete_event_stream;
 
 pub(crate) mod shape_delete_integration;
 
@@ -34,7 +42,13 @@ pub(crate) mod shape_delete_workflow;
 
 pub(crate) mod shape_get_auto_merging_preview;
 
+pub(crate) mod shape_get_calculated_attribute_definition;
+
+pub(crate) mod shape_get_calculated_attribute_for_profile;
+
 pub(crate) mod shape_get_domain;
+
+pub(crate) mod shape_get_event_stream;
 
 pub(crate) mod shape_get_identity_resolution_job;
 
@@ -46,13 +60,21 @@ pub(crate) mod shape_get_profile_object_type;
 
 pub(crate) mod shape_get_profile_object_type_template;
 
+pub(crate) mod shape_get_similar_profiles;
+
 pub(crate) mod shape_get_workflow;
 
 pub(crate) mod shape_get_workflow_steps;
 
 pub(crate) mod shape_list_account_integrations;
 
+pub(crate) mod shape_list_calculated_attribute_definitions;
+
+pub(crate) mod shape_list_calculated_attributes_for_profile;
+
 pub(crate) mod shape_list_domains;
+
+pub(crate) mod shape_list_event_streams;
 
 pub(crate) mod shape_list_identity_resolution_jobs;
 
@@ -63,6 +85,8 @@ pub(crate) mod shape_list_profile_object_type_templates;
 pub(crate) mod shape_list_profile_object_types;
 
 pub(crate) mod shape_list_profile_objects;
+
+pub(crate) mod shape_list_rule_based_matches;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -82,6 +106,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_calculated_attribute_definition;
+
 pub(crate) mod shape_update_domain;
 
 pub(crate) mod shape_update_profile;
@@ -100,7 +126,11 @@ pub(crate) mod shape_add_profile_key_input;
 
 pub(crate) mod shape_bad_request_exception;
 
+pub(crate) mod shape_create_calculated_attribute_definition_input;
+
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_event_stream_input;
 
 pub(crate) mod shape_create_integration_workflow_input;
 
@@ -117,6 +147,8 @@ pub(crate) mod shape_delete_profile_object_input;
 pub(crate) mod shape_get_auto_merging_preview_input;
 
 pub(crate) mod shape_get_integration_input;
+
+pub(crate) mod shape_get_similar_profiles_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -142,6 +174,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_calculated_attribute_definition_input;
+
 pub(crate) mod shape_update_domain_input;
 
 pub(crate) mod shape_update_profile_input;
@@ -150,7 +184,15 @@ pub(crate) mod shape_additional_search_key;
 
 pub(crate) mod shape_address;
 
+pub(crate) mod shape_attribute_details;
+
 pub(crate) mod shape_auto_merging;
+
+pub(crate) mod shape_calculated_attribute_definitions_list;
+
+pub(crate) mod shape_calculated_attributes_for_profile_list;
+
+pub(crate) mod shape_conditions;
 
 pub(crate) mod shape_conflict_resolution;
 
@@ -159,6 +201,10 @@ pub(crate) mod shape_consolidation;
 pub(crate) mod shape_domain_list;
 
 pub(crate) mod shape_domain_stats;
+
+pub(crate) mod shape_event_stream_destination_details;
+
+pub(crate) mod shape_event_stream_summary_list;
 
 pub(crate) mod shape_exporting_location;
 
@@ -178,6 +224,8 @@ pub(crate) mod shape_job_stats;
 
 pub(crate) mod shape_key_map;
 
+pub(crate) mod shape_match_id_list;
+
 pub(crate) mod shape_matches_list;
 
 pub(crate) mod shape_matching_request;
@@ -192,6 +240,8 @@ pub(crate) mod shape_object_type_key;
 
 pub(crate) mod shape_object_type_names;
 
+pub(crate) mod shape_profile_id_list;
+
 pub(crate) mod shape_profile_list;
 
 pub(crate) mod shape_profile_object_list;
@@ -201,6 +251,10 @@ pub(crate) mod shape_profile_object_type_list;
 pub(crate) mod shape_profile_object_type_template_list;
 
 pub(crate) mod shape_request_value_list;
+
+pub(crate) mod shape_rule_based_matching_request;
+
+pub(crate) mod shape_rule_based_matching_response;
 
 pub(crate) mod shape_tag_map;
 
@@ -220,11 +274,23 @@ pub(crate) mod shape_appflow_integration_workflow_attributes;
 
 pub(crate) mod shape_appflow_integration_workflow_metrics;
 
+pub(crate) mod shape_attribute_item;
+
+pub(crate) mod shape_attribute_list;
+
+pub(crate) mod shape_attribute_types_selector;
+
+pub(crate) mod shape_event_stream_summary;
+
 pub(crate) mod shape_exporting_config;
 
 pub(crate) mod shape_identity_resolution_job;
 
 pub(crate) mod shape_job_schedule;
+
+pub(crate) mod shape_list_calculated_attribute_definition_item;
+
+pub(crate) mod shape_list_calculated_attribute_for_profile_item;
 
 pub(crate) mod shape_list_domain_item;
 
@@ -240,9 +306,15 @@ pub(crate) mod shape_list_workflows_item;
 
 pub(crate) mod shape_match_item;
 
+pub(crate) mod shape_matching_rule;
+
+pub(crate) mod shape_matching_rules;
+
 pub(crate) mod shape_object_type_key_list;
 
 pub(crate) mod shape_profile;
+
+pub(crate) mod shape_range;
 
 pub(crate) mod shape_s3_exporting_location;
 
@@ -250,9 +322,13 @@ pub(crate) mod shape_source_flow_config;
 
 pub(crate) mod shape_task;
 
+pub(crate) mod shape_threshold;
+
 pub(crate) mod shape_trigger_config;
 
 pub(crate) mod shape_workflow_step_item;
+
+pub(crate) mod shape_address_list;
 
 pub(crate) mod shape_appflow_integration_workflow_step;
 
@@ -262,13 +338,17 @@ pub(crate) mod shape_batch;
 
 pub(crate) mod shape_connector_operator;
 
+pub(crate) mod shape_destination_summary;
+
+pub(crate) mod shape_email_list;
+
 pub(crate) mod shape_found_by_list;
 
 pub(crate) mod shape_incremental_pull_config;
 
 pub(crate) mod shape_matching_attributes_list;
 
-pub(crate) mod shape_profile_id_list;
+pub(crate) mod shape_phone_number_list;
 
 pub(crate) mod shape_s3_exporting_config;
 
@@ -283,6 +363,8 @@ pub(crate) mod shape_found_by_key_value;
 pub(crate) mod shape_marketo_source_properties;
 
 pub(crate) mod shape_matching_attributes;
+
+pub(crate) mod shape_matching_rule_attribute_list;
 
 pub(crate) mod shape_s3_source_properties;
 

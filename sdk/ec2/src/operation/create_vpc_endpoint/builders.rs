@@ -5,7 +5,7 @@ pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_input::Creat
 
 /// Fluent builder constructing a request to `CreateVpcEndpoint`.
 ///
-/// <p>Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between your VPC and the service. The service may be provided by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink Guide</a>.</p>
+/// <p>Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified VPC and the specified endpoint service. You can use an endpoint service provided by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,22 +124,22 @@ impl CreateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_vpc_endpoint_type(input);
         self
     }
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self

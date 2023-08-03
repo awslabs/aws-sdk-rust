@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreInput {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated data store ID.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirDatastoreInput {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated data store ID.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -31,12 +31,12 @@ pub struct DescribeFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirDatastoreInputBuilder {
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated data store ID.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// <p>The AWS-generated data store ID.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

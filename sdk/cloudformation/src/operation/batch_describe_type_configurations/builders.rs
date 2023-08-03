@@ -5,7 +5,7 @@ pub use crate::operation::batch_describe_type_configurations::_batch_describe_ty
 
 /// Fluent builder constructing a request to `BatchDescribeTypeConfigurations`.
 ///
-/// <p>Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the account and region.</p>
+/// <p>Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the account and Region.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsFluentBuilder {

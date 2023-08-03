@@ -150,6 +150,15 @@ pub(crate) fn de_get_record(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "ExpiresAt" => {
+                        builder = builder.set_expires_at(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "Record" => {
                         builder = builder
                             .set_record(crate::protocol_serde::shape_record::de_record(tokens)?);

@@ -21,6 +21,9 @@ pub struct AdBreak {
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
     #[doc(hidden)]
     pub time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
+    /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+    #[doc(hidden)]
+    pub ad_break_metadata: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl AdBreak {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
@@ -47,6 +50,10 @@ impl AdBreak {
     pub fn time_signal_message(&self) -> ::std::option::Option<&crate::types::TimeSignalMessage> {
         self.time_signal_message.as_ref()
     }
+    /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+    pub fn ad_break_metadata(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
+        self.ad_break_metadata.as_deref()
+    }
 }
 impl AdBreak {
     /// Creates a new builder-style object to manufacture [`AdBreak`](crate::types::AdBreak).
@@ -66,6 +73,8 @@ pub struct AdBreakBuilder {
     pub(crate) slate: ::std::option::Option<crate::types::SlateSource>,
     pub(crate) splice_insert_message: ::std::option::Option<crate::types::SpliceInsertMessage>,
     pub(crate) time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
+    pub(crate) ad_break_metadata:
+        ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl AdBreakBuilder {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
@@ -131,6 +140,25 @@ impl AdBreakBuilder {
         self.time_signal_message = input;
         self
     }
+    /// Appends an item to `ad_break_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_ad_break_metadata`](Self::set_ad_break_metadata).
+    ///
+    /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+    pub fn ad_break_metadata(mut self, input: crate::types::KeyValuePair) -> Self {
+        let mut v = self.ad_break_metadata.unwrap_or_default();
+        v.push(input);
+        self.ad_break_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
+    pub fn set_ad_break_metadata(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    ) -> Self {
+        self.ad_break_metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AdBreak`](crate::types::AdBreak).
     pub fn build(self) -> crate::types::AdBreak {
         crate::types::AdBreak {
@@ -139,6 +167,7 @@ impl AdBreakBuilder {
             slate: self.slate,
             splice_insert_message: self.splice_insert_message,
             time_signal_message: self.time_signal_message,
+            ad_break_metadata: self.ad_break_metadata,
         }
     }
 }

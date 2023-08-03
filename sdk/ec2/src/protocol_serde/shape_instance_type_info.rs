@@ -294,6 +294,44 @@ pub fn de_instance_type_info(
                 builder = builder.set_supported_boot_modes(var_24);
             }
             ,
+            s if s.matches("nitroEnclavesSupport") /* NitroEnclavesSupport com.amazonaws.ec2#InstanceTypeInfo$NitroEnclavesSupport */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<crate::types::NitroEnclavesSupport, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NitroEnclavesSupport::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nitro_enclaves_support(var_25);
+            }
+            ,
+            s if s.matches("nitroTpmSupport") /* NitroTpmSupport com.amazonaws.ec2#InstanceTypeInfo$NitroTpmSupport */ =>  {
+                let var_26 =
+                    Some(
+                        Result::<crate::types::NitroTpmSupport, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NitroTpmSupport::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nitro_tpm_support(var_26);
+            }
+            ,
+            s if s.matches("nitroTpmInfo") /* NitroTpmInfo com.amazonaws.ec2#InstanceTypeInfo$NitroTpmInfo */ =>  {
+                let var_27 =
+                    Some(
+                        crate::protocol_serde::shape_nitro_tpm_info::de_nitro_tpm_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_nitro_tpm_info(var_27);
+            }
+            ,
             _ => {}
         }
     }

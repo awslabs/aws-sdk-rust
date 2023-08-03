@@ -49,6 +49,9 @@ pub struct ModelCard {
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
     #[doc(hidden)]
     pub risk_rating: ::std::option::Option<::std::string::String>,
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
+    #[doc(hidden)]
+    pub model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelCard {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
@@ -109,6 +112,10 @@ impl ModelCard {
     pub fn risk_rating(&self) -> ::std::option::Option<&str> {
         self.risk_rating.as_deref()
     }
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
+    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ModelCard {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +133,7 @@ impl ::std::fmt::Debug for ModelCard {
         formatter.field("tags", &self.tags);
         formatter.field("model_id", &self.model_id);
         formatter.field("risk_rating", &self.risk_rating);
+        formatter.field("model_package_group_name", &self.model_package_group_name);
         formatter.finish()
     }
 }
@@ -153,6 +161,7 @@ pub struct ModelCardBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) risk_rating: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelCardBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
@@ -336,6 +345,22 @@ impl ModelCardBuilder {
         self.risk_rating = input;
         self
     }
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
+    pub fn model_package_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
+    pub fn set_model_package_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.model_package_group_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModelCard`](crate::types::ModelCard).
     pub fn build(self) -> crate::types::ModelCard {
         crate::types::ModelCard {
@@ -352,6 +377,7 @@ impl ModelCardBuilder {
             tags: self.tags,
             model_id: self.model_id,
             risk_rating: self.risk_rating,
+            model_package_group_name: self.model_package_group_name,
         }
     }
 }
@@ -371,6 +397,7 @@ impl ::std::fmt::Debug for ModelCardBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("model_id", &self.model_id);
         formatter.field("risk_rating", &self.risk_rating);
+        formatter.field("model_package_group_name", &self.model_package_group_name);
         formatter.finish()
     }
 }

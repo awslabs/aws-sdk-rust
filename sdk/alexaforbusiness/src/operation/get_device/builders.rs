@@ -6,6 +6,7 @@ pub use crate::operation::get_device::_get_device_input::GetDeviceInputBuilder;
 /// Fluent builder constructing a request to `GetDevice`.
 ///
 /// <p>Gets the details of a device by device ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

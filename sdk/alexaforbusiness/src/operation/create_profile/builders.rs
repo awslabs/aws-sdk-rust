@@ -6,6 +6,7 @@ pub use crate::operation::create_profile::_create_profile_input::CreateProfileIn
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
 /// <p>Creates a new room profile with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

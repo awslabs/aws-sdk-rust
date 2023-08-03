@@ -100,7 +100,7 @@ impl DescribeFeatureMetadataFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -108,7 +108,7 @@ impl DescribeFeatureMetadataFluentBuilder {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -24,6 +24,10 @@ pub struct RecommendationMetrics {
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     #[doc(hidden)]
     pub memory_utilization: ::std::option::Option<f32>,
+    /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    #[doc(hidden)]
+    pub model_setup_time: ::std::option::Option<i32>,
 }
 impl RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
@@ -52,6 +56,11 @@ impl RecommendationMetrics {
     pub fn memory_utilization(&self) -> ::std::option::Option<f32> {
         self.memory_utilization
     }
+    /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn model_setup_time(&self) -> ::std::option::Option<i32> {
+        self.model_setup_time
+    }
 }
 impl RecommendationMetrics {
     /// Creates a new builder-style object to manufacture [`RecommendationMetrics`](crate::types::RecommendationMetrics).
@@ -72,6 +81,7 @@ pub struct RecommendationMetricsBuilder {
     pub(crate) model_latency: ::std::option::Option<i32>,
     pub(crate) cpu_utilization: ::std::option::Option<f32>,
     pub(crate) memory_utilization: ::std::option::Option<f32>,
+    pub(crate) model_setup_time: ::std::option::Option<i32>,
 }
 impl RecommendationMetricsBuilder {
     /// <p>Defines the cost per hour for the instance. </p>
@@ -138,6 +148,18 @@ impl RecommendationMetricsBuilder {
         self.memory_utilization = input;
         self
     }
+    /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn model_setup_time(mut self, input: i32) -> Self {
+        self.model_setup_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+    /// <p> <code>NaN</code> indicates that the value is not available.</p>
+    pub fn set_model_setup_time(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.model_setup_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::types::RecommendationMetrics).
     pub fn build(self) -> crate::types::RecommendationMetrics {
         crate::types::RecommendationMetrics {
@@ -147,6 +169,7 @@ impl RecommendationMetricsBuilder {
             model_latency: self.model_latency.unwrap_or_default(),
             cpu_utilization: self.cpu_utilization,
             memory_utilization: self.memory_utilization,
+            model_setup_time: self.model_setup_time,
         }
     }
 }

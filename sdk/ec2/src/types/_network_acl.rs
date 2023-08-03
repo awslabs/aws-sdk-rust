@@ -7,7 +7,7 @@ pub struct NetworkAcl {
     /// <p>Any associations between the network ACL and one or more subnets</p>
     #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>>,
-    /// <p>One or more entries (rules) in the network ACL.</p>
+    /// <p>The entries (rules) in the network ACL.</p>
     #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Indicates whether this is the default network ACL for the VPC.</p>
@@ -31,7 +31,7 @@ impl NetworkAcl {
     pub fn associations(&self) -> ::std::option::Option<&[crate::types::NetworkAclAssociation]> {
         self.associations.as_deref()
     }
-    /// <p>One or more entries (rules) in the network ACL.</p>
+    /// <p>The entries (rules) in the network ACL.</p>
     pub fn entries(&self) -> ::std::option::Option<&[crate::types::NetworkAclEntry]> {
         self.entries.as_deref()
     }
@@ -102,14 +102,14 @@ impl NetworkAclBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>One or more entries (rules) in the network ACL.</p>
+    /// <p>The entries (rules) in the network ACL.</p>
     pub fn entries(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more entries (rules) in the network ACL.</p>
+    /// <p>The entries (rules) in the network ACL.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,

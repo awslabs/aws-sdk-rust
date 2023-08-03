@@ -30,6 +30,10 @@ pub struct DescribeStateMachineForExecutionOutput {
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
     #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
+    /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
+    /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    #[doc(hidden)]
+    pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineForExecutionOutput {
@@ -73,6 +77,11 @@ impl DescribeStateMachineForExecutionOutput {
     pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
+    /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
+    /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +95,7 @@ impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutput {
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("label", &self.label);
+        formatter.field("revision_id", &self.revision_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -115,6 +125,7 @@ pub struct DescribeStateMachineForExecutionOutputBuilder {
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineForExecutionOutputBuilder {
@@ -223,6 +234,18 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self.label = input;
         self
     }
+    /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
+    /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
+    /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision_id = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -253,6 +276,8 @@ impl DescribeStateMachineForExecutionOutputBuilder {
             ,
             label: self.label
             ,
+            revision_id: self.revision_id
+            ,
             _request_id: self._request_id,
         }
     }
@@ -269,6 +294,7 @@ impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutputBuilder {
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("label", &self.label);
+        formatter.field("revision_id", &self.revision_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

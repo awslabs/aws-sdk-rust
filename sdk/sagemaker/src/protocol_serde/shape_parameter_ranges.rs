@@ -42,6 +42,21 @@ pub fn ser_parameter_ranges(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.auto_parameters {
+        let mut array_14 = object.key("AutoParameters").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_auto_parameter::ser_auto_parameter(
+                    &mut object_16,
+                    item_15,
+                )?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }
 
@@ -82,6 +97,11 @@ where
                             "CategoricalParameterRanges" => {
                                 builder = builder.set_categorical_parameter_ranges(
                                     crate::protocol_serde::shape_categorical_parameter_ranges::de_categorical_parameter_ranges(tokens)?
+                                );
+                            }
+                            "AutoParameters" => {
+                                builder = builder.set_auto_parameters(
+                                    crate::protocol_serde::shape_auto_parameters::de_auto_parameters(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

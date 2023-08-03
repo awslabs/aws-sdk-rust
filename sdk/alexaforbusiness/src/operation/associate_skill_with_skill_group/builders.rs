@@ -6,6 +6,7 @@ pub use crate::operation::associate_skill_with_skill_group::_associate_skill_wit
 /// Fluent builder constructing a request to `AssociateSkillWithSkillGroup`.
 ///
 /// <p>Associates a skill with a skill group.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSkillWithSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

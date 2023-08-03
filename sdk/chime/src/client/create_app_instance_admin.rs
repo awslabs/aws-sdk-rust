@@ -9,6 +9,9 @@ impl super::Client {
     ///   - [`app_instance_admin(Option<Identity>)`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput::app_instance_admin): <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput::app_instance_arn): <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceAdminError>`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminError)
+    #[deprecated(
+        note = "Replaced by CreateAppInstanceAdmin in the Amazon Chime SDK Identity Namespace"
+    )]
     pub fn create_app_instance_admin(
         &self,
     ) -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminFluentBuilder

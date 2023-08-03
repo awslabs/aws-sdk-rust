@@ -226,6 +226,8 @@ mod create_event_subscription;
 
 mod create_fleet_advisor_collector;
 
+mod create_replication_config;
+
 mod create_replication_instance;
 
 mod create_replication_subnet_group;
@@ -271,6 +273,8 @@ mod delete_event_subscription;
 mod delete_fleet_advisor_collector;
 
 mod delete_fleet_advisor_databases;
+
+mod delete_replication_config;
 
 mod delete_replication_instance;
 
@@ -320,11 +324,15 @@ mod describe_recommendations;
 
 mod describe_refresh_schemas_status;
 
+mod describe_replication_configs;
+
 mod describe_replication_instance_task_logs;
 
 mod describe_replication_instances;
 
 mod describe_replication_subnet_groups;
+
+mod describe_replication_table_statistics;
 
 mod describe_replication_task_assessment_results;
 
@@ -333,6 +341,8 @@ mod describe_replication_task_assessment_runs;
 mod describe_replication_task_individual_assessments;
 
 mod describe_replication_tasks;
+
+mod describe_replications;
 
 mod describe_schemas;
 
@@ -346,6 +356,8 @@ mod modify_endpoint;
 
 mod modify_event_subscription;
 
+mod modify_replication_config;
+
 mod modify_replication_instance;
 
 mod modify_replication_subnet_group;
@@ -358,6 +370,8 @@ mod reboot_replication_instance;
 
 mod refresh_schemas;
 
+mod reload_replication_tables;
+
 mod reload_tables;
 
 mod remove_tags_from_resource;
@@ -366,11 +380,15 @@ mod run_fleet_advisor_lsa_analysis;
 
 mod start_recommendations;
 
+mod start_replication;
+
 mod start_replication_task;
 
 mod start_replication_task_assessment;
 
 mod start_replication_task_assessment_run;
+
+mod stop_replication;
 
 mod stop_replication_task;
 

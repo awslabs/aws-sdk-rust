@@ -13,7 +13,7 @@ pub struct Campaign {
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
     #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     #[doc(hidden)]
     pub min_provisioned_tps: ::std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
@@ -53,7 +53,7 @@ impl Campaign {
     pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn min_provisioned_tps(&self) -> ::std::option::Option<i32> {
         self.min_provisioned_tps
     }
@@ -150,12 +150,12 @@ impl CampaignBuilder {
         self.solution_version_arn = input;
         self
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
         self.min_provisioned_tps = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_provisioned_tps = input;
         self

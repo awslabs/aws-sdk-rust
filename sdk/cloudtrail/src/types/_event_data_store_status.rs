@@ -15,6 +15,9 @@
 ///     EventDataStoreStatus::Created => { /* ... */ },
 ///     EventDataStoreStatus::Enabled => { /* ... */ },
 ///     EventDataStoreStatus::PendingDeletion => { /* ... */ },
+///     EventDataStoreStatus::StartingIngestion => { /* ... */ },
+///     EventDataStoreStatus::StoppedIngestion => { /* ... */ },
+///     EventDataStoreStatus::StoppingIngestion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +57,12 @@ pub enum EventDataStoreStatus {
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
+    StartingIngestion,
+    #[allow(missing_docs)] // documentation missing in model
+    StoppedIngestion,
+    #[allow(missing_docs)] // documentation missing in model
+    StoppingIngestion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +72,9 @@ impl ::std::convert::From<&str> for EventDataStoreStatus {
             "CREATED" => EventDataStoreStatus::Created,
             "ENABLED" => EventDataStoreStatus::Enabled,
             "PENDING_DELETION" => EventDataStoreStatus::PendingDeletion,
+            "STARTING_INGESTION" => EventDataStoreStatus::StartingIngestion,
+            "STOPPED_INGESTION" => EventDataStoreStatus::StoppedIngestion,
+            "STOPPING_INGESTION" => EventDataStoreStatus::StoppingIngestion,
             other => EventDataStoreStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -83,12 +95,22 @@ impl EventDataStoreStatus {
             EventDataStoreStatus::Created => "CREATED",
             EventDataStoreStatus::Enabled => "ENABLED",
             EventDataStoreStatus::PendingDeletion => "PENDING_DELETION",
+            EventDataStoreStatus::StartingIngestion => "STARTING_INGESTION",
+            EventDataStoreStatus::StoppedIngestion => "STOPPED_INGESTION",
+            EventDataStoreStatus::StoppingIngestion => "STOPPING_INGESTION",
             EventDataStoreStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "ENABLED", "PENDING_DELETION"]
+        &[
+            "CREATED",
+            "ENABLED",
+            "PENDING_DELETION",
+            "STARTING_INGESTION",
+            "STOPPED_INGESTION",
+            "STOPPING_INGESTION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EventDataStoreStatus {

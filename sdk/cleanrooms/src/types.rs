@@ -65,6 +65,8 @@ pub use crate::types::_aggregation_type::AggregationType;
 
 pub use crate::types::_scalar_functions::ScalarFunctions;
 
+pub use crate::types::_join_operator::JoinOperator;
+
 pub use crate::types::_join_required_option::JoinRequiredOption;
 
 pub use crate::types::_aggregate_column::AggregateColumn;
@@ -178,6 +180,8 @@ mod _data_encryption_metadata;
 mod _filterable_member_status;
 
 mod _glue_table_reference;
+
+mod _join_operator;
 
 mod _join_required_option;
 

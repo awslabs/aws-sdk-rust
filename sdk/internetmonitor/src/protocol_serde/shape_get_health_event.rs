@@ -174,6 +174,14 @@ pub(crate) fn de_get_health_event(
                             .transpose()?,
                         );
                     }
+                    "HealthScoreThreshold" => {
+                        builder = builder.set_health_score_threshold(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|v| v.to_f64_lossy()),
+                        );
+                    }
                     "ImpactType" => {
                         builder = builder.set_impact_type(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -18,6 +18,9 @@ pub struct UpdateBillingGroupInput {
     /// <p>A description of the billing group. </p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    #[doc(hidden)]
+    pub account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
 }
 impl UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
@@ -42,6 +45,12 @@ impl UpdateBillingGroupInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn account_grouping(
+        &self,
+    ) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
+        self.account_grouping.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateBillingGroupInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +60,7 @@ impl ::std::fmt::Debug for UpdateBillingGroupInput {
         formatter.field("status", &self.status);
         formatter.field("computation_preference", &self.computation_preference);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_grouping", &self.account_grouping);
         formatter.finish()
     }
 }
@@ -71,6 +81,8 @@ pub struct UpdateBillingGroupInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) computation_preference: ::std::option::Option<crate::types::ComputationPreference>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) account_grouping:
+        ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
 }
 impl UpdateBillingGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
@@ -129,6 +141,22 @@ impl UpdateBillingGroupInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn account_grouping(
+        mut self,
+        input: crate::types::UpdateBillingGroupAccountGrouping,
+    ) -> Self {
+        self.account_grouping = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn set_account_grouping(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
+    ) -> Self {
+        self.account_grouping = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
     pub fn build(
         self,
@@ -143,6 +171,7 @@ impl UpdateBillingGroupInputBuilder {
                 status: self.status,
                 computation_preference: self.computation_preference,
                 description: self.description,
+                account_grouping: self.account_grouping,
             },
         )
     }
@@ -155,6 +184,7 @@ impl ::std::fmt::Debug for UpdateBillingGroupInputBuilder {
         formatter.field("status", &self.status);
         formatter.field("computation_preference", &self.computation_preference);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_grouping", &self.account_grouping);
         formatter.finish()
     }
 }

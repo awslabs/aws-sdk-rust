@@ -42,6 +42,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_register_connector;
 
+pub(crate) mod shape_reset_connector_metadata_cache;
+
 pub(crate) mod shape_start_flow;
 
 pub(crate) mod shape_stop_flow;
@@ -105,6 +107,8 @@ pub(crate) mod shape_list_connectors_input;
 pub(crate) mod shape_list_flows_input;
 
 pub(crate) mod shape_register_connector_input;
+
+pub(crate) mod shape_reset_connector_metadata_cache_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -216,6 +220,10 @@ pub(crate) mod shape_source_connector_properties;
 
 pub(crate) mod shape_supported_api_version_list;
 
+pub(crate) mod shape_supported_data_transfer_apis;
+
+pub(crate) mod shape_supported_data_transfer_type_list;
+
 pub(crate) mod shape_supported_operator_list;
 
 pub(crate) mod shape_supported_write_operation_list;
@@ -251,6 +259,8 @@ pub(crate) mod shape_custom_properties;
 pub(crate) mod shape_customer_profiles_destination_properties;
 
 pub(crate) mod shape_customer_profiles_metadata;
+
+pub(crate) mod shape_data_transfer_api;
 
 pub(crate) mod shape_datadog_connector_profile_credentials;
 

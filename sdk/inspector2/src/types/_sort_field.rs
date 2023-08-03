@@ -17,6 +17,7 @@
 ///     SortField::EcrImagePushedAt => { /* ... */ },
 ///     SortField::EcrImageRegistry => { /* ... */ },
 ///     SortField::EcrImageRepositoryName => { /* ... */ },
+///     SortField::EpssScore => { /* ... */ },
 ///     SortField::FindingStatus => { /* ... */ },
 ///     SortField::FindingType => { /* ... */ },
 ///     SortField::FirstObservedAt => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum SortField {
     #[allow(missing_docs)] // documentation missing in model
     EcrImageRepositoryName,
     #[allow(missing_docs)] // documentation missing in model
+    EpssScore,
+    #[allow(missing_docs)] // documentation missing in model
     FindingStatus,
     #[allow(missing_docs)] // documentation missing in model
     FindingType,
@@ -104,6 +107,7 @@ impl ::std::convert::From<&str> for SortField {
             "ECR_IMAGE_PUSHED_AT" => SortField::EcrImagePushedAt,
             "ECR_IMAGE_REGISTRY" => SortField::EcrImageRegistry,
             "ECR_IMAGE_REPOSITORY_NAME" => SortField::EcrImageRepositoryName,
+            "EPSS_SCORE" => SortField::EpssScore,
             "FINDING_STATUS" => SortField::FindingStatus,
             "FINDING_TYPE" => SortField::FindingType,
             "FIRST_OBSERVED_AT" => SortField::FirstObservedAt,
@@ -135,6 +139,7 @@ impl SortField {
             SortField::EcrImagePushedAt => "ECR_IMAGE_PUSHED_AT",
             SortField::EcrImageRegistry => "ECR_IMAGE_REGISTRY",
             SortField::EcrImageRepositoryName => "ECR_IMAGE_REPOSITORY_NAME",
+            SortField::EpssScore => "EPSS_SCORE",
             SortField::FindingStatus => "FINDING_STATUS",
             SortField::FindingType => "FINDING_TYPE",
             SortField::FirstObservedAt => "FIRST_OBSERVED_AT",
@@ -157,6 +162,7 @@ impl SortField {
             "ECR_IMAGE_PUSHED_AT",
             "ECR_IMAGE_REGISTRY",
             "ECR_IMAGE_REPOSITORY_NAME",
+            "EPSS_SCORE",
             "FINDING_STATUS",
             "FINDING_TYPE",
             "FIRST_OBSERVED_AT",

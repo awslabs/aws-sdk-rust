@@ -5,7 +5,7 @@ pub use crate::operation::get_evidence_folders_by_assessment_control::_get_evide
 
 /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
 ///
-/// <p> Returns a list of evidence folders that are associated with a specified control in an Audit Manager assessment. </p>
+/// <p> Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

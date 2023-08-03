@@ -195,6 +195,11 @@ where
                                     crate::protocol_serde::shape_scheduled_job_rollout_list::de_scheduled_job_rollout_list(tokens)?
                                 );
                             }
+                            "destinationPackageVersions" => {
+                                builder = builder.set_destination_package_versions(
+                                    crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

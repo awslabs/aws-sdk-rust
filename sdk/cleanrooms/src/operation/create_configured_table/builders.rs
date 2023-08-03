@@ -119,12 +119,12 @@ impl CreateConfiguredTableFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.inner = self.inner.table_reference(input);
         self
     }
-    /// <p>A reference to the AWS Glue table being configured.</p>
+    /// <p>A reference to the Glue table being configured.</p>
     pub fn set_table_reference(
         mut self,
         input: ::std::option::Option<crate::types::TableReference>,

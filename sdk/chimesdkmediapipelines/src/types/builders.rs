@@ -107,6 +107,14 @@ pub use crate::types::_composited_video_artifacts_configuration::CompositedVideo
 
 pub use crate::types::_grid_view_configuration::GridViewConfigurationBuilder;
 
+pub use crate::types::_video_attribute::VideoAttributeBuilder;
+
+pub use crate::types::_vertical_layout_configuration::VerticalLayoutConfigurationBuilder;
+
+pub use crate::types::_horizontal_layout_configuration::HorizontalLayoutConfigurationBuilder;
+
+pub use crate::types::_active_speaker_only_configuration::ActiveSpeakerOnlyConfigurationBuilder;
+
 pub use crate::types::_presenter_only_configuration::PresenterOnlyConfigurationBuilder;
 
 pub use crate::types::_media_capture_pipeline::MediaCapturePipelineBuilder;

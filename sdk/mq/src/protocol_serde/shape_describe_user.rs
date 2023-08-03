@@ -165,6 +165,13 @@ pub(crate) fn de_describe_user(
                             crate::protocol_serde::shape_user_pending_changes::de_user_pending_changes(tokens)?
                         );
                     }
+                    "replicationUser" => {
+                        builder = builder.set_replication_user(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     "username" => {
                         builder = builder.set_username(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

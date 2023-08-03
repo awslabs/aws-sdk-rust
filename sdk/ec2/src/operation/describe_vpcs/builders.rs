@@ -106,7 +106,7 @@ impl DescribeVpcsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -134,7 +134,7 @@ impl DescribeVpcsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -169,13 +169,13 @@ impl DescribeVpcsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ids(input.into());
         self
     }
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     pub fn set_vpc_ids(
         mut self,

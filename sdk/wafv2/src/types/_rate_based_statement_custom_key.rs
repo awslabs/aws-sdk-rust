@@ -35,6 +35,9 @@ pub struct RateBasedStatementCustomKey {
     /// <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub label_namespace: ::std::option::Option<crate::types::RateLimitLabelNamespace>,
+    /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. </p>
+    #[doc(hidden)]
+    pub uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
 }
 impl RateBasedStatementCustomKey {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance. </p>
@@ -74,6 +77,10 @@ impl RateBasedStatementCustomKey {
     pub fn label_namespace(&self) -> ::std::option::Option<&crate::types::RateLimitLabelNamespace> {
         self.label_namespace.as_ref()
     }
+    /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. </p>
+    pub fn uri_path(&self) -> ::std::option::Option<&crate::types::RateLimitUriPath> {
+        self.uri_path.as_ref()
+    }
 }
 impl RateBasedStatementCustomKey {
     /// Creates a new builder-style object to manufacture [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
@@ -96,6 +103,7 @@ pub struct RateBasedStatementCustomKeyBuilder {
     pub(crate) forwarded_ip: ::std::option::Option<crate::types::RateLimitForwardedIp>,
     pub(crate) ip: ::std::option::Option<crate::types::RateLimitIp>,
     pub(crate) label_namespace: ::std::option::Option<crate::types::RateLimitLabelNamespace>,
+    pub(crate) uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
 }
 impl RateBasedStatementCustomKeyBuilder {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance. </p>
@@ -209,6 +217,19 @@ impl RateBasedStatementCustomKeyBuilder {
         self.label_namespace = input;
         self
     }
+    /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. </p>
+    pub fn uri_path(mut self, input: crate::types::RateLimitUriPath) -> Self {
+        self.uri_path = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. </p>
+    pub fn set_uri_path(
+        mut self,
+        input: ::std::option::Option<crate::types::RateLimitUriPath>,
+    ) -> Self {
+        self.uri_path = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
     pub fn build(self) -> crate::types::RateBasedStatementCustomKey {
         crate::types::RateBasedStatementCustomKey {
@@ -220,6 +241,7 @@ impl RateBasedStatementCustomKeyBuilder {
             forwarded_ip: self.forwarded_ip,
             ip: self.ip,
             label_namespace: self.label_namespace,
+            uri_path: self.uri_path,
         }
     }
 }

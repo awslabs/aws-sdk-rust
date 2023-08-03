@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriberOutput {
-    /// <p>The subscription information for the specified subscription ID.</p>
+    /// <p>The subscriber information for the specified subscriber ID.</p>
     #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
 }
 impl GetSubscriberOutput {
-    /// <p>The subscription information for the specified subscription ID.</p>
+    /// <p>The subscriber information for the specified subscriber ID.</p>
     pub fn subscriber(&self) -> ::std::option::Option<&crate::types::SubscriberResource> {
         self.subscriber.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct GetSubscriberOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSubscriberOutputBuilder {
-    /// <p>The subscription information for the specified subscription ID.</p>
+    /// <p>The subscriber information for the specified subscriber ID.</p>
     pub fn subscriber(mut self, input: crate::types::SubscriberResource) -> Self {
         self.subscriber = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The subscription information for the specified subscription ID.</p>
+    /// <p>The subscriber information for the specified subscriber ID.</p>
     pub fn set_subscriber(
         mut self,
         input: ::std::option::Option<crate::types::SubscriberResource>,

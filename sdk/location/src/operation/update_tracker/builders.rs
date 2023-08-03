@@ -175,4 +175,18 @@ impl UpdateTrackerFluentBuilder {
         self.inner = self.inner.set_position_filtering(input);
         self
     }
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    pub fn event_bridge_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.event_bridge_enabled(input);
+        self
+    }
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    pub fn set_event_bridge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_event_bridge_enabled(input);
+        self
+    }
 }

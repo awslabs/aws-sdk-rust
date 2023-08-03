@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_components_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_deployments_output_next_token(
+    input: &crate::operation::list_deployments::ListDeploymentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_environment_account_connections_output_next_token(
     input: &crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -223,6 +233,16 @@ pub(crate) fn lens_list_components_output_components(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
     let input = match input.components {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_deployments_output_deployments(
+    input: crate::operation::list_deployments::ListDeploymentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
+    let input = match input.deployments {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

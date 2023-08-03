@@ -24,6 +24,12 @@ pub fn ser_list_control_display_options(
         crate::protocol_serde::shape_label_options::ser_label_options(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.info_icon_label_options {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("InfoIconLabelOptions").start_object();
+        crate::protocol_serde::shape_sheet_control_info_icon_label_options::ser_sheet_control_info_icon_label_options(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -66,6 +72,11 @@ where
                                     crate::protocol_serde::shape_label_options::de_label_options(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "InfoIconLabelOptions" => {
+                                builder = builder.set_info_icon_label_options(
+                                    crate::protocol_serde::shape_sheet_control_info_icon_label_options::de_sheet_control_info_icon_label_options(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -100,6 +100,10 @@ pub(crate) mod shape_point_in_time_recovery;
 
 pub(crate) mod shape_point_in_time_recovery_summary;
 
+pub(crate) mod shape_region_list;
+
+pub(crate) mod shape_replication_specification;
+
 pub(crate) mod shape_schema_definition;
 
 pub(crate) mod shape_table_summary_list;

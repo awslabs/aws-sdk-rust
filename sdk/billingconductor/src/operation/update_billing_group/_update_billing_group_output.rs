@@ -30,6 +30,9 @@ pub struct UpdateBillingGroupOutput {
     /// <p> The reason why the billing group is in its current status. </p>
     #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    #[doc(hidden)]
+    pub account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
     _request_id: Option<String>,
 }
 impl UpdateBillingGroupOutput {
@@ -69,6 +72,12 @@ impl UpdateBillingGroupOutput {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn account_grouping(
+        &self,
+    ) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
+        self.account_grouping.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateBillingGroupOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -82,6 +91,7 @@ impl ::std::fmt::Debug for UpdateBillingGroupOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("account_grouping", &self.account_grouping);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -112,6 +122,8 @@ pub struct UpdateBillingGroupOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) account_grouping:
+        ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
     _request_id: Option<String>,
 }
 impl UpdateBillingGroupOutputBuilder {
@@ -226,6 +238,22 @@ impl UpdateBillingGroupOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn account_grouping(
+        mut self,
+        input: crate::types::UpdateBillingGroupAccountGrouping,
+    ) -> Self {
+        self.account_grouping = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn set_account_grouping(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
+    ) -> Self {
+        self.account_grouping = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -247,6 +275,7 @@ impl UpdateBillingGroupOutputBuilder {
             last_modified_time: self.last_modified_time.unwrap_or_default(),
             status: self.status,
             status_reason: self.status_reason,
+            account_grouping: self.account_grouping,
             _request_id: self._request_id,
         }
     }
@@ -263,6 +292,7 @@ impl ::std::fmt::Debug for UpdateBillingGroupOutputBuilder {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("account_grouping", &self.account_grouping);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

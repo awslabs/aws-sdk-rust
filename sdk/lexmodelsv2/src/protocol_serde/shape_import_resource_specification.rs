@@ -38,6 +38,11 @@ where
                                     crate::protocol_serde::shape_custom_vocabulary_import_specification::de_custom_vocabulary_import_specification(tokens)?
                                 );
                             }
+                            "testSetImportResourceSpecification" => {
+                                builder = builder.set_test_set_import_resource_specification(
+                                    crate::protocol_serde::shape_test_set_import_resource_specification::de_test_set_import_resource_specification(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -86,6 +91,14 @@ pub fn ser_import_resource_specification(
             .start_object();
         crate::protocol_serde::shape_custom_vocabulary_import_specification::ser_custom_vocabulary_import_specification(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.test_set_import_resource_specification {
+        #[allow(unused_mut)]
+        let mut object_8 = object
+            .key("testSetImportResourceSpecification")
+            .start_object();
+        crate::protocol_serde::shape_test_set_import_resource_specification::ser_test_set_import_resource_specification(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

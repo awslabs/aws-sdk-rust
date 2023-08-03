@@ -188,4 +188,21 @@ impl AssociateResourceShareFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sources(input.into());
+        self
+    }
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_sources(input);
+        self
+    }
 }

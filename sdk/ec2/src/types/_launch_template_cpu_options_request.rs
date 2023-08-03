@@ -10,7 +10,7 @@ pub struct LaunchTemplateCpuOptionsRequest {
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     #[doc(hidden)]
     pub threads_per_core: ::std::option::Option<i32>,
-    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     #[doc(hidden)]
     pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
@@ -23,7 +23,7 @@ impl LaunchTemplateCpuOptionsRequest {
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
-    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
     }
@@ -66,12 +66,12 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
         self.threads_per_core = input;
         self
     }
-    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
         self.amd_sev_snp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn set_amd_sev_snp(
         mut self,
         input: ::std::option::Option<crate::types::AmdSevSnpSpecification>,

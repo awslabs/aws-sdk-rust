@@ -16,6 +16,15 @@ pub fn ser_custom_connector_source_properties(
         }
         object_3.finish();
     }
+    if let Some(var_6) = &input.data_transfer_api {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("dataTransferApi").start_object();
+        crate::protocol_serde::shape_data_transfer_api::ser_data_transfer_api(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +65,11 @@ where
                             "customProperties" => {
                                 builder = builder.set_custom_properties(
                                     crate::protocol_serde::shape_custom_properties::de_custom_properties(tokens)?
+                                );
+                            }
+                            "dataTransferApi" => {
+                                builder = builder.set_data_transfer_api(
+                                    crate::protocol_serde::shape_data_transfer_api::de_data_transfer_api(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

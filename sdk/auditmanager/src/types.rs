@@ -5,6 +5,10 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_settings::Settings;
 
+pub use crate::types::_default_export_destination::DefaultExportDestination;
+
+pub use crate::types::_export_destination_type::ExportDestinationType;
+
 pub use crate::types::_deregistration_policy::DeregistrationPolicy;
 
 pub use crate::types::_delete_resources::DeleteResources;
@@ -233,6 +237,8 @@ mod _create_control_mapping_source;
 
 mod _create_delegation_request;
 
+mod _default_export_destination;
+
 mod _delegation;
 
 mod _delegation_metadata;
@@ -252,6 +258,8 @@ mod _evidence_finder_enablement;
 mod _evidence_finder_enablement_status;
 
 mod _evidence_insights;
+
+mod _export_destination_type;
 
 mod _framework;
 

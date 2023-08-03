@@ -61,14 +61,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CompareFaces`](crate::operation::compare_faces) operation has
-/// a [`Client::compare_faces`], function which returns a builder for that operation.
+/// For example, the [`AssociateFaces`](crate::operation::associate_faces) operation has
+/// a [`Client::associate_faces`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.compare_faces()
-///     .quality_filter("example")
+/// let result = client.associate_faces()
+///     .collection_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod associate_faces;
+
 mod compare_faces;
 
 mod copy_project_version;
@@ -228,6 +230,8 @@ mod create_project_version;
 
 mod create_stream_processor;
 
+mod create_user;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -239,7 +243,7 @@ mod create_stream_processor;
 /// # let client: aws_sdk_rekognition::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.compare_faces()
+/// let result = client.associate_faces()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -270,6 +274,8 @@ mod delete_project_version;
 
 mod delete_stream_processor;
 
+mod delete_user;
+
 mod describe_collection;
 
 mod describe_dataset;
@@ -291,6 +297,8 @@ mod detect_moderation_labels;
 mod detect_protective_equipment;
 
 mod detect_text;
+
+mod disassociate_faces;
 
 mod distribute_dataset_entries;
 
@@ -330,6 +338,8 @@ mod list_stream_processors;
 
 mod list_tags_for_resource;
 
+mod list_users;
+
 mod put_project_policy;
 
 mod recognize_celebrities;
@@ -337,6 +347,10 @@ mod recognize_celebrities;
 mod search_faces;
 
 mod search_faces_by_image;
+
+mod search_users;
+
+mod search_users_by_image;
 
 mod start_celebrity_recognition;
 

@@ -12,12 +12,19 @@ pub struct UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    #[doc(hidden)]
+    pub publish: ::std::option::Option<bool>,
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    #[doc(hidden)]
+    pub version_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
@@ -32,7 +39,7 @@ impl UpdateStateMachineInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn logging_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
@@ -44,6 +51,15 @@ impl UpdateStateMachineInput {
     ) -> ::std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn publish(&self) -> ::std::option::Option<bool> {
+        self.publish
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn version_description(&self) -> ::std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateStateMachineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +69,8 @@ impl ::std::fmt::Debug for UpdateStateMachineInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("publish", &self.publish);
+        formatter.field("version_description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -73,6 +91,8 @@ pub struct UpdateStateMachineInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
+    pub(crate) publish: ::std::option::Option<bool>,
+    pub(crate) version_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStateMachineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
@@ -111,12 +131,12 @@ impl UpdateStateMachineInputBuilder {
         self.role_arn = input;
         self
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn set_logging_configuration(
         mut self,
         input: ::std::option::Option<crate::types::LoggingConfiguration>,
@@ -137,6 +157,34 @@ impl UpdateStateMachineInputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn publish(mut self, input: bool) -> Self {
+        self.publish = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.publish = input;
+        self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn version_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn set_version_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.version_description = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
     pub fn build(
         self,
@@ -151,6 +199,8 @@ impl UpdateStateMachineInputBuilder {
                 role_arn: self.role_arn,
                 logging_configuration: self.logging_configuration,
                 tracing_configuration: self.tracing_configuration,
+                publish: self.publish,
+                version_description: self.version_description,
             },
         )
     }
@@ -163,6 +213,8 @@ impl ::std::fmt::Debug for UpdateStateMachineInputBuilder {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("publish", &self.publish);
+        formatter.field("version_description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

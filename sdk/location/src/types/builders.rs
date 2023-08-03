@@ -69,6 +69,8 @@ pub use crate::types::_list_maps_response_entry::ListMapsResponseEntryBuilder;
 
 pub use crate::types::_map_configuration::MapConfigurationBuilder;
 
+pub use crate::types::_map_configuration_update::MapConfigurationUpdateBuilder;
+
 pub use crate::types::_geofence_geometry::GeofenceGeometryBuilder;
 
 pub use crate::types::_circle::CircleBuilder;

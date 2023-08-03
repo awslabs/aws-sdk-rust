@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_address_books::SearchAddressBooksOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_address_books::SearchAddressBooksOutput::total_count): <p>The total number of address books returned.</p>
     /// - On failure, responds with [`SdkError<SearchAddressBooksError>`](crate::operation::search_address_books::SearchAddressBooksError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_address_books(
         &self,
     ) -> crate::operation::search_address_books::builders::SearchAddressBooksFluentBuilder {

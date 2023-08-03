@@ -9,6 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelModeratorOutput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput) with field(s):
     ///   - [`channel_moderator(Option<ChannelModerator>)`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput::channel_moderator): <p>The details of the channel moderator.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelModeratorError>`](crate::operation::describe_channel_moderator::DescribeChannelModeratorError)
+    #[deprecated(
+        note = "Replaced by DescribeChannelModerator in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn describe_channel_moderator(
         &self,
     ) -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorFluentBuilder

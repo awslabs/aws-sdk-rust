@@ -548,4 +548,17 @@ impl ModifyEndpointFluentBuilder {
         self.inner = self.inner.set_gcp_my_sql_settings(input);
         self
     }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn timestream_settings(mut self, input: crate::types::TimestreamSettings) -> Self {
+        self.inner = self.inner.timestream_settings(input);
+        self
+    }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn set_timestream_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::TimestreamSettings>,
+    ) -> Self {
+        self.inner = self.inner.set_timestream_settings(input);
+        self
+    }
 }

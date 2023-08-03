@@ -274,6 +274,13 @@ pub(crate) fn de_update_replication_configuration(value: &[u8], mut builder: cra
                             )?,
                         );
                     }
+                    "useFipsEndpoint" => {
+                        builder = builder.set_use_fips_endpoint(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

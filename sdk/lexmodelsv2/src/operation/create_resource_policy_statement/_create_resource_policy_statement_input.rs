@@ -12,7 +12,7 @@ pub struct CreateResourcePolicyStatementInput {
     /// <p>Determines whether the statement allows or denies access to the resource.</p>
     #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::Effect>,
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
     #[doc(hidden)]
     pub principal: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
@@ -45,7 +45,7 @@ impl CreateResourcePolicyStatementInput {
     pub fn effect(&self) -> ::std::option::Option<&crate::types::Effect> {
         self.effect.as_ref()
     }
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
     pub fn principal(&self) -> ::std::option::Option<&[crate::types::Principal]> {
         self.principal.as_deref()
     }
@@ -132,14 +132,14 @@ impl CreateResourcePolicyStatementInputBuilder {
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).
     ///
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
     pub fn principal(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principal.unwrap_or_default();
         v.push(input);
         self.principal = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
     pub fn set_principal(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,

@@ -5,7 +5,7 @@ pub use crate::operation::get_instance_profile::_get_instance_profile_input::Get
 
 /// Fluent builder constructing a request to `GetInstanceProfile`.
 ///
-/// <p> Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About instance profiles</a> in the <i>IAM User Guide</i>.</p>
+/// <p> Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using instance profiles</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInstanceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

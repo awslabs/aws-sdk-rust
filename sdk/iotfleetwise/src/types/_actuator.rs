@@ -31,6 +31,12 @@ pub struct Actuator {
     #[deprecated(note = "assignedValue is no longer in use")]
     #[doc(hidden)]
     pub assigned_value: ::std::option::Option<::std::string::String>,
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    #[doc(hidden)]
+    pub deprecation_message: ::std::option::Option<::std::string::String>,
+    /// <p>A comment in addition to the description.</p>
+    #[doc(hidden)]
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Actuator {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
@@ -66,6 +72,14 @@ impl Actuator {
     pub fn assigned_value(&self) -> ::std::option::Option<&str> {
         self.assigned_value.as_deref()
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+        self.deprecation_message.as_deref()
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(&self) -> ::std::option::Option<&str> {
+        self.comment.as_deref()
+    }
 }
 impl Actuator {
     /// Creates a new builder-style object to manufacture [`Actuator`](crate::types::Actuator).
@@ -88,6 +102,8 @@ pub struct ActuatorBuilder {
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) assigned_value: ::std::option::Option<::std::string::String>,
+    pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl ActuatorBuilder {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
@@ -199,6 +215,32 @@ impl ActuatorBuilder {
         self.assigned_value = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn set_deprecation_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = input;
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comment = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Actuator`](crate::types::Actuator).
     pub fn build(self) -> crate::types::Actuator {
         crate::types::Actuator {
@@ -210,6 +252,8 @@ impl ActuatorBuilder {
             min: self.min,
             max: self.max,
             assigned_value: self.assigned_value,
+            deprecation_message: self.deprecation_message,
+            comment: self.comment,
         }
     }
 }

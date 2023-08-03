@@ -55,7 +55,7 @@ pub struct DeleteLagOutput {
     /// <p>Indicates whether the LAG can host other connections.</p>
     #[doc(hidden)]
     pub allows_hosted_connections: bool,
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
@@ -145,7 +145,7 @@ impl DeleteLagOutput {
     pub fn allows_hosted_connections(&self) -> bool {
         self.allows_hosted_connections
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(&self) -> ::std::option::Option<bool> {
         self.jumbo_frame_capable
     }
@@ -410,12 +410,12 @@ impl DeleteLagOutputBuilder {
         self.allows_hosted_connections = input;
         self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
         self.jumbo_frame_capable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.jumbo_frame_capable = input;
         self

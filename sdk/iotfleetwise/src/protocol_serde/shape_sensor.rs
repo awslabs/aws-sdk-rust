@@ -36,6 +36,12 @@ pub fn ser_sensor(
             ::aws_smithy_types::Number::Float((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.deprecation_message {
+        object.key("deprecationMessage").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.comment {
+        object.key("comment").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -118,6 +124,24 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_f64_lossy()),
+                                );
+                            }
+                            "deprecationMessage" => {
+                                builder = builder.set_deprecation_message(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "comment" => {
+                                builder = builder.set_comment(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

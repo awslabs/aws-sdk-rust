@@ -6,7 +6,7 @@ pub use crate::operation::describe_configuration_recorders::_describe_configurat
 /// Fluent builder constructing a request to `DescribeConfigurationRecorders`.
 ///
 /// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p> <note>
-/// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
+/// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersFluentBuilder {

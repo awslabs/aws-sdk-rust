@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineInput {
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
@@ -12,7 +12,7 @@ pub struct GetPipelineInput {
     pub version: ::std::option::Option<i32>,
 }
 impl GetPipelineInput {
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -38,12 +38,12 @@ pub struct GetPipelineInputBuilder {
     pub(crate) version: ::std::option::Option<i32>,
 }
 impl GetPipelineInputBuilder {
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self

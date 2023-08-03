@@ -6,6 +6,7 @@ pub use crate::operation::get_conference_preference::_get_conference_preference_
 /// Fluent builder constructing a request to `GetConferencePreference`.
 ///
 /// <p>Retrieves the existing conference preferences.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConferencePreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -163,4 +163,17 @@ impl CreateTableFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn open_table_format_input(mut self, input: crate::types::OpenTableFormatInput) -> Self {
+        self.inner = self.inner.open_table_format_input(input);
+        self
+    }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn set_open_table_format_input(
+        mut self,
+        input: ::std::option::Option<crate::types::OpenTableFormatInput>,
+    ) -> Self {
+        self.inner = self.inner.set_open_table_format_input(input);
+        self
+    }
 }

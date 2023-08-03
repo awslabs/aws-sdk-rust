@@ -155,6 +155,13 @@ pub(crate) fn de_get_route(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AppendSourcePath" => {
+                        builder = builder.set_append_source_path(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     "ApplicationId" => {
                         builder = builder.set_application_id(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

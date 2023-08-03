@@ -27,6 +27,9 @@ pub struct RecordingConfiguration {
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
     #[doc(hidden)]
     pub recording_reconnect_window_seconds: i32,
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    #[doc(hidden)]
+    pub rendition_configuration: ::std::option::Option<crate::types::RenditionConfiguration>,
 }
 impl RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
@@ -65,6 +68,12 @@ impl RecordingConfiguration {
     pub fn recording_reconnect_window_seconds(&self) -> i32 {
         self.recording_reconnect_window_seconds
     }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn rendition_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RenditionConfiguration> {
+        self.rendition_configuration.as_ref()
+    }
 }
 impl RecordingConfiguration {
     /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::types::RecordingConfiguration).
@@ -89,6 +98,7 @@ pub struct RecordingConfigurationBuilder {
     >,
     pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     pub(crate) recording_reconnect_window_seconds: ::std::option::Option<i32>,
+    pub(crate) rendition_configuration: ::std::option::Option<crate::types::RenditionConfiguration>,
 }
 impl RecordingConfigurationBuilder {
     /// <p>Recording-configuration ARN.</p>
@@ -191,6 +201,19 @@ impl RecordingConfigurationBuilder {
         self.recording_reconnect_window_seconds = input;
         self
     }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn rendition_configuration(mut self, input: crate::types::RenditionConfiguration) -> Self {
+        self.rendition_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Object that describes which renditions should be recorded for a stream.</p>
+    pub fn set_rendition_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::RenditionConfiguration>,
+    ) -> Self {
+        self.rendition_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::types::RecordingConfiguration).
     pub fn build(self) -> crate::types::RecordingConfiguration {
         crate::types::RecordingConfiguration {
@@ -203,6 +226,7 @@ impl RecordingConfigurationBuilder {
             recording_reconnect_window_seconds: self
                 .recording_reconnect_window_seconds
                 .unwrap_or_default(),
+            rendition_configuration: self.rendition_configuration,
         }
     }
 }

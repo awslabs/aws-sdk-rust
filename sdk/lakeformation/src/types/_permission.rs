@@ -16,12 +16,13 @@
 ///     Permission::Alter => { /* ... */ },
 ///     Permission::Associate => { /* ... */ },
 ///     Permission::CreateDatabase => { /* ... */ },
+///     Permission::CreateLfTag => { /* ... */ },
 ///     Permission::CreateTable => { /* ... */ },
-///     Permission::CreateTag => { /* ... */ },
 ///     Permission::DataLocationAccess => { /* ... */ },
 ///     Permission::Delete => { /* ... */ },
 ///     Permission::Describe => { /* ... */ },
 ///     Permission::Drop => { /* ... */ },
+///     Permission::GrantWithLfTagExpression => { /* ... */ },
 ///     Permission::Insert => { /* ... */ },
 ///     Permission::Select => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -66,9 +67,9 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     CreateDatabase,
     #[allow(missing_docs)] // documentation missing in model
-    CreateTable,
+    CreateLfTag,
     #[allow(missing_docs)] // documentation missing in model
-    CreateTag,
+    CreateTable,
     #[allow(missing_docs)] // documentation missing in model
     DataLocationAccess,
     #[allow(missing_docs)] // documentation missing in model
@@ -77,6 +78,8 @@ pub enum Permission {
     Describe,
     #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
+    GrantWithLfTagExpression,
     #[allow(missing_docs)] // documentation missing in model
     Insert,
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +94,13 @@ impl ::std::convert::From<&str> for Permission {
             "ALTER" => Permission::Alter,
             "ASSOCIATE" => Permission::Associate,
             "CREATE_DATABASE" => Permission::CreateDatabase,
+            "CREATE_LF_TAG" => Permission::CreateLfTag,
             "CREATE_TABLE" => Permission::CreateTable,
-            "CREATE_TAG" => Permission::CreateTag,
             "DATA_LOCATION_ACCESS" => Permission::DataLocationAccess,
             "DELETE" => Permission::Delete,
             "DESCRIBE" => Permission::Describe,
             "DROP" => Permission::Drop,
+            "GRANT_WITH_LF_TAG_EXPRESSION" => Permission::GrantWithLfTagExpression,
             "INSERT" => Permission::Insert,
             "SELECT" => Permission::Select,
             other => Permission::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -118,12 +122,13 @@ impl Permission {
             Permission::Alter => "ALTER",
             Permission::Associate => "ASSOCIATE",
             Permission::CreateDatabase => "CREATE_DATABASE",
+            Permission::CreateLfTag => "CREATE_LF_TAG",
             Permission::CreateTable => "CREATE_TABLE",
-            Permission::CreateTag => "CREATE_TAG",
             Permission::DataLocationAccess => "DATA_LOCATION_ACCESS",
             Permission::Delete => "DELETE",
             Permission::Describe => "DESCRIBE",
             Permission::Drop => "DROP",
+            Permission::GrantWithLfTagExpression => "GRANT_WITH_LF_TAG_EXPRESSION",
             Permission::Insert => "INSERT",
             Permission::Select => "SELECT",
             Permission::Unknown(value) => value.as_str(),
@@ -136,12 +141,13 @@ impl Permission {
             "ALTER",
             "ASSOCIATE",
             "CREATE_DATABASE",
+            "CREATE_LF_TAG",
             "CREATE_TABLE",
-            "CREATE_TAG",
             "DATA_LOCATION_ACCESS",
             "DELETE",
             "DESCRIBE",
             "DROP",
+            "GRANT_WITH_LF_TAG_EXPRESSION",
             "INSERT",
             "SELECT",
         ]

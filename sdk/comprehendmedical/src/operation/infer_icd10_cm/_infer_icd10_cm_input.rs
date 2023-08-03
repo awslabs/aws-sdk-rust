@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -29,12 +29,12 @@ pub struct InferIcd10CmInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
 impl InferIcd10CmInputBuilder {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self

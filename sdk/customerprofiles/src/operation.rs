@@ -4,8 +4,14 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AddProfileKey` operation.
 pub mod add_profile_key;
 
+/// Types for the `CreateCalculatedAttributeDefinition` operation.
+pub mod create_calculated_attribute_definition;
+
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
+
+/// Types for the `CreateEventStream` operation.
+pub mod create_event_stream;
 
 /// Types for the `CreateIntegrationWorkflow` operation.
 pub mod create_integration_workflow;
@@ -13,8 +19,14 @@ pub mod create_integration_workflow;
 /// Types for the `CreateProfile` operation.
 pub mod create_profile;
 
+/// Types for the `DeleteCalculatedAttributeDefinition` operation.
+pub mod delete_calculated_attribute_definition;
+
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
+
+/// Types for the `DeleteEventStream` operation.
+pub mod delete_event_stream;
 
 /// Types for the `DeleteIntegration` operation.
 pub mod delete_integration;
@@ -37,8 +49,17 @@ pub mod delete_workflow;
 /// Types for the `GetAutoMergingPreview` operation.
 pub mod get_auto_merging_preview;
 
+/// Types for the `GetCalculatedAttributeDefinition` operation.
+pub mod get_calculated_attribute_definition;
+
+/// Types for the `GetCalculatedAttributeForProfile` operation.
+pub mod get_calculated_attribute_for_profile;
+
 /// Types for the `GetDomain` operation.
 pub mod get_domain;
+
+/// Types for the `GetEventStream` operation.
+pub mod get_event_stream;
 
 /// Types for the `GetIdentityResolutionJob` operation.
 pub mod get_identity_resolution_job;
@@ -55,6 +76,9 @@ pub mod get_profile_object_type;
 /// Types for the `GetProfileObjectTypeTemplate` operation.
 pub mod get_profile_object_type_template;
 
+/// Types for the `GetSimilarProfiles` operation.
+pub mod get_similar_profiles;
+
 /// Types for the `GetWorkflow` operation.
 pub mod get_workflow;
 
@@ -64,8 +88,17 @@ pub mod get_workflow_steps;
 /// Types for the `ListAccountIntegrations` operation.
 pub mod list_account_integrations;
 
+/// Types for the `ListCalculatedAttributeDefinitions` operation.
+pub mod list_calculated_attribute_definitions;
+
+/// Types for the `ListCalculatedAttributesForProfile` operation.
+pub mod list_calculated_attributes_for_profile;
+
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
+
+/// Types for the `ListEventStreams` operation.
+pub mod list_event_streams;
 
 /// Types for the `ListIdentityResolutionJobs` operation.
 pub mod list_identity_resolution_jobs;
@@ -81,6 +114,9 @@ pub mod list_profile_object_types;
 
 /// Types for the `ListProfileObjects` operation.
 pub mod list_profile_objects;
+
+/// Types for the `ListRuleBasedMatches` operation.
+pub mod list_rule_based_matches;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -108,6 +144,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCalculatedAttributeDefinition` operation.
+pub mod update_calculated_attribute_definition;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;

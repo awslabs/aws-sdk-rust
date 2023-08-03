@@ -3,21 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeatureGroupInput {
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     #[doc(hidden)]
     pub feature_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    /// <p>Updates the feature group online store configuration.</p>
+    #[doc(hidden)]
+    pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
 }
 impl UpdateFeatureGroupInput {
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     pub fn feature_additions(&self) -> ::std::option::Option<&[crate::types::FeatureDefinition]> {
         self.feature_additions.as_deref()
+    }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn online_store_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OnlineStoreConfigUpdate> {
+        self.online_store_config.as_ref()
     }
 }
 impl UpdateFeatureGroupInput {
@@ -37,9 +46,10 @@ pub struct UpdateFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_additions:
         ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
 }
 impl UpdateFeatureGroupInputBuilder {
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -47,7 +57,7 @@ impl UpdateFeatureGroupInputBuilder {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -74,6 +84,19 @@ impl UpdateFeatureGroupInputBuilder {
         self.feature_additions = input;
         self
     }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn online_store_config(mut self, input: crate::types::OnlineStoreConfigUpdate) -> Self {
+        self.online_store_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn set_online_store_config(
+        mut self,
+        input: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
+    ) -> Self {
+        self.online_store_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
     pub fn build(
         self,
@@ -85,6 +108,7 @@ impl UpdateFeatureGroupInputBuilder {
             crate::operation::update_feature_group::UpdateFeatureGroupInput {
                 feature_group_name: self.feature_group_name,
                 feature_additions: self.feature_additions,
+                online_store_config: self.online_store_config,
             },
         )
     }

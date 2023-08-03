@@ -59,6 +59,16 @@ pub(crate) fn reflens_describe_replication_configuration_templates_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_source_networks_output_next_token(
+    input: &crate::operation::describe_source_networks::DescribeSourceNetworksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_source_servers_output_next_token(
     input: &crate::operation::describe_source_servers::DescribeSourceServersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -142,6 +152,16 @@ pub(crate) fn lens_describe_recovery_snapshots_output_items(
 pub(crate) fn lens_describe_replication_configuration_templates_output_items(
     input: crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_source_networks_output_items(
+    input: crate::operation::describe_source_networks::DescribeSourceNetworksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>> {
     let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

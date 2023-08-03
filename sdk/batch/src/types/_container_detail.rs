@@ -103,6 +103,9 @@ pub struct ContainerDetail {
     /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    #[doc(hidden)]
+    pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
 }
 impl ContainerDetail {
     /// <p>The image used to start the container.</p>
@@ -235,6 +238,10 @@ impl ContainerDetail {
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
+        self.runtime_platform.as_ref()
+    }
 }
 impl ContainerDetail {
     /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::types::ContainerDetail).
@@ -279,6 +286,7 @@ pub struct ContainerDetailBuilder {
     pub(crate) fargate_platform_configuration:
         ::std::option::Option<crate::types::FargatePlatformConfiguration>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
 }
 impl ContainerDetailBuilder {
     /// <p>The image used to start the container.</p>
@@ -697,6 +705,19 @@ impl ContainerDetailBuilder {
         self.ephemeral_storage = input;
         self
     }
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
+        self.runtime_platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    pub fn set_runtime_platform(
+        mut self,
+        input: ::std::option::Option<crate::types::RuntimePlatform>,
+    ) -> Self {
+        self.runtime_platform = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ContainerDetail`](crate::types::ContainerDetail).
     pub fn build(self) -> crate::types::ContainerDetail {
         crate::types::ContainerDetail {
@@ -727,6 +748,7 @@ impl ContainerDetailBuilder {
             network_configuration: self.network_configuration,
             fargate_platform_configuration: self.fargate_platform_configuration,
             ephemeral_storage: self.ephemeral_storage,
+            runtime_platform: self.runtime_platform,
         }
     }
 }

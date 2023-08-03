@@ -65,6 +65,16 @@ impl ListGraphqlApisInput {
                         );
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.api_type {
+                    {
+                        query.push_kv("apiType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.owner {
+                    {
+                        query.push_kv("owner", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

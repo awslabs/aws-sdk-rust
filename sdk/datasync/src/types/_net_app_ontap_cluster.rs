@@ -35,6 +35,9 @@ pub struct NetAppOntapCluster {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
+    /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+    #[doc(hidden)]
+    pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapCluster {
     /// <p>The number of CIFS shares in the cluster.</p>
@@ -80,6 +83,10 @@ impl NetAppOntapCluster {
     ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
+    /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+    pub fn lun_count(&self) -> ::std::option::Option<i64> {
+        self.lun_count
+    }
 }
 impl NetAppOntapCluster {
     /// Creates a new builder-style object to manufacture [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
@@ -105,6 +112,7 @@ pub struct NetAppOntapClusterBuilder {
     pub(crate) recommendations:
         ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
+    pub(crate) lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapClusterBuilder {
     /// <p>The number of CIFS shares in the cluster.</p>
@@ -227,6 +235,16 @@ impl NetAppOntapClusterBuilder {
         self.recommendation_status = input;
         self
     }
+    /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+    pub fn lun_count(mut self, input: i64) -> Self {
+        self.lun_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+    pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.lun_count = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
     pub fn build(self) -> crate::types::NetAppOntapCluster {
         crate::types::NetAppOntapCluster {
@@ -240,6 +258,7 @@ impl NetAppOntapClusterBuilder {
             cluster_block_storage_logical_used: self.cluster_block_storage_logical_used,
             recommendations: self.recommendations,
             recommendation_status: self.recommendation_status,
+            lun_count: self.lun_count,
         }
     }
 }

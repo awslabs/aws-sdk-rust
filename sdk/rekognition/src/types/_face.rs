@@ -22,6 +22,9 @@ pub struct Face {
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
     #[doc(hidden)]
     pub index_faces_model_version: ::std::option::Option<::std::string::String>,
+    /// <p>Unique identifier assigned to the user.</p>
+    #[doc(hidden)]
+    pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
@@ -48,6 +51,10 @@ impl Face {
     pub fn index_faces_model_version(&self) -> ::std::option::Option<&str> {
         self.index_faces_model_version.as_deref()
     }
+    /// <p>Unique identifier assigned to the user.</p>
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl Face {
     /// Creates a new builder-style object to manufacture [`Face`](crate::types::Face).
@@ -68,6 +75,7 @@ pub struct FaceBuilder {
     pub(crate) external_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) index_faces_model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl FaceBuilder {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
@@ -145,6 +153,16 @@ impl FaceBuilder {
         self.index_faces_model_version = input;
         self
     }
+    /// <p>Unique identifier assigned to the user.</p>
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique identifier assigned to the user.</p>
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Face`](crate::types::Face).
     pub fn build(self) -> crate::types::Face {
         crate::types::Face {
@@ -154,6 +172,7 @@ impl FaceBuilder {
             external_image_id: self.external_image_id,
             confidence: self.confidence,
             index_faces_model_version: self.index_faces_model_version,
+            user_id: self.user_id,
         }
     }
 }

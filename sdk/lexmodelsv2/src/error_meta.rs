@@ -659,6 +659,36 @@ impl From<crate::operation::create_slot_type::CreateSlotTypeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError,
+    ) -> Self {
+        match err {
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -1282,6 +1312,51 @@ impl From<crate::operation::delete_slot_type::DeleteSlotTypeError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_test_set::DeleteTestSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_test_set::DeleteTestSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_test_set::DeleteTestSetError> for Error {
+    fn from(err: crate::operation::delete_test_set::DeleteTestSetError) -> Self {
+        match err {
+            crate::operation::delete_test_set::DeleteTestSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_test_set::DeleteTestSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_utterances::DeleteUtterancesError,
             R,
         >,
@@ -1874,6 +1949,215 @@ impl From<crate::operation::describe_slot_type::DescribeSlotTypeError> for Error
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_execution::DescribeTestExecutionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_execution::DescribeTestExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_test_execution::DescribeTestExecutionError> for Error {
+    fn from(err: crate::operation::describe_test_execution::DescribeTestExecutionError) -> Self {
+        match err {
+            crate::operation::describe_test_execution::DescribeTestExecutionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_test_execution::DescribeTestExecutionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_test_execution::DescribeTestExecutionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::describe_test_execution::DescribeTestExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_test_execution::DescribeTestExecutionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_test_execution::DescribeTestExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set::DescribeTestSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set::DescribeTestSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_test_set::DescribeTestSetError> for Error {
+    fn from(err: crate::operation::describe_test_set::DescribeTestSetError) -> Self {
+        match err {
+            crate::operation::describe_test_set::DescribeTestSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_test_set::DescribeTestSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_test_set::DescribeTestSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::describe_test_set::DescribeTestSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_test_set::DescribeTestSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_test_set::DescribeTestSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError> for Error {
+    fn from(err: crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError) -> Self {
+        match err {
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_test_set_generation::DescribeTestSetGenerationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
+    ) -> Self {
+        match err {
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
             R,
         >,
@@ -2358,6 +2642,94 @@ impl From<crate::operation::list_imports::ListImportsError> for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_metrics::ListIntentMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_metrics::ListIntentMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_intent_metrics::ListIntentMetricsError> for Error {
+    fn from(err: crate::operation::list_intent_metrics::ListIntentMetricsError) -> Self {
+        match err {
+            crate::operation::list_intent_metrics::ListIntentMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_intent_metrics::ListIntentMetricsError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_intent_metrics::ListIntentMetricsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_intent_metrics::ListIntentMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_intent_metrics::ListIntentMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_intent_metrics::ListIntentMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_paths::ListIntentPathsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_paths::ListIntentPathsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_intent_paths::ListIntentPathsError> for Error {
+    fn from(err: crate::operation::list_intent_paths::ListIntentPathsError) -> Self {
+        match err {
+            crate::operation::list_intent_paths::ListIntentPathsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_intent_paths::ListIntentPathsError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_intent_paths::ListIntentPathsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_intent_paths::ListIntentPathsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_intent_paths::ListIntentPathsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_intent_paths::ListIntentPathsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::list_intents::ListIntentsError, R>>
     for Error
 where
@@ -2409,6 +2781,50 @@ impl From<crate::operation::list_intents::ListIntentsError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError> for Error {
+    fn from(err: crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError) -> Self {
+        match err {
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_recommended_intents::ListRecommendedIntentsError,
             R,
         >,
@@ -2447,6 +2863,96 @@ impl From<crate::operation::list_recommended_intents::ListRecommendedIntentsErro
             crate::operation::list_recommended_intents::ListRecommendedIntentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_recommended_intents::ListRecommendedIntentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_recommended_intents::ListRecommendedIntentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError> for Error {
+    fn from(
+        err: crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
+    ) -> Self {
+        match err {
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_metrics::ListSessionMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_metrics::ListSessionMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_session_metrics::ListSessionMetricsError> for Error {
+    fn from(err: crate::operation::list_session_metrics::ListSessionMetricsError) -> Self {
+        match err {
+            crate::operation::list_session_metrics::ListSessionMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_session_metrics::ListSessionMetricsError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_session_metrics::ListSessionMetricsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_session_metrics::ListSessionMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_session_metrics::ListSessionMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_session_metrics::ListSessionMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2578,6 +3084,283 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_executions::ListTestExecutionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_executions::ListTestExecutionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_test_executions::ListTestExecutionsError> for Error {
+    fn from(err: crate::operation::list_test_executions::ListTestExecutionsError) -> Self {
+        match err {
+            crate::operation::list_test_executions::ListTestExecutionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_executions::ListTestExecutionsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_test_executions::ListTestExecutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_test_executions::ListTestExecutionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_executions::ListTestExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_set_records::ListTestSetRecordsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_set_records::ListTestSetRecordsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_test_set_records::ListTestSetRecordsError> for Error {
+    fn from(err: crate::operation::list_test_set_records::ListTestSetRecordsError) -> Self {
+        match err {
+            crate::operation::list_test_set_records::ListTestSetRecordsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_set_records::ListTestSetRecordsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_test_set_records::ListTestSetRecordsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_test_set_records::ListTestSetRecordsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_test_set_records::ListTestSetRecordsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_set_records::ListTestSetRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_sets::ListTestSetsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_sets::ListTestSetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_test_sets::ListTestSetsError> for Error {
+    fn from(err: crate::operation::list_test_sets::ListTestSetsError) -> Self {
+        match err {
+            crate::operation::list_test_sets::ListTestSetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_test_sets::ListTestSetsError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_test_sets::ListTestSetsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_test_sets::ListTestSetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_test_sets::ListTestSetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+    ) -> Self {
+        match err {
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_utterance_metrics::ListUtteranceMetricsError> for Error {
+    fn from(err: crate::operation::list_utterance_metrics::ListUtteranceMetricsError) -> Self {
+        match err {
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2727,6 +3510,96 @@ impl From<crate::operation::start_import::StartImportError> for Error {
             crate::operation::start_import::StartImportError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_execution::StartTestExecutionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_execution::StartTestExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_test_execution::StartTestExecutionError> for Error {
+    fn from(err: crate::operation::start_test_execution::StartTestExecutionError) -> Self {
+        match err {
+            crate::operation::start_test_execution::StartTestExecutionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_test_execution::StartTestExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_set_generation::StartTestSetGenerationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_set_generation::StartTestSetGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_test_set_generation::StartTestSetGenerationError> for Error {
+    fn from(err: crate::operation::start_test_set_generation::StartTestSetGenerationError) -> Self {
+        match err {
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_test_set_generation::StartTestSetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3315,6 +4188,51 @@ impl From<crate::operation::update_slot_type::UpdateSlotTypeError> for Error {
             crate::operation::update_slot_type::UpdateSlotTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_slot_type::UpdateSlotTypeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_slot_type::UpdateSlotTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_test_set::UpdateTestSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_test_set::UpdateTestSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_test_set::UpdateTestSetError> for Error {
+    fn from(err: crate::operation::update_test_set::UpdateTestSetError) -> Self {
+        match err {
+            crate::operation::update_test_set::UpdateTestSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_test_set::UpdateTestSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

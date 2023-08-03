@@ -48,6 +48,9 @@ pub struct Portal {
     /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    /// <p>The ARN of the IP access settings.</p>
+    #[doc(hidden)]
+    pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl Portal {
     /// <p>The ARN of the web portal.</p>
@@ -108,6 +111,10 @@ impl Portal {
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
+        self.ip_access_settings_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Portal {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -129,6 +136,7 @@ impl ::std::fmt::Debug for Portal {
             &self.user_access_logging_settings_arn,
         );
         formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
         formatter.finish()
     }
 }
@@ -157,6 +165,7 @@ pub struct PortalBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl PortalBuilder {
     /// <p>The ARN of the web portal.</p>
@@ -360,6 +369,22 @@ impl PortalBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn ip_access_settings_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn set_ip_access_settings_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.ip_access_settings_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Portal`](crate::types::Portal).
     pub fn build(self) -> crate::types::Portal {
         crate::types::Portal {
@@ -377,6 +402,7 @@ impl PortalBuilder {
             status_reason: self.status_reason,
             user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             authentication_type: self.authentication_type,
+            ip_access_settings_arn: self.ip_access_settings_arn,
         }
     }
 }
@@ -400,6 +426,7 @@ impl ::std::fmt::Debug for PortalBuilder {
             &self.user_access_logging_settings_arn,
         );
         formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
         formatter.finish()
     }
 }

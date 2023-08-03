@@ -260,6 +260,8 @@ mod export_forms;
 
 mod export_themes;
 
+mod get_codegen_job;
+
 mod get_component;
 
 mod get_form;
@@ -267,6 +269,8 @@ mod get_form;
 mod get_metadata;
 
 mod get_theme;
+
+mod list_codegen_jobs;
 
 mod list_components;
 
@@ -277,6 +281,8 @@ mod list_themes;
 mod put_metadata_flag;
 
 mod refresh_token;
+
+mod start_codegen_job;
 
 mod update_component;
 

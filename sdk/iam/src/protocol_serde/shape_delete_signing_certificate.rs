@@ -30,6 +30,22 @@ pub fn de_delete_signing_certificate_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModification" => crate::operation::delete_signing_certificate::DeleteSigningCertificateError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(_response_body, output).map_err(crate::operation::delete_signing_certificate::DeleteSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "LimitExceeded" => crate::operation::delete_signing_certificate::DeleteSigningCertificateError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =

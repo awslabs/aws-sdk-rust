@@ -27,6 +27,12 @@ pub struct Sensor {
     /// <p>The specified possible maximum value of the sensor.</p>
     #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    #[doc(hidden)]
+    pub deprecation_message: ::std::option::Option<::std::string::String>,
+    /// <p>A comment in addition to the description.</p>
+    #[doc(hidden)]
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
@@ -57,6 +63,14 @@ impl Sensor {
     pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+        self.deprecation_message.as_deref()
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(&self) -> ::std::option::Option<&str> {
+        self.comment.as_deref()
+    }
 }
 impl Sensor {
     /// Creates a new builder-style object to manufacture [`Sensor`](crate::types::Sensor).
@@ -78,6 +92,8 @@ pub struct SensorBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
+    pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl SensorBuilder {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
@@ -171,6 +187,32 @@ impl SensorBuilder {
         self.max = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn set_deprecation_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = input;
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comment = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Sensor`](crate::types::Sensor).
     pub fn build(self) -> crate::types::Sensor {
         crate::types::Sensor {
@@ -181,6 +223,8 @@ impl SensorBuilder {
             allowed_values: self.allowed_values,
             min: self.min,
             max: self.max,
+            deprecation_message: self.deprecation_message,
+            comment: self.comment,
         }
     }
 }

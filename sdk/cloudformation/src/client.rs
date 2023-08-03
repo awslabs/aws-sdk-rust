@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod activate_organizations_access;
+
 mod activate_type;
 
 mod batch_describe_type_configurations;
@@ -239,7 +241,7 @@ mod create_stack_set;
 /// # let client: aws_sdk_cloudformation::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.activate_type()
+/// let result = client.activate_organizations_access()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -255,6 +257,8 @@ mod create_stack_set;
 /// # }
 /// ```
 pub mod customize;
+
+mod deactivate_organizations_access;
 
 mod deactivate_type;
 
@@ -273,6 +277,8 @@ mod describe_account_limits;
 mod describe_change_set;
 
 mod describe_change_set_hooks;
+
+mod describe_organizations_access;
 
 mod describe_publisher;
 
@@ -321,6 +327,8 @@ mod list_change_sets;
 mod list_exports;
 
 mod list_imports;
+
+mod list_stack_instance_resource_drifts;
 
 mod list_stack_instances;
 

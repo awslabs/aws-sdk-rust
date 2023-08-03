@@ -28,6 +28,11 @@ pub fn ser_get_cluster_credentials_with_iam_input_input(
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("CustomDomainName");
+    if let Some(var_8) = &input.custom_domain_name {
+        scope_7.string(var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

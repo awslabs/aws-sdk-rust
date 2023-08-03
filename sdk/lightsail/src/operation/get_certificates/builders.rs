@@ -6,7 +6,7 @@ pub use crate::operation::get_certificates::_get_certificates_input::GetCertific
 /// Fluent builder constructing a request to `GetCertificates`.
 ///
 /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p> <note>
-/// <p>To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
+/// <p>To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCertificatesFluentBuilder {
@@ -150,6 +150,18 @@ impl GetCertificatesFluentBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
+        self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.page_token(input.into());
+        self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_page_token(input);
         self
     }
 }

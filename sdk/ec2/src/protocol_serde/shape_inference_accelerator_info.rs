@@ -16,6 +16,21 @@ pub fn de_inference_accelerator_info(
                 builder = builder.set_accelerators(var_1);
             }
             ,
+            s if s.matches("totalInferenceMemoryInMiB") /* TotalInferenceMemoryInMiB com.amazonaws.ec2#InferenceAcceleratorInfo$TotalInferenceMemoryInMiB */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#totalInferenceMemory`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_total_inference_memory_in_mi_b(var_2);
+            }
+            ,
             _ => {}
         }
     }

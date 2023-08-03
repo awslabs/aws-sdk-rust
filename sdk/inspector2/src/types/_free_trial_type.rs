@@ -15,6 +15,7 @@
 ///     FreeTrialType::Ec2 => { /* ... */ },
 ///     FreeTrialType::Ecr => { /* ... */ },
 ///     FreeTrialType::Lambda => { /* ... */ },
+///     FreeTrialType::LambdaCode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum FreeTrialType {
     Ecr,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaCode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for FreeTrialType {
             "EC2" => FreeTrialType::Ec2,
             "ECR" => FreeTrialType::Ecr,
             "LAMBDA" => FreeTrialType::Lambda,
+            "LAMBDA_CODE" => FreeTrialType::LambdaCode,
             other => {
                 FreeTrialType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -83,12 +87,13 @@ impl FreeTrialType {
             FreeTrialType::Ec2 => "EC2",
             FreeTrialType::Ecr => "ECR",
             FreeTrialType::Lambda => "LAMBDA",
+            FreeTrialType::LambdaCode => "LAMBDA_CODE",
             FreeTrialType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "ECR", "LAMBDA"]
+        &["EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
     }
 }
 impl ::std::convert::AsRef<str> for FreeTrialType {

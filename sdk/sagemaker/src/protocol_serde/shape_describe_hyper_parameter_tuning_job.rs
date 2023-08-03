@@ -195,6 +195,11 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(value: &[u8], mut builder: 
                             crate::protocol_serde::shape_hyper_parameter_tuning_job_consumed_resources::de_hyper_parameter_tuning_job_consumed_resources(tokens)?
                         );
                     }
+                    "Autotune" => {
+                        builder = builder.set_autotune(
+                            crate::protocol_serde::shape_autotune::de_autotune(tokens)?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

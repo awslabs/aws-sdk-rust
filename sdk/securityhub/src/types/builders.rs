@@ -31,6 +31,8 @@ pub use crate::types::_invitation::InvitationBuilder;
 
 pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
 
+pub use crate::types::_automation_rules_metadata::AutomationRulesMetadataBuilder;
+
 pub use crate::types::_result::ResultBuilder;
 
 pub use crate::types::_insight::InsightBuilder;
@@ -102,6 +104,76 @@ pub use crate::types::_status_reason::StatusReasonBuilder;
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
+
+pub use crate::types::_aws_athena_work_group_details::AwsAthenaWorkGroupDetailsBuilder;
+
+pub use crate::types::_aws_athena_work_group_configuration_details::AwsAthenaWorkGroupConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_athena_work_group_configuration_result_configuration_details::AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_athena_work_group_configuration_result_configuration_encryption_configuration_details::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_step_function_state_machine_details::AwsStepFunctionStateMachineDetailsBuilder;
+
+pub use crate::types::_aws_step_function_state_machine_tracing_configuration_details::AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_details::AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_destinations_details::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsBuilder;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_details::AwsGuardDutyDetectorDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_features_details::AwsGuardDutyDetectorFeaturesDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_details::AwsGuardDutyDetectorDataSourcesDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_s3_logs_details::AwsGuardDutyDetectorDataSourcesS3LogsDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_ebs_volumes_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_kubernetes_details::AwsGuardDutyDetectorDataSourcesKubernetesDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_flow_logs_details::AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_dns_logs_details::AwsGuardDutyDetectorDataSourcesDnsLogsDetailsBuilder;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_cloud_trail_details::AwsGuardDutyDetectorDataSourcesCloudTrailDetailsBuilder;
+
+pub use crate::types::_aws_event_schemas_registry_details::AwsEventSchemasRegistryDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_details::AwsAppSyncGraphQlApiDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_additional_authentication_providers_details::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_user_pool_config_details::AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_open_id_connect_config_details::AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsBuilder;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_log_config_details::AwsAppSyncGraphQlApiLogConfigDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_details::AwsAmazonMqBrokerDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_users_details::AwsAmazonMqBrokerUsersDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_maintenance_window_start_time_details::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_logs_details::AwsAmazonMqBrokerLogsDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_logs_pending_details::AwsAmazonMqBrokerLogsPendingDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_ldap_server_metadata_details::AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder;
+
+pub use crate::types::_aws_amazon_mq_broker_encryption_options_details::AwsAmazonMqBrokerEncryptionOptionsDetailsBuilder;
 
 pub use crate::types::_aws_ec2_route_table_details::AwsEc2RouteTableDetailsBuilder;
 
@@ -570,6 +642,8 @@ pub use crate::types::_aws_rds_db_cluster_associated_role::AwsRdsDbClusterAssoci
 pub use crate::types::_aws_rds_db_instance_vpc_security_group::AwsRdsDbInstanceVpcSecurityGroupBuilder;
 
 pub use crate::types::_aws_rds_db_cluster_snapshot_details::AwsRdsDbClusterSnapshotDetailsBuilder;
+
+pub use crate::types::_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute::AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeBuilder;
 
 pub use crate::types::_aws_rds_db_snapshot_details::AwsRdsDbSnapshotDetailsBuilder;
 
@@ -1097,15 +1171,25 @@ pub use crate::types::_action_target::ActionTargetBuilder;
 
 pub use crate::types::_account_details::AccountDetailsBuilder;
 
+pub use crate::types::_automation_rules_action::AutomationRulesActionBuilder;
+
+pub use crate::types::_automation_rules_finding_fields_update::AutomationRulesFindingFieldsUpdateBuilder;
+
+pub use crate::types::_workflow_update::WorkflowUpdateBuilder;
+
+pub use crate::types::_severity_update::SeverityUpdateBuilder;
+
+pub use crate::types::_automation_rules_finding_filters::AutomationRulesFindingFiltersBuilder;
+
 pub use crate::types::_unprocessed_standards_control_association_update::UnprocessedStandardsControlAssociationUpdateBuilder;
 
 pub use crate::types::_standards_control_association_update::StandardsControlAssociationUpdateBuilder;
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFindingBuilder;
 
-pub use crate::types::_workflow_update::WorkflowUpdateBuilder;
+pub use crate::types::_unprocessed_automation_rule::UnprocessedAutomationRuleBuilder;
 
-pub use crate::types::_severity_update::SeverityUpdateBuilder;
+pub use crate::types::_update_automation_rules_request_item::UpdateAutomationRulesRequestItemBuilder;
 
 pub use crate::types::_import_findings_error::ImportFindingsErrorBuilder;
 
@@ -1118,5 +1202,7 @@ pub use crate::types::_standards_control_association_detail::StandardsControlAss
 pub use crate::types::_unprocessed_security_control::UnprocessedSecurityControlBuilder;
 
 pub use crate::types::_security_control::SecurityControlBuilder;
+
+pub use crate::types::_automation_rules_config::AutomationRulesConfigBuilder;
 
 pub use crate::types::_standards_subscription_request::StandardsSubscriptionRequestBuilder;

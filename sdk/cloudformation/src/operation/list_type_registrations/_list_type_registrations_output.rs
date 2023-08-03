@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTypeRegistrationsOutput {
     /// <p>A list of extension registration tokens.</p>
-    /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
+    /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
     #[doc(hidden)]
     pub registration_token_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -14,7 +14,7 @@ pub struct ListTypeRegistrationsOutput {
 }
 impl ListTypeRegistrationsOutput {
     /// <p>A list of extension registration tokens.</p>
-    /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
+    /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
     pub fn registration_token_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.registration_token_list.as_deref()
     }
@@ -54,7 +54,7 @@ impl ListTypeRegistrationsOutputBuilder {
     /// To override the contents of this collection use [`set_registration_token_list`](Self::set_registration_token_list).
     ///
     /// <p>A list of extension registration tokens.</p>
-    /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
+    /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
     pub fn registration_token_list(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -65,7 +65,7 @@ impl ListTypeRegistrationsOutputBuilder {
         self
     }
     /// <p>A list of extension registration tokens.</p>
-    /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
+    /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
     pub fn set_registration_token_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -186,6 +186,8 @@ pub enum DeleteEventSourceMappingError {
     ServiceException(crate::types::error::ServiceException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -211,6 +213,7 @@ impl ::std::fmt::Display for DeleteEventSourceMappingError {
             Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -231,6 +234,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteEventSo
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidParameterValueException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ResourceConflictException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -291,6 +297,7 @@ impl DeleteEventSourceMappingError {
             Self::ResourceInUseException(e) => e.meta(),
             Self::ServiceException(e) => e.meta(),
             Self::InvalidParameterValueException(e) => e.meta(),
+            Self::ResourceConflictException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -314,6 +321,10 @@ impl DeleteEventSourceMappingError {
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
     }
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingError::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(self, Self::ResourceConflictException(_))
+    }
 }
 impl ::std::error::Error for DeleteEventSourceMappingError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -323,6 +334,7 @@ impl ::std::error::Error for DeleteEventSourceMappingError {
             Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

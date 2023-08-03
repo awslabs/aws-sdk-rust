@@ -5,7 +5,7 @@ pub use crate::operation::update_storage_virtual_machine::_update_storage_virtua
 
 /// Fluent builder constructing a request to `UpdateStorageVirtualMachine`.
 ///
-/// <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p>
+/// <p>Updates an FSx for ONTAP storage virtual machine (SVM).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStorageVirtualMachineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,7 +99,7 @@ impl UpdateStorageVirtualMachineFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn active_directory_configuration(
         mut self,
         input: crate::types::UpdateSvmActiveDirectoryConfiguration,
@@ -107,7 +107,7 @@ impl UpdateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.active_directory_configuration(input);
         self
     }
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn set_active_directory_configuration(
         mut self,
         input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
@@ -147,7 +147,7 @@ impl UpdateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.set_storage_virtual_machine_id(input);
         self
     }
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn svm_admin_password(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -155,7 +155,7 @@ impl UpdateStorageVirtualMachineFluentBuilder {
         self.inner = self.inner.svm_admin_password(input.into());
         self
     }
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn set_svm_admin_password(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -5,6 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`query_statement(impl ::std::convert::Into<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::query_statement) / [`set_query_statement(Option<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::set_query_statement): <p>The SQL code of your query.</p>
     ///   - [`delivery_s3_uri(impl ::std::convert::Into<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::delivery_s3_uri) / [`set_delivery_s3_uri(Option<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::set_delivery_s3_uri): <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+    ///   - [`query_alias(impl ::std::convert::Into<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::query_alias) / [`set_query_alias(Option<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::set_query_alias): <p> The alias that identifies a query template. </p>
+    ///   - [`query_parameters(Vec<String>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::query_parameters) / [`set_query_parameters(Option<Vec<String>>)`](crate::operation::start_query::builders::StartQueryFluentBuilder::set_query_parameters): <p> The query parameters for the specified <code>QueryAlias</code>. </p>
     /// - On success, responds with [`StartQueryOutput`](crate::operation::start_query::StartQueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::operation::start_query::StartQueryOutput::query_id): <p>The ID of the started query.</p>
     /// - On failure, responds with [`SdkError<StartQueryError>`](crate::operation::start_query::StartQueryError)

@@ -31,7 +31,14 @@ pub struct CreateLocationObjectStorageInput {
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     #[doc(hidden)]
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -75,7 +82,14 @@ impl CreateLocationObjectStorageInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn server_certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
@@ -237,13 +251,27 @@ impl CreateLocationObjectStorageInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn server_certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.server_certificate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn set_server_certificate(
         mut self,

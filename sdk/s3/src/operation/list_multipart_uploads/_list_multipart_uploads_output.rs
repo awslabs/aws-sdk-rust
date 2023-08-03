@@ -37,10 +37,13 @@ pub struct ListMultipartUploadsOutput {
     #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    #[doc(hidden)]
+    pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -90,10 +93,14 @@ impl ListMultipartUploadsOutput {
         self.common_prefixes.as_deref()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
         self.encoding_type.as_ref()
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+        self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListMultipartUploadsOutput {
@@ -132,6 +139,7 @@ pub struct ListMultipartUploadsOutputBuilder {
     pub(crate) uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartUpload>>,
     pub(crate) common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -283,20 +291,33 @@ impl ListMultipartUploadsOutputBuilder {
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     pub fn set_encoding_type(
         mut self,
         input: ::std::option::Option<crate::types::EncodingType>,
     ) -> Self {
         self.encoding_type = input;
+        self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
+        self.request_charged = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn set_request_charged(
+        mut self,
+        input: ::std::option::Option<crate::types::RequestCharged>,
+    ) -> Self {
+        self.request_charged = input;
         self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -335,6 +356,7 @@ impl ListMultipartUploadsOutputBuilder {
             uploads: self.uploads,
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,
+            request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

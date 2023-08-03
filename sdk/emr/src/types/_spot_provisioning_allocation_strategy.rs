@@ -13,6 +13,9 @@
 /// # let spotprovisioningallocationstrategy = unimplemented!();
 /// match spotprovisioningallocationstrategy {
 ///     SpotProvisioningAllocationStrategy::CapacityOptimized => { /* ... */ },
+///     SpotProvisioningAllocationStrategy::Diversified => { /* ... */ },
+///     SpotProvisioningAllocationStrategy::LowestPrice => { /* ... */ },
+///     SpotProvisioningAllocationStrategy::PriceCapacityOptimized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +51,12 @@
 pub enum SpotProvisioningAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     CapacityOptimized,
+    #[allow(missing_docs)] // documentation missing in model
+    Diversified,
+    #[allow(missing_docs)] // documentation missing in model
+    LowestPrice,
+    #[allow(missing_docs)] // documentation missing in model
+    PriceCapacityOptimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +64,11 @@ impl ::std::convert::From<&str> for SpotProvisioningAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "capacity-optimized" => SpotProvisioningAllocationStrategy::CapacityOptimized,
+            "diversified" => SpotProvisioningAllocationStrategy::Diversified,
+            "lowest-price" => SpotProvisioningAllocationStrategy::LowestPrice,
+            "price-capacity-optimized" => {
+                SpotProvisioningAllocationStrategy::PriceCapacityOptimized
+            }
             other => SpotProvisioningAllocationStrategy::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -73,12 +87,22 @@ impl SpotProvisioningAllocationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             SpotProvisioningAllocationStrategy::CapacityOptimized => "capacity-optimized",
+            SpotProvisioningAllocationStrategy::Diversified => "diversified",
+            SpotProvisioningAllocationStrategy::LowestPrice => "lowest-price",
+            SpotProvisioningAllocationStrategy::PriceCapacityOptimized => {
+                "price-capacity-optimized"
+            }
             SpotProvisioningAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["capacity-optimized"]
+        &[
+            "capacity-optimized",
+            "diversified",
+            "lowest-price",
+            "price-capacity-optimized",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SpotProvisioningAllocationStrategy {

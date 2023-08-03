@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
-    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    /// <p>The Amazon Resource Name(ARN) of the data store for which tags are being removed.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    /// <p>The Amazon Resource Name(ARN) of the data store for which tags are being removed.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -37,12 +37,12 @@ pub struct UntagResourceInputBuilder {
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInputBuilder {
-    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    /// <p>The Amazon Resource Name(ARN) of the data store for which tags are being removed.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    /// <p>The Amazon Resource Name(ARN) of the data store for which tags are being removed.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
@@ -51,14 +51,14 @@ impl UntagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
         v.push(input.into());
         self.tag_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    /// <p> The keys for the tags to be removed from the HealthLake data store. </p>
     pub fn set_tag_keys(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

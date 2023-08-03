@@ -42,7 +42,9 @@ pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 /// <ul>
 /// <li> <p>Capacity: T100</p> </li>
 /// <li> <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li>
-/// </ul> <p></p> </li>
+/// </ul> <note>
+/// <p>This device is replaced with T98.</p>
+/// </note> <p></p> </li>
 /// <li> <p>Device type: <b>STANDARD</b> </p>
 /// <ul>
 /// <li> <p>Capacity: T50</p> </li>
@@ -57,16 +59,16 @@ pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region. </p>
 /// </note> </li>
 /// </ul> <p></p> </li>
-/// <li> <p>Device type: <b>V3_5C</b> </p>
+/// <li> <p>Snow Family device type: <b>RACK_5U_C</b> </p>
 /// <ul>
-/// <li> <p>Capacity: T32</p> </li>
-/// <li> <p>Description: Snowball Edge Compute Optimized without GPU</p> </li>
-/// </ul> <p></p> </li>
+/// <li> <p>Capacity: T13 </p> </li>
+/// <li> <p>Description: Snowblade.</p> </li>
+/// </ul> </li>
 /// <li> <p>Device type: <b>V3_5S</b> </p>
 /// <ul>
 /// <li> <p>Capacity: T240</p> </li>
 /// <li> <p>Description: Snowball Edge Storage Optimized 210TB</p> </li>
-/// </ul> <p></p> </li>
+/// </ul> </li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
@@ -366,12 +368,12 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_device_configuration(input);
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn remote_management(mut self, input: crate::types::RemoteManagement) -> Self {
         self.inner = self.inner.remote_management(input);
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn set_remote_management(
         mut self,
         input: ::std::option::Option<crate::types::RemoteManagement>,
@@ -393,6 +395,32 @@ impl CreateJobFluentBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_long_term_pricing_id(input);
+        self
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn impact_level(mut self, input: crate::types::ImpactLevel) -> Self {
+        self.inner = self.inner.impact_level(input);
+        self
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn set_impact_level(
+        mut self,
+        input: ::std::option::Option<crate::types::ImpactLevel>,
+    ) -> Self {
+        self.inner = self.inner.set_impact_level(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
+        self.inner = self.inner.pickup_details(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn set_pickup_details(
+        mut self,
+        input: ::std::option::Option<crate::types::PickupDetails>,
+    ) -> Self {
+        self.inner = self.inner.set_pickup_details(input);
         self
     }
 }

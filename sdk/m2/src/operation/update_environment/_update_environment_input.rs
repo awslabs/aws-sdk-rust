@@ -6,7 +6,7 @@ pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
     #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The instance type for the runtime environment to update.</p>
@@ -27,7 +27,7 @@ impl UpdateEnvironmentInput {
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
         self.desired_capacity
     }
@@ -86,12 +86,12 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_capacity = input;
         self

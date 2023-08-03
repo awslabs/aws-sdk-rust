@@ -99,6 +99,17 @@ impl ListPolicyTagsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_policy_tags::paginator::ListPolicyTagsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_policy_tags::paginator::ListPolicyTagsPaginator {
+        crate::operation::list_policy_tags::paginator::ListPolicyTagsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

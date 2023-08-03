@@ -62,6 +62,7 @@
 ///     VoiceId::Laura => { /* ... */ },
 ///     VoiceId::Lea => { /* ... */ },
 ///     VoiceId::Liam => { /* ... */ },
+///     VoiceId::Lisa => { /* ... */ },
 ///     VoiceId::Liv => { /* ... */ },
 ///     VoiceId::Lotte => { /* ... */ },
 ///     VoiceId::Lucia => { /* ... */ },
@@ -76,6 +77,7 @@
 ///     VoiceId::Miguel => { /* ... */ },
 ///     VoiceId::Mizuki => { /* ... */ },
 ///     VoiceId::Naja => { /* ... */ },
+///     VoiceId::Niamh => { /* ... */ },
 ///     VoiceId::Nicole => { /* ... */ },
 ///     VoiceId::Ola => { /* ... */ },
 ///     VoiceId::Olivia => { /* ... */ },
@@ -90,6 +92,7 @@
 ///     VoiceId::Salli => { /* ... */ },
 ///     VoiceId::Seoyeon => { /* ... */ },
 ///     VoiceId::Sergio => { /* ... */ },
+///     VoiceId::Sofie => { /* ... */ },
 ///     VoiceId::Stephen => { /* ... */ },
 ///     VoiceId::Suvi => { /* ... */ },
 ///     VoiceId::Takumi => { /* ... */ },
@@ -234,6 +237,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Liam,
     #[allow(missing_docs)] // documentation missing in model
+    Lisa,
+    #[allow(missing_docs)] // documentation missing in model
     Liv,
     #[allow(missing_docs)] // documentation missing in model
     Lotte,
@@ -262,6 +267,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Naja,
     #[allow(missing_docs)] // documentation missing in model
+    Niamh,
+    #[allow(missing_docs)] // documentation missing in model
     Nicole,
     #[allow(missing_docs)] // documentation missing in model
     Ola,
@@ -289,6 +296,8 @@ pub enum VoiceId {
     Seoyeon,
     #[allow(missing_docs)] // documentation missing in model
     Sergio,
+    #[allow(missing_docs)] // documentation missing in model
+    Sofie,
     #[allow(missing_docs)] // documentation missing in model
     Stephen,
     #[allow(missing_docs)] // documentation missing in model
@@ -365,6 +374,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Laura" => VoiceId::Laura,
             "Lea" => VoiceId::Lea,
             "Liam" => VoiceId::Liam,
+            "Lisa" => VoiceId::Lisa,
             "Liv" => VoiceId::Liv,
             "Lotte" => VoiceId::Lotte,
             "Lucia" => VoiceId::Lucia,
@@ -379,6 +389,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Miguel" => VoiceId::Miguel,
             "Mizuki" => VoiceId::Mizuki,
             "Naja" => VoiceId::Naja,
+            "Niamh" => VoiceId::Niamh,
             "Nicole" => VoiceId::Nicole,
             "Ola" => VoiceId::Ola,
             "Olivia" => VoiceId::Olivia,
@@ -393,6 +404,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Salli" => VoiceId::Salli,
             "Seoyeon" => VoiceId::Seoyeon,
             "Sergio" => VoiceId::Sergio,
+            "Sofie" => VoiceId::Sofie,
             "Stephen" => VoiceId::Stephen,
             "Suvi" => VoiceId::Suvi,
             "Takumi" => VoiceId::Takumi,
@@ -468,6 +480,7 @@ impl VoiceId {
             VoiceId::Laura => "Laura",
             VoiceId::Lea => "Lea",
             VoiceId::Liam => "Liam",
+            VoiceId::Lisa => "Lisa",
             VoiceId::Liv => "Liv",
             VoiceId::Lotte => "Lotte",
             VoiceId::Lucia => "Lucia",
@@ -482,6 +495,7 @@ impl VoiceId {
             VoiceId::Miguel => "Miguel",
             VoiceId::Mizuki => "Mizuki",
             VoiceId::Naja => "Naja",
+            VoiceId::Niamh => "Niamh",
             VoiceId::Nicole => "Nicole",
             VoiceId::Ola => "Ola",
             VoiceId::Olivia => "Olivia",
@@ -496,6 +510,7 @@ impl VoiceId {
             VoiceId::Salli => "Salli",
             VoiceId::Seoyeon => "Seoyeon",
             VoiceId::Sergio => "Sergio",
+            VoiceId::Sofie => "Sofie",
             VoiceId::Stephen => "Stephen",
             VoiceId::Suvi => "Suvi",
             VoiceId::Takumi => "Takumi",
@@ -562,6 +577,7 @@ impl VoiceId {
             "Laura",
             "Lea",
             "Liam",
+            "Lisa",
             "Liv",
             "Lotte",
             "Lucia",
@@ -576,6 +592,7 @@ impl VoiceId {
             "Miguel",
             "Mizuki",
             "Naja",
+            "Niamh",
             "Nicole",
             "Ola",
             "Olivia",
@@ -590,6 +607,7 @@ impl VoiceId {
             "Salli",
             "Seoyeon",
             "Sergio",
+            "Sofie",
             "Stephen",
             "Suvi",
             "Takumi",

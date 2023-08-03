@@ -203,4 +203,36 @@ impl ListInferenceRecommendationsJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn model_name_equals(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.model_name_equals(input.into());
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn set_model_name_equals(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_model_name_equals(input);
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn model_package_version_arn_equals(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.model_package_version_arn_equals(input.into());
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn set_model_package_version_arn_equals(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_model_package_version_arn_equals(input);
+        self
+    }
 }

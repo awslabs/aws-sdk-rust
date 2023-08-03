@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`sip_rule_id(impl ::std::convert::Into<String>)`](crate::operation::delete_sip_rule::builders::DeleteSipRuleFluentBuilder::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::operation::delete_sip_rule::builders::DeleteSipRuleFluentBuilder::set_sip_rule_id): <p>The SIP rule ID.</p>
     /// - On success, responds with [`DeleteSipRuleOutput`](crate::operation::delete_sip_rule::DeleteSipRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteSipRuleError>`](crate::operation::delete_sip_rule::DeleteSipRuleError)
+    #[deprecated(note = "Replaced by DeleteSipRule in the Amazon Chime SDK Voice Namespace")]
     pub fn delete_sip_rule(
         &self,
     ) -> crate::operation::delete_sip_rule::builders::DeleteSipRuleFluentBuilder {

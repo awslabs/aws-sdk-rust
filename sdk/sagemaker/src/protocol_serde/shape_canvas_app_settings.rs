@@ -18,6 +18,15 @@ pub fn ser_canvas_app_settings(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.workspace_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("WorkspaceSettings").start_object();
+        crate::protocol_serde::shape_workspace_settings::ser_workspace_settings(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +62,11 @@ where
                             "ModelRegisterSettings" => {
                                 builder = builder.set_model_register_settings(
                                     crate::protocol_serde::shape_model_register_settings::de_model_register_settings(tokens)?
+                                );
+                            }
+                            "WorkspaceSettings" => {
+                                builder = builder.set_workspace_settings(
+                                    crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

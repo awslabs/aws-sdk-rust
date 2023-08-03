@@ -258,13 +258,13 @@ impl UpdateFleetFluentBuilder {
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.max_user_duration_in_seconds(input);
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_user_duration_in_seconds(input);
         self

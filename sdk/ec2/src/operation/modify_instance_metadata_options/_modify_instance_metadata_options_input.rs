@@ -25,7 +25,7 @@ pub struct ModifyInstanceMetadataOptionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     #[doc(hidden)]
     pub http_protocol_ipv6: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
@@ -63,7 +63,7 @@ impl ModifyInstanceMetadataOptionsInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     pub fn http_protocol_ipv6(
         &self,
     ) -> ::std::option::Option<&crate::types::InstanceMetadataProtocolState> {
@@ -171,7 +171,7 @@ impl ModifyInstanceMetadataOptionsInputBuilder {
         self.dry_run = input;
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     pub fn http_protocol_ipv6(
         mut self,
         input: crate::types::InstanceMetadataProtocolState,
@@ -179,7 +179,7 @@ impl ModifyInstanceMetadataOptionsInputBuilder {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     pub fn set_http_protocol_ipv6(
         mut self,
         input: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,

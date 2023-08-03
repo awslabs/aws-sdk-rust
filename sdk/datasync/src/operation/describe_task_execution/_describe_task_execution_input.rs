@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     #[doc(hidden)]
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskExecutionInput {
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
@@ -32,7 +32,7 @@ pub struct DescribeTaskExecutionInputBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskExecutionInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     pub fn task_execution_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -40,7 +40,7 @@ impl DescribeTaskExecutionInputBuilder {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     pub fn set_task_execution_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

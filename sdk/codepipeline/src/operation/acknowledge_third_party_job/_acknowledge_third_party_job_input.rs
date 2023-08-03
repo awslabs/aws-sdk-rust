@@ -7,7 +7,7 @@ pub struct AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
     #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
@@ -19,7 +19,7 @@ impl AcknowledgeThirdPartyJobInput {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(&self) -> ::std::option::Option<&str> {
         self.nonce.as_deref()
     }
@@ -58,12 +58,12 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         self.job_id = input;
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self

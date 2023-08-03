@@ -5,17 +5,25 @@ pub use crate::operation::import_key_material::_import_key_material_input::Impor
 
 /// Fluent builder constructing a request to `ImportKeyMaterial`.
 ///
-/// <p>Imports key material into an existing symmetric encryption KMS key that was created without key material. After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport the same key material</a> into that KMS key, but you cannot import different key material. </p>
-/// <p>You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web Services account. For more information about creating KMS keys with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p>Before using this operation, call <code>GetParametersForImport</code>. Its response includes a public key and an import token. Use the public key to encrypt the key material. Then, submit the import token from the same <code>GetParametersForImport</code> response.</p>
-/// <p>When calling this operation, you must specify the following values:</p>
+/// <p>Imports or reimports key material into an existing KMS key that was created without key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration date of the imported key material.</p>
+/// <p>By default, KMS keys are created with key material that KMS generates. This operation supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a>, an advanced feature that lets you generate and import the cryptographic key material for a KMS key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport the same key material</a> into that KMS key, but you cannot import different key material. You might reimport key material to replace key material that expired or key material that you deleted. You might also reimport key material to change the expiration model or expiration date of the key material. Before reimporting key material, if necessary, call <code>DeleteImportedKeyMaterial</code> to delete the current imported key material. </p>
+/// <p>Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>) and when (<code>ValidTo</code>) the key material expires. To change the expiration of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code> or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import features</a> of the KMS console.</p>
+/// <p>Before calling <code>ImportKeyMaterial</code>:</p>
 /// <ul>
-/// <li> <p>The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>To create a KMS key with no key material, call <code>CreateKey</code> and set the value of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code> of a KMS key, call <code>DescribeKey</code>.)</p> </li>
-/// <li> <p>The encrypted key material. To get the public key to encrypt the key material, call <code>GetParametersForImport</code>.</p> </li>
-/// <li> <p>The import token that <code>GetParametersForImport</code> returned. You must use a public key and token from the same <code>GetParametersForImport</code> response.</p> </li>
-/// <li> <p>Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). If you set an expiration date, on the specified date, KMS deletes the key material from the KMS key, making the KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material. The only way to change the expiration model or expiration date is by reimporting the same key material and specifying a new expiration date. </p> </li>
+/// <li> <p>Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code> value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported key material. </p> <p>To create an new KMS key for imported key material, call the <code>CreateKey</code> operation with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. However, you can't import key material into a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p> </li>
+/// <li> <p>Use the <code>DescribeKey</code> operation to verify that the <code>KeyState</code> of the KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key material. </p> <p>If you are reimporting the same key material into an existing KMS key, you might need to call the <code>DeleteImportedKeyMaterial</code> to delete its existing key material.</p> </li>
+/// <li> <p>Call the <code>GetParametersForImport</code> operation to get a public key and import token set for importing key material. </p> </li>
+/// <li> <p>Use the public key in the <code>GetParametersForImport</code> response to encrypt your key material.</p> </li>
 /// </ul>
-/// <p>When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code> to <code>Enabled</code>, and you can use the KMS key.</p>
+/// <p> Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key material and import token. When calling this operation, you must specify the following values:</p>
+/// <ul>
+/// <li> <p>The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. You cannot perform this operation on a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and <code>KeyState</code> of a KMS key, call <code>DescribeKey</code>.</p> </li>
+/// <li> <p>The encrypted key material. </p> </li>
+/// <li> <p>The import token that <code>GetParametersForImport</code> returned. You must use a public key and token from the same <code>GetParametersForImport</code> response.</p> </li>
+/// <li> <p>Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If you set an expiration date, KMS deletes the key material from the KMS key on the specified date, making the KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material. However, you can delete and reimport the key material at any time, including before the key material expires. Each time you reimport, you can eliminate or reset the expiration time.</p> </li>
+/// </ul>
+/// <p>When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code> to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.</p>
 /// <p>If this operation fails, use the exception to help determine the problem. If the error is related to the key material, the import token, or wrapping key, use <code>GetParametersForImport</code> to get a new public key and import token for the KMS key and repeat the import procedure. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#importing-keys-overview">How To Import Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
@@ -118,7 +126,8 @@ impl ImportKeyMaterialFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The identifier of the symmetric encryption KMS key that receives the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>. You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. </p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -130,7 +139,8 @@ impl ImportKeyMaterialFluentBuilder {
         self.inner = self.inner.key_id(input.into());
         self
     }
-    /// <p>The identifier of the symmetric encryption KMS key that receives the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>. You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. </p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -155,12 +165,12 @@ impl ImportKeyMaterialFluentBuilder {
         self.inner = self.inner.set_import_token(input);
         self
     }
-    /// <p>The encrypted key material to import. The key material must be encrypted with the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
+    /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
     pub fn encrypted_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.encrypted_key_material(input);
         self
     }
-    /// <p>The encrypted key material to import. The key material must be encrypted with the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
+    /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
     pub fn set_encrypted_key_material(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -187,16 +197,16 @@ impl ImportKeyMaterialFluentBuilder {
         self.inner = self.inner.set_valid_to(input);
         self
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
-    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must delete (<code>DeleteImportedKeyMaterial</code>) and reimport the key material.</p>
+    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn expiration_model(mut self, input: crate::types::ExpirationModelType) -> Self {
         self.inner = self.inner.expiration_model(input);
         self
     }
-    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
-    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must delete (<code>DeleteImportedKeyMaterial</code>) and reimport the key material.</p>
+    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     pub fn set_expiration_model(
         mut self,
         input: ::std::option::Option<crate::types::ExpirationModelType>,

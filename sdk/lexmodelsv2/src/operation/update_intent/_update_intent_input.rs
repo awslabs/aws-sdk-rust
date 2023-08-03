@@ -51,7 +51,7 @@ pub struct UpdateIntentInput {
     /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
 }
@@ -128,7 +128,7 @@ impl UpdateIntentInput {
     pub fn locale_id(&self) -> ::std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn initial_response_setting(
         &self,
     ) -> ::std::option::Option<&crate::types::InitialResponseSetting> {
@@ -394,12 +394,12 @@ impl UpdateIntentInputBuilder {
         self.locale_id = input;
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
         self.initial_response_setting = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn set_initial_response_setting(
         mut self,
         input: ::std::option::Option<crate::types::InitialResponseSetting>,

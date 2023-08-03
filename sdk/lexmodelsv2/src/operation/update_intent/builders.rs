@@ -306,12 +306,12 @@ impl UpdateIntentFluentBuilder {
         self.inner = self.inner.set_locale_id(input);
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
         self.inner = self.inner.initial_response_setting(input);
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn set_initial_response_setting(
         mut self,
         input: ::std::option::Option<crate::types::InitialResponseSetting>,

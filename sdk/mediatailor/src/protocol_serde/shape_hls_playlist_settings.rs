@@ -9,6 +9,15 @@ pub fn ser_hls_playlist_settings(
             ::aws_smithy_types::Number::NegInt((input.manifest_window_seconds).into()),
         );
     }
+    if let Some(var_1) = &input.ad_markup_type {
+        let mut array_2 = object.key("AdMarkupType").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +52,11 @@ where
                                     )?
                                     .map(i32::try_from)
                                     .transpose()?,
+                                );
+                            }
+                            "AdMarkupType" => {
+                                builder = builder.set_ad_markup_type(
+                                    crate::protocol_serde::shape_ad_markup_types::de_ad_markup_types(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

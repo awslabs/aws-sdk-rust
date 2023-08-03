@@ -114,6 +114,22 @@ pub fn de_delete_event_source_mapping_http_error(
                                                     }
             tmp
         }),
+        "ResourceConflictException" => crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output).map_err(crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         _ => crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::generic(generic)
     })
 }

@@ -29,6 +29,11 @@ pub struct UpdateTrackerInput {
     /// </ul>
     #[doc(hidden)]
     pub position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub event_bridge_enabled: ::std::option::Option<bool>,
 }
 impl UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
@@ -62,6 +67,12 @@ impl UpdateTrackerInput {
     pub fn position_filtering(&self) -> ::std::option::Option<&crate::types::PositionFiltering> {
         self.position_filtering.as_ref()
     }
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    pub fn event_bridge_enabled(&self) -> ::std::option::Option<bool> {
+        self.event_bridge_enabled
+    }
 }
 impl UpdateTrackerInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrackerInput`](crate::operation::update_tracker::UpdateTrackerInput).
@@ -81,6 +92,7 @@ pub struct UpdateTrackerInputBuilder {
     pub(crate) pricing_plan_data_source: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
+    pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
 }
 impl UpdateTrackerInputBuilder {
     /// <p>The name of the tracker resource to update.</p>
@@ -167,6 +179,20 @@ impl UpdateTrackerInputBuilder {
         self.position_filtering = input;
         self
     }
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    pub fn event_bridge_enabled(mut self, input: bool) -> Self {
+        self.event_bridge_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note>
+    /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
+    /// </note>
+    pub fn set_event_bridge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.event_bridge_enabled = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTrackerInput`](crate::operation::update_tracker::UpdateTrackerInput).
     pub fn build(
         self,
@@ -180,6 +206,7 @@ impl UpdateTrackerInputBuilder {
             pricing_plan_data_source: self.pricing_plan_data_source,
             description: self.description,
             position_filtering: self.position_filtering,
+            event_bridge_enabled: self.event_bridge_enabled,
         })
     }
 }

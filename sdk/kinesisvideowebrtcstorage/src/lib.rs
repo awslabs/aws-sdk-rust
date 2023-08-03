@@ -26,8 +26,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-kinesisvideowebrtcstorage = "0.6.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-kinesisvideowebrtcstorage = "0.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

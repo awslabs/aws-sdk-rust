@@ -56,7 +56,7 @@ pub struct PostgreSqlSettings {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
-    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
+    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the plugin to use to create a replication slot.</p>
@@ -76,6 +76,18 @@ pub struct PostgreSqlSettings {
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
     #[doc(hidden)]
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
+    /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    #[doc(hidden)]
+    pub map_jsonb_as_clob: ::std::option::Option<bool>,
+    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    #[doc(hidden)]
+    pub map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
+    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    #[doc(hidden)]
+    pub database_mode: ::std::option::Option<crate::types::DatabaseMode>,
+    /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+    #[doc(hidden)]
+    pub babelfish_database_name: ::std::option::Option<::std::string::String>,
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -144,7 +156,7 @@ impl PostgreSqlSettings {
     }
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
-    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
+    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn slot_name(&self) -> ::std::option::Option<&str> {
         self.slot_name.as_deref()
     }
@@ -169,6 +181,24 @@ impl PostgreSqlSettings {
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
     pub fn map_boolean_as_boolean(&self) -> ::std::option::Option<bool> {
         self.map_boolean_as_boolean
+    }
+    /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    pub fn map_jsonb_as_clob(&self) -> ::std::option::Option<bool> {
+        self.map_jsonb_as_clob
+    }
+    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    pub fn map_long_varchar_as(
+        &self,
+    ) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
+        self.map_long_varchar_as.as_ref()
+    }
+    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    pub fn database_mode(&self) -> ::std::option::Option<&crate::types::DatabaseMode> {
+        self.database_mode.as_ref()
+    }
+    /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+    pub fn babelfish_database_name(&self) -> ::std::option::Option<&str> {
+        self.babelfish_database_name.as_deref()
     }
 }
 impl ::std::fmt::Debug for PostgreSqlSettings {
@@ -200,6 +230,10 @@ impl ::std::fmt::Debug for PostgreSqlSettings {
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
+        formatter.field("map_jsonb_as_clob", &self.map_jsonb_as_clob);
+        formatter.field("map_long_varchar_as", &self.map_long_varchar_as);
+        formatter.field("database_mode", &self.database_mode);
+        formatter.field("babelfish_database_name", &self.babelfish_database_name);
         formatter.finish()
     }
 }
@@ -234,6 +268,10 @@ pub struct PostgreSqlSettingsBuilder {
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) trim_space_in_char: ::std::option::Option<bool>,
     pub(crate) map_boolean_as_boolean: ::std::option::Option<bool>,
+    pub(crate) map_jsonb_as_clob: ::std::option::Option<bool>,
+    pub(crate) map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
+    pub(crate) database_mode: ::std::option::Option<crate::types::DatabaseMode>,
+    pub(crate) babelfish_database_name: ::std::option::Option<::std::string::String>,
 }
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -418,14 +456,14 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
-    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
+    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
-    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
+    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
@@ -499,6 +537,58 @@ impl PostgreSqlSettingsBuilder {
         self.map_boolean_as_boolean = input;
         self
     }
+    /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    pub fn map_jsonb_as_clob(mut self, input: bool) -> Self {
+        self.map_jsonb_as_clob = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    pub fn set_map_jsonb_as_clob(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.map_jsonb_as_clob = input;
+        self
+    }
+    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    pub fn map_long_varchar_as(mut self, input: crate::types::LongVarcharMappingType) -> Self {
+        self.map_long_varchar_as = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    pub fn set_map_long_varchar_as(
+        mut self,
+        input: ::std::option::Option<crate::types::LongVarcharMappingType>,
+    ) -> Self {
+        self.map_long_varchar_as = input;
+        self
+    }
+    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    pub fn database_mode(mut self, input: crate::types::DatabaseMode) -> Self {
+        self.database_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    pub fn set_database_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DatabaseMode>,
+    ) -> Self {
+        self.database_mode = input;
+        self
+    }
+    /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+    pub fn babelfish_database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.babelfish_database_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+    pub fn set_babelfish_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.babelfish_database_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::types::PostgreSqlSettings).
     pub fn build(self) -> crate::types::PostgreSqlSettings {
         crate::types::PostgreSqlSettings {
@@ -522,6 +612,10 @@ impl PostgreSqlSettingsBuilder {
             secrets_manager_secret_id: self.secrets_manager_secret_id,
             trim_space_in_char: self.trim_space_in_char,
             map_boolean_as_boolean: self.map_boolean_as_boolean,
+            map_jsonb_as_clob: self.map_jsonb_as_clob,
+            map_long_varchar_as: self.map_long_varchar_as,
+            database_mode: self.database_mode,
+            babelfish_database_name: self.babelfish_database_name,
         }
     }
 }
@@ -554,6 +648,10 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
+        formatter.field("map_jsonb_as_clob", &self.map_jsonb_as_clob);
+        formatter.field("map_long_varchar_as", &self.map_long_varchar_as);
+        formatter.field("database_mode", &self.database_mode);
+        formatter.field("babelfish_database_name", &self.babelfish_database_name);
         formatter.finish()
     }
 }

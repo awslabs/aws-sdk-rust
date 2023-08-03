@@ -6,32 +6,32 @@ pub fn ser_update_network_analyzer_configuration_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.trace_content {
+    if let Some(var_2) = &input.multicast_groups_to_add {
+        let mut array_3 = object.key("MulticastGroupsToAdd").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
+    if let Some(var_5) = &input.multicast_groups_to_remove {
+        let mut array_6 = object.key("MulticastGroupsToRemove").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.trace_content {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TraceContent").start_object();
-        crate::protocol_serde::shape_trace_content::ser_trace_content(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_9 = object.key("TraceContent").start_object();
+        crate::protocol_serde::shape_trace_content::ser_trace_content(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_4) = &input.wireless_devices_to_add {
-        let mut array_5 = object.key("WirelessDevicesToAdd").start_array();
-        for item_6 in var_4 {
-            {
-                array_5.value().string(item_6.as_str());
-            }
-        }
-        array_5.finish();
-    }
-    if let Some(var_7) = &input.wireless_devices_to_remove {
-        let mut array_8 = object.key("WirelessDevicesToRemove").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().string(item_9.as_str());
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_10) = &input.wireless_gateways_to_add {
-        let mut array_11 = object.key("WirelessGatewaysToAdd").start_array();
+    if let Some(var_10) = &input.wireless_devices_to_add {
+        let mut array_11 = object.key("WirelessDevicesToAdd").start_array();
         for item_12 in var_10 {
             {
                 array_11.value().string(item_12.as_str());
@@ -39,14 +39,32 @@ pub fn ser_update_network_analyzer_configuration_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.wireless_gateways_to_remove {
-        let mut array_14 = object.key("WirelessGatewaysToRemove").start_array();
+    if let Some(var_13) = &input.wireless_devices_to_remove {
+        let mut array_14 = object.key("WirelessDevicesToRemove").start_array();
         for item_15 in var_13 {
             {
                 array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
+    }
+    if let Some(var_16) = &input.wireless_gateways_to_add {
+        let mut array_17 = object.key("WirelessGatewaysToAdd").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.wireless_gateways_to_remove {
+        let mut array_20 = object.key("WirelessGatewaysToRemove").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
     }
     Ok(())
 }

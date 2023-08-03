@@ -174,6 +174,18 @@ where
                                     crate::protocol_serde::shape_exploitability_details::de_exploitability_details(tokens)?
                                 );
                             }
+                            "codeVulnerabilityDetails" => {
+                                builder = builder.set_code_vulnerability_details(
+                                    crate::protocol_serde::shape_code_vulnerability_details::de_code_vulnerability_details(tokens)?
+                                );
+                            }
+                            "epss" => {
+                                builder = builder.set_epss(
+                                    crate::protocol_serde::shape_epss_details::de_epss_details(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

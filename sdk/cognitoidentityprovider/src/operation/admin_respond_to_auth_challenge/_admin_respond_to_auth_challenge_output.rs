@@ -2,7 +2,7 @@
 
 /// <p>Responds to the authentication challenge, as an administrator.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     #[doc(hidden)]
@@ -44,6 +44,17 @@ impl AdminRespondToAuthChallengeOutput {
         self.authentication_result.as_ref()
     }
 }
+impl ::std::fmt::Debug for AdminRespondToAuthChallengeOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AdminRespondToAuthChallengeOutput");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for AdminRespondToAuthChallengeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -58,9 +69,7 @@ impl AdminRespondToAuthChallengeOutput {
 
 /// A builder for [`AdminRespondToAuthChallengeOutput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminRespondToAuthChallengeOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
@@ -152,5 +161,16 @@ impl AdminRespondToAuthChallengeOutputBuilder {
             authentication_result: self.authentication_result,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for AdminRespondToAuthChallengeOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AdminRespondToAuthChallengeOutputBuilder");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

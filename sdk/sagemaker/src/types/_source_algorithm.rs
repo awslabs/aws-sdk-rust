@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAlgorithm {
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the algorithm.</p>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
     #[doc(hidden)]
     pub model_data_url: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct SourceAlgorithm {
 }
 impl SourceAlgorithm {
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the algorithm.</p>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
     pub fn model_data_url(&self) -> ::std::option::Option<&str> {
         self.model_data_url.as_deref()
@@ -43,7 +43,7 @@ pub struct SourceAlgorithmBuilder {
 }
 impl SourceAlgorithmBuilder {
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the algorithm.</p>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
     pub fn model_data_url(
         mut self,
@@ -53,7 +53,7 @@ impl SourceAlgorithmBuilder {
         self
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the algorithm.</p>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
     pub fn set_model_data_url(
         mut self,

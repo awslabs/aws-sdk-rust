@@ -99,6 +99,17 @@ impl ListGroupMembershipsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator {
+        crate::operation::list_group_memberships::paginator::ListGroupMembershipsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the group that you want to see a membership list of.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());

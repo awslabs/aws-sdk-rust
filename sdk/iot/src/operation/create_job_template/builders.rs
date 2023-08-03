@@ -277,4 +277,26 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_maintenance_windows(input);
         self
     }
+    /// Appends an item to `destinationPackageVersions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.destination_package_versions(input.into());
+        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_destination_package_versions(input);
+        self
+    }
 }

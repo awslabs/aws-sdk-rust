@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirExportJobsInput {
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
@@ -26,7 +26,7 @@ pub struct ListFhirExportJobsInput {
     pub submitted_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListFhirExportJobsInput {
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -78,12 +78,12 @@ pub struct ListFhirExportJobsInputBuilder {
     pub(crate) submitted_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListFhirExportJobsInputBuilder {
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

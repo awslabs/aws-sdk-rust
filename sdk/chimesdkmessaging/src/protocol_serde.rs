@@ -246,6 +246,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_target;
+
 pub(crate) mod shape_app_instance_user_membership_summary;
 
 pub(crate) mod shape_batch_create_channel_membership_error;
@@ -275,6 +277,8 @@ pub(crate) mod shape_processor_list;
 pub(crate) mod shape_push_notification_preferences;
 
 pub(crate) mod shape_sub_channel_summary;
+
+pub(crate) mod shape_target_list;
 
 pub(crate) mod shape_lambda_configuration;
 

@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetRoomSkillParameterOutput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput) with field(s):
     ///   - [`room_skill_parameter(Option<RoomSkillParameter>)`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput::room_skill_parameter): <p>The details of the room skill parameter requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetRoomSkillParameterError>`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_room_skill_parameter(
         &self,
     ) -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterFluentBuilder

@@ -6,8 +6,8 @@ pub fn ser_get_log_record_input(
     if let Some(var_1) = &input.log_record_pointer {
         object.key("logRecordPointer").string(var_1.as_str());
     }
-    if input.unmask {
-        object.key("unmask").boolean(input.unmask);
+    if let Some(var_2) = &input.unmask {
+        object.key("unmask").boolean(*var_2);
     }
     Ok(())
 }

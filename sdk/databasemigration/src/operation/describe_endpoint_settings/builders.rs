@@ -108,12 +108,12 @@ impl DescribeEndpointSettingsFluentBuilder {
     {
         crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_name(input.into());
         self
     }
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_name(input);
         self

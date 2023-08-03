@@ -43,9 +43,13 @@ pub use crate::types::_service_account_credentials::ServiceAccountCredentialsBui
 
 pub use crate::types::_application::ApplicationBuilder;
 
-pub use crate::types::_image_builder::ImageBuilderBuilder;
+pub use crate::types::_app_block_builder::AppBlockBuilderBuilder;
+
+pub use crate::types::_app_block_builder_state_change_reason::AppBlockBuilderStateChangeReasonBuilder;
 
 pub use crate::types::_resource_error::ResourceErrorBuilder;
+
+pub use crate::types::_image_builder::ImageBuilderBuilder;
 
 pub use crate::types::_network_access_configuration::NetworkAccessConfigurationBuilder;
 
@@ -73,6 +77,10 @@ pub use crate::types::_application_fleet_association::ApplicationFleetAssociatio
 
 pub use crate::types::_app_block::AppBlockBuilder;
 
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
 pub use crate::types::_script_details::ScriptDetailsBuilder;
+
+pub use crate::types::_app_block_builder_app_block_association::AppBlockBuilderAppBlockAssociationBuilder;
 
 pub use crate::types::_user_stack_association_error::UserStackAssociationErrorBuilder;

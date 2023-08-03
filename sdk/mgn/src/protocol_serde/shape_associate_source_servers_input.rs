@@ -3,17 +3,20 @@ pub fn ser_associate_source_servers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_source_servers::AssociateSourceServersInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_id {
-        object.key("applicationID").string(var_1.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_server_i_ds {
-        let mut array_3 = object.key("sourceServerIDs").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.application_id {
+        object.key("applicationID").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.source_server_i_ds {
+        let mut array_4 = object.key("sourceServerIDs").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

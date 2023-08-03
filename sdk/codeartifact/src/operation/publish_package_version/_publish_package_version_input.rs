@@ -13,6 +13,7 @@ pub struct PublishPackageVersionInput {
     #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version to publish.</p>
@@ -52,6 +53,7 @@ impl PublishPackageVersionInput {
         self.repository.as_deref()
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
@@ -143,11 +145,13 @@ impl PublishPackageVersionInputBuilder {
         self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self

@@ -5,18 +5,18 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`broker_id(impl ::std::convert::Into<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`DescribeBrokerOutput`](crate::operation::describe_broker::DescribeBrokerOutput) with field(s):
-    ///   - [`actions_required(Option<Vec<ActionRequired>>)`](crate::operation::describe_broker::DescribeBrokerOutput::actions_required): <p>A list of actions required for a broker.</p>
+    ///   - [`actions_required(Option<Vec<ActionRequired>>)`](crate::operation::describe_broker::DescribeBrokerOutput::actions_required): <p>Actions required for a broker.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::operation::describe_broker::DescribeBrokerOutput::authentication_strategy): <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::operation::describe_broker::DescribeBrokerOutput::auto_minor_version_upgrade): <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     ///   - [`broker_arn(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_arn): <p>The broker's Amazon Resource Name (ARN).</p>
     ///   - [`broker_id(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     ///   - [`broker_instances(Option<Vec<BrokerInstance>>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_instances): <p>A list of information about allocated brokers.</p>
-    ///   - [`broker_name(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_name): <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    ///   - [`broker_name(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_name): <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     ///   - [`broker_state(Option<BrokerState>)`](crate::operation::describe_broker::DescribeBrokerOutput::broker_state): <p>The broker's status.</p>
     ///   - [`configurations(Option<Configurations>)`](crate::operation::describe_broker::DescribeBrokerOutput::configurations): <p>The list of all revisions for the specified configuration.</p>
     ///   - [`created(Option<DateTime>)`](crate::operation::describe_broker::DescribeBrokerOutput::created): <p>The time when the broker was created.</p>
     ///   - [`deployment_mode(Option<DeploymentMode>)`](crate::operation::describe_broker::DescribeBrokerOutput::deployment_mode): <p>The broker's deployment mode.</p>
-    ///   - [`encryption_options(Option<EncryptionOptions>)`](crate::operation::describe_broker::DescribeBrokerOutput::encryption_options): <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    ///   - [`encryption_options(Option<EncryptionOptions>)`](crate::operation::describe_broker::DescribeBrokerOutput::encryption_options): <p>Encryption options for the broker.</p>
     ///   - [`engine_type(Option<EngineType>)`](crate::operation::describe_broker::DescribeBrokerOutput::engine_type): <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     ///   - [`engine_version(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::engine_version): <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     ///   - [`host_instance_type(Option<String>)`](crate::operation::describe_broker::DescribeBrokerOutput::host_instance_type): <p>The broker's instance type.</p>
@@ -34,6 +34,10 @@ impl super::Client {
     ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::describe_broker::DescribeBrokerOutput::subnet_ids): <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_broker::DescribeBrokerOutput::tags): <p>The list of all tags associated with this broker.</p>
     ///   - [`users(Option<Vec<UserSummary>>)`](crate::operation::describe_broker::DescribeBrokerOutput::users): <p>The list of all broker usernames for the specified broker.</p>
+    ///   - [`data_replication_metadata(Option<DataReplicationMetadataOutput>)`](crate::operation::describe_broker::DescribeBrokerOutput::data_replication_metadata): <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    ///   - [`data_replication_mode(Option<DataReplicationMode>)`](crate::operation::describe_broker::DescribeBrokerOutput::data_replication_mode): <p>Describes whether this broker is a part of a data replication pair.</p>
+    ///   - [`pending_data_replication_metadata(Option<DataReplicationMetadataOutput>)`](crate::operation::describe_broker::DescribeBrokerOutput::pending_data_replication_metadata): <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    ///   - [`pending_data_replication_mode(Option<DataReplicationMode>)`](crate::operation::describe_broker::DescribeBrokerOutput::pending_data_replication_mode): <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
     /// - On failure, responds with [`SdkError<DescribeBrokerError>`](crate::operation::describe_broker::DescribeBrokerError)
     pub fn describe_broker(
         &self,

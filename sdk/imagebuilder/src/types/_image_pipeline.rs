@@ -49,7 +49,7 @@ pub struct ImagePipeline {
     /// <p>This is no longer supported, and does not return a value.</p>
     #[doc(hidden)]
     pub date_last_run: ::std::option::Option<::std::string::String>,
-    /// <p>This is no longer supported, and does not return a value.</p>
+    /// <p>The next date when the pipeline is scheduled to run.</p>
     #[doc(hidden)]
     pub date_next_run: ::std::option::Option<::std::string::String>,
     /// <p>The tags of this image pipeline.</p>
@@ -125,7 +125,7 @@ impl ImagePipeline {
     pub fn date_last_run(&self) -> ::std::option::Option<&str> {
         self.date_last_run.as_deref()
     }
-    /// <p>This is no longer supported, and does not return a value.</p>
+    /// <p>The next date when the pipeline is scheduled to run.</p>
     pub fn date_next_run(&self) -> ::std::option::Option<&str> {
         self.date_next_run.as_deref()
     }
@@ -373,7 +373,7 @@ impl ImagePipelineBuilder {
         self.date_last_run = input;
         self
     }
-    /// <p>This is no longer supported, and does not return a value.</p>
+    /// <p>The next date when the pipeline is scheduled to run.</p>
     pub fn date_next_run(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -381,7 +381,7 @@ impl ImagePipelineBuilder {
         self.date_next_run = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is no longer supported, and does not return a value.</p>
+    /// <p>The next date when the pipeline is scheduled to run.</p>
     pub fn set_date_next_run(
         mut self,
         input: ::std::option::Option<::std::string::String>,

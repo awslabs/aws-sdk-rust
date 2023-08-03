@@ -41,6 +41,8 @@ pub use crate::types::_search_cases_response_item::SearchCasesResponseItemBuilde
 
 pub use crate::types::_field_value::FieldValueBuilder;
 
+pub use crate::types::_empty_field_value::EmptyFieldValueBuilder;
+
 pub use crate::types::_sort::SortBuilder;
 
 pub use crate::types::_case_summary::CaseSummaryBuilder;

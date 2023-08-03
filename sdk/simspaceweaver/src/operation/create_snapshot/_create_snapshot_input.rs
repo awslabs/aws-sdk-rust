@@ -7,6 +7,7 @@ pub struct CreateSnapshotInput {
     #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::S3Destination>,
 }
@@ -16,6 +17,7 @@ impl CreateSnapshotInput {
         self.simulation.as_deref()
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
         self.destination.as_ref()
     }
@@ -48,11 +50,13 @@ impl CreateSnapshotInputBuilder {
         self
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn destination(mut self, input: crate::types::S3Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn set_destination(
         mut self,
         input: ::std::option::Option<crate::types::S3Destination>,

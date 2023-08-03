@@ -18,7 +18,7 @@ pub struct ConfirmSignUpInput {
     pub confirmation_code: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
     #[doc(hidden)]
-    pub force_alias_creation: bool,
+    pub force_alias_creation: ::std::option::Option<bool>,
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
     #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
@@ -58,7 +58,7 @@ impl ConfirmSignUpInput {
         self.confirmation_code.as_deref()
     }
     /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
-    pub fn force_alias_creation(&self) -> bool {
+    pub fn force_alias_creation(&self) -> ::std::option::Option<bool> {
         self.force_alias_creation
     }
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
@@ -98,7 +98,7 @@ impl ::std::fmt::Debug for ConfirmSignUpInput {
         formatter.field("confirmation_code", &self.confirmation_code);
         formatter.field("force_alias_creation", &self.force_alias_creation);
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }
@@ -263,7 +263,7 @@ impl ConfirmSignUpInputBuilder {
             secret_hash: self.secret_hash,
             username: self.username,
             confirmation_code: self.confirmation_code,
-            force_alias_creation: self.force_alias_creation.unwrap_or_default(),
+            force_alias_creation: self.force_alias_creation,
             analytics_metadata: self.analytics_metadata,
             user_context_data: self.user_context_data,
             client_metadata: self.client_metadata,
@@ -279,7 +279,7 @@ impl ::std::fmt::Debug for ConfirmSignUpInputBuilder {
         formatter.field("confirmation_code", &self.confirmation_code);
         formatter.field("force_alias_creation", &self.force_alias_creation);
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }

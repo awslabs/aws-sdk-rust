@@ -15,5 +15,20 @@ pub fn ser_start_file_transfer_input(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.retrieve_file_paths {
+        let mut array_6 = object.key("RetrieveFilePaths").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.local_directory_path {
+        object.key("LocalDirectoryPath").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.remote_directory_path {
+        object.key("RemoteDirectoryPath").string(var_9.as_str());
+    }
     Ok(())
 }

@@ -37,8 +37,8 @@ impl UpdateAppInstanceUserEndpointInput {
 impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInput");
-        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("allow_messages", &self.allow_messages);
         formatter.finish()
@@ -134,8 +134,8 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
 impl ::std::fmt::Debug for UpdateAppInstanceUserEndpointInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInputBuilder");
-        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("allow_messages", &self.allow_messages);
         formatter.finish()

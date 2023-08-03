@@ -13,7 +13,7 @@ pub struct Parameter {
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     #[doc(hidden)]
     pub use_previous_value: ::std::option::Option<bool>,
-    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
+    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
     #[doc(hidden)]
     pub resolved_value: ::std::option::Option<::std::string::String>,
 }
@@ -30,7 +30,7 @@ impl Parameter {
     pub fn use_previous_value(&self) -> ::std::option::Option<bool> {
         self.use_previous_value
     }
-    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
+    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
     pub fn resolved_value(&self) -> ::std::option::Option<&str> {
         self.resolved_value.as_deref()
     }
@@ -96,7 +96,7 @@ impl ParameterBuilder {
         self.use_previous_value = input;
         self
     }
-    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
+    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
     pub fn resolved_value(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -104,7 +104,7 @@ impl ParameterBuilder {
         self.resolved_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
+    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
     pub fn set_resolved_value(
         mut self,
         input: ::std::option::Option<::std::string::String>,

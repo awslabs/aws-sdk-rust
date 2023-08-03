@@ -6,7 +6,7 @@ pub struct CreateClusterOutput {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
+    /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     #[doc(hidden)]
     pub job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl CreateClusterOutput {
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
+    /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     pub fn job_list_entries(&self) -> ::std::option::Option<&[crate::types::JobListEntry]> {
         self.job_list_entries.as_deref()
     }
@@ -58,14 +58,14 @@ impl CreateClusterOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_list_entries`](Self::set_job_list_entries).
     ///
-    /// <p>List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
+    /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     pub fn job_list_entries(mut self, input: crate::types::JobListEntry) -> Self {
         let mut v = self.job_list_entries.unwrap_or_default();
         v.push(input);
         self.job_list_entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
+    /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     pub fn set_job_list_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,

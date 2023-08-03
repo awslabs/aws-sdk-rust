@@ -22,7 +22,7 @@ pub struct SecurityControl {
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
     #[doc(hidden)]
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
-    /// <p> The status of a security control based on the compliance status of its findings. For more information about how control status is determined, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> The enablement status of a security control in a specific standard. </p>
     #[doc(hidden)]
     pub security_control_status: ::std::option::Option<crate::types::ControlStatus>,
 }
@@ -51,7 +51,7 @@ impl SecurityControl {
     pub fn severity_rating(&self) -> ::std::option::Option<&crate::types::SeverityRating> {
         self.severity_rating.as_ref()
     }
-    /// <p> The status of a security control based on the compliance status of its findings. For more information about how control status is determined, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> The enablement status of a security control in a specific standard. </p>
     pub fn security_control_status(&self) -> ::std::option::Option<&crate::types::ControlStatus> {
         self.security_control_status.as_ref()
     }
@@ -159,12 +159,12 @@ impl SecurityControlBuilder {
         self.severity_rating = input;
         self
     }
-    /// <p> The status of a security control based on the compliance status of its findings. For more information about how control status is determined, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> The enablement status of a security control in a specific standard. </p>
     pub fn security_control_status(mut self, input: crate::types::ControlStatus) -> Self {
         self.security_control_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of a security control based on the compliance status of its findings. For more information about how control status is determined, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining the overall status of a control from its findings</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> The enablement status of a security control in a specific standard. </p>
     pub fn set_security_control_status(
         mut self,
         input: ::std::option::Option<crate::types::ControlStatus>,

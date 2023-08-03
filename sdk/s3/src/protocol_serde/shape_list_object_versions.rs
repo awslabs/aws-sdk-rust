@@ -20,6 +20,40 @@ pub fn ser_list_object_versions_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_3) = &input.request_payer {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
+            builder = builder.header("x-amz-request-payer", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_5) = &input.optional_object_attributes {
+        for inner_6 in inner_5 {
+            let formatted_7 = ::aws_smithy_http::header::quote_header_value(inner_6.as_str());
+            if !formatted_7.is_empty() {
+                let header_value = formatted_7;
+                let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "optional_object_attributes",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
+                builder = builder.header("x-amz-optional-object-attributes", header_value);
+            }
+        }
+    }
     Ok(builder)
 }
 
@@ -63,6 +97,16 @@ pub fn de_list_object_versions_http_response_with_props(
             output,
         )
         .map_err(crate::operation::list_object_versions::ListObjectVersionsError::unhandled)?;
+        output = output.set_request_charged(
+            crate::protocol_serde::shape_list_object_versions_output::de_request_charged_header(
+                _response_headers,
+            )
+            .map_err(|_| {
+                crate::operation::list_object_versions::ListObjectVersionsError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
+        );
         output._set_extended_request_id(
             crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
                 .map(str::to_string),
@@ -98,24 +142,24 @@ pub fn de_list_object_versions(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CommonPrefixes") /* CommonPrefixes com.amazonaws.s3.synthetic#ListObjectVersionsOutput$CommonPrefixes */ =>  {
-                let var_3 =
+                let var_8 =
                     Some(
                         Result::<::std::vec::Vec<crate::types::CommonPrefix>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_4 = builder.common_prefixes.take().unwrap_or_default();
-                            list_4.push(
+                            let mut list_9 = builder.common_prefixes.take().unwrap_or_default();
+                            list_9.push(
                                 crate::protocol_serde::shape_common_prefix::de_common_prefix(&mut tag)
                                 ?
                             );
-                            list_4
+                            list_9
                         })
                         ?
                     )
                 ;
-                builder = builder.set_common_prefixes(var_3);
+                builder = builder.set_common_prefixes(var_8);
             }
             ,
             s if s.matches("NextKeyMarker") /* NextKeyMarker com.amazonaws.s3.synthetic#ListObjectVersionsOutput$NextKeyMarker */ =>  {
-                let var_5 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -124,11 +168,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_next_key_marker(var_5);
+                builder = builder.set_next_key_marker(var_10);
             }
             ,
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3.synthetic#ListObjectVersionsOutput$Delimiter */ =>  {
-                let var_6 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -137,11 +181,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_delimiter(var_6);
+                builder = builder.set_delimiter(var_11);
             }
             ,
             s if s.matches("EncodingType") /* EncodingType com.amazonaws.s3.synthetic#ListObjectVersionsOutput$EncodingType */ =>  {
-                let var_7 =
+                let var_12 =
                     Some(
                         Result::<crate::types::EncodingType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EncodingType::from(
@@ -151,11 +195,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_encoding_type(var_7);
+                builder = builder.set_encoding_type(var_12);
             }
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3.synthetic#ListObjectVersionsOutput$IsTruncated */ =>  {
-                let var_8 =
+                let var_13 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -166,11 +210,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_is_truncated(var_8);
+                builder = builder.set_is_truncated(var_13);
             }
             ,
             s if s.matches("NextVersionIdMarker") /* NextVersionIdMarker com.amazonaws.s3.synthetic#ListObjectVersionsOutput$NextVersionIdMarker */ =>  {
-                let var_9 =
+                let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -179,11 +223,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_next_version_id_marker(var_9);
+                builder = builder.set_next_version_id_marker(var_14);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3.synthetic#ListObjectVersionsOutput$Prefix */ =>  {
-                let var_10 =
+                let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -192,11 +236,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_10);
+                builder = builder.set_prefix(var_15);
             }
             ,
             s if s.matches("Name") /* Name com.amazonaws.s3.synthetic#ListObjectVersionsOutput$Name */ =>  {
-                let var_11 =
+                let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -205,11 +249,11 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_11);
+                builder = builder.set_name(var_16);
             }
             ,
             s if s.matches("VersionIdMarker") /* VersionIdMarker com.amazonaws.s3.synthetic#ListObjectVersionsOutput$VersionIdMarker */ =>  {
-                let var_12 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -218,28 +262,28 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_version_id_marker(var_12);
+                builder = builder.set_version_id_marker(var_17);
             }
             ,
             s if s.matches("Version") /* Versions com.amazonaws.s3.synthetic#ListObjectVersionsOutput$Versions */ =>  {
-                let var_13 =
+                let var_18 =
                     Some(
                         Result::<::std::vec::Vec<crate::types::ObjectVersion>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_14 = builder.versions.take().unwrap_or_default();
-                            list_14.push(
+                            let mut list_19 = builder.versions.take().unwrap_or_default();
+                            list_19.push(
                                 crate::protocol_serde::shape_object_version::de_object_version(&mut tag)
                                 ?
                             );
-                            list_14
+                            list_19
                         })
                         ?
                     )
                 ;
-                builder = builder.set_versions(var_13);
+                builder = builder.set_versions(var_18);
             }
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3.synthetic#ListObjectVersionsOutput$MaxKeys */ =>  {
-                let var_15 =
+                let var_20 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -250,28 +294,28 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_max_keys(var_15);
+                builder = builder.set_max_keys(var_20);
             }
             ,
             s if s.matches("DeleteMarker") /* DeleteMarkers com.amazonaws.s3.synthetic#ListObjectVersionsOutput$DeleteMarkers */ =>  {
-                let var_16 =
+                let var_21 =
                     Some(
                         Result::<::std::vec::Vec<crate::types::DeleteMarkerEntry>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_17 = builder.delete_markers.take().unwrap_or_default();
-                            list_17.push(
+                            let mut list_22 = builder.delete_markers.take().unwrap_or_default();
+                            list_22.push(
                                 crate::protocol_serde::shape_delete_marker_entry::de_delete_marker_entry(&mut tag)
                                 ?
                             );
-                            list_17
+                            list_22
                         })
                         ?
                     )
                 ;
-                builder = builder.set_delete_markers(var_16);
+                builder = builder.set_delete_markers(var_21);
             }
             ,
             s if s.matches("KeyMarker") /* KeyMarker com.amazonaws.s3.synthetic#ListObjectVersionsOutput$KeyMarker */ =>  {
-                let var_18 =
+                let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -280,7 +324,7 @@ pub fn de_list_object_versions(
                         ?
                     )
                 ;
-                builder = builder.set_key_marker(var_18);
+                builder = builder.set_key_marker(var_23);
             }
             ,
             _ => {}

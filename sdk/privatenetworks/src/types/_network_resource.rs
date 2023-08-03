@@ -52,6 +52,9 @@ pub struct NetworkResource {
     /// <p>Information about a request to return the network resource.</p>
     #[doc(hidden)]
     pub return_information: ::std::option::Option<crate::types::ReturnInformation>,
+    /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
+    #[doc(hidden)]
+    pub commitment_information: ::std::option::Option<crate::types::CommitmentInformation>,
 }
 impl NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -118,6 +121,12 @@ impl NetworkResource {
     pub fn return_information(&self) -> ::std::option::Option<&crate::types::ReturnInformation> {
         self.return_information.as_ref()
     }
+    /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
+    pub fn commitment_information(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CommitmentInformation> {
+        self.commitment_information.as_ref()
+    }
 }
 impl NetworkResource {
     /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::types::NetworkResource).
@@ -148,6 +157,7 @@ pub struct NetworkResourceBuilder {
     pub(crate) position: ::std::option::Option<crate::types::Position>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) return_information: ::std::option::Option<crate::types::ReturnInformation>,
+    pub(crate) commitment_information: ::std::option::Option<crate::types::CommitmentInformation>,
 }
 impl NetworkResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -355,6 +365,19 @@ impl NetworkResourceBuilder {
         self.return_information = input;
         self
     }
+    /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
+    pub fn commitment_information(mut self, input: crate::types::CommitmentInformation) -> Self {
+        self.commitment_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
+    pub fn set_commitment_information(
+        mut self,
+        input: ::std::option::Option<crate::types::CommitmentInformation>,
+    ) -> Self {
+        self.commitment_information = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetworkResource`](crate::types::NetworkResource).
     pub fn build(self) -> crate::types::NetworkResource {
         crate::types::NetworkResource {
@@ -374,6 +397,7 @@ impl NetworkResourceBuilder {
             position: self.position,
             created_at: self.created_at,
             return_information: self.return_information,
+            commitment_information: self.commitment_information,
         }
     }
 }

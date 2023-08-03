@@ -6,6 +6,7 @@ pub use crate::operation::get_address_book::_get_address_book_input::GetAddressB
 /// Fluent builder constructing a request to `GetAddressBook`.
 ///
 /// <p>Gets address the book details by the address book ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

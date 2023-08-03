@@ -6,14 +6,20 @@ pub fn ser_lex_configuration(
     if let Some(var_1) = &input.responds_to {
         object.key("RespondsTo").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.lex_bot_alias_arn {
-        object.key("LexBotAliasArn").string(var_2.as_str());
+    if let Some(var_2) = &input.invoked_by {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("InvokedBy").start_object();
+        crate::protocol_serde::shape_invoked_by::ser_invoked_by(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.locale_id {
-        object.key("LocaleId").string(var_3.as_str());
+    if let Some(var_4) = &input.lex_bot_alias_arn {
+        object.key("LexBotAliasArn").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.welcome_intent {
-        object.key("WelcomeIntent").string(var_4.as_str());
+    if let Some(var_5) = &input.locale_id {
+        object.key("LocaleId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.welcome_intent {
+        object.key("WelcomeIntent").string(var_6.as_str());
     }
     Ok(())
 }
@@ -52,6 +58,11 @@ where
                                             .map(|u| crate::types::RespondsTo::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "InvokedBy" => {
+                                builder = builder.set_invoked_by(
+                                    crate::protocol_serde::shape_invoked_by::de_invoked_by(tokens)?,
                                 );
                             }
                             "LexBotAliasArn" => {

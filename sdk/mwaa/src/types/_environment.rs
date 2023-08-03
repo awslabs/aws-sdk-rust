@@ -10,9 +10,11 @@ pub struct Environment {
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
     /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
@@ -39,7 +41,7 @@ pub struct Environment {
     /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
     #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
     #[doc(hidden)]
     pub airflow_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
@@ -122,9 +124,11 @@ impl Environment {
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
     /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
@@ -158,7 +162,7 @@ impl Environment {
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
     pub fn airflow_version(&self) -> ::std::option::Option<&str> {
         self.airflow_version.as_deref()
     }
@@ -367,9 +371,11 @@ impl EnvironmentBuilder {
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
     /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
@@ -383,9 +389,11 @@ impl EnvironmentBuilder {
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p> </li>
     /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
     /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
@@ -480,7 +488,7 @@ impl EnvironmentBuilder {
         self.kms_key = input;
         self
     }
-    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
     pub fn airflow_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -488,7 +496,7 @@ impl EnvironmentBuilder {
         self.airflow_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.</p>
+    /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
     pub fn set_airflow_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,

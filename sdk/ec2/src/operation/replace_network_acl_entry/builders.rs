@@ -5,7 +5,7 @@ pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_
 
 /// Fluent builder constructing a request to `ReplaceNetworkAclEntry`.
 ///
-/// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclEntryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

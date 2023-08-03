@@ -7,7 +7,7 @@ pub struct ChannelMessageSummary {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the message.</p>
@@ -34,21 +34,24 @@ pub struct ChannelMessageSummary {
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub message_attributes: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
     >,
-    /// <p>The content type of the channel messsage listed in the summary.</p>
+    /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
+    /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
+    #[doc(hidden)]
+    pub target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ChannelMessageSummary {
     /// <p>The ID of the message.</p>
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -84,7 +87,7 @@ impl ChannelMessageSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChannelMessageStatusStructure> {
         self.status.as_ref()
     }
-    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
     ) -> ::std::option::Option<
@@ -92,9 +95,13 @@ impl ChannelMessageSummary {
     > {
         self.message_attributes.as_ref()
     }
-    /// <p>The content type of the channel messsage listed in the summary.</p>
+    /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
+    }
+    /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
+    pub fn target(&self) -> ::std::option::Option<&[crate::types::Target]> {
+        self.target.as_deref()
     }
 }
 impl ::std::fmt::Debug for ChannelMessageSummary {
@@ -112,6 +119,7 @@ impl ::std::fmt::Debug for ChannelMessageSummary {
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.finish()
     }
 }
@@ -140,6 +148,7 @@ pub struct ChannelMessageSummaryBuilder {
         ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
     >,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ChannelMessageSummaryBuilder {
     /// <p>The ID of the message.</p>
@@ -152,12 +161,12 @@ impl ChannelMessageSummaryBuilder {
         self.message_id = input;
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
@@ -261,7 +270,7 @@ impl ChannelMessageSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
-    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -272,7 +281,7 @@ impl ChannelMessageSummaryBuilder {
         self.message_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The message attribues listed in a the summary of a channel message.</p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_message_attributes(
         mut self,
         input: ::std::option::Option<
@@ -282,14 +291,33 @@ impl ChannelMessageSummaryBuilder {
         self.message_attributes = input;
         self
     }
-    /// <p>The content type of the channel messsage listed in the summary.</p>
+    /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content type of the channel messsage listed in the summary.</p>
+    /// <p>The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
+        self
+    }
+    /// Appends an item to `target`.
+    ///
+    /// To override the contents of this collection use [`set_target`](Self::set_target).
+    ///
+    /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
+    pub fn target(mut self, input: crate::types::Target) -> Self {
+        let mut v = self.target.unwrap_or_default();
+        v.push(input);
+        self.target = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
+    pub fn set_target(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.target = input;
         self
     }
     /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
@@ -307,6 +335,7 @@ impl ChannelMessageSummaryBuilder {
             status: self.status,
             message_attributes: self.message_attributes,
             content_type: self.content_type,
+            target: self.target,
         }
     }
 }
@@ -325,6 +354,7 @@ impl ::std::fmt::Debug for ChannelMessageSummaryBuilder {
         formatter.field("status", &self.status);
         formatter.field("message_attributes", &self.message_attributes);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.finish()
     }
 }

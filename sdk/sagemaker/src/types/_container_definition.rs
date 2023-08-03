@@ -43,6 +43,11 @@ pub struct ContainerDefinition {
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     #[doc(hidden)]
     pub multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
+    /// <p>Specifies the location of ML model data to deploy.</p> <note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
 }
 impl ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -95,6 +100,12 @@ impl ContainerDefinition {
     pub fn multi_model_config(&self) -> ::std::option::Option<&crate::types::MultiModelConfig> {
         self.multi_model_config.as_ref()
     }
+    /// <p>Specifies the location of ML model data to deploy.</p> <note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
+        self.model_data_source.as_ref()
+    }
 }
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
@@ -120,6 +131,7 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
+    pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
 }
 impl ContainerDefinitionBuilder {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -277,6 +289,23 @@ impl ContainerDefinitionBuilder {
         self.multi_model_config = input;
         self
     }
+    /// <p>Specifies the location of ML model data to deploy.</p> <note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn model_data_source(mut self, input: crate::types::ModelDataSource) -> Self {
+        self.model_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy.</p> <note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn set_model_data_source(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDataSource>,
+    ) -> Self {
+        self.model_data_source = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn build(self) -> crate::types::ContainerDefinition {
         crate::types::ContainerDefinition {
@@ -289,6 +318,7 @@ impl ContainerDefinitionBuilder {
             model_package_name: self.model_package_name,
             inference_specification_name: self.inference_specification_name,
             multi_model_config: self.multi_model_config,
+            model_data_source: self.model_data_source,
         }
     }
 }

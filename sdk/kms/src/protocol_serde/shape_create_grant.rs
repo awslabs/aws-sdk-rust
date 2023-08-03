@@ -73,6 +73,23 @@ pub fn de_create_grant_http_error(
                 tmp
             })
         }
+        "DryRunOperationException" => {
+            crate::operation::create_grant::CreateGrantError::DryRunOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_grant::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidArnException" => {
             crate::operation::create_grant::CreateGrantError::InvalidArnException({
                 #[allow(unused_mut)]

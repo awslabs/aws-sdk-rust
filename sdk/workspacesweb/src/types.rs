@@ -21,6 +21,10 @@ pub use crate::types::_renderer_type::RendererType;
 
 pub use crate::types::_network_settings::NetworkSettings;
 
+pub use crate::types::_ip_access_settings::IpAccessSettings;
+
+pub use crate::types::_ip_rule::IpRule;
+
 pub use crate::types::_identity_provider::IdentityProvider;
 
 pub use crate::types::_identity_provider_type::IdentityProviderType;
@@ -40,6 +44,8 @@ pub use crate::types::_certificate_summary::CertificateSummary;
 pub use crate::types::_portal_summary::PortalSummary;
 
 pub use crate::types::_network_settings_summary::NetworkSettingsSummary;
+
+pub use crate::types::_ip_access_settings_summary::IpAccessSettingsSummary;
 
 pub use crate::types::_identity_provider_summary::IdentityProviderSummary;
 
@@ -68,6 +74,12 @@ mod _identity_provider;
 mod _identity_provider_summary;
 
 mod _identity_provider_type;
+
+mod _ip_access_settings;
+
+mod _ip_access_settings_summary;
+
+mod _ip_rule;
 
 mod _network_settings;
 

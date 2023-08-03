@@ -5,7 +5,11 @@ pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRule
 
 /// Fluent builder constructing a request to `CreateSipRule`.
 ///
-/// <p>Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.</p>
+/// <p>Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipRule.html">CreateSipRule</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(note = "Replaced by CreateSipRule in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

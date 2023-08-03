@@ -15,6 +15,7 @@
 ///     ImportResourceType::Bot => { /* ... */ },
 ///     ImportResourceType::BotLocale => { /* ... */ },
 ///     ImportResourceType::CustomVocabulary => { /* ... */ },
+///     ImportResourceType::TestSet => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum ImportResourceType {
     BotLocale,
     #[allow(missing_docs)] // documentation missing in model
     CustomVocabulary,
+    #[allow(missing_docs)] // documentation missing in model
+    TestSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for ImportResourceType {
             "Bot" => ImportResourceType::Bot,
             "BotLocale" => ImportResourceType::BotLocale,
             "CustomVocabulary" => ImportResourceType::CustomVocabulary,
+            "TestSet" => ImportResourceType::TestSet,
             other => ImportResourceType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -83,12 +87,13 @@ impl ImportResourceType {
             ImportResourceType::Bot => "Bot",
             ImportResourceType::BotLocale => "BotLocale",
             ImportResourceType::CustomVocabulary => "CustomVocabulary",
+            ImportResourceType::TestSet => "TestSet",
             ImportResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bot", "BotLocale", "CustomVocabulary"]
+        &["Bot", "BotLocale", "CustomVocabulary", "TestSet"]
     }
 }
 impl ::std::convert::AsRef<str> for ImportResourceType {

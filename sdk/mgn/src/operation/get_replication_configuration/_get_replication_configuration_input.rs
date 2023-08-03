@@ -6,11 +6,18 @@ pub struct GetReplicationConfigurationInput {
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
+    /// <p>Request to get Replication Configuration by Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationConfigurationInput {
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
     pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
+    }
+    /// <p>Request to get Replication Configuration by Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl GetReplicationConfigurationInput {
@@ -27,6 +34,7 @@ impl GetReplicationConfigurationInput {
 )]
 pub struct GetReplicationConfigurationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetReplicationConfigurationInputBuilder {
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
@@ -45,6 +53,16 @@ impl GetReplicationConfigurationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Request to get Replication Configuration by Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Request to get Replication Configuration by Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReplicationConfigurationInput`](crate::operation::get_replication_configuration::GetReplicationConfigurationInput).
     pub fn build(
         self,
@@ -55,6 +73,7 @@ impl GetReplicationConfigurationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
                 source_server_id: self.source_server_id,
+                account_id: self.account_id,
             },
         )
     }

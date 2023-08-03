@@ -600,6 +600,9 @@ impl From<crate::operation::get_admin_scope::GetAdminScopeError> for Error {
             crate::operation::get_admin_scope::GetAdminScopeError::InvalidOperationException(
                 inner,
             ) => Error::InvalidOperationException(inner),
+            crate::operation::get_admin_scope::GetAdminScopeError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
             crate::operation::get_admin_scope::GetAdminScopeError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
@@ -1006,6 +1009,7 @@ impl From<crate::operation::list_admin_accounts_for_organization::ListAdminAccou
         match err {
             crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }

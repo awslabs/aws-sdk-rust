@@ -40,6 +40,56 @@ impl ::std::fmt::Display for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_extended_source_server::CreateExtendedSourceServerError,
             R,
         >,
@@ -136,6 +186,52 @@ impl From<crate::operation::create_replication_configuration_template::CreateRep
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_source_network::CreateSourceNetworkError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_source_network::CreateSourceNetworkError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_source_network::CreateSourceNetworkError> for Error {
+    fn from(err: crate::operation::create_source_network::CreateSourceNetworkError) -> Self {
+        match err {
+            crate::operation::create_source_network::CreateSourceNetworkError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_source_network::CreateSourceNetworkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -278,6 +374,50 @@ impl From<crate::operation::delete_replication_configuration_template::DeleteRep
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_source_network::DeleteSourceNetworkError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_source_network::DeleteSourceNetworkError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_source_network::DeleteSourceNetworkError> for Error {
+    fn from(err: crate::operation::delete_source_network::DeleteSourceNetworkError) -> Self {
+        match err {
+            crate::operation::delete_source_network::DeleteSourceNetworkError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_source_network::DeleteSourceNetworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_source_network::DeleteSourceNetworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_source_network::DeleteSourceNetworkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_source_network::DeleteSourceNetworkError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::delete_source_network::DeleteSourceNetworkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -561,6 +701,49 @@ impl From<crate::operation::describe_replication_configuration_templates::Descri
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_source_networks::DescribeSourceNetworksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_source_networks::DescribeSourceNetworksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_source_networks::DescribeSourceNetworksError> for Error {
+    fn from(err: crate::operation::describe_source_networks::DescribeSourceNetworksError) -> Self {
+        match err {
+            crate::operation::describe_source_networks::DescribeSourceNetworksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_source_networks::DescribeSourceNetworksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_source_networks::DescribeSourceNetworksError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::describe_source_networks::DescribeSourceNetworksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_source_networks::DescribeSourceNetworksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_source_servers::DescribeSourceServersError,
             R,
         >,
@@ -691,6 +874,36 @@ impl From<crate::operation::disconnect_source_server::DisconnectSourceServerErro
             crate::operation::disconnect_source_server::DisconnectSourceServerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disconnect_source_server::DisconnectSourceServerError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::disconnect_source_server::DisconnectSourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError,
+    ) -> Self {
+        match err {
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1224,6 +1437,103 @@ impl From<crate::operation::start_replication::StartReplicationError> for Error 
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
+    ) -> Self {
+        match err {
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_source_network_replication::StartSourceNetworkReplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::stop_failback::StopFailbackError, R>>
     for Error
 where
@@ -1313,6 +1623,55 @@ impl From<crate::operation::stop_replication::StopReplicationError> for Error {
             crate::operation::stop_replication::StopReplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::stop_replication::StopReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::stop_replication::StopReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

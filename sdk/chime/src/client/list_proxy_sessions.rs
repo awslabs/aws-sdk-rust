@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`proxy_sessions(Option<Vec<ProxySession>>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::proxy_sessions): <p>The proxy session details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proxy_sessions::ListProxySessionsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListProxySessionsError>`](crate::operation::list_proxy_sessions::ListProxySessionsError)
+    #[deprecated(note = "Replaced by ListProxySessions in the Amazon Chime SDK Voice Namespace")]
     pub fn list_proxy_sessions(
         &self,
     ) -> crate::operation::list_proxy_sessions::builders::ListProxySessionsFluentBuilder {

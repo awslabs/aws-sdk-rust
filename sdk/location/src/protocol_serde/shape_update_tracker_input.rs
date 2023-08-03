@@ -6,14 +6,17 @@ pub fn ser_update_tracker_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.position_filtering {
-        object.key("PositionFiltering").string(var_2.as_str());
+    if let Some(var_2) = &input.event_bridge_enabled {
+        object.key("EventBridgeEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_3.as_str());
+    if let Some(var_3) = &input.position_filtering {
+        object.key("PositionFiltering").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_4.as_str());
+    if let Some(var_4) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_5.as_str());
     }
     Ok(())
 }

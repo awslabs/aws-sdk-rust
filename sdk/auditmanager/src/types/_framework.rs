@@ -13,10 +13,10 @@ pub struct Framework {
     /// <p> The name of the framework. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FrameworkType>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
     #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
@@ -25,7 +25,7 @@ pub struct Framework {
     /// <p> The logo that's associated with the framework. </p>
     #[doc(hidden)]
     pub logo: ::std::option::Option<::std::string::String>,
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
     #[doc(hidden)]
     pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
@@ -62,11 +62,11 @@ impl Framework {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::FrameworkType> {
         self.r#type.as_ref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -78,7 +78,7 @@ impl Framework {
     pub fn logo(&self) -> ::std::option::Option<&str> {
         self.logo.as_deref()
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
     pub fn control_sources(&self) -> ::std::option::Option<&str> {
         self.control_sources.as_deref()
     }
@@ -172,17 +172,17 @@ impl FrameworkBuilder {
         self.name = input;
         self
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     pub fn r#type(mut self, input: crate::types::FrameworkType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The framework type, such as a custom framework or a standard framework. </p>
+    /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -190,7 +190,7 @@ impl FrameworkBuilder {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
     pub fn set_compliance_type(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -218,7 +218,7 @@ impl FrameworkBuilder {
         self.logo = input;
         self
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
     pub fn control_sources(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -226,7 +226,7 @@ impl FrameworkBuilder {
         self.control_sources = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The sources that Audit Manager collects evidence from for the control. </p>
+    /// <p> The control data sources where Audit Manager collects evidence from.</p>
     pub fn set_control_sources(
         mut self,
         input: ::std::option::Option<::std::string::String>,

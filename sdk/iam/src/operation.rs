@@ -190,6 +190,9 @@ pub mod get_instance_profile;
 /// Types for the `GetLoginProfile` operation.
 pub mod get_login_profile;
 
+/// Types for the `GetMFADevice` operation.
+pub mod get_mfa_device;
+
 /// Types for the `GetOpenIDConnectProvider` operation.
 pub mod get_open_id_connect_provider;
 

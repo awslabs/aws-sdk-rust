@@ -7,6 +7,9 @@ impl super::Client {
     ///   - [`credentials(Vec<Credential>)`](crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsFluentBuilder::credentials) / [`set_credentials(Option<Vec<Credential>>)`](crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsFluentBuilder::set_credentials): <p>The termination SIP credentials.</p>
     /// - On success, responds with [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput)
     /// - On failure, responds with [`SdkError<PutVoiceConnectorTerminationCredentialsError>`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsError)
+    #[deprecated(
+        note = "Replaced by PutVoiceConnectorTerminationCredentials in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn put_voice_connector_termination_credentials(&self) -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsFluentBuilder{
         crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsFluentBuilder::new(self.handle.clone())
     }

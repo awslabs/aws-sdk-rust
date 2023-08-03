@@ -39,7 +39,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
+/// Use Profile to specify the type of Apple ProRes codec to use for this output.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

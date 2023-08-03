@@ -9,7 +9,7 @@ pub struct StartFhirExportJobOutput {
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl StartFhirExportJobOutput {
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -74,12 +74,12 @@ impl StartFhirExportJobOutputBuilder {
         self.job_status = input;
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

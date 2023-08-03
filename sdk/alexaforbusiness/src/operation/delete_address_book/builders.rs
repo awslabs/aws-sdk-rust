@@ -6,6 +6,7 @@ pub use crate::operation::delete_address_book::_delete_address_book_input::Delet
 /// Fluent builder constructing a request to `DeleteAddressBook`.
 ///
 /// <p>Deletes an address book by the address book ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

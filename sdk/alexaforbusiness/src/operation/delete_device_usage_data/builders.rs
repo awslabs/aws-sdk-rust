@@ -6,6 +6,7 @@ pub use crate::operation::delete_device_usage_data::_delete_device_usage_data_in
 /// Fluent builder constructing a request to `DeleteDeviceUsageData`.
 ///
 /// <p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeviceUsageDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

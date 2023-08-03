@@ -6,6 +6,7 @@ pub use crate::operation::search_devices::_search_devices_input::SearchDevicesIn
 /// Fluent builder constructing a request to `SearchDevices`.
 ///
 /// <p>Searches devices and lists the ones that meet a set of filter criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchDevicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

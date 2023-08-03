@@ -184,6 +184,20 @@ pub(crate) fn de_get_keyspace(
                             .transpose()?,
                         );
                     }
+                    "replicationStrategy" => {
+                        builder = builder.set_replication_strategy(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Rs::from(u.as_ref())))
+                            .transpose()?,
+                        );
+                    }
+                    "replicationRegions" => {
+                        builder = builder.set_replication_regions(
+                            crate::protocol_serde::shape_region_list::de_region_list(tokens)?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

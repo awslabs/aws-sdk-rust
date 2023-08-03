@@ -6,6 +6,7 @@ pub use crate::operation::put_conference_preference::_put_conference_preference_
 /// Fluent builder constructing a request to `PutConferencePreference`.
 ///
 /// <p>Sets the conference preferences on a specific conference provider at the account level.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConferencePreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

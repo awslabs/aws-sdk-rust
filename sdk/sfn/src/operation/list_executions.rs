@@ -177,7 +177,7 @@ pub enum ListExecutionsError {
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided token is not valid.</p>
     InvalidToken(crate::types::error::InvalidToken),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
+    /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::types::error::StateMachineDoesNotExist),

@@ -12,7 +12,9 @@
 /// ```text
 /// # let stringfiltercomparison = unimplemented!();
 /// match stringfiltercomparison {
+///     StringFilterComparison::Contains => { /* ... */ },
 ///     StringFilterComparison::Equals => { /* ... */ },
+///     StringFilterComparison::NotContains => { /* ... */ },
 ///     StringFilterComparison::NotEquals => { /* ... */ },
 ///     StringFilterComparison::Prefix => { /* ... */ },
 ///     StringFilterComparison::PrefixNotEquals => { /* ... */ },
@@ -50,7 +52,11 @@
 )]
 pub enum StringFilterComparison {
     #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotContains,
     #[allow(missing_docs)] // documentation missing in model
     NotEquals,
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +69,9 @@ pub enum StringFilterComparison {
 impl ::std::convert::From<&str> for StringFilterComparison {
     fn from(s: &str) -> Self {
         match s {
+            "CONTAINS" => StringFilterComparison::Contains,
             "EQUALS" => StringFilterComparison::Equals,
+            "NOT_CONTAINS" => StringFilterComparison::NotContains,
             "NOT_EQUALS" => StringFilterComparison::NotEquals,
             "PREFIX" => StringFilterComparison::Prefix,
             "PREFIX_NOT_EQUALS" => StringFilterComparison::PrefixNotEquals,
@@ -84,7 +92,9 @@ impl StringFilterComparison {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StringFilterComparison::Contains => "CONTAINS",
             StringFilterComparison::Equals => "EQUALS",
+            StringFilterComparison::NotContains => "NOT_CONTAINS",
             StringFilterComparison::NotEquals => "NOT_EQUALS",
             StringFilterComparison::Prefix => "PREFIX",
             StringFilterComparison::PrefixNotEquals => "PREFIX_NOT_EQUALS",
@@ -93,7 +103,14 @@ impl StringFilterComparison {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQUALS", "NOT_EQUALS", "PREFIX", "PREFIX_NOT_EQUALS"]
+        &[
+            "CONTAINS",
+            "EQUALS",
+            "NOT_CONTAINS",
+            "NOT_EQUALS",
+            "PREFIX",
+            "PREFIX_NOT_EQUALS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StringFilterComparison {

@@ -6,7 +6,7 @@ pub use crate::operation::create_network_acl::_create_network_acl_input::CreateN
 /// Fluent builder constructing a request to `CreateNetworkAcl`.
 ///
 /// <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkAclFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

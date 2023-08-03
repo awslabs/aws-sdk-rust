@@ -7,23 +7,20 @@ pub mod create_aws_log_source;
 /// Types for the `CreateCustomLogSource` operation.
 pub mod create_custom_log_source;
 
-/// Types for the `CreateDatalake` operation.
-pub mod create_datalake;
+/// Types for the `CreateDataLake` operation.
+pub mod create_data_lake;
 
-/// Types for the `CreateDatalakeAutoEnable` operation.
-pub mod create_datalake_auto_enable;
+/// Types for the `CreateDataLakeExceptionSubscription` operation.
+pub mod create_data_lake_exception_subscription;
 
-/// Types for the `CreateDatalakeDelegatedAdmin` operation.
-pub mod create_datalake_delegated_admin;
-
-/// Types for the `CreateDatalakeExceptionsSubscription` operation.
-pub mod create_datalake_exceptions_subscription;
+/// Types for the `CreateDataLakeOrganizationConfiguration` operation.
+pub mod create_data_lake_organization_configuration;
 
 /// Types for the `CreateSubscriber` operation.
 pub mod create_subscriber;
 
-/// Types for the `CreateSubscriptionNotificationConfiguration` operation.
-pub mod create_subscription_notification_configuration;
+/// Types for the `CreateSubscriberNotification` operation.
+pub mod create_subscriber_notification;
 
 /// Types for the `DeleteAwsLogSource` operation.
 pub mod delete_aws_log_source;
@@ -31,44 +28,41 @@ pub mod delete_aws_log_source;
 /// Types for the `DeleteCustomLogSource` operation.
 pub mod delete_custom_log_source;
 
-/// Types for the `DeleteDatalake` operation.
-pub mod delete_datalake;
+/// Types for the `DeleteDataLake` operation.
+pub mod delete_data_lake;
 
-/// Types for the `DeleteDatalakeAutoEnable` operation.
-pub mod delete_datalake_auto_enable;
+/// Types for the `DeleteDataLakeExceptionSubscription` operation.
+pub mod delete_data_lake_exception_subscription;
 
-/// Types for the `DeleteDatalakeDelegatedAdmin` operation.
-pub mod delete_datalake_delegated_admin;
-
-/// Types for the `DeleteDatalakeExceptionsSubscription` operation.
-pub mod delete_datalake_exceptions_subscription;
+/// Types for the `DeleteDataLakeOrganizationConfiguration` operation.
+pub mod delete_data_lake_organization_configuration;
 
 /// Types for the `DeleteSubscriber` operation.
 pub mod delete_subscriber;
 
-/// Types for the `DeleteSubscriptionNotificationConfiguration` operation.
-pub mod delete_subscription_notification_configuration;
+/// Types for the `DeleteSubscriberNotification` operation.
+pub mod delete_subscriber_notification;
 
-/// Types for the `GetDatalake` operation.
-pub mod get_datalake;
+/// Types for the `DeregisterDataLakeDelegatedAdministrator` operation.
+pub mod deregister_data_lake_delegated_administrator;
 
-/// Types for the `GetDatalakeAutoEnable` operation.
-pub mod get_datalake_auto_enable;
+/// Types for the `GetDataLakeExceptionSubscription` operation.
+pub mod get_data_lake_exception_subscription;
 
-/// Types for the `GetDatalakeExceptionsExpiry` operation.
-pub mod get_datalake_exceptions_expiry;
+/// Types for the `GetDataLakeOrganizationConfiguration` operation.
+pub mod get_data_lake_organization_configuration;
 
-/// Types for the `GetDatalakeExceptionsSubscription` operation.
-pub mod get_datalake_exceptions_subscription;
-
-/// Types for the `GetDatalakeStatus` operation.
-pub mod get_datalake_status;
+/// Types for the `GetDataLakeSources` operation.
+pub mod get_data_lake_sources;
 
 /// Types for the `GetSubscriber` operation.
 pub mod get_subscriber;
 
-/// Types for the `ListDatalakeExceptions` operation.
-pub mod list_datalake_exceptions;
+/// Types for the `ListDataLakeExceptions` operation.
+pub mod list_data_lake_exceptions;
+
+/// Types for the `ListDataLakes` operation.
+pub mod list_data_lakes;
 
 /// Types for the `ListLogSources` operation.
 pub mod list_log_sources;
@@ -76,17 +70,26 @@ pub mod list_log_sources;
 /// Types for the `ListSubscribers` operation.
 pub mod list_subscribers;
 
-/// Types for the `UpdateDatalake` operation.
-pub mod update_datalake;
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
 
-/// Types for the `UpdateDatalakeExceptionsExpiry` operation.
-pub mod update_datalake_exceptions_expiry;
+/// Types for the `RegisterDataLakeDelegatedAdministrator` operation.
+pub mod register_data_lake_delegated_administrator;
 
-/// Types for the `UpdateDatalakeExceptionsSubscription` operation.
-pub mod update_datalake_exceptions_subscription;
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
+/// Types for the `UpdateDataLake` operation.
+pub mod update_data_lake;
+
+/// Types for the `UpdateDataLakeExceptionSubscription` operation.
+pub mod update_data_lake_exception_subscription;
 
 /// Types for the `UpdateSubscriber` operation.
 pub mod update_subscriber;
 
-/// Types for the `UpdateSubscriptionNotificationConfiguration` operation.
-pub mod update_subscription_notification_configuration;
+/// Types for the `UpdateSubscriberNotification` operation.
+pub mod update_subscriber_notification;

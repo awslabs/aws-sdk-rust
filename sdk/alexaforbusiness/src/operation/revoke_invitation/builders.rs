@@ -6,6 +6,7 @@ pub use crate::operation::revoke_invitation::_revoke_invitation_input::RevokeInv
 /// Fluent builder constructing a request to `RevokeInvitation`.
 ///
 /// <p>Revokes an invitation and invalidates the enrollment URL.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeInvitationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

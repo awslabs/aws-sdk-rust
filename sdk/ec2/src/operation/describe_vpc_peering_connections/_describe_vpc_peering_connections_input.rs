@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -29,7 +29,7 @@ pub struct DescribeVpcPeeringConnectionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     #[doc(hidden)]
     pub vpc_peering_connection_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -41,7 +41,7 @@ pub struct DescribeVpcPeeringConnectionsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeVpcPeeringConnectionsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -69,7 +69,7 @@ impl DescribeVpcPeeringConnectionsInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn vpc_peering_connection_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_peering_connection_ids.as_deref()
@@ -108,7 +108,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -135,7 +135,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -177,7 +177,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_peering_connection_ids`](Self::set_vpc_peering_connection_ids).
     ///
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn vpc_peering_connection_ids(
         mut self,
@@ -188,7 +188,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
         self.vpc_peering_connection_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn set_vpc_peering_connection_ids(
         mut self,

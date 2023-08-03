@@ -84,6 +84,31 @@ impl From<crate::operation::add_profile_key::AddProfileKeyError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError> for Error {
+    fn from(err: crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError) -> Self {
+        match err {
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>>
     for Error
@@ -133,6 +158,50 @@ impl From<crate::operation::create_domain::CreateDomainError> for Error {
             crate::operation::create_domain::CreateDomainError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_stream::CreateEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_stream::CreateEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_event_stream::CreateEventStreamError> for Error {
+    fn from(err: crate::operation::create_event_stream::CreateEventStreamError) -> Self {
+        match err {
+            crate::operation::create_event_stream::CreateEventStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_event_stream::CreateEventStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_event_stream::CreateEventStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_event_stream::CreateEventStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_event_stream::CreateEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_event_stream::CreateEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -238,6 +307,31 @@ impl From<crate::operation::create_profile::CreateProfileError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError> for Error {
+    fn from(err: crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::delete_domain::DeleteDomainError, R>>
     for Error
@@ -287,6 +381,50 @@ impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
             crate::operation::delete_domain::DeleteDomainError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_stream::DeleteEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_stream::DeleteEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_event_stream::DeleteEventStreamError> for Error {
+    fn from(err: crate::operation::delete_event_stream::DeleteEventStreamError) -> Self {
+        match err {
+            crate::operation::delete_event_stream::DeleteEventStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_event_stream::DeleteEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -624,6 +762,56 @@ impl From<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError> for Error {
+    fn from(err: crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError) -> Self {
+        match err {
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError> for Error {
+    fn from(err: crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError) -> Self {
+        match err {
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_domain::GetDomainError, R>>
     for Error
 where
@@ -667,6 +855,62 @@ impl From<crate::operation::get_domain::GetDomainError> for Error {
                 Error::ThrottlingException(inner)
             }
             crate::operation::get_domain::GetDomainError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_stream::GetEventStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_stream::GetEventStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_event_stream::GetEventStreamError> for Error {
+    fn from(err: crate::operation::get_event_stream::GetEventStreamError) -> Self {
+        match err {
+            crate::operation::get_event_stream::GetEventStreamError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_event_stream::GetEventStreamError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_event_stream::GetEventStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_event_stream::GetEventStreamError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -915,6 +1159,50 @@ impl From<crate::operation::get_profile_object_type_template::GetProfileObjectTy
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_similar_profiles::GetSimilarProfilesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_similar_profiles::GetSimilarProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_similar_profiles::GetSimilarProfilesError> for Error {
+    fn from(err: crate::operation::get_similar_profiles::GetSimilarProfilesError) -> Self {
+        match err {
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_similar_profiles::GetSimilarProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>>
     for Error
 where
@@ -1056,6 +1344,56 @@ impl From<crate::operation::list_account_integrations::ListAccountIntegrationsEr
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError> for Error {
+    fn from(err: crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError> for Error {
+    fn from(err: crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError) -> Self {
+        match err {
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError, R>>
     for Error
@@ -1105,6 +1443,50 @@ impl From<crate::operation::list_domains::ListDomainsError> for Error {
             crate::operation::list_domains::ListDomainsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_streams::ListEventStreamsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_streams::ListEventStreamsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_event_streams::ListEventStreamsError> for Error {
+    fn from(err: crate::operation::list_event_streams::ListEventStreamsError) -> Self {
+        match err {
+            crate::operation::list_event_streams::ListEventStreamsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_event_streams::ListEventStreamsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_event_streams::ListEventStreamsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_event_streams::ListEventStreamsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_event_streams::ListEventStreamsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_event_streams::ListEventStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1314,6 +1696,50 @@ impl From<crate::operation::list_profile_object_type_templates::ListProfileObjec
             crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_rule_based_matches::ListRuleBasedMatchesError> for Error {
+    fn from(err: crate::operation::list_rule_based_matches::ListRuleBasedMatchesError) -> Self {
+        match err {
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1761,6 +2187,31 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError> for Error {
+    fn from(err: crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError) -> Self {
+        match err {
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

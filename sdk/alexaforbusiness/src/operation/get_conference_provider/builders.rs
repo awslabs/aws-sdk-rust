@@ -6,6 +6,7 @@ pub use crate::operation::get_conference_provider::_get_conference_provider_inpu
 /// Fluent builder constructing a request to `GetConferenceProvider`.
 ///
 /// <p>Gets details about a specific conference provider.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

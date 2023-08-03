@@ -6,7 +6,7 @@ pub struct UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     #[doc(hidden)]
     pub default_assessment_reports_destination:
         ::std::option::Option<crate::types::AssessmentReportsDestination>,
@@ -24,13 +24,16 @@ pub struct UpdateSettingsInput {
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
     #[doc(hidden)]
     pub deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    #[doc(hidden)]
+    pub default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn sns_topic(&self) -> ::std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn default_assessment_reports_destination(
         &self,
     ) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
@@ -56,6 +59,12 @@ impl UpdateSettingsInput {
     ) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
         self.deregistration_policy.as_ref()
     }
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    pub fn default_export_destination(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
+        self.default_export_destination.as_ref()
+    }
 }
 impl UpdateSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
@@ -77,6 +86,8 @@ pub struct UpdateSettingsInputBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_finder_enabled: ::std::option::Option<bool>,
     pub(crate) deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
+    pub(crate) default_export_destination:
+        ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInputBuilder {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
@@ -89,7 +100,7 @@ impl UpdateSettingsInputBuilder {
         self.sns_topic = input;
         self
     }
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn default_assessment_reports_destination(
         mut self,
         input: crate::types::AssessmentReportsDestination,
@@ -97,7 +108,7 @@ impl UpdateSettingsInputBuilder {
         self.default_assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn set_default_assessment_reports_destination(
         mut self,
         input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
@@ -161,6 +172,22 @@ impl UpdateSettingsInputBuilder {
         self.deregistration_policy = input;
         self
     }
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    pub fn default_export_destination(
+        mut self,
+        input: crate::types::DefaultExportDestination,
+    ) -> Self {
+        self.default_export_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    pub fn set_default_export_destination(
+        mut self,
+        input: ::std::option::Option<crate::types::DefaultExportDestination>,
+    ) -> Self {
+        self.default_export_destination = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
     pub fn build(
         self,
@@ -175,6 +202,7 @@ impl UpdateSettingsInputBuilder {
             kms_key: self.kms_key,
             evidence_finder_enabled: self.evidence_finder_enabled,
             deregistration_policy: self.deregistration_policy,
+            default_export_destination: self.default_export_destination,
         })
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_stack_set::_describe_stack_set_input::Describ
 
 /// Fluent builder constructing a request to `DescribeStackSet`.
 ///
-/// <p>Returns the description of the specified stack set.</p>
+/// <p>Returns the description of the specified StackSet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

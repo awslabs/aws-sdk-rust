@@ -34,6 +34,9 @@ pub struct PipelineExecutionStep {
     /// <p>Metadata to run the pipeline step.</p>
     #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
+    /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
+    #[doc(hidden)]
+    pub selective_execution_result: ::std::option::Option<crate::types::SelectiveExecutionResult>,
 }
 impl PipelineExecutionStep {
     /// <p>The name of the step that is executed.</p>
@@ -76,6 +79,12 @@ impl PipelineExecutionStep {
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStepMetadata> {
         self.metadata.as_ref()
     }
+    /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
+    pub fn selective_execution_result(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SelectiveExecutionResult> {
+        self.selective_execution_result.as_ref()
+    }
 }
 impl PipelineExecutionStep {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
@@ -100,6 +109,8 @@ pub struct PipelineExecutionStepBuilder {
     pub(crate) attempt_count: ::std::option::Option<i32>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
+    pub(crate) selective_execution_result:
+        ::std::option::Option<crate::types::SelectiveExecutionResult>,
 }
 impl PipelineExecutionStepBuilder {
     /// <p>The name of the step that is executed.</p>
@@ -235,6 +246,22 @@ impl PipelineExecutionStepBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
+    pub fn selective_execution_result(
+        mut self,
+        input: crate::types::SelectiveExecutionResult,
+    ) -> Self {
+        self.selective_execution_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
+    pub fn set_selective_execution_result(
+        mut self,
+        input: ::std::option::Option<crate::types::SelectiveExecutionResult>,
+    ) -> Self {
+        self.selective_execution_result = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
     pub fn build(self) -> crate::types::PipelineExecutionStep {
         crate::types::PipelineExecutionStep {
@@ -248,6 +275,7 @@ impl PipelineExecutionStepBuilder {
             attempt_count: self.attempt_count.unwrap_or_default(),
             failure_reason: self.failure_reason,
             metadata: self.metadata,
+            selective_execution_result: self.selective_execution_result,
         }
     }
 }

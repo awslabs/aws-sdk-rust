@@ -5,6 +5,7 @@
 pub struct ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
     #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
@@ -13,7 +14,7 @@ pub struct ListExecutionsInput {
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -25,6 +26,7 @@ pub struct ListExecutionsInput {
 impl ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
@@ -34,7 +36,7 @@ impl ListExecutionsInput {
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -69,6 +71,7 @@ pub struct ListExecutionsInputBuilder {
 impl ListExecutionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -78,6 +81,7 @@ impl ListExecutionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -142,7 +146,7 @@ impl ListExecutionsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsInput {
             state_machine_arn: self.state_machine_arn,
             status_filter: self.status_filter,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             map_run_arn: self.map_run_arn,
         })

@@ -42,32 +42,30 @@ pub fn ser_admin_create_user_input(
     if let Some(var_11) = &input.temporary_password {
         object.key("TemporaryPassword").string(var_11.as_str());
     }
-    if input.force_alias_creation {
-        object
-            .key("ForceAliasCreation")
-            .boolean(input.force_alias_creation);
+    if let Some(var_12) = &input.force_alias_creation {
+        object.key("ForceAliasCreation").boolean(*var_12);
     }
-    if let Some(var_12) = &input.message_action {
-        object.key("MessageAction").string(var_12.as_str());
+    if let Some(var_13) = &input.message_action {
+        object.key("MessageAction").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.desired_delivery_mediums {
-        let mut array_14 = object.key("DesiredDeliveryMediums").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.desired_delivery_mediums {
+        let mut array_15 = object.key("DesiredDeliveryMediums").start_array();
+        for item_16 in var_14 {
             {
-                array_14.value().string(item_15.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.client_metadata {
+    if let Some(var_17) = &input.client_metadata {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("ClientMetadata").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("ClientMetadata").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
     Ok(())
 }

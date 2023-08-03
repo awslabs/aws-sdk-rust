@@ -37,6 +37,8 @@ pub use crate::types::_model_input_data_format::ModelInputDataFormat;
 
 pub use crate::types::_model_source::ModelSource;
 
+pub use crate::types::_event_orchestration::EventOrchestration;
+
 pub use crate::types::_event_ingestion::EventIngestion;
 
 pub use crate::types::_event_prediction_summary::EventPredictionSummary;
@@ -218,6 +220,8 @@ mod _evaluated_rule;
 mod _event;
 
 mod _event_ingestion;
+
+mod _event_orchestration;
 
 mod _event_prediction_summary;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumeInput {
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -81,7 +81,7 @@ pub struct CreateVolumeInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVolumeInput {
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -200,7 +200,7 @@ pub struct CreateVolumeInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVolumeInputBuilder {
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     pub fn availability_zone(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -208,7 +208,7 @@ impl CreateVolumeInputBuilder {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     pub fn set_availability_zone(
         mut self,
         input: ::std::option::Option<::std::string::String>,

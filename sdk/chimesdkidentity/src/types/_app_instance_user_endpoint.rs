@@ -92,8 +92,8 @@ impl AppInstanceUserEndpoint {
 impl ::std::fmt::Debug for AppInstanceUserEndpoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpoint");
-        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("resource_arn", &self.resource_arn);
@@ -283,8 +283,8 @@ impl AppInstanceUserEndpointBuilder {
 impl ::std::fmt::Debug for AppInstanceUserEndpointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpointBuilder");
-        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+        formatter.field("endpoint_id", &self.endpoint_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("resource_arn", &self.resource_arn);

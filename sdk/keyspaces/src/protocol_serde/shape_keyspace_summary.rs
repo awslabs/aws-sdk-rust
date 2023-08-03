@@ -21,29 +21,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "keyspaceName" => {
-                                builder = builder.set_keyspace_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "resourceArn" => {
-                                builder = builder.set_resource_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
+                        .to_unescaped()?
+                        .as_ref()
+                    {
+                        "keyspaceName" => {
+                            builder = builder.set_keyspace_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
                         }
-                    }
+                        "resourceArn" => {
+                            builder = builder.set_resource_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
+                        }
+                        "replicationStrategy" => {
+                            builder = builder.set_replication_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| crate::types::Rs::from(u.as_ref()))
+                                })
+                                .transpose()?,
+                            );
+                        }
+                        "replicationRegions" => {
+                            builder = builder.set_replication_regions(
+                                crate::protocol_serde::shape_region_list::de_region_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(
                             ::aws_smithy_json::deserialize::error::DeserializeError::custom(

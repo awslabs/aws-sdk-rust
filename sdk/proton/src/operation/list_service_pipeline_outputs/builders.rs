@@ -125,4 +125,20 @@ impl ListServicePipelineOutputsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.deployment_id(input.into());
+        self
+    }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_deployment_id(input);
+        self
+    }
 }

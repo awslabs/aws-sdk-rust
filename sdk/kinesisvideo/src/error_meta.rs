@@ -157,6 +157,52 @@ impl From<crate::operation::create_stream::CreateStreamError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError> for Error {
+    fn from(
+        err: crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::StreamEdgeConfigurationNotFoundException(inner) => Error::StreamEdgeConfigurationNotFoundException(inner),
+            crate::operation::delete_edge_configuration::DeleteEdgeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_signaling_channel::DeleteSignalingChannelError,
             R,
         >,
@@ -572,6 +618,52 @@ impl From<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelE
             crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

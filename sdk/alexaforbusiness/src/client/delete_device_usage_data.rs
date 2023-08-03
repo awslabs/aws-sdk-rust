@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`device_usage_type(DeviceUsageType)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::device_usage_type) / [`set_device_usage_type(Option<DeviceUsageType>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::set_device_usage_type): <p>The type of usage data to delete.</p>
     /// - On success, responds with [`DeleteDeviceUsageDataOutput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceUsageDataError>`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_device_usage_data(
         &self,
     ) -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder

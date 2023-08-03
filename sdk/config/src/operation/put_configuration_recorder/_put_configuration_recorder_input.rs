@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     #[doc(hidden)]
     pub configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     pub fn configuration_recorder(
         &self,
     ) -> ::std::option::Option<&crate::types::ConfigurationRecorder> {
@@ -34,12 +34,12 @@ pub struct PutConfigurationRecorderInputBuilder {
     pub(crate) configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInputBuilder {
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.configuration_recorder = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     pub fn set_configuration_recorder(
         mut self,
         input: ::std::option::Option<crate::types::ConfigurationRecorder>,

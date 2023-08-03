@@ -213,4 +213,38 @@ impl UpdateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_lambda_authorizer_config(input);
         self
     }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn merged_api_execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.merged_api_execution_role_arn(input.into());
+        self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn set_merged_api_execution_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_merged_api_execution_role_arn(input);
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn owner_contact(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.owner_contact(input.into());
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn set_owner_contact(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_owner_contact(input);
+        self
+    }
 }

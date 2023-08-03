@@ -6,7 +6,7 @@ pub struct DescribeNatGatewaysInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -26,7 +26,7 @@ pub struct DescribeNatGatewaysInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     #[doc(hidden)]
     pub nat_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -38,7 +38,7 @@ impl DescribeNatGatewaysInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -60,7 +60,7 @@ impl DescribeNatGatewaysInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     pub fn nat_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.nat_gateway_ids.as_deref()
     }
@@ -105,7 +105,7 @@ impl DescribeNatGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -126,7 +126,7 @@ impl DescribeNatGatewaysInputBuilder {
         self.filter = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -162,7 +162,7 @@ impl DescribeNatGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_nat_gateway_ids`](Self::set_nat_gateway_ids).
     ///
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     pub fn nat_gateway_ids(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -172,7 +172,7 @@ impl DescribeNatGatewaysInputBuilder {
         self.nat_gateway_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     pub fn set_nat_gateway_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

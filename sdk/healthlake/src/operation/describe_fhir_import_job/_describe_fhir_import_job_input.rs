@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobInput {
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS-generated job ID.</p>
@@ -11,7 +11,7 @@ pub struct DescribeFhirImportJobInput {
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirImportJobInput {
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -39,12 +39,12 @@ pub struct DescribeFhirImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirImportJobInputBuilder {
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

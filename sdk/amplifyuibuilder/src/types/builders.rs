@@ -85,6 +85,30 @@ pub use crate::types::_create_component_data::CreateComponentDataBuilder;
 
 pub use crate::types::_update_component_data::UpdateComponentDataBuilder;
 
+pub use crate::types::_codegen_job_summary::CodegenJobSummaryBuilder;
+
+pub use crate::types::_codegen_job::CodegenJobBuilder;
+
+pub use crate::types::_codegen_job_asset::CodegenJobAssetBuilder;
+
+pub use crate::types::_codegen_feature_flags::CodegenFeatureFlagsBuilder;
+
+pub use crate::types::_codegen_job_generic_data_schema::CodegenJobGenericDataSchemaBuilder;
+
+pub use crate::types::_codegen_generic_data_non_model::CodegenGenericDataNonModelBuilder;
+
+pub use crate::types::_codegen_generic_data_field::CodegenGenericDataFieldBuilder;
+
+pub use crate::types::_codegen_generic_data_relationship_type::CodegenGenericDataRelationshipTypeBuilder;
+
+pub use crate::types::_codegen_generic_data_enum::CodegenGenericDataEnumBuilder;
+
+pub use crate::types::_codegen_generic_data_model::CodegenGenericDataModelBuilder;
+
+pub use crate::types::_react_start_codegen_job_data::ReactStartCodegenJobDataBuilder;
+
+pub use crate::types::_start_codegen_job_data::StartCodegenJobDataBuilder;
+
 pub use crate::types::_refresh_token_request_body::RefreshTokenRequestBodyBuilder;
 
 pub use crate::types::_put_metadata_flag_body::PutMetadataFlagBodyBuilder;

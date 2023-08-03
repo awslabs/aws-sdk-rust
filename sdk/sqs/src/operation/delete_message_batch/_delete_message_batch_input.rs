@@ -8,7 +8,7 @@ pub struct DeleteMessageBatchInput {
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     #[doc(hidden)]
     pub entries:
         ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
@@ -19,7 +19,7 @@ impl DeleteMessageBatchInput {
     pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     pub fn entries(
         &self,
     ) -> ::std::option::Option<&[crate::types::DeleteMessageBatchRequestEntry]> {
@@ -61,14 +61,14 @@ impl DeleteMessageBatchInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     pub fn entries(mut self, input: crate::types::DeleteMessageBatchRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,

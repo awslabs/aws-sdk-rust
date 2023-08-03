@@ -3,38 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLogSourcesOutput {
-    /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+    /// <p>The list of log sources in your organization that send data to the data lake.</p>
     #[doc(hidden)]
-    pub region_source_types_accounts_list: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    >,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLogSourcesOutput {
-    /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-    pub fn region_source_types_accounts_list(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >],
-    > {
-        self.region_source_types_accounts_list.as_deref()
+    /// <p>The list of log sources in your organization that send data to the data lake.</p>
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSource]> {
+        self.sources.as_deref()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -59,57 +39,28 @@ impl ListLogSourcesOutput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct ListLogSourcesOutputBuilder {
-    pub(crate) region_source_types_accounts_list: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    >,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLogSourcesOutputBuilder {
-    /// Appends an item to `region_source_types_accounts_list`.
+    /// Appends an item to `sources`.
     ///
-    /// To override the contents of this collection use [`set_region_source_types_accounts_list`](Self::set_region_source_types_accounts_list).
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-    pub fn region_source_types_accounts_list(
-        mut self,
-        input: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        let mut v = self.region_source_types_accounts_list.unwrap_or_default();
+    /// <p>The list of log sources in your organization that send data to the data lake.</p>
+    pub fn sources(mut self, input: crate::types::LogSource) -> Self {
+        let mut v = self.sources.unwrap_or_default();
         v.push(input);
-        self.region_source_types_accounts_list = ::std::option::Option::Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-    pub fn set_region_source_types_accounts_list(
+    /// <p>The list of log sources in your organization that send data to the data lake.</p>
+    pub fn set_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::collections::HashMap<
-                        ::std::string::String,
-                        ::std::vec::Vec<::std::string::String>,
-                    >,
-                >,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     ) -> Self {
-        self.region_source_types_accounts_list = input;
+        self.sources = input;
         self
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
@@ -134,7 +85,7 @@ impl ListLogSourcesOutputBuilder {
     /// Consumes the builder and constructs a [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput).
     pub fn build(self) -> crate::operation::list_log_sources::ListLogSourcesOutput {
         crate::operation::list_log_sources::ListLogSourcesOutput {
-            region_source_types_accounts_list: self.region_source_types_accounts_list,
+            sources: self.sources,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

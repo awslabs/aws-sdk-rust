@@ -124,8 +124,14 @@ pub mod delete_integration_association;
 /// Types for the `DeletePrompt` operation.
 pub mod delete_prompt;
 
+/// Types for the `DeleteQueue` operation.
+pub mod delete_queue;
+
 /// Types for the `DeleteQuickConnect` operation.
 pub mod delete_quick_connect;
+
+/// Types for the `DeleteRoutingProfile` operation.
+pub mod delete_routing_profile;
 
 /// Types for the `DeleteRule` operation.
 pub mod delete_rule;
@@ -397,8 +403,20 @@ pub mod resume_contact_recording;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `SearchHoursOfOperations` operation.
+pub mod search_hours_of_operations;
+
+/// Types for the `SearchPrompts` operation.
+pub mod search_prompts;
+
 /// Types for the `SearchQueues` operation.
 pub mod search_queues;
+
+/// Types for the `SearchQuickConnects` operation.
+pub mod search_quick_connects;
+
+/// Types for the `SearchResourceTags` operation.
+pub mod search_resource_tags;
 
 /// Types for the `SearchRoutingProfiles` operation.
 pub mod search_routing_profiles;

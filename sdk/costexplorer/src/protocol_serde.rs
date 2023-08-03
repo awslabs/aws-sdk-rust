@@ -48,6 +48,8 @@ pub(crate) mod shape_get_reservation_utilization;
 
 pub(crate) mod shape_get_rightsizing_recommendation;
 
+pub(crate) mod shape_get_savings_plan_purchase_recommendation_details;
+
 pub(crate) mod shape_get_savings_plans_coverage;
 
 pub(crate) mod shape_get_savings_plans_purchase_recommendation;
@@ -135,6 +137,8 @@ pub(crate) mod shape_get_reservation_purchase_recommendation_input;
 pub(crate) mod shape_get_reservation_utilization_input;
 
 pub(crate) mod shape_get_rightsizing_recommendation_input;
+
+pub(crate) mod shape_get_savings_plan_purchase_recommendation_details_input;
 
 pub(crate) mod shape_get_savings_plans_coverage_input;
 
@@ -236,6 +240,8 @@ pub(crate) mod shape_group_definitions;
 
 pub(crate) mod shape_metric_value;
 
+pub(crate) mod shape_recommendation_detail_data;
+
 pub(crate) mod shape_reservation_aggregates;
 
 pub(crate) mod shape_reservation_purchase_recommendation_metadata;
@@ -318,6 +324,8 @@ pub(crate) mod shape_forecast_result;
 
 pub(crate) mod shape_generation_summary;
 
+pub(crate) mod shape_metrics_over_lookback_period;
+
 pub(crate) mod shape_reservation_purchase_recommendation;
 
 pub(crate) mod shape_result_by_time;
@@ -365,6 +373,8 @@ pub(crate) mod shape_metrics;
 pub(crate) mod shape_modify_recommendation_detail;
 
 pub(crate) mod shape_monitor_arn_list;
+
+pub(crate) mod shape_recommendation_detail_hourly_metrics;
 
 pub(crate) mod shape_reservation_coverage_groups;
 

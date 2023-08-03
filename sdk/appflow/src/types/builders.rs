@@ -59,6 +59,8 @@ pub use crate::types::_pardot_source_properties::PardotSourcePropertiesBuilder;
 
 pub use crate::types::_custom_connector_source_properties::CustomConnectorSourcePropertiesBuilder;
 
+pub use crate::types::_data_transfer_api::DataTransferApiBuilder;
+
 pub use crate::types::_sapo_data_source_properties::SapoDataSourcePropertiesBuilder;
 
 pub use crate::types::_zendesk_source_properties::ZendeskSourcePropertiesBuilder;

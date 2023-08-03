@@ -278,6 +278,8 @@ mod get_reservation_utilization;
 
 mod get_rightsizing_recommendation;
 
+mod get_savings_plan_purchase_recommendation_details;
+
 mod get_savings_plans_coverage;
 
 mod get_savings_plans_purchase_recommendation;

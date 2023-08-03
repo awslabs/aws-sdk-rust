@@ -13,6 +13,8 @@ pub use crate::types::error::_invalid_key_usage_exception::InvalidKeyUsageExcept
 
 pub use crate::types::error::_invalid_grant_token_exception::InvalidGrantTokenException;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationException;
+
 pub use crate::types::error::_disabled_exception::DisabledException;
 
 pub use crate::types::error::_kms_invalid_signature_exception::KmsInvalidSignatureException;
@@ -114,6 +116,8 @@ mod _custom_key_store_not_found_exception;
 mod _dependency_timeout_exception;
 
 mod _disabled_exception;
+
+mod _dry_run_operation_exception;
 
 mod _expired_import_token_exception;
 

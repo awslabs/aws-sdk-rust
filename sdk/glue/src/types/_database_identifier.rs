@@ -10,6 +10,9 @@ pub struct DatabaseIdentifier {
     /// <p>The name of the catalog database.</p>
     #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>Region of the target database.</p>
+    #[doc(hidden)]
+    pub region: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
@@ -19,6 +22,10 @@ impl DatabaseIdentifier {
     /// <p>The name of the catalog database.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
+    }
+    /// <p>Region of the target database.</p>
+    pub fn region(&self) -> ::std::option::Option<&str> {
+        self.region.as_deref()
     }
 }
 impl DatabaseIdentifier {
@@ -36,6 +43,7 @@ impl DatabaseIdentifier {
 pub struct DatabaseIdentifierBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseIdentifierBuilder {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
@@ -64,11 +72,22 @@ impl DatabaseIdentifierBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Region of the target database.</p>
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Region of the target database.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.region = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DatabaseIdentifier`](crate::types::DatabaseIdentifier).
     pub fn build(self) -> crate::types::DatabaseIdentifier {
         crate::types::DatabaseIdentifier {
             catalog_id: self.catalog_id,
             database_name: self.database_name,
+            region: self.region,
         }
     }
 }

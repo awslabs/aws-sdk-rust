@@ -13,7 +13,7 @@ pub struct WorkspaceRequest {
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     #[doc(hidden)]
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
@@ -42,7 +42,7 @@ impl WorkspaceRequest {
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
@@ -118,7 +118,7 @@ impl WorkspaceRequestBuilder {
         self.bundle_id = input;
         self
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -126,7 +126,7 @@ impl WorkspaceRequestBuilder {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn set_volume_encryption_key(
         mut self,
         input: ::std::option::Option<::std::string::String>,

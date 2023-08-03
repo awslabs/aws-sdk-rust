@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skil
 /// Fluent builder constructing a request to `DisassociateSkillGroupFromRoom`.
 ///
 /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

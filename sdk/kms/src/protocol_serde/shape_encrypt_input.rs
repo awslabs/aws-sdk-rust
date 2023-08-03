@@ -33,5 +33,8 @@ pub fn ser_encrypt_input(
     if let Some(var_10) = &input.encryption_algorithm {
         object.key("EncryptionAlgorithm").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.dry_run {
+        object.key("DryRun").boolean(*var_11);
+    }
     Ok(())
 }

@@ -35,7 +35,7 @@ pub enum Error {
     UnsupportedDisplayLanguageCodeException(
         crate::types::error::UnsupportedDisplayLanguageCodeException,
     ),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>. </p>
     UnsupportedLanguagePairException(crate::types::error::UnsupportedLanguagePairException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
@@ -724,6 +724,52 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::translate_document::TranslateDocumentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::translate_document::TranslateDocumentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::translate_document::TranslateDocumentError> for Error {
+    fn from(err: crate::operation::translate_document::TranslateDocumentError) -> Self {
+        match err {
+            crate::operation::translate_document::TranslateDocumentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::translate_document::TranslateDocumentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::translate_document::TranslateDocumentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::translate_document::TranslateDocumentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::translate_document::TranslateDocumentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::translate_document::TranslateDocumentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::translate_document::TranslateDocumentError::UnsupportedLanguagePairException(inner) => Error::UnsupportedLanguagePairException(inner),
+            crate::operation::translate_document::TranslateDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

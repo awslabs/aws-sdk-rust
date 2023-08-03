@@ -16,7 +16,7 @@ pub struct Address {
     /// <p>The recipient's name for this address.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The phone number for this address.</p>
+    /// <p>The recipient's phone number.</p>
     #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The postal code for this address.</p>
@@ -34,6 +34,9 @@ pub struct Address {
     /// <p>The third line of the street address.</p>
     #[doc(hidden)]
     pub street3: ::std::option::Option<::std::string::String>,
+    /// <p>The recipient's email address.</p>
+    #[doc(hidden)]
+    pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl Address {
     /// <p>The city for this address.</p>
@@ -52,7 +55,7 @@ impl Address {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The phone number for this address.</p>
+    /// <p>The recipient's phone number.</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -76,6 +79,10 @@ impl Address {
     pub fn street3(&self) -> ::std::option::Option<&str> {
         self.street3.as_deref()
     }
+    /// <p>The recipient's email address.</p>
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Address {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -90,6 +97,7 @@ impl ::std::fmt::Debug for Address {
         formatter.field("street1", &"*** Sensitive Data Redacted ***");
         formatter.field("street2", &"*** Sensitive Data Redacted ***");
         formatter.field("street3", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -114,6 +122,7 @@ pub struct AddressBuilder {
     pub(crate) street1: ::std::option::Option<::std::string::String>,
     pub(crate) street2: ::std::option::Option<::std::string::String>,
     pub(crate) street3: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl AddressBuilder {
     /// <p>The city for this address.</p>
@@ -156,12 +165,12 @@ impl AddressBuilder {
         self.name = input;
         self
     }
-    /// <p>The phone number for this address.</p>
+    /// <p>The recipient's phone number.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The phone number for this address.</p>
+    /// <p>The recipient's phone number.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
@@ -222,6 +231,22 @@ impl AddressBuilder {
         self.street3 = input;
         self
     }
+    /// <p>The recipient's email address.</p>
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The recipient's email address.</p>
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.email_address = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {
         crate::types::Address {
@@ -235,6 +260,7 @@ impl AddressBuilder {
             street1: self.street1,
             street2: self.street2,
             street3: self.street3,
+            email_address: self.email_address,
         }
     }
 }
@@ -251,6 +277,7 @@ impl ::std::fmt::Debug for AddressBuilder {
         formatter.field("street1", &"*** Sensitive Data Redacted ***");
         formatter.field("street2", &"*** Sensitive Data Redacted ***");
         formatter.field("street3", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

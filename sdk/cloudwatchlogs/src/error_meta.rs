@@ -275,6 +275,49 @@ impl From<crate::operation::create_log_stream::CreateLogStreamError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_policy::DeleteAccountPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_policy::DeleteAccountPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_account_policy::DeleteAccountPolicyError> for Error {
+    fn from(err: crate::operation::delete_account_policy::DeleteAccountPolicyError) -> Self {
+        match err {
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
             R,
         >,
@@ -660,6 +703,51 @@ impl From<crate::operation::delete_subscription_filter::DeleteSubscriptionFilter
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_account_policies::DescribeAccountPoliciesError> for Error {
+    fn from(
+        err: crate::operation::describe_account_policies::DescribeAccountPoliciesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1436,6 +1524,49 @@ impl From<crate::operation::list_tags_log_group::ListTagsLogGroupError> for Erro
             crate::operation::list_tags_log_group::ListTagsLogGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_log_group::ListTagsLogGroupError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_tags_log_group::ListTagsLogGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_policy::PutAccountPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_policy::PutAccountPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_account_policy::PutAccountPolicyError> for Error {
+    fn from(err: crate::operation::put_account_policy::PutAccountPolicyError) -> Self {
+        match err {
+            crate::operation::put_account_policy::PutAccountPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_account_policy::PutAccountPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_account_policy::PutAccountPolicyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::put_account_policy::PutAccountPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_account_policy::PutAccountPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

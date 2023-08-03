@@ -34,8 +34,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-sagemakerfeaturestoreruntime = "0.28.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-sagemakerfeaturestoreruntime = "0.29.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteRecord`](crate::operation::delete_record) operation has
-/// a [`Client::delete_record`], function which returns a builder for that operation.
+/// For example, the [`BatchGetRecord`](crate::operation::batch_get_record) operation has
+/// a [`Client::batch_get_record`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_record()
-///     .feature_group_name("example")
+/// let result = client.batch_get_record()
+///     .expiration_time_response("example")
 ///     .send()
 ///     .await;
 /// ```

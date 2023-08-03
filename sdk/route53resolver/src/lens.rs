@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_firewall_rules_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_outpost_resolvers_output_next_token(
+    input: &crate::operation::list_outpost_resolvers::ListOutpostResolversOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_resolver_configs_output_next_token(
     input: &crate::operation::list_resolver_configs::ListResolverConfigsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -203,6 +213,16 @@ pub(crate) fn lens_list_firewall_rules_output_firewall_rules(
     input: crate::operation::list_firewall_rules::ListFirewallRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>> {
     let input = match input.firewall_rules {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_outpost_resolvers_output_outpost_resolvers(
+    input: crate::operation::list_outpost_resolvers::ListOutpostResolversOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>> {
+    let input = match input.outpost_resolvers {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

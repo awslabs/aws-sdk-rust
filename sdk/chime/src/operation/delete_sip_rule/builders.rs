@@ -5,7 +5,11 @@ pub use crate::operation::delete_sip_rule::_delete_sip_rule_input::DeleteSipRule
 
 /// Fluent builder constructing a request to `DeleteSipRule`.
 ///
-/// <p>Deletes a SIP rule. You must disable a SIP rule before you can delete it.</p>
+/// <p>Deletes a SIP rule. You must disable a SIP rule before you can delete it.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteSipRule.html">DeleteSipRule</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(note = "Replaced by DeleteSipRule in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSipRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

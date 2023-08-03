@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact(Option<Contact>)`](crate::operation::get_contact::GetContactOutput::contact): <p>The details of the requested contact.</p>
     /// - On failure, responds with [`SdkError<GetContactError>`](crate::operation::get_contact::GetContactError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_contact(&self) -> crate::operation::get_contact::builders::GetContactFluentBuilder {
         crate::operation::get_contact::builders::GetContactFluentBuilder::new(self.handle.clone())
     }

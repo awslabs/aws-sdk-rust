@@ -18,5 +18,8 @@ pub fn ser_create_user_input(
     if let Some(var_5) = &input.password {
         object.key("password").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.replication_user {
+        object.key("replicationUser").boolean(*var_6);
+    }
     Ok(())
 }

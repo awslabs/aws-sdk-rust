@@ -15,8 +15,8 @@ pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecy
 /// <dd>
 /// <p>You specify the lifecycle configuration in your request body. The lifecycle configuration is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This limit is not adjustable. Each rule consists of the following:</p>
 /// <ul>
-/// <li> <p>Filter identifying a subset of objects to which the rule applies. The filter can be based on a key name prefix, object tags, or a combination of both.</p> </li>
-/// <li> <p>Status whether the rule is in effect.</p> </li>
+/// <li> <p>A filter identifying a subset of objects to which the rule applies. The filter can be based on a key name prefix, object tags, or a combination of both.</p> </li>
+/// <li> <p>A status indicating whether the rule is in effect.</p> </li>
 /// <li> <p>One or more lifecycle transition and expiration actions that you want Amazon S3 to perform on the objects identified by the filter. If the state of your bucket is versioning-enabled or versioning-suspended, you can have many versions of the same object (one current version and zero or more noncurrent versions). Amazon S3 provides predefined actions that you can specify for current and noncurrent object versions.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle Configuration Elements</a>.</p>
@@ -26,7 +26,7 @@ pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecy
 /// </dt>
 /// <dd>
 /// <p>By default, all Amazon S3 resources are private, including buckets, objects, and related subresources (for example, lifecycle configuration and website configuration). Only the resource owner (that is, the Amazon Web Services account that created it) can access the resource. The resource owner can optionally grant access permissions to others by writing an access policy. For this operation, a user must get the <code>s3:PutLifecycleConfiguration</code> permission.</p>
-/// <p>You can also explicitly deny permissions. Explicit deny also supersedes any other permissions. If you want to block users or accounts from removing or deleting objects from your bucket, you must deny them permissions for the following actions:</p>
+/// <p>You can also explicitly deny permissions. An explicit deny also supersedes any other permissions. If you want to block users or accounts from removing or deleting objects from your bucket, you must deny them permissions for the following actions:</p>
 /// <ul>
 /// <li> <p> <code>s3:DeleteObject</code> </p> </li>
 /// <li> <p> <code>s3:DeleteObjectVersion</code> </p> </li>

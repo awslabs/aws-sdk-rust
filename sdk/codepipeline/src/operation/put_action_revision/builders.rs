@@ -5,7 +5,7 @@ pub use crate::operation::put_action_revision::_put_action_revision_input::PutAc
 
 /// Fluent builder constructing a request to `PutActionRevision`.
 ///
-/// <p>Provides information to AWS CodePipeline about new revisions to a source.</p>
+/// <p>Provides information to CodePipeline about new revisions to a source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutActionRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

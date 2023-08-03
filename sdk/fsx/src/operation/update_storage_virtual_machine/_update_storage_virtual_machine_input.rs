@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStorageVirtualMachineInput {
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     #[doc(hidden)]
     pub active_directory_configuration:
         ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
@@ -13,12 +13,12 @@ pub struct UpdateStorageVirtualMachineInput {
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
     #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     #[doc(hidden)]
     pub svm_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStorageVirtualMachineInput {
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn active_directory_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::UpdateSvmActiveDirectoryConfiguration> {
@@ -32,7 +32,7 @@ impl UpdateStorageVirtualMachineInput {
     pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<&str> {
         self.storage_virtual_machine_id.as_deref()
     }
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn svm_admin_password(&self) -> ::std::option::Option<&str> {
         self.svm_admin_password.as_deref()
     }
@@ -71,7 +71,7 @@ pub struct UpdateStorageVirtualMachineInputBuilder {
     pub(crate) svm_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStorageVirtualMachineInputBuilder {
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn active_directory_configuration(
         mut self,
         input: crate::types::UpdateSvmActiveDirectoryConfiguration,
@@ -79,7 +79,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self.active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn set_active_directory_configuration(
         mut self,
         input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
@@ -119,7 +119,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self.storage_virtual_machine_id = input;
         self
     }
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn svm_admin_password(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -127,7 +127,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self.svm_admin_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn set_svm_admin_password(
         mut self,
         input: ::std::option::Option<::std::string::String>,

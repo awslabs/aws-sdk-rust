@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`sync_status(Option<SyncStatus>)`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput::sync_status): <p>The latest status of the edge configuration update.</p>
     ///   - [`failed_status_details(Option<String>)`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput::failed_status_details): <p>A description of the generated failure status.</p>
     ///   - [`edge_config(Option<EdgeConfig>)`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
+    ///   - [`edge_agent_status(Option<EdgeAgentStatus>)`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput::edge_agent_status): <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
     /// - On failure, responds with [`SdkError<DescribeEdgeConfigurationError>`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError)
     pub fn describe_edge_configuration(&self) -> crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationFluentBuilder{
         crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationFluentBuilder::new(self.handle.clone())

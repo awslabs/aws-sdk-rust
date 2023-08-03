@@ -9,6 +9,9 @@ pub struct DisassociateSourceServersInput {
     /// <p>Source server IDs list.</p>
     #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSourceServersInput {
     /// <p>Application ID.</p>
@@ -18,6 +21,10 @@ impl DisassociateSourceServersInput {
     /// <p>Source server IDs list.</p>
     pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.source_server_i_ds.as_deref()
+    }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DisassociateSourceServersInput {
@@ -35,6 +42,7 @@ impl DisassociateSourceServersInput {
 pub struct DisassociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSourceServersInputBuilder {
     /// <p>Application ID.</p>
@@ -75,6 +83,16 @@ impl DisassociateSourceServersInputBuilder {
         self.source_server_i_ds = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
     pub fn build(
         self,
@@ -86,6 +104,7 @@ impl DisassociateSourceServersInputBuilder {
             crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
                 application_id: self.application_id,
                 source_server_i_ds: self.source_server_i_ds,
+                account_id: self.account_id,
             },
         )
     }

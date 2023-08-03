@@ -5,7 +5,12 @@ pub use crate::operation::untag_attendee::_untag_attendee_input::UntagAttendeeIn
 
 /// Fluent builder constructing a request to `UntagAttendee`.
 ///
-/// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p>
+/// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p> <important>
+/// <p>UntagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
+/// </important>
+#[deprecated(
+    note = "Attendee Tags are not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagAttendeeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -12,5 +12,8 @@ pub fn ser_account_grouping(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.auto_associate {
+        object.key("AutoAssociate").boolean(*var_4);
+    }
     Ok(())
 }

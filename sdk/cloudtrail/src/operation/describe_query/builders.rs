@@ -5,7 +5,8 @@ pub use crate::operation::describe_query::_describe_query_input::DescribeQueryIn
 
 /// Fluent builder constructing a request to `DescribeQuery`.
 ///
-/// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.</p>
+/// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and the delivery status.</p>
+/// <p>You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter returns information about the last query run for the alias.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,6 +118,16 @@ impl DescribeQueryFluentBuilder {
     /// <p>The query ID.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
+        self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.query_alias(input.into());
+        self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_query_alias(input);
         self
     }
 }

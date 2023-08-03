@@ -6,6 +6,7 @@ pub use crate::operation::update_gateway::_update_gateway_input::UpdateGatewayIn
 /// Fluent builder constructing a request to `UpdateGateway`.
 ///
 /// <p>Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left unmodified.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

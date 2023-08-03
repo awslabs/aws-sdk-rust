@@ -155,12 +155,12 @@ impl ListProfileObjectsFluentBuilder {
         self.inner = self.inner.set_profile_id(input);
         self
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn object_filter(mut self, input: crate::types::ObjectFilter) -> Self {
         self.inner = self.inner.object_filter(input);
         self
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn set_object_filter(
         mut self,
         input: ::std::option::Option<crate::types::ObjectFilter>,

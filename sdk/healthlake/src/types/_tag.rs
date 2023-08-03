@@ -7,7 +7,7 @@ pub struct Tag {
     /// <p> The key portion of a tag. Tag keys are case sensitive. </p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl Tag {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -48,12 +48,12 @@ impl TagBuilder {
         self.key = input;
         self
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The value portion of tag. Tag values are case sensitive. </p>
+    /// <p> The value portion of a tag. Tag values are case sensitive. </p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self

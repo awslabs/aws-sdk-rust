@@ -19,13 +19,13 @@ pub struct SecurityGroup {
     /// <p>The ID of the security group.</p>
     #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>The outbound rules associated with the security group.</p>
     #[doc(hidden)]
     pub ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>Any tags assigned to the security group.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>The ID of the VPC for the security group.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,7 +50,7 @@ impl SecurityGroup {
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>The outbound rules associated with the security group.</p>
     pub fn ip_permissions_egress(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
         self.ip_permissions_egress.as_deref()
     }
@@ -58,7 +58,7 @@ impl SecurityGroup {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -150,14 +150,14 @@ impl SecurityGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_permissions_egress`](Self::set_ip_permissions_egress).
     ///
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>The outbound rules associated with the security group.</p>
     pub fn ip_permissions_egress(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.ip_permissions_egress.unwrap_or_default();
         v.push(input);
         self.ip_permissions_egress = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[VPC only] The outbound rules associated with the security group.</p>
+    /// <p>The outbound rules associated with the security group.</p>
     pub fn set_ip_permissions_egress(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
@@ -184,12 +184,12 @@ impl SecurityGroupBuilder {
         self.tags = input;
         self
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[VPC only] The ID of the VPC for the security group.</p>
+    /// <p>The ID of the VPC for the security group.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self

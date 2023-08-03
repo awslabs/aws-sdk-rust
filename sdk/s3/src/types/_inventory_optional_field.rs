@@ -19,9 +19,11 @@
 ///     InventoryOptionalField::IntelligentTieringAccessTier => { /* ... */ },
 ///     InventoryOptionalField::IsMultipartUploaded => { /* ... */ },
 ///     InventoryOptionalField::LastModifiedDate => { /* ... */ },
+///     InventoryOptionalField::ObjectAccessControlList => { /* ... */ },
 ///     InventoryOptionalField::ObjectLockLegalHoldStatus => { /* ... */ },
 ///     InventoryOptionalField::ObjectLockMode => { /* ... */ },
 ///     InventoryOptionalField::ObjectLockRetainUntilDate => { /* ... */ },
+///     InventoryOptionalField::ObjectOwner => { /* ... */ },
 ///     InventoryOptionalField::ReplicationStatus => { /* ... */ },
 ///     InventoryOptionalField::Size => { /* ... */ },
 ///     InventoryOptionalField::StorageClass => { /* ... */ },
@@ -73,11 +75,15 @@ pub enum InventoryOptionalField {
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
     #[allow(missing_docs)] // documentation missing in model
+    ObjectAccessControlList,
+    #[allow(missing_docs)] // documentation missing in model
     ObjectLockLegalHoldStatus,
     #[allow(missing_docs)] // documentation missing in model
     ObjectLockMode,
     #[allow(missing_docs)] // documentation missing in model
     ObjectLockRetainUntilDate,
+    #[allow(missing_docs)] // documentation missing in model
+    ObjectOwner,
     #[allow(missing_docs)] // documentation missing in model
     ReplicationStatus,
     #[allow(missing_docs)] // documentation missing in model
@@ -97,9 +103,11 @@ impl ::std::convert::From<&str> for InventoryOptionalField {
             "IntelligentTieringAccessTier" => InventoryOptionalField::IntelligentTieringAccessTier,
             "IsMultipartUploaded" => InventoryOptionalField::IsMultipartUploaded,
             "LastModifiedDate" => InventoryOptionalField::LastModifiedDate,
+            "ObjectAccessControlList" => InventoryOptionalField::ObjectAccessControlList,
             "ObjectLockLegalHoldStatus" => InventoryOptionalField::ObjectLockLegalHoldStatus,
             "ObjectLockMode" => InventoryOptionalField::ObjectLockMode,
             "ObjectLockRetainUntilDate" => InventoryOptionalField::ObjectLockRetainUntilDate,
+            "ObjectOwner" => InventoryOptionalField::ObjectOwner,
             "ReplicationStatus" => InventoryOptionalField::ReplicationStatus,
             "Size" => InventoryOptionalField::Size,
             "StorageClass" => InventoryOptionalField::StorageClass,
@@ -127,9 +135,11 @@ impl InventoryOptionalField {
             InventoryOptionalField::IntelligentTieringAccessTier => "IntelligentTieringAccessTier",
             InventoryOptionalField::IsMultipartUploaded => "IsMultipartUploaded",
             InventoryOptionalField::LastModifiedDate => "LastModifiedDate",
+            InventoryOptionalField::ObjectAccessControlList => "ObjectAccessControlList",
             InventoryOptionalField::ObjectLockLegalHoldStatus => "ObjectLockLegalHoldStatus",
             InventoryOptionalField::ObjectLockMode => "ObjectLockMode",
             InventoryOptionalField::ObjectLockRetainUntilDate => "ObjectLockRetainUntilDate",
+            InventoryOptionalField::ObjectOwner => "ObjectOwner",
             InventoryOptionalField::ReplicationStatus => "ReplicationStatus",
             InventoryOptionalField::Size => "Size",
             InventoryOptionalField::StorageClass => "StorageClass",
@@ -146,9 +156,11 @@ impl InventoryOptionalField {
             "IntelligentTieringAccessTier",
             "IsMultipartUploaded",
             "LastModifiedDate",
+            "ObjectAccessControlList",
             "ObjectLockLegalHoldStatus",
             "ObjectLockMode",
             "ObjectLockRetainUntilDate",
+            "ObjectOwner",
             "ReplicationStatus",
             "Size",
             "StorageClass",

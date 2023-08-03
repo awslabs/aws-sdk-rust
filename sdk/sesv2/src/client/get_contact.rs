@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`contact_list_name(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
-    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_email_address): <p>The contact's email addres.</p>
+    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_email_address): <p>The contact's email address.</p>
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::operation::get_contact::GetContactOutput::contact_list_name): <p>The name of the contact list to which the contact belongs.</p>
-    ///   - [`email_address(Option<String>)`](crate::operation::get_contact::GetContactOutput::email_address): <p>The contact's email addres.</p>
+    ///   - [`email_address(Option<String>)`](crate::operation::get_contact::GetContactOutput::email_address): <p>The contact's email address.</p>
     ///   - [`topic_preferences(Option<Vec<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_preferences): <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
     ///   - [`topic_default_preferences(Option<Vec<TopicPreference>>)`](crate::operation::get_contact::GetContactOutput::topic_default_preferences): <p>The default topic preferences applied to the contact.</p>
     ///   - [`unsubscribe_all(bool)`](crate::operation::get_contact::GetContactOutput::unsubscribe_all): <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>

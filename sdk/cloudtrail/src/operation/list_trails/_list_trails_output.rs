@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrailsOutput {
-    /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
     #[doc(hidden)]
     pub trails: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>,
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
@@ -12,7 +12,7 @@ pub struct ListTrailsOutput {
     _request_id: Option<String>,
 }
 impl ListTrailsOutput {
-    /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
     pub fn trails(&self) -> ::std::option::Option<&[crate::types::TrailInfo]> {
         self.trails.as_deref()
     }
@@ -48,14 +48,14 @@ impl ListTrailsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_trails`](Self::set_trails).
     ///
-    /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
     pub fn trails(mut self, input: crate::types::TrailInfo) -> Self {
         let mut v = self.trails.unwrap_or_default();
         v.push(input);
         self.trails = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
     pub fn set_trails(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>,

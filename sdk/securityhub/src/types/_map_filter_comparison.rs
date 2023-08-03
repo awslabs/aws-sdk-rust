@@ -12,7 +12,9 @@
 /// ```text
 /// # let mapfiltercomparison = unimplemented!();
 /// match mapfiltercomparison {
+///     MapFilterComparison::Contains => { /* ... */ },
 ///     MapFilterComparison::Equals => { /* ... */ },
+///     MapFilterComparison::NotContains => { /* ... */ },
 ///     MapFilterComparison::NotEquals => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,7 +50,11 @@
 )]
 pub enum MapFilterComparison {
     #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
+    NotContains,
     #[allow(missing_docs)] // documentation missing in model
     NotEquals,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +63,9 @@ pub enum MapFilterComparison {
 impl ::std::convert::From<&str> for MapFilterComparison {
     fn from(s: &str) -> Self {
         match s {
+            "CONTAINS" => MapFilterComparison::Contains,
             "EQUALS" => MapFilterComparison::Equals,
+            "NOT_CONTAINS" => MapFilterComparison::NotContains,
             "NOT_EQUALS" => MapFilterComparison::NotEquals,
             other => MapFilterComparison::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -76,14 +84,16 @@ impl MapFilterComparison {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MapFilterComparison::Contains => "CONTAINS",
             MapFilterComparison::Equals => "EQUALS",
+            MapFilterComparison::NotContains => "NOT_CONTAINS",
             MapFilterComparison::NotEquals => "NOT_EQUALS",
             MapFilterComparison::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQUALS", "NOT_EQUALS"]
+        &["CONTAINS", "EQUALS", "NOT_CONTAINS", "NOT_EQUALS"]
     }
 }
 impl ::std::convert::AsRef<str> for MapFilterComparison {

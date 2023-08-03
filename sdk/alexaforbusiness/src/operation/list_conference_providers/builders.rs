@@ -6,6 +6,7 @@ pub use crate::operation::list_conference_providers::_list_conference_providers_
 /// Fluent builder constructing a request to `ListConferenceProviders`.
 ///
 /// <p>Lists conference providers under a specific AWS account.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConferenceProvidersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

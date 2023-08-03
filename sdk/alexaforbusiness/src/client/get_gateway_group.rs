@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetGatewayGroupOutput`](crate::operation::get_gateway_group::GetGatewayGroupOutput) with field(s):
     ///   - [`gateway_group(Option<GatewayGroup>)`](crate::operation::get_gateway_group::GetGatewayGroupOutput::gateway_group): <p>The details of the gateway group.</p>
     /// - On failure, responds with [`SdkError<GetGatewayGroupError>`](crate::operation::get_gateway_group::GetGatewayGroupError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_gateway_group(
         &self,
     ) -> crate::operation::get_gateway_group::builders::GetGatewayGroupFluentBuilder {

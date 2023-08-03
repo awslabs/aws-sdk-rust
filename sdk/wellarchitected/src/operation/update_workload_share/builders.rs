@@ -99,12 +99,12 @@ impl UpdateWorkloadShareFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_id(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_id(input);
         self
@@ -119,12 +119,12 @@ impl UpdateWorkloadShareFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.inner = self.inner.permission_type(input);
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn set_permission_type(
         mut self,
         input: ::std::option::Option<crate::types::PermissionType>,

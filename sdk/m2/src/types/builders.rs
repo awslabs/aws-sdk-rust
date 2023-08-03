@@ -33,6 +33,10 @@ pub use crate::types::_file_batch_job_definition::FileBatchJobDefinitionBuilder;
 
 pub use crate::types::_application_version_summary::ApplicationVersionSummaryBuilder;
 
+pub use crate::types::_ps_detail_attributes::PsDetailAttributesBuilder;
+
+pub use crate::types::_po_detail_attributes::PoDetailAttributesBuilder;
+
 pub use crate::types::_gdg_detail_attributes::GdgDetailAttributesBuilder;
 
 pub use crate::types::_vsam_detail_attributes::VsamDetailAttributesBuilder;
@@ -46,6 +50,10 @@ pub use crate::types::_data_set_import_item::DataSetImportItemBuilder;
 pub use crate::types::_data_set::DataSetBuilder;
 
 pub use crate::types::_record_length::RecordLengthBuilder;
+
+pub use crate::types::_ps_attributes::PsAttributesBuilder;
+
+pub use crate::types::_po_attributes::PoAttributesBuilder;
 
 pub use crate::types::_gdg_attributes::GdgAttributesBuilder;
 

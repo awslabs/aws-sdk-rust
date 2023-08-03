@@ -1049,6 +1049,19 @@ pub fn de_db_instance(
                 builder = builder.set_read_replica_source_db_cluster_identifier(var_81);
             }
             ,
+            s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBInstance$PercentProgress */ =>  {
+                let var_82 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_percent_progress(var_82);
+            }
+            ,
             _ => {}
         }
     }

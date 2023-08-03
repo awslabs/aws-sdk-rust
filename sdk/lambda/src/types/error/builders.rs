@@ -67,6 +67,8 @@ pub use crate::types::error::_invalid_subnet_id_exception::InvalidSubnetIdExcept
 
 pub use crate::types::error::_snap_start_exception::SnapStartExceptionBuilder;
 
+pub use crate::types::error::_recursive_invocation_exception::RecursiveInvocationExceptionBuilder;
+
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundExceptionBuilder;
 
 pub use crate::types::error::_provisioned_concurrency_config_not_found_exception::ProvisionedConcurrencyConfigNotFoundExceptionBuilder;

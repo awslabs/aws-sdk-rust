@@ -14,6 +14,7 @@
 /// match operatingsystem {
 ///     OperatingSystem::AmazonLinux => { /* ... */ },
 ///     OperatingSystem::AmazonLinux2 => { /* ... */ },
+///     OperatingSystem::AmazonLinux2023 => { /* ... */ },
 ///     OperatingSystem::Windows2012 => { /* ... */ },
 ///     OperatingSystem::Windows2016 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
     #[allow(missing_docs)] // documentation missing in model
+    AmazonLinux2023,
+    #[allow(missing_docs)] // documentation missing in model
     Windows2012,
     #[allow(missing_docs)] // documentation missing in model
     Windows2016,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for OperatingSystem {
         match s {
             "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
             "AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
+            "AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
             "WINDOWS_2012" => OperatingSystem::Windows2012,
             "WINDOWS_2016" => OperatingSystem::Windows2016,
             other => {
@@ -86,6 +90,7 @@ impl OperatingSystem {
         match self {
             OperatingSystem::AmazonLinux => "AMAZON_LINUX",
             OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
+            OperatingSystem::AmazonLinux2023 => "AMAZON_LINUX_2023",
             OperatingSystem::Windows2012 => "WINDOWS_2012",
             OperatingSystem::Windows2016 => "WINDOWS_2016",
             OperatingSystem::Unknown(value) => value.as_str(),
@@ -96,6 +101,7 @@ impl OperatingSystem {
         &[
             "AMAZON_LINUX",
             "AMAZON_LINUX_2",
+            "AMAZON_LINUX_2023",
             "WINDOWS_2012",
             "WINDOWS_2016",
         ]

@@ -11,7 +11,7 @@ pub struct DeleteBotVersionInput {
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
     #[doc(hidden)]
-    pub skip_resource_in_use_check: bool,
+    pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
 impl DeleteBotVersionInput {
     /// <p>The identifier of the bot that contains the version.</p>
@@ -23,7 +23,7 @@ impl DeleteBotVersionInput {
         self.bot_version.as_deref()
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
-    pub fn skip_resource_in_use_check(&self) -> bool {
+    pub fn skip_resource_in_use_check(&self) -> ::std::option::Option<bool> {
         self.skip_resource_in_use_check
     }
 }
@@ -87,7 +87,7 @@ impl DeleteBotVersionInputBuilder {
             crate::operation::delete_bot_version::DeleteBotVersionInput {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
-                skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+                skip_resource_in_use_check: self.skip_resource_in_use_check,
             },
         )
     }

@@ -193,6 +193,9 @@ pub mod untag_resource;
 /// Types for the `UpdateCampaign` operation.
 pub mod update_campaign;
 
+/// Types for the `UpdateDataset` operation.
+pub mod update_dataset;
+
 /// Types for the `UpdateMetricAttribution` operation.
 pub mod update_metric_attribution;
 

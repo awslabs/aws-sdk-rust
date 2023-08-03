@@ -12,7 +12,7 @@ pub struct GetChannelOutput {
     /// <p>The source for the CloudTrail channel.</p>
     #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all Regions or a single Region. </p>
     #[doc(hidden)]
     pub source_config: ::std::option::Option<crate::types::SourceConfig>,
     /// <p>The destinations for the channel. For channels created for integrations, the destinations are the event data stores that log events arriving through the channel. For service-linked channels, the destination is the Amazon Web Services service that created the service-linked channel to receive events.</p>
@@ -36,7 +36,7 @@ impl GetChannelOutput {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all Regions or a single Region. </p>
     pub fn source_config(&self) -> ::std::option::Option<&crate::types::SourceConfig> {
         self.source_config.as_ref()
     }
@@ -106,12 +106,12 @@ impl GetChannelOutputBuilder {
         self.source = input;
         self
     }
-    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all Regions or a single Region. </p>
     pub fn source_config(mut self, input: crate::types::SourceConfig) -> Self {
         self.source_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all regions or a single region. </p>
+    /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all Regions or a single Region. </p>
     pub fn set_source_config(
         mut self,
         input: ::std::option::Option<crate::types::SourceConfig>,

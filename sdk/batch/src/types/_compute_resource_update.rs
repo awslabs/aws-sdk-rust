@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeResourceUpdate {
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
@@ -14,7 +14,7 @@ pub struct ComputeResourceUpdate {
     /// </note>
     #[doc(hidden)]
     pub maxv_cpus: ::std::option::Option<i32>,
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
@@ -133,7 +133,7 @@ pub struct ComputeResourceUpdate {
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl ComputeResourceUpdate {
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(&self) -> ::std::option::Option<i32> {
@@ -145,7 +145,7 @@ impl ComputeResourceUpdate {
     pub fn maxv_cpus(&self) -> ::std::option::Option<i32> {
         self.maxv_cpus
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
@@ -319,14 +319,14 @@ pub struct ComputeResourceUpdateBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
 impl ComputeResourceUpdateBuilder {
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(mut self, input: i32) -> Self {
         self.minv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn set_minv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -347,7 +347,7 @@ impl ComputeResourceUpdateBuilder {
         self.maxv_cpus = input;
         self
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>
@@ -359,7 +359,7 @@ impl ComputeResourceUpdateBuilder {
         self.desiredv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note> <note>
     /// <p>Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this parameter for compute environments using Amazon EKS clusters.</p>

@@ -8,7 +8,7 @@ pub struct DeleteBotInput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is being used by another resource.</p>
     #[doc(hidden)]
-    pub skip_resource_in_use_check: bool,
+    pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
 impl DeleteBotInput {
     /// <p>The identifier of the bot to delete. </p>
@@ -16,7 +16,7 @@ impl DeleteBotInput {
         self.bot_id.as_deref()
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is being used by another resource.</p>
-    pub fn skip_resource_in_use_check(&self) -> bool {
+    pub fn skip_resource_in_use_check(&self) -> ::std::option::Option<bool> {
         self.skip_resource_in_use_check
     }
 }
@@ -66,7 +66,7 @@ impl DeleteBotInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_bot::DeleteBotInput {
             bot_id: self.bot_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+            skip_resource_in_use_check: self.skip_resource_in_use_check,
         })
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_db_clusters::_describe_db_clusters_input::Des
 
 /// Fluent builder constructing a request to `DescribeDBClusters`.
 ///
-/// <p>Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.</p>
+/// <p>Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports pagination.</p>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.</p>
@@ -113,10 +113,10 @@ impl DescribeDBClustersFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(
         mut self,
@@ -125,10 +125,10 @@ impl DescribeDBClustersFluentBuilder {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     pub fn set_db_cluster_identifier(
         mut self,
@@ -142,7 +142,7 @@ impl DescribeDBClustersFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -155,7 +155,7 @@ impl DescribeDBClustersFluentBuilder {
         self
     }
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -194,12 +194,12 @@ impl DescribeDBClustersFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.inner = self.inner.include_shared(input);
         self
     }
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shared(input);
         self

@@ -41,6 +41,16 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Categories" => {
+                                builder = builder.set_categories(
+                                    crate::protocol_serde::shape_place_category_list::de_place_category_list(tokens)?
+                                );
+                            }
+                            "SupplementalCategories" => {
+                                builder = builder.set_supplemental_categories(
+                                    crate::protocol_serde::shape_place_supplemental_category_list::de_place_supplemental_category_list(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -47,6 +47,8 @@ pub use crate::types::_text_transformation::TextTransformationBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;
 
+pub use crate::types::_header_order::HeaderOrderBuilder;
+
 pub use crate::types::_cookies::CookiesBuilder;
 
 pub use crate::types::_cookie_match_pattern::CookieMatchPatternBuilder;
@@ -83,7 +85,7 @@ pub use crate::types::_rule_action_override::RuleActionOverrideBuilder;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfigBuilder;
 
-pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSetBuilder;
+pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleSetBuilder;
 
 pub use crate::types::_response_inspection::ResponseInspectionBuilder;
 
@@ -95,11 +97,21 @@ pub use crate::types::_response_inspection_header::ResponseInspectionHeaderBuild
 
 pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCodeBuilder;
 
-pub use crate::types::_request_inspection::RequestInspectionBuilder;
+pub use crate::types::_request_inspection_acfp::RequestInspectionAcfpBuilder;
+
+pub use crate::types::_address_field::AddressFieldBuilder;
+
+pub use crate::types::_phone_number_field::PhoneNumberFieldBuilder;
+
+pub use crate::types::_email_field::EmailFieldBuilder;
 
 pub use crate::types::_password_field::PasswordFieldBuilder;
 
 pub use crate::types::_username_field::UsernameFieldBuilder;
+
+pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSetBuilder;
+
+pub use crate::types::_request_inspection::RequestInspectionBuilder;
 
 pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSetBuilder;
 
@@ -114,6 +126,8 @@ pub use crate::types::_and_statement::AndStatementBuilder;
 pub use crate::types::_rate_based_statement::RateBasedStatementBuilder;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKeyBuilder;
+
+pub use crate::types::_rate_limit_uri_path::RateLimitUriPathBuilder;
 
 pub use crate::types::_rate_limit_label_namespace::RateLimitLabelNamespaceBuilder;
 
@@ -226,3 +240,5 @@ pub use crate::types::_managed_rule_set_version::ManagedRuleSetVersionBuilder;
 pub use crate::types::_ip_set::IpSetBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
+
+pub use crate::types::_managed_product_descriptor::ManagedProductDescriptorBuilder;

@@ -147,8 +147,8 @@ impl ::std::fmt::Debug for AdminRespondToAuthChallengeInput {
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("challenge_responses", &self.challenge_responses);
-        formatter.field("session", &self.session);
+        formatter.field("challenge_responses", &"*** Sensitive Data Redacted ***");
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("context_data", &self.context_data);
         formatter.field("client_metadata", &self.client_metadata);
@@ -390,8 +390,8 @@ impl ::std::fmt::Debug for AdminRespondToAuthChallengeInputBuilder {
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("challenge_responses", &self.challenge_responses);
-        formatter.field("session", &self.session);
+        formatter.field("challenge_responses", &"*** Sensitive Data Redacted ***");
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("context_data", &self.context_data);
         formatter.field("client_metadata", &self.client_metadata);

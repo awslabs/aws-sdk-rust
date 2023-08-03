@@ -9,4 +9,6 @@ pub use crate::types::error::_resource_conflict_exception::ResourceConflictExcep
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;

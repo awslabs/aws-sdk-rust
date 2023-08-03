@@ -17,6 +17,7 @@
 ///     BrokerState::CriticalActionRequired => { /* ... */ },
 ///     BrokerState::DeletionInProgress => { /* ... */ },
 ///     BrokerState::RebootInProgress => { /* ... */ },
+///     BrokerState::Replica => { /* ... */ },
 ///     BrokerState::Running => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum BrokerState {
     #[allow(missing_docs)] // documentation missing in model
     RebootInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Replica,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for BrokerState {
             "CRITICAL_ACTION_REQUIRED" => BrokerState::CriticalActionRequired,
             "DELETION_IN_PROGRESS" => BrokerState::DeletionInProgress,
             "REBOOT_IN_PROGRESS" => BrokerState::RebootInProgress,
+            "REPLICA" => BrokerState::Replica,
             "RUNNING" => BrokerState::Running,
             other => BrokerState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +99,7 @@ impl BrokerState {
             BrokerState::CriticalActionRequired => "CRITICAL_ACTION_REQUIRED",
             BrokerState::DeletionInProgress => "DELETION_IN_PROGRESS",
             BrokerState::RebootInProgress => "REBOOT_IN_PROGRESS",
+            BrokerState::Replica => "REPLICA",
             BrokerState::Running => "RUNNING",
             BrokerState::Unknown(value) => value.as_str(),
         }
@@ -107,6 +112,7 @@ impl BrokerState {
             "CRITICAL_ACTION_REQUIRED",
             "DELETION_IN_PROGRESS",
             "REBOOT_IN_PROGRESS",
+            "REPLICA",
             "RUNNING",
         ]
     }

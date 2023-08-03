@@ -91,5 +91,20 @@ pub fn ser_create_campaign_input(
         }
         array_22.finish();
     }
+    if let Some(var_25) = &input.data_destination_configs {
+        let mut array_26 = object.key("dataDestinationConfigs").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_data_destination_config::ser_data_destination_config(
+                    &mut object_28,
+                    item_27,
+                )?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
     Ok(())
 }

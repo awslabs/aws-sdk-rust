@@ -20,7 +20,7 @@ pub struct GetSavingsPlansPurchaseRecommendationInput {
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: ::std::option::Option<i32>,
     /// <p>The lookback period that's used to generate the recommendation.</p>
     #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
@@ -53,7 +53,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         self.next_page_token.as_deref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
@@ -209,7 +209,6 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
                 next_page_token: self.next_page_token
                 ,
                 page_size: self.page_size
-                    .unwrap_or_default()
                 ,
                 lookback_period_in_days: self.lookback_period_in_days
                 ,

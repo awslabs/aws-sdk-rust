@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_permissions_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_versions_output_next_token(
+    input: &crate::operation::list_versions::ListVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workspaces_output_next_token(
     input: &crate::operation::list_workspaces::ListWorkspacesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -23,6 +33,16 @@ pub(crate) fn lens_list_permissions_output_permissions(
     input: crate::operation::list_permissions::ListPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>> {
     let input = match input.permissions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_versions_output_grafana_versions(
+    input: crate::operation::list_versions::ListVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.grafana_versions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -2,7 +2,7 @@
 
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
@@ -26,6 +26,12 @@ pub struct ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    #[doc(hidden)]
+    pub geofence_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
@@ -55,6 +61,27 @@ impl ListGeofenceResponseEntry {
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
+    /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn geofence_properties(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.geofence_properties.as_ref()
+    }
+}
+impl ::std::fmt::Debug for ListGeofenceResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceResponseEntry");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("status", &self.status);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl ListGeofenceResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
@@ -65,15 +92,16 @@ impl ListGeofenceResponseEntry {
 
 /// A builder for [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListGeofenceResponseEntryBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) geofence_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ListGeofenceResponseEntryBuilder {
     /// <p>The geofence identifier.</p>
@@ -149,6 +177,33 @@ impl ListGeofenceResponseEntryBuilder {
         self.update_time = input;
         self
     }
+    /// Adds a key-value pair to `geofence_properties`.
+    ///
+    /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).
+    ///
+    /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn geofence_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.geofence_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.geofence_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn set_geofence_properties(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    ) -> Self {
+        self.geofence_properties = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
     pub fn build(self) -> crate::types::ListGeofenceResponseEntry {
         crate::types::ListGeofenceResponseEntry {
@@ -157,6 +212,19 @@ impl ListGeofenceResponseEntryBuilder {
             status: self.status,
             create_time: self.create_time,
             update_time: self.update_time,
+            geofence_properties: self.geofence_properties,
         }
+    }
+}
+impl ::std::fmt::Debug for ListGeofenceResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceResponseEntryBuilder");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("status", &self.status);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

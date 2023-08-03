@@ -119,6 +119,10 @@ pub use crate::types::_group_definition::GroupDefinition;
 
 pub use crate::types::_group_definition_type::GroupDefinitionType;
 
+pub use crate::types::_recommendation_detail_data::RecommendationDetailData;
+
+pub use crate::types::_recommendation_detail_hourly_metrics::RecommendationDetailHourlyMetrics;
+
 pub use crate::types::_rightsizing_recommendation_configuration::RightsizingRecommendationConfiguration;
 
 pub use crate::types::_recommendation_target::RecommendationTarget;
@@ -372,6 +376,10 @@ mod _payment_option;
 mod _platform_difference;
 
 mod _rds_instance_details;
+
+mod _recommendation_detail_data;
+
+mod _recommendation_detail_hourly_metrics;
 
 mod _recommendation_target;
 

@@ -10,6 +10,9 @@ pub struct DataQualityTargetTable {
     /// <p>The name of the database where the Glue table exists.</p>
     #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>The catalog id where the Glue table exists.</p>
+    #[doc(hidden)]
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityTargetTable {
     /// <p>The name of the Glue table.</p>
@@ -19,6 +22,10 @@ impl DataQualityTargetTable {
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
     }
 }
 impl DataQualityTargetTable {
@@ -36,6 +43,7 @@ impl DataQualityTargetTable {
 pub struct DataQualityTargetTableBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityTargetTableBuilder {
     /// <p>The name of the Glue table.</p>
@@ -64,11 +72,22 @@ impl DataQualityTargetTableBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
     pub fn build(self) -> crate::types::DataQualityTargetTable {
         crate::types::DataQualityTargetTable {
             table_name: self.table_name,
             database_name: self.database_name,
+            catalog_id: self.catalog_id,
         }
     }
 }

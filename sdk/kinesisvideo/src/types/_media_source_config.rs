@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaSourceConfig {
-    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     #[doc(hidden)]
     pub media_uri_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
@@ -14,7 +14,7 @@ pub struct MediaSourceConfig {
     pub media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
 }
 impl MediaSourceConfig {
-    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     pub fn media_uri_secret_arn(&self) -> ::std::option::Option<&str> {
         self.media_uri_secret_arn.as_deref()
     }
@@ -48,7 +48,7 @@ pub struct MediaSourceConfigBuilder {
     pub(crate) media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
 }
 impl MediaSourceConfigBuilder {
-    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     pub fn media_uri_secret_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -56,7 +56,7 @@ impl MediaSourceConfigBuilder {
         self.media_uri_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
+    /// <p>The Amazon Web Services Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     pub fn set_media_uri_secret_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

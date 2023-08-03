@@ -520,6 +520,8 @@ pub(crate) mod shape_create_end_of_meeting_reminder;
 
 pub(crate) mod shape_create_instant_booking;
 
+pub(crate) mod shape_create_proactive_join;
+
 pub(crate) mod shape_create_require_check_in;
 
 pub(crate) mod shape_device_data;
@@ -564,6 +566,8 @@ pub(crate) mod shape_update_end_of_meeting_reminder;
 
 pub(crate) mod shape_update_instant_booking;
 
+pub(crate) mod shape_update_proactive_join;
+
 pub(crate) mod shape_update_require_check_in;
 
 pub(crate) mod shape_user_data;
@@ -575,6 +579,8 @@ pub(crate) mod shape_device_status_details;
 pub(crate) mod shape_end_of_meeting_reminder;
 
 pub(crate) mod shape_instant_booking;
+
+pub(crate) mod shape_proactive_join;
 
 pub(crate) mod shape_require_check_in;
 

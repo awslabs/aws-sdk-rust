@@ -21,13 +21,13 @@ tower = "0.4.13"
 wasm-bindgen = "0.2.83"
 wasm-bindgen-futures = "0.4.33"
 wasm-timer = "0.2.5"
-aws-config= { version = "0.55.3", path = "../../sdk/aws-config", default-features = false }
-aws-credential-types= { version = "0.55.3", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-sdk-lambda= { version = "0.28.0", path = "../../sdk/lambda", default-features = false }
-aws-smithy-async= { version = "0.55.3", path = "../../sdk/aws-smithy-async" }
-aws-smithy-client= { version = "0.55.3", path = "../../sdk/aws-smithy-client", default-features = false }
-aws-smithy-http= { version = "0.55.3", path = "../../sdk/aws-smithy-http", features = ["event-stream"] }
-aws-smithy-types= { version = "0.55.3", path = "../../sdk/aws-smithy-types" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config", default-features = false }
+aws-credential-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-sdk-lambda= { version = "0.29.0", path = "../../sdk/lambda", default-features = false }
+aws-smithy-async= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-async" }
+aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client", default-features = false }
+aws-smithy-http= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-http", features = ["event-stream"] }
+aws-smithy-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-types" }
 
 [dependencies.serde]
 version = "1.0.152"

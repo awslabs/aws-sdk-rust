@@ -175,6 +175,9 @@ pub type UpdateStateMachineErrorKind = UpdateStateMachineError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateStateMachineError {
+    /// <p>Updating or deleting a resource can cause an inconsistent state. This error occurs when there're concurrent requests for <code>DeleteStateMachineVersion</code>, <code>PublishStateMachineVersion</code>, or <code>UpdateStateMachine</code> with the <code>publish</code> parameter set to <code>true</code>.</p>
+    /// <p>HTTP Status Code: 409</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
@@ -185,6 +188,9 @@ pub enum UpdateStateMachineError {
     InvalidTracingConfiguration(crate::types::error::InvalidTracingConfiguration),
     /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::types::error::MissingRequiredParameter),
+    /// <p>The request would cause a service quota to be exceeded.</p>
+    /// <p>HTTP Status Code: 402</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::types::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
@@ -211,11 +217,13 @@ impl ::aws_smithy_http::result::CreateUnhandledError for UpdateStateMachineError
 impl ::std::fmt::Display for UpdateStateMachineError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::InvalidDefinition(_inner) => _inner.fmt(f),
             Self::InvalidLoggingConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidTracingConfiguration(_inner) => _inner.fmt(f),
             Self::MissingRequiredParameter(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::StateMachineDeleting(_inner) => _inner.fmt(f),
             Self::StateMachineDoesNotExist(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -226,6 +234,9 @@ impl ::std::fmt::Display for UpdateStateMachineError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateStateMachineError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidArn(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -239,6 +250,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateStateMa
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::MissingRequiredParameter(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceQuotaExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::StateMachineDeleting(_inner) => {
@@ -303,16 +317,22 @@ impl UpdateStateMachineError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConflictException(e) => e.meta(),
             Self::InvalidArn(e) => e.meta(),
             Self::InvalidDefinition(e) => e.meta(),
             Self::InvalidLoggingConfiguration(e) => e.meta(),
             Self::InvalidTracingConfiguration(e) => e.meta(),
             Self::MissingRequiredParameter(e) => e.meta(),
+            Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::StateMachineDeleting(e) => e.meta(),
             Self::StateMachineDoesNotExist(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `UpdateStateMachineError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateStateMachineError::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
@@ -334,6 +354,10 @@ impl UpdateStateMachineError {
     pub fn is_missing_required_parameter(&self) -> bool {
         matches!(self, Self::MissingRequiredParameter(_))
     }
+    /// Returns `true` if the error kind is `UpdateStateMachineError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `UpdateStateMachineError::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(self, Self::StateMachineDeleting(_))
@@ -350,11 +374,13 @@ impl UpdateStateMachineError {
 impl ::std::error::Error for UpdateStateMachineError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDefinition(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTracingConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingRequiredParameter(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDeleting(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),

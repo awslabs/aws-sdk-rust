@@ -250,6 +250,8 @@ mod create_log_stream;
 /// ```
 pub mod customize;
 
+mod delete_account_policy;
+
 mod delete_data_protection_policy;
 
 mod delete_destination;
@@ -267,6 +269,8 @@ mod delete_resource_policy;
 mod delete_retention_policy;
 
 mod delete_subscription_filter;
+
+mod describe_account_policies;
 
 mod describe_destinations;
 
@@ -303,6 +307,8 @@ mod get_query_results;
 mod list_tags_for_resource;
 
 mod list_tags_log_group;
+
+mod put_account_policy;
 
 mod put_data_protection_policy;
 

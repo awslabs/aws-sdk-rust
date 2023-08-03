@@ -34,6 +34,9 @@ pub mod list_permissions;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListVersions` operation.
+pub mod list_versions;
+
 /// Types for the `ListWorkspaces` operation.
 pub mod list_workspaces;
 

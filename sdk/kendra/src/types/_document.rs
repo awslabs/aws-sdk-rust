@@ -30,6 +30,7 @@ pub struct Document {
     pub hierarchical_access_control_list:
         ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
@@ -71,6 +72,7 @@ impl Document {
         self.hierarchical_access_control_list.as_deref()
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
         self.content_type.as_ref()
     }
@@ -211,11 +213,13 @@ impl DocumentBuilder {
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn set_content_type(
         mut self,
         input: ::std::option::Option<crate::types::ContentType>,

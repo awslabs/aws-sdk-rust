@@ -26,6 +26,9 @@ pub struct CreateApplicationInput {
     /// <p>The identifier of a customer managed key.</p>
     #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
+    #[doc(hidden)]
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
@@ -60,6 +63,10 @@ impl CreateApplicationInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -84,6 +91,7 @@ pub struct CreateApplicationInputBuilder {
     >,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The unique identifier of the application.</p>
@@ -177,6 +185,16 @@ impl CreateApplicationInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -193,6 +211,7 @@ impl CreateApplicationInputBuilder {
                 tags: self.tags,
                 client_token: self.client_token,
                 kms_key_id: self.kms_key_id,
+                role_arn: self.role_arn,
             },
         )
     }

@@ -55,6 +55,31 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError> for Error {
+    fn from(err: crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError) -> Self {
+        match err {
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -349,6 +374,77 @@ impl From<crate::operation::create_app_block::CreateAppBlockError> for Error {
             crate::operation::create_app_block::CreateAppBlockError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::create_app_block::CreateAppBlockError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
             crate::operation::create_app_block::CreateAppBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_app_block_builder::CreateAppBlockBuilderError> for Error {
+    fn from(err: crate::operation::create_app_block_builder::CreateAppBlockBuilderError) -> Self {
+        match err {
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::InvalidAccountStatusException(inner) => Error::InvalidAccountStatusException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::RequestLimitExceededException(inner) => Error::RequestLimitExceededException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::ResourceNotAvailableException(inner) => Error::ResourceNotAvailableException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError> for Error {
+    fn from(err: crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError) -> Self {
+        match err {
+            crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -864,6 +960,49 @@ impl From<crate::operation::delete_app_block::DeleteAppBlockError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError> for Error {
+    fn from(err: crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError) -> Self {
+        match err {
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_application::DeleteApplicationError,
             R,
         >,
@@ -1293,6 +1432,71 @@ impl From<crate::operation::delete_user::DeleteUserError> for Error {
             crate::operation::delete_user::DeleteUserError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError> for Error {
+    fn from(err: crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError> for Error {
+    fn from(
+        err: crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1884,6 +2088,30 @@ impl From<crate::operation::disable_user::DisableUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError> for Error {
+    fn from(err: crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError) -> Self {
+        match err {
+            crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -2242,6 +2470,52 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_app_block_builder::StartAppBlockBuilderError> for Error {
+    fn from(err: crate::operation::start_app_block_builder::StartAppBlockBuilderError) -> Self {
+        match err {
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::InvalidAccountStatusException(inner) => Error::InvalidAccountStatusException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::RequestLimitExceededException(inner) => Error::RequestLimitExceededException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::ResourceNotAvailableException(inner) => Error::ResourceNotAvailableException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_app_block_builder::StartAppBlockBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_fleet::StartFleetError, R>>
     for Error
 where
@@ -2340,6 +2614,48 @@ impl From<crate::operation::start_image_builder::StartImageBuilderError> for Err
             crate::operation::start_image_builder::StartImageBuilderError::ResourceNotAvailableException(inner) => Error::ResourceNotAvailableException(inner),
             crate::operation::start_image_builder::StartImageBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_image_builder::StartImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_app_block_builder::StopAppBlockBuilderError> for Error {
+    fn from(err: crate::operation::stop_app_block_builder::StopAppBlockBuilderError) -> Self {
+        match err {
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2511,6 +2827,55 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_app_block_builder::UpdateAppBlockBuilderError> for Error {
+    fn from(err: crate::operation::update_app_block_builder::UpdateAppBlockBuilderError) -> Self {
+        match err {
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::InvalidAccountStatusException(inner) => Error::InvalidAccountStatusException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::RequestLimitExceededException(inner) => Error::RequestLimitExceededException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::ResourceNotAvailableException(inner) => Error::ResourceNotAvailableException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_app_block_builder::UpdateAppBlockBuilderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

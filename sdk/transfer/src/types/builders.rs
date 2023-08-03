@@ -13,6 +13,8 @@ pub use crate::types::_endpoint_details::EndpointDetailsBuilder;
 
 pub use crate::types::_protocol_details::ProtocolDetailsBuilder;
 
+pub use crate::types::_sftp_connector_config::SftpConnectorConfigBuilder;
+
 pub use crate::types::_as2_connector_config::As2ConnectorConfigBuilder;
 
 pub use crate::types::_tag::TagBuilder;

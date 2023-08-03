@@ -28,5 +28,8 @@ pub fn ser_verify_mac_input(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.dry_run {
+        object.key("DryRun").boolean(*var_8);
+    }
     Ok(())
 }

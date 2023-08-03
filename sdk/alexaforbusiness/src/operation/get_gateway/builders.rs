@@ -6,6 +6,7 @@ pub use crate::operation::get_gateway::_get_gateway_input::GetGatewayInputBuilde
 /// Fluent builder constructing a request to `GetGateway`.
 ///
 /// <p>Retrieves the details of a gateway.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

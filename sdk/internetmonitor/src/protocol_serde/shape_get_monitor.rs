@@ -147,6 +147,11 @@ pub(crate) fn de_get_monitor(
                             )?,
                         );
                     }
+                    "HealthEventsConfig" => {
+                        builder = builder.set_health_events_config(
+                            crate::protocol_serde::shape_health_events_config::de_health_events_config(tokens)?
+                        );
+                    }
                     "InternetMeasurementsLogDelivery" => {
                         builder = builder.set_internet_measurements_log_delivery(
                             crate::protocol_serde::shape_internet_measurements_log_delivery::de_internet_measurements_log_delivery(tokens)?

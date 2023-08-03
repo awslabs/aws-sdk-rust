@@ -25,9 +25,15 @@ pub struct CreateResolverEndpointInput {
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     #[doc(hidden)]
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    #[doc(hidden)]
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    #[doc(hidden)]
+    pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverEndpointInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
@@ -58,11 +64,19 @@ impl CreateResolverEndpointInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(
         &self,
     ) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
+        self.preferred_instance_type.as_deref()
     }
 }
 impl CreateResolverEndpointInput {
@@ -87,6 +101,8 @@ pub struct CreateResolverEndpointInputBuilder {
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverEndpointInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
@@ -196,17 +212,43 @@ impl CreateResolverEndpointInputBuilder {
         self.tags = input;
         self
     }
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.resolver_endpoint_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
+    /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
     pub fn set_resolver_endpoint_type(
         mut self,
         input: ::std::option::Option<crate::types::ResolverEndpointType>,
     ) -> Self {
         self.resolver_endpoint_type = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.outpost_arn = input;
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn preferred_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_instance_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn set_preferred_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.preferred_instance_type = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateResolverEndpointInput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointInput).
@@ -225,6 +267,8 @@ impl CreateResolverEndpointInputBuilder {
                 ip_addresses: self.ip_addresses,
                 tags: self.tags,
                 resolver_endpoint_type: self.resolver_endpoint_type,
+                outpost_arn: self.outpost_arn,
+                preferred_instance_type: self.preferred_instance_type,
             },
         )
     }

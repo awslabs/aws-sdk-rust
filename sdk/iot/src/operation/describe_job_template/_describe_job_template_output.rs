@@ -41,6 +41,10 @@ pub struct DescribeJobTemplateOutput {
     #[doc(hidden)]
     pub maintenance_windows:
         ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    #[doc(hidden)]
+    pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeJobTemplateOutput {
@@ -96,6 +100,11 @@ impl DescribeJobTemplateOutput {
     pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
         self.maintenance_windows.as_deref()
     }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.destination_package_versions.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobTemplateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -132,6 +141,8 @@ pub struct DescribeJobTemplateOutputBuilder {
         ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     pub(crate) maintenance_windows:
         ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub(crate) destination_package_versions:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeJobTemplateOutputBuilder {
@@ -306,6 +317,30 @@ impl DescribeJobTemplateOutputBuilder {
         self.maintenance_windows = input;
         self
     }
+    /// Appends an item to `destination_package_versions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.destination_package_versions.unwrap_or_default();
+        v.push(input.into());
+        self.destination_package_versions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.destination_package_versions = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -330,6 +365,7 @@ impl DescribeJobTemplateOutputBuilder {
             timeout_config: self.timeout_config,
             job_executions_retry_config: self.job_executions_retry_config,
             maintenance_windows: self.maintenance_windows,
+            destination_package_versions: self.destination_package_versions,
             _request_id: self._request_id,
         }
     }

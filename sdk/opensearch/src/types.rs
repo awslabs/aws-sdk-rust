@@ -209,6 +209,10 @@ pub use crate::types::_outbound_connection::OutboundConnection;
 
 pub use crate::types::_connection_properties::ConnectionProperties;
 
+pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionProperties;
+
+pub use crate::types::_skip_unavailable_status::SkipUnavailableStatus;
+
 pub use crate::types::_outbound_connection_status::OutboundConnectionStatus;
 
 pub use crate::types::_outbound_connection_status_code::OutboundConnectionStatusCode;
@@ -336,6 +340,8 @@ mod _compatible_versions_map;
 mod _connection_mode;
 
 mod _connection_properties;
+
+mod _cross_cluster_search_connection_properties;
 
 mod _deployment_status;
 
@@ -484,6 +490,8 @@ mod _scheduled_auto_tune_severity_type;
 mod _scheduled_by;
 
 mod _service_software_options;
+
+mod _skip_unavailable_status;
 
 mod _snapshot_options;
 

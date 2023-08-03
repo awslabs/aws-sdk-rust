@@ -41,17 +41,13 @@ pub use crate::types::_label_detection_settings::LabelDetectionSettingsBuilder;
 
 pub use crate::types::_general_labels_settings::GeneralLabelsSettingsBuilder;
 
-pub use crate::types::_face_match::FaceMatchBuilder;
+pub use crate::types::_unsearched_face::UnsearchedFaceBuilder;
 
-pub use crate::types::_face::FaceBuilder;
+pub use crate::types::_face_detail::FaceDetailBuilder;
 
-pub use crate::types::_image::ImageBuilder;
+pub use crate::types::_eye_direction::EyeDirectionBuilder;
 
-pub use crate::types::_compared_face::ComparedFaceBuilder;
-
-pub use crate::types::_smile::SmileBuilder;
-
-pub use crate::types::_emotion::EmotionBuilder;
+pub use crate::types::_face_occluded::FaceOccludedBuilder;
 
 pub use crate::types::_image_quality::ImageQualityBuilder;
 
@@ -59,25 +55,7 @@ pub use crate::types::_pose::PoseBuilder;
 
 pub use crate::types::_landmark::LandmarkBuilder;
 
-pub use crate::types::_celebrity::CelebrityBuilder;
-
-pub use crate::types::_known_gender::KnownGenderBuilder;
-
-pub use crate::types::_stream_processor::StreamProcessorBuilder;
-
-pub use crate::types::_project_policy::ProjectPolicyBuilder;
-
-pub use crate::types::_dataset_label_description::DatasetLabelDescriptionBuilder;
-
-pub use crate::types::_dataset_label_stats::DatasetLabelStatsBuilder;
-
-pub use crate::types::_unindexed_face::UnindexedFaceBuilder;
-
-pub use crate::types::_face_detail::FaceDetailBuilder;
-
-pub use crate::types::_eye_direction::EyeDirectionBuilder;
-
-pub use crate::types::_face_occluded::FaceOccludedBuilder;
+pub use crate::types::_emotion::EmotionBuilder;
 
 pub use crate::types::_mouth_open::MouthOpenBuilder;
 
@@ -93,7 +71,43 @@ pub use crate::types::_sunglasses::SunglassesBuilder;
 
 pub use crate::types::_eyeglasses::EyeglassesBuilder;
 
+pub use crate::types::_smile::SmileBuilder;
+
 pub use crate::types::_age_range::AgeRangeBuilder;
+
+pub use crate::types::_searched_face_details::SearchedFaceDetailsBuilder;
+
+pub use crate::types::_user_match::UserMatchBuilder;
+
+pub use crate::types::_matched_user::MatchedUserBuilder;
+
+pub use crate::types::_image::ImageBuilder;
+
+pub use crate::types::_searched_user::SearchedUserBuilder;
+
+pub use crate::types::_searched_face::SearchedFaceBuilder;
+
+pub use crate::types::_face_match::FaceMatchBuilder;
+
+pub use crate::types::_face::FaceBuilder;
+
+pub use crate::types::_compared_face::ComparedFaceBuilder;
+
+pub use crate::types::_celebrity::CelebrityBuilder;
+
+pub use crate::types::_known_gender::KnownGenderBuilder;
+
+pub use crate::types::_user::UserBuilder;
+
+pub use crate::types::_stream_processor::StreamProcessorBuilder;
+
+pub use crate::types::_project_policy::ProjectPolicyBuilder;
+
+pub use crate::types::_dataset_label_description::DatasetLabelDescriptionBuilder;
+
+pub use crate::types::_dataset_label_stats::DatasetLabelStatsBuilder;
+
+pub use crate::types::_unindexed_face::UnindexedFaceBuilder;
 
 pub use crate::types::_face_record::FaceRecordBuilder;
 
@@ -152,6 +166,10 @@ pub use crate::types::_celebrity_recognition::CelebrityRecognitionBuilder;
 pub use crate::types::_celebrity_detail::CelebrityDetailBuilder;
 
 pub use crate::types::_distribute_dataset::DistributeDatasetBuilder;
+
+pub use crate::types::_unsuccessful_face_disassociation::UnsuccessfulFaceDisassociationBuilder;
+
+pub use crate::types::_disassociated_face::DisassociatedFaceBuilder;
 
 pub use crate::types::_detect_text_filters::DetectTextFiltersBuilder;
 
@@ -235,6 +253,8 @@ pub use crate::types::_dataset_description::DatasetDescriptionBuilder;
 
 pub use crate::types::_dataset_stats::DatasetStatsBuilder;
 
+pub use crate::types::_unsuccessful_face_deletion::UnsuccessfulFaceDeletionBuilder;
+
 pub use crate::types::_create_face_liveness_session_request_settings::CreateFaceLivenessSessionRequestSettingsBuilder;
 
 pub use crate::types::_liveness_output_config::LivenessOutputConfigBuilder;
@@ -244,3 +264,7 @@ pub use crate::types::_dataset_source::DatasetSourceBuilder;
 pub use crate::types::_compare_faces_match::CompareFacesMatchBuilder;
 
 pub use crate::types::_compared_source_image_face::ComparedSourceImageFaceBuilder;
+
+pub use crate::types::_unsuccessful_face_association::UnsuccessfulFaceAssociationBuilder;
+
+pub use crate::types::_associated_face::AssociatedFaceBuilder;

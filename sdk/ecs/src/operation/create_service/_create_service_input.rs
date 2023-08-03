@@ -104,9 +104,11 @@ pub struct CreateServiceInput {
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
     #[doc(hidden)]
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>The default is <code>NONE</code>.</p>
     #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
@@ -247,10 +249,12 @@ impl CreateServiceInput {
         self.tags.as_deref()
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
     pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>The default is <code>NONE</code>.</p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -673,21 +677,25 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
         self.enable_ecs_managed_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ecs_managed_tags = input;
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>The default is <code>NONE</code>.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>The default is <code>NONE</code>.</p>
     pub fn set_propagate_tags(
         mut self,
         input: ::std::option::Option<crate::types::PropagateTags>,

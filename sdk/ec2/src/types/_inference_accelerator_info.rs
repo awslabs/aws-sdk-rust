@@ -7,11 +7,18 @@ pub struct InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
     #[doc(hidden)]
     pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+    /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
+    #[doc(hidden)]
+    pub total_inference_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
     pub fn accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceDeviceInfo]> {
         self.accelerators.as_deref()
+    }
+    /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
+    pub fn total_inference_memory_in_mi_b(&self) -> ::std::option::Option<i32> {
+        self.total_inference_memory_in_mi_b
     }
 }
 impl InferenceAcceleratorInfo {
@@ -29,6 +36,7 @@ impl InferenceAcceleratorInfo {
 pub struct InferenceAcceleratorInfoBuilder {
     pub(crate) accelerators:
         ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+    pub(crate) total_inference_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfoBuilder {
     /// Appends an item to `accelerators`.
@@ -50,10 +58,21 @@ impl InferenceAcceleratorInfoBuilder {
         self.accelerators = input;
         self
     }
+    /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
+    pub fn total_inference_memory_in_mi_b(mut self, input: i32) -> Self {
+        self.total_inference_memory_in_mi_b = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
+    pub fn set_total_inference_memory_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_inference_memory_in_mi_b = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InferenceAcceleratorInfo`](crate::types::InferenceAcceleratorInfo).
     pub fn build(self) -> crate::types::InferenceAcceleratorInfo {
         crate::types::InferenceAcceleratorInfo {
             accelerators: self.accelerators,
+            total_inference_memory_in_mi_b: self.total_inference_memory_in_mi_b,
         }
     }
 }

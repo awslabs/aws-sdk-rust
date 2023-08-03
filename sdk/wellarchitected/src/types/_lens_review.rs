@@ -38,6 +38,13 @@ pub struct LensReview {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The profiles associated with the workload.</p>
+    #[doc(hidden)]
+    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    #[doc(hidden)]
+    pub prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReview {
     /// <p>The alias of the lens.</p>
@@ -87,6 +94,16 @@ impl LensReview {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The profiles associated with the workload.</p>
+    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
+        self.profiles.as_deref()
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+        self.prioritized_risk_counts.as_ref()
+    }
 }
 impl LensReview {
     /// Creates a new builder-style object to manufacture [`LensReview`](crate::types::LensReview).
@@ -113,6 +130,9 @@ pub struct LensReviewBuilder {
     pub(crate) risk_counts:
         ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewBuilder {
     /// <p>The alias of the lens.</p>
@@ -245,6 +265,44 @@ impl LensReviewBuilder {
         self.next_token = input;
         self
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>The profiles associated with the workload.</p>
+    pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input);
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The profiles associated with the workload.</p>
+    pub fn set_profiles(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    ) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// Adds a key-value pair to `prioritized_risk_counts`.
+    ///
+    /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
+    ///
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
+        let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn set_prioritized_risk_counts(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.prioritized_risk_counts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LensReview`](crate::types::LensReview).
     pub fn build(self) -> crate::types::LensReview {
         crate::types::LensReview {
@@ -258,6 +316,8 @@ impl LensReviewBuilder {
             notes: self.notes,
             risk_counts: self.risk_counts,
             next_token: self.next_token,
+            profiles: self.profiles,
+            prioritized_risk_counts: self.prioritized_risk_counts,
         }
     }
 }

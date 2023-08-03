@@ -11,6 +11,9 @@ pub struct TerminateTargetInstancesInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Terminate Target instance by Account ID</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl TerminateTargetInstancesInput {
     /// <p>Terminate Target instance by Source Server IDs.</p>
@@ -25,12 +28,17 @@ impl TerminateTargetInstancesInput {
     > {
         self.tags.as_ref()
     }
+    /// <p>Terminate Target instance by Account ID</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TerminateTargetInstancesInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateTargetInstancesInput");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -51,6 +59,7 @@ pub struct TerminateTargetInstancesInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl TerminateTargetInstancesInputBuilder {
     /// Appends an item to `source_server_i_ds`.
@@ -100,6 +109,16 @@ impl TerminateTargetInstancesInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Terminate Target instance by Account ID</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Terminate Target instance by Account ID</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TerminateTargetInstancesInput`](crate::operation::terminate_target_instances::TerminateTargetInstancesInput).
     pub fn build(
         self,
@@ -111,6 +130,7 @@ impl TerminateTargetInstancesInputBuilder {
             crate::operation::terminate_target_instances::TerminateTargetInstancesInput {
                 source_server_i_ds: self.source_server_i_ds,
                 tags: self.tags,
+                account_id: self.account_id,
             },
         )
     }
@@ -120,6 +140,7 @@ impl ::std::fmt::Debug for TerminateTargetInstancesInputBuilder {
         let mut formatter = f.debug_struct("TerminateTargetInstancesInputBuilder");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

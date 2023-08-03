@@ -56,6 +56,8 @@ pub(crate) mod shape_packed_policy_too_large_exception;
 
 pub(crate) mod shape_policy_descriptor_type;
 
+pub(crate) mod shape_provided_context;
+
 pub(crate) mod shape_region_disabled_exception;
 
 pub(crate) mod shape_tag;

@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-http-auth"
-version = "0.55.3"
+version = "0.0.0-smithy-rs-head"
 authors = [
   "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
   "Eduardo Rodrigues <16357187+eduardomourar@users.noreply.github.com>",

@@ -36,6 +36,10 @@ pub struct EncryptInput {
     /// <p>The SM2PKE algorithm is only available in China Regions.</p>
     #[doc(hidden)]
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl EncryptInput {
     /// <p>Identifies the KMS key to use in the encryption operation. The KMS key must have a <code>KeyUsage</code> of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -80,6 +84,11 @@ impl EncryptInput {
     ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl ::std::fmt::Debug for EncryptInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +98,7 @@ impl ::std::fmt::Debug for EncryptInput {
         formatter.field("encryption_context", &self.encryption_context);
         formatter.field("grant_tokens", &self.grant_tokens);
         formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }
@@ -110,6 +120,7 @@ pub struct EncryptInputBuilder {
     >,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl EncryptInputBuilder {
     /// <p>Identifies the KMS key to use in the encryption operation. The KMS key must have a <code>KeyUsage</code> of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -221,6 +232,18 @@ impl EncryptInputBuilder {
         self.encryption_algorithm = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EncryptInput`](crate::operation::encrypt::EncryptInput).
     pub fn build(
         self,
@@ -234,6 +257,7 @@ impl EncryptInputBuilder {
             encryption_context: self.encryption_context,
             grant_tokens: self.grant_tokens,
             encryption_algorithm: self.encryption_algorithm,
+            dry_run: self.dry_run,
         })
     }
 }
@@ -245,6 +269,7 @@ impl ::std::fmt::Debug for EncryptInputBuilder {
         formatter.field("encryption_context", &self.encryption_context);
         formatter.field("grant_tokens", &self.grant_tokens);
         formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }

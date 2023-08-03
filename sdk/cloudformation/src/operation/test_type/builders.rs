@@ -11,8 +11,8 @@ pub use crate::operation::test_type::_test_type_input::TestTypeInputBuilder;
 /// <li> <p>For modules, this includes determining if the module's model meets all necessary requirements.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-/// <p>If you don't specify a version, CloudFormation uses the default version of the extension in your account and region for testing.</p>
-/// <p>To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+/// <p>If you don't specify a version, CloudFormation uses the default version of the extension in your account and Region for testing.</p>
+/// <p>To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
 /// <p>Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a> to monitor the current test status and test status description for the extension.</p>
 /// <p>An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,14 +138,14 @@ impl TestTypeFluentBuilder {
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
         self
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self

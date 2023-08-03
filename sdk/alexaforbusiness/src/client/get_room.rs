@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRoomOutput`](crate::operation::get_room::GetRoomOutput) with field(s):
     ///   - [`room(Option<Room>)`](crate::operation::get_room::GetRoomOutput::room): <p>The details of the room requested.</p>
     /// - On failure, responds with [`SdkError<GetRoomError>`](crate::operation::get_room::GetRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_room(&self) -> crate::operation::get_room::builders::GetRoomFluentBuilder {
         crate::operation::get_room::builders::GetRoomFluentBuilder::new(self.handle.clone())
     }

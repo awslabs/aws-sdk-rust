@@ -18,6 +18,7 @@
 ///     AwsRegion::Seoul => { /* ... */ },
 ///     AwsRegion::Osaka => { /* ... */ },
 ///     AwsRegion::Mumbai => { /* ... */ },
+///     AwsRegion::Hyderabad => { /* ... */ },
 ///     AwsRegion::Singapore => { /* ... */ },
 ///     AwsRegion::Sydney => { /* ... */ },
 ///     AwsRegion::Jakarta => { /* ... */ },
@@ -25,6 +26,7 @@
 ///     AwsRegion::Beijing => { /* ... */ },
 ///     AwsRegion::Ningxia => { /* ... */ },
 ///     AwsRegion::Frankfurt => { /* ... */ },
+///     AwsRegion::Zurich => { /* ... */ },
 ///     AwsRegion::Stockholm => { /* ... */ },
 ///     AwsRegion::Milano => { /* ... */ },
 ///     AwsRegion::Spain => { /* ... */ },
@@ -84,6 +86,8 @@ pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     Mumbai,
     #[allow(missing_docs)] // documentation missing in model
+    Hyderabad,
+    #[allow(missing_docs)] // documentation missing in model
     Singapore,
     #[allow(missing_docs)] // documentation missing in model
     Sydney,
@@ -97,6 +101,8 @@ pub enum AwsRegion {
     Ningxia,
     #[allow(missing_docs)] // documentation missing in model
     Frankfurt,
+    #[allow(missing_docs)] // documentation missing in model
+    Zurich,
     #[allow(missing_docs)] // documentation missing in model
     Stockholm,
     #[allow(missing_docs)] // documentation missing in model
@@ -135,6 +141,7 @@ impl ::std::convert::From<&str> for AwsRegion {
             "ap-northeast-2" => AwsRegion::Seoul,
             "ap-northeast-3" => AwsRegion::Osaka,
             "ap-south-1" => AwsRegion::Mumbai,
+            "ap-south-2" => AwsRegion::Hyderabad,
             "ap-southeast-1" => AwsRegion::Singapore,
             "ap-southeast-2" => AwsRegion::Sydney,
             "ap-southeast-3" => AwsRegion::Jakarta,
@@ -142,6 +149,7 @@ impl ::std::convert::From<&str> for AwsRegion {
             "cn-north-1" => AwsRegion::Beijing,
             "cn-northwest-1" => AwsRegion::Ningxia,
             "eu-central-1" => AwsRegion::Frankfurt,
+            "eu-central-2" => AwsRegion::Zurich,
             "eu-north-1" => AwsRegion::Stockholm,
             "eu-south-1" => AwsRegion::Milano,
             "eu-south-2" => AwsRegion::Spain,
@@ -176,6 +184,7 @@ impl AwsRegion {
             AwsRegion::Seoul => "ap-northeast-2",
             AwsRegion::Osaka => "ap-northeast-3",
             AwsRegion::Mumbai => "ap-south-1",
+            AwsRegion::Hyderabad => "ap-south-2",
             AwsRegion::Singapore => "ap-southeast-1",
             AwsRegion::Sydney => "ap-southeast-2",
             AwsRegion::Jakarta => "ap-southeast-3",
@@ -183,6 +192,7 @@ impl AwsRegion {
             AwsRegion::Beijing => "cn-north-1",
             AwsRegion::Ningxia => "cn-northwest-1",
             AwsRegion::Frankfurt => "eu-central-1",
+            AwsRegion::Zurich => "eu-central-2",
             AwsRegion::Stockholm => "eu-north-1",
             AwsRegion::Milano => "eu-south-1",
             AwsRegion::Spain => "eu-south-2",
@@ -208,6 +218,7 @@ impl AwsRegion {
             "ap-northeast-2",
             "ap-northeast-3",
             "ap-south-1",
+            "ap-south-2",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -215,6 +226,7 @@ impl AwsRegion {
             "cn-north-1",
             "cn-northwest-1",
             "eu-central-1",
+            "eu-central-2",
             "eu-north-1",
             "eu-south-1",
             "eu-south-2",

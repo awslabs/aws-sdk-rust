@@ -46,6 +46,8 @@ pub(crate) mod shape_create_template_sync_config;
 
 pub(crate) mod shape_delete_component;
 
+pub(crate) mod shape_delete_deployment;
+
 pub(crate) mod shape_delete_environment;
 
 pub(crate) mod shape_delete_environment_account_connection;
@@ -69,6 +71,8 @@ pub(crate) mod shape_delete_template_sync_config;
 pub(crate) mod shape_get_account_settings;
 
 pub(crate) mod shape_get_component;
+
+pub(crate) mod shape_get_deployment;
 
 pub(crate) mod shape_get_environment;
 
@@ -107,6 +111,8 @@ pub(crate) mod shape_list_component_outputs;
 pub(crate) mod shape_list_component_provisioned_resources;
 
 pub(crate) mod shape_list_components;
+
+pub(crate) mod shape_list_deployments;
 
 pub(crate) mod shape_list_environment_account_connections;
 
@@ -226,6 +232,8 @@ pub(crate) mod shape_create_template_sync_config_input;
 
 pub(crate) mod shape_delete_component_input;
 
+pub(crate) mod shape_delete_deployment_input;
+
 pub(crate) mod shape_delete_environment_account_connection_input;
 
 pub(crate) mod shape_delete_environment_input;
@@ -247,6 +255,8 @@ pub(crate) mod shape_delete_service_template_version_input;
 pub(crate) mod shape_delete_template_sync_config_input;
 
 pub(crate) mod shape_get_component_input;
+
+pub(crate) mod shape_get_deployment_input;
 
 pub(crate) mod shape_get_environment_account_connection_input;
 
@@ -285,6 +295,8 @@ pub(crate) mod shape_list_component_outputs_input;
 pub(crate) mod shape_list_component_provisioned_resources_input;
 
 pub(crate) mod shape_list_components_input;
+
+pub(crate) mod shape_list_deployments_input;
 
 pub(crate) mod shape_list_environment_account_connections_input;
 
@@ -374,6 +386,10 @@ pub(crate) mod shape_component_summary_list;
 
 pub(crate) mod shape_counts_summary;
 
+pub(crate) mod shape_deployment;
+
+pub(crate) mod shape_deployment_summary_list;
+
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_account_connection;
@@ -450,6 +466,10 @@ pub(crate) mod shape_compatible_environment_template_list;
 
 pub(crate) mod shape_component_summary;
 
+pub(crate) mod shape_deployment_state;
+
+pub(crate) mod shape_deployment_summary;
+
 pub(crate) mod shape_environment_account_connection_summary;
 
 pub(crate) mod shape_environment_summary;
@@ -490,8 +510,18 @@ pub(crate) mod shape_sync_blocker_contexts;
 
 pub(crate) mod shape_compatible_environment_template;
 
+pub(crate) mod shape_component_state;
+
+pub(crate) mod shape_environment_state;
+
 pub(crate) mod shape_repository_sync_event;
 
 pub(crate) mod shape_resource_sync_event;
 
+pub(crate) mod shape_service_instance_state;
+
+pub(crate) mod shape_service_pipeline_state;
+
 pub(crate) mod shape_sync_blocker_context;
+
+pub(crate) mod shape_component_deployment_id_list;

@@ -67,6 +67,18 @@ pub use crate::types::_environment_account_connection::EnvironmentAccountConnect
 
 pub use crate::types::_environment_account_connection_summary::EnvironmentAccountConnectionSummaryBuilder;
 
+pub use crate::types::_deployment_summary::DeploymentSummaryBuilder;
+
+pub use crate::types::_deployment::DeploymentBuilder;
+
+pub use crate::types::_component_state::ComponentStateBuilder;
+
+pub use crate::types::_service_pipeline_state::ServicePipelineStateBuilder;
+
+pub use crate::types::_environment_state::EnvironmentStateBuilder;
+
+pub use crate::types::_service_instance_state::ServiceInstanceStateBuilder;
+
 pub use crate::types::_component_summary::ComponentSummaryBuilder;
 
 pub use crate::types::_component::ComponentBuilder;

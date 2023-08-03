@@ -29,6 +29,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The specified resource isn't available.</p>
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
+    /// <p>Fulfilling the request would cause one or more quotas to be exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The specified resource doesn't exist.</p>
@@ -54,6 +56,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceUnavailableException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnknownResourceException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -359,6 +362,51 @@ impl From<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupE
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_outpost_resolver::CreateOutpostResolverError> for Error {
+    fn from(err: crate::operation::create_outpost_resolver::CreateOutpostResolverError) -> Self {
+        match err {
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_resolver_endpoint::CreateResolverEndpointError,
             R,
         >,
@@ -633,6 +681,51 @@ impl From<crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupE
             crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_outpost_resolver::DeleteOutpostResolverError> for Error {
+    fn from(err: crate::operation::delete_outpost_resolver::DeleteOutpostResolverError) -> Self {
+        match err {
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1124,6 +1217,50 @@ impl From<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroup
             crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_outpost_resolver::GetOutpostResolverError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_outpost_resolver::GetOutpostResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_outpost_resolver::GetOutpostResolverError> for Error {
+    fn from(err: crate::operation::get_outpost_resolver::GetOutpostResolverError) -> Self {
+        match err {
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_outpost_resolver::GetOutpostResolverError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1781,6 +1918,50 @@ impl From<crate::operation::list_firewall_rules::ListFirewallRulesError> for Err
             crate::operation::list_firewall_rules::ListFirewallRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_firewall_rules::ListFirewallRulesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_firewall_rules::ListFirewallRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_outpost_resolvers::ListOutpostResolversError> for Error {
+    fn from(err: crate::operation::list_outpost_resolvers::ListOutpostResolversError) -> Self {
+        match err {
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2562,6 +2743,52 @@ impl From<crate::operation::update_firewall_rule_group_association::UpdateFirewa
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_outpost_resolver::UpdateOutpostResolverError> for Error {
+    fn from(err: crate::operation::update_outpost_resolver::UpdateOutpostResolverError) -> Self {
+        match err {
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_resolver_config::UpdateResolverConfigError,
             R,
         >,
@@ -2762,6 +2989,7 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceUnavailableException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::UnknownResourceException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -2785,6 +3013,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceUnavailableException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::UnknownResourceException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

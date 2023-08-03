@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
-    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
     #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The results of the search.</p>
     #[doc(hidden)]
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>>,
-    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
     #[doc(hidden)]
     pub facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
-    /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     #[doc(hidden)]
     pub total_number_of_results: ::std::option::Option<i32>,
     /// <p>A list of warning codes and their messages on problems with your query.</p>
@@ -30,7 +30,7 @@ pub struct QueryOutput {
     _request_id: Option<String>,
 }
 impl QueryOutput {
-    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -38,11 +38,11 @@ impl QueryOutput {
     pub fn result_items(&self) -> ::std::option::Option<&[crate::types::QueryResultItem]> {
         self.result_items.as_deref()
     }
-    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
     pub fn facet_results(&self) -> ::std::option::Option<&[crate::types::FacetResult]> {
         self.facet_results.as_deref()
     }
-    /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub fn total_number_of_results(&self) -> ::std::option::Option<i32> {
         self.total_number_of_results
     }
@@ -94,12 +94,12 @@ pub struct QueryOutputBuilder {
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
-    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
+    /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
@@ -127,14 +127,14 @@ impl QueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_facet_results`](Self::set_facet_results).
     ///
-    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
     pub fn facet_results(mut self, input: crate::types::FacetResult) -> Self {
         let mut v = self.facet_results.unwrap_or_default();
         v.push(input);
         self.facet_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
     pub fn set_facet_results(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
@@ -142,12 +142,12 @@ impl QueryOutputBuilder {
         self.facet_results = input;
         self
     }
-    /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub fn total_number_of_results(mut self, input: i32) -> Self {
         self.total_number_of_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub fn set_total_number_of_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_results = input;
         self

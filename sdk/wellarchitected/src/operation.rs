@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AssociateLenses` operation.
 pub mod associate_lenses;
 
+/// Types for the `AssociateProfiles` operation.
+pub mod associate_profiles;
+
 /// Types for the `CreateLensShare` operation.
 pub mod create_lens_share;
 
@@ -12,6 +15,12 @@ pub mod create_lens_version;
 
 /// Types for the `CreateMilestone` operation.
 pub mod create_milestone;
+
+/// Types for the `CreateProfile` operation.
+pub mod create_profile;
+
+/// Types for the `CreateProfileShare` operation.
+pub mod create_profile_share;
 
 /// Types for the `CreateWorkload` operation.
 pub mod create_workload;
@@ -25,6 +34,12 @@ pub mod delete_lens;
 /// Types for the `DeleteLensShare` operation.
 pub mod delete_lens_share;
 
+/// Types for the `DeleteProfile` operation.
+pub mod delete_profile;
+
+/// Types for the `DeleteProfileShare` operation.
+pub mod delete_profile_share;
+
 /// Types for the `DeleteWorkload` operation.
 pub mod delete_workload;
 
@@ -33,6 +48,9 @@ pub mod delete_workload_share;
 
 /// Types for the `DisassociateLenses` operation.
 pub mod disassociate_lenses;
+
+/// Types for the `DisassociateProfiles` operation.
+pub mod disassociate_profiles;
 
 /// Types for the `ExportLens` operation.
 pub mod export_lens;
@@ -57,6 +75,12 @@ pub mod get_lens_version_difference;
 
 /// Types for the `GetMilestone` operation.
 pub mod get_milestone;
+
+/// Types for the `GetProfile` operation.
+pub mod get_profile;
+
+/// Types for the `GetProfileTemplate` operation.
+pub mod get_profile_template;
 
 /// Types for the `GetWorkload` operation.
 pub mod get_workload;
@@ -91,6 +115,15 @@ pub mod list_milestones;
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
 
+/// Types for the `ListProfileNotifications` operation.
+pub mod list_profile_notifications;
+
+/// Types for the `ListProfileShares` operation.
+pub mod list_profile_shares;
+
+/// Types for the `ListProfiles` operation.
+pub mod list_profiles;
+
 /// Types for the `ListShareInvitations` operation.
 pub mod list_share_invitations;
 
@@ -118,6 +151,9 @@ pub mod update_global_settings;
 /// Types for the `UpdateLensReview` operation.
 pub mod update_lens_review;
 
+/// Types for the `UpdateProfile` operation.
+pub mod update_profile;
+
 /// Types for the `UpdateShareInvitation` operation.
 pub mod update_share_invitation;
 
@@ -129,3 +165,6 @@ pub mod update_workload_share;
 
 /// Types for the `UpgradeLensReview` operation.
 pub mod upgrade_lens_review;
+
+/// Types for the `UpgradeProfileVersion` operation.
+pub mod upgrade_profile_version;

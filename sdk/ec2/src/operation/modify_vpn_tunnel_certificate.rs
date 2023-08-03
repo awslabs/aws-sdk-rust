@@ -153,6 +153,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for ModifyVpnTunnelCertifi
             crate::protocol_serde::shape_modify_vpn_tunnel_certificate::de_modify_vpn_tunnel_certificate_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

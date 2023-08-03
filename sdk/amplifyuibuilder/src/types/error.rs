@@ -9,6 +9,8 @@ pub use crate::types::error::_resource_conflict_exception::ResourceConflictExcep
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 mod _internal_server_exception;
@@ -20,6 +22,8 @@ mod _resource_conflict_exception;
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _throttling_exception;
 
 mod _unauthorized_exception;
 

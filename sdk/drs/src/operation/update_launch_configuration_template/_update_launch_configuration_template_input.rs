@@ -22,6 +22,9 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Licensing.</p>
     #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    #[doc(hidden)]
+    pub export_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
@@ -50,6 +53,10 @@ impl UpdateLaunchConfigurationTemplateInput {
     pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
         self.licensing.as_ref()
     }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.export_bucket_arn.as_deref()
+    }
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
@@ -71,6 +78,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
+    pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch Configuration Template ID.</p>
@@ -148,6 +156,22 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self.licensing = input;
         self
     }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn export_bucket_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.export_bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn set_export_bucket_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.export_bucket_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -163,6 +187,8 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
                 copy_tags: self.copy_tags
                 ,
                 licensing: self.licensing
+                ,
+                export_bucket_arn: self.export_bucket_arn
                 ,
             }
         )

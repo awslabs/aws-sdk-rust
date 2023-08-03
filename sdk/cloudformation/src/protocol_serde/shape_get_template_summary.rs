@@ -204,6 +204,16 @@ pub fn de_get_template_summary(
                 builder = builder.set_resource_identifier_summaries(var_9);
             }
             ,
+            s if s.matches("Warnings") /* Warnings com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Warnings */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_warnings::de_warnings(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_warnings(var_10);
+            }
+            ,
             _ => {}
         }
         }

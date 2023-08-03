@@ -60,13 +60,29 @@ pub fn de_delete_aws_log_source_http_error(
                                                     }
             tmp
         }),
-        "AccountNotFoundException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::AccountNotFoundException({
+        "BadRequestException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ConflictException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -83,10 +99,6 @@ pub fn de_delete_aws_log_source_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -96,13 +108,33 @@ pub fn de_delete_aws_log_source_http_error(
                                                     }
             tmp
         }),
-        "ValidationException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::ValidationException({
+        "ResourceNotFoundException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
+                                                .map_err(|_|crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -159,11 +191,6 @@ pub(crate) fn de_delete_aws_log_source(
                 match key.to_unescaped()?.as_ref() {
                     "failed" => {
                         builder = builder.set_failed(
-                            crate::protocol_serde::shape_account_list::de_account_list(tokens)?,
-                        );
-                    }
-                    "processing" => {
-                        builder = builder.set_processing(
                             crate::protocol_serde::shape_account_list::de_account_list(tokens)?,
                         );
                     }

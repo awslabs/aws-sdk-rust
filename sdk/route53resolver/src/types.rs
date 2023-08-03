@@ -33,6 +33,10 @@ pub use crate::types::_resolver_autodefined_reverse_status::ResolverAutodefinedR
 
 pub use crate::types::_autodefined_reverse_flag::AutodefinedReverseFlag;
 
+pub use crate::types::_outpost_resolver::OutpostResolver;
+
+pub use crate::types::_outpost_resolver_status::OutpostResolverStatus;
+
 pub use crate::types::_firewall_rule_group_association::FirewallRuleGroupAssociation;
 
 pub use crate::types::_firewall_rule_group_association_status::FirewallRuleGroupAssociationStatus;
@@ -140,6 +144,10 @@ mod _ip_address_status;
 mod _ip_address_update;
 
 mod _mutation_protection_status;
+
+mod _outpost_resolver;
+
+mod _outpost_resolver_status;
 
 mod _resolver_autodefined_reverse_status;
 

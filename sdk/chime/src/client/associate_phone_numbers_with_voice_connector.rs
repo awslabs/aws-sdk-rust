@@ -9,6 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociatePhoneNumbersWithVoiceConnectorOutput`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorOutput) with field(s):
     ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<AssociatePhoneNumbersWithVoiceConnectorError>`](crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorError)
+    #[deprecated(
+        note = "Replaced by AssociatePhoneNumbersWithVoiceConnector in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn associate_phone_numbers_with_voice_connector(&self) -> crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorFluentBuilder{
         crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorFluentBuilder::new(self.handle.clone())
     }

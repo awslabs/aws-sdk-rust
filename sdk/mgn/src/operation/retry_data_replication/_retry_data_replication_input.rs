@@ -6,11 +6,18 @@ pub struct RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
+    /// <p>Retry data replication for Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
     pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
+    }
+    /// <p>Retry data replication for Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl RetryDataReplicationInput {
@@ -28,6 +35,7 @@ impl RetryDataReplicationInput {
 )]
 pub struct RetryDataReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl RetryDataReplicationInputBuilder {
     /// <p>Retry data replication for Source Server ID.</p>
@@ -46,6 +54,16 @@ impl RetryDataReplicationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Retry data replication for Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Retry data replication for Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
     pub fn build(
         self,
@@ -56,6 +74,7 @@ impl RetryDataReplicationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::retry_data_replication::RetryDataReplicationInput {
                 source_server_id: self.source_server_id,
+                account_id: self.account_id,
             },
         )
     }

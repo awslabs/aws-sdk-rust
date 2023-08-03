@@ -34,6 +34,9 @@ pub struct HealthEvent {
     /// <p>The type of impairment for a health event.</p>
     #[doc(hidden)]
     pub impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
+    /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
+    #[doc(hidden)]
+    pub health_score_threshold: f64,
 }
 impl HealthEvent {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
@@ -76,6 +79,10 @@ impl HealthEvent {
     pub fn impact_type(&self) -> ::std::option::Option<&crate::types::HealthEventImpactType> {
         self.impact_type.as_ref()
     }
+    /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
+    pub fn health_score_threshold(&self) -> f64 {
+        self.health_score_threshold
+    }
 }
 impl HealthEvent {
     /// Creates a new builder-style object to manufacture [`HealthEvent`](crate::types::HealthEvent).
@@ -101,6 +108,7 @@ pub struct HealthEventBuilder {
     pub(crate) status: ::std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     pub(crate) impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
+    pub(crate) health_score_threshold: ::std::option::Option<f64>,
 }
 impl HealthEventBuilder {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
@@ -233,6 +241,16 @@ impl HealthEventBuilder {
         self.impact_type = input;
         self
     }
+    /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
+    pub fn health_score_threshold(mut self, input: f64) -> Self {
+        self.health_score_threshold = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
+    pub fn set_health_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.health_score_threshold = input;
+        self
+    }
     /// Consumes the builder and constructs a [`HealthEvent`](crate::types::HealthEvent).
     pub fn build(self) -> crate::types::HealthEvent {
         crate::types::HealthEvent {
@@ -246,6 +264,7 @@ impl HealthEventBuilder {
             status: self.status,
             percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted,
             impact_type: self.impact_type,
+            health_score_threshold: self.health_score_threshold.unwrap_or_default(),
         }
     }
 }

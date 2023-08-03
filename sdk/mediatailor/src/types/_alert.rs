@@ -19,6 +19,9 @@ pub struct Alert {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The category that MediaTailor assigns to the alert.</p>
+    #[doc(hidden)]
+    pub category: ::std::option::Option<crate::types::AlertCategory>,
 }
 impl Alert {
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
@@ -41,6 +44,10 @@ impl Alert {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
+    /// <p>The category that MediaTailor assigns to the alert.</p>
+    pub fn category(&self) -> ::std::option::Option<&crate::types::AlertCategory> {
+        self.category.as_ref()
+    }
 }
 impl Alert {
     /// Creates a new builder-style object to manufacture [`Alert`](crate::types::Alert).
@@ -60,6 +67,7 @@ pub struct AlertBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::AlertCategory>,
 }
 impl AlertBuilder {
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
@@ -133,6 +141,19 @@ impl AlertBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The category that MediaTailor assigns to the alert.</p>
+    pub fn category(mut self, input: crate::types::AlertCategory) -> Self {
+        self.category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category that MediaTailor assigns to the alert.</p>
+    pub fn set_category(
+        mut self,
+        input: ::std::option::Option<crate::types::AlertCategory>,
+    ) -> Self {
+        self.category = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Alert`](crate::types::Alert).
     pub fn build(self) -> crate::types::Alert {
         crate::types::Alert {
@@ -141,6 +162,7 @@ impl AlertBuilder {
             last_modified_time: self.last_modified_time,
             related_resource_arns: self.related_resource_arns,
             resource_arn: self.resource_arn,
+            category: self.category,
         }
     }
 }

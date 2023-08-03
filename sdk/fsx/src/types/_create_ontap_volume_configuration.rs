@@ -15,7 +15,7 @@ pub struct CreateOntapVolumeConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     #[doc(hidden)]
     pub size_in_megabytes: ::std::option::Option<i32>,
     /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
@@ -61,6 +61,9 @@ pub struct CreateOntapVolumeConfiguration {
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+    #[doc(hidden)]
+    pub snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
 }
 impl CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -76,7 +79,7 @@ impl CreateOntapVolumeConfiguration {
     pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn size_in_megabytes(&self) -> ::std::option::Option<i32> {
         self.size_in_megabytes
     }
@@ -129,6 +132,12 @@ impl CreateOntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+    pub fn snaplock_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
+        self.snaplock_configuration.as_ref()
+    }
 }
 impl CreateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
@@ -152,6 +161,8 @@ pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) ontap_volume_type: ::std::option::Option<crate::types::InputOntapVolumeType>,
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
+    pub(crate) snaplock_configuration:
+        ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
 }
 impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -193,12 +204,12 @@ impl CreateOntapVolumeConfigurationBuilder {
         self.security_style = input;
         self
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn size_in_megabytes(mut self, input: i32) -> Self {
         self.size_in_megabytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range of 20–104857600 to specify the size of the volume.</p>
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
     pub fn set_size_in_megabytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_megabytes = input;
         self
@@ -331,6 +342,22 @@ impl CreateOntapVolumeConfigurationBuilder {
         self.copy_tags_to_backups = input;
         self
     }
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+    pub fn snaplock_configuration(
+        mut self,
+        input: crate::types::CreateSnaplockConfiguration,
+    ) -> Self {
+        self.snaplock_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+    pub fn set_snaplock_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
+    ) -> Self {
+        self.snaplock_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::CreateOntapVolumeConfiguration {
         crate::types::CreateOntapVolumeConfiguration {
@@ -343,6 +370,7 @@ impl CreateOntapVolumeConfigurationBuilder {
             ontap_volume_type: self.ontap_volume_type,
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
+            snaplock_configuration: self.snaplock_configuration,
         }
     }
 }

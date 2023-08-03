@@ -9,6 +9,26 @@ pub(crate) fn reflens_list_analyses_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_asset_bundle_export_jobs_output_next_token(
+    input: &crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_asset_bundle_import_jobs_output_next_token(
+    input: &crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dashboard_versions_output_next_token(
     input: &crate::operation::list_dashboard_versions::ListDashboardVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -41,6 +61,46 @@ pub(crate) fn reflens_list_data_sets_output_next_token(
 
 pub(crate) fn reflens_list_data_sources_output_next_token(
     input: &crate::operation::list_data_sources::ListDataSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_group_memberships_output_next_token(
+    input: &crate::operation::list_group_memberships::ListGroupMembershipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_groups_output_next_token(
+    input: &crate::operation::list_groups::ListGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_iam_policy_assignments_output_next_token(
+    input: &crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_iam_policy_assignments_for_user_output_next_token(
+    input: &crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -129,6 +189,26 @@ pub(crate) fn reflens_list_topics_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_user_groups_output_next_token(
+    input: &crate::operation::list_user_groups::ListUserGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_users_output_next_token(
+    input: &crate::operation::list_users::ListUsersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_vpc_connections_output_next_token(
     input: &crate::operation::list_vpc_connections::ListVpcConnectionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -179,10 +259,40 @@ pub(crate) fn reflens_search_data_sources_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_groups_output_next_token(
+    input: &crate::operation::search_groups::SearchGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_analyses_output_analysis_summary_list(
     input: crate::operation::list_analyses::ListAnalysesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
     let input = match input.analysis_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_bundle_export_jobs_output_asset_bundle_export_job_summary_list(
+    input: crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>> {
+    let input = match input.asset_bundle_export_job_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_bundle_import_jobs_output_asset_bundle_import_job_summary_list(
+    input: crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobSummary>> {
+    let input = match input.asset_bundle_import_job_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -223,6 +333,46 @@ pub(crate) fn lens_list_data_sources_output_data_sources(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
     let input = match input.data_sources {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_group_memberships_output_group_member_list(
+    input: crate::operation::list_group_memberships::ListGroupMembershipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupMember>> {
+    let input = match input.group_member_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_groups_output_group_list(
+    input: crate::operation::list_groups::ListGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    let input = match input.group_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_iam_policy_assignments_output_iam_policy_assignments(
+    input: crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>> {
+    let input = match input.iam_policy_assignments {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_iam_policy_assignments_for_user_output_active_assignments(
+    input: crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>> {
+    let input = match input.active_assignments {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -299,6 +449,26 @@ pub(crate) fn lens_list_themes_output_theme_summary_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_user_groups_output_group_list(
+    input: crate::operation::list_user_groups::ListUserGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    let input = match input.group_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_users_output_user_list(
+    input: crate::operation::list_users::ListUsersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
+    let input = match input.user_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_analyses_output_analysis_summary_list(
     input: crate::operation::search_analyses::SearchAnalysesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
@@ -333,6 +503,16 @@ pub(crate) fn lens_search_data_sources_output_data_source_summaries(
     input: crate::operation::search_data_sources::SearchDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
     let input = match input.data_source_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_groups_output_group_list(
+    input: crate::operation::search_groups::SearchGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    let input = match input.group_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -15,6 +15,8 @@
 ///     AlgorithmSpec::RsaesOaepSha1 => { /* ... */ },
 ///     AlgorithmSpec::RsaesOaepSha256 => { /* ... */ },
 ///     AlgorithmSpec::RsaesPkcs1V15 => { /* ... */ },
+///     AlgorithmSpec::RsaAesKeyWrapSha1 => { /* ... */ },
+///     AlgorithmSpec::RsaAesKeyWrapSha256 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +56,10 @@ pub enum AlgorithmSpec {
     RsaesOaepSha256,
     #[allow(missing_docs)] // documentation missing in model
     RsaesPkcs1V15,
+    #[allow(missing_docs)] // documentation missing in model
+    RsaAesKeyWrapSha1,
+    #[allow(missing_docs)] // documentation missing in model
+    RsaAesKeyWrapSha256,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +69,8 @@ impl ::std::convert::From<&str> for AlgorithmSpec {
             "RSAES_OAEP_SHA_1" => AlgorithmSpec::RsaesOaepSha1,
             "RSAES_OAEP_SHA_256" => AlgorithmSpec::RsaesOaepSha256,
             "RSAES_PKCS1_V1_5" => AlgorithmSpec::RsaesPkcs1V15,
+            "RSA_AES_KEY_WRAP_SHA_1" => AlgorithmSpec::RsaAesKeyWrapSha1,
+            "RSA_AES_KEY_WRAP_SHA_256" => AlgorithmSpec::RsaAesKeyWrapSha256,
             other => {
                 AlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -83,12 +91,20 @@ impl AlgorithmSpec {
             AlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
             AlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
             AlgorithmSpec::RsaesPkcs1V15 => "RSAES_PKCS1_V1_5",
+            AlgorithmSpec::RsaAesKeyWrapSha1 => "RSA_AES_KEY_WRAP_SHA_1",
+            AlgorithmSpec::RsaAesKeyWrapSha256 => "RSA_AES_KEY_WRAP_SHA_256",
             AlgorithmSpec::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
+        &[
+            "RSAES_OAEP_SHA_1",
+            "RSAES_OAEP_SHA_256",
+            "RSAES_PKCS1_V1_5",
+            "RSA_AES_KEY_WRAP_SHA_1",
+            "RSA_AES_KEY_WRAP_SHA_256",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AlgorithmSpec {

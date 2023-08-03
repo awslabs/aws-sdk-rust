@@ -12,6 +12,12 @@ pub fn ser_relative_date_time_control_display_options(
     if let Some(var_3) = &input.date_time_format {
         object.key("DateTimeFormat").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.info_icon_label_options {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("InfoIconLabelOptions").start_object();
+        crate::protocol_serde::shape_sheet_control_info_icon_label_options::ser_sheet_control_info_icon_label_options(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -54,6 +60,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "InfoIconLabelOptions" => {
+                                builder = builder.set_info_icon_label_options(
+                                    crate::protocol_serde::shape_sheet_control_info_icon_label_options::de_sheet_control_info_icon_label_options(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

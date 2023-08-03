@@ -15,6 +15,7 @@
 ///     UsageType::Ec2InstanceHours => { /* ... */ },
 ///     UsageType::EcrInitialScan => { /* ... */ },
 ///     UsageType::EcrRescan => { /* ... */ },
+///     UsageType::LambdaFunctionCodeHours => { /* ... */ },
 ///     UsageType::LambdaFunctionHours => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum UsageType {
     #[allow(missing_docs)] // documentation missing in model
     EcrRescan,
     #[allow(missing_docs)] // documentation missing in model
+    LambdaFunctionCodeHours,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionHours,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for UsageType {
             "EC2_INSTANCE_HOURS" => UsageType::Ec2InstanceHours,
             "ECR_INITIAL_SCAN" => UsageType::EcrInitialScan,
             "ECR_RESCAN" => UsageType::EcrRescan,
+            "LAMBDA_FUNCTION_CODE_HOURS" => UsageType::LambdaFunctionCodeHours,
             "LAMBDA_FUNCTION_HOURS" => UsageType::LambdaFunctionHours,
             other => UsageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -85,6 +89,7 @@ impl UsageType {
             UsageType::Ec2InstanceHours => "EC2_INSTANCE_HOURS",
             UsageType::EcrInitialScan => "ECR_INITIAL_SCAN",
             UsageType::EcrRescan => "ECR_RESCAN",
+            UsageType::LambdaFunctionCodeHours => "LAMBDA_FUNCTION_CODE_HOURS",
             UsageType::LambdaFunctionHours => "LAMBDA_FUNCTION_HOURS",
             UsageType::Unknown(value) => value.as_str(),
         }
@@ -95,6 +100,7 @@ impl UsageType {
             "EC2_INSTANCE_HOURS",
             "ECR_INITIAL_SCAN",
             "ECR_RESCAN",
+            "LAMBDA_FUNCTION_CODE_HOURS",
             "LAMBDA_FUNCTION_HOURS",
         ]
     }

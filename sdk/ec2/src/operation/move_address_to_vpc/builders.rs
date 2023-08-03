@@ -5,9 +5,10 @@ pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_input::MoveA
 
 /// Fluent builder constructing a request to `MoveAddressToVpc`.
 ///
-/// <p>Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be allocated to your account for more than 24 hours, and it must not be associated with an instance. After the Elastic IP address is moved, it is no longer available for use in the EC2-Classic platform, unless you move it back using the <code>RestoreAddressToClassic</code> request. You cannot move an Elastic IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic platform.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be allocated to your account for more than 24 hours, and it must not be associated with an instance. After the Elastic IP address is moved, it is no longer available for use in the EC2-Classic platform, unless you move it back using the <code>RestoreAddressToClassic</code> request. You cannot move an Elastic IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic platform.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MoveAddressToVpcFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

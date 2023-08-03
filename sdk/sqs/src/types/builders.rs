@@ -11,6 +11,8 @@ pub use crate::types::_message_attribute_value::MessageAttributeValueBuilder;
 
 pub use crate::types::_message::MessageBuilder;
 
+pub use crate::types::_list_message_move_tasks_result_entry::ListMessageMoveTasksResultEntryBuilder;
+
 pub use crate::types::_delete_message_batch_result_entry::DeleteMessageBatchResultEntryBuilder;
 
 pub use crate::types::_delete_message_batch_request_entry::DeleteMessageBatchRequestEntryBuilder;

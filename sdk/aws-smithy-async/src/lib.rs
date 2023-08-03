@@ -18,6 +18,9 @@
 
 pub mod future;
 pub mod rt;
+#[cfg(feature = "test-util")]
+pub mod test_util;
+pub mod time;
 
 /// Given an `Instant` and a `Duration`, assert time elapsed since `Instant` is equal to `Duration`.
 /// This macro allows for a 5ms margin of error.

@@ -32,8 +32,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-appstream = "0.28.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-appstream = "0.29.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,14 +150,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateApplicationFleet`](crate::operation::associate_application_fleet) operation has
-/// a [`Client::associate_application_fleet`], function which returns a builder for that operation.
+/// For example, the [`AssociateAppBlockBuilderAppBlock`](crate::operation::associate_app_block_builder_app_block) operation has
+/// a [`Client::associate_app_block_builder_app_block`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_application_fleet()
-///     .fleet_name("example")
+/// let result = client.associate_app_block_builder_app_block()
+///     .app_block_arn("example")
 ///     .send()
 ///     .await;
 /// ```

@@ -49,6 +49,9 @@ pub struct GetClusterCredentialsInput {
     /// </ul>
     #[doc(hidden)]
     pub db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The custom domain name for the cluster credentials.</p>
+    #[doc(hidden)]
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsInput {
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
@@ -102,6 +105,10 @@ impl GetClusterCredentialsInput {
     pub fn db_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.db_groups.as_deref()
     }
+    /// <p>The custom domain name for the cluster credentials.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
 }
 impl GetClusterCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
@@ -124,6 +131,7 @@ pub struct GetClusterCredentialsInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) auto_create: ::std::option::Option<bool>,
     pub(crate) db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsInputBuilder {
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
@@ -255,6 +263,22 @@ impl GetClusterCredentialsInputBuilder {
         self.db_groups = input;
         self
     }
+    /// <p>The custom domain name for the cluster credentials.</p>
+    pub fn custom_domain_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name for the cluster credentials.</p>
+    pub fn set_custom_domain_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
     pub fn build(
         self,
@@ -270,6 +294,7 @@ impl GetClusterCredentialsInputBuilder {
                 duration_seconds: self.duration_seconds,
                 auto_create: self.auto_create,
                 db_groups: self.db_groups,
+                custom_domain_name: self.custom_domain_name,
             },
         )
     }

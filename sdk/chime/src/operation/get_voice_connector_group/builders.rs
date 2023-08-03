@@ -5,7 +5,11 @@ pub use crate::operation::get_voice_connector_group::_get_voice_connector_group_
 
 /// Fluent builder constructing a request to `GetVoiceConnectorGroup`.
 ///
-/// <p> Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p>
+/// <p> Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorGroup.html">GetVoiceConnectorGroup</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(note = "Replaced by GetVoiceConnectorGroup in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

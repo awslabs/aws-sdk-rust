@@ -6,6 +6,7 @@ pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 /// Fluent builder constructing a request to `ListTags`.
 ///
 /// <p>Lists all tags for the specified resource.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

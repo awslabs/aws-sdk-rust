@@ -16,7 +16,7 @@ pub struct ConfiguredTable {
     /// <p>A description for the configured table.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Glue table that this configured table represents.</p>
+    /// <p>The Glue table that this configured table represents.</p>
     #[doc(hidden)]
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The time the configured table was created.</p>
@@ -32,7 +32,7 @@ pub struct ConfiguredTable {
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
-    /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     #[doc(hidden)]
     pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -53,7 +53,7 @@ impl ConfiguredTable {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The AWS Glue table that this configured table represents.</p>
+    /// <p>The Glue table that this configured table represents.</p>
     pub fn table_reference(&self) -> ::std::option::Option<&crate::types::TableReference> {
         self.table_reference.as_ref()
     }
@@ -75,7 +75,7 @@ impl ConfiguredTable {
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
-    /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     pub fn allowed_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_columns.as_deref()
     }
@@ -146,12 +146,12 @@ impl ConfiguredTableBuilder {
         self.description = input;
         self
     }
-    /// <p>The AWS Glue table that this configured table represents.</p>
+    /// <p>The Glue table that this configured table represents.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS Glue table that this configured table represents.</p>
+    /// <p>The Glue table that this configured table represents.</p>
     pub fn set_table_reference(
         mut self,
         input: ::std::option::Option<crate::types::TableReference>,
@@ -226,7 +226,7 @@ impl ConfiguredTableBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
     ///
-    /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     pub fn allowed_columns(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -236,7 +236,7 @@ impl ConfiguredTableBuilder {
         self.allowed_columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The columns within the underlying AWS Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     pub fn set_allowed_columns(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

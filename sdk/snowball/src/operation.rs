@@ -64,6 +64,9 @@ pub mod list_jobs;
 /// Types for the `ListLongTermPricing` operation.
 pub mod list_long_term_pricing;
 
+/// Types for the `ListPickupLocations` operation.
+pub mod list_pickup_locations;
+
 /// Types for the `ListServiceVersions` operation.
 pub mod list_service_versions;
 

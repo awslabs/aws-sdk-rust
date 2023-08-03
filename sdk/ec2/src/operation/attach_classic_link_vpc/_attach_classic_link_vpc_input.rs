@@ -6,13 +6,13 @@ pub struct AttachClassicLinkVpcInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -21,15 +21,15 @@ impl AttachClassicLinkVpcInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -68,14 +68,14 @@ impl AttachClassicLinkVpcInputBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
         self.groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn set_groups(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -83,22 +83,22 @@ impl AttachClassicLinkVpcInputBuilder {
         self.groups = input;
         self
     }
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self

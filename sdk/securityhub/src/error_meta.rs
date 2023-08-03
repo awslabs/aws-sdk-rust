@@ -129,6 +129,54 @@ impl From<crate::operation::accept_invitation::AcceptInvitationError> for Error 
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_disable_standards::BatchDisableStandardsError,
             R,
         >,
@@ -209,6 +257,53 @@ impl From<crate::operation::batch_enable_standards::BatchEnableStandardsError> f
             crate::operation::batch_enable_standards::BatchEnableStandardsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::batch_enable_standards::BatchEnableStandardsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::batch_enable_standards::BatchEnableStandardsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError> for Error {
+    fn from(
+        err: crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -327,6 +422,54 @@ impl From<crate::operation::batch_import_findings::BatchImportFindingsError> for
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_findings::BatchUpdateFindingsError,
             R,
         >,
@@ -432,6 +575,50 @@ impl From<crate::operation::create_action_target::CreateActionTargetError> for E
             crate::operation::create_action_target::CreateActionTargetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_action_target::CreateActionTargetError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::create_action_target::CreateActionTargetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_automation_rule::CreateAutomationRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_automation_rule::CreateAutomationRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_automation_rule::CreateAutomationRuleError> for Error {
+    fn from(err: crate::operation::create_automation_rule::CreateAutomationRuleError) -> Self {
+        match err {
+            crate::operation::create_automation_rule::CreateAutomationRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_automation_rule::CreateAutomationRuleError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::create_automation_rule::CreateAutomationRuleError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::create_automation_rule::CreateAutomationRuleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_automation_rule::CreateAutomationRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_automation_rule::CreateAutomationRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1972,6 +2159,50 @@ impl From<crate::operation::invite_members::InviteMembersError> for Error {
             crate::operation::invite_members::InviteMembersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_automation_rules::ListAutomationRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_automation_rules::ListAutomationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_automation_rules::ListAutomationRulesError> for Error {
+    fn from(err: crate::operation::list_automation_rules::ListAutomationRulesError) -> Self {
+        match err {
+            crate::operation::list_automation_rules::ListAutomationRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_automation_rules::ListAutomationRulesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_automation_rules::ListAutomationRulesError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::list_automation_rules::ListAutomationRulesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_automation_rules::ListAutomationRulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_automation_rules::ListAutomationRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

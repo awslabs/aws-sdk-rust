@@ -5,9 +5,10 @@ pub use crate::operation::describe_classic_link_instances::_describe_classic_lin
 
 /// Fluent builder constructing a request to `DescribeClassicLinkInstances`.
 ///
-/// <p>Describes one or more of your linked EC2-Classic instances. This request only returns information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information about other instances.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Describes one or more of your linked EC2-Classic instances. This request only returns information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information about other instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClassicLinkInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,7 +112,7 @@ impl DescribeClassicLinkInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -123,13 +124,13 @@ impl DescribeClassicLinkInstancesFluentBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -141,7 +142,7 @@ impl DescribeClassicLinkInstancesFluentBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     pub fn set_filters(
         mut self,
@@ -164,12 +165,12 @@ impl DescribeClassicLinkInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
     ///
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_ids(input.into());
         self
     }
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     pub fn set_instance_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

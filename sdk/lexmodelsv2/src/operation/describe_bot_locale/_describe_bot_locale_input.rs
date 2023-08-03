@@ -6,7 +6,7 @@ pub struct DescribeBotLocaleInput {
     /// <p>The identifier of the bot associated with the locale.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
@@ -18,7 +18,7 @@ impl DescribeBotLocaleInput {
     pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -56,12 +56,12 @@ impl DescribeBotLocaleInputBuilder {
         self.bot_id = input;
         self
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the version of the bot associated with the locale.</p>
+    /// <p>The version of the bot associated with the locale.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self

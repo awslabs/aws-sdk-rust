@@ -8,6 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutAppInstanceStreamingConfigurationsOutput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput) with field(s):
     ///   - [`app_instance_streaming_configurations(Option<Vec<AppInstanceStreamingConfiguration>>)`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsOutput::app_instance_streaming_configurations): <p>The streaming configurations of an <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<PutAppInstanceStreamingConfigurationsError>`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsError)
+    #[deprecated(
+        note = "Replaced by PutAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn put_app_instance_streaming_configurations(&self) -> crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsFluentBuilder{
         crate::operation::put_app_instance_streaming_configurations::builders::PutAppInstanceStreamingConfigurationsFluentBuilder::new(self.handle.clone())
     }

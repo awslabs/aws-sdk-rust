@@ -92,7 +92,11 @@ pub(crate) mod shape_delete_integration_association;
 
 pub(crate) mod shape_delete_prompt;
 
+pub(crate) mod shape_delete_queue;
+
 pub(crate) mod shape_delete_quick_connect;
+
+pub(crate) mod shape_delete_routing_profile;
 
 pub(crate) mod shape_delete_rule;
 
@@ -274,7 +278,15 @@ pub(crate) mod shape_resume_contact_recording;
 
 pub(crate) mod shape_search_available_phone_numbers;
 
+pub(crate) mod shape_search_hours_of_operations;
+
+pub(crate) mod shape_search_prompts;
+
 pub(crate) mod shape_search_queues;
+
+pub(crate) mod shape_search_quick_connects;
+
+pub(crate) mod shape_search_resource_tags;
 
 pub(crate) mod shape_search_routing_profiles;
 
@@ -508,6 +520,8 @@ pub(crate) mod shape_list_default_vocabularies_input;
 
 pub(crate) mod shape_list_phone_numbers_v2_input;
 
+pub(crate) mod shape_maximum_result_returned_exception;
+
 pub(crate) mod shape_monitor_contact_input;
 
 pub(crate) mod shape_outbound_contact_not_permitted_exception;
@@ -530,7 +544,15 @@ pub(crate) mod shape_resume_contact_recording_input;
 
 pub(crate) mod shape_search_available_phone_numbers_input;
 
+pub(crate) mod shape_search_hours_of_operations_input;
+
+pub(crate) mod shape_search_prompts_input;
+
 pub(crate) mod shape_search_queues_input;
+
+pub(crate) mod shape_search_quick_connects_input;
+
+pub(crate) mod shape_search_resource_tags_input;
 
 pub(crate) mod shape_search_routing_profiles_input;
 
@@ -732,6 +754,12 @@ pub(crate) mod shape_hours_of_operation;
 
 pub(crate) mod shape_hours_of_operation_config;
 
+pub(crate) mod shape_hours_of_operation_list;
+
+pub(crate) mod shape_hours_of_operation_search_criteria;
+
+pub(crate) mod shape_hours_of_operation_search_filter;
+
 pub(crate) mod shape_hours_of_operation_summary_list;
 
 pub(crate) mod shape_instance;
@@ -780,6 +808,12 @@ pub(crate) mod shape_problems;
 
 pub(crate) mod shape_prompt;
 
+pub(crate) mod shape_prompt_list;
+
+pub(crate) mod shape_prompt_search_criteria;
+
+pub(crate) mod shape_prompt_search_filter;
+
 pub(crate) mod shape_prompt_summary_list;
 
 pub(crate) mod shape_property_validation_exception_property_list;
@@ -798,11 +832,19 @@ pub(crate) mod shape_quick_connect;
 
 pub(crate) mod shape_quick_connect_config;
 
+pub(crate) mod shape_quick_connect_search_criteria;
+
+pub(crate) mod shape_quick_connect_search_filter;
+
+pub(crate) mod shape_quick_connect_search_summary_list;
+
 pub(crate) mod shape_quick_connect_summary_list;
 
 pub(crate) mod shape_reference;
 
 pub(crate) mod shape_reference_summary_list;
+
+pub(crate) mod shape_resource_tags_search_criteria;
 
 pub(crate) mod shape_routing_profile;
 
@@ -841,6 +883,8 @@ pub(crate) mod shape_security_profiles_search_filter;
 pub(crate) mod shape_security_profiles_search_summary_list;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_tags_list;
 
 pub(crate) mod shape_task_template_constraints;
 
@@ -1037,6 +1081,10 @@ pub(crate) mod shape_send_notification_action_definition;
 pub(crate) mod shape_string_condition;
 
 pub(crate) mod shape_tag_restricted_resource_list;
+
+pub(crate) mod shape_tag_search_condition;
+
+pub(crate) mod shape_tag_set;
 
 pub(crate) mod shape_task_action_definition;
 

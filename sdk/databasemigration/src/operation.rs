@@ -22,6 +22,9 @@ pub mod create_event_subscription;
 /// Types for the `CreateFleetAdvisorCollector` operation.
 pub mod create_fleet_advisor_collector;
 
+/// Types for the `CreateReplicationConfig` operation.
+pub mod create_replication_config;
+
 /// Types for the `CreateReplicationInstance` operation.
 pub mod create_replication_instance;
 
@@ -48,6 +51,9 @@ pub mod delete_fleet_advisor_collector;
 
 /// Types for the `DeleteFleetAdvisorDatabases` operation.
 pub mod delete_fleet_advisor_databases;
+
+/// Types for the `DeleteReplicationConfig` operation.
+pub mod delete_replication_config;
 
 /// Types for the `DeleteReplicationInstance` operation.
 pub mod delete_replication_instance;
@@ -121,6 +127,9 @@ pub mod describe_recommendations;
 /// Types for the `DescribeRefreshSchemasStatus` operation.
 pub mod describe_refresh_schemas_status;
 
+/// Types for the `DescribeReplicationConfigs` operation.
+pub mod describe_replication_configs;
+
 /// Types for the `DescribeReplicationInstanceTaskLogs` operation.
 pub mod describe_replication_instance_task_logs;
 
@@ -129,6 +138,9 @@ pub mod describe_replication_instances;
 
 /// Types for the `DescribeReplicationSubnetGroups` operation.
 pub mod describe_replication_subnet_groups;
+
+/// Types for the `DescribeReplicationTableStatistics` operation.
+pub mod describe_replication_table_statistics;
 
 /// Types for the `DescribeReplicationTaskAssessmentResults` operation.
 pub mod describe_replication_task_assessment_results;
@@ -141,6 +153,9 @@ pub mod describe_replication_task_individual_assessments;
 
 /// Types for the `DescribeReplicationTasks` operation.
 pub mod describe_replication_tasks;
+
+/// Types for the `DescribeReplications` operation.
+pub mod describe_replications;
 
 /// Types for the `DescribeSchemas` operation.
 pub mod describe_schemas;
@@ -160,6 +175,9 @@ pub mod modify_endpoint;
 /// Types for the `ModifyEventSubscription` operation.
 pub mod modify_event_subscription;
 
+/// Types for the `ModifyReplicationConfig` operation.
+pub mod modify_replication_config;
+
 /// Types for the `ModifyReplicationInstance` operation.
 pub mod modify_replication_instance;
 
@@ -178,6 +196,9 @@ pub mod reboot_replication_instance;
 /// Types for the `RefreshSchemas` operation.
 pub mod refresh_schemas;
 
+/// Types for the `ReloadReplicationTables` operation.
+pub mod reload_replication_tables;
+
 /// Types for the `ReloadTables` operation.
 pub mod reload_tables;
 
@@ -190,6 +211,9 @@ pub mod run_fleet_advisor_lsa_analysis;
 /// Types for the `StartRecommendations` operation.
 pub mod start_recommendations;
 
+/// Types for the `StartReplication` operation.
+pub mod start_replication;
+
 /// Types for the `StartReplicationTask` operation.
 pub mod start_replication_task;
 
@@ -198,6 +222,9 @@ pub mod start_replication_task_assessment;
 
 /// Types for the `StartReplicationTaskAssessmentRun` operation.
 pub mod start_replication_task_assessment_run;
+
+/// Types for the `StopReplication` operation.
+pub mod stop_replication;
 
 /// Types for the `StopReplicationTask` operation.
 pub mod stop_replication_task;

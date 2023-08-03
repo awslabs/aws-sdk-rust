@@ -175,7 +175,7 @@ pub type TagResourceErrorKind = TagResourceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
-    /// <p> The requested Data Store was not found.</p>
+    /// <p> The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),

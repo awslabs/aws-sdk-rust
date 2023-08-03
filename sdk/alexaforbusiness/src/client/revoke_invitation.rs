@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`enrollment_id(impl ::std::convert::Into<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder::set_enrollment_id): <p>The ARN of the enrollment invitation to revoke. Required.</p>
     /// - On success, responds with [`RevokeInvitationOutput`](crate::operation::revoke_invitation::RevokeInvitationOutput)
     /// - On failure, responds with [`SdkError<RevokeInvitationError>`](crate::operation::revoke_invitation::RevokeInvitationError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn revoke_invitation(
         &self,
     ) -> crate::operation::revoke_invitation::builders::RevokeInvitationFluentBuilder {

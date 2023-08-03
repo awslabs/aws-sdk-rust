@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
+    #[deprecated(note = "Replaced by ListChannels in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channels(
         &self,
     ) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {

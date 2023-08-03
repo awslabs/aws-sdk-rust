@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTypeConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     #[doc(hidden)]
     pub configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SetTypeConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn configuration_arn(&self) -> ::std::option::Option<&str> {
         self.configuration_arn.as_deref()
@@ -39,7 +39,7 @@ pub struct SetTypeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl SetTypeConfigurationOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn configuration_arn(
         mut self,
@@ -48,7 +48,7 @@ impl SetTypeConfigurationOutputBuilder {
         self.configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn set_configuration_arn(
         mut self,

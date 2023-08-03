@@ -17,6 +17,7 @@ pub struct LayerVersionsListItem {
     #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The layer's compatible runtimes.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     #[doc(hidden)]
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     /// <p>The layer's open-source license.</p>
@@ -45,6 +46,7 @@ impl LayerVersionsListItem {
         self.created_date.as_deref()
     }
     /// <p>The layer's compatible runtimes.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtimes(&self) -> ::std::option::Option<&[crate::types::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
@@ -131,6 +133,7 @@ impl LayerVersionsListItemBuilder {
     /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
     ///
     /// <p>The layer's compatible runtimes.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtimes(mut self, input: crate::types::Runtime) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
         v.push(input);
@@ -138,6 +141,7 @@ impl LayerVersionsListItemBuilder {
         self
     }
     /// <p>The layer's compatible runtimes.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_compatible_runtimes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,

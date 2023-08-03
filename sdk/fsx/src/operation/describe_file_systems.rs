@@ -162,6 +162,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
             crate::protocol_serde::shape_describe_file_systems::de_describe_file_systems_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

@@ -196,53 +196,79 @@ pub fn ser_create_db_instance_read_replica_input_input(
         scope_71.string(var_72);
     }
     #[allow(unused_mut)]
-    let mut scope_73 = writer.prefix("ReplicaMode");
-    if let Some(var_74) = &input.replica_mode {
-        scope_73.string(var_74.as_str());
+    let mut scope_73 = writer.prefix("DomainFqdn");
+    if let Some(var_74) = &input.domain_fqdn {
+        scope_73.string(var_74);
     }
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("MaxAllocatedStorage");
-    if let Some(var_76) = &input.max_allocated_storage {
-        scope_75.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_76).into()),
-        );
+    let mut scope_75 = writer.prefix("DomainOu");
+    if let Some(var_76) = &input.domain_ou {
+        scope_75.string(var_76);
     }
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("CustomIamInstanceProfile");
-    if let Some(var_78) = &input.custom_iam_instance_profile {
+    let mut scope_77 = writer.prefix("DomainAuthSecretArn");
+    if let Some(var_78) = &input.domain_auth_secret_arn {
         scope_77.string(var_78);
     }
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("NetworkType");
-    if let Some(var_80) = &input.network_type {
-        scope_79.string(var_80);
+    let mut scope_79 = writer.prefix("DomainDnsIps");
+    if let Some(var_80) = &input.domain_dns_ips {
+        let mut list_82 = scope_79.start_list(false, None);
+        for item_81 in var_80 {
+            #[allow(unused_mut)]
+            let mut entry_83 = list_82.entry();
+            entry_83.string(item_81);
+        }
+        list_82.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("StorageThroughput");
-    if let Some(var_82) = &input.storage_throughput {
-        scope_81.number(
+    let mut scope_84 = writer.prefix("ReplicaMode");
+    if let Some(var_85) = &input.replica_mode {
+        scope_84.string(var_85.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_86 = writer.prefix("MaxAllocatedStorage");
+    if let Some(var_87) = &input.max_allocated_storage {
+        scope_86.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_82).into()),
+            ::aws_smithy_types::Number::NegInt((*var_87).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("EnableCustomerOwnedIp");
-    if let Some(var_84) = &input.enable_customer_owned_ip {
-        scope_83.boolean(*var_84);
+    let mut scope_88 = writer.prefix("CustomIamInstanceProfile");
+    if let Some(var_89) = &input.custom_iam_instance_profile {
+        scope_88.string(var_89);
     }
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("AllocatedStorage");
-    if let Some(var_86) = &input.allocated_storage {
-        scope_85.number(
+    let mut scope_90 = writer.prefix("NetworkType");
+    if let Some(var_91) = &input.network_type {
+        scope_90.string(var_91);
+    }
+    #[allow(unused_mut)]
+    let mut scope_92 = writer.prefix("StorageThroughput");
+    if let Some(var_93) = &input.storage_throughput {
+        scope_92.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_86).into()),
+            ::aws_smithy_types::Number::NegInt((*var_93).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("SourceDBClusterIdentifier");
-    if let Some(var_88) = &input.source_db_cluster_identifier {
-        scope_87.string(var_88);
+    let mut scope_94 = writer.prefix("EnableCustomerOwnedIp");
+    if let Some(var_95) = &input.enable_customer_owned_ip {
+        scope_94.boolean(*var_95);
+    }
+    #[allow(unused_mut)]
+    let mut scope_96 = writer.prefix("AllocatedStorage");
+    if let Some(var_97) = &input.allocated_storage {
+        scope_96.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_97).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_98 = writer.prefix("SourceDBClusterIdentifier");
+    if let Some(var_99) = &input.source_db_cluster_identifier {
+        scope_98.string(var_99);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

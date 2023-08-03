@@ -34,6 +34,9 @@ pub struct UpdateBrokerInput {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    #[doc(hidden)]
+    pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
 }
 impl UpdateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -82,6 +85,12 @@ impl UpdateBrokerInput {
     pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.data_replication_mode.as_ref()
+    }
 }
 impl UpdateBrokerInput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerInput`](crate::operation::update_broker::UpdateBrokerInput).
@@ -106,6 +115,7 @@ pub struct UpdateBrokerInputBuilder {
     pub(crate) logs: ::std::option::Option<crate::types::Logs>,
     pub(crate) maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
 }
 impl UpdateBrokerInputBuilder {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -244,6 +254,19 @@ impl UpdateBrokerInputBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
+        self.data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn set_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.data_replication_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBrokerInput`](crate::operation::update_broker::UpdateBrokerInput).
     pub fn build(
         self,
@@ -262,6 +285,7 @@ impl UpdateBrokerInputBuilder {
             logs: self.logs,
             maintenance_window_start_time: self.maintenance_window_start_time,
             security_groups: self.security_groups,
+            data_replication_mode: self.data_replication_mode,
         })
     }
 }

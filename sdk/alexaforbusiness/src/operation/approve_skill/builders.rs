@@ -6,6 +6,7 @@ pub use crate::operation::approve_skill::_approve_skill_input::ApproveSkillInput
 /// Fluent builder constructing a request to `ApproveSkill`.
 ///
 /// <p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ApproveSkillFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

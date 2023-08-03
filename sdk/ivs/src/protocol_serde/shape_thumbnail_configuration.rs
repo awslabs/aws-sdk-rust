@@ -12,6 +12,18 @@ pub fn ser_thumbnail_configuration(
             ::aws_smithy_types::Number::NegInt((input.target_interval_seconds).into()),
         );
     }
+    if let Some(var_2) = &input.resolution {
+        object.key("resolution").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.storage {
+        let mut array_4 = object.key("storage").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +70,26 @@ where
                                     )?
                                     .map(i64::try_from)
                                     .transpose()?,
+                                );
+                            }
+                            "resolution" => {
+                                builder = builder.set_resolution(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::ThumbnailConfigurationResolution::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "storage" => {
+                                builder = builder.set_storage(
+                                    crate::protocol_serde::shape_thumbnail_configuration_storage_list::de_thumbnail_configuration_storage_list(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

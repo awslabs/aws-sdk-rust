@@ -6,6 +6,7 @@ pub use crate::operation::delete_business_report_schedule::_delete_business_repo
 /// Fluent builder constructing a request to `DeleteBusinessReportSchedule`.
 ///
 /// <p>Deletes the recurring report delivery schedule with the specified schedule ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBusinessReportScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -87,6 +87,23 @@ pub fn de_delete_volume_http_error(
                 tmp
             })
         }
+        "ServiceLimitExceeded" => {
+            crate::operation::delete_volume::DeleteVolumeError::ServiceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceLimitExceededBuilder::default();
+                    output = crate::protocol_serde::shape_service_limit_exceeded::de_service_limit_exceeded_json_err(_response_body, output).map_err(crate::operation::delete_volume::DeleteVolumeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "VolumeNotFound" => {
             crate::operation::delete_volume::DeleteVolumeError::VolumeNotFound({
                 #[allow(unused_mut)]

@@ -38,6 +38,8 @@ pub(crate) mod shape_create_slot;
 
 pub(crate) mod shape_create_slot_type;
 
+pub(crate) mod shape_create_test_set_discrepancy_report;
+
 pub(crate) mod shape_create_upload_url;
 
 pub(crate) mod shape_delete_bot;
@@ -63,6 +65,8 @@ pub(crate) mod shape_delete_resource_policy_statement;
 pub(crate) mod shape_delete_slot;
 
 pub(crate) mod shape_delete_slot_type;
+
+pub(crate) mod shape_delete_test_set;
 
 pub(crate) mod shape_delete_utterances;
 
@@ -90,6 +94,16 @@ pub(crate) mod shape_describe_slot;
 
 pub(crate) mod shape_describe_slot_type;
 
+pub(crate) mod shape_describe_test_execution;
+
+pub(crate) mod shape_describe_test_set;
+
+pub(crate) mod shape_describe_test_set_discrepancy_report;
+
+pub(crate) mod shape_describe_test_set_generation;
+
+pub(crate) mod shape_get_test_execution_artifacts_url;
+
 pub(crate) mod shape_list_aggregated_utterances;
 
 pub(crate) mod shape_list_bot_aliases;
@@ -112,9 +126,19 @@ pub(crate) mod shape_list_exports;
 
 pub(crate) mod shape_list_imports;
 
+pub(crate) mod shape_list_intent_metrics;
+
+pub(crate) mod shape_list_intent_paths;
+
+pub(crate) mod shape_list_intent_stage_metrics;
+
 pub(crate) mod shape_list_intents;
 
 pub(crate) mod shape_list_recommended_intents;
+
+pub(crate) mod shape_list_session_analytics_data;
+
+pub(crate) mod shape_list_session_metrics;
 
 pub(crate) mod shape_list_slot_types;
 
@@ -122,11 +146,27 @@ pub(crate) mod shape_list_slots;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_test_execution_result_items;
+
+pub(crate) mod shape_list_test_executions;
+
+pub(crate) mod shape_list_test_set_records;
+
+pub(crate) mod shape_list_test_sets;
+
+pub(crate) mod shape_list_utterance_analytics_data;
+
+pub(crate) mod shape_list_utterance_metrics;
+
 pub(crate) mod shape_search_associated_transcripts;
 
 pub(crate) mod shape_start_bot_recommendation;
 
 pub(crate) mod shape_start_import;
+
+pub(crate) mod shape_start_test_execution;
+
+pub(crate) mod shape_start_test_set_generation;
 
 pub(crate) mod shape_stop_bot_recommendation;
 
@@ -151,6 +191,8 @@ pub(crate) mod shape_update_resource_policy;
 pub(crate) mod shape_update_slot;
 
 pub(crate) mod shape_update_slot_type;
+
+pub(crate) mod shape_update_test_set;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -188,6 +230,8 @@ pub(crate) mod shape_create_slot_input;
 
 pub(crate) mod shape_create_slot_type_input;
 
+pub(crate) mod shape_create_test_set_discrepancy_report_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_aggregated_utterances_input;
@@ -212,13 +256,35 @@ pub(crate) mod shape_list_exports_input;
 
 pub(crate) mod shape_list_imports_input;
 
+pub(crate) mod shape_list_intent_metrics_input;
+
+pub(crate) mod shape_list_intent_paths_input;
+
+pub(crate) mod shape_list_intent_stage_metrics_input;
+
 pub(crate) mod shape_list_intents_input;
 
 pub(crate) mod shape_list_recommended_intents_input;
 
+pub(crate) mod shape_list_session_analytics_data_input;
+
+pub(crate) mod shape_list_session_metrics_input;
+
 pub(crate) mod shape_list_slot_types_input;
 
 pub(crate) mod shape_list_slots_input;
+
+pub(crate) mod shape_list_test_execution_result_items_input;
+
+pub(crate) mod shape_list_test_executions_input;
+
+pub(crate) mod shape_list_test_set_records_input;
+
+pub(crate) mod shape_list_test_sets_input;
+
+pub(crate) mod shape_list_utterance_analytics_data_input;
+
+pub(crate) mod shape_list_utterance_metrics_input;
 
 pub(crate) mod shape_precondition_failed_exception;
 
@@ -231,6 +297,10 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_bot_recommendation_input;
 
 pub(crate) mod shape_start_import_input;
+
+pub(crate) mod shape_start_test_execution_input;
+
+pub(crate) mod shape_start_test_set_generation_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -254,6 +324,8 @@ pub(crate) mod shape_update_slot_input;
 
 pub(crate) mod shape_update_slot_type_input;
 
+pub(crate) mod shape_update_test_set_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_aggregated_utterances_filter;
@@ -261,6 +333,46 @@ pub(crate) mod shape_aggregated_utterances_filter;
 pub(crate) mod shape_aggregated_utterances_sort_by;
 
 pub(crate) mod shape_aggregated_utterances_summary_list;
+
+pub(crate) mod shape_analytics_bin_by_specification;
+
+pub(crate) mod shape_analytics_intent_filter;
+
+pub(crate) mod shape_analytics_intent_group_by_specification;
+
+pub(crate) mod shape_analytics_intent_metric;
+
+pub(crate) mod shape_analytics_intent_node_summaries;
+
+pub(crate) mod shape_analytics_intent_results;
+
+pub(crate) mod shape_analytics_intent_stage_filter;
+
+pub(crate) mod shape_analytics_intent_stage_group_by_specification;
+
+pub(crate) mod shape_analytics_intent_stage_metric;
+
+pub(crate) mod shape_analytics_intent_stage_results;
+
+pub(crate) mod shape_analytics_path_filter;
+
+pub(crate) mod shape_analytics_session_filter;
+
+pub(crate) mod shape_analytics_session_group_by_specification;
+
+pub(crate) mod shape_analytics_session_metric;
+
+pub(crate) mod shape_analytics_session_results;
+
+pub(crate) mod shape_analytics_utterance_attribute;
+
+pub(crate) mod shape_analytics_utterance_filter;
+
+pub(crate) mod shape_analytics_utterance_group_by_specification;
+
+pub(crate) mod shape_analytics_utterance_metric;
+
+pub(crate) mod shape_analytics_utterance_results;
 
 pub(crate) mod shape_associated_transcript_filter;
 
@@ -394,6 +506,10 @@ pub(crate) mod shape_sample_utterances_list;
 
 pub(crate) mod shape_sentiment_analysis_settings;
 
+pub(crate) mod shape_session_data_sort_by;
+
+pub(crate) mod shape_session_specifications;
+
 pub(crate) mod shape_slot_filter;
 
 pub(crate) mod shape_slot_priorities_list;
@@ -422,15 +538,53 @@ pub(crate) mod shape_sub_slot_setting;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_test_execution_result_filter_by;
+
+pub(crate) mod shape_test_execution_result_items;
+
+pub(crate) mod shape_test_execution_sort_by;
+
+pub(crate) mod shape_test_execution_summary_list;
+
+pub(crate) mod shape_test_execution_target;
+
+pub(crate) mod shape_test_set_discrepancy_errors;
+
+pub(crate) mod shape_test_set_discrepancy_report_resource_target;
+
+pub(crate) mod shape_test_set_generation_data_source;
+
+pub(crate) mod shape_test_set_sort_by;
+
+pub(crate) mod shape_test_set_storage_location;
+
+pub(crate) mod shape_test_set_summary_list;
+
+pub(crate) mod shape_test_set_turn_record_list;
+
 pub(crate) mod shape_transcript_source_setting;
 
 pub(crate) mod shape_utterance_aggregation_duration;
+
+pub(crate) mod shape_utterance_data_sort_by;
+
+pub(crate) mod shape_utterance_specifications;
 
 pub(crate) mod shape_voice_settings;
 
 pub(crate) mod shape_advanced_recognition_setting;
 
 pub(crate) mod shape_aggregated_utterances_summary;
+
+pub(crate) mod shape_analytics_intent_node_summary;
+
+pub(crate) mod shape_analytics_intent_result;
+
+pub(crate) mod shape_analytics_intent_stage_result;
+
+pub(crate) mod shape_analytics_session_result;
+
+pub(crate) mod shape_analytics_utterance_result;
 
 pub(crate) mod shape_associated_transcript;
 
@@ -441,6 +595,8 @@ pub(crate) mod shape_audio_log_settings_list;
 pub(crate) mod shape_bot_alias_history_event;
 
 pub(crate) mod shape_bot_alias_summary;
+
+pub(crate) mod shape_bot_alias_test_execution_target;
 
 pub(crate) mod shape_bot_export_specification;
 
@@ -470,6 +626,12 @@ pub(crate) mod shape_code_hook_specification;
 
 pub(crate) mod shape_conditional_specification;
 
+pub(crate) mod shape_conversation_level_test_results;
+
+pub(crate) mod shape_conversation_level_test_results_filter_by;
+
+pub(crate) mod shape_conversation_logs_data_source;
+
 pub(crate) mod shape_custom_vocabulary_export_specification;
 
 pub(crate) mod shape_custom_vocabulary_import_specification;
@@ -490,7 +652,13 @@ pub(crate) mod shape_grammar_slot_type_setting;
 
 pub(crate) mod shape_import_summary;
 
+pub(crate) mod shape_intent_classification_test_results;
+
+pub(crate) mod shape_intent_level_slot_resolution_test_results;
+
 pub(crate) mod shape_intent_summary;
+
+pub(crate) mod shape_overall_test_results;
 
 pub(crate) mod shape_parent_bot_network;
 
@@ -507,6 +675,8 @@ pub(crate) mod shape_response_specification;
 pub(crate) mod shape_s3_bucket_transcript_source;
 
 pub(crate) mod shape_sample_value;
+
+pub(crate) mod shape_session_specification;
 
 pub(crate) mod shape_slot_capture_setting;
 
@@ -526,17 +696,61 @@ pub(crate) mod shape_sub_slot_type_composition;
 
 pub(crate) mod shape_sub_slot_type_list;
 
+pub(crate) mod shape_test_execution_summary;
+
+pub(crate) mod shape_test_set_discrepancy_report_bot_alias_target;
+
+pub(crate) mod shape_test_set_export_specification;
+
+pub(crate) mod shape_test_set_import_resource_specification;
+
+pub(crate) mod shape_test_set_intent_discrepancy_list;
+
+pub(crate) mod shape_test_set_slot_discrepancy_list;
+
+pub(crate) mod shape_test_set_summary;
+
+pub(crate) mod shape_test_set_turn_record;
+
 pub(crate) mod shape_text_log_setting;
 
 pub(crate) mod shape_text_log_settings_list;
 
+pub(crate) mod shape_utterance_level_test_results;
+
+pub(crate) mod shape_utterance_specification;
+
 pub(crate) mod shape_wait_and_continue_specification;
+
+pub(crate) mod shape_analytics_bin_keys;
+
+pub(crate) mod shape_analytics_intent_group_by_keys;
+
+pub(crate) mod shape_analytics_intent_metric_results;
+
+pub(crate) mod shape_analytics_intent_stage_group_by_keys;
+
+pub(crate) mod shape_analytics_intent_stage_metric_results;
+
+pub(crate) mod shape_analytics_session_group_by_keys;
+
+pub(crate) mod shape_analytics_session_metric_results;
+
+pub(crate) mod shape_analytics_utterance_attribute_results;
+
+pub(crate) mod shape_analytics_utterance_group_by_keys;
+
+pub(crate) mod shape_analytics_utterance_metric_results;
 
 pub(crate) mod shape_audio_log_destination;
 
 pub(crate) mod shape_conditional_branch;
 
 pub(crate) mod shape_conditional_branches;
+
+pub(crate) mod shape_conversation_level_test_result_item_list;
+
+pub(crate) mod shape_conversation_logs_data_source_filter_by;
 
 pub(crate) mod shape_default_conditional_branch;
 
@@ -548,15 +762,23 @@ pub(crate) mod shape_fulfillment_update_response_specification;
 
 pub(crate) mod shape_grammar_slot_type_source;
 
+pub(crate) mod shape_intent_classification_test_result_item_list;
+
+pub(crate) mod shape_intent_level_slot_resolution_test_result_item_list;
+
 pub(crate) mod shape_intent_override;
 
 pub(crate) mod shape_intent_statistics;
+
+pub(crate) mod shape_invoked_intent_samples;
 
 pub(crate) mod shape_lambda_code_hook;
 
 pub(crate) mod shape_message_group;
 
 pub(crate) mod shape_message_groups_list;
+
+pub(crate) mod shape_overall_test_result_item_list;
 
 pub(crate) mod shape_path_format;
 
@@ -580,11 +802,45 @@ pub(crate) mod shape_sub_slot_value_elicitation_setting;
 
 pub(crate) mod shape_synonym_list;
 
+pub(crate) mod shape_test_set_import_input_location;
+
+pub(crate) mod shape_test_set_intent_discrepancy_item;
+
+pub(crate) mod shape_test_set_slot_discrepancy_item;
+
 pub(crate) mod shape_text_log_destination;
 
 pub(crate) mod shape_transcript_filter;
 
+pub(crate) mod shape_turn_specification;
+
+pub(crate) mod shape_utterance_bot_responses;
+
+pub(crate) mod shape_utterance_level_test_result_item_list;
+
+pub(crate) mod shape_agent_turn_specification;
+
 pub(crate) mod shape_allowed_input_types;
+
+pub(crate) mod shape_analytics_bin_key;
+
+pub(crate) mod shape_analytics_intent_group_by_key;
+
+pub(crate) mod shape_analytics_intent_metric_result;
+
+pub(crate) mod shape_analytics_intent_stage_group_by_key;
+
+pub(crate) mod shape_analytics_intent_stage_metric_result;
+
+pub(crate) mod shape_analytics_session_group_by_key;
+
+pub(crate) mod shape_analytics_session_metric_result;
+
+pub(crate) mod shape_analytics_utterance_attribute_result;
+
+pub(crate) mod shape_analytics_utterance_group_by_key;
+
+pub(crate) mod shape_analytics_utterance_metric_result;
 
 pub(crate) mod shape_audio_and_dtmf_input_specification;
 
@@ -592,11 +848,21 @@ pub(crate) mod shape_cloud_watch_log_group_log_destination;
 
 pub(crate) mod shape_condition;
 
+pub(crate) mod shape_conversation_level_test_result_item;
+
+pub(crate) mod shape_intent_classification_test_result_item;
+
+pub(crate) mod shape_intent_level_slot_resolution_test_result_item;
+
+pub(crate) mod shape_invoked_intent_sample;
+
 pub(crate) mod shape_lex_transcript_filter;
 
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_object_prefixes;
+
+pub(crate) mod shape_overall_test_result_item;
 
 pub(crate) mod shape_s3_bucket_log_destination;
 
@@ -606,7 +872,17 @@ pub(crate) mod shape_slot_value_override_map;
 
 pub(crate) mod shape_text_input_specification;
 
+pub(crate) mod shape_user_turn_specification;
+
+pub(crate) mod shape_utterance_bot_response;
+
+pub(crate) mod shape_utterance_level_test_result_item;
+
 pub(crate) mod shape_audio_specification;
+
+pub(crate) mod shape_conversation_level_intent_classification_results;
+
+pub(crate) mod shape_conversation_level_slot_resolution_results;
 
 pub(crate) mod shape_custom_payload;
 
@@ -616,16 +892,74 @@ pub(crate) mod shape_dtmf_specification;
 
 pub(crate) mod shape_image_response_card;
 
+pub(crate) mod shape_intent_classification_test_result_item_counts;
+
 pub(crate) mod shape_message_variations_list;
 
 pub(crate) mod shape_plain_text_message;
+
+pub(crate) mod shape_slot_resolution_test_result_items;
 
 pub(crate) mod shape_slot_value;
 
 pub(crate) mod shape_ssml_message;
 
+pub(crate) mod shape_test_result_match_status_count_map;
+
+pub(crate) mod shape_test_set_turn_result;
+
+pub(crate) mod shape_user_turn_input_specification;
+
+pub(crate) mod shape_user_turn_output_specification;
+
+pub(crate) mod shape_active_context_list;
+
+pub(crate) mod shape_agent_turn_result;
+
 pub(crate) mod shape_button;
+
+pub(crate) mod shape_buttons_list;
+
+pub(crate) mod shape_conversation_level_intent_classification_result_item;
+
+pub(crate) mod shape_conversation_level_slot_resolution_result_item;
+
+pub(crate) mod shape_input_session_state_specification;
+
+pub(crate) mod shape_slot_resolution_test_result_item;
 
 pub(crate) mod shape_slot_values;
 
-pub(crate) mod shape_buttons_list;
+pub(crate) mod shape_user_turn_intent_output;
+
+pub(crate) mod shape_user_turn_result;
+
+pub(crate) mod shape_utterance_input_specification;
+
+pub(crate) mod shape_active_context;
+
+pub(crate) mod shape_conversation_level_result_detail;
+
+pub(crate) mod shape_execution_error_details;
+
+pub(crate) mod shape_runtime_hints;
+
+pub(crate) mod shape_slot_resolution_test_result_item_counts;
+
+pub(crate) mod shape_user_turn_slot_output_map;
+
+pub(crate) mod shape_utterance_audio_input_specification;
+
+pub(crate) mod shape_slot_hints_intent_map;
+
+pub(crate) mod shape_user_turn_slot_output;
+
+pub(crate) mod shape_slot_hints_slot_map;
+
+pub(crate) mod shape_user_turn_slot_output_list;
+
+pub(crate) mod shape_runtime_hint_details;
+
+pub(crate) mod shape_runtime_hint_values_list;
+
+pub(crate) mod shape_runtime_hint_value;

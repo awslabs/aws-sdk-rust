@@ -15,6 +15,7 @@
 ///     SyncStatus::Acknowledged => { /* ... */ },
 ///     SyncStatus::DeleteFailed => { /* ... */ },
 ///     SyncStatus::Deleting => { /* ... */ },
+///     SyncStatus::DeletingAcknowledged => { /* ... */ },
 ///     SyncStatus::InSync => { /* ... */ },
 ///     SyncStatus::Syncing => { /* ... */ },
 ///     SyncStatus::SyncFailed => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum SyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    DeletingAcknowledged,
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     Syncing,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for SyncStatus {
             "ACKNOWLEDGED" => SyncStatus::Acknowledged,
             "DELETE_FAILED" => SyncStatus::DeleteFailed,
             "DELETING" => SyncStatus::Deleting,
+            "DELETING_ACKNOWLEDGED" => SyncStatus::DeletingAcknowledged,
             "IN_SYNC" => SyncStatus::InSync,
             "SYNCING" => SyncStatus::Syncing,
             "SYNC_FAILED" => SyncStatus::SyncFailed,
@@ -93,6 +97,7 @@ impl SyncStatus {
             SyncStatus::Acknowledged => "ACKNOWLEDGED",
             SyncStatus::DeleteFailed => "DELETE_FAILED",
             SyncStatus::Deleting => "DELETING",
+            SyncStatus::DeletingAcknowledged => "DELETING_ACKNOWLEDGED",
             SyncStatus::InSync => "IN_SYNC",
             SyncStatus::Syncing => "SYNCING",
             SyncStatus::SyncFailed => "SYNC_FAILED",
@@ -105,6 +110,7 @@ impl SyncStatus {
             "ACKNOWLEDGED",
             "DELETE_FAILED",
             "DELETING",
+            "DELETING_ACKNOWLEDGED",
             "IN_SYNC",
             "SYNCING",
             "SYNC_FAILED",

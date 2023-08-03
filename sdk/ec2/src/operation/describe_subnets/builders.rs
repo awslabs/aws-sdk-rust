@@ -6,7 +6,7 @@ pub use crate::operation::describe_subnets::_describe_subnets_input::DescribeSub
 /// Fluent builder constructing a request to `DescribeSubnets`.
 ///
 /// <p>Describes one or more of your subnets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSubnetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,7 +115,7 @@ impl DescribeSubnetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -153,7 +153,7 @@ impl DescribeSubnetsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -198,13 +198,13 @@ impl DescribeSubnetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     pub fn set_subnet_ids(
         mut self,

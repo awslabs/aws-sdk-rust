@@ -64,6 +64,9 @@ pub struct PendingModifiedValues {
     /// <p>The storage throughput of the DB instance.</p>
     #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The database engine of the DB instance.</p>
+    #[doc(hidden)]
+    pub engine: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -148,6 +151,10 @@ impl PendingModifiedValues {
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
+    /// <p>The database engine of the DB instance.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
 }
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::types::PendingModifiedValues).
@@ -184,6 +191,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) resume_full_automation_mode_time:
         ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -446,6 +454,16 @@ impl PendingModifiedValuesBuilder {
         self.storage_throughput = input;
         self
     }
+    /// <p>The database engine of the DB instance.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The database engine of the DB instance.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -468,6 +486,7 @@ impl PendingModifiedValuesBuilder {
             automation_mode: self.automation_mode,
             resume_full_automation_mode_time: self.resume_full_automation_mode_time,
             storage_throughput: self.storage_throughput,
+            engine: self.engine,
         }
     }
 }

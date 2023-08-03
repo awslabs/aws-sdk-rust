@@ -112,11 +112,13 @@ impl CreateSnapshotFluentBuilder {
         self
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn destination(mut self, input: crate::types::S3Destination) -> Self {
         self.inner = self.inner.destination(input);
         self
     }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn set_destination(
         mut self,
         input: ::std::option::Option<crate::types::S3Destination>,

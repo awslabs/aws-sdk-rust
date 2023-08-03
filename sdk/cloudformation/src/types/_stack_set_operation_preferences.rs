@@ -8,7 +8,7 @@ pub struct StackSetOperationPreferences {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     #[doc(hidden)]
     pub region_concurrency_type: ::std::option::Option<crate::types::RegionConcurrencyType>,
-    /// <p>The order of the Regions in where you want to perform the stack operation.</p>
+    /// <p>The order of the Regions where you want to perform the stack operation.</p>
     #[doc(hidden)]
     pub region_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
@@ -43,7 +43,7 @@ impl StackSetOperationPreferences {
     ) -> ::std::option::Option<&crate::types::RegionConcurrencyType> {
         self.region_concurrency_type.as_ref()
     }
-    /// <p>The order of the Regions in where you want to perform the stack operation.</p>
+    /// <p>The order of the Regions where you want to perform the stack operation.</p>
     pub fn region_order(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.region_order.as_deref()
     }
@@ -114,14 +114,14 @@ impl StackSetOperationPreferencesBuilder {
     ///
     /// To override the contents of this collection use [`set_region_order`](Self::set_region_order).
     ///
-    /// <p>The order of the Regions in where you want to perform the stack operation.</p>
+    /// <p>The order of the Regions where you want to perform the stack operation.</p>
     pub fn region_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.region_order.unwrap_or_default();
         v.push(input.into());
         self.region_order = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The order of the Regions in where you want to perform the stack operation.</p>
+    /// <p>The order of the Regions where you want to perform the stack operation.</p>
     pub fn set_region_order(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

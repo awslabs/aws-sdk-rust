@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupInput {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -22,7 +22,7 @@ pub struct DescribeManagedRuleGroupInput {
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeManagedRuleGroupInput {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn vendor_name(&self) -> ::std::option::Option<&str> {
         self.vendor_name.as_deref()
     }
@@ -65,12 +65,12 @@ pub struct DescribeManagedRuleGroupInputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeManagedRuleGroupInputBuilder {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor_name = input;
         self

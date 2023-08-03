@@ -42,139 +42,113 @@ pub fn de_create_subscriber_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::create_subscriber::CreateSubscriberError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "AccountNotFoundException" => crate::operation::create_subscriber::CreateSubscriberError::AccountNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "BucketNotFoundException" => crate::operation::create_subscriber::CreateSubscriberError::BucketNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BucketNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bucket_not_found_exception::de_bucket_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ConflictSubscriptionException" => crate::operation::create_subscriber::CreateSubscriberError::ConflictSubscriptionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictSubscriptionExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_subscription_exception::de_conflict_subscription_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::create_subscriber::CreateSubscriberError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::create_subscriber::CreateSubscriberError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::create_subscriber::CreateSubscriberError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidInputException" => crate::operation::create_subscriber::CreateSubscriberError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::create_subscriber::CreateSubscriberError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ValidationException" => crate::operation::create_subscriber::CreateSubscriberError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_subscriber::CreateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::create_subscriber::CreateSubscriberError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::create_subscriber::CreateSubscriberError::generic(generic),
     })
 }
 
@@ -220,58 +194,9 @@ pub(crate) fn de_create_subscriber(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
-                    "resourceShareArn" => {
-                        builder = builder.set_resource_share_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "resourceShareName" => {
-                        builder = builder.set_resource_share_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "roleArn" => {
-                        builder = builder.set_role_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "s3BucketArn" => {
-                        builder = builder.set_s3_bucket_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "snsArn" => {
-                        builder = builder.set_sns_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "subscriptionId" => {
-                        builder = builder.set_subscription_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                    "subscriber" => {
+                        builder = builder.set_subscriber(
+                            crate::protocol_serde::shape_subscriber_resource::de_subscriber_resource(tokens)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

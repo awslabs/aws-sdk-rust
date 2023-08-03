@@ -6,6 +6,7 @@ pub use crate::operation::create_contact::_create_contact_input::CreateContactIn
 /// Fluent builder constructing a request to `CreateContact`.
 ///
 /// <p>Creates a contact with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

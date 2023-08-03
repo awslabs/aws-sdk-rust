@@ -52,6 +52,8 @@ pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_long_term_pricing;
 
+pub(crate) mod shape_list_pickup_locations;
+
 pub(crate) mod shape_list_service_versions;
 
 pub(crate) mod shape_update_cluster;
@@ -128,6 +130,8 @@ pub(crate) mod shape_list_jobs_input;
 
 pub(crate) mod shape_list_long_term_pricing_input;
 
+pub(crate) mod shape_list_pickup_locations_input;
+
 pub(crate) mod shape_list_service_versions_input;
 
 pub(crate) mod shape_return_shipping_label_already_exists_exception;
@@ -171,6 +175,8 @@ pub(crate) mod shape_long_term_pricing_entry_list;
 pub(crate) mod shape_notification;
 
 pub(crate) mod shape_on_device_service_configuration;
+
+pub(crate) mod shape_pickup_details;
 
 pub(crate) mod shape_service_version_list;
 

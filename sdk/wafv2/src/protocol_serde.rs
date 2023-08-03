@@ -38,6 +38,10 @@ pub(crate) mod shape_delete_rule_group;
 
 pub(crate) mod shape_delete_web_acl;
 
+pub(crate) mod shape_describe_all_managed_products;
+
+pub(crate) mod shape_describe_managed_products_by_vendor;
+
 pub(crate) mod shape_describe_managed_rule_group;
 
 pub(crate) mod shape_disassociate_web_acl;
@@ -147,6 +151,10 @@ pub(crate) mod shape_delete_regex_pattern_set_input;
 pub(crate) mod shape_delete_rule_group_input;
 
 pub(crate) mod shape_delete_web_acl_input;
+
+pub(crate) mod shape_describe_all_managed_products_input;
+
+pub(crate) mod shape_describe_managed_products_by_vendor_input;
 
 pub(crate) mod shape_describe_managed_rule_group_input;
 
@@ -284,6 +292,8 @@ pub(crate) mod shape_logging_configuration;
 
 pub(crate) mod shape_logging_configurations;
 
+pub(crate) mod shape_managed_product_descriptors;
+
 pub(crate) mod shape_managed_rule_group_summaries;
 
 pub(crate) mod shape_managed_rule_group_versions;
@@ -362,6 +372,8 @@ pub(crate) mod shape_log_destination_configs;
 
 pub(crate) mod shape_logging_filter;
 
+pub(crate) mod shape_managed_product_descriptor;
+
 pub(crate) mod shape_managed_rule_group_summary;
 
 pub(crate) mod shape_managed_rule_group_version;
@@ -423,6 +435,8 @@ pub(crate) mod shape_filters;
 pub(crate) mod shape_firewall_manager_rule_group;
 
 pub(crate) mod shape_geo_match_statement;
+
+pub(crate) mod shape_header_order;
 
 pub(crate) mod shape_headers;
 
@@ -506,6 +520,8 @@ pub(crate) mod shape_action_condition;
 
 pub(crate) mod shape_all;
 
+pub(crate) mod shape_aws_managed_rules_acfp_rule_set;
+
 pub(crate) mod shape_aws_managed_rules_atp_rule_set;
 
 pub(crate) mod shape_aws_managed_rules_bot_control_rule_set;
@@ -534,6 +550,8 @@ pub(crate) mod shape_rate_limit_query_argument;
 
 pub(crate) mod shape_rate_limit_query_string;
 
+pub(crate) mod shape_rate_limit_uri_path;
+
 pub(crate) mod shape_username_field;
 
 pub(crate) mod shape_cookie_names;
@@ -552,6 +570,8 @@ pub(crate) mod shape_rate_based_statement_custom_keys;
 
 pub(crate) mod shape_request_inspection;
 
+pub(crate) mod shape_request_inspection_acfp;
+
 pub(crate) mod shape_response_inspection;
 
 pub(crate) mod shape_rule_action_overrides;
@@ -560,6 +580,12 @@ pub(crate) mod shape_statements;
 
 pub(crate) mod shape_text_transformations;
 
+pub(crate) mod shape_address_field;
+
+pub(crate) mod shape_email_field;
+
+pub(crate) mod shape_phone_number_field;
+
 pub(crate) mod shape_response_inspection_body_contains;
 
 pub(crate) mod shape_response_inspection_header;
@@ -567,6 +593,10 @@ pub(crate) mod shape_response_inspection_header;
 pub(crate) mod shape_response_inspection_json;
 
 pub(crate) mod shape_response_inspection_status_code;
+
+pub(crate) mod shape_address_fields;
+
+pub(crate) mod shape_phone_number_fields;
 
 pub(crate) mod shape_response_inspection_body_contains_failure_strings;
 

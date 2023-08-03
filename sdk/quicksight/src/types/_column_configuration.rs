@@ -13,6 +13,9 @@ pub struct ColumnConfiguration {
     /// <p>The role of the column.</p>
     #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::ColumnRole>,
+    /// <p>The color configurations of the column.</p>
+    #[doc(hidden)]
+    pub colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
 }
 impl ColumnConfiguration {
     /// <p>The column.</p>
@@ -28,6 +31,12 @@ impl ColumnConfiguration {
     /// <p>The role of the column.</p>
     pub fn role(&self) -> ::std::option::Option<&crate::types::ColumnRole> {
         self.role.as_ref()
+    }
+    /// <p>The color configurations of the column.</p>
+    pub fn colors_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ColorsConfiguration> {
+        self.colors_configuration.as_ref()
     }
 }
 impl ColumnConfiguration {
@@ -46,6 +55,7 @@ pub struct ColumnConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,
     pub(crate) role: ::std::option::Option<crate::types::ColumnRole>,
+    pub(crate) colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
 }
 impl ColumnConfigurationBuilder {
     /// <p>The column.</p>
@@ -84,12 +94,26 @@ impl ColumnConfigurationBuilder {
         self.role = input;
         self
     }
+    /// <p>The color configurations of the column.</p>
+    pub fn colors_configuration(mut self, input: crate::types::ColorsConfiguration) -> Self {
+        self.colors_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The color configurations of the column.</p>
+    pub fn set_colors_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ColorsConfiguration>,
+    ) -> Self {
+        self.colors_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {
         crate::types::ColumnConfiguration {
             column: self.column,
             format_configuration: self.format_configuration,
             role: self.role,
+            colors_configuration: self.colors_configuration,
         }
     }
 }

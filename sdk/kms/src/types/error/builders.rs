@@ -13,6 +13,8 @@ pub use crate::types::error::_invalid_key_usage_exception::InvalidKeyUsageExcept
 
 pub use crate::types::error::_invalid_grant_token_exception::InvalidGrantTokenExceptionBuilder;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationExceptionBuilder;
+
 pub use crate::types::error::_disabled_exception::DisabledExceptionBuilder;
 
 pub use crate::types::error::_kms_invalid_signature_exception::KmsInvalidSignatureExceptionBuilder;

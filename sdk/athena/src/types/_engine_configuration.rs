@@ -19,6 +19,11 @@ pub struct EngineConfiguration {
     pub additional_configs: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
+    #[doc(hidden)]
+    pub spark_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
@@ -42,6 +47,14 @@ impl EngineConfiguration {
     > {
         self.additional_configs.as_ref()
     }
+    /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
+    pub fn spark_properties(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.spark_properties.as_ref()
+    }
 }
 impl EngineConfiguration {
     /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::types::EngineConfiguration).
@@ -60,6 +73,9 @@ pub struct EngineConfigurationBuilder {
     pub(crate) max_concurrent_dpus: ::std::option::Option<i32>,
     pub(crate) default_executor_dpu_size: ::std::option::Option<i32>,
     pub(crate) additional_configs: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) spark_properties: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
 }
@@ -121,6 +137,31 @@ impl EngineConfigurationBuilder {
         self.additional_configs = input;
         self
     }
+    /// Adds a key-value pair to `spark_properties`.
+    ///
+    /// To override the contents of this collection use [`set_spark_properties`](Self::set_spark_properties).
+    ///
+    /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
+    pub fn spark_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.spark_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.spark_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
+    pub fn set_spark_properties(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    ) -> Self {
+        self.spark_properties = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
     pub fn build(self) -> crate::types::EngineConfiguration {
         crate::types::EngineConfiguration {
@@ -128,6 +169,7 @@ impl EngineConfigurationBuilder {
             max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or_default(),
             default_executor_dpu_size: self.default_executor_dpu_size,
             additional_configs: self.additional_configs,
+            spark_properties: self.spark_properties,
         }
     }
 }

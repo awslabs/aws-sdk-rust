@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_id): <p>The unique identifier for FinSpace environment that you created.</p>
     ///   - [`environment_arn(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    ///   - [`environment_url(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_url): <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    ///   - [`environment_url(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_url): <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
     pub fn create_environment(
         &self,

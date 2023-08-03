@@ -20,6 +20,22 @@ pub fn ser_get_bucket_accelerate_configuration_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_3) = &input.request_payer {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
+            builder = builder.header("x-amz-request-payer", header_value);
+        }
+    }
     Ok(builder)
 }
 
@@ -54,6 +70,10 @@ pub fn de_get_bucket_accelerate_configuration_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder::default();
         output = crate::protocol_serde::shape_get_bucket_accelerate_configuration::de_get_bucket_accelerate_configuration(_response_body, output).map_err(crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationError::unhandled)?;
+        output = output.set_request_charged(
+            crate::protocol_serde::shape_get_bucket_accelerate_configuration_output::de_request_charged_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
+        );
         output._set_extended_request_id(
             crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
                 .map(str::to_string),
@@ -83,7 +103,7 @@ pub fn de_get_bucket_accelerate_configuration(inp: &[u8], mut builder: crate::op
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.s3.synthetic#GetBucketAccelerateConfigurationOutput$Status */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                         Result::<crate::types::BucketAccelerateStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::BucketAccelerateStatus::from(
@@ -93,7 +113,7 @@ pub fn de_get_bucket_accelerate_configuration(inp: &[u8], mut builder: crate::op
                         ?
                     )
                 ;
-                builder = builder.set_status(var_3);
+                builder = builder.set_status(var_5);
             }
             ,
             _ => {}

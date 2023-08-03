@@ -115,6 +115,11 @@ pub struct StartTranscriptionJobInput {
     pub language_id_settings: ::std::option::Option<
         ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
     >,
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    #[doc(hidden)]
+    pub toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl StartTranscriptionJobInput {
     /// <p>A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
@@ -254,6 +259,13 @@ impl StartTranscriptionJobInput {
     > {
         self.language_id_settings.as_ref()
     }
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn toxicity_detection(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
+        self.toxicity_detection.as_deref()
+    }
 }
 impl StartTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`StartTranscriptionJobInput`](crate::operation::start_transcription_job::StartTranscriptionJobInput).
@@ -293,6 +305,8 @@ pub struct StartTranscriptionJobInputBuilder {
     pub(crate) language_id_settings: ::std::option::Option<
         ::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>,
     >,
+    pub(crate) toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl StartTranscriptionJobInputBuilder {
     /// <p>A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
@@ -671,6 +685,27 @@ impl StartTranscriptionJobInputBuilder {
         self.language_id_settings = input;
         self
     }
+    /// Appends an item to `toxicity_detection`.
+    ///
+    /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
+    ///
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn toxicity_detection(mut self, input: crate::types::ToxicityDetectionSettings) -> Self {
+        let mut v = self.toxicity_detection.unwrap_or_default();
+        v.push(input);
+        self.toxicity_detection = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn set_toxicity_detection(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
+    ) -> Self {
+        self.toxicity_detection = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartTranscriptionJobInput`](crate::operation::start_transcription_job::StartTranscriptionJobInput).
     pub fn build(
         self,
@@ -699,6 +734,7 @@ impl StartTranscriptionJobInputBuilder {
                 subtitles: self.subtitles,
                 tags: self.tags,
                 language_id_settings: self.language_id_settings,
+                toxicity_detection: self.toxicity_detection,
             },
         )
     }

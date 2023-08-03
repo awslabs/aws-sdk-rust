@@ -63,6 +63,12 @@ pub struct Environment {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     #[doc(hidden)]
     pub codebuild_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    #[doc(hidden)]
+    pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    #[doc(hidden)]
+    pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl Environment {
     /// <p>The name of the environment.</p>
@@ -149,6 +155,14 @@ impl Environment {
     pub fn codebuild_role_arn(&self) -> ::std::option::Option<&str> {
         self.codebuild_role_arn.as_deref()
     }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_attempted_deployment_id.as_deref()
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_succeeded_deployment_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -184,6 +198,14 @@ impl ::std::fmt::Debug for Environment {
         formatter.field("provisioning_repository", &self.provisioning_repository);
         formatter.field("component_role_arn", &self.component_role_arn);
         formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }
@@ -217,6 +239,8 @@ pub struct EnvironmentBuilder {
     pub(crate) provisioning_repository: ::std::option::Option<crate::types::RepositoryBranch>,
     pub(crate) component_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) codebuild_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentBuilder {
     /// <p>The name of the environment.</p>
@@ -485,6 +509,38 @@ impl EnvironmentBuilder {
         self.codebuild_role_arn = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn last_attempted_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn set_last_attempted_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = input;
+        self
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn last_succeeded_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn set_last_succeeded_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
         crate::types::Environment {
@@ -507,6 +563,8 @@ impl EnvironmentBuilder {
             provisioning_repository: self.provisioning_repository,
             component_role_arn: self.component_role_arn,
             codebuild_role_arn: self.codebuild_role_arn,
+            last_attempted_deployment_id: self.last_attempted_deployment_id,
+            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
         }
     }
 }
@@ -544,6 +602,14 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.field("provisioning_repository", &self.provisioning_repository);
         formatter.field("component_role_arn", &self.component_role_arn);
         formatter.field("codebuild_role_arn", &self.codebuild_role_arn);
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }

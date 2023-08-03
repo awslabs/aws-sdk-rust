@@ -9,6 +9,9 @@ pub struct RemoveSourceServerActionInput {
     /// <p>Source server post migration custom action ID to remove.</p>
     #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
+    /// <p>Source server post migration account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceServerActionInput {
     /// <p>Source server ID of the post migration custom action to remove.</p>
@@ -18,6 +21,10 @@ impl RemoveSourceServerActionInput {
     /// <p>Source server post migration custom action ID to remove.</p>
     pub fn action_id(&self) -> ::std::option::Option<&str> {
         self.action_id.as_deref()
+    }
+    /// <p>Source server post migration account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl RemoveSourceServerActionInput {
@@ -37,6 +44,7 @@ impl RemoveSourceServerActionInput {
 pub struct RemoveSourceServerActionInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceServerActionInputBuilder {
     /// <p>Source server ID of the post migration custom action to remove.</p>
@@ -65,6 +73,16 @@ impl RemoveSourceServerActionInputBuilder {
         self.action_id = input;
         self
     }
+    /// <p>Source server post migration account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Source server post migration account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
     pub fn build(
         self,
@@ -76,6 +94,7 @@ impl RemoveSourceServerActionInputBuilder {
             crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
                 source_server_id: self.source_server_id,
                 action_id: self.action_id,
+                account_id: self.account_id,
             },
         )
     }

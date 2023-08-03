@@ -9,7 +9,7 @@ pub struct BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A list containing the ARNs of the resources to be associated. </p>
     #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
@@ -22,7 +22,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
     pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -80,7 +80,7 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         self.resource_arns = input;
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
         input: crate::types::CustomLineItemBillingPeriodRange,
@@ -88,7 +88,7 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(
         mut self,
         input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,

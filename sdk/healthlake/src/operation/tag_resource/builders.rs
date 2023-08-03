@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p> Adds a user specifed key and value tag to a Data Store. </p>
+/// <p> Adds a user specified key and value tag to a data store. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -91,12 +91,12 @@ impl TagResourceFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
+    /// <p> The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
+    /// <p> The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to. </p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
@@ -105,12 +105,12 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The user specified key and value pair tags being added to a Data Store. </p>
+    /// <p> The user specified key and value pair tags being added to a data store. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> The user specified key and value pair tags being added to a Data Store. </p>
+    /// <p> The user specified key and value pair tags being added to a data store. </p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

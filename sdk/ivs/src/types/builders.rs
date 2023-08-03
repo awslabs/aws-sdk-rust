@@ -27,6 +27,8 @@ pub use crate::types::_stream_event::StreamEventBuilder;
 
 pub use crate::types::_recording_configuration::RecordingConfigurationBuilder;
 
+pub use crate::types::_rendition_configuration::RenditionConfigurationBuilder;
+
 pub use crate::types::_thumbnail_configuration::ThumbnailConfigurationBuilder;
 
 pub use crate::types::_ingest_configuration::IngestConfigurationBuilder;
@@ -38,5 +40,9 @@ pub use crate::types::_video_configuration::VideoConfigurationBuilder;
 pub use crate::types::_stream_key::StreamKeyBuilder;
 
 pub use crate::types::_stream::StreamBuilder;
+
+pub use crate::types::_batch_start_viewer_session_revocation_error::BatchStartViewerSessionRevocationErrorBuilder;
+
+pub use crate::types::_batch_start_viewer_session_revocation_viewer_session::BatchStartViewerSessionRevocationViewerSessionBuilder;
 
 pub use crate::types::_batch_error::BatchErrorBuilder;

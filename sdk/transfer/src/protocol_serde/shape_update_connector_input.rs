@@ -24,5 +24,14 @@ pub fn ser_update_connector_input(
     if let Some(var_6) = &input.logging_role {
         object.key("LoggingRole").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.sftp_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("SftpConfig").start_object();
+        crate::protocol_serde::shape_sftp_connector_config::ser_sftp_connector_config(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
+    }
     Ok(())
 }

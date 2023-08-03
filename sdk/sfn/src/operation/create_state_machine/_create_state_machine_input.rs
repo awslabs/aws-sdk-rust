@@ -37,6 +37,12 @@ pub struct CreateStateMachineInput {
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
+    /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
+    #[doc(hidden)]
+    pub publish: ::std::option::Option<bool>,
+    /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
+    #[doc(hidden)]
+    pub version_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateStateMachineInput {
     /// <p>The name of the state machine. </p>
@@ -84,6 +90,14 @@ impl CreateStateMachineInput {
     ) -> ::std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
+    /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
+    pub fn publish(&self) -> ::std::option::Option<bool> {
+        self.publish
+    }
+    /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
+    pub fn version_description(&self) -> ::std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateStateMachineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -95,6 +109,8 @@ impl ::std::fmt::Debug for CreateStateMachineInput {
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tags", &self.tags);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("publish", &self.publish);
+        formatter.field("version_description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -117,6 +133,8 @@ pub struct CreateStateMachineInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
+    pub(crate) publish: ::std::option::Option<bool>,
+    pub(crate) version_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateStateMachineInputBuilder {
     /// <p>The name of the state machine. </p>
@@ -233,6 +251,32 @@ impl CreateStateMachineInputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
+    pub fn publish(mut self, input: bool) -> Self {
+        self.publish = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
+    pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.publish = input;
+        self
+    }
+    /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
+    pub fn version_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
+    pub fn set_version_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.version_description = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
     pub fn build(
         self,
@@ -249,6 +293,8 @@ impl CreateStateMachineInputBuilder {
                 logging_configuration: self.logging_configuration,
                 tags: self.tags,
                 tracing_configuration: self.tracing_configuration,
+                publish: self.publish,
+                version_description: self.version_description,
             },
         )
     }
@@ -263,6 +309,8 @@ impl ::std::fmt::Debug for CreateStateMachineInputBuilder {
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tags", &self.tags);
         formatter.field("tracing_configuration", &self.tracing_configuration);
+        formatter.field("publish", &self.publish);
+        formatter.field("version_description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

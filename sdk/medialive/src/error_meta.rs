@@ -1187,6 +1187,55 @@ impl From<crate::operation::delete_tags::DeleteTagsError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_account_configuration::DescribeAccountConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_account_configuration::DescribeAccountConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_account_configuration::DescribeAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_channel::DescribeChannelError,
             R,
         >,
@@ -1667,6 +1716,53 @@ impl From<crate::operation::describe_schedule::DescribeScheduleError> for Error 
             crate::operation::describe_schedule::DescribeScheduleError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_schedule::DescribeScheduleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_schedule::DescribeScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_thumbnails::DescribeThumbnailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_thumbnails::DescribeThumbnailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_thumbnails::DescribeThumbnailsError> for Error {
+    fn from(err: crate::operation::describe_thumbnails::DescribeThumbnailsError) -> Self {
+        match err {
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_thumbnails::DescribeThumbnailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2607,6 +2703,56 @@ impl From<crate::operation::transfer_input_device::TransferInputDeviceError> for
             crate::operation::transfer_input_device::TransferInputDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::transfer_input_device::TransferInputDeviceError::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
             crate::operation::transfer_input_device::TransferInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_account_configuration::UpdateAccountConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_account_configuration::UpdateAccountConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::operation::update_account_configuration::UpdateAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

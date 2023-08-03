@@ -40,6 +40,18 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gdg' cannot be null"))?
                                 ))
                             }
+                            "po" => {
+                                Some(crate::types::DatasetDetailOrgAttributes::Po(
+                                    crate::protocol_serde::shape_po_detail_attributes::de_po_detail_attributes(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'po' cannot be null"))?
+                                ))
+                            }
+                            "ps" => {
+                                Some(crate::types::DatasetDetailOrgAttributes::Ps(
+                                    crate::protocol_serde::shape_ps_detail_attributes::de_ps_detail_attributes(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ps' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                       ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                       Some(crate::types::DatasetDetailOrgAttributes::Unknown)

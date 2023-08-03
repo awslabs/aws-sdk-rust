@@ -212,13 +212,27 @@ impl CreateLocationObjectStorageFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn server_certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.server_certificate(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
+    /// <ul>
+    /// <li> <p>The certificate of the signing certificate authority (CA)</p> </li>
+    /// <li> <p>Any intermediate certificates</p> </li>
+    /// <li> <p>base64 encoding</p> </li>
+    /// <li> <p>A <code>.pem</code> extension</p> </li>
+    /// </ul>
+    /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn set_server_certificate(
         mut self,

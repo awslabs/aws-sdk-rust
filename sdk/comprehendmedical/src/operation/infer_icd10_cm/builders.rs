@@ -91,12 +91,12 @@ impl InferICD10CMFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    /// <p>The input text used for analysis.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self

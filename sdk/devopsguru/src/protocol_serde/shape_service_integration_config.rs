@@ -33,6 +33,11 @@ where
                                     crate::protocol_serde::shape_logs_anomaly_detection_integration::de_logs_anomaly_detection_integration(tokens)?
                                 );
                             }
+                            "KMSServerSideEncryption" => {
+                                builder = builder.set_kms_server_side_encryption(
+                                    crate::protocol_serde::shape_kms_server_side_encryption_integration::de_kms_server_side_encryption_integration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

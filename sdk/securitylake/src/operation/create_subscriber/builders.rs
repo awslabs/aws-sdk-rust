@@ -99,41 +99,66 @@ impl CreateSubscriberFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// Appends an item to `sourceTypes`.
-    ///
-    /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
-    ///
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn source_types(mut self, input: crate::types::SourceType) -> Self {
-        self.inner = self.inner.source_types(input);
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
+        self.inner = self.inner.subscriber_identity(input);
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_source_types(
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn set_subscriber_identity(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceType>>,
+        input: ::std::option::Option<crate::types::AwsIdentity>,
     ) -> Self {
-        self.inner = self.inner.set_source_types(input);
+        self.inner = self.inner.set_subscriber_identity(input);
         self
     }
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.account_id(input.into());
+    /// <p>The name of your Security Lake subscriber account.</p>
+    pub fn subscriber_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.subscriber_name(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_account_id(input);
+    /// <p>The name of your Security Lake subscriber account.</p>
+    pub fn set_subscriber_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_subscriber_name(input);
         self
     }
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.external_id(input.into());
+    /// <p>The description for your subscriber account in Security Lake.</p>
+    pub fn subscriber_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.subscriber_description(input.into());
         self
     }
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_external_id(input);
+    /// <p>The description for your subscriber account in Security Lake.</p>
+    pub fn set_subscriber_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_subscriber_description(input);
+        self
+    }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
+        self.inner = self.inner.sources(input);
+        self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    ) -> Self {
+        self.inner = self.inner.set_sources(input);
         self
     }
     /// Appends an item to `accessTypes`.
@@ -153,36 +178,21 @@ impl CreateSubscriberFluentBuilder {
         self.inner = self.inner.set_access_types(input);
         self
     }
-    /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn subscriber_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.subscriber_name(input.into());
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn set_subscriber_name(
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn set_tags(
         mut self,
-        input: ::std::option::Option<::std::string::String>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
-        self.inner = self.inner.set_subscriber_name(input);
-        self
-    }
-    /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn subscriber_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.subscriber_description(input.into());
-        self
-    }
-    /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.set_subscriber_description(input);
+        self.inner = self.inner.set_tags(input);
         self
     }
 }

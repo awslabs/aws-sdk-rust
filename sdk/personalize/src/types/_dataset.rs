@@ -38,6 +38,9 @@ pub struct Dataset {
     /// <p>A time stamp that shows when the dataset was updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Describes the latest update to the dataset.</p>
+    #[doc(hidden)]
+    pub latest_dataset_update: ::std::option::Option<crate::types::DatasetUpdateSummary>,
 }
 impl Dataset {
     /// <p>The name of the dataset.</p>
@@ -82,6 +85,12 @@ impl Dataset {
     pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p>Describes the latest update to the dataset.</p>
+    pub fn latest_dataset_update(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DatasetUpdateSummary> {
+        self.latest_dataset_update.as_ref()
+    }
 }
 impl Dataset {
     /// Creates a new builder-style object to manufacture [`Dataset`](crate::types::Dataset).
@@ -104,6 +113,7 @@ pub struct DatasetBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_dataset_update: ::std::option::Option<crate::types::DatasetUpdateSummary>,
 }
 impl DatasetBuilder {
     /// <p>The name of the dataset.</p>
@@ -218,6 +228,19 @@ impl DatasetBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>Describes the latest update to the dataset.</p>
+    pub fn latest_dataset_update(mut self, input: crate::types::DatasetUpdateSummary) -> Self {
+        self.latest_dataset_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the latest update to the dataset.</p>
+    pub fn set_latest_dataset_update(
+        mut self,
+        input: ::std::option::Option<crate::types::DatasetUpdateSummary>,
+    ) -> Self {
+        self.latest_dataset_update = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
@@ -229,6 +252,7 @@ impl DatasetBuilder {
             status: self.status,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
+            latest_dataset_update: self.latest_dataset_update,
         }
     }
 }

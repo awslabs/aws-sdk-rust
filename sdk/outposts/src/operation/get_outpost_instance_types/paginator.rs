@@ -28,6 +28,14 @@ impl GetOutpostInstanceTypesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `instance_types`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginatorItems{
+        crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -111,6 +119,35 @@ impl GetOutpostInstanceTypesPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `GetOutpostInstanceTypesPaginator`
+///
+/// This is created with [`.items()`](GetOutpostInstanceTypesPaginator::items)
+pub struct GetOutpostInstanceTypesPaginatorItems(GetOutpostInstanceTypesPaginator);
+
+impl GetOutpostInstanceTypesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::InstanceTypeItem,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
+            >,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_outpost_instance_types_output_instance_types(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

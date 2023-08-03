@@ -238,6 +238,10 @@ pub(crate) mod shape_event_time_range;
 
 pub(crate) mod shape_insight_time_range;
 
+pub(crate) mod shape_kms_server_side_encryption_integration;
+
+pub(crate) mod shape_kms_server_side_encryption_integration_config;
+
 pub(crate) mod shape_list_insights_any_status_filter;
 
 pub(crate) mod shape_list_insights_closed_status_filter;

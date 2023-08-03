@@ -10,7 +10,7 @@ pub struct OrderSummary {
     /// <p> The ID of the order. </p>
     #[doc(hidden)]
     pub order_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of order.</p>
+    /// <p> The type of order. </p>
     #[doc(hidden)]
     pub order_type: ::std::option::Option<crate::types::OrderType>,
     /// <p>The status of the order.</p>
@@ -45,7 +45,7 @@ impl OrderSummary {
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
     }
-    /// <p>The type of order.</p>
+    /// <p> The type of order. </p>
     pub fn order_type(&self) -> ::std::option::Option<&crate::types::OrderType> {
         self.order_type.as_ref()
     }
@@ -121,12 +121,12 @@ impl OrderSummaryBuilder {
         self.order_id = input;
         self
     }
-    /// <p>The type of order.</p>
+    /// <p> The type of order. </p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of order.</p>
+    /// <p> The type of order. </p>
     pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self

@@ -34,6 +34,9 @@ pub struct Instance {
     /// <p>Whether outbound calls are enabled.</p>
     #[doc(hidden)]
     pub outbound_calls_enabled: ::std::option::Option<bool>,
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    #[doc(hidden)]
+    pub instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl Instance {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -76,6 +79,10 @@ impl Instance {
     pub fn outbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.outbound_calls_enabled
     }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn instance_access_url(&self) -> ::std::option::Option<&str> {
+        self.instance_access_url.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -90,6 +97,7 @@ impl ::std::fmt::Debug for Instance {
         formatter.field("status_reason", &self.status_reason);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("instance_access_url", &self.instance_access_url);
         formatter.finish()
     }
 }
@@ -114,6 +122,7 @@ pub struct InstanceBuilder {
     pub(crate) status_reason: ::std::option::Option<crate::types::InstanceStatusReason>,
     pub(crate) inbound_calls_enabled: ::std::option::Option<bool>,
     pub(crate) outbound_calls_enabled: ::std::option::Option<bool>,
+    pub(crate) instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -234,6 +243,22 @@ impl InstanceBuilder {
         self.outbound_calls_enabled = input;
         self
     }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn instance_access_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_access_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn set_instance_access_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.instance_access_url = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
@@ -247,6 +272,7 @@ impl InstanceBuilder {
             status_reason: self.status_reason,
             inbound_calls_enabled: self.inbound_calls_enabled,
             outbound_calls_enabled: self.outbound_calls_enabled,
+            instance_access_url: self.instance_access_url,
         }
     }
 }
@@ -263,6 +289,7 @@ impl ::std::fmt::Debug for InstanceBuilder {
         formatter.field("status_reason", &self.status_reason);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("instance_access_url", &self.instance_access_url);
         formatter.finish()
     }
 }

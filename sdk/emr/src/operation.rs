@@ -103,6 +103,9 @@ pub mod list_studio_session_mappings;
 /// Types for the `ListStudios` operation.
 pub mod list_studios;
 
+/// Types for the `ListSupportedInstanceTypes` operation.
+pub mod list_supported_instance_types;
+
 /// Types for the `ModifyCluster` operation.
 pub mod modify_cluster;
 

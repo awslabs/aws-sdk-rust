@@ -42,5 +42,11 @@ pub fn ser_create_fhir_datastore_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.identity_provider_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("IdentityProviderConfiguration").start_object();
+        crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

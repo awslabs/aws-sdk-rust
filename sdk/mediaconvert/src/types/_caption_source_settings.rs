@@ -16,7 +16,7 @@ pub struct CaptionSourceSettings {
     /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     #[doc(hidden)]
     pub file_source_settings: ::std::option::Option<crate::types::FileSourceSettings>,
-    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+    /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
     #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::CaptionSourceType>,
     /// Settings specific to Teletext caption sources, including Page number.
@@ -52,7 +52,7 @@ impl CaptionSourceSettings {
     pub fn file_source_settings(&self) -> ::std::option::Option<&crate::types::FileSourceSettings> {
         self.file_source_settings.as_ref()
     }
-    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+    /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::CaptionSourceType> {
         self.source_type.as_ref()
     }
@@ -157,12 +157,12 @@ impl CaptionSourceSettingsBuilder {
         self.file_source_settings = input;
         self
     }
-    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+    /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
     pub fn source_type(mut self, input: crate::types::CaptionSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+    /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
     pub fn set_source_type(
         mut self,
         input: ::std::option::Option<crate::types::CaptionSourceType>,

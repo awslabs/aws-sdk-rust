@@ -5,7 +5,7 @@ pub use crate::operation::get_account_status::_get_account_status_input::GetAcco
 
 /// Fluent builder constructing a request to `GetAccountStatus`.
 ///
-/// <p> Returns the registration status of an account in Audit Manager. </p>
+/// <p> Gets the registration status of an account in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

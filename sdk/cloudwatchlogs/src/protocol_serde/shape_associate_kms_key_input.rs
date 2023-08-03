@@ -9,5 +9,8 @@ pub fn ser_associate_kms_key_input(
     if let Some(var_2) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.resource_identifier {
+        object.key("resourceIdentifier").string(var_3.as_str());
+    }
     Ok(())
 }

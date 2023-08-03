@@ -10,13 +10,13 @@ pub struct Address {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
-    /// <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+    /// <p>The ID representing the allocation of the address.</p>
     #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID representing the association of the address with an instance in a VPC.</p>
+    /// <p>The ID representing the association of the address with an instance.</p>
     #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
     /// <p>The ID of the network interface.</p>
@@ -56,15 +56,15 @@ impl Address {
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
-    /// <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+    /// <p>The ID representing the allocation of the address.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
-    /// <p>The ID representing the association of the address with an instance in a VPC.</p>
+    /// <p>The ID representing the association of the address with an instance.</p>
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::DomainType> {
         self.domain.as_ref()
     }
@@ -154,7 +154,7 @@ impl AddressBuilder {
         self.public_ip = input;
         self
     }
-    /// <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+    /// <p>The ID representing the allocation of the address.</p>
     pub fn allocation_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -162,7 +162,7 @@ impl AddressBuilder {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+    /// <p>The ID representing the allocation of the address.</p>
     pub fn set_allocation_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -170,7 +170,7 @@ impl AddressBuilder {
         self.allocation_id = input;
         self
     }
-    /// <p>The ID representing the association of the address with an instance in a VPC.</p>
+    /// <p>The ID representing the association of the address with an instance.</p>
     pub fn association_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -178,7 +178,7 @@ impl AddressBuilder {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID representing the association of the address with an instance in a VPC.</p>
+    /// <p>The ID representing the association of the address with an instance.</p>
     pub fn set_association_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -186,12 +186,12 @@ impl AddressBuilder {
         self.association_id = input;
         self
     }
-    /// <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain = input;
         self

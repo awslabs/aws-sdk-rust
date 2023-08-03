@@ -10,6 +10,10 @@ pub struct RelativeDateTimeControlDisplayOptions {
     /// <p>Customize how dates are formatted in controls.</p>
     #[doc(hidden)]
     pub date_time_format: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration of info icon label options.</p>
+    #[doc(hidden)]
+    pub info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl RelativeDateTimeControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -19,6 +23,12 @@ impl RelativeDateTimeControlDisplayOptions {
     /// <p>Customize how dates are formatted in controls.</p>
     pub fn date_time_format(&self) -> ::std::option::Option<&str> {
         self.date_time_format.as_deref()
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+        self.info_icon_label_options.as_ref()
     }
 }
 impl RelativeDateTimeControlDisplayOptions {
@@ -36,6 +46,8 @@ impl RelativeDateTimeControlDisplayOptions {
 pub struct RelativeDateTimeControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) date_time_format: ::std::option::Option<::std::string::String>,
+    pub(crate) info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl RelativeDateTimeControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -67,11 +79,28 @@ impl RelativeDateTimeControlDisplayOptionsBuilder {
         self.date_time_format = input;
         self
     }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        mut self,
+        input: crate::types::SheetControlInfoIconLabelOptions,
+    ) -> Self {
+        self.info_icon_label_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn set_info_icon_label_options(
+        mut self,
+        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    ) -> Self {
+        self.info_icon_label_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RelativeDateTimeControlDisplayOptions`](crate::types::RelativeDateTimeControlDisplayOptions).
     pub fn build(self) -> crate::types::RelativeDateTimeControlDisplayOptions {
         crate::types::RelativeDateTimeControlDisplayOptions {
             title_options: self.title_options,
             date_time_format: self.date_time_format,
+            info_icon_label_options: self.info_icon_label_options,
         }
     }
 }

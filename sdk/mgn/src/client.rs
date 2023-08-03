@@ -61,14 +61,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ListManagedAccounts`](crate::operation::list_managed_accounts) operation has
+/// a [`Client::list_managed_accounts`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.list_managed_accounts()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -308,6 +308,8 @@ mod list_import_errors;
 
 mod list_imports;
 
+mod list_managed_accounts;
+
 mod list_source_server_actions;
 
 mod list_tags_for_resource;
@@ -318,6 +320,8 @@ mod list_waves;
 
 mod mark_as_archived;
 
+mod pause_replication;
+
 mod put_source_server_action;
 
 mod put_template_action;
@@ -325,6 +329,8 @@ mod put_template_action;
 mod remove_source_server_action;
 
 mod remove_template_action;
+
+mod resume_replication;
 
 mod retry_data_replication;
 
@@ -337,6 +343,8 @@ mod start_import;
 mod start_replication;
 
 mod start_test;
+
+mod stop_replication;
 
 mod tag_resource;
 

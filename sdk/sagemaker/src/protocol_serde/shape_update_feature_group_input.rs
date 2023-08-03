@@ -21,5 +21,14 @@ pub fn ser_update_feature_group_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.online_store_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("OnlineStoreConfig").start_object();
+        crate::protocol_serde::shape_online_store_config_update::ser_online_store_config_update(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }

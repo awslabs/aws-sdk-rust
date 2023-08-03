@@ -6,6 +6,7 @@ pub use crate::operation::associate_skill_group_with_room::_associate_skill_grou
 /// Fluent builder constructing a request to `AssociateSkillGroupWithRoom`.
 ///
 /// <p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSkillGroupWithRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

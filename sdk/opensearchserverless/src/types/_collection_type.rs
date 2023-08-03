@@ -14,6 +14,7 @@
 /// match collectiontype {
 ///     CollectionType::Search => { /* ... */ },
 ///     CollectionType::Timeseries => { /* ... */ },
+///     CollectionType::Vectorsearch => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum CollectionType {
     Search,
     /// Timeseries collection type
     Timeseries,
+    /// Vectorsearch collection type
+    Vectorsearch,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for CollectionType {
         match s {
             "SEARCH" => CollectionType::Search,
             "TIMESERIES" => CollectionType::Timeseries,
+            "VECTORSEARCH" => CollectionType::Vectorsearch,
             other => {
                 CollectionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +82,13 @@ impl CollectionType {
         match self {
             CollectionType::Search => "SEARCH",
             CollectionType::Timeseries => "TIMESERIES",
+            CollectionType::Vectorsearch => "VECTORSEARCH",
             CollectionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SEARCH", "TIMESERIES"]
+        &["SEARCH", "TIMESERIES", "VECTORSEARCH"]
     }
 }
 impl ::std::convert::AsRef<str> for CollectionType {

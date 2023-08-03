@@ -16,6 +16,10 @@ pub struct RevokeGrantInput {
     /// <p>Identifies the grant to revoke. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     #[doc(hidden)]
     pub grant_id: ::std::option::Option<::std::string::String>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl RevokeGrantInput {
     /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
@@ -33,6 +37,11 @@ impl RevokeGrantInput {
     pub fn grant_id(&self) -> ::std::option::Option<&str> {
         self.grant_id.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl RevokeGrantInput {
     /// Creates a new builder-style object to manufacture [`RevokeGrantInput`](crate::operation::revoke_grant::RevokeGrantInput).
@@ -49,6 +58,7 @@ impl RevokeGrantInput {
 pub struct RevokeGrantInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl RevokeGrantInputBuilder {
     /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
@@ -85,6 +95,18 @@ impl RevokeGrantInputBuilder {
         self.grant_id = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::operation::revoke_grant::RevokeGrantInput).
     pub fn build(
         self,
@@ -95,6 +117,7 @@ impl RevokeGrantInputBuilder {
         ::std::result::Result::Ok(crate::operation::revoke_grant::RevokeGrantInput {
             key_id: self.key_id,
             grant_id: self.grant_id,
+            dry_run: self.dry_run,
         })
     }
 }

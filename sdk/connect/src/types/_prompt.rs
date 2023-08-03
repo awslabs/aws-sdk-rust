@@ -13,7 +13,7 @@ pub struct Prompt {
     /// <p>The name of the prompt.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the prompt.</p>
+    /// <p>The description of the prompt.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
@@ -35,7 +35,7 @@ impl Prompt {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description for the prompt.</p>
+    /// <p>The description of the prompt.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -100,12 +100,12 @@ impl PromptBuilder {
         self.name = input;
         self
     }
-    /// <p>A description for the prompt.</p>
+    /// <p>The description of the prompt.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the prompt.</p>
+    /// <p>The description of the prompt.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self

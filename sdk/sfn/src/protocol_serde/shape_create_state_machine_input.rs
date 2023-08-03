@@ -45,5 +45,11 @@ pub fn ser_create_state_machine_input(
         )?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.publish {
+        object.key("publish").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.version_description {
+        object.key("versionDescription").string(var_14.as_str());
+    }
     Ok(())
 }

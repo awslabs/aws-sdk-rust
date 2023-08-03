@@ -26,5 +26,8 @@ pub fn ser_sign_input(
     if let Some(var_7) = &input.signing_algorithm {
         object.key("SigningAlgorithm").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.dry_run {
+        object.key("DryRun").boolean(*var_8);
+    }
     Ok(())
 }

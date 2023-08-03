@@ -14,12 +14,15 @@
 /// match automlmetricextendedenum {
 ///     AutoMlMetricExtendedEnum::Auc => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Accuracy => { /* ... */ },
+///     AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::BalancedAccuracy => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::F1 => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::F1Macro => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::InferenceLatency => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::LogLoss => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Mae => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Mape => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Mase => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Mse => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Precision => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::PrecisionMacro => { /* ... */ },
@@ -27,6 +30,7 @@
 ///     AutoMlMetricExtendedEnum::Rmse => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::Recall => { /* ... */ },
 ///     AutoMlMetricExtendedEnum::RecallMacro => { /* ... */ },
+///     AutoMlMetricExtendedEnum::Wape => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -65,6 +69,8 @@ pub enum AutoMlMetricExtendedEnum {
     #[allow(missing_docs)] // documentation missing in model
     Accuracy,
     #[allow(missing_docs)] // documentation missing in model
+    AverageWeightedQuantileLoss,
+    #[allow(missing_docs)] // documentation missing in model
     BalancedAccuracy,
     #[allow(missing_docs)] // documentation missing in model
     F1,
@@ -76,6 +82,10 @@ pub enum AutoMlMetricExtendedEnum {
     LogLoss,
     #[allow(missing_docs)] // documentation missing in model
     Mae,
+    #[allow(missing_docs)] // documentation missing in model
+    Mape,
+    #[allow(missing_docs)] // documentation missing in model
+    Mase,
     #[allow(missing_docs)] // documentation missing in model
     Mse,
     #[allow(missing_docs)] // documentation missing in model
@@ -90,6 +100,8 @@ pub enum AutoMlMetricExtendedEnum {
     Recall,
     #[allow(missing_docs)] // documentation missing in model
     RecallMacro,
+    #[allow(missing_docs)] // documentation missing in model
+    Wape,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -98,12 +110,15 @@ impl ::std::convert::From<&str> for AutoMlMetricExtendedEnum {
         match s {
             "AUC" => AutoMlMetricExtendedEnum::Auc,
             "Accuracy" => AutoMlMetricExtendedEnum::Accuracy,
+            "AverageWeightedQuantileLoss" => AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss,
             "BalancedAccuracy" => AutoMlMetricExtendedEnum::BalancedAccuracy,
             "F1" => AutoMlMetricExtendedEnum::F1,
             "F1macro" => AutoMlMetricExtendedEnum::F1Macro,
             "InferenceLatency" => AutoMlMetricExtendedEnum::InferenceLatency,
             "LogLoss" => AutoMlMetricExtendedEnum::LogLoss,
             "MAE" => AutoMlMetricExtendedEnum::Mae,
+            "MAPE" => AutoMlMetricExtendedEnum::Mape,
+            "MASE" => AutoMlMetricExtendedEnum::Mase,
             "MSE" => AutoMlMetricExtendedEnum::Mse,
             "Precision" => AutoMlMetricExtendedEnum::Precision,
             "PrecisionMacro" => AutoMlMetricExtendedEnum::PrecisionMacro,
@@ -111,6 +126,7 @@ impl ::std::convert::From<&str> for AutoMlMetricExtendedEnum {
             "RMSE" => AutoMlMetricExtendedEnum::Rmse,
             "Recall" => AutoMlMetricExtendedEnum::Recall,
             "RecallMacro" => AutoMlMetricExtendedEnum::RecallMacro,
+            "WAPE" => AutoMlMetricExtendedEnum::Wape,
             other => AutoMlMetricExtendedEnum::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -130,12 +146,15 @@ impl AutoMlMetricExtendedEnum {
         match self {
             AutoMlMetricExtendedEnum::Auc => "AUC",
             AutoMlMetricExtendedEnum::Accuracy => "Accuracy",
+            AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
             AutoMlMetricExtendedEnum::BalancedAccuracy => "BalancedAccuracy",
             AutoMlMetricExtendedEnum::F1 => "F1",
             AutoMlMetricExtendedEnum::F1Macro => "F1macro",
             AutoMlMetricExtendedEnum::InferenceLatency => "InferenceLatency",
             AutoMlMetricExtendedEnum::LogLoss => "LogLoss",
             AutoMlMetricExtendedEnum::Mae => "MAE",
+            AutoMlMetricExtendedEnum::Mape => "MAPE",
+            AutoMlMetricExtendedEnum::Mase => "MASE",
             AutoMlMetricExtendedEnum::Mse => "MSE",
             AutoMlMetricExtendedEnum::Precision => "Precision",
             AutoMlMetricExtendedEnum::PrecisionMacro => "PrecisionMacro",
@@ -143,6 +162,7 @@ impl AutoMlMetricExtendedEnum {
             AutoMlMetricExtendedEnum::Rmse => "RMSE",
             AutoMlMetricExtendedEnum::Recall => "Recall",
             AutoMlMetricExtendedEnum::RecallMacro => "RecallMacro",
+            AutoMlMetricExtendedEnum::Wape => "WAPE",
             AutoMlMetricExtendedEnum::Unknown(value) => value.as_str(),
         }
     }
@@ -151,12 +171,15 @@ impl AutoMlMetricExtendedEnum {
         &[
             "AUC",
             "Accuracy",
+            "AverageWeightedQuantileLoss",
             "BalancedAccuracy",
             "F1",
             "F1macro",
             "InferenceLatency",
             "LogLoss",
             "MAE",
+            "MAPE",
+            "MASE",
             "MSE",
             "Precision",
             "PrecisionMacro",
@@ -164,6 +187,7 @@ impl AutoMlMetricExtendedEnum {
             "RMSE",
             "Recall",
             "RecallMacro",
+            "WAPE",
         ]
     }
 }

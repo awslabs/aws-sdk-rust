@@ -52,40 +52,41 @@ impl ListSigningProfilesInput {
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.include_canceled {
-                    query.push_kv(
-                        "includeCanceled",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.include_canceled)
-                            .encode(),
-                    );
-                }
-                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
-                    if *inner_1 != 0 {
+                if let ::std::option::Option::Some(inner_1) = &_input.include_canceled {
+                    if *inner_1 {
                         query.push_kv(
-                            "maxResults",
+                            "includeCanceled",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
-                    }
-                }
-                if let ::std::option::Option::Some(inner_3) = &_input.platform_id {
-                    {
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
                         query.push_kv(
-                            "platformId",
-                            &::aws_smithy_http::query::fmt_string(&inner_3),
+                            "maxResults",
+                            ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.statuses {
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        for inner_5 in inner_4 {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.platform_id {
+                    {
+                        query.push_kv(
+                            "platformId",
+                            &::aws_smithy_http::query::fmt_string(&inner_4),
+                        );
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.statuses {
+                    {
+                        for inner_6 in inner_5 {
                             query.push_kv(
                                 "statuses",
-                                &::aws_smithy_http::query::fmt_string(&inner_5),
+                                &::aws_smithy_http::query::fmt_string(&inner_6),
                             );
                         }
                     }

@@ -9,6 +9,8 @@ pub use crate::types::_lambda_configuration::LambdaConfigurationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_target::TargetBuilder;
+
 pub use crate::types::_message_attribute_value::MessageAttributeValueBuilder;
 
 pub use crate::types::_push_notification_configuration::PushNotificationConfigurationBuilder;

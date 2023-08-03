@@ -169,7 +169,7 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     pub fn http_protocol_ipv6(
         mut self,
         input: crate::types::InstanceMetadataProtocolState,
@@ -177,7 +177,7 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
         self.inner = self.inner.http_protocol_ipv6(input);
         self
     }
-    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only if you have enabled the HTTP metadata endpoint.</p>
+    /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. Applies only if you enabled the HTTP metadata endpoint.</p>
     pub fn set_http_protocol_ipv6(
         mut self,
         input: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,

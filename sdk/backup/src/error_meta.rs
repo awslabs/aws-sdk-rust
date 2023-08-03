@@ -2694,6 +2694,7 @@ impl From<crate::operation::start_restore_job::StartRestoreJobError> for Error {
     fn from(err: crate::operation::start_restore_job::StartRestoreJobError) -> Self {
         match err {
             crate::operation::start_restore_job::StartRestoreJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_restore_job::StartRestoreJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::start_restore_job::StartRestoreJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
             crate::operation::start_restore_job::StartRestoreJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_restore_job::StartRestoreJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),

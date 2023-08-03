@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetMeetingOutput`](crate::operation::get_meeting::GetMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::operation::get_meeting::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
     /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::operation::get_meeting::GetMeetingError)
+    #[deprecated(note = "Replaced by GetMeeting in the Amazon Chime SDK Meetings Namespace")]
     pub fn get_meeting(&self) -> crate::operation::get_meeting::builders::GetMeetingFluentBuilder {
         crate::operation::get_meeting::builders::GetMeetingFluentBuilder::new(self.handle.clone())
     }

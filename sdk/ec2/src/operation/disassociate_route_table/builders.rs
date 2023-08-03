@@ -6,7 +6,7 @@ pub use crate::operation::disassociate_route_table::_disassociate_route_table_in
 /// Fluent builder constructing a request to `DisassociateRouteTable`.
 ///
 /// <p>Disassociates a subnet or gateway from a route table.</p>
-/// <p>After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the routes in the VPC's main route table. For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the routes in the VPC's main route table. For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

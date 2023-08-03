@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_contact_from_address_book::_disassociate_
 /// Fluent builder constructing a request to `DisassociateContactFromAddressBook`.
 ///
 /// <p>Disassociates a contact from a given address book.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

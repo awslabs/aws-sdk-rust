@@ -5,7 +5,7 @@ pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservat
 
 /// Fluent builder constructing a request to `CancelCapacityReservation`.
 ///
-/// <p>Cancels the capacity reservation with the specified name.</p>
+/// <p>Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has been cancelled, but you can refer to its tags and view it for historical reference. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

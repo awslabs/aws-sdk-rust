@@ -90,6 +90,22 @@ pub fn de_modify_cluster_http_error(
                                                     }
             tmp
         }),
+        "CustomCnameAssociationFault" => crate::operation::modify_cluster::ModifyClusterError::CustomCnameAssociationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CustomCnameAssociationFaultBuilder::default();
+                    output = crate::protocol_serde::shape_custom_cname_association_fault::de_custom_cname_association_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "DependentServiceRequestThrottlingFault" => crate::operation::modify_cluster::ModifyClusterError::DependentServiceRequestThrottlingFault({
             #[allow(unused_mut)]
             let mut tmp =
@@ -305,6 +321,22 @@ pub fn de_modify_cluster_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
                     output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::modify_cluster::ModifyClusterError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

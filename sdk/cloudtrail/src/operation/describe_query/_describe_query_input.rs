@@ -10,6 +10,9 @@ pub struct DescribeQueryInput {
     /// <p>The query ID.</p>
     #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
+    /// <p> The alias that identifies a query template. </p>
+    #[doc(hidden)]
+    pub query_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
@@ -20,6 +23,10 @@ impl DescribeQueryInput {
     /// <p>The query ID.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn query_alias(&self) -> ::std::option::Option<&str> {
+        self.query_alias.as_deref()
     }
 }
 impl DescribeQueryInput {
@@ -37,6 +44,7 @@ impl DescribeQueryInput {
 pub struct DescribeQueryInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
+    pub(crate) query_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
@@ -67,6 +75,16 @@ impl DescribeQueryInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_alias = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
     pub fn build(
         self,
@@ -77,6 +95,7 @@ impl DescribeQueryInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_query::DescribeQueryInput {
             event_data_store: self.event_data_store,
             query_id: self.query_id,
+            query_alias: self.query_alias,
         })
     }
 }

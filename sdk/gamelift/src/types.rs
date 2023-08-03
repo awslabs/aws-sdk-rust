@@ -199,6 +199,10 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 
 pub use crate::types::_location_configuration::LocationConfiguration;
 
+pub use crate::types::_claim_filter_option::ClaimFilterOption;
+
+pub use crate::types::_filter_instance_status::FilterInstanceStatus;
+
 pub use crate::types::_acceptance_type::AcceptanceType;
 
 mod _acceptance_type;
@@ -223,6 +227,8 @@ mod _certificate_configuration;
 
 mod _certificate_type;
 
+mod _claim_filter_option;
+
 mod _comparison_operator_type;
 
 mod _compute;
@@ -244,6 +250,8 @@ mod _event;
 mod _event_code;
 
 mod _filter_configuration;
+
+mod _filter_instance_status;
 
 mod _fleet_action;
 

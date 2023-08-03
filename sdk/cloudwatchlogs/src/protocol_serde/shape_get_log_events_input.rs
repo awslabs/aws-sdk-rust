@@ -36,8 +36,8 @@ pub fn ser_get_log_events_input(
     if let Some(var_8) = &input.start_from_head {
         object.key("startFromHead").boolean(*var_8);
     }
-    if input.unmask {
-        object.key("unmask").boolean(input.unmask);
+    if let Some(var_9) = &input.unmask {
+        object.key("unmask").boolean(*var_9);
     }
     Ok(())
 }

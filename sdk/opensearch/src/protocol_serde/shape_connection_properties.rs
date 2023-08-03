@@ -32,6 +32,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "CrossClusterSearch" => {
+                                builder = builder.set_cross_cluster_search(
+                                    crate::protocol_serde::shape_cross_cluster_search_connection_properties::de_cross_cluster_search_connection_properties(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -52,4 +57,20 @@ where
             ),
         ),
     }
+}
+
+pub fn ser_connection_properties(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::ConnectionProperties,
+) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+    if let Some(var_1) = &input.endpoint {
+        object.key("Endpoint").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.cross_cluster_search {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("CrossClusterSearch").start_object();
+        crate::protocol_serde::shape_cross_cluster_search_connection_properties::ser_cross_cluster_search_connection_properties(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    Ok(())
 }

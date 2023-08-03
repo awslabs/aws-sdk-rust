@@ -23,7 +23,7 @@ pub enum Error {
     /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
-    /// <p>You have provided a configuration recorder name that is not valid.</p>
+    /// <p>You have provided a name for the configuration recorder that is not valid.</p>
     InvalidConfigurationRecorderNameException(
         crate::types::error::InvalidConfigurationRecorderNameException,
     ),
@@ -37,11 +37,21 @@ pub enum Error {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Values that are not valid might also be incorrectly formatted.</p>
+    /// <p>Indicates one of the following errors:</p>
+    /// <ul>
+    /// <li> <p>You have provided a combination of parameter values that is not valid. For example:</p>
+    /// <ul>
+    /// <li> <p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.</p> </li>
+    /// <li> <p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Every parameter is either null, false, or empty.</p> </li>
+    /// <li> <p>You have reached the limit of the number of resource types you can provide for the recording group.</p> </li>
+    /// <li> <p>You have provided resource types or a recording strategy that are not valid.</p> </li>
+    /// </ul>
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
     /// <p>The specified <code>ResultToken</code> is not valid.</p>
     InvalidResultTokenException(crate::types::error::InvalidResultTokenException),
-    /// <p>You have provided a null or empty role ARN.</p>
+    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the configuration recorder.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The specified Amazon S3 key prefix is not valid.</p>
     InvalidS3KeyPrefixException(crate::types::error::InvalidS3KeyPrefixException),
@@ -64,11 +74,11 @@ pub enum Error {
     MaxNumberOfConfigRulesExceededException(
         crate::types::error::MaxNumberOfConfigRulesExceededException,
     ),
-    /// <p>You have reached the limit of the number of recorders you can create.</p>
+    /// <p>You have reached the limit of the number of configuration recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(
         crate::types::error::MaxNumberOfConfigurationRecordersExceededException,
     ),
-    /// <p>You have reached the limit of the number of conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>You have reached the limit of the number of conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     MaxNumberOfConformancePacksExceededException(
         crate::types::error::MaxNumberOfConformancePacksExceededException,
     ),
@@ -76,11 +86,11 @@ pub enum Error {
     MaxNumberOfDeliveryChannelsExceededException(
         crate::types::error::MaxNumberOfDeliveryChannelsExceededException,
     ),
-    /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
         crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException,
     ),
-    /// <p>You have reached the limit of the number of organization conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>You have reached the limit of the number of organization conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     MaxNumberOfOrganizationConformancePacksExceededException(
         crate::types::error::MaxNumberOfOrganizationConformancePacksExceededException,
     ),
@@ -177,7 +187,7 @@ pub enum Error {
     ResourceNotDiscoveredException(crate::types::error::ResourceNotDiscoveredException),
     /// <p>You have specified a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
+    /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The requested action is not valid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>

@@ -101,7 +101,7 @@ impl UpdateSettingsFluentBuilder {
         self.inner = self.inner.set_sns_topic(input);
         self
     }
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn default_assessment_reports_destination(
         mut self,
         input: crate::types::AssessmentReportsDestination,
@@ -109,7 +109,7 @@ impl UpdateSettingsFluentBuilder {
         self.inner = self.inner.default_assessment_reports_destination(input);
         self
     }
-    /// <p> The default storage destination for assessment reports. </p>
+    /// <p> The default S3 destination bucket for storing assessment reports. </p>
     pub fn set_default_assessment_reports_destination(
         mut self,
         input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
@@ -169,6 +169,22 @@ impl UpdateSettingsFluentBuilder {
         input: ::std::option::Option<crate::types::DeregistrationPolicy>,
     ) -> Self {
         self.inner = self.inner.set_deregistration_policy(input);
+        self
+    }
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    pub fn default_export_destination(
+        mut self,
+        input: crate::types::DefaultExportDestination,
+    ) -> Self {
+        self.inner = self.inner.default_export_destination(input);
+        self
+    }
+    /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
+    pub fn set_default_export_destination(
+        mut self,
+        input: ::std::option::Option<crate::types::DefaultExportDestination>,
+    ) -> Self {
+        self.inner = self.inner.set_default_export_destination(input);
         self
     }
 }

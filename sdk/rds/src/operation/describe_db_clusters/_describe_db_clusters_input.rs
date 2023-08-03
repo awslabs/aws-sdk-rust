@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -30,21 +30,21 @@ pub struct DescribeDbClustersInput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     #[doc(hidden)]
     pub include_shared: bool,
 }
 impl DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -65,7 +65,7 @@ impl DescribeDbClustersInput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn include_shared(&self) -> bool {
         self.include_shared
     }
@@ -91,10 +91,10 @@ pub struct DescribeDbClustersInputBuilder {
     pub(crate) include_shared: ::std::option::Option<bool>,
 }
 impl DescribeDbClustersInputBuilder {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(
         mut self,
@@ -103,10 +103,10 @@ impl DescribeDbClustersInputBuilder {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB cluster identifier.</p> </li>
     /// </ul>
     pub fn set_db_cluster_identifier(
         mut self,
@@ -120,7 +120,7 @@ impl DescribeDbClustersInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -135,7 +135,7 @@ impl DescribeDbClustersInputBuilder {
         self
     }
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
@@ -174,12 +174,12 @@ impl DescribeDbClustersInputBuilder {
         self.marker = input;
         self
     }
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.include_shared = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
+    /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_shared = input;
         self

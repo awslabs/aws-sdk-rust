@@ -7,6 +7,9 @@ pub mod batch_get_channel;
 /// Types for the `BatchGetStreamKey` operation.
 pub mod batch_get_stream_key;
 
+/// Types for the `BatchStartViewerSessionRevocation` operation.
+pub mod batch_start_viewer_session_revocation;
+
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
@@ -72,6 +75,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PutMetadata` operation.
 pub mod put_metadata;
+
+/// Types for the `StartViewerSessionRevocation` operation.
+pub mod start_viewer_session_revocation;
 
 /// Types for the `StopStream` operation.
 pub mod stop_stream;

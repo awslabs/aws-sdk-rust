@@ -24,6 +24,12 @@ pub struct UpdateNetworkAnalyzerConfigurationInput {
     /// <p>The description of the new resource.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
+    pub multicast_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    #[doc(hidden)]
+    pub multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
@@ -54,6 +60,14 @@ impl UpdateNetworkAnalyzerConfigurationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn multicast_groups_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.multicast_groups_to_add.as_deref()
+    }
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn multicast_groups_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.multicast_groups_to_remove.as_deref()
+    }
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput).
@@ -79,6 +93,10 @@ pub struct UpdateNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) wireless_gateways_to_remove:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) multicast_groups_to_add:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) multicast_groups_to_remove:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
@@ -208,6 +226,50 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
         self.description = input;
         self
     }
+    /// Appends an item to `multicast_groups_to_add`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups_to_add`](Self::set_multicast_groups_to_add).
+    ///
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn multicast_groups_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.multicast_groups_to_add.unwrap_or_default();
+        v.push(input.into());
+        self.multicast_groups_to_add = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn set_multicast_groups_to_add(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.multicast_groups_to_add = input;
+        self
+    }
+    /// Appends an item to `multicast_groups_to_remove`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups_to_remove`](Self::set_multicast_groups_to_remove).
+    ///
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn multicast_groups_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.multicast_groups_to_remove.unwrap_or_default();
+        v.push(input.into());
+        self.multicast_groups_to_remove = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn set_multicast_groups_to_remove(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.multicast_groups_to_remove = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationInput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -225,6 +287,10 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
                 wireless_gateways_to_remove: self.wireless_gateways_to_remove
                 ,
                 description: self.description
+                ,
+                multicast_groups_to_add: self.multicast_groups_to_add
+                ,
+                multicast_groups_to_remove: self.multicast_groups_to_remove
                 ,
             }
         )

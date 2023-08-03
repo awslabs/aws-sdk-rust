@@ -168,6 +168,8 @@ pub type EnableMFADeviceErrorKind = EnableMFADeviceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum EnableMFADeviceError {
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
@@ -202,6 +204,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for EnableMFADeviceError {
 impl ::std::fmt::Display for EnableMFADeviceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::EntityTemporarilyUnmodifiableException(_inner) => _inner.fmt(f),
             Self::InvalidAuthenticationCodeException(_inner) => _inner.fmt(f),
@@ -215,6 +218,9 @@ impl ::std::fmt::Display for EnableMFADeviceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EnableMFADeviceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::EntityAlreadyExistsException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -286,6 +292,7 @@ impl EnableMFADeviceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConcurrentModificationException(e) => e.meta(),
             Self::EntityAlreadyExistsException(e) => e.meta(),
             Self::EntityTemporarilyUnmodifiableException(e) => e.meta(),
             Self::InvalidAuthenticationCodeException(e) => e.meta(),
@@ -294,6 +301,10 @@ impl EnableMFADeviceError {
             Self::ServiceFailureException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `EnableMFADeviceError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `EnableMFADeviceError::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
@@ -323,6 +334,7 @@ impl EnableMFADeviceError {
 impl ::std::error::Error for EnableMFADeviceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityTemporarilyUnmodifiableException(_inner) => {
                 ::std::option::Option::Some(_inner)

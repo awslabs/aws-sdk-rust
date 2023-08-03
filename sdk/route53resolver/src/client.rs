@@ -226,6 +226,8 @@ mod create_firewall_rule;
 
 mod create_firewall_rule_group;
 
+mod create_outpost_resolver;
+
 mod create_resolver_endpoint;
 
 mod create_resolver_query_log_config;
@@ -266,6 +268,8 @@ mod delete_firewall_rule;
 
 mod delete_firewall_rule_group;
 
+mod delete_outpost_resolver;
+
 mod delete_resolver_endpoint;
 
 mod delete_resolver_query_log_config;
@@ -289,6 +293,8 @@ mod get_firewall_rule_group;
 mod get_firewall_rule_group_association;
 
 mod get_firewall_rule_group_policy;
+
+mod get_outpost_resolver;
 
 mod get_resolver_config;
 
@@ -321,6 +327,8 @@ mod list_firewall_rule_group_associations;
 mod list_firewall_rule_groups;
 
 mod list_firewall_rules;
+
+mod list_outpost_resolvers;
 
 mod list_resolver_configs;
 
@@ -357,6 +365,8 @@ mod update_firewall_domains;
 mod update_firewall_rule;
 
 mod update_firewall_rule_group_association;
+
+mod update_outpost_resolver;
 
 mod update_resolver_config;
 

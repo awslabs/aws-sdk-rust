@@ -9,11 +9,11 @@ pub fn ser_stop_pipeline_execution_input(
     if let Some(var_2) = &input.pipeline_execution_id {
         object.key("pipelineExecutionId").string(var_2.as_str());
     }
-    if input.abandon {
-        object.key("abandon").boolean(input.abandon);
+    if let Some(var_3) = &input.abandon {
+        object.key("abandon").boolean(*var_3);
     }
-    if let Some(var_3) = &input.reason {
-        object.key("reason").string(var_3.as_str());
+    if let Some(var_4) = &input.reason {
+        object.key("reason").string(var_4.as_str());
     }
     Ok(())
 }

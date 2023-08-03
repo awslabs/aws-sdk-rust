@@ -6,7 +6,7 @@ pub use crate::operation::attach_user_policy::_attach_user_policy_input::AttachU
 /// Fluent builder constructing a request to `AttachUserPolicy`.
 ///
 /// <p>Attaches the specified managed policy to the specified user.</p>
-/// <p>You use this operation to attach a <i>managed</i> policy to a user. To embed an inline policy in a user, use <code>PutUserPolicy</code>.</p>
+/// <p>You use this operation to attach a <i>managed</i> policy to a user. To embed an inline policy in a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html"> <code>PutUserPolicy</code> </a>.</p>
 /// <p>As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM policies</a> in the <i>IAM User Guide</i>.</p>
 /// <p>For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

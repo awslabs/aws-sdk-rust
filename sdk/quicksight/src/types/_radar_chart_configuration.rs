@@ -46,6 +46,9 @@ pub struct RadarChartConfiguration {
     /// <p>The legend display setup of the visual.</p>
     #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
+    /// <p>The axis behavior options of a radar chart.</p>
+    #[doc(hidden)]
+    pub axes_range_scale: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
 }
 impl RadarChartConfiguration {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
@@ -114,6 +117,12 @@ impl RadarChartConfiguration {
     pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
     }
+    /// <p>The axis behavior options of a radar chart.</p>
+    pub fn axes_range_scale(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RadarChartAxesRangeScale> {
+        self.axes_range_scale.as_ref()
+    }
 }
 impl RadarChartConfiguration {
     /// Creates a new builder-style object to manufacture [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
@@ -142,6 +151,7 @@ pub struct RadarChartConfigurationBuilder {
     pub(crate) color_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
+    pub(crate) axes_range_scale: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
 }
 impl RadarChartConfigurationBuilder {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
@@ -326,6 +336,19 @@ impl RadarChartConfigurationBuilder {
         self.legend = input;
         self
     }
+    /// <p>The axis behavior options of a radar chart.</p>
+    pub fn axes_range_scale(mut self, input: crate::types::RadarChartAxesRangeScale) -> Self {
+        self.axes_range_scale = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The axis behavior options of a radar chart.</p>
+    pub fn set_axes_range_scale(
+        mut self,
+        input: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
+    ) -> Self {
+        self.axes_range_scale = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
     pub fn build(self) -> crate::types::RadarChartConfiguration {
         crate::types::RadarChartConfiguration {
@@ -343,6 +366,7 @@ impl RadarChartConfigurationBuilder {
             color_axis: self.color_axis,
             color_label_options: self.color_label_options,
             legend: self.legend,
+            axes_range_scale: self.axes_range_scale,
         }
     }
 }

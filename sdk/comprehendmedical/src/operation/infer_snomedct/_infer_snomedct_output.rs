@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferSnomedctOutput {
-    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>>,
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
@@ -21,7 +21,7 @@ pub struct InferSnomedctOutput {
     _request_id: Option<String>,
 }
 impl InferSnomedctOutput {
-    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     pub fn entities(&self) -> ::std::option::Option<&[crate::types::SnomedctEntity]> {
         self.entities.as_deref()
     }
@@ -72,14 +72,14 @@ impl InferSnomedctOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
     ///
-    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     pub fn entities(mut self, input: crate::types::SnomedctEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
         v.push(input);
         self.entities = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+    /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     pub fn set_entities(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>>,

@@ -5,7 +5,7 @@ pub use crate::operation::get_change_logs::_get_change_logs_input::GetChangeLogs
 
 /// Fluent builder constructing a request to `GetChangeLogs`.
 ///
-/// <p> Returns a list of changelogs from Audit Manager. </p>
+/// <p> Gets a list of changelogs from Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChangeLogsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

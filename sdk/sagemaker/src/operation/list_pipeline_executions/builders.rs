@@ -111,7 +111,7 @@ impl ListPipelineExecutionsFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -119,7 +119,7 @@ impl ListPipelineExecutionsFluentBuilder {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -6,6 +6,9 @@ impl super::Client {
     ///   - [`app_instance_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsFluentBuilder::set_app_instance_arn): <p>The ARN of the streaming configurations being deleted.</p>
     /// - On success, responds with [`DeleteAppInstanceStreamingConfigurationsOutput`](crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceStreamingConfigurationsError>`](crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError)
+    #[deprecated(
+        note = "Replaced by DeleteAppInstanceStreamingConfigurations in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn delete_app_instance_streaming_configurations(&self) -> crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsFluentBuilder{
         crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsFluentBuilder::new(self.handle.clone())
     }

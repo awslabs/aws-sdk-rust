@@ -24,6 +24,9 @@ pub struct CreateNetworkAnalyzerConfigurationInput {
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    #[doc(hidden)]
+    pub multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
@@ -54,6 +57,10 @@ impl CreateNetworkAnalyzerConfigurationInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
+    /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn multicast_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.multicast_groups.as_deref()
+    }
 }
 impl CreateNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput).
@@ -75,6 +82,7 @@ pub struct CreateNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
@@ -189,6 +197,28 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// Appends an item to `multicast_groups`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
+    ///
+    /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn multicast_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.multicast_groups.unwrap_or_default();
+        v.push(input.into());
+        self.multicast_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn set_multicast_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.multicast_groups = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationInput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -206,6 +236,8 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
                 tags: self.tags
                 ,
                 client_request_token: self.client_request_token
+                ,
+                multicast_groups: self.multicast_groups
                 ,
             }
         )

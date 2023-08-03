@@ -6,6 +6,7 @@ pub use crate::operation::get_contact::_get_contact_input::GetContactInputBuilde
 /// Fluent builder constructing a request to `GetContact`.
 ///
 /// <p>Gets the contact details by the contact ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

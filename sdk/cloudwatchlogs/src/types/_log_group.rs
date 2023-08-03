@@ -10,7 +10,7 @@ pub struct LogGroup {
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<i64>,
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     #[doc(hidden)]
     pub retention_in_days: ::std::option::Option<i32>,
@@ -29,6 +29,10 @@ pub struct LogGroup {
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
     #[doc(hidden)]
     pub data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
+    /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
+    #[doc(hidden)]
+    pub inherited_properties:
+        ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -39,7 +43,7 @@ impl LogGroup {
     pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_in_days
@@ -66,6 +70,12 @@ impl LogGroup {
     ) -> ::std::option::Option<&crate::types::DataProtectionStatus> {
         self.data_protection_status.as_ref()
     }
+    /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
+    pub fn inherited_properties(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::InheritedProperty]> {
+        self.inherited_properties.as_deref()
+    }
 }
 impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::types::LogGroup).
@@ -88,6 +98,8 @@ pub struct LogGroupBuilder {
     pub(crate) stored_bytes: ::std::option::Option<i64>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
+    pub(crate) inherited_properties:
+        ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
 }
 impl LogGroupBuilder {
     /// <p>The name of the log group.</p>
@@ -116,13 +128,13 @@ impl LogGroupBuilder {
         self.creation_time = input;
         self
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(mut self, input: i32) -> Self {
         self.retention_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn set_retention_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_in_days = input;
@@ -181,6 +193,25 @@ impl LogGroupBuilder {
         self.data_protection_status = input;
         self
     }
+    /// Appends an item to `inherited_properties`.
+    ///
+    /// To override the contents of this collection use [`set_inherited_properties`](Self::set_inherited_properties).
+    ///
+    /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
+    pub fn inherited_properties(mut self, input: crate::types::InheritedProperty) -> Self {
+        let mut v = self.inherited_properties.unwrap_or_default();
+        v.push(input);
+        self.inherited_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
+    pub fn set_inherited_properties(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
+    ) -> Self {
+        self.inherited_properties = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).
     pub fn build(self) -> crate::types::LogGroup {
         crate::types::LogGroup {
@@ -192,6 +223,7 @@ impl LogGroupBuilder {
             stored_bytes: self.stored_bytes,
             kms_key_id: self.kms_key_id,
             data_protection_status: self.data_protection_status,
+            inherited_properties: self.inherited_properties,
         }
     }
 }

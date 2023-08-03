@@ -16,6 +16,10 @@ pub struct DataQualityRuleResult {
     /// <p>A pass or fail status for the rule.</p>
     #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    #[doc(hidden)]
+    pub evaluated_metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
@@ -33,6 +37,12 @@ impl DataQualityRuleResult {
     /// <p>A pass or fail status for the rule.</p>
     pub fn result(&self) -> ::std::option::Option<&crate::types::DataQualityRuleResultStatus> {
         self.result.as_ref()
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn evaluated_metrics(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+        self.evaluated_metrics.as_ref()
     }
 }
 impl DataQualityRuleResult {
@@ -52,6 +62,8 @@ pub struct DataQualityRuleResultBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_message: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
+    pub(crate) evaluated_metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DataQualityRuleResultBuilder {
     /// <p>The name of the data quality rule.</p>
@@ -103,6 +115,29 @@ impl DataQualityRuleResultBuilder {
         self.result = input;
         self
     }
+    /// Adds a key-value pair to `evaluated_metrics`.
+    ///
+    /// To override the contents of this collection use [`set_evaluated_metrics`](Self::set_evaluated_metrics).
+    ///
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn evaluated_metrics(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: f64,
+    ) -> Self {
+        let mut hash_map = self.evaluated_metrics.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.evaluated_metrics = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of metrics associated with the evaluation of the rule.</p>
+    pub fn set_evaluated_metrics(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    ) -> Self {
+        self.evaluated_metrics = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
     pub fn build(self) -> crate::types::DataQualityRuleResult {
         crate::types::DataQualityRuleResult {
@@ -110,6 +145,7 @@ impl DataQualityRuleResultBuilder {
             description: self.description,
             evaluation_message: self.evaluation_message,
             result: self.result,
+            evaluated_metrics: self.evaluated_metrics,
         }
     }
 }

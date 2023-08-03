@@ -24,9 +24,11 @@ pub struct AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -96,6 +98,19 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :profile/
+    /// <profile_id></profile_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -133,6 +148,16 @@ pub struct AdvancedFieldSelector {
     /// <region>
     /// ::snapshot/
     /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :emrwal:
+    /// <region>
+    /// ::workspace/
+    /// <workspace_name></workspace_name>
     /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
@@ -326,9 +351,11 @@ impl AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -398,6 +425,19 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :profile/
+    /// <profile_id></profile_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -435,6 +475,16 @@ impl AdvancedFieldSelector {
     /// <region>
     /// ::snapshot/
     /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :emrwal:
+    /// <region>
+    /// ::workspace/
+    /// <workspace_name></workspace_name>
     /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
@@ -656,9 +706,11 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -728,6 +780,19 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :profile/
+    /// <profile_id></profile_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -765,6 +830,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <region>
     /// ::snapshot/
     /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :emrwal:
+    /// <region>
+    /// ::workspace/
+    /// <workspace_name></workspace_name>
     /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
@@ -940,9 +1015,11 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -1012,6 +1089,19 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :codewhisperer:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :profile/
+    /// <profile_id></profile_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1049,6 +1139,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <region>
     /// ::snapshot/
     /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :emrwal:
+    /// <region>
+    /// ::workspace/
+    /// <workspace_name></workspace_name>
     /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>

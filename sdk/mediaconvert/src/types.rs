@@ -301,6 +301,12 @@ pub use crate::types::_h265_codec_profile::H265CodecProfile;
 
 pub use crate::types::_h265_codec_level::H265CodecLevel;
 
+pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilter;
+
+pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
+
+pub use crate::types::_bandwidth_reduction_filter_sharpening::BandwidthReductionFilterSharpening;
+
 pub use crate::types::_h265_alternate_transfer_function_sei::H265AlternateTransferFunctionSei;
 
 pub use crate::types::_h265_adaptive_quantization::H265AdaptiveQuantization;
@@ -354,12 +360,6 @@ pub use crate::types::_h264_dynamic_sub_gop::H264DynamicSubGop;
 pub use crate::types::_h264_codec_profile::H264CodecProfile;
 
 pub use crate::types::_h264_codec_level::H264CodecLevel;
-
-pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilter;
-
-pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
-
-pub use crate::types::_bandwidth_reduction_filter_sharpening::BandwidthReductionFilterSharpening;
 
 pub use crate::types::_h264_adaptive_quantization::H264AdaptiveQuantization;
 
@@ -830,6 +830,8 @@ pub use crate::types::_hls_stream_inf_resolution::HlsStreamInfResolution;
 pub use crate::types::_hls_segment_length_control::HlsSegmentLengthControl;
 
 pub use crate::types::_hls_segment_control::HlsSegmentControl;
+
+pub use crate::types::_hls_progressive_write_hls_manifest::HlsProgressiveWriteHlsManifest;
 
 pub use crate::types::_hls_program_date_time::HlsProgramDateTime;
 
@@ -1786,6 +1788,8 @@ mod _hls_offline_encrypted;
 mod _hls_output_selection;
 
 mod _hls_program_date_time;
+
+mod _hls_progressive_write_hls_manifest;
 
 mod _hls_rendition_group_settings;
 

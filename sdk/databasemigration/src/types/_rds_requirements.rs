@@ -22,6 +22,9 @@ pub struct RdsRequirements {
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     #[doc(hidden)]
     pub deployment_option: ::std::option::Option<::std::string::String>,
+    /// <p>The required target Amazon RDS engine version.</p>
+    #[doc(hidden)]
+    pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsRequirements {
     /// <p>The required target Amazon RDS engine edition.</p>
@@ -48,6 +51,10 @@ impl RdsRequirements {
     pub fn deployment_option(&self) -> ::std::option::Option<&str> {
         self.deployment_option.as_deref()
     }
+    /// <p>The required target Amazon RDS engine version.</p>
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
 }
 impl RdsRequirements {
     /// Creates a new builder-style object to manufacture [`RdsRequirements`](crate::types::RdsRequirements).
@@ -68,6 +75,7 @@ pub struct RdsRequirementsBuilder {
     pub(crate) storage_size: ::std::option::Option<i32>,
     pub(crate) storage_iops: ::std::option::Option<i32>,
     pub(crate) deployment_option: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsRequirementsBuilder {
     /// <p>The required target Amazon RDS engine edition.</p>
@@ -142,6 +150,22 @@ impl RdsRequirementsBuilder {
         self.deployment_option = input;
         self
     }
+    /// <p>The required target Amazon RDS engine version.</p>
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The required target Amazon RDS engine version.</p>
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.engine_version = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RdsRequirements`](crate::types::RdsRequirements).
     pub fn build(self) -> crate::types::RdsRequirements {
         crate::types::RdsRequirements {
@@ -151,6 +175,7 @@ impl RdsRequirementsBuilder {
             storage_size: self.storage_size,
             storage_iops: self.storage_iops,
             deployment_option: self.deployment_option,
+            engine_version: self.engine_version,
         }
     }
 }

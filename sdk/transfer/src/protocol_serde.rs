@@ -106,6 +106,8 @@ pub(crate) mod shape_stop_server;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_test_connection;
+
 pub(crate) mod shape_test_identity_provider;
 
 pub(crate) mod shape_untag_resource;
@@ -246,6 +248,8 @@ pub(crate) mod shape_stop_server_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_test_connection_input;
+
 pub(crate) mod shape_test_identity_provider_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -324,6 +328,8 @@ pub(crate) mod shape_protocol_details;
 
 pub(crate) mod shape_security_policy_names;
 
+pub(crate) mod shape_sftp_connector_config;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
@@ -378,6 +384,8 @@ pub(crate) mod shape_service_metadata;
 
 pub(crate) mod shape_ssh_public_keys;
 
+pub(crate) mod shape_structured_log_destinations;
+
 pub(crate) mod shape_tag_step_details;
 
 pub(crate) mod shape_workflow_detail;
@@ -405,6 +413,8 @@ pub(crate) mod shape_s3_tag;
 pub(crate) mod shape_secondary_gids;
 
 pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_sftp_connector_trusted_host_key_list;
 
 pub(crate) mod shape_ssh_public_key;
 

@@ -235,8 +235,8 @@ impl RegisterScalableTargetFluentBuilder {
     /// <li> <p>ECS services</p> </li>
     /// <li> <p>EMR clusters</p> </li>
     /// <li> <p>Lambda provisioned concurrency</p> </li>
-    /// <li> <p>SageMaker Serverless endpoint provisioned concurrency</p> </li>
     /// <li> <p>SageMaker endpoint variants</p> </li>
+    /// <li> <p>SageMaker Serverless endpoint provisioned concurrency</p> </li>
     /// <li> <p>Spot Fleets</p> </li>
     /// <li> <p>custom resources</p> </li>
     /// </ul>
@@ -254,8 +254,8 @@ impl RegisterScalableTargetFluentBuilder {
     /// <li> <p>ECS services</p> </li>
     /// <li> <p>EMR clusters</p> </li>
     /// <li> <p>Lambda provisioned concurrency</p> </li>
-    /// <li> <p>SageMaker Serverless endpoint provisioned concurrency</p> </li>
     /// <li> <p>SageMaker endpoint variants</p> </li>
+    /// <li> <p>SageMaker Serverless endpoint provisioned concurrency</p> </li>
     /// <li> <p>Spot Fleets</p> </li>
     /// <li> <p>custom resources</p> </li>
     /// </ul>

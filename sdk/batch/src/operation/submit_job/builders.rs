@@ -115,7 +115,8 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.set_job_queue(input);
         self
     }
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -123,7 +124,8 @@ impl SubmitJobFluentBuilder {
         self.inner = self.inner.share_identifier(input.into());
         self
     }
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn set_share_identifier(
         mut self,
         input: ::std::option::Option<::std::string::String>,

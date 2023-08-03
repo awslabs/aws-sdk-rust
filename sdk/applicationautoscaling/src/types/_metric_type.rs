@@ -24,6 +24,7 @@
 ///     MetricType::Ec2SpotFleetRequestAverageNetworkOut => { /* ... */ },
 ///     MetricType::EcsServiceAverageCpuUtilization => { /* ... */ },
 ///     MetricType::EcsServiceAverageMemoryUtilization => { /* ... */ },
+///     MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => { /* ... */ },
 ///     MetricType::ElastiCachePrimaryEngineCpuUtilization => { /* ... */ },
 ///     MetricType::ElastiCacheReplicaEngineCpuUtilization => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageMemoryUtilization,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
     #[allow(missing_docs)] // documentation missing in model
     ElastiCachePrimaryEngineCpuUtilization,
@@ -137,6 +140,9 @@ impl ::std::convert::From<&str> for MetricType {
             }
             "ECSServiceAverageCPUUtilization" => MetricType::EcsServiceAverageCpuUtilization,
             "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
+            "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" => {
+                MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage
+            }
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => {
                 MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage
             }
@@ -196,6 +202,9 @@ impl MetricType {
             }
             MetricType::EcsServiceAverageCpuUtilization => "ECSServiceAverageCPUUtilization",
             MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
+            MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => {
+                "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage"
+            }
             MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => {
                 "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage"
             }
@@ -238,6 +247,7 @@ impl MetricType {
             "EC2SpotFleetRequestAverageNetworkOut",
             "ECSServiceAverageCPUUtilization",
             "ECSServiceAverageMemoryUtilization",
+            "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
             "ElastiCachePrimaryEngineCPUUtilization",
             "ElastiCacheReplicaEngineCPUUtilization",

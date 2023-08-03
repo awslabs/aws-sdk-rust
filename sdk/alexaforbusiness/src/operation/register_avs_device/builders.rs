@@ -6,6 +6,7 @@ pub use crate::operation::register_avs_device::_register_avs_device_input::Regis
 /// Fluent builder constructing a request to `RegisterAVSDevice`.
 ///
 /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAVSDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

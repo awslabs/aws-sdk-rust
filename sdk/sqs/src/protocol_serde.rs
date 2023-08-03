@@ -12,6 +12,10 @@ pub(crate) mod shape_add_permission;
 
 pub(crate) mod shape_add_permission_input;
 
+pub(crate) mod shape_cancel_message_move_task;
+
+pub(crate) mod shape_cancel_message_move_task_input;
+
 pub(crate) mod shape_change_message_visibility;
 
 pub(crate) mod shape_change_message_visibility_batch;
@@ -48,6 +52,10 @@ pub(crate) mod shape_list_dead_letter_source_queues;
 
 pub(crate) mod shape_list_dead_letter_source_queues_input;
 
+pub(crate) mod shape_list_message_move_tasks;
+
+pub(crate) mod shape_list_message_move_tasks_input;
+
 pub(crate) mod shape_list_queue_tags;
 
 pub(crate) mod shape_list_queue_tags_input;
@@ -79,6 +87,10 @@ pub(crate) mod shape_send_message_input;
 pub(crate) mod shape_set_queue_attributes;
 
 pub(crate) mod shape_set_queue_attributes_input;
+
+pub(crate) mod shape_start_message_move_task;
+
+pub(crate) mod shape_start_message_move_task_input;
 
 pub(crate) mod shape_tag_queue;
 
@@ -124,6 +136,8 @@ pub(crate) mod shape_queue_name_exists;
 
 pub(crate) mod shape_receipt_handle_is_invalid;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_send_message_batch_request_entry;
 
 pub(crate) mod shape_too_many_entries_in_batch_request;
@@ -135,6 +149,8 @@ pub(crate) mod shape_batch_result_error_entry;
 pub(crate) mod shape_change_message_visibility_batch_result_entry;
 
 pub(crate) mod shape_delete_message_batch_result_entry;
+
+pub(crate) mod shape_list_message_move_tasks_result_entry;
 
 pub(crate) mod shape_message;
 

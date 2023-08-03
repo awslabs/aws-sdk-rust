@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`skill_id(impl ::std::convert::Into<String>)`](crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder::set_skill_id): <p>The private skill ID you want to make available to enrolled users.</p>
     /// - On success, responds with [`AssociateSkillWithUsersOutput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput)
     /// - On failure, responds with [`SdkError<AssociateSkillWithUsersError>`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn associate_skill_with_users(
         &self,
     ) -> crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersFluentBuilder

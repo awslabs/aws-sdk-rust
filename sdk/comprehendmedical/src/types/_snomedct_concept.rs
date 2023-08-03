@@ -10,7 +10,7 @@ pub struct SnomedctConcept {
     /// <p> The numeric ID for the SNOMED-CT concept. </p>
     #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
-    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
@@ -23,7 +23,7 @@ impl SnomedctConcept {
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
@@ -66,12 +66,12 @@ impl SnomedctConceptBuilder {
         self.code = input;
         self
     }
-    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self

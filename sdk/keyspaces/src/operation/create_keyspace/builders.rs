@@ -128,4 +128,28 @@ impl CreateKeyspaceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> The replication specification of the keyspace includes:</p>
+    /// <ul>
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li>
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li>
+    /// </ul>
+    pub fn replication_specification(
+        mut self,
+        input: crate::types::ReplicationSpecification,
+    ) -> Self {
+        self.inner = self.inner.replication_specification(input);
+        self
+    }
+    /// <p> The replication specification of the keyspace includes:</p>
+    /// <ul>
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li>
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li>
+    /// </ul>
+    pub fn set_replication_specification(
+        mut self,
+        input: ::std::option::Option<crate::types::ReplicationSpecification>,
+    ) -> Self {
+        self.inner = self.inner.set_replication_specification(input);
+        self
+    }
 }

@@ -37,6 +37,9 @@ pub struct UpdateLaunchConfigurationInput {
     /// <p>Launch configuration map auto tagging MPE ID.</p>
     #[doc(hidden)]
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    /// <p>Update Launch configuration Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationInput {
     /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -85,6 +88,10 @@ impl UpdateLaunchConfigurationInput {
     pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
+    /// <p>Update Launch configuration Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl UpdateLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationInput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput).
@@ -111,6 +118,7 @@ pub struct UpdateLaunchConfigurationInputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationInputBuilder {
     /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -247,6 +255,16 @@ impl UpdateLaunchConfigurationInputBuilder {
         self.map_auto_tagging_mpe_id = input;
         self
     }
+    /// <p>Update Launch configuration Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update Launch configuration Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationInput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput).
     pub fn build(
         self,
@@ -268,6 +286,7 @@ impl UpdateLaunchConfigurationInputBuilder {
                 post_launch_actions: self.post_launch_actions,
                 enable_map_auto_tagging: self.enable_map_auto_tagging,
                 map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                account_id: self.account_id,
             },
         )
     }

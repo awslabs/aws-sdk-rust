@@ -47,6 +47,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The resource registration failed.</p>
     ResourceRegistrationFailureException(crate::types::error::ResourceRegistrationFailureException),
+    /// <p>A limit has been exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is temporarily unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The Rule-SQL expression can't be parsed correctly.</p>
@@ -61,6 +63,8 @@ pub enum Error {
     TransferConflictException(crate::types::error::TransferConflictException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
+    /// <p>The request is not valid.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::types::error::VersionConflictException),
     /// <p>The number of policy versions exceeds the limit.</p>
@@ -93,6 +97,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceRegistrationFailureException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::SqlParseException(inner) => inner.fmt(f),
             Error::TaskAlreadyExistsException(inner) => inner.fmt(f),
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for Error {
             Error::TransferAlreadyCompletedException(inner) => inner.fmt(f),
             Error::TransferConflictException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::VersionConflictException(inner) => inner.fmt(f),
             Error::VersionsLimitExceededException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -1451,6 +1457,106 @@ impl From<crate::operation::create_ota_update::CreateOTAUpdateError> for Error {
             crate::operation::create_ota_update::CreateOTAUpdateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_ota_update::CreateOTAUpdateError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_ota_update::CreateOTAUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package::CreatePackageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package::CreatePackageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_package::CreatePackageError> for Error {
+    fn from(err: crate::operation::create_package::CreatePackageError) -> Self {
+        match err {
+            crate::operation::create_package::CreatePackageError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_package::CreatePackageError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::create_package::CreatePackageError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_package::CreatePackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_package::CreatePackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_package::CreatePackageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package_version::CreatePackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package_version::CreatePackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_package_version::CreatePackageVersionError> for Error {
+    fn from(err: crate::operation::create_package_version::CreatePackageVersionError) -> Self {
+        match err {
+            crate::operation::create_package_version::CreatePackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_package_version::CreatePackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_package_version::CreatePackageVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_package_version::CreatePackageVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_package_version::CreatePackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_package_version::CreatePackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2820,6 +2926,98 @@ impl From<crate::operation::delete_ota_update::DeleteOTAUpdateError> for Error {
             crate::operation::delete_ota_update::DeleteOTAUpdateError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_ota_update::DeleteOTAUpdateError::VersionConflictException(inner) => Error::VersionConflictException(inner),
             crate::operation::delete_ota_update::DeleteOTAUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_package::DeletePackageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_package::DeletePackageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_package::DeletePackageError> for Error {
+    fn from(err: crate::operation::delete_package::DeletePackageError) -> Self {
+        match err {
+            crate::operation::delete_package::DeletePackageError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_package::DeletePackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_package::DeletePackageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_package_version::DeletePackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_package_version::DeletePackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_package_version::DeletePackageVersionError> for Error {
+    fn from(err: crate::operation::delete_package_version::DeletePackageVersionError) -> Self {
+        match err {
+            crate::operation::delete_package_version::DeletePackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_package_version::DeletePackageVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_package_version::DeletePackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_package_version::DeletePackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5652,6 +5850,137 @@ impl From<crate::operation::get_ota_update::GetOTAUpdateError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_package::GetPackageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_package::GetPackageError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_package::GetPackageError> for Error {
+    fn from(err: crate::operation::get_package::GetPackageError) -> Self {
+        match err {
+            crate::operation::get_package::GetPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_package::GetPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_package::GetPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_package::GetPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_package::GetPackageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_configuration::GetPackageConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_configuration::GetPackageConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_package_configuration::GetPackageConfigurationError> for Error {
+    fn from(
+        err: crate::operation::get_package_configuration::GetPackageConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_package_configuration::GetPackageConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_package_configuration::GetPackageConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_package_configuration::GetPackageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_version::GetPackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_version::GetPackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_package_version::GetPackageVersionError> for Error {
+    fn from(err: crate::operation::get_package_version::GetPackageVersionError) -> Self {
+        match err {
+            crate::operation::get_package_version::GetPackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_package_version::GetPackageVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_package_version::GetPackageVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_package_version::GetPackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_package_version::GetPackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -7233,6 +7562,94 @@ impl From<crate::operation::list_outgoing_certificates::ListOutgoingCertificates
             crate::operation::list_outgoing_certificates::ListOutgoingCertificatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_outgoing_certificates::ListOutgoingCertificatesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_outgoing_certificates::ListOutgoingCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_packages::ListPackagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_packages::ListPackagesError> for Error {
+    fn from(err: crate::operation::list_packages::ListPackagesError) -> Self {
+        match err {
+            crate::operation::list_packages::ListPackagesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_packages::ListPackagesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_packages::ListPackagesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_packages::ListPackagesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_package_versions::ListPackageVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_package_versions::ListPackageVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_package_versions::ListPackageVersionsError> for Error {
+    fn from(err: crate::operation::list_package_versions::ListPackageVersionsError) -> Self {
+        match err {
+            crate::operation::list_package_versions::ListPackageVersionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_package_versions::ListPackageVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_package_versions::ListPackageVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_package_versions::ListPackageVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10293,6 +10710,148 @@ impl From<crate::operation::update_mitigation_action::UpdateMitigationActionErro
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package::UpdatePackageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package::UpdatePackageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_package::UpdatePackageError> for Error {
+    fn from(err: crate::operation::update_package::UpdatePackageError) -> Self {
+        match err {
+            crate::operation::update_package::UpdatePackageError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_package::UpdatePackageError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_package::UpdatePackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_package::UpdatePackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_package::UpdatePackageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_package_configuration::UpdatePackageConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_package_configuration::UpdatePackageConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_version::UpdatePackageVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_version::UpdatePackageVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_package_version::UpdatePackageVersionError> for Error {
+    fn from(err: crate::operation::update_package_version::UpdatePackageVersionError) -> Self {
+        match err {
+            crate::operation::update_package_version::UpdatePackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_package_version::UpdatePackageVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_package_version::UpdatePackageVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_package_version::UpdatePackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_package_version::UpdatePackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
             R,
         >,
@@ -10770,6 +11329,7 @@ impl ::std::error::Error for Error {
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceRegistrationFailureException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::SqlParseException(inner) => inner.source(),
             Error::TaskAlreadyExistsException(inner) => inner.source(),
@@ -10777,6 +11337,7 @@ impl ::std::error::Error for Error {
             Error::TransferAlreadyCompletedException(inner) => inner.source(),
             Error::TransferConflictException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::VersionConflictException(inner) => inner.source(),
             Error::VersionsLimitExceededException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
@@ -10808,6 +11369,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceRegistrationFailureException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::SqlParseException(e) => e.request_id(),
             Self::TaskAlreadyExistsException(e) => e.request_id(),
@@ -10815,6 +11377,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::TransferAlreadyCompletedException(e) => e.request_id(),
             Self::TransferConflictException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::VersionConflictException(e) => e.request_id(),
             Self::VersionsLimitExceededException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),

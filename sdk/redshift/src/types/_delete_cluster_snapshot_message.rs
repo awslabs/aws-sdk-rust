@@ -8,7 +8,7 @@ pub struct DeleteClusterSnapshotMessage {
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     #[doc(hidden)]
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl DeleteClusterSnapshotMessage {
     pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_cluster_identifier.as_deref()
@@ -60,7 +60,7 @@ impl DeleteClusterSnapshotMessageBuilder {
         self.snapshot_identifier = input;
         self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(
         mut self,
@@ -69,7 +69,7 @@ impl DeleteClusterSnapshotMessageBuilder {
         self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,

@@ -26,6 +26,9 @@ pub struct SolutionConfig {
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     #[doc(hidden)]
     pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
+    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    #[doc(hidden)]
+    pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
 }
 impl SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
@@ -62,6 +65,10 @@ impl SolutionConfig {
     ) -> ::std::option::Option<&crate::types::OptimizationObjective> {
         self.optimization_objective.as_ref()
     }
+    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
+        self.training_data_config.as_ref()
+    }
 }
 impl SolutionConfig {
     /// Creates a new builder-style object to manufacture [`SolutionConfig`](crate::types::SolutionConfig).
@@ -86,6 +93,7 @@ pub struct SolutionConfigBuilder {
     >,
     pub(crate) auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     pub(crate) optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
+    pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
 }
 impl SolutionConfigBuilder {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
@@ -190,6 +198,19 @@ impl SolutionConfigBuilder {
         self.optimization_objective = input;
         self
     }
+    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
+        self.training_data_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    pub fn set_training_data_config(
+        mut self,
+        input: ::std::option::Option<crate::types::TrainingDataConfig>,
+    ) -> Self {
+        self.training_data_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SolutionConfig`](crate::types::SolutionConfig).
     pub fn build(self) -> crate::types::SolutionConfig {
         crate::types::SolutionConfig {
@@ -199,6 +220,7 @@ impl SolutionConfigBuilder {
             feature_transformation_parameters: self.feature_transformation_parameters,
             auto_ml_config: self.auto_ml_config,
             optimization_objective: self.optimization_objective,
+            training_data_config: self.training_data_config,
         }
     }
 }

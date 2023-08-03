@@ -15,6 +15,7 @@
 ///     ResourceType::Certificate => { /* ... */ },
 ///     ResourceType::AccessAnalyzerAnalyzer => { /* ... */ },
 ///     ResourceType::AmazonMqBroker => { /* ... */ },
+///     ResourceType::AmplifyApp => { /* ... */ },
 ///     ResourceType::RestApi => { /* ... */ },
 ///     ResourceType::Stage => { /* ... */ },
 ///     ResourceType::Api => { /* ... */ },
@@ -24,6 +25,10 @@
 ///     ResourceType::AppConfigDeploymentStrategy => { /* ... */ },
 ///     ResourceType::AppConfigEnvironment => { /* ... */ },
 ///     ResourceType::AppFlowFlow => { /* ... */ },
+///     ResourceType::AppMeshVirtualNode => { /* ... */ },
+///     ResourceType::AppMeshVirtualService => { /* ... */ },
+///     ResourceType::AppRunnerVpcConnector => { /* ... */ },
+///     ResourceType::AppStreamApplication => { /* ... */ },
 ///     ResourceType::AppStreamDirectoryConfig => { /* ... */ },
 ///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
@@ -42,6 +47,7 @@
 ///     ResourceType::BatchComputeEnvironment => { /* ... */ },
 ///     ResourceType::BatchJobQueue => { /* ... */ },
 ///     ResourceType::BudgetsBudgetsAction => { /* ... */ },
+///     ResourceType::CassandraKeyspace => { /* ... */ },
 ///     ResourceType::Cloud9EnvironmentEc2 => { /* ... */ },
 ///     ResourceType::Stack => { /* ... */ },
 ///     ResourceType::Distribution => { /* ... */ },
@@ -49,6 +55,7 @@
 ///     ResourceType::Trail => { /* ... */ },
 ///     ResourceType::Alarm => { /* ... */ },
 ///     ResourceType::CloudWatchMetricStream => { /* ... */ },
+///     ResourceType::CodeArtifactRepository => { /* ... */ },
 ///     ResourceType::Project => { /* ... */ },
 ///     ResourceType::CodeDeployApplication => { /* ... */ },
 ///     ResourceType::CodeDeployDeploymentConfig => { /* ... */ },
@@ -92,9 +99,11 @@
 ///     ResourceType::NetworkInsightsAccessScopeAnalysis => { /* ... */ },
 ///     ResourceType::Ec2NetworkInsightsPath => { /* ... */ },
 ///     ResourceType::NetworkInterface => { /* ... */ },
+///     ResourceType::Ec2PrefixList => { /* ... */ },
 ///     ResourceType::RegisteredHaInstance => { /* ... */ },
 ///     ResourceType::RouteTable => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
+///     ResourceType::Ec2SpotFleet => { /* ... */ },
 ///     ResourceType::Subnet => { /* ... */ },
 ///     ResourceType::Ec2SubnetRouteTableAssociation => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorFilter => { /* ... */ },
@@ -117,6 +126,7 @@
 ///     ResourceType::EcsCluster => { /* ... */ },
 ///     ResourceType::EcsService => { /* ... */ },
 ///     ResourceType::EcsTaskDefinition => { /* ... */ },
+///     ResourceType::EcsTaskSet => { /* ... */ },
 ///     ResourceType::EfsAccessPoint => { /* ... */ },
 ///     ResourceType::EfsFileSystem => { /* ... */ },
 ///     ResourceType::EksAddon => { /* ... */ },
@@ -141,7 +151,9 @@
 ///     ResourceType::EventsEndpoint => { /* ... */ },
 ///     ResourceType::EventsEventBus => { /* ... */ },
 ///     ResourceType::EventsRule => { /* ... */ },
+///     ResourceType::EvidentlyProject => { /* ... */ },
 ///     ResourceType::FisExperimentTemplate => { /* ... */ },
+///     ResourceType::ForecastDataset => { /* ... */ },
 ///     ResourceType::FraudDetectorEntityType => { /* ... */ },
 ///     ResourceType::FraudDetectorLabel => { /* ... */ },
 ///     ResourceType::FraudDetectorOutcome => { /* ... */ },
@@ -161,6 +173,8 @@
 ///     ResourceType::Group => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Role => { /* ... */ },
+///     ResourceType::IamsamlProvider => { /* ... */ },
+///     ResourceType::IamServerCertificate => { /* ... */ },
 ///     ResourceType::User => { /* ... */ },
 ///     ResourceType::IvsChannel => { /* ... */ },
 ///     ResourceType::IvsPlaybackKeyPair => { /* ... */ },
@@ -199,6 +213,7 @@
 ///     ResourceType::KinesisStream => { /* ... */ },
 ///     ResourceType::KinesisStreamConsumer => { /* ... */ },
 ///     ResourceType::KinesisAnalyticsV2Application => { /* ... */ },
+///     ResourceType::KinesisFirehoseDeliveryStream => { /* ... */ },
 ///     ResourceType::KinesisVideoSignalingChannel => { /* ... */ },
 ///     ResourceType::Function => { /* ... */ },
 ///     ResourceType::LexBot => { /* ... */ },
@@ -224,6 +239,8 @@
 ///     ResourceType::PanoramaPackage => { /* ... */ },
 ///     ResourceType::PinpointApp => { /* ... */ },
 ///     ResourceType::PinpointApplicationSettings => { /* ... */ },
+///     ResourceType::PinpointCampaign => { /* ... */ },
+///     ResourceType::PinpointInAppTemplate => { /* ... */ },
 ///     ResourceType::PinpointSegment => { /* ... */ },
 ///     ResourceType::QldbLedger => { /* ... */ },
 ///     ResourceType::DbCluster => { /* ... */ },
@@ -277,6 +294,7 @@
 ///     ResourceType::PatchCompliance => { /* ... */ },
 ///     ResourceType::SageMakerAppImageConfig => { /* ... */ },
 ///     ResourceType::SageMakerCodeRepository => { /* ... */ },
+///     ResourceType::SageMakerDomain => { /* ... */ },
 ///     ResourceType::SageMakerImage => { /* ... */ },
 ///     ResourceType::SageMakerModel => { /* ... */ },
 ///     ResourceType::SageMakerNotebookInstanceLifecycleConfig => { /* ... */ },
@@ -290,8 +308,11 @@
 ///     ResourceType::ServiceDiscoveryService => { /* ... */ },
 ///     ResourceType::Protection => { /* ... */ },
 ///     ResourceType::RegionalProtection => { /* ... */ },
+///     ResourceType::SignerSigningProfile => { /* ... */ },
 ///     ResourceType::StepFunctionsActivity => { /* ... */ },
 ///     ResourceType::StepFunctionsStateMachine => { /* ... */ },
+///     ResourceType::TransferAgreement => { /* ... */ },
+///     ResourceType::TransferConnector => { /* ... */ },
 ///     ResourceType::TransferWorkflow => { /* ... */ },
 ///     ResourceType::RateBasedRule => { /* ... */ },
 ///     ResourceType::Rule => { /* ... */ },
@@ -349,6 +370,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonMqBroker,
     #[allow(missing_docs)] // documentation missing in model
+    AmplifyApp,
+    #[allow(missing_docs)] // documentation missing in model
     RestApi,
     #[allow(missing_docs)] // documentation missing in model
     Stage,
@@ -366,6 +389,14 @@ pub enum ResourceType {
     AppConfigEnvironment,
     #[allow(missing_docs)] // documentation missing in model
     AppFlowFlow,
+    #[allow(missing_docs)] // documentation missing in model
+    AppMeshVirtualNode,
+    #[allow(missing_docs)] // documentation missing in model
+    AppMeshVirtualService,
+    #[allow(missing_docs)] // documentation missing in model
+    AppRunnerVpcConnector,
+    #[allow(missing_docs)] // documentation missing in model
+    AppStreamApplication,
     #[allow(missing_docs)] // documentation missing in model
     AppStreamDirectoryConfig,
     #[allow(missing_docs)] // documentation missing in model
@@ -403,6 +434,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     BudgetsBudgetsAction,
     #[allow(missing_docs)] // documentation missing in model
+    CassandraKeyspace,
+    #[allow(missing_docs)] // documentation missing in model
     Cloud9EnvironmentEc2,
     #[allow(missing_docs)] // documentation missing in model
     Stack,
@@ -416,6 +449,8 @@ pub enum ResourceType {
     Alarm,
     #[allow(missing_docs)] // documentation missing in model
     CloudWatchMetricStream,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeArtifactRepository,
     #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
@@ -503,11 +538,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2PrefixList,
+    #[allow(missing_docs)] // documentation missing in model
     RegisteredHaInstance,
     #[allow(missing_docs)] // documentation missing in model
     RouteTable,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2SpotFleet,
     #[allow(missing_docs)] // documentation missing in model
     Subnet,
     #[allow(missing_docs)] // documentation missing in model
@@ -552,6 +591,8 @@ pub enum ResourceType {
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
     EcsTaskDefinition,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsTaskSet,
     #[allow(missing_docs)] // documentation missing in model
     EfsAccessPoint,
     #[allow(missing_docs)] // documentation missing in model
@@ -601,7 +642,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EventsRule,
     #[allow(missing_docs)] // documentation missing in model
+    EvidentlyProject,
+    #[allow(missing_docs)] // documentation missing in model
     FisExperimentTemplate,
+    #[allow(missing_docs)] // documentation missing in model
+    ForecastDataset,
     #[allow(missing_docs)] // documentation missing in model
     FraudDetectorEntityType,
     #[allow(missing_docs)] // documentation missing in model
@@ -640,6 +685,10 @@ pub enum ResourceType {
     Policy,
     #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
+    IamsamlProvider,
+    #[allow(missing_docs)] // documentation missing in model
+    IamServerCertificate,
     #[allow(missing_docs)] // documentation missing in model
     User,
     #[allow(missing_docs)] // documentation missing in model
@@ -717,6 +766,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     KinesisAnalyticsV2Application,
     #[allow(missing_docs)] // documentation missing in model
+    KinesisFirehoseDeliveryStream,
+    #[allow(missing_docs)] // documentation missing in model
     KinesisVideoSignalingChannel,
     #[allow(missing_docs)] // documentation missing in model
     Function,
@@ -766,6 +817,10 @@ pub enum ResourceType {
     PinpointApp,
     #[allow(missing_docs)] // documentation missing in model
     PinpointApplicationSettings,
+    #[allow(missing_docs)] // documentation missing in model
+    PinpointCampaign,
+    #[allow(missing_docs)] // documentation missing in model
+    PinpointInAppTemplate,
     #[allow(missing_docs)] // documentation missing in model
     PinpointSegment,
     #[allow(missing_docs)] // documentation missing in model
@@ -873,6 +928,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SageMakerCodeRepository,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerDomain,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerImage,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerModel,
@@ -899,9 +956,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RegionalProtection,
     #[allow(missing_docs)] // documentation missing in model
+    SignerSigningProfile,
+    #[allow(missing_docs)] // documentation missing in model
     StepFunctionsActivity,
     #[allow(missing_docs)] // documentation missing in model
     StepFunctionsStateMachine,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferAgreement,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferConnector,
     #[allow(missing_docs)] // documentation missing in model
     TransferWorkflow,
     #[allow(missing_docs)] // documentation missing in model
@@ -945,6 +1008,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ACM::Certificate" => ResourceType::Certificate,
             "AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
             "AWS::AmazonMQ::Broker" => ResourceType::AmazonMqBroker,
+            "AWS::Amplify::App" => ResourceType::AmplifyApp,
             "AWS::ApiGateway::RestApi" => ResourceType::RestApi,
             "AWS::ApiGateway::Stage" => ResourceType::Stage,
             "AWS::ApiGatewayV2::Api" => ResourceType::Api,
@@ -954,6 +1018,10 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::AppConfig::DeploymentStrategy" => ResourceType::AppConfigDeploymentStrategy,
             "AWS::AppConfig::Environment" => ResourceType::AppConfigEnvironment,
             "AWS::AppFlow::Flow" => ResourceType::AppFlowFlow,
+            "AWS::AppMesh::VirtualNode" => ResourceType::AppMeshVirtualNode,
+            "AWS::AppMesh::VirtualService" => ResourceType::AppMeshVirtualService,
+            "AWS::AppRunner::VpcConnector" => ResourceType::AppRunnerVpcConnector,
+            "AWS::AppStream::Application" => ResourceType::AppStreamApplication,
             "AWS::AppStream::DirectoryConfig" => ResourceType::AppStreamDirectoryConfig,
             "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
@@ -972,6 +1040,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Batch::ComputeEnvironment" => ResourceType::BatchComputeEnvironment,
             "AWS::Batch::JobQueue" => ResourceType::BatchJobQueue,
             "AWS::Budgets::BudgetsAction" => ResourceType::BudgetsBudgetsAction,
+            "AWS::Cassandra::Keyspace" => ResourceType::CassandraKeyspace,
             "AWS::Cloud9::EnvironmentEC2" => ResourceType::Cloud9EnvironmentEc2,
             "AWS::CloudFormation::Stack" => ResourceType::Stack,
             "AWS::CloudFront::Distribution" => ResourceType::Distribution,
@@ -979,6 +1048,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CloudTrail::Trail" => ResourceType::Trail,
             "AWS::CloudWatch::Alarm" => ResourceType::Alarm,
             "AWS::CloudWatch::MetricStream" => ResourceType::CloudWatchMetricStream,
+            "AWS::CodeArtifact::Repository" => ResourceType::CodeArtifactRepository,
             "AWS::CodeBuild::Project" => ResourceType::Project,
             "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
             "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
@@ -1026,9 +1096,11 @@ impl ::std::convert::From<&str> for ResourceType {
             }
             "AWS::EC2::NetworkInsightsPath" => ResourceType::Ec2NetworkInsightsPath,
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
+            "AWS::EC2::PrefixList" => ResourceType::Ec2PrefixList,
             "AWS::EC2::RegisteredHAInstance" => ResourceType::RegisteredHaInstance,
             "AWS::EC2::RouteTable" => ResourceType::RouteTable,
             "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
+            "AWS::EC2::SpotFleet" => ResourceType::Ec2SpotFleet,
             "AWS::EC2::Subnet" => ResourceType::Subnet,
             "AWS::EC2::SubnetRouteTableAssociation" => ResourceType::Ec2SubnetRouteTableAssociation,
             "AWS::EC2::TrafficMirrorFilter" => ResourceType::Ec2TrafficMirrorFilter,
@@ -1051,6 +1123,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ECS::Cluster" => ResourceType::EcsCluster,
             "AWS::ECS::Service" => ResourceType::EcsService,
             "AWS::ECS::TaskDefinition" => ResourceType::EcsTaskDefinition,
+            "AWS::ECS::TaskSet" => ResourceType::EcsTaskSet,
             "AWS::EFS::AccessPoint" => ResourceType::EfsAccessPoint,
             "AWS::EFS::FileSystem" => ResourceType::EfsFileSystem,
             "AWS::EKS::Addon" => ResourceType::EksAddon,
@@ -1075,7 +1148,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Events::Endpoint" => ResourceType::EventsEndpoint,
             "AWS::Events::EventBus" => ResourceType::EventsEventBus,
             "AWS::Events::Rule" => ResourceType::EventsRule,
+            "AWS::Evidently::Project" => ResourceType::EvidentlyProject,
             "AWS::FIS::ExperimentTemplate" => ResourceType::FisExperimentTemplate,
+            "AWS::Forecast::Dataset" => ResourceType::ForecastDataset,
             "AWS::FraudDetector::EntityType" => ResourceType::FraudDetectorEntityType,
             "AWS::FraudDetector::Label" => ResourceType::FraudDetectorLabel,
             "AWS::FraudDetector::Outcome" => ResourceType::FraudDetectorOutcome,
@@ -1095,6 +1170,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::IAM::Group" => ResourceType::Group,
             "AWS::IAM::Policy" => ResourceType::Policy,
             "AWS::IAM::Role" => ResourceType::Role,
+            "AWS::IAM::SAMLProvider" => ResourceType::IamsamlProvider,
+            "AWS::IAM::ServerCertificate" => ResourceType::IamServerCertificate,
             "AWS::IAM::User" => ResourceType::User,
             "AWS::IVS::Channel" => ResourceType::IvsChannel,
             "AWS::IVS::PlaybackKeyPair" => ResourceType::IvsPlaybackKeyPair,
@@ -1137,6 +1214,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
             "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
             "AWS::KinesisAnalyticsV2::Application" => ResourceType::KinesisAnalyticsV2Application,
+            "AWS::KinesisFirehose::DeliveryStream" => ResourceType::KinesisFirehoseDeliveryStream,
             "AWS::KinesisVideo::SignalingChannel" => ResourceType::KinesisVideoSignalingChannel,
             "AWS::Lambda::Function" => ResourceType::Function,
             "AWS::Lex::Bot" => ResourceType::LexBot,
@@ -1166,6 +1244,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Panorama::Package" => ResourceType::PanoramaPackage,
             "AWS::Pinpoint::App" => ResourceType::PinpointApp,
             "AWS::Pinpoint::ApplicationSettings" => ResourceType::PinpointApplicationSettings,
+            "AWS::Pinpoint::Campaign" => ResourceType::PinpointCampaign,
+            "AWS::Pinpoint::InAppTemplate" => ResourceType::PinpointInAppTemplate,
             "AWS::Pinpoint::Segment" => ResourceType::PinpointSegment,
             "AWS::QLDB::Ledger" => ResourceType::QldbLedger,
             "AWS::RDS::DBCluster" => ResourceType::DbCluster,
@@ -1241,6 +1321,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
             "AWS::SageMaker::AppImageConfig" => ResourceType::SageMakerAppImageConfig,
             "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
+            "AWS::SageMaker::Domain" => ResourceType::SageMakerDomain,
             "AWS::SageMaker::Image" => ResourceType::SageMakerImage,
             "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
             "AWS::SageMaker::NotebookInstanceLifecycleConfig" => {
@@ -1260,8 +1341,11 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
             "AWS::Shield::Protection" => ResourceType::Protection,
             "AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
+            "AWS::Signer::SigningProfile" => ResourceType::SignerSigningProfile,
             "AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
             "AWS::StepFunctions::StateMachine" => ResourceType::StepFunctionsStateMachine,
+            "AWS::Transfer::Agreement" => ResourceType::TransferAgreement,
+            "AWS::Transfer::Connector" => ResourceType::TransferConnector,
             "AWS::Transfer::Workflow" => ResourceType::TransferWorkflow,
             "AWS::WAF::RateBasedRule" => ResourceType::RateBasedRule,
             "AWS::WAF::Rule" => ResourceType::Rule,
@@ -1299,6 +1383,7 @@ impl ResourceType {
             ResourceType::Certificate => "AWS::ACM::Certificate",
             ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
             ResourceType::AmazonMqBroker => "AWS::AmazonMQ::Broker",
+            ResourceType::AmplifyApp => "AWS::Amplify::App",
             ResourceType::RestApi => "AWS::ApiGateway::RestApi",
             ResourceType::Stage => "AWS::ApiGateway::Stage",
             ResourceType::Api => "AWS::ApiGatewayV2::Api",
@@ -1308,6 +1393,10 @@ impl ResourceType {
             ResourceType::AppConfigDeploymentStrategy => "AWS::AppConfig::DeploymentStrategy",
             ResourceType::AppConfigEnvironment => "AWS::AppConfig::Environment",
             ResourceType::AppFlowFlow => "AWS::AppFlow::Flow",
+            ResourceType::AppMeshVirtualNode => "AWS::AppMesh::VirtualNode",
+            ResourceType::AppMeshVirtualService => "AWS::AppMesh::VirtualService",
+            ResourceType::AppRunnerVpcConnector => "AWS::AppRunner::VpcConnector",
+            ResourceType::AppStreamApplication => "AWS::AppStream::Application",
             ResourceType::AppStreamDirectoryConfig => "AWS::AppStream::DirectoryConfig",
             ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
@@ -1326,6 +1415,7 @@ impl ResourceType {
             ResourceType::BatchComputeEnvironment => "AWS::Batch::ComputeEnvironment",
             ResourceType::BatchJobQueue => "AWS::Batch::JobQueue",
             ResourceType::BudgetsBudgetsAction => "AWS::Budgets::BudgetsAction",
+            ResourceType::CassandraKeyspace => "AWS::Cassandra::Keyspace",
             ResourceType::Cloud9EnvironmentEc2 => "AWS::Cloud9::EnvironmentEC2",
             ResourceType::Stack => "AWS::CloudFormation::Stack",
             ResourceType::Distribution => "AWS::CloudFront::Distribution",
@@ -1333,6 +1423,7 @@ impl ResourceType {
             ResourceType::Trail => "AWS::CloudTrail::Trail",
             ResourceType::Alarm => "AWS::CloudWatch::Alarm",
             ResourceType::CloudWatchMetricStream => "AWS::CloudWatch::MetricStream",
+            ResourceType::CodeArtifactRepository => "AWS::CodeArtifact::Repository",
             ResourceType::Project => "AWS::CodeBuild::Project",
             ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
             ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
@@ -1380,9 +1471,11 @@ impl ResourceType {
             }
             ResourceType::Ec2NetworkInsightsPath => "AWS::EC2::NetworkInsightsPath",
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
+            ResourceType::Ec2PrefixList => "AWS::EC2::PrefixList",
             ResourceType::RegisteredHaInstance => "AWS::EC2::RegisteredHAInstance",
             ResourceType::RouteTable => "AWS::EC2::RouteTable",
             ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
+            ResourceType::Ec2SpotFleet => "AWS::EC2::SpotFleet",
             ResourceType::Subnet => "AWS::EC2::Subnet",
             ResourceType::Ec2SubnetRouteTableAssociation => "AWS::EC2::SubnetRouteTableAssociation",
             ResourceType::Ec2TrafficMirrorFilter => "AWS::EC2::TrafficMirrorFilter",
@@ -1405,6 +1498,7 @@ impl ResourceType {
             ResourceType::EcsCluster => "AWS::ECS::Cluster",
             ResourceType::EcsService => "AWS::ECS::Service",
             ResourceType::EcsTaskDefinition => "AWS::ECS::TaskDefinition",
+            ResourceType::EcsTaskSet => "AWS::ECS::TaskSet",
             ResourceType::EfsAccessPoint => "AWS::EFS::AccessPoint",
             ResourceType::EfsFileSystem => "AWS::EFS::FileSystem",
             ResourceType::EksAddon => "AWS::EKS::Addon",
@@ -1429,7 +1523,9 @@ impl ResourceType {
             ResourceType::EventsEndpoint => "AWS::Events::Endpoint",
             ResourceType::EventsEventBus => "AWS::Events::EventBus",
             ResourceType::EventsRule => "AWS::Events::Rule",
+            ResourceType::EvidentlyProject => "AWS::Evidently::Project",
             ResourceType::FisExperimentTemplate => "AWS::FIS::ExperimentTemplate",
+            ResourceType::ForecastDataset => "AWS::Forecast::Dataset",
             ResourceType::FraudDetectorEntityType => "AWS::FraudDetector::EntityType",
             ResourceType::FraudDetectorLabel => "AWS::FraudDetector::Label",
             ResourceType::FraudDetectorOutcome => "AWS::FraudDetector::Outcome",
@@ -1449,6 +1545,8 @@ impl ResourceType {
             ResourceType::Group => "AWS::IAM::Group",
             ResourceType::Policy => "AWS::IAM::Policy",
             ResourceType::Role => "AWS::IAM::Role",
+            ResourceType::IamsamlProvider => "AWS::IAM::SAMLProvider",
+            ResourceType::IamServerCertificate => "AWS::IAM::ServerCertificate",
             ResourceType::User => "AWS::IAM::User",
             ResourceType::IvsChannel => "AWS::IVS::Channel",
             ResourceType::IvsPlaybackKeyPair => "AWS::IVS::PlaybackKeyPair",
@@ -1491,6 +1589,7 @@ impl ResourceType {
             ResourceType::KinesisStream => "AWS::Kinesis::Stream",
             ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
             ResourceType::KinesisAnalyticsV2Application => "AWS::KinesisAnalyticsV2::Application",
+            ResourceType::KinesisFirehoseDeliveryStream => "AWS::KinesisFirehose::DeliveryStream",
             ResourceType::KinesisVideoSignalingChannel => "AWS::KinesisVideo::SignalingChannel",
             ResourceType::Function => "AWS::Lambda::Function",
             ResourceType::LexBot => "AWS::Lex::Bot",
@@ -1520,6 +1619,8 @@ impl ResourceType {
             ResourceType::PanoramaPackage => "AWS::Panorama::Package",
             ResourceType::PinpointApp => "AWS::Pinpoint::App",
             ResourceType::PinpointApplicationSettings => "AWS::Pinpoint::ApplicationSettings",
+            ResourceType::PinpointCampaign => "AWS::Pinpoint::Campaign",
+            ResourceType::PinpointInAppTemplate => "AWS::Pinpoint::InAppTemplate",
             ResourceType::PinpointSegment => "AWS::Pinpoint::Segment",
             ResourceType::QldbLedger => "AWS::QLDB::Ledger",
             ResourceType::DbCluster => "AWS::RDS::DBCluster",
@@ -1595,6 +1696,7 @@ impl ResourceType {
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
             ResourceType::SageMakerAppImageConfig => "AWS::SageMaker::AppImageConfig",
             ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
+            ResourceType::SageMakerDomain => "AWS::SageMaker::Domain",
             ResourceType::SageMakerImage => "AWS::SageMaker::Image",
             ResourceType::SageMakerModel => "AWS::SageMaker::Model",
             ResourceType::SageMakerNotebookInstanceLifecycleConfig => {
@@ -1614,8 +1716,11 @@ impl ResourceType {
             ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
             ResourceType::Protection => "AWS::Shield::Protection",
             ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",
+            ResourceType::SignerSigningProfile => "AWS::Signer::SigningProfile",
             ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
             ResourceType::StepFunctionsStateMachine => "AWS::StepFunctions::StateMachine",
+            ResourceType::TransferAgreement => "AWS::Transfer::Agreement",
+            ResourceType::TransferConnector => "AWS::Transfer::Connector",
             ResourceType::TransferWorkflow => "AWS::Transfer::Workflow",
             ResourceType::RateBasedRule => "AWS::WAF::RateBasedRule",
             ResourceType::Rule => "AWS::WAF::Rule",
@@ -1642,6 +1747,7 @@ impl ResourceType {
             "AWS::ACM::Certificate",
             "AWS::AccessAnalyzer::Analyzer",
             "AWS::AmazonMQ::Broker",
+            "AWS::Amplify::App",
             "AWS::ApiGateway::RestApi",
             "AWS::ApiGateway::Stage",
             "AWS::ApiGatewayV2::Api",
@@ -1651,6 +1757,10 @@ impl ResourceType {
             "AWS::AppConfig::DeploymentStrategy",
             "AWS::AppConfig::Environment",
             "AWS::AppFlow::Flow",
+            "AWS::AppMesh::VirtualNode",
+            "AWS::AppMesh::VirtualService",
+            "AWS::AppRunner::VpcConnector",
+            "AWS::AppStream::Application",
             "AWS::AppStream::DirectoryConfig",
             "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
@@ -1669,6 +1779,7 @@ impl ResourceType {
             "AWS::Batch::ComputeEnvironment",
             "AWS::Batch::JobQueue",
             "AWS::Budgets::BudgetsAction",
+            "AWS::Cassandra::Keyspace",
             "AWS::Cloud9::EnvironmentEC2",
             "AWS::CloudFormation::Stack",
             "AWS::CloudFront::Distribution",
@@ -1676,6 +1787,7 @@ impl ResourceType {
             "AWS::CloudTrail::Trail",
             "AWS::CloudWatch::Alarm",
             "AWS::CloudWatch::MetricStream",
+            "AWS::CodeArtifact::Repository",
             "AWS::CodeBuild::Project",
             "AWS::CodeDeploy::Application",
             "AWS::CodeDeploy::DeploymentConfig",
@@ -1719,9 +1831,11 @@ impl ResourceType {
             "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
             "AWS::EC2::NetworkInsightsPath",
             "AWS::EC2::NetworkInterface",
+            "AWS::EC2::PrefixList",
             "AWS::EC2::RegisteredHAInstance",
             "AWS::EC2::RouteTable",
             "AWS::EC2::SecurityGroup",
+            "AWS::EC2::SpotFleet",
             "AWS::EC2::Subnet",
             "AWS::EC2::SubnetRouteTableAssociation",
             "AWS::EC2::TrafficMirrorFilter",
@@ -1744,6 +1858,7 @@ impl ResourceType {
             "AWS::ECS::Cluster",
             "AWS::ECS::Service",
             "AWS::ECS::TaskDefinition",
+            "AWS::ECS::TaskSet",
             "AWS::EFS::AccessPoint",
             "AWS::EFS::FileSystem",
             "AWS::EKS::Addon",
@@ -1768,7 +1883,9 @@ impl ResourceType {
             "AWS::Events::Endpoint",
             "AWS::Events::EventBus",
             "AWS::Events::Rule",
+            "AWS::Evidently::Project",
             "AWS::FIS::ExperimentTemplate",
+            "AWS::Forecast::Dataset",
             "AWS::FraudDetector::EntityType",
             "AWS::FraudDetector::Label",
             "AWS::FraudDetector::Outcome",
@@ -1788,6 +1905,8 @@ impl ResourceType {
             "AWS::IAM::Group",
             "AWS::IAM::Policy",
             "AWS::IAM::Role",
+            "AWS::IAM::SAMLProvider",
+            "AWS::IAM::ServerCertificate",
             "AWS::IAM::User",
             "AWS::IVS::Channel",
             "AWS::IVS::PlaybackKeyPair",
@@ -1826,6 +1945,7 @@ impl ResourceType {
             "AWS::Kinesis::Stream",
             "AWS::Kinesis::StreamConsumer",
             "AWS::KinesisAnalyticsV2::Application",
+            "AWS::KinesisFirehose::DeliveryStream",
             "AWS::KinesisVideo::SignalingChannel",
             "AWS::Lambda::Function",
             "AWS::Lex::Bot",
@@ -1851,6 +1971,8 @@ impl ResourceType {
             "AWS::Panorama::Package",
             "AWS::Pinpoint::App",
             "AWS::Pinpoint::ApplicationSettings",
+            "AWS::Pinpoint::Campaign",
+            "AWS::Pinpoint::InAppTemplate",
             "AWS::Pinpoint::Segment",
             "AWS::QLDB::Ledger",
             "AWS::RDS::DBCluster",
@@ -1904,6 +2026,7 @@ impl ResourceType {
             "AWS::SSM::PatchCompliance",
             "AWS::SageMaker::AppImageConfig",
             "AWS::SageMaker::CodeRepository",
+            "AWS::SageMaker::Domain",
             "AWS::SageMaker::Image",
             "AWS::SageMaker::Model",
             "AWS::SageMaker::NotebookInstanceLifecycleConfig",
@@ -1917,8 +2040,11 @@ impl ResourceType {
             "AWS::ServiceDiscovery::Service",
             "AWS::Shield::Protection",
             "AWS::ShieldRegional::Protection",
+            "AWS::Signer::SigningProfile",
             "AWS::StepFunctions::Activity",
             "AWS::StepFunctions::StateMachine",
+            "AWS::Transfer::Agreement",
+            "AWS::Transfer::Connector",
             "AWS::Transfer::Workflow",
             "AWS::WAF::RateBasedRule",
             "AWS::WAF::Rule",

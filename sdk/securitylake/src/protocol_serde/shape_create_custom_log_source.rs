@@ -56,13 +56,13 @@ pub fn de_create_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "AccountNotFoundException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::AccountNotFoundException({
+        "BadRequestException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -72,29 +72,13 @@ pub fn de_create_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "BucketNotFoundException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::BucketNotFoundException({
+        "ConflictException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BucketNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bucket_not_found_exception::de_bucket_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ConflictSourceNamesException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::ConflictSourceNamesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictSourceNamesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_source_names_exception::de_conflict_source_names_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -111,10 +95,6 @@ pub fn de_create_custom_log_source_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -140,13 +120,17 @@ pub fn de_create_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "ValidationException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::ValidationException({
+        "ThrottlingException" => crate::operation::create_custom_log_source::CreateCustomLogSourceError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
+                                                .map_err(|_|crate::operation::create_custom_log_source::CreateCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -204,49 +188,9 @@ pub(crate) fn de_create_custom_log_source(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
-                    "customDataLocation" => {
-                        builder = builder.set_custom_data_location(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "glueCrawlerName" => {
-                        builder = builder.set_glue_crawler_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "glueDatabaseName" => {
-                        builder = builder.set_glue_database_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "glueTableName" => {
-                        builder = builder.set_glue_table_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "logProviderAccessRoleArn" => {
-                        builder = builder.set_log_provider_access_role_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                    "source" => {
+                        builder = builder.set_source(
+                            crate::protocol_serde::shape_custom_log_source_resource::de_custom_log_source_resource(tokens)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

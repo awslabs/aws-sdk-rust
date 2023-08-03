@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataEntry {
-    /// <p>Name of the Object.</p>
+    /// <p>Name of the object.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Value of the Object.</p>
+    /// <p>Value of the object.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl MetadataEntry {
-    /// <p>Name of the Object.</p>
+    /// <p>Name of the object.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Value of the Object.</p>
+    /// <p>Value of the object.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -38,22 +38,22 @@ pub struct MetadataEntryBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl MetadataEntryBuilder {
-    /// <p>Name of the Object.</p>
+    /// <p>Name of the object.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the Object.</p>
+    /// <p>Name of the object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Value of the Object.</p>
+    /// <p>Value of the object.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Value of the Object.</p>
+    /// <p>Value of the object.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self

@@ -22,6 +22,9 @@ pub mod create_firewall_rule;
 /// Types for the `CreateFirewallRuleGroup` operation.
 pub mod create_firewall_rule_group;
 
+/// Types for the `CreateOutpostResolver` operation.
+pub mod create_outpost_resolver;
+
 /// Types for the `CreateResolverEndpoint` operation.
 pub mod create_resolver_endpoint;
 
@@ -39,6 +42,9 @@ pub mod delete_firewall_rule;
 
 /// Types for the `DeleteFirewallRuleGroup` operation.
 pub mod delete_firewall_rule_group;
+
+/// Types for the `DeleteOutpostResolver` operation.
+pub mod delete_outpost_resolver;
 
 /// Types for the `DeleteResolverEndpoint` operation.
 pub mod delete_resolver_endpoint;
@@ -75,6 +81,9 @@ pub mod get_firewall_rule_group_association;
 
 /// Types for the `GetFirewallRuleGroupPolicy` operation.
 pub mod get_firewall_rule_group_policy;
+
+/// Types for the `GetOutpostResolver` operation.
+pub mod get_outpost_resolver;
 
 /// Types for the `GetResolverConfig` operation.
 pub mod get_resolver_config;
@@ -123,6 +132,9 @@ pub mod list_firewall_rule_groups;
 
 /// Types for the `ListFirewallRules` operation.
 pub mod list_firewall_rules;
+
+/// Types for the `ListOutpostResolvers` operation.
+pub mod list_outpost_resolvers;
 
 /// Types for the `ListResolverConfigs` operation.
 pub mod list_resolver_configs;
@@ -177,6 +189,9 @@ pub mod update_firewall_rule;
 
 /// Types for the `UpdateFirewallRuleGroupAssociation` operation.
 pub mod update_firewall_rule_group_association;
+
+/// Types for the `UpdateOutpostResolver` operation.
+pub mod update_outpost_resolver;
 
 /// Types for the `UpdateResolverConfig` operation.
 pub mod update_resolver_config;

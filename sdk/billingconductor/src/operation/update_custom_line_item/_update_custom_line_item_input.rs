@@ -15,7 +15,7 @@ pub struct UpdateCustomLineItemInput {
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
     #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>,
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
@@ -38,7 +38,7 @@ impl UpdateCustomLineItemInput {
     ) -> ::std::option::Option<&crate::types::UpdateCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -123,7 +123,7 @@ impl UpdateCustomLineItemInputBuilder {
         self.charge_details = input;
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
         input: crate::types::CustomLineItemBillingPeriodRange,
@@ -131,7 +131,7 @@ impl UpdateCustomLineItemInputBuilder {
         self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(
         mut self,
         input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,

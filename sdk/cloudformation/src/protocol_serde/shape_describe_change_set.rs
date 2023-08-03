@@ -336,6 +336,20 @@ pub fn de_describe_change_set(
                 builder = builder.set_root_change_set_id(var_19);
             }
             ,
+            s if s.matches("OnStackFailure") /* OnStackFailure com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$OnStackFailure */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<crate::types::OnStackFailure, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::OnStackFailure::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_on_stack_failure(var_20);
+            }
+            ,
             _ => {}
         }
         }

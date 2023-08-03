@@ -18,8 +18,8 @@ pub fn ser_describe_engine_versions_input(
     if let Some(var_4) = &input.next_token {
         object.key("NextToken").string(var_4.as_str());
     }
-    if input.default_only {
-        object.key("DefaultOnly").boolean(input.default_only);
+    if let Some(var_5) = &input.default_only {
+        object.key("DefaultOnly").boolean(*var_5);
     }
     Ok(())
 }

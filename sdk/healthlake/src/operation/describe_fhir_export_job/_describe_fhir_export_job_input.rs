@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobInput {
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS generated ID for an export job.</p>
@@ -11,7 +11,7 @@ pub struct DescribeFhirExportJobInput {
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirExportJobInput {
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -39,12 +39,12 @@ pub struct DescribeFhirExportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirExportJobInputBuilder {
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

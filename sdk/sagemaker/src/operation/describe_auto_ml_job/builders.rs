@@ -5,7 +5,9 @@ pub use crate::operation::describe_auto_ml_job::_describe_auto_ml_job_input::Des
 
 /// Fluent builder constructing a request to `DescribeAutoMLJob`.
 ///
-/// <p>Returns information about an Amazon SageMaker AutoML job.</p>
+/// <p>Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.</p> <note>
+/// <p>AutoML jobs created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> cannot be described by <code>DescribeAutoMLJob</code>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoMLJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

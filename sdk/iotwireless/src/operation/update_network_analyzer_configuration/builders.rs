@@ -192,4 +192,44 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// Appends an item to `MulticastGroupsToAdd`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups_to_add`](Self::set_multicast_groups_to_add).
+    ///
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn multicast_groups_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.multicast_groups_to_add(input.into());
+        self
+    }
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn set_multicast_groups_to_add(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_multicast_groups_to_add(input);
+        self
+    }
+    /// Appends an item to `MulticastGroupsToRemove`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups_to_remove`](Self::set_multicast_groups_to_remove).
+    ///
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn multicast_groups_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.multicast_groups_to_remove(input.into());
+        self
+    }
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn set_multicast_groups_to_remove(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_multicast_groups_to_remove(input);
+        self
+    }
 }

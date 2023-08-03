@@ -40,6 +40,8 @@ pub(crate) mod shape_get_deployment;
 
 pub(crate) mod shape_get_environment;
 
+pub(crate) mod shape_get_signed_bluinsights_url;
+
 pub(crate) mod shape_list_application_versions;
 
 pub(crate) mod shape_list_applications;
@@ -196,6 +198,10 @@ pub(crate) mod shape_log_group_summary;
 
 pub(crate) mod shape_maintenance_schedule;
 
+pub(crate) mod shape_po_detail_attributes;
+
+pub(crate) mod shape_ps_detail_attributes;
+
 pub(crate) mod shape_script_batch_job_identifier;
 
 pub(crate) mod shape_validation_exception_field;
@@ -221,5 +227,9 @@ pub(crate) mod shape_dataset_org_attributes;
 pub(crate) mod shape_record_length;
 
 pub(crate) mod shape_gdg_attributes;
+
+pub(crate) mod shape_po_attributes;
+
+pub(crate) mod shape_ps_attributes;
 
 pub(crate) mod shape_vsam_attributes;

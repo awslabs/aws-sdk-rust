@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkloadShareInput {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -18,7 +18,7 @@ pub struct DeleteWorkloadShareInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkloadShareInput {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
@@ -54,12 +54,12 @@ pub struct DeleteWorkloadShareInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkloadShareInputBuilder {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self

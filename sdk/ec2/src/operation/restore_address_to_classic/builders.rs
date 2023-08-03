@@ -5,9 +5,10 @@ pub use crate::operation::restore_address_to_classic::_restore_address_to_classi
 
 /// Fluent builder constructing a request to `RestoreAddressToClassic`.
 ///
-/// <p>Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP address must not be associated with an instance or network interface.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP address must not be associated with an instance or network interface.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreAddressToClassicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

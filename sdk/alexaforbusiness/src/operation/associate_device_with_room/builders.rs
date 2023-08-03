@@ -6,6 +6,7 @@ pub use crate::operation::associate_device_with_room::_associate_device_with_roo
 /// Fluent builder constructing a request to `AssociateDeviceWithRoom`.
 ///
 /// <p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

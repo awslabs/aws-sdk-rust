@@ -204,6 +204,8 @@ pub(crate) mod shape_node_range_property;
 
 pub(crate) mod shape_resource_requirement;
 
+pub(crate) mod shape_runtime_platform;
+
 pub(crate) mod shape_scheduling_policy_detail;
 
 pub(crate) mod shape_scheduling_policy_listing_detail;

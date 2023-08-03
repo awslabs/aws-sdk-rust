@@ -34,7 +34,7 @@ pub struct QueryExecution {
     /// <p>The engine version that executed the query.</p>
     #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
-    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
     #[doc(hidden)]
     pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The kind of query statement that was run.</p>
@@ -88,7 +88,7 @@ impl QueryExecution {
     pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
-    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
     pub fn execution_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.execution_parameters.as_deref()
     }
@@ -259,7 +259,7 @@ impl QueryExecutionBuilder {
     ///
     /// To override the contents of this collection use [`set_execution_parameters`](Self::set_execution_parameters).
     ///
-    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
     pub fn execution_parameters(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -269,7 +269,7 @@ impl QueryExecutionBuilder {
         self.execution_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
+    /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
     pub fn set_execution_parameters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

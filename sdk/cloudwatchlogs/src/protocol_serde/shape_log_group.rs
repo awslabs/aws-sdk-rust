@@ -96,6 +96,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "inheritedProperties" => {
+                                builder = builder.set_inherited_properties(
+                                    crate::protocol_serde::shape_inherited_properties::de_inherited_properties(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

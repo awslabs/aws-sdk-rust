@@ -22,6 +22,9 @@ pub struct ShareInvitation {
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The profile ARN.</p>
+    #[doc(hidden)]
+    pub profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
@@ -47,6 +50,10 @@ impl ShareInvitation {
     pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
+    /// <p>The profile ARN.</p>
+    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
 }
 impl ShareInvitation {
     /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::types::ShareInvitation).
@@ -66,6 +73,7 @@ pub struct ShareInvitationBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationBuilder {
     /// <p>The ID assigned to the share invitation.</p>
@@ -133,6 +141,16 @@ impl ShareInvitationBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The profile ARN.</p>
+    pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ShareInvitation`](crate::types::ShareInvitation).
     pub fn build(self) -> crate::types::ShareInvitation {
         crate::types::ShareInvitation {
@@ -141,6 +159,7 @@ impl ShareInvitationBuilder {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,
             lens_arn: self.lens_arn,
+            profile_arn: self.profile_arn,
         }
     }
 }

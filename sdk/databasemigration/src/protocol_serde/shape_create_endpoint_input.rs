@@ -205,5 +205,14 @@ pub fn ser_create_endpoint_input(
         )?;
         object_55.finish();
     }
+    if let Some(var_56) = &input.timestream_settings {
+        #[allow(unused_mut)]
+        let mut object_57 = object.key("TimestreamSettings").start_object();
+        crate::protocol_serde::shape_timestream_settings::ser_timestream_settings(
+            &mut object_57,
+            var_56,
+        )?;
+        object_57.finish();
+    }
     Ok(())
 }

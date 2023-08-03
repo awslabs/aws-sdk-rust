@@ -154,6 +154,8 @@ pub(crate) mod shape_describe_configurations_attributes;
 
 pub(crate) mod shape_export_filter;
 
+pub(crate) mod shape_export_preferences;
+
 pub(crate) mod shape_exports_info;
 
 pub(crate) mod shape_filter;
@@ -188,10 +190,16 @@ pub(crate) mod shape_continuous_export_description;
 
 pub(crate) mod shape_describe_configurations_attribute;
 
+pub(crate) mod shape_ec2_recommendations_export_preferences;
+
 pub(crate) mod shape_export_info;
 
 pub(crate) mod shape_neighbor_connection_detail;
 
 pub(crate) mod shape_agent_network_info_list;
+
+pub(crate) mod shape_reserved_instance_options;
+
+pub(crate) mod shape_usage_metric_basis;
 
 pub(crate) mod shape_agent_network_info;

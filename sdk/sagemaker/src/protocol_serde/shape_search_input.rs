@@ -30,5 +30,10 @@ pub fn ser_search_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.cross_account_filter_option {
+        object
+            .key("CrossAccountFilterOption")
+            .string(var_8.as_str());
+    }
     Ok(())
 }

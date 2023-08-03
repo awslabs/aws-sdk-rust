@@ -5,9 +5,13 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_update_service_integration_config::UpdateServiceIntegrationConfig;
 
-pub use crate::types::_logs_anomaly_detection_integration_config::LogsAnomalyDetectionIntegrationConfig;
+pub use crate::types::_kms_server_side_encryption_integration_config::KmsServerSideEncryptionIntegrationConfig;
+
+pub use crate::types::_server_side_encryption_type::ServerSideEncryptionType;
 
 pub use crate::types::_opt_in_status::OptInStatus;
+
+pub use crate::types::_logs_anomaly_detection_integration_config::LogsAnomalyDetectionIntegrationConfig;
 
 pub use crate::types::_ops_center_integration_config::OpsCenterIntegrationConfig;
 
@@ -201,6 +205,8 @@ pub use crate::types::_cost_estimation_status::CostEstimationStatus;
 
 pub use crate::types::_service_integration_config::ServiceIntegrationConfig;
 
+pub use crate::types::_kms_server_side_encryption_integration::KmsServerSideEncryptionIntegration;
+
 pub use crate::types::_logs_anomaly_detection_integration::LogsAnomalyDetectionIntegration;
 
 pub use crate::types::_ops_center_integration::OpsCenterIntegration;
@@ -308,6 +314,10 @@ mod _insight_status;
 mod _insight_time_range;
 
 mod _insight_type;
+
+mod _kms_server_side_encryption_integration;
+
+mod _kms_server_side_encryption_integration_config;
 
 mod _list_anomalies_for_insight_filters;
 
@@ -418,6 +428,8 @@ mod _resource_type_filter;
 mod _search_insights_filters;
 
 mod _search_organization_insights_filters;
+
+mod _server_side_encryption_type;
 
 mod _service_collection;
 

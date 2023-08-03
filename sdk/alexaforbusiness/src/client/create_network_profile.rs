@@ -17,6 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput) with field(s):
     ///   - [`network_profile_arn(Option<String>)`](crate::operation::create_network_profile::CreateNetworkProfileOutput::network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkProfileError>`](crate::operation::create_network_profile::CreateNetworkProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn create_network_profile(
         &self,
     ) -> crate::operation::create_network_profile::builders::CreateNetworkProfileFluentBuilder {

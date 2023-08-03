@@ -27,6 +27,14 @@ impl ListSitesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `sites`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_sites::paginator::ListSitesPaginatorItems {
+        crate::operation::list_sites::paginator::ListSitesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -105,6 +113,33 @@ impl ListSitesPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListSitesPaginator`
+///
+/// This is created with [`.items()`](ListSitesPaginator::items)
+pub struct ListSitesPaginatorItems(ListSitesPaginator);
+
+impl ListSitesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::Site,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_sites::ListSitesError>,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_sites_output_sites(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

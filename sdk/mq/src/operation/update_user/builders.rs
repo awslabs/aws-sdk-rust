@@ -148,4 +148,14 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn replication_user(mut self, input: bool) -> Self {
+        self.inner = self.inner.replication_user(input);
+        self
+    }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_replication_user(input);
+        self
+    }
 }

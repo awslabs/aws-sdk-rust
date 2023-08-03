@@ -33,6 +33,20 @@ pub struct UpdateBrokerOutput {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    #[doc(hidden)]
+    pub data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    #[doc(hidden)]
+    pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    #[doc(hidden)]
+    pub pending_data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    #[doc(hidden)]
+    pub pending_data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }
 impl UpdateBrokerOutput {
@@ -82,6 +96,30 @@ impl UpdateBrokerOutput {
     pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+        self.data_replication_metadata.as_ref()
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.data_replication_mode.as_ref()
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn pending_data_replication_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+        self.pending_data_replication_metadata.as_ref()
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn pending_data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.pending_data_replication_mode.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for UpdateBrokerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +149,13 @@ pub struct UpdateBrokerOutputBuilder {
     pub(crate) logs: ::std::option::Option<crate::types::Logs>,
     pub(crate) maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    pub(crate) pending_data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    pub(crate) pending_data_replication_mode:
+        ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }
 impl UpdateBrokerOutputBuilder {
@@ -250,6 +295,67 @@ impl UpdateBrokerOutputBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_metadata(
+        mut self,
+        input: crate::types::DataReplicationMetadataOutput,
+    ) -> Self {
+        self.data_replication_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn set_data_replication_metadata(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    ) -> Self {
+        self.data_replication_metadata = input;
+        self
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
+        self.data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn set_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.data_replication_mode = input;
+        self
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn pending_data_replication_metadata(
+        mut self,
+        input: crate::types::DataReplicationMetadataOutput,
+    ) -> Self {
+        self.pending_data_replication_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn set_pending_data_replication_metadata(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    ) -> Self {
+        self.pending_data_replication_metadata = input;
+        self
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn pending_data_replication_mode(
+        mut self,
+        input: crate::types::DataReplicationMode,
+    ) -> Self {
+        self.pending_data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn set_pending_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.pending_data_replication_mode = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -272,6 +378,10 @@ impl UpdateBrokerOutputBuilder {
             logs: self.logs,
             maintenance_window_start_time: self.maintenance_window_start_time,
             security_groups: self.security_groups,
+            data_replication_metadata: self.data_replication_metadata,
+            data_replication_mode: self.data_replication_mode,
+            pending_data_replication_metadata: self.pending_data_replication_metadata,
+            pending_data_replication_mode: self.pending_data_replication_mode,
             _request_id: self._request_id,
         }
     }

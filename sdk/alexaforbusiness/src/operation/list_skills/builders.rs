@@ -6,6 +6,7 @@ pub use crate::operation::list_skills::_list_skills_input::ListSkillsInputBuilde
 /// Fluent builder constructing a request to `ListSkills`.
 ///
 /// <p>Lists all enabled skills in a specific skill group.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSkillsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

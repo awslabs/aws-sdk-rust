@@ -39,7 +39,7 @@ pub struct AutoMlCandidate {
     /// <p>The properties of an AutoML candidate job.</p>
     #[doc(hidden)]
     pub candidate_properties: ::std::option::Option<crate::types::CandidateProperties>,
-    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
     #[doc(hidden)]
     pub inference_container_definitions: ::std::option::Option<
         ::std::collections::HashMap<
@@ -99,7 +99,7 @@ impl AutoMlCandidate {
     ) -> ::std::option::Option<&crate::types::CandidateProperties> {
         self.candidate_properties.as_ref()
     }
-    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
     pub fn inference_container_definitions(
         &self,
     ) -> ::std::option::Option<
@@ -314,7 +314,7 @@ impl AutoMlCandidateBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_container_definitions`](Self::set_inference_container_definitions).
     ///
-    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
     pub fn inference_container_definitions(
         mut self,
         k: crate::types::AutoMlProcessingUnit,
@@ -325,7 +325,7 @@ impl AutoMlCandidateBuilder {
         self.inference_container_definitions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
     pub fn set_inference_container_definitions(
         mut self,
         input: ::std::option::Option<

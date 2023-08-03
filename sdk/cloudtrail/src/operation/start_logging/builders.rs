@@ -5,7 +5,7 @@ pub use crate::operation::start_logging::_start_logging_input::StartLoggingInput
 
 /// Fluent builder constructing a request to `StartLogging`.
 ///
-/// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
+/// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all Regions, this operation must be called from the Region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled in all Regions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartLoggingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

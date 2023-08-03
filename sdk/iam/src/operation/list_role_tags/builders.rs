@@ -91,6 +91,17 @@ impl ListRoleTagsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_role_tags::paginator::ListRoleTagsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_role_tags::paginator::ListRoleTagsPaginator {
+        crate::operation::list_role_tags::paginator::ListRoleTagsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the IAM role for which you want to see the list of tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

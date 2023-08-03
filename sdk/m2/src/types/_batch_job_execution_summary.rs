@@ -28,10 +28,10 @@ pub struct BatchJobExecutionSummary {
     /// <p>The timestamp when this batch job execution ended.</p>
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     #[doc(hidden)]
     pub return_code: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The unique identifier of this batch job.</p>
     #[doc(hidden)]
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
 }
@@ -68,11 +68,11 @@ impl BatchJobExecutionSummary {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn return_code(&self) -> ::std::option::Option<&str> {
         self.return_code.as_deref()
     }
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The unique identifier of this batch job.</p>
     pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
         self.batch_job_identifier.as_ref()
     }
@@ -200,22 +200,22 @@ impl BatchJobExecutionSummaryBuilder {
         self.end_time = input;
         self
     }
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn return_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.return_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn set_return_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.return_code = input;
         self
     }
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The unique identifier of this batch job.</p>
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.batch_job_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies a specific batch job.</p>
+    /// <p>The unique identifier of this batch job.</p>
     pub fn set_batch_job_identifier(
         mut self,
         input: ::std::option::Option<crate::types::BatchJobIdentifier>,

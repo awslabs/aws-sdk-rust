@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::set_user_arn): <p>The ARN of the user to whom to send an invitation. Required.</p>
     /// - On success, responds with [`SendInvitationOutput`](crate::operation::send_invitation::SendInvitationOutput)
     /// - On failure, responds with [`SdkError<SendInvitationError>`](crate::operation::send_invitation::SendInvitationError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn send_invitation(
         &self,
     ) -> crate::operation::send_invitation::builders::SendInvitationFluentBuilder {

@@ -6,6 +6,7 @@ pub use crate::operation::put_room_skill_parameter::_put_room_skill_parameter_in
 /// Fluent builder constructing a request to `PutRoomSkillParameter`.
 ///
 /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRoomSkillParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`value_elicitation_setting(Option<SlotValueElicitationSetting>)`](crate::operation::update_slot::UpdateSlotOutput::value_elicitation_setting): <p>The updated prompts that Amazon Lex sends to the user to elicit a response that provides a value for the slot.</p>
     ///   - [`obfuscation_setting(Option<ObfuscationSetting>)`](crate::operation::update_slot::UpdateSlotOutput::obfuscation_setting): <p>The updated setting that determines whether the slot value is obfuscated in the Amazon CloudWatch logs.</p>
     ///   - [`bot_id(Option<String>)`](crate::operation::update_slot::UpdateSlotOutput::bot_id): <p>The identifier of the bot that contains the slot.</p>
-    ///   - [`bot_version(Option<String>)`](crate::operation::update_slot::UpdateSlotOutput::bot_version): <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
+    ///   - [`bot_version(Option<String>)`](crate::operation::update_slot::UpdateSlotOutput::bot_version): <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::update_slot::UpdateSlotOutput::locale_id): <p>The locale that contains the slot.</p>
     ///   - [`intent_id(Option<String>)`](crate::operation::update_slot::UpdateSlotOutput::intent_id): <p>The intent that contains the slot.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::update_slot::UpdateSlotOutput::creation_date_time): <p>The timestamp of the date and time that the slot was created.</p>

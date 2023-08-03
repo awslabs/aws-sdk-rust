@@ -268,6 +268,10 @@ mod delete_rule_group;
 
 mod delete_web_acl;
 
+mod describe_all_managed_products;
+
+mod describe_managed_products_by_vendor;
+
 mod describe_managed_rule_group;
 
 mod disassociate_web_acl;

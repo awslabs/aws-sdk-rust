@@ -28,6 +28,9 @@ pub struct GetTemplateSummaryInput {
     /// </ul>
     #[doc(hidden)]
     pub call_as: ::std::option::Option<crate::types::CallAs>,
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    #[doc(hidden)]
+    pub template_summary_config: ::std::option::Option<crate::types::TemplateSummaryConfig>,
 }
 impl GetTemplateSummaryInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
@@ -59,6 +62,12 @@ impl GetTemplateSummaryInput {
     pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
         self.call_as.as_ref()
     }
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    pub fn template_summary_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TemplateSummaryConfig> {
+        self.template_summary_config.as_ref()
+    }
 }
 impl GetTemplateSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
@@ -79,6 +88,7 @@ pub struct GetTemplateSummaryInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
+    pub(crate) template_summary_config: ::std::option::Option<crate::types::TemplateSummaryConfig>,
 }
 impl GetTemplateSummaryInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
@@ -161,6 +171,19 @@ impl GetTemplateSummaryInputBuilder {
         self.call_as = input;
         self
     }
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    pub fn template_summary_config(mut self, input: crate::types::TemplateSummaryConfig) -> Self {
+        self.template_summary_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    pub fn set_template_summary_config(
+        mut self,
+        input: ::std::option::Option<crate::types::TemplateSummaryConfig>,
+    ) -> Self {
+        self.template_summary_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
     pub fn build(
         self,
@@ -175,6 +198,7 @@ impl GetTemplateSummaryInputBuilder {
                 stack_name: self.stack_name,
                 stack_set_name: self.stack_set_name,
                 call_as: self.call_as,
+                template_summary_config: self.template_summary_config,
             },
         )
     }

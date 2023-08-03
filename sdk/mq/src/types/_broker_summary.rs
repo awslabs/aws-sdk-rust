@@ -10,7 +10,7 @@ pub struct BrokerSummary {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>The broker's status.</p>
@@ -38,7 +38,7 @@ impl BrokerSummary {
     pub fn broker_id(&self) -> ::std::option::Option<&str> {
         self.broker_id.as_deref()
     }
-    /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(&self) -> ::std::option::Option<&str> {
         self.broker_name.as_deref()
     }
@@ -106,12 +106,12 @@ impl BrokerSummaryBuilder {
         self.broker_id = input;
         self
     }
-    /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_name = input;
         self

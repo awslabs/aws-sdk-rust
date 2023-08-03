@@ -5,6 +5,12 @@ pub use crate::types::_sanitization_warning_reason::SanitizationWarningReason;
 
 pub use crate::types::_configuration_revision::ConfigurationRevision;
 
+pub use crate::types::_data_replication_mode::DataReplicationMode;
+
+pub use crate::types::_data_replication_metadata_output::DataReplicationMetadataOutput;
+
+pub use crate::types::_data_replication_counterpart::DataReplicationCounterpart;
+
 pub use crate::types::_weekly_start_time::WeeklyStartTime;
 
 pub use crate::types::_day_of_week::DayOfWeek;
@@ -18,6 +24,8 @@ pub use crate::types::_configuration_id::ConfigurationId;
 pub use crate::types::_authentication_strategy::AuthenticationStrategy;
 
 pub use crate::types::_ldap_server_metadata_input::LdapServerMetadataInput;
+
+pub use crate::types::_promote_mode::PromoteMode;
 
 pub use crate::types::_user_summary::UserSummary;
 
@@ -87,6 +95,12 @@ mod _configuration_revision;
 
 mod _configurations;
 
+mod _data_replication_counterpart;
+
+mod _data_replication_metadata_output;
+
+mod _data_replication_mode;
+
 mod _day_of_week;
 
 mod _deployment_mode;
@@ -106,6 +120,8 @@ mod _logs;
 mod _logs_summary;
 
 mod _pending_logs;
+
+mod _promote_mode;
 
 mod _sanitization_warning;
 

@@ -7,7 +7,7 @@ pub struct CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -17,7 +17,7 @@ impl CreateWorkloadShareOutput {
     pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
@@ -57,12 +57,12 @@ impl CreateWorkloadShareOutputBuilder {
         self.workload_id = input;
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self

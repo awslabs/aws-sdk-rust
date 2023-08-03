@@ -12,90 +12,99 @@ pub fn ser_create_job_input(
     if let Some(var_3) = &input.description {
         object.key("description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.document {
-        object.key("document").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.document_parameters {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("documentParameters").start_object();
-        for (key_7, value_8) in var_5 {
+    if let Some(var_4) = &input.destination_package_versions {
+        let mut array_5 = object.key("destinationPackageVersions").start_array();
+        for item_6 in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        object_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.document_source {
-        object.key("documentSource").string(var_9.as_str());
+    if let Some(var_7) = &input.document {
+        object.key("document").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.job_executions_retry_config {
+    if let Some(var_8) = &input.document_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("jobExecutionsRetryConfig").start_object();
+        let mut object_9 = object.key("documentParameters").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
+    }
+    if let Some(var_12) = &input.document_source {
+        object.key("documentSource").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.job_executions_retry_config {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("jobExecutionsRetryConfig").start_object();
         crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(
-            &mut object_11,
-            var_10,
+            &mut object_14,
+            var_13,
         )?;
-        object_11.finish();
+        object_14.finish();
     }
-    if let Some(var_12) = &input.job_executions_rollout_config {
+    if let Some(var_15) = &input.job_executions_rollout_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("jobExecutionsRolloutConfig").start_object();
-        crate::protocol_serde::shape_job_executions_rollout_config::ser_job_executions_rollout_config(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_16 = object.key("jobExecutionsRolloutConfig").start_object();
+        crate::protocol_serde::shape_job_executions_rollout_config::ser_job_executions_rollout_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_14) = &input.job_template_arn {
-        object.key("jobTemplateArn").string(var_14.as_str());
+    if let Some(var_17) = &input.job_template_arn {
+        object.key("jobTemplateArn").string(var_17.as_str());
     }
-    if let Some(var_15) = &input.namespace_id {
-        object.key("namespaceId").string(var_15.as_str());
+    if let Some(var_18) = &input.namespace_id {
+        object.key("namespaceId").string(var_18.as_str());
     }
-    if let Some(var_16) = &input.presigned_url_config {
+    if let Some(var_19) = &input.presigned_url_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("presignedUrlConfig").start_object();
+        let mut object_20 = object.key("presignedUrlConfig").start_object();
         crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
-            &mut object_17,
-            var_16,
+            &mut object_20,
+            var_19,
         )?;
-        object_17.finish();
+        object_20.finish();
     }
-    if let Some(var_18) = &input.scheduling_config {
+    if let Some(var_21) = &input.scheduling_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("schedulingConfig").start_object();
+        let mut object_22 = object.key("schedulingConfig").start_object();
         crate::protocol_serde::shape_scheduling_config::ser_scheduling_config(
-            &mut object_19,
-            var_18,
+            &mut object_22,
+            var_21,
         )?;
-        object_19.finish();
+        object_22.finish();
     }
-    if let Some(var_20) = &input.tags {
-        let mut array_21 = object.key("tags").start_array();
-        for item_22 in var_20 {
+    if let Some(var_23) = &input.tags {
+        let mut array_24 = object.key("tags").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_21.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.target_selection {
-        object.key("targetSelection").string(var_24.as_str());
+    if let Some(var_27) = &input.target_selection {
+        object.key("targetSelection").string(var_27.as_str());
     }
-    if let Some(var_25) = &input.targets {
-        let mut array_26 = object.key("targets").start_array();
-        for item_27 in var_25 {
+    if let Some(var_28) = &input.targets {
+        let mut array_29 = object.key("targets").start_array();
+        for item_30 in var_28 {
             {
-                array_26.value().string(item_27.as_str());
+                array_29.value().string(item_30.as_str());
             }
         }
-        array_26.finish();
+        array_29.finish();
     }
-    if let Some(var_28) = &input.timeout_config {
+    if let Some(var_31) = &input.timeout_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("timeoutConfig").start_object();
-        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_32 = object.key("timeoutConfig").start_object();
+        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_32, var_31)?;
+        object_32.finish();
     }
     Ok(())
 }

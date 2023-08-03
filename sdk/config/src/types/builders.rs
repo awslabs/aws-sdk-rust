@@ -57,6 +57,10 @@ pub use crate::types::_configuration_recorder::ConfigurationRecorderBuilder;
 
 pub use crate::types::_recording_group::RecordingGroupBuilder;
 
+pub use crate::types::_recording_strategy::RecordingStrategyBuilder;
+
+pub use crate::types::_exclusion_by_resource_types::ExclusionByResourceTypesBuilder;
+
 pub use crate::types::_configuration_aggregator::ConfigurationAggregatorBuilder;
 
 pub use crate::types::_organization_aggregation_source::OrganizationAggregationSourceBuilder;

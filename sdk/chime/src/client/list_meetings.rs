@@ -10,6 +10,9 @@ impl super::Client {
     ///   - [`meetings(Option<Vec<Meeting>>)`](crate::operation::list_meetings::ListMeetingsOutput::meetings): <p>The Amazon Chime SDK meeting information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_meetings::ListMeetingsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMeetingsError>`](crate::operation::list_meetings::ListMeetingsError)
+    #[deprecated(
+        note = "ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
+    )]
     pub fn list_meetings(
         &self,
     ) -> crate::operation::list_meetings::builders::ListMeetingsFluentBuilder {

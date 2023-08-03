@@ -7,6 +7,9 @@ impl super::Client {
     ///   - [`usernames(Vec<String>)`](crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsFluentBuilder::usernames) / [`set_usernames(Option<Vec<String>>)`](crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsFluentBuilder::set_usernames): <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     /// - On success, responds with [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorTerminationCredentialsError>`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsError)
+    #[deprecated(
+        note = "Replaced by DeleteVoiceConnectorTerminationCredentials in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn delete_voice_connector_termination_credentials(&self) -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsFluentBuilder{
         crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsFluentBuilder::new(self.handle.clone())
     }

@@ -30,5 +30,11 @@ pub fn ser_update_ontap_volume_configuration(
     if let Some(var_8) = &input.copy_tags_to_backups {
         object.key("CopyTagsToBackups").boolean(*var_8);
     }
+    if let Some(var_9) = &input.snaplock_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("SnaplockConfiguration").start_object();
+        crate::protocol_serde::shape_update_snaplock_configuration::ser_update_snaplock_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

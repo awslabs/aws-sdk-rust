@@ -15,6 +15,7 @@
 ///     ResourceScanType::Ec2 => { /* ... */ },
 ///     ResourceScanType::Ecr => { /* ... */ },
 ///     ResourceScanType::Lambda => { /* ... */ },
+///     ResourceScanType::LambdaCode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum ResourceScanType {
     Ecr,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaCode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for ResourceScanType {
             "EC2" => ResourceScanType::Ec2,
             "ECR" => ResourceScanType::Ecr,
             "LAMBDA" => ResourceScanType::Lambda,
+            "LAMBDA_CODE" => ResourceScanType::LambdaCode,
             other => {
                 ResourceScanType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -83,12 +87,13 @@ impl ResourceScanType {
             ResourceScanType::Ec2 => "EC2",
             ResourceScanType::Ecr => "ECR",
             ResourceScanType::Lambda => "LAMBDA",
+            ResourceScanType::LambdaCode => "LAMBDA_CODE",
             ResourceScanType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "ECR", "LAMBDA"]
+        &["EC2", "ECR", "LAMBDA", "LAMBDA_CODE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceScanType {

@@ -264,6 +264,16 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_staging_area_tags(input);
         self
     }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_fips_endpoint(input);
+        self
+    }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_fips_endpoint(input);
+        self
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

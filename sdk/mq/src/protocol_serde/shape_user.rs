@@ -21,5 +21,8 @@ pub fn ser_user(
     if let Some(var_6) = &input.username {
         object.key("username").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.replication_user {
+        object.key("replicationUser").boolean(*var_7);
+    }
     Ok(())
 }

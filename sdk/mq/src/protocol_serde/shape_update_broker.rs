@@ -200,6 +200,23 @@ pub(crate) fn de_update_broker(
                             )?,
                         );
                     }
+                    "dataReplicationMetadata" => {
+                        builder = builder.set_data_replication_metadata(
+                            crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens)?
+                        );
+                    }
+                    "dataReplicationMode" => {
+                        builder = builder.set_data_replication_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::DataReplicationMode::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "engineVersion" => {
                         builder = builder.set_engine_version(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -232,6 +249,23 @@ pub(crate) fn de_update_broker(
                             crate::protocol_serde::shape_weekly_start_time::de_weekly_start_time(
                                 tokens,
                             )?,
+                        );
+                    }
+                    "pendingDataReplicationMetadata" => {
+                        builder = builder.set_pending_data_replication_metadata(
+                            crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens)?
+                        );
+                    }
+                    "pendingDataReplicationMode" => {
+                        builder = builder.set_pending_data_replication_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::DataReplicationMode::from(u.as_ref()))
+                            })
+                            .transpose()?,
                         );
                     }
                     "securityGroups" => {

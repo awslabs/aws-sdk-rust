@@ -13,7 +13,7 @@ pub struct CollaborationSummary {
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the collaboration creator.</p>
@@ -48,7 +48,7 @@ impl CollaborationSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
         self.creator_account_id.as_deref()
     }
@@ -132,7 +132,7 @@ impl CollaborationSummaryBuilder {
         self.name = input;
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn creator_account_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -140,7 +140,7 @@ impl CollaborationSummaryBuilder {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_creator_account_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

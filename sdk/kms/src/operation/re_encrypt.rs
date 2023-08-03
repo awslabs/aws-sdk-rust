@@ -177,6 +177,8 @@ pub enum ReEncryptError {
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::types::error::DisabledException),
+    /// <p> The request was rejected because the DryRun parameter was specified. </p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::types::error::IncorrectKeyException),
     /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
@@ -227,6 +229,7 @@ impl ::std::fmt::Display for ReEncryptError {
         match self {
             Self::DependencyTimeoutException(_inner) => _inner.fmt(f),
             Self::DisabledException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::IncorrectKeyException(_inner) => _inner.fmt(f),
             Self::InvalidCiphertextException(_inner) => _inner.fmt(f),
             Self::InvalidGrantTokenException(_inner) => _inner.fmt(f),
@@ -246,6 +249,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ReEncryptErro
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DisabledException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DryRunOperationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::IncorrectKeyException(_inner) => {
@@ -325,6 +331,7 @@ impl ReEncryptError {
         match self {
             Self::DependencyTimeoutException(e) => e.meta(),
             Self::DisabledException(e) => e.meta(),
+            Self::DryRunOperationException(e) => e.meta(),
             Self::IncorrectKeyException(e) => e.meta(),
             Self::InvalidCiphertextException(e) => e.meta(),
             Self::InvalidGrantTokenException(e) => e.meta(),
@@ -343,6 +350,10 @@ impl ReEncryptError {
     /// Returns `true` if the error kind is `ReEncryptError::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(self, Self::DisabledException(_))
+    }
+    /// Returns `true` if the error kind is `ReEncryptError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `ReEncryptError::IncorrectKeyException`.
     pub fn is_incorrect_key_exception(&self) -> bool {
@@ -382,6 +393,7 @@ impl ::std::error::Error for ReEncryptError {
         match self {
             Self::DependencyTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::DisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::IncorrectKeyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCiphertextException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGrantTokenException(_inner) => ::std::option::Option::Some(_inner),

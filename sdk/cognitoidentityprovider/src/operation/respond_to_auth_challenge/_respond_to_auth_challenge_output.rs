@@ -2,7 +2,7 @@
 
 /// <p>The response to respond to the authentication challenge.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RespondToAuthChallengeOutput {
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     #[doc(hidden)]
@@ -44,6 +44,17 @@ impl RespondToAuthChallengeOutput {
         self.authentication_result.as_ref()
     }
 }
+impl ::std::fmt::Debug for RespondToAuthChallengeOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RespondToAuthChallengeOutput");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for RespondToAuthChallengeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -60,9 +71,7 @@ impl RespondToAuthChallengeOutput {
 
 /// A builder for [`RespondToAuthChallengeOutput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RespondToAuthChallengeOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
@@ -154,5 +163,16 @@ impl RespondToAuthChallengeOutputBuilder {
             authentication_result: self.authentication_result,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for RespondToAuthChallengeOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RespondToAuthChallengeOutputBuilder");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

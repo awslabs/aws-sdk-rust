@@ -16,6 +16,9 @@ pub struct UpdateMeetingRoomConfiguration {
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     #[doc(hidden)]
     pub require_check_in: ::std::option::Option<crate::types::UpdateRequireCheckIn>,
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub proactive_join: ::std::option::Option<crate::types::UpdateProactiveJoin>,
 }
 impl UpdateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
@@ -36,6 +39,10 @@ impl UpdateMeetingRoomConfiguration {
     pub fn require_check_in(&self) -> ::std::option::Option<&crate::types::UpdateRequireCheckIn> {
         self.require_check_in.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn proactive_join(&self) -> ::std::option::Option<&crate::types::UpdateProactiveJoin> {
+        self.proactive_join.as_ref()
+    }
 }
 impl UpdateMeetingRoomConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::types::UpdateMeetingRoomConfiguration).
@@ -55,6 +62,7 @@ pub struct UpdateMeetingRoomConfigurationBuilder {
         ::std::option::Option<crate::types::UpdateEndOfMeetingReminder>,
     pub(crate) instant_booking: ::std::option::Option<crate::types::UpdateInstantBooking>,
     pub(crate) require_check_in: ::std::option::Option<crate::types::UpdateRequireCheckIn>,
+    pub(crate) proactive_join: ::std::option::Option<crate::types::UpdateProactiveJoin>,
 }
 impl UpdateMeetingRoomConfigurationBuilder {
     /// <p>Whether room utilization metrics are enabled or not.</p>
@@ -112,6 +120,19 @@ impl UpdateMeetingRoomConfigurationBuilder {
         self.require_check_in = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn proactive_join(mut self, input: crate::types::UpdateProactiveJoin) -> Self {
+        self.proactive_join = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_proactive_join(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateProactiveJoin>,
+    ) -> Self {
+        self.proactive_join = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMeetingRoomConfiguration`](crate::types::UpdateMeetingRoomConfiguration).
     pub fn build(self) -> crate::types::UpdateMeetingRoomConfiguration {
         crate::types::UpdateMeetingRoomConfiguration {
@@ -119,6 +140,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
             end_of_meeting_reminder: self.end_of_meeting_reminder,
             instant_booking: self.instant_booking,
             require_check_in: self.require_check_in,
+            proactive_join: self.proactive_join,
         }
     }
 }

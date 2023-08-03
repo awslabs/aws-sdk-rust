@@ -62,6 +62,9 @@ pub struct GetApplicationOutput {
     /// <p>The identifier of a customer managed key.</p>
     #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    #[doc(hidden)]
+    pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -147,6 +150,10 @@ impl GetApplicationOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -187,6 +194,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) load_balancer_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -485,6 +493,16 @@ impl GetApplicationOutputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -516,6 +534,7 @@ impl GetApplicationOutputBuilder {
             load_balancer_dns_name: self.load_balancer_dns_name,
             status_reason: self.status_reason,
             kms_key_id: self.kms_key_id,
+            role_arn: self.role_arn,
             _request_id: self._request_id,
         }
     }

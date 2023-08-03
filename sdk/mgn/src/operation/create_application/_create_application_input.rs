@@ -14,6 +14,9 @@ pub struct CreateApplicationInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {
     /// <p>Application name.</p>
@@ -32,6 +35,10 @@ impl CreateApplicationInput {
     > {
         self.tags.as_ref()
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +46,7 @@ impl ::std::fmt::Debug for CreateApplicationInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -59,6 +67,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>Application name.</p>
@@ -106,6 +115,16 @@ impl CreateApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -118,6 +137,7 @@ impl CreateApplicationInputBuilder {
                 name: self.name,
                 description: self.description,
                 tags: self.tags,
+                account_id: self.account_id,
             },
         )
     }
@@ -128,6 +148,7 @@ impl ::std::fmt::Debug for CreateApplicationInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

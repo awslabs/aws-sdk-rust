@@ -123,6 +123,11 @@ where
                                     crate::protocol_serde::shape_connector_mode_list::de_connector_mode_list(tokens)?
                                 );
                             }
+                            "supportedDataTransferTypes" => {
+                                builder = builder.set_supported_data_transfer_types(
+                                    crate::protocol_serde::shape_supported_data_transfer_type_list::de_supported_data_transfer_type_list(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

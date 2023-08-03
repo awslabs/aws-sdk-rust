@@ -284,6 +284,8 @@ mod delete_schedule;
 
 mod delete_tags;
 
+mod describe_account_configuration;
+
 mod describe_channel;
 
 mod describe_input;
@@ -303,6 +305,8 @@ mod describe_offering;
 mod describe_reservation;
 
 mod describe_schedule;
+
+mod describe_thumbnails;
 
 mod list_channels;
 
@@ -341,6 +345,8 @@ mod stop_channel;
 mod stop_multiplex;
 
 mod transfer_input_device;
+
+mod update_account_configuration;
 
 mod update_channel;
 

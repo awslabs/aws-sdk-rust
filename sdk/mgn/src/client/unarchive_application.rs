@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`UnarchiveApplicationOutput`](crate::operation::unarchive_application::UnarchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::arn): <p>Application ARN.</p>

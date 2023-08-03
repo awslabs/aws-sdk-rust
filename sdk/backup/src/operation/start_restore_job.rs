@@ -170,6 +170,8 @@ pub type StartRestoreJobErrorKind = StartRestoreJobError;
 pub enum StartRestoreJobError {
     /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
     /// <p>A resource that is required for the action doesn't exist.</p>
@@ -197,6 +199,7 @@ impl ::std::fmt::Display for StartRestoreJobError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::MissingParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -208,6 +211,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartRestoreJ
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterValueException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRequestException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::MissingParameterValueException(_inner) => {
@@ -273,6 +279,7 @@ impl StartRestoreJobError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InvalidParameterValueException(e) => e.meta(),
+            Self::InvalidRequestException(e) => e.meta(),
             Self::MissingParameterValueException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ServiceUnavailableException(e) => e.meta(),
@@ -282,6 +289,10 @@ impl StartRestoreJobError {
     /// Returns `true` if the error kind is `StartRestoreJobError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `StartRestoreJobError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `StartRestoreJobError::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
@@ -300,6 +311,7 @@ impl ::std::error::Error for StartRestoreJobError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),

@@ -6,7 +6,7 @@ pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_input::Bat
 /// Fluent builder constructing a request to `BatchUnsuspendUser`.
 ///
 /// <p>Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html"> Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon Chime Administration Guide</i>. </p>
-/// <p> Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored. </p>
+/// <p>Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUnsuspendUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

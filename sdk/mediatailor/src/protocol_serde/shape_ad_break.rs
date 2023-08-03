@@ -36,6 +36,21 @@ pub fn ser_ad_break(
         )?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.ad_break_metadata {
+        let mut array_9 = object.key("AdBreakMetadata").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_key_value_pair::ser_key_value_pair(
+                    &mut object_11,
+                    item_10,
+                )?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }
 
@@ -96,6 +111,11 @@ where
                         "TimeSignalMessage" => {
                             builder = builder.set_time_signal_message(
                                     crate::protocol_serde::shape_time_signal_message::de_time_signal_message(tokens)?
+                                );
+                        }
+                        "AdBreakMetadata" => {
+                            builder = builder.set_ad_break_metadata(
+                                    crate::protocol_serde::shape_ad_break_metadata_list::de_ad_break_metadata_list(tokens)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

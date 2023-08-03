@@ -115,12 +115,12 @@ impl DeleteCustomActionTypeFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self

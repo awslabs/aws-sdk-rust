@@ -214,6 +214,8 @@ impl Client {
 
 mod add_permission;
 
+mod cancel_message_move_task;
+
 mod change_message_visibility;
 
 mod change_message_visibility_batch;
@@ -260,6 +262,8 @@ mod get_queue_url;
 
 mod list_dead_letter_source_queues;
 
+mod list_message_move_tasks;
+
 mod list_queue_tags;
 
 mod list_queues;
@@ -275,6 +279,8 @@ mod send_message;
 mod send_message_batch;
 
 mod set_queue_attributes;
+
+mod start_message_move_task;
 
 mod tag_queue;
 

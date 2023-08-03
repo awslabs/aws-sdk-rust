@@ -16,7 +16,7 @@ pub struct Environment {
     /// <p>The current status of creation of the FinSpace environment.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
-    /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_url: ::std::option::Option<::std::string::String>,
     /// <p>The description of the FinSpace environment.</p>
@@ -25,7 +25,7 @@ pub struct Environment {
     /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
     #[doc(hidden)]
     pub sage_maker_studio_domain_url: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
@@ -58,7 +58,7 @@ impl Environment {
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
     pub fn environment_url(&self) -> ::std::option::Option<&str> {
         self.environment_url.as_deref()
     }
@@ -70,7 +70,7 @@ impl Environment {
     pub fn environment_arn(&self) -> ::std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
     pub fn sage_maker_studio_domain_url(&self) -> ::std::option::Option<&str> {
         self.sage_maker_studio_domain_url.as_deref()
     }
@@ -175,7 +175,7 @@ impl EnvironmentBuilder {
         self.status = input;
         self
     }
-    /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
     pub fn environment_url(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -183,7 +183,7 @@ impl EnvironmentBuilder {
         self.environment_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sign-in url for the web application of your FinSpace environment.</p>
+    /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
     pub fn set_environment_url(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -217,7 +217,7 @@ impl EnvironmentBuilder {
         self.environment_arn = input;
         self
     }
-    /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
     pub fn sage_maker_studio_domain_url(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -225,7 +225,7 @@ impl EnvironmentBuilder {
         self.sage_maker_studio_domain_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
+    /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
     pub fn set_sage_maker_studio_domain_url(
         mut self,
         input: ::std::option::Option<::std::string::String>,

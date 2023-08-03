@@ -6,6 +6,7 @@ pub use crate::operation::update_network_profile::_update_network_profile_input:
 /// Fluent builder constructing a request to `UpdateNetworkProfile`.
 ///
 /// <p>Updates a network profile by the network profile ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNetworkProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

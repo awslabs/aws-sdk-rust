@@ -374,6 +374,8 @@ pub(crate) mod shape_backup_failure_details;
 
 pub(crate) mod shape_create_open_zfs_origin_snapshot_configuration;
 
+pub(crate) mod shape_create_snaplock_configuration;
+
 pub(crate) mod shape_data_repository_association_ids;
 
 pub(crate) mod shape_data_repository_failure_details;
@@ -436,11 +438,15 @@ pub(crate) mod shape_svm_endpoints;
 
 pub(crate) mod shape_tiering_policy;
 
+pub(crate) mod shape_update_snaplock_configuration;
+
 pub(crate) mod shape_windows_audit_log_create_configuration;
 
 pub(crate) mod shape_windows_file_system_configuration;
 
 pub(crate) mod shape_administrative_action_failure_details;
+
+pub(crate) mod shape_autocommit_period;
 
 pub(crate) mod shape_data_repository_configuration;
 
@@ -464,6 +470,10 @@ pub(crate) mod shape_route_table_ids;
 
 pub(crate) mod shape_self_managed_active_directory_attributes;
 
+pub(crate) mod shape_snaplock_configuration;
+
+pub(crate) mod shape_snaplock_retention_period;
+
 pub(crate) mod shape_svm_endpoint;
 
 pub(crate) mod shape_windows_audit_log_configuration;
@@ -477,6 +487,8 @@ pub(crate) mod shape_file_system_endpoint;
 pub(crate) mod shape_lustre_no_squash_nids;
 
 pub(crate) mod shape_ontap_endpoint_ip_addresses;
+
+pub(crate) mod shape_retention_period;
 
 pub(crate) mod shape_open_zfs_client_configurations;
 

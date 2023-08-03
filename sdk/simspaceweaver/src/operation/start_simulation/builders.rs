@@ -197,6 +197,7 @@ impl StartSimulationFluentBuilder {
     }
     /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
     pub fn snapshot_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.inner = self.inner.snapshot_s3_location(input);
@@ -204,6 +205,7 @@ impl StartSimulationFluentBuilder {
     }
     /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
     pub fn set_snapshot_s3_location(
         mut self,

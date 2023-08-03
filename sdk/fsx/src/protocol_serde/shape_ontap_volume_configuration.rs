@@ -134,6 +134,11 @@ where
                                     )?,
                                 );
                             }
+                            "SnaplockConfiguration" => {
+                                builder = builder.set_snaplock_configuration(
+                                    crate::protocol_serde::shape_snaplock_configuration::de_snaplock_configuration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

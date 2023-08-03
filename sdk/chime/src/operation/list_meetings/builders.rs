@@ -5,7 +5,13 @@ pub use crate::operation::list_meetings::_list_meetings_input::ListMeetingsInput
 
 /// Fluent builder constructing a request to `ListMeetings`.
 ///
-/// <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// <p>Lists up to 100 active Amazon Chime SDK meetings.</p> <important>
+/// <p>ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
+/// </important>
+/// <p>For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+#[deprecated(
+    note = "ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMeetingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

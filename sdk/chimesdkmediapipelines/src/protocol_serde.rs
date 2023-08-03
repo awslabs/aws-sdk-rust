@@ -224,6 +224,8 @@ pub(crate) mod shape_channel_definition;
 
 pub(crate) mod shape_grid_view_configuration;
 
+pub(crate) mod shape_active_speaker_only_configuration;
+
 pub(crate) mod shape_attendee_id_list;
 
 pub(crate) mod shape_audio_concatenation_configuration;
@@ -238,11 +240,17 @@ pub(crate) mod shape_data_channel_concatenation_configuration;
 
 pub(crate) mod shape_external_user_id_list;
 
+pub(crate) mod shape_horizontal_layout_configuration;
+
 pub(crate) mod shape_meeting_events_concatenation_configuration;
 
 pub(crate) mod shape_presenter_only_configuration;
 
 pub(crate) mod shape_transcription_messages_concatenation_configuration;
+
+pub(crate) mod shape_vertical_layout_configuration;
+
+pub(crate) mod shape_video_attribute;
 
 pub(crate) mod shape_video_concatenation_configuration;
 

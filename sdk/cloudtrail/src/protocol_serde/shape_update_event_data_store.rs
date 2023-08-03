@@ -60,6 +60,22 @@ pub fn de_update_event_data_store_http_error(
                                                     }
             tmp
         }),
+        "EventDataStoreAlreadyExistsException" => crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EventDataStoreAlreadyExistsExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_event_data_store_already_exists_exception::de_event_data_store_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::update_event_data_store::UpdateEventDataStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "EventDataStoreARNInvalidException" => crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreArnInvalidException({
             #[allow(unused_mut)]
             let mut tmp =

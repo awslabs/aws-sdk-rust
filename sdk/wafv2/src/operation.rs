@@ -43,6 +43,12 @@ pub mod delete_rule_group;
 /// Types for the `DeleteWebACL` operation.
 pub mod delete_web_acl;
 
+/// Types for the `DescribeAllManagedProducts` operation.
+pub mod describe_all_managed_products;
+
+/// Types for the `DescribeManagedProductsByVendor` operation.
+pub mod describe_managed_products_by_vendor;
+
 /// Types for the `DescribeManagedRuleGroup` operation.
 pub mod describe_managed_rule_group;
 

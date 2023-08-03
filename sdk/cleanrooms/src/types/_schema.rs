@@ -16,7 +16,7 @@ pub struct Schema {
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
     #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
@@ -58,7 +58,7 @@ impl Schema {
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
         self.creator_account_id.as_deref()
     }
@@ -189,7 +189,7 @@ impl SchemaBuilder {
         self.analysis_method = input;
         self
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -197,7 +197,7 @@ impl SchemaBuilder {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn set_creator_account_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

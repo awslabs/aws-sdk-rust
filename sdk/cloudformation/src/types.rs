@@ -111,6 +111,14 @@ pub use crate::types::_stack_instance_filter::StackInstanceFilter;
 
 pub use crate::types::_stack_instance_filter_name::StackInstanceFilterName;
 
+pub use crate::types::_stack_instance_resource_drifts_summary::StackInstanceResourceDriftsSummary;
+
+pub use crate::types::_property_difference::PropertyDifference;
+
+pub use crate::types::_difference_type::DifferenceType;
+
+pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePair;
+
 pub use crate::types::_export::Export;
 
 pub use crate::types::_change_set_summary::ChangeSetSummary;
@@ -119,21 +127,19 @@ pub use crate::types::_change_set_status::ChangeSetStatus;
 
 pub use crate::types::_execution_status::ExecutionStatus;
 
+pub use crate::types::_warnings::Warnings;
+
 pub use crate::types::_resource_identifier_summary::ResourceIdentifierSummary;
 
 pub use crate::types::_parameter_declaration::ParameterDeclaration;
 
 pub use crate::types::_parameter_constraints::ParameterConstraints;
 
+pub use crate::types::_template_summary_config::TemplateSummaryConfig;
+
 pub use crate::types::_template_stage::TemplateStage;
 
 pub use crate::types::_stack_resource_drift::StackResourceDrift;
-
-pub use crate::types::_property_difference::PropertyDifference;
-
-pub use crate::types::_difference_type::DifferenceType;
-
-pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePair;
 
 pub use crate::types::_required_activated_type::RequiredActivatedType;
 
@@ -175,6 +181,8 @@ pub use crate::types::_stack_drift_detection_status::StackDriftDetectionStatus;
 
 pub use crate::types::_publisher_status::PublisherStatus;
 
+pub use crate::types::_organization_status::OrganizationStatus;
+
 pub use crate::types::_change_set_hooks_status::ChangeSetHooksStatus;
 
 pub use crate::types::_change_set_hook::ChangeSetHook;
@@ -186,6 +194,8 @@ pub use crate::types::_change_set_hook_resource_target_details::ChangeSetHookRes
 pub use crate::types::_change_action::ChangeAction;
 
 pub use crate::types::_hook_target_type::HookTargetType;
+
+pub use crate::types::_on_stack_failure::OnStackFailure;
 
 pub use crate::types::_change::Change;
 
@@ -295,11 +305,15 @@ mod _module_info;
 
 mod _on_failure;
 
+mod _on_stack_failure;
+
 mod _operation_result_filter;
 
 mod _operation_result_filter_name;
 
 mod _operation_status;
+
+mod _organization_status;
 
 mod _output;
 
@@ -373,6 +387,8 @@ mod _stack_instance_filter;
 
 mod _stack_instance_filter_name;
 
+mod _stack_instance_resource_drifts_summary;
+
 mod _stack_instance_status;
 
 mod _stack_instance_summary;
@@ -429,6 +445,8 @@ mod _template_parameter;
 
 mod _template_stage;
 
+mod _template_summary_config;
+
 mod _third_party_type;
 
 mod _type_configuration_details;
@@ -446,6 +464,8 @@ mod _type_version_summary;
 mod _version_bump;
 
 mod _visibility;
+
+mod _warnings;
 
 /// Builders
 pub mod builders;

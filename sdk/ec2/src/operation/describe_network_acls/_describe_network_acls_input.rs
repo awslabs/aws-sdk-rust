@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -36,7 +36,7 @@ pub struct DescribeNetworkAclsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     #[doc(hidden)]
     pub network_acl_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,7 +48,7 @@ pub struct DescribeNetworkAclsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeNetworkAclsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -83,7 +83,7 @@ impl DescribeNetworkAclsInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     pub fn network_acl_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_acl_ids.as_deref()
@@ -123,7 +123,7 @@ impl DescribeNetworkAclsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -157,7 +157,7 @@ impl DescribeNetworkAclsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -206,7 +206,7 @@ impl DescribeNetworkAclsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_acl_ids`](Self::set_network_acl_ids).
     ///
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     pub fn network_acl_ids(
         mut self,
@@ -217,7 +217,7 @@ impl DescribeNetworkAclsInputBuilder {
         self.network_acl_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     pub fn set_network_acl_ids(
         mut self,

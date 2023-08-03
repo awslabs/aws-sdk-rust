@@ -9,6 +9,9 @@ pub struct AssociateSourceServersInput {
     /// <p>Source server IDs list.</p>
     #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSourceServersInput {
     /// <p>Application ID.</p>
@@ -18,6 +21,10 @@ impl AssociateSourceServersInput {
     /// <p>Source server IDs list.</p>
     pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.source_server_i_ds.as_deref()
+    }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl AssociateSourceServersInput {
@@ -37,6 +44,7 @@ impl AssociateSourceServersInput {
 pub struct AssociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSourceServersInputBuilder {
     /// <p>Application ID.</p>
@@ -77,6 +85,16 @@ impl AssociateSourceServersInputBuilder {
         self.source_server_i_ds = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateSourceServersInput`](crate::operation::associate_source_servers::AssociateSourceServersInput).
     pub fn build(
         self,
@@ -88,6 +106,7 @@ impl AssociateSourceServersInputBuilder {
             crate::operation::associate_source_servers::AssociateSourceServersInput {
                 application_id: self.application_id,
                 source_server_i_ds: self.source_server_i_ds,
+                account_id: self.account_id,
             },
         )
     }

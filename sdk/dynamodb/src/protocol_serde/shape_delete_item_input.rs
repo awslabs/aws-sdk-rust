@@ -78,5 +78,10 @@ pub fn ser_delete_item_input(
         }
         object_22.finish();
     }
+    if let Some(var_26) = &input.return_values_on_condition_check_failure {
+        object
+            .key("ReturnValuesOnConditionCheckFailure")
+            .string(var_26.as_str());
+    }
     Ok(())
 }

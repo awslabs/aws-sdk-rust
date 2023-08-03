@@ -9,6 +9,12 @@ pub fn ser_branch(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.deprecation_message {
+        object.key("deprecationMessage").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.comment {
+        object.key("comment").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -44,6 +50,24 @@ where
                             }
                             "description" => {
                                 builder = builder.set_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "deprecationMessage" => {
+                                builder = builder.set_deprecation_message(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "comment" => {
+                                builder = builder.set_comment(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

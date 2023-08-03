@@ -10,10 +10,10 @@ publish = false
 
 [dependencies]
 http = "0.2"
-aws-config= { version = "0.55.3", path = "../../sdk/aws-config" }
-aws-smithy-client= { version = "0.55.3", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
-aws-smithy-http= { version = "0.55.3", path = "../../sdk/aws-smithy-http" }
-aws-types= { version = "0.55.3", path = "../../sdk/aws-types" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
+aws-smithy-http= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-http" }
+aws-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-types" }
 
 [lib]
 path = "src/mod.rs"

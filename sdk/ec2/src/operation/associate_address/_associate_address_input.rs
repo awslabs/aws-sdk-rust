@@ -3,43 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAddressInput {
-    /// <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+    /// <p>The allocation ID. This is required.</p>
     #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an instance ID and the instance must be in the running state.</p>
+    /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     #[doc(hidden)]
     pub allow_reassociation: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. </p>
+    /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
+    /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAddressInput {
-    /// <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+    /// <p>The allocation ID. This is required.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
-    /// <p>The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an instance ID and the instance must be in the running state.</p>
+    /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
-    /// <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn allow_reassociation(&self) -> ::std::option::Option<bool> {
         self.allow_reassociation
     }
@@ -47,12 +47,12 @@ impl AssociateAddressInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. </p>
+    /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
-    /// <p>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
+    /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
@@ -80,7 +80,7 @@ pub struct AssociateAddressInputBuilder {
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAddressInputBuilder {
-    /// <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+    /// <p>The allocation ID. This is required.</p>
     pub fn allocation_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -88,7 +88,7 @@ impl AssociateAddressInputBuilder {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+    /// <p>The allocation ID. This is required.</p>
     pub fn set_allocation_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -96,32 +96,32 @@ impl AssociateAddressInputBuilder {
         self.allocation_id = input;
         self
     }
-    /// <p>The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an instance ID and the instance must be in the running state.</p>
+    /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an instance ID and the instance must be in the running state.</p>
+    /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
-    /// <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn allow_reassociation(mut self, input: bool) -> Self {
         self.allow_reassociation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn set_allow_reassociation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_reassociation = input;
         self
@@ -136,8 +136,8 @@ impl AssociateAddressInputBuilder {
         self.dry_run = input;
         self
     }
-    /// <p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. </p>
+    /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn network_interface_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -145,8 +145,8 @@ impl AssociateAddressInputBuilder {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
-    /// <p>For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. </p>
+    /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
     pub fn set_network_interface_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -154,7 +154,7 @@ impl AssociateAddressInputBuilder {
         self.network_interface_id = input;
         self
     }
-    /// <p>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
+    /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn private_ip_address(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -162,7 +162,7 @@ impl AssociateAddressInputBuilder {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
+    /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn set_private_ip_address(
         mut self,
         input: ::std::option::Option<::std::string::String>,

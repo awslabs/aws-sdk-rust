@@ -31,5 +31,8 @@ pub fn ser_verify_input(
         }
         array_7.finish();
     }
+    if let Some(var_9) = &input.dry_run {
+        object.key("DryRun").boolean(*var_9);
+    }
     Ok(())
 }

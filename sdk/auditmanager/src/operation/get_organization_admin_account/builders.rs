@@ -5,7 +5,7 @@ pub use crate::operation::get_organization_admin_account::_get_organization_admi
 
 /// Fluent builder constructing a request to `GetOrganizationAdminAccount`.
 ///
-/// <p> Returns the name of the delegated Amazon Web Services administrator account for the organization. </p>
+/// <p> Gets the name of the delegated Amazon Web Services administrator account for a specified organization. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

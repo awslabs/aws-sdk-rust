@@ -29,6 +29,9 @@ pub struct RdsConfiguration {
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
     #[doc(hidden)]
     pub deployment_option: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the recommended target Amazon RDS engine version.</p>
+    #[doc(hidden)]
+    pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsConfiguration {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
@@ -64,6 +67,10 @@ impl RdsConfiguration {
     pub fn deployment_option(&self) -> ::std::option::Option<&str> {
         self.deployment_option.as_deref()
     }
+    /// <p>Describes the recommended target Amazon RDS engine version.</p>
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
 }
 impl RdsConfiguration {
     /// Creates a new builder-style object to manufacture [`RdsConfiguration`](crate::types::RdsConfiguration).
@@ -86,6 +93,7 @@ pub struct RdsConfigurationBuilder {
     pub(crate) storage_size: ::std::option::Option<i32>,
     pub(crate) storage_iops: ::std::option::Option<i32>,
     pub(crate) deployment_option: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
 }
 impl RdsConfigurationBuilder {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
@@ -188,6 +196,22 @@ impl RdsConfigurationBuilder {
         self.deployment_option = input;
         self
     }
+    /// <p>Describes the recommended target Amazon RDS engine version.</p>
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Describes the recommended target Amazon RDS engine version.</p>
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.engine_version = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RdsConfiguration`](crate::types::RdsConfiguration).
     pub fn build(self) -> crate::types::RdsConfiguration {
         crate::types::RdsConfiguration {
@@ -199,6 +223,7 @@ impl RdsConfigurationBuilder {
             storage_size: self.storage_size,
             storage_iops: self.storage_iops,
             deployment_option: self.deployment_option,
+            engine_version: self.engine_version,
         }
     }
 }

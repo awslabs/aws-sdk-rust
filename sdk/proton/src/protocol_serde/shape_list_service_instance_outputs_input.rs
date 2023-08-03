@@ -12,5 +12,8 @@ pub fn ser_list_service_instance_outputs_input(
     if let Some(var_3) = &input.next_token {
         object.key("nextToken").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.deployment_id {
+        object.key("deploymentId").string(var_4.as_str());
+    }
     Ok(())
 }

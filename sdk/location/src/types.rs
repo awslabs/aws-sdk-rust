@@ -89,6 +89,8 @@ pub use crate::types::_list_maps_response_entry::ListMapsResponseEntry;
 
 pub use crate::types::_map_configuration::MapConfiguration;
 
+pub use crate::types::_map_configuration_update::MapConfigurationUpdate;
+
 pub use crate::types::_geofence_geometry::GeofenceGeometry;
 
 pub use crate::types::_circle::Circle;
@@ -184,6 +186,8 @@ mod _list_route_calculators_response_entry;
 mod _list_trackers_response_entry;
 
 mod _map_configuration;
+
+mod _map_configuration_update;
 
 mod _place;
 

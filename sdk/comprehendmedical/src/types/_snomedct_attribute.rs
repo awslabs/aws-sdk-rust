@@ -10,10 +10,10 @@ pub struct SnomedctAttribute {
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,
-    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
-    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
     #[doc(hidden)]
     pub relationship_score: ::std::option::Option<f32>,
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
@@ -47,11 +47,11 @@ impl SnomedctAttribute {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SnomedctAttributeType> {
         self.r#type.as_ref()
     }
-    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
-    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
     pub fn relationship_score(&self) -> ::std::option::Option<f32> {
         self.relationship_score
     }
@@ -139,22 +139,22 @@ impl SnomedctAttributeBuilder {
         self.r#type = input;
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
     pub fn relationship_score(mut self, input: f32) -> Self {
         self.relationship_score = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
     pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.relationship_score = input;
         self

@@ -13,8 +13,10 @@ pub struct PutDataProtectionPolicyInput {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
@@ -30,8 +32,10 @@ impl PutDataProtectionPolicyInput {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
@@ -78,8 +82,10 @@ impl PutDataProtectionPolicyInputBuilder {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn policy_document(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -94,8 +100,10 @@ impl PutDataProtectionPolicyInputBuilder {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn set_policy_document(
         mut self,
         input: ::std::option::Option<::std::string::String>,

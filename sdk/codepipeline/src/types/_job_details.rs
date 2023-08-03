@@ -10,7 +10,7 @@ pub struct JobDetails {
     /// <p>Represents other information about a job required for a job worker to complete the job. </p>
     #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::JobData>,
-    /// <p>The AWS account ID associated with the job.</p>
+    /// <p>The Amazon Web Services account ID associated with the job.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -23,7 +23,7 @@ impl JobDetails {
     pub fn data(&self) -> ::std::option::Option<&crate::types::JobData> {
         self.data.as_ref()
     }
-    /// <p>The AWS account ID associated with the job.</p>
+    /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -66,12 +66,12 @@ impl JobDetailsBuilder {
         self.data = input;
         self
     }
-    /// <p>The AWS account ID associated with the job.</p>
+    /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID associated with the job.</p>
+    /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self

@@ -143,6 +143,8 @@ pub use crate::types::_audio_silence_failover_settings::AudioSilenceFailoverSett
 
 pub use crate::types::_encoder_settings::EncoderSettingsBuilder;
 
+pub use crate::types::_thumbnail_configuration::ThumbnailConfigurationBuilder;
+
 pub use crate::types::_video_description::VideoDescriptionBuilder;
 
 pub use crate::types::_video_codec_settings::VideoCodecSettingsBuilder;
@@ -383,6 +385,8 @@ pub use crate::types::_cdi_input_specification::CdiInputSpecificationBuilder;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettingsBuilder;
 
+pub use crate::types::_account_configuration::AccountConfigurationBuilder;
+
 pub use crate::types::_offering::OfferingBuilder;
 
 pub use crate::types::_multiplex_program_summary::MultiplexProgramSummaryBuilder;
@@ -396,6 +400,10 @@ pub use crate::types::_transferring_input_device_summary::TransferringInputDevic
 pub use crate::types::_input_device_summary::InputDeviceSummaryBuilder;
 
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
+
+pub use crate::types::_thumbnail_detail::ThumbnailDetailBuilder;
+
+pub use crate::types::_thumbnail::ThumbnailBuilder;
 
 pub use crate::types::_schedule_action::ScheduleActionBuilder;
 

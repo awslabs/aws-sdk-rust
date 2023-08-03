@@ -24,6 +24,8 @@ pub(crate) mod shape_create_event_subscription;
 
 pub(crate) mod shape_create_fleet_advisor_collector;
 
+pub(crate) mod shape_create_replication_config;
+
 pub(crate) mod shape_create_replication_instance;
 
 pub(crate) mod shape_create_replication_subnet_group;
@@ -41,6 +43,8 @@ pub(crate) mod shape_delete_event_subscription;
 pub(crate) mod shape_delete_fleet_advisor_collector;
 
 pub(crate) mod shape_delete_fleet_advisor_databases;
+
+pub(crate) mod shape_delete_replication_config;
 
 pub(crate) mod shape_delete_replication_instance;
 
@@ -90,11 +94,15 @@ pub(crate) mod shape_describe_recommendations;
 
 pub(crate) mod shape_describe_refresh_schemas_status;
 
+pub(crate) mod shape_describe_replication_configs;
+
 pub(crate) mod shape_describe_replication_instance_task_logs;
 
 pub(crate) mod shape_describe_replication_instances;
 
 pub(crate) mod shape_describe_replication_subnet_groups;
+
+pub(crate) mod shape_describe_replication_table_statistics;
 
 pub(crate) mod shape_describe_replication_task_assessment_results;
 
@@ -103,6 +111,8 @@ pub(crate) mod shape_describe_replication_task_assessment_runs;
 pub(crate) mod shape_describe_replication_task_individual_assessments;
 
 pub(crate) mod shape_describe_replication_tasks;
+
+pub(crate) mod shape_describe_replications;
 
 pub(crate) mod shape_describe_schemas;
 
@@ -116,6 +126,8 @@ pub(crate) mod shape_modify_endpoint;
 
 pub(crate) mod shape_modify_event_subscription;
 
+pub(crate) mod shape_modify_replication_config;
+
 pub(crate) mod shape_modify_replication_instance;
 
 pub(crate) mod shape_modify_replication_subnet_group;
@@ -128,6 +140,8 @@ pub(crate) mod shape_reboot_replication_instance;
 
 pub(crate) mod shape_refresh_schemas;
 
+pub(crate) mod shape_reload_replication_tables;
+
 pub(crate) mod shape_reload_tables;
 
 pub(crate) mod shape_remove_tags_from_resource;
@@ -136,11 +150,15 @@ pub(crate) mod shape_run_fleet_advisor_lsa_analysis;
 
 pub(crate) mod shape_start_recommendations;
 
+pub(crate) mod shape_start_replication;
+
 pub(crate) mod shape_start_replication_task;
 
 pub(crate) mod shape_start_replication_task_assessment;
 
 pub(crate) mod shape_start_replication_task_assessment_run;
+
+pub(crate) mod shape_stop_replication;
 
 pub(crate) mod shape_stop_replication_task;
 
@@ -174,6 +192,8 @@ pub(crate) mod shape_create_event_subscription_input;
 
 pub(crate) mod shape_create_fleet_advisor_collector_input;
 
+pub(crate) mod shape_create_replication_config_input;
+
 pub(crate) mod shape_create_replication_instance_input;
 
 pub(crate) mod shape_create_replication_subnet_group_input;
@@ -191,6 +211,8 @@ pub(crate) mod shape_delete_event_subscription_input;
 pub(crate) mod shape_delete_fleet_advisor_collector_input;
 
 pub(crate) mod shape_delete_fleet_advisor_databases_input;
+
+pub(crate) mod shape_delete_replication_config_input;
 
 pub(crate) mod shape_delete_replication_instance_input;
 
@@ -238,11 +260,15 @@ pub(crate) mod shape_describe_recommendations_input;
 
 pub(crate) mod shape_describe_refresh_schemas_status_input;
 
+pub(crate) mod shape_describe_replication_configs_input;
+
 pub(crate) mod shape_describe_replication_instance_task_logs_input;
 
 pub(crate) mod shape_describe_replication_instances_input;
 
 pub(crate) mod shape_describe_replication_subnet_groups_input;
+
+pub(crate) mod shape_describe_replication_table_statistics_input;
 
 pub(crate) mod shape_describe_replication_task_assessment_results_input;
 
@@ -251,6 +277,8 @@ pub(crate) mod shape_describe_replication_task_assessment_runs_input;
 pub(crate) mod shape_describe_replication_task_individual_assessments_input;
 
 pub(crate) mod shape_describe_replication_tasks_input;
+
+pub(crate) mod shape_describe_replications_input;
 
 pub(crate) mod shape_describe_schemas_input;
 
@@ -288,6 +316,8 @@ pub(crate) mod shape_modify_endpoint_input;
 
 pub(crate) mod shape_modify_event_subscription_input;
 
+pub(crate) mod shape_modify_replication_config_input;
+
 pub(crate) mod shape_modify_replication_instance_input;
 
 pub(crate) mod shape_modify_replication_subnet_group_input;
@@ -299,6 +329,8 @@ pub(crate) mod shape_move_replication_task_input;
 pub(crate) mod shape_reboot_replication_instance_input;
 
 pub(crate) mod shape_refresh_schemas_input;
+
+pub(crate) mod shape_reload_replication_tables_input;
 
 pub(crate) mod shape_reload_tables_input;
 
@@ -322,11 +354,15 @@ pub(crate) mod shape_sns_no_authorization_fault;
 
 pub(crate) mod shape_start_recommendations_input;
 
+pub(crate) mod shape_start_replication_input;
+
 pub(crate) mod shape_start_replication_task_assessment_input;
 
 pub(crate) mod shape_start_replication_task_assessment_run_input;
 
 pub(crate) mod shape_start_replication_task_input;
+
+pub(crate) mod shape_stop_replication_input;
 
 pub(crate) mod shape_stop_replication_task_input;
 
@@ -349,6 +385,8 @@ pub(crate) mod shape_certificate;
 pub(crate) mod shape_certificate_list;
 
 pub(crate) mod shape_collector_responses;
+
+pub(crate) mod shape_compute_config;
 
 pub(crate) mod shape_connection;
 
@@ -424,15 +462,25 @@ pub(crate) mod shape_redshift_settings;
 
 pub(crate) mod shape_refresh_schemas_status;
 
+pub(crate) mod shape_replication;
+
+pub(crate) mod shape_replication_config;
+
+pub(crate) mod shape_replication_config_list;
+
 pub(crate) mod shape_replication_instance;
 
 pub(crate) mod shape_replication_instance_list;
 
 pub(crate) mod shape_replication_instance_task_logs_list;
 
+pub(crate) mod shape_replication_list;
+
 pub(crate) mod shape_replication_subnet_group;
 
 pub(crate) mod shape_replication_subnet_groups;
+
+pub(crate) mod shape_replication_table_statistics_list;
 
 pub(crate) mod shape_replication_task;
 
@@ -468,6 +516,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_timestream_settings;
+
 pub(crate) mod shape_account_quota;
 
 pub(crate) mod shape_batch_start_recommendations_error_entry;
@@ -494,6 +544,8 @@ pub(crate) mod shape_orderable_replication_instance;
 
 pub(crate) mod shape_pending_maintenance_action_details;
 
+pub(crate) mod shape_provision_data;
+
 pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_replication_instance_ipv6_address_list;
@@ -505,6 +557,8 @@ pub(crate) mod shape_replication_instance_public_ip_address_list;
 pub(crate) mod shape_replication_instance_task_log;
 
 pub(crate) mod shape_replication_pending_modified_values;
+
+pub(crate) mod shape_replication_stats;
 
 pub(crate) mod shape_replication_task_assessment_result;
 

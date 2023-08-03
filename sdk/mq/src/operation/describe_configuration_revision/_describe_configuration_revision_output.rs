@@ -9,7 +9,7 @@ pub struct DescribeConfigurationRevisionOutput {
     /// <p>Required. The date and time of the configuration.</p>
     #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The description of the configuration.</p>
@@ -26,7 +26,7 @@ impl DescribeConfigurationRevisionOutput {
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
@@ -89,12 +89,12 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.created = input;
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self

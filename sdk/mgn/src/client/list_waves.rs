@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`filters(ListWavesRequestFilters)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::filters) / [`set_filters(Option<ListWavesRequestFilters>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_filters): <p>Waves list filters.</p>
     ///   - [`max_results(i32)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_max_results): <p>Maximum results to return when listing waves.</p>
     ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_next_token): <p>Request next token.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_account_id): <p>Request account ID.</p>
     /// - On success, responds with [`ListWavesOutput`](crate::operation::list_waves::ListWavesOutput) with field(s):
     ///   - [`items(Option<Vec<Wave>>)`](crate::operation::list_waves::ListWavesOutput::items): <p>Waves list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_waves::ListWavesOutput::next_token): <p>Response next token.</p>

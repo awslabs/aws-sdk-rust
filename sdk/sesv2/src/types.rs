@@ -71,6 +71,8 @@ pub use crate::types::_domain_deliverability_tracking_option::DomainDeliverabili
 
 pub use crate::types::_inbox_placement_tracking_option::InboxPlacementTrackingOption;
 
+pub use crate::types::_scaling_mode::ScalingMode;
+
 pub use crate::types::_vdm_options::VdmOptions;
 
 pub use crate::types::_guardian_options::GuardianOptions;
@@ -178,8 +180,6 @@ pub use crate::types::_dedicated_ip::DedicatedIp;
 pub use crate::types::_warmup_status::WarmupStatus;
 
 pub use crate::types::_dedicated_ip_pool::DedicatedIpPool;
-
-pub use crate::types::_scaling_mode::ScalingMode;
 
 pub use crate::types::_event_destination::EventDestination;
 

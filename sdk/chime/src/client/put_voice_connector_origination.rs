@@ -8,6 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorOriginationOutput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput) with field(s):
     ///   - [`origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput::origination): <p>The updated origination setting details.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorOriginationError>`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationError)
+    #[deprecated(
+        note = "Replaced by PutVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn put_voice_connector_origination(&self) -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder{
         crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::new(self.handle.clone())
     }

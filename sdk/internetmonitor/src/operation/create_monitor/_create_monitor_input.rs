@@ -31,6 +31,9 @@ pub struct CreateMonitorInput {
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    #[doc(hidden)]
+    pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl CreateMonitorInput {
     /// <p>The name of the monitor. </p>
@@ -71,6 +74,10 @@ impl CreateMonitorInput {
     pub fn traffic_percentage_to_monitor(&self) -> i32 {
         self.traffic_percentage_to_monitor
     }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn health_events_config(&self) -> ::std::option::Option<&crate::types::HealthEventsConfig> {
+        self.health_events_config.as_ref()
+    }
 }
 impl CreateMonitorInput {
     /// Creates a new builder-style object to manufacture [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
@@ -95,6 +102,7 @@ pub struct CreateMonitorInputBuilder {
     pub(crate) internet_measurements_log_delivery:
         ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     pub(crate) traffic_percentage_to_monitor: ::std::option::Option<i32>,
+    pub(crate) health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl CreateMonitorInputBuilder {
     /// <p>The name of the monitor. </p>
@@ -205,6 +213,19 @@ impl CreateMonitorInputBuilder {
         self.traffic_percentage_to_monitor = input;
         self
     }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
+        self.health_events_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
+    pub fn set_health_events_config(
+        mut self,
+        input: ::std::option::Option<crate::types::HealthEventsConfig>,
+    ) -> Self {
+        self.health_events_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
     pub fn build(
         self,
@@ -220,6 +241,7 @@ impl CreateMonitorInputBuilder {
             max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
             internet_measurements_log_delivery: self.internet_measurements_log_delivery,
             traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
+            health_events_config: self.health_events_config,
         })
     }
 }

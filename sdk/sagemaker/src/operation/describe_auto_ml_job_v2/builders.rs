@@ -5,9 +5,7 @@ pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_inpu
 
 /// Fluent builder constructing a request to `DescribeAutoMLJobV2`.
 ///
-/// <p>Returns information about an Amazon SageMaker AutoML V2 job.</p> <note>
-/// <p>This API action is callable through SageMaker Canvas only. Calling it directly from the CLI or an SDK results in an error.</p>
-/// </note>
+/// <p>Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoMLJobV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -101,7 +99,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     pub fn auto_ml_job_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -109,7 +107,7 @@ impl DescribeAutoMLJobV2FluentBuilder {
         self.inner = self.inner.auto_ml_job_name(input.into());
         self
     }
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     pub fn set_auto_ml_job_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

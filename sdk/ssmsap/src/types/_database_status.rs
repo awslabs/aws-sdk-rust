@@ -12,6 +12,7 @@
 /// ```text
 /// # let databasestatus = unimplemented!();
 /// match databasestatus {
+///     DatabaseStatus::Error => { /* ... */ },
 ///     DatabaseStatus::Running => { /* ... */ },
 ///     DatabaseStatus::Starting => { /* ... */ },
 ///     DatabaseStatus::Stopped => { /* ... */ },
@@ -51,6 +52,8 @@
 )]
 pub enum DatabaseStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Starting,
@@ -66,6 +69,7 @@ pub enum DatabaseStatus {
 impl ::std::convert::From<&str> for DatabaseStatus {
     fn from(s: &str) -> Self {
         match s {
+            "ERROR" => DatabaseStatus::Error,
             "RUNNING" => DatabaseStatus::Running,
             "STARTING" => DatabaseStatus::Starting,
             "STOPPED" => DatabaseStatus::Stopped,
@@ -88,6 +92,7 @@ impl DatabaseStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DatabaseStatus::Error => "ERROR",
             DatabaseStatus::Running => "RUNNING",
             DatabaseStatus::Starting => "STARTING",
             DatabaseStatus::Stopped => "STOPPED",
@@ -98,7 +103,9 @@ impl DatabaseStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
+        &[
+            "ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DatabaseStatus {

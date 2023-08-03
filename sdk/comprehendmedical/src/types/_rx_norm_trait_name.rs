@@ -13,6 +13,7 @@
 /// # let rxnormtraitname = unimplemented!();
 /// match rxnormtraitname {
 ///     RxNormTraitName::Negation => { /* ... */ },
+///     RxNormTraitName::PastHistory => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum RxNormTraitName {
     #[allow(missing_docs)] // documentation missing in model
     Negation,
+    #[allow(missing_docs)] // documentation missing in model
+    PastHistory,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for RxNormTraitName {
     fn from(s: &str) -> Self {
         match s {
             "NEGATION" => RxNormTraitName::Negation,
+            "PAST_HISTORY" => RxNormTraitName::PastHistory,
             other => {
                 RxNormTraitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +77,13 @@ impl RxNormTraitName {
     pub fn as_str(&self) -> &str {
         match self {
             RxNormTraitName::Negation => "NEGATION",
+            RxNormTraitName::PastHistory => "PAST_HISTORY",
             RxNormTraitName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NEGATION"]
+        &["NEGATION", "PAST_HISTORY"]
     }
 }
 impl ::std::convert::AsRef<str> for RxNormTraitName {

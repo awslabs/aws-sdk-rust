@@ -165,12 +165,12 @@ impl PutEventTypeFluentBuilder {
         self.inner = self.inner.set_entity_types(input);
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn event_ingestion(mut self, input: crate::types::EventIngestion) -> Self {
         self.inner = self.inner.event_ingestion(input);
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn set_event_ingestion(
         mut self,
         input: ::std::option::Option<crate::types::EventIngestion>,
@@ -193,6 +193,19 @@ impl PutEventTypeFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
+        self.inner = self.inner.event_orchestration(input);
+        self
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn set_event_orchestration(
+        mut self,
+        input: ::std::option::Option<crate::types::EventOrchestration>,
+    ) -> Self {
+        self.inner = self.inner.set_event_orchestration(input);
         self
     }
 }

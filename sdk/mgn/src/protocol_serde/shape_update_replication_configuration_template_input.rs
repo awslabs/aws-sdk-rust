@@ -69,5 +69,8 @@ pub fn ser_update_replication_configuration_template_input(
     if let Some(var_18) = &input.use_dedicated_replication_server {
         object.key("useDedicatedReplicationServer").boolean(*var_18);
     }
+    if let Some(var_19) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_19);
+    }
     Ok(())
 }

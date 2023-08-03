@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_update_service_integration_config::UpdateServiceIntegrationConfigBuilder;
 
+pub use crate::types::_kms_server_side_encryption_integration_config::KmsServerSideEncryptionIntegrationConfigBuilder;
+
 pub use crate::types::_logs_anomaly_detection_integration_config::LogsAnomalyDetectionIntegrationConfigBuilder;
 
 pub use crate::types::_ops_center_integration_config::OpsCenterIntegrationConfigBuilder;
@@ -152,6 +154,8 @@ pub use crate::types::_cost_estimation_time_range::CostEstimationTimeRangeBuilde
 pub use crate::types::_service_resource_cost::ServiceResourceCostBuilder;
 
 pub use crate::types::_service_integration_config::ServiceIntegrationConfigBuilder;
+
+pub use crate::types::_kms_server_side_encryption_integration::KmsServerSideEncryptionIntegrationBuilder;
 
 pub use crate::types::_logs_anomaly_detection_integration::LogsAnomalyDetectionIntegrationBuilder;
 

@@ -10,10 +10,10 @@ pub struct CreateVpcEndpointInput {
     /// <p>Default: Gateway</p>
     #[doc(hidden)]
     pub vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
@@ -56,11 +56,11 @@ impl CreateVpcEndpointInput {
     pub fn vpc_endpoint_type(&self) -> ::std::option::Option<&crate::types::VpcEndpointType> {
         self.vpc_endpoint_type.as_ref()
     }
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
@@ -158,22 +158,22 @@ impl CreateVpcEndpointInputBuilder {
         self.vpc_endpoint_type = input;
         self
     }
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the VPC for the endpoint.</p>
+    /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service name.</p>
+    /// <p>The name of the endpoint service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self

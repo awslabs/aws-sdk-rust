@@ -19,7 +19,7 @@ pub struct ChannelSummary {
     /// <p>The metadata of the channel.</p>
     #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
-    /// <p>The time at which the last persistent message in a channel was sent.</p>
+    /// <p>The time at which the last persistent message visible to the caller in a channel was sent.</p>
     #[doc(hidden)]
     pub last_message_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -44,7 +44,7 @@ impl ChannelSummary {
     pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
-    /// <p>The time at which the last persistent message in a channel was sent.</p>
+    /// <p>The time at which the last persistent message visible to the caller in a channel was sent.</p>
     pub fn last_message_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
@@ -133,12 +133,12 @@ impl ChannelSummaryBuilder {
         self.metadata = input;
         self
     }
-    /// <p>The time at which the last persistent message in a channel was sent.</p>
+    /// <p>The time at which the last persistent message visible to the caller in a channel was sent.</p>
     pub fn last_message_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_message_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the last persistent message in a channel was sent.</p>
+    /// <p>The time at which the last persistent message visible to the caller in a channel was sent.</p>
     pub fn set_last_message_timestamp(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,

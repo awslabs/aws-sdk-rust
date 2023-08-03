@@ -227,9 +227,19 @@ pub use crate::types::_relevance_type::RelevanceType;
 
 pub use crate::types::_click_feedback::ClickFeedback;
 
-pub use crate::types::_featured_results_item::FeaturedResultsItem;
+pub use crate::types::_retrieve_result_item::RetrieveResultItem;
 
 pub use crate::types::_document_attribute::DocumentAttribute;
+
+pub use crate::types::_user_context::UserContext;
+
+pub use crate::types::_data_source_group::DataSourceGroup;
+
+pub use crate::types::_document_relevance_configuration::DocumentRelevanceConfiguration;
+
+pub use crate::types::_attribute_filter::AttributeFilter;
+
+pub use crate::types::_featured_results_item::FeaturedResultsItem;
 
 pub use crate::types::_text_with_highlights::TextWithHighlights;
 
@@ -273,19 +283,11 @@ pub use crate::types::_query_result_format::QueryResultFormat;
 
 pub use crate::types::_spell_correction_configuration::SpellCorrectionConfiguration;
 
-pub use crate::types::_user_context::UserContext;
-
-pub use crate::types::_data_source_group::DataSourceGroup;
-
 pub use crate::types::_sorting_configuration::SortingConfiguration;
 
 pub use crate::types::_sort_order::SortOrder;
 
-pub use crate::types::_document_relevance_configuration::DocumentRelevanceConfiguration;
-
 pub use crate::types::_facet::Facet;
-
-pub use crate::types::_attribute_filter::AttributeFilter;
 
 pub use crate::types::_group_members::GroupMembers;
 
@@ -704,6 +706,8 @@ mod _relevance;
 mod _relevance_feedback;
 
 mod _relevance_type;
+
+mod _retrieve_result_item;
 
 mod _s3_data_source_configuration;
 

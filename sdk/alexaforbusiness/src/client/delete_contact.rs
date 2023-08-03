@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`contact_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_arn): <p>The ARN of the contact to delete.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::operation::delete_contact::DeleteContactOutput)
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::operation::delete_contact::DeleteContactError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_contact(
         &self,
     ) -> crate::operation::delete_contact::builders::DeleteContactFluentBuilder {

@@ -2,12 +2,12 @@
 
 /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
 /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
-/// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+/// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupStatement {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -25,8 +25,12 @@ pub struct ManagedRuleGroupStatement {
     #[doc(hidden)]
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
-    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
-    /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
+    /// <p>The rule groups used for intelligent threat mitigation require additional configuration: </p>
+    /// <ul>
+    /// <li> <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub managed_rule_group_configs:
         ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
@@ -37,7 +41,7 @@ pub struct ManagedRuleGroupStatement {
         ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatement {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn vendor_name(&self) -> ::std::option::Option<&str> {
         self.vendor_name.as_deref()
     }
@@ -60,8 +64,12 @@ impl ManagedRuleGroupStatement {
         self.scope_down_statement.as_deref()
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
-    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
-    /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
+    /// <p>The rule groups used for intelligent threat mitigation require additional configuration: </p>
+    /// <ul>
+    /// <li> <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
+    /// </ul>
     pub fn managed_rule_group_configs(
         &self,
     ) -> ::std::option::Option<&[crate::types::ManagedRuleGroupConfig]> {
@@ -100,12 +108,12 @@ pub struct ManagedRuleGroupStatementBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatementBuilder {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor_name = input;
         self
@@ -174,8 +182,12 @@ impl ManagedRuleGroupStatementBuilder {
     /// To override the contents of this collection use [`set_managed_rule_group_configs`](Self::set_managed_rule_group_configs).
     ///
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
-    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
-    /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
+    /// <p>The rule groups used for intelligent threat mitigation require additional configuration: </p>
+    /// <ul>
+    /// <li> <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
+    /// </ul>
     pub fn managed_rule_group_configs(
         mut self,
         input: crate::types::ManagedRuleGroupConfig,
@@ -186,8 +198,12 @@ impl ManagedRuleGroupStatementBuilder {
         self
     }
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
-    /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object for the account takeover prevention managed rule group, to provide information such as the sign-in page of your application and the type of content to accept or reject from the client. </p>
-    /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p>
+    /// <p>The rule groups used for intelligent threat mitigation require additional configuration: </p>
+    /// <ul>
+    /// <li> <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
+    /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
+    /// </ul>
     pub fn set_managed_rule_group_configs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,

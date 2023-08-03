@@ -3,45 +3,48 @@ pub fn ser_put_source_server_action_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_source_server_action::PutSourceServerActionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_id {
-        object.key("actionID").string(var_1.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.action_name {
-        object.key("actionName").string(var_2.as_str());
+    if let Some(var_2) = &input.action_id {
+        object.key("actionID").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.active {
-        object.key("active").boolean(*var_3);
+    if let Some(var_3) = &input.action_name {
+        object.key("actionName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.category {
-        object.key("category").string(var_4.as_str());
+    if let Some(var_4) = &input.active {
+        object.key("active").boolean(*var_4);
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_5) = &input.category {
+        object.key("category").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.document_identifier {
-        object.key("documentIdentifier").string(var_6.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.document_version {
-        object.key("documentVersion").string(var_7.as_str());
+    if let Some(var_7) = &input.document_identifier {
+        object.key("documentIdentifier").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.external_parameters {
+    if let Some(var_8) = &input.document_version {
+        object.key("documentVersion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.external_parameters {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("externalParameters").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("externalParameters").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
                 crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(
-                    &mut object_12,
-                    value_11,
+                    &mut object_13,
+                    value_12,
                 )?;
-                object_12.finish();
+                object_13.finish();
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_13) = &input.must_succeed_for_cutover {
-        object.key("mustSucceedForCutover").boolean(*var_13);
+    if let Some(var_14) = &input.must_succeed_for_cutover {
+        object.key("mustSucceedForCutover").boolean(*var_14);
     }
     {
         object.key("order").number(
@@ -49,27 +52,27 @@ pub fn ser_put_source_server_action_input(
             ::aws_smithy_types::Number::NegInt((input.order).into()),
         );
     }
-    if let Some(var_14) = &input.parameters {
+    if let Some(var_15) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("parameters").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("parameters").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                let mut array_18 = object_15.key(key_16.as_str()).start_array();
-                for item_19 in value_17 {
+                let mut array_19 = object_16.key(key_17.as_str()).start_array();
+                for item_20 in value_18 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_20 = array_18.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_20, item_19)?;
-                        object_20.finish();
+                        let mut object_21 = array_19.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_21, item_20)?;
+                        object_21.finish();
                     }
                 }
-                array_18.finish();
+                array_19.finish();
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_21) = &input.source_server_id {
-        object.key("sourceServerID").string(var_21.as_str());
+    if let Some(var_22) = &input.source_server_id {
+        object.key("sourceServerID").string(var_22.as_str());
     }
     if input.timeout_seconds != 0 {
         object.key("timeoutSeconds").number(

@@ -39,17 +39,26 @@ pub fn ser_create_resource_share_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("tags").start_array();
+    if let Some(var_13) = &input.sources {
+        let mut array_14 = object.key("sources").start_array();
         for item_15 in var_13 {
             {
-                #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("tags").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
     }
     Ok(())
 }

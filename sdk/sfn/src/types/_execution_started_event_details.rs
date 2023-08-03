@@ -13,6 +13,12 @@ pub struct ExecutionStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
+    #[doc(hidden)]
+    pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
+    #[doc(hidden)]
+    pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -29,6 +35,14 @@ impl ExecutionStartedEventDetails {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_alias_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_version_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ExecutionStartedEventDetails {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -36,6 +50,8 @@ impl ::std::fmt::Debug for ExecutionStartedEventDetails {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("input_details", &self.input_details);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
+        formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
         formatter.finish()
     }
 }
@@ -53,6 +69,8 @@ pub struct ExecutionStartedEventDetailsBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStartedEventDetailsBuilder {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -88,12 +106,46 @@ impl ExecutionStartedEventDetailsBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
+    pub fn state_machine_alias_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
+    pub fn set_state_machine_alias_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
+    pub fn state_machine_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
+    pub fn set_state_machine_version_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ExecutionStartedEventDetails`](crate::types::ExecutionStartedEventDetails).
     pub fn build(self) -> crate::types::ExecutionStartedEventDetails {
         crate::types::ExecutionStartedEventDetails {
             input: self.input,
             input_details: self.input_details,
             role_arn: self.role_arn,
+            state_machine_alias_arn: self.state_machine_alias_arn,
+            state_machine_version_arn: self.state_machine_version_arn,
         }
     }
 }
@@ -103,6 +155,8 @@ impl ::std::fmt::Debug for ExecutionStartedEventDetailsBuilder {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("input_details", &self.input_details);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
+        formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
         formatter.finish()
     }
 }

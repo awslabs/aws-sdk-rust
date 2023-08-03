@@ -6,12 +6,25 @@ pub struct GetComponentOutput {
     /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::Component>,
+    /// <p>The tags of a component.</p>
+    #[doc(hidden)]
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetComponentOutput {
     /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     pub fn component(&self) -> ::std::option::Option<&crate::types::Component> {
         self.component.as_ref()
+    }
+    /// <p>The tags of a component.</p>
+    pub fn tags(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.tags.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetComponentOutput {
@@ -33,6 +46,9 @@ impl GetComponentOutput {
 )]
 pub struct GetComponentOutputBuilder {
     pub(crate) component: ::std::option::Option<crate::types::Component>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetComponentOutputBuilder {
@@ -44,6 +60,31 @@ impl GetComponentOutputBuilder {
     /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     pub fn set_component(mut self, input: ::std::option::Option<crate::types::Component>) -> Self {
         self.component = input;
+        self
+    }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags of a component.</p>
+    pub fn tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags of a component.</p>
+    pub fn set_tags(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -59,6 +100,7 @@ impl GetComponentOutputBuilder {
     pub fn build(self) -> crate::operation::get_component::GetComponentOutput {
         crate::operation::get_component::GetComponentOutput {
             component: self.component,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

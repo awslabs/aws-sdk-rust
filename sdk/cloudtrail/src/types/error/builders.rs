@@ -71,6 +71,8 @@ pub use crate::types::error::_event_data_store_has_ongoing_import_exception::Eve
 
 pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataStoreArnInvalidExceptionBuilder;
 
+pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsExceptionBuilder;
+
 pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryExceptionBuilder;
 
 pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundExceptionBuilder;
@@ -81,13 +83,13 @@ pub use crate::types::error::_channel_already_exists_exception::ChannelAlreadyEx
 
 pub use crate::types::error::_import_not_found_exception::ImportNotFoundExceptionBuilder;
 
+pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusExceptionBuilder;
+
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesExceptionBuilder;
 
 pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementExceptionBuilder;
 
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceExceptionBuilder;
-
-pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusExceptionBuilder;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportExceptionBuilder;
 
@@ -148,8 +150,6 @@ pub use crate::types::error::_trail_already_exists_exception::TrailAlreadyExists
 pub use crate::types::error::_tags_limit_exceeded_exception::TagsLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_maximum_number_of_trails_exceeded_exception::MaximumNumberOfTrailsExceededExceptionBuilder;
-
-pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_invalid_source_exception::InvalidSourceExceptionBuilder;
 

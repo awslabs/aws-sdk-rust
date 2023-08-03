@@ -61,6 +61,14 @@ pub struct DescribeChangeSetOutput {
     /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
     #[doc(hidden)]
     pub root_change_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>
+    /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutput {
@@ -142,6 +150,15 @@ impl DescribeChangeSetOutput {
     pub fn root_change_set_id(&self) -> ::std::option::Option<&str> {
         self.root_change_set_id.as_deref()
     }
+    /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>
+    /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    pub fn on_stack_failure(&self) -> ::std::option::Option<&crate::types::OnStackFailure> {
+        self.on_stack_failure.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -181,6 +198,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) include_nested_stacks: ::std::option::Option<bool>,
     pub(crate) parent_change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_change_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutputBuilder {
@@ -464,6 +482,29 @@ impl DescribeChangeSetOutputBuilder {
         self.root_change_set_id = input;
         self
     }
+    /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>
+    /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    pub fn on_stack_failure(mut self, input: crate::types::OnStackFailure) -> Self {
+        self.on_stack_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>
+    /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    pub fn set_on_stack_failure(
+        mut self,
+        input: ::std::option::Option<crate::types::OnStackFailure>,
+    ) -> Self {
+        self.on_stack_failure = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -495,6 +536,7 @@ impl DescribeChangeSetOutputBuilder {
             include_nested_stacks: self.include_nested_stacks,
             parent_change_set_id: self.parent_change_set_id,
             root_change_set_id: self.root_change_set_id,
+            on_stack_failure: self.on_stack_failure,
             _request_id: self._request_id,
         }
     }

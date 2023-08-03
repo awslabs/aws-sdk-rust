@@ -27,6 +27,9 @@ pub fn ser_as2_connector_config(
     if let Some(var_8) = &input.mdn_response {
         object.key("MdnResponse").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.basic_auth_secret_id {
+        object.key("BasicAuthSecretId").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -139,6 +142,15 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::MdnResponse::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "BasicAuthSecretId" => {
+                                builder = builder.set_basic_auth_secret_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

@@ -36,7 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The reason for which the XML elements or attributes were sanitized.</p>
+/// <p>The reason for which the configuration elements or attributes were sanitized.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

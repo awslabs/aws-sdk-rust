@@ -5,7 +5,7 @@ pub use crate::operation::update_subscriber::_update_subscriber_input::UpdateSub
 
 /// Fluent builder constructing a request to `UpdateSubscriber`.
 ///
-/// <p>Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from. </p>
+/// <p>Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSubscriberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,44 +99,36 @@ impl UpdateSubscriberFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.id(input.into());
-        self
-    }
-    /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_id(input);
-        self
-    }
-    /// Appends an item to `sourceTypes`.
-    ///
-    /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
-    ///
-    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn source_types(mut self, input: crate::types::SourceType) -> Self {
-        self.inner = self.inner.source_types(input);
-        self
-    }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_source_types(
+    /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
+    pub fn subscriber_id(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceType>>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.inner = self.inner.set_source_types(input);
+        self.inner = self.inner.subscriber_id(input.into());
         self
     }
-    /// <p>The external ID of the Security Lake account.</p>
-    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.external_id(input.into());
+    /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
+    pub fn set_subscriber_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_subscriber_id(input);
         self
     }
-    /// <p>The external ID of the Security Lake account.</p>
-    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_external_id(input);
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
+        self.inner = self.inner.subscriber_identity(input);
         self
     }
-    /// <p>The name of the Security Lake account subscriber. </p>
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn set_subscriber_identity(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsIdentity>,
+    ) -> Self {
+        self.inner = self.inner.set_subscriber_identity(input);
+        self
+    }
+    /// <p>The name of the Security Lake account subscriber.</p>
     pub fn subscriber_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -144,7 +136,7 @@ impl UpdateSubscriberFluentBuilder {
         self.inner = self.inner.subscriber_name(input.into());
         self
     }
-    /// <p>The name of the Security Lake account subscriber. </p>
+    /// <p>The name of the Security Lake account subscriber.</p>
     pub fn set_subscriber_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -166,6 +158,23 @@ impl UpdateSubscriberFluentBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_subscriber_description(input);
+        self
+    }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
+        self.inner = self.inner.sources(input);
+        self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    ) -> Self {
+        self.inner = self.inner.set_sources(input);
         self
     }
 }

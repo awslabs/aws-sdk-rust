@@ -322,7 +322,11 @@ mod delete_integration_association;
 
 mod delete_prompt;
 
+mod delete_queue;
+
 mod delete_quick_connect;
+
+mod delete_routing_profile;
 
 mod delete_rule;
 
@@ -504,7 +508,15 @@ mod resume_contact_recording;
 
 mod search_available_phone_numbers;
 
+mod search_hours_of_operations;
+
+mod search_prompts;
+
 mod search_queues;
+
+mod search_quick_connects;
+
+mod search_resource_tags;
 
 mod search_routing_profiles;
 

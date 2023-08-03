@@ -211,6 +211,18 @@ where
                                     crate::protocol_serde::shape_workload_applications::de_workload_applications(tokens)?
                                 );
                             }
+                            "Profiles" => {
+                                builder = builder.set_profiles(
+                                    crate::protocol_serde::shape_workload_profiles::de_workload_profiles(tokens)?
+                                );
+                            }
+                            "PrioritizedRiskCounts" => {
+                                builder = builder.set_prioritized_risk_counts(
+                                    crate::protocol_serde::shape_risk_counts::de_risk_counts(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

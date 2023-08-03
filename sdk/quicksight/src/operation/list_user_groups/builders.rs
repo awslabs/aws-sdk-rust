@@ -99,6 +99,17 @@ impl ListUserGroupsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_user_groups::paginator::ListUserGroupsPaginator {
+        crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());

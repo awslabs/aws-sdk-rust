@@ -46,7 +46,7 @@ pub struct EventLogEntry {
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
     #[doc(hidden)]
     pub source_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The user agent whose actions are recorded in the event.</p>
     #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
 }
@@ -107,7 +107,7 @@ impl EventLogEntry {
     pub fn source_ip_address(&self) -> ::std::option::Option<&str> {
         self.source_ip_address.as_deref()
     }
-    /// <p></p>
+    /// <p>The user agent whose actions are recorded in the event.</p>
     pub fn user_agent(&self) -> ::std::option::Option<&str> {
         self.user_agent.as_deref()
     }
@@ -312,12 +312,12 @@ impl EventLogEntryBuilder {
         self.source_ip_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The user agent whose actions are recorded in the event.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The user agent whose actions are recorded in the event.</p>
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_agent = input;
         self

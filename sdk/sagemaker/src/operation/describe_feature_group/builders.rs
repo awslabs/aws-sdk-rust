@@ -99,7 +99,7 @@ impl DescribeFeatureGroupFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +107,7 @@ impl DescribeFeatureGroupFluentBuilder {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

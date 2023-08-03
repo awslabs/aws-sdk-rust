@@ -17,6 +17,7 @@
 ///     FieldType::Number => { /* ... */ },
 ///     FieldType::SingleSelect => { /* ... */ },
 ///     FieldType::Text => { /* ... */ },
+///     FieldType::Url => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +61,8 @@ pub enum FieldType {
     SingleSelect,
     #[allow(missing_docs)] // documentation missing in model
     Text,
+    #[allow(missing_docs)] // documentation missing in model
+    Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for FieldType {
             "Number" => FieldType::Number,
             "SingleSelect" => FieldType::SingleSelect,
             "Text" => FieldType::Text,
+            "Url" => FieldType::Url,
             other => FieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -91,12 +95,20 @@ impl FieldType {
             FieldType::Number => "Number",
             FieldType::SingleSelect => "SingleSelect",
             FieldType::Text => "Text",
+            FieldType::Url => "Url",
             FieldType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Boolean", "DateTime", "Number", "SingleSelect", "Text"]
+        &[
+            "Boolean",
+            "DateTime",
+            "Number",
+            "SingleSelect",
+            "Text",
+            "Url",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FieldType {

@@ -91,6 +91,12 @@ impl ListGroupsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_groups::paginator::ListGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_groups::paginator::ListGroupsPaginator {
+        crate::operation::list_groups::paginator::ListGroupsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,

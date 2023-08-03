@@ -6,6 +6,7 @@ pub use crate::operation::put_skill_authorization::_put_skill_authorization_inpu
 /// Fluent builder constructing a request to `PutSkillAuthorization`.
 ///
 /// <p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSkillAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

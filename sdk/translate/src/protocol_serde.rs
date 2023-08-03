@@ -40,6 +40,8 @@ pub(crate) mod shape_stop_text_translation_job;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_translate_document;
+
 pub(crate) mod shape_translate_text;
 
 pub(crate) mod shape_untag_resource;
@@ -110,6 +112,8 @@ pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_translate_document_input;
+
 pub(crate) mod shape_translate_text_input;
 
 pub(crate) mod shape_unsupported_display_language_code_exception;
@@ -121,6 +125,8 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_update_parallel_data_input;
 
 pub(crate) mod shape_applied_terminology_list;
+
+pub(crate) mod shape_document;
 
 pub(crate) mod shape_encryption_key;
 
@@ -155,6 +161,8 @@ pub(crate) mod shape_text_translation_job_filter;
 pub(crate) mod shape_text_translation_job_properties;
 
 pub(crate) mod shape_text_translation_job_properties_list;
+
+pub(crate) mod shape_translated_document;
 
 pub(crate) mod shape_translation_settings;
 

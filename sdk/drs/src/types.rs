@@ -83,6 +83,10 @@ pub use crate::types::_describe_recovery_snapshots_request_filters::DescribeReco
 
 pub use crate::types::_job::Job;
 
+pub use crate::types::_participating_resource::ParticipatingResource;
+
+pub use crate::types::_participating_resource_id::ParticipatingResourceId;
+
 pub use crate::types::_participating_server::ParticipatingServer;
 
 pub use crate::types::_job_status::JobStatus;
@@ -94,6 +98,18 @@ pub use crate::types::_job_type::JobType;
 pub use crate::types::_start_recovery_request_source_server::StartRecoveryRequestSourceServer;
 
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFilters;
+
+pub use crate::types::_source_network::SourceNetwork;
+
+pub use crate::types::_recovery_life_cycle::RecoveryLifeCycle;
+
+pub use crate::types::_recovery_result::RecoveryResult;
+
+pub use crate::types::_replication_status::ReplicationStatus;
+
+pub use crate::types::_start_source_network_recovery_request_network_entry::StartSourceNetworkRecoveryRequestNetworkEntry;
+
+pub use crate::types::_describe_source_networks_request_filters::DescribeSourceNetworksRequestFilters;
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplate;
 
@@ -139,6 +155,10 @@ pub use crate::types::_job_log::JobLog;
 
 pub use crate::types::_job_log_event_data::JobLogEventData;
 
+pub use crate::types::_event_resource_data::EventResourceData;
+
+pub use crate::types::_source_network_data::SourceNetworkData;
+
 pub use crate::types::_conversion_properties::ConversionProperties;
 
 pub use crate::types::_job_log_event::JobLogEvent;
@@ -179,11 +199,15 @@ mod _describe_recovery_instances_request_filters;
 
 mod _describe_recovery_snapshots_request_filters;
 
+mod _describe_source_networks_request_filters;
+
 mod _describe_source_servers_request_filters;
 
 mod _disk;
 
 mod _ec2_instance_state;
+
+mod _event_resource_data;
 
 mod _extension_status;
 
@@ -233,6 +257,10 @@ mod _origin_environment;
 
 mod _os;
 
+mod _participating_resource;
+
+mod _participating_resource_id;
+
 mod _participating_server;
 
 mod _pit_policy_rule;
@@ -263,6 +291,10 @@ mod _recovery_instance_failback;
 
 mod _recovery_instance_properties;
 
+mod _recovery_life_cycle;
+
+mod _recovery_result;
+
 mod _recovery_snapshot;
 
 mod _recovery_snapshots_order;
@@ -281,7 +313,13 @@ mod _replication_configuration_template;
 
 mod _replication_direction;
 
+mod _replication_status;
+
 mod _source_cloud_properties;
+
+mod _source_network;
+
+mod _source_network_data;
 
 mod _source_properties;
 
@@ -292,6 +330,8 @@ mod _staging_area;
 mod _staging_source_server;
 
 mod _start_recovery_request_source_server;
+
+mod _start_source_network_recovery_request_network_entry;
 
 mod _target_instance_type_right_sizing_method;
 

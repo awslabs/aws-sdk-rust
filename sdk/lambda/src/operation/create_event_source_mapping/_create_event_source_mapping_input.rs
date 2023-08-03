@@ -52,10 +52,10 @@ pub struct CreateEventSourceMappingInput {
     /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
     #[doc(hidden)]
     pub parallelization_factor: ::std::option::Option<i32>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
@@ -163,11 +163,11 @@ impl CreateEventSourceMappingInput {
     pub fn parallelization_factor(&self) -> ::std::option::Option<i32> {
         self.parallelization_factor
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn starting_position_timestamp(
         &self,
     ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -432,12 +432,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.parallelization_factor = input;
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn starting_position(mut self, input: crate::types::EventSourcePosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn set_starting_position(
         mut self,
         input: ::std::option::Option<crate::types::EventSourcePosition>,
@@ -445,12 +445,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.starting_position = input;
         self
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn starting_position_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.starting_position_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn set_starting_position_timestamp(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,

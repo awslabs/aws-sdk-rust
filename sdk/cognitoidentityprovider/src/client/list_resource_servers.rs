@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_max_results): <p>The maximum number of resource servers to return.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_max_results): <p>The maximum number of resource servers to return.</p>
     ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_next_token): <p>A pagination token.</p>
     /// - On success, responds with [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput) with field(s):
     ///   - [`resource_servers(Option<Vec<ResourceServerType>>)`](crate::operation::list_resource_servers::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>

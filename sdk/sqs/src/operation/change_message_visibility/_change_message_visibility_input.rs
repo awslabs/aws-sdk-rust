@@ -7,7 +7,7 @@ pub struct ChangeMessageVisibilityInput {
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
@@ -20,7 +20,7 @@ impl ChangeMessageVisibilityInput {
     pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub fn receipt_handle(&self) -> ::std::option::Option<&str> {
         self.receipt_handle.as_deref()
     }
@@ -61,7 +61,7 @@ impl ChangeMessageVisibilityInputBuilder {
         self.queue_url = input;
         self
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub fn receipt_handle(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -69,7 +69,7 @@ impl ChangeMessageVisibilityInputBuilder {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub fn set_receipt_handle(
         mut self,
         input: ::std::option::Option<::std::string::String>,

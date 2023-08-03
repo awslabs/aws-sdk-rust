@@ -13,7 +13,7 @@ pub struct StopPipelineExecutionInput {
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     #[doc(hidden)]
-    pub abandon: bool,
+    pub abandon: ::std::option::Option<bool>,
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl StopPipelineExecutionInput {
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
-    pub fn abandon(&self) -> bool {
+    pub fn abandon(&self) -> ::std::option::Option<bool> {
         self.abandon
     }
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
@@ -126,7 +126,7 @@ impl StopPipelineExecutionInputBuilder {
             crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
                 pipeline_name: self.pipeline_name,
                 pipeline_execution_id: self.pipeline_execution_id,
-                abandon: self.abandon.unwrap_or_default(),
+                abandon: self.abandon,
                 reason: self.reason,
             },
         )

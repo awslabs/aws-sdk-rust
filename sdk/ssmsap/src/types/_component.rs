@@ -7,6 +7,12 @@ pub struct Component {
     /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
+    #[doc(hidden)]
+    pub parent_component: ::std::option::Option<::std::string::String>,
+    /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
+    #[doc(hidden)]
+    pub child_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -16,23 +22,51 @@ pub struct Component {
     /// <p>The status of the component.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
+    /// <p>The hostname of the component.</p>
+    #[doc(hidden)]
+    pub sap_hostname: ::std::option::Option<::std::string::String>,
+    /// <p>The kernel version of the component.</p>
+    #[doc(hidden)]
+    pub sap_kernel_version: ::std::option::Option<::std::string::String>,
+    /// <p>The SAP HANA version of the component.</p>
+    #[doc(hidden)]
+    pub hdb_version: ::std::option::Option<::std::string::String>,
+    /// <p>Details of the SAP HANA system replication for the component.</p>
+    #[doc(hidden)]
+    pub resilience: ::std::option::Option<crate::types::Resilience>,
+    /// <p>The associated host of the component.</p>
+    #[doc(hidden)]
+    pub associated_host: ::std::option::Option<crate::types::AssociatedHost>,
     /// <p>The SAP HANA databases of the component.</p>
     #[doc(hidden)]
     pub databases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The hosts of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     #[doc(hidden)]
     pub hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     /// <p>The primary host of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     #[doc(hidden)]
     pub primary_host: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the component was last updated.</p>
     #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    #[doc(hidden)]
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Component {
     /// <p>The ID of the component.</p>
     pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
+    }
+    /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
+    pub fn parent_component(&self) -> ::std::option::Option<&str> {
+        self.parent_component.as_deref()
+    }
+    /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
+    pub fn child_components(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.child_components.as_deref()
     }
     /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
@@ -46,21 +80,47 @@ impl Component {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
     }
+    /// <p>The hostname of the component.</p>
+    pub fn sap_hostname(&self) -> ::std::option::Option<&str> {
+        self.sap_hostname.as_deref()
+    }
+    /// <p>The kernel version of the component.</p>
+    pub fn sap_kernel_version(&self) -> ::std::option::Option<&str> {
+        self.sap_kernel_version.as_deref()
+    }
+    /// <p>The SAP HANA version of the component.</p>
+    pub fn hdb_version(&self) -> ::std::option::Option<&str> {
+        self.hdb_version.as_deref()
+    }
+    /// <p>Details of the SAP HANA system replication for the component.</p>
+    pub fn resilience(&self) -> ::std::option::Option<&crate::types::Resilience> {
+        self.resilience.as_ref()
+    }
+    /// <p>The associated host of the component.</p>
+    pub fn associated_host(&self) -> ::std::option::Option<&crate::types::AssociatedHost> {
+        self.associated_host.as_ref()
+    }
     /// <p>The SAP HANA databases of the component.</p>
     pub fn databases(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.databases.as_deref()
     }
     /// <p>The hosts of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn hosts(&self) -> ::std::option::Option<&[crate::types::Host]> {
         self.hosts.as_deref()
     }
     /// <p>The primary host of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn primary_host(&self) -> ::std::option::Option<&str> {
         self.primary_host.as_deref()
     }
     /// <p>The time at which the component was last updated.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl Component {
@@ -77,13 +137,21 @@ impl Component {
 )]
 pub struct ComponentBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_component: ::std::option::Option<::std::string::String>,
+    pub(crate) child_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<crate::types::ComponentType>,
     pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
+    pub(crate) sap_hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) sap_kernel_version: ::std::option::Option<::std::string::String>,
+    pub(crate) hdb_version: ::std::option::Option<::std::string::String>,
+    pub(crate) resilience: ::std::option::Option<crate::types::Resilience>,
+    pub(crate) associated_host: ::std::option::Option<crate::types::AssociatedHost>,
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     pub(crate) primary_host: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBuilder {
     /// <p>The ID of the component.</p>
@@ -94,6 +162,44 @@ impl ComponentBuilder {
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
+        self
+    }
+    /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
+    pub fn parent_component(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parent_component = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
+    pub fn set_parent_component(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.parent_component = input;
+        self
+    }
+    /// Appends an item to `child_components`.
+    ///
+    /// To override the contents of this collection use [`set_child_components`](Self::set_child_components).
+    ///
+    /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
+    pub fn child_components(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.child_components.unwrap_or_default();
+        v.push(input.into());
+        self.child_components = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
+    pub fn set_child_components(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.child_components = input;
         self
     }
     /// <p>The ID of the application.</p>
@@ -138,6 +244,68 @@ impl ComponentBuilder {
         self.status = input;
         self
     }
+    /// <p>The hostname of the component.</p>
+    pub fn sap_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sap_hostname = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The hostname of the component.</p>
+    pub fn set_sap_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sap_hostname = input;
+        self
+    }
+    /// <p>The kernel version of the component.</p>
+    pub fn sap_kernel_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sap_kernel_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The kernel version of the component.</p>
+    pub fn set_sap_kernel_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.sap_kernel_version = input;
+        self
+    }
+    /// <p>The SAP HANA version of the component.</p>
+    pub fn hdb_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hdb_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SAP HANA version of the component.</p>
+    pub fn set_hdb_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hdb_version = input;
+        self
+    }
+    /// <p>Details of the SAP HANA system replication for the component.</p>
+    pub fn resilience(mut self, input: crate::types::Resilience) -> Self {
+        self.resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of the SAP HANA system replication for the component.</p>
+    pub fn set_resilience(
+        mut self,
+        input: ::std::option::Option<crate::types::Resilience>,
+    ) -> Self {
+        self.resilience = input;
+        self
+    }
+    /// <p>The associated host of the component.</p>
+    pub fn associated_host(mut self, input: crate::types::AssociatedHost) -> Self {
+        self.associated_host = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The associated host of the component.</p>
+    pub fn set_associated_host(
+        mut self,
+        input: ::std::option::Option<crate::types::AssociatedHost>,
+    ) -> Self {
+        self.associated_host = input;
+        self
+    }
     /// Appends an item to `databases`.
     ///
     /// To override the contents of this collection use [`set_databases`](Self::set_databases).
@@ -162,6 +330,7 @@ impl ComponentBuilder {
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
     /// <p>The hosts of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn hosts(mut self, input: crate::types::Host) -> Self {
         let mut v = self.hosts.unwrap_or_default();
         v.push(input);
@@ -169,6 +338,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The hosts of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn set_hosts(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
@@ -177,11 +347,13 @@ impl ComponentBuilder {
         self
     }
     /// <p>The primary host of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn primary_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary host of the component.</p>
+    #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn set_primary_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_host = input;
         self
@@ -199,17 +371,35 @@ impl ComponentBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
             component_id: self.component_id,
+            parent_component: self.parent_component,
+            child_components: self.child_components,
             application_id: self.application_id,
             component_type: self.component_type,
             status: self.status,
+            sap_hostname: self.sap_hostname,
+            sap_kernel_version: self.sap_kernel_version,
+            hdb_version: self.hdb_version,
+            resilience: self.resilience,
+            associated_host: self.associated_host,
             databases: self.databases,
             hosts: self.hosts,
             primary_host: self.primary_host,
             last_updated: self.last_updated,
+            arn: self.arn,
         }
     }
 }

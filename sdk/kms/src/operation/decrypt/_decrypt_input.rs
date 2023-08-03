@@ -41,6 +41,10 @@ pub struct DecryptInput {
     /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -91,6 +95,11 @@ impl DecryptInput {
     pub fn recipient(&self) -> ::std::option::Option<&crate::types::RecipientInfo> {
         self.recipient.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl DecryptInput {
     /// Creates a new builder-style object to manufacture [`DecryptInput`](crate::operation::decrypt::DecryptInput).
@@ -113,6 +122,7 @@ pub struct DecryptInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     pub(crate) recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DecryptInputBuilder {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -244,6 +254,18 @@ impl DecryptInputBuilder {
         self.recipient = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DecryptInput`](crate::operation::decrypt::DecryptInput).
     pub fn build(
         self,
@@ -258,6 +280,7 @@ impl DecryptInputBuilder {
             key_id: self.key_id,
             encryption_algorithm: self.encryption_algorithm,
             recipient: self.recipient,
+            dry_run: self.dry_run,
         })
     }
 }

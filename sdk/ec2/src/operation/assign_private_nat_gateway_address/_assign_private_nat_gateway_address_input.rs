@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressInput {
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
@@ -17,7 +17,7 @@ pub struct AssignPrivateNatGatewayAddressInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl AssignPrivateNatGatewayAddressInput {
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
         self.nat_gateway_id.as_deref()
     }
@@ -53,7 +53,7 @@ pub struct AssignPrivateNatGatewayAddressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AssignPrivateNatGatewayAddressInputBuilder {
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -61,7 +61,7 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The NAT gateway ID.</p>
+    /// <p>The ID of the NAT gateway.</p>
     pub fn set_nat_gateway_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

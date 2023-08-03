@@ -7,7 +7,7 @@ pub struct DescribeDhcpOptionsInput {
     /// <p>Default: Describes all your DHCP options sets.</p>
     #[doc(hidden)]
     pub dhcp_options_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>
@@ -40,7 +40,7 @@ impl DescribeDhcpOptionsInput {
     pub fn dhcp_options_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dhcp_options_ids.as_deref()
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>
@@ -121,7 +121,7 @@ impl DescribeDhcpOptionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>
@@ -142,7 +142,7 @@ impl DescribeDhcpOptionsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>

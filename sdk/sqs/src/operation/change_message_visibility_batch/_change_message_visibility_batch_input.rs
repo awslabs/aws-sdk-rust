@@ -8,7 +8,7 @@ pub struct ChangeMessageVisibilityBatchInput {
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     #[doc(hidden)]
     pub entries: ::std::option::Option<
         ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
@@ -20,7 +20,7 @@ impl ChangeMessageVisibilityBatchInput {
     pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn entries(
         &self,
     ) -> ::std::option::Option<&[crate::types::ChangeMessageVisibilityBatchRequestEntry]> {
@@ -62,7 +62,7 @@ impl ChangeMessageVisibilityBatchInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn entries(
         mut self,
         input: crate::types::ChangeMessageVisibilityBatchRequestEntry,
@@ -72,7 +72,7 @@ impl ChangeMessageVisibilityBatchInputBuilder {
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<

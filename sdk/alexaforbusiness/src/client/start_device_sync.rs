@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`features(Vec<Feature>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::features) / [`set_features(Option<Vec<Feature>>)`](crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::set_features): <p>Request structure to start the device sync. Required.</p>
     /// - On success, responds with [`StartDeviceSyncOutput`](crate::operation::start_device_sync::StartDeviceSyncOutput)
     /// - On failure, responds with [`SdkError<StartDeviceSyncError>`](crate::operation::start_device_sync::StartDeviceSyncError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn start_device_sync(
         &self,
     ) -> crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder {

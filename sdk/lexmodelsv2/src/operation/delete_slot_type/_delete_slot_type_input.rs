@@ -17,7 +17,7 @@ pub struct DeleteSlotTypeInput {
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     #[doc(hidden)]
-    pub skip_resource_in_use_check: bool,
+    pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
 impl DeleteSlotTypeInput {
     /// <p>The identifier of the slot type to delete.</p>
@@ -37,7 +37,7 @@ impl DeleteSlotTypeInput {
         self.locale_id.as_deref()
     }
     /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
-    pub fn skip_resource_in_use_check(&self) -> bool {
+    pub fn skip_resource_in_use_check(&self) -> ::std::option::Option<bool> {
         self.skip_resource_in_use_check
     }
 }
@@ -123,7 +123,7 @@ impl DeleteSlotTypeInputBuilder {
             bot_id: self.bot_id,
             bot_version: self.bot_version,
             locale_id: self.locale_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+            skip_resource_in_use_check: self.skip_resource_in_use_check,
         })
     }
 }

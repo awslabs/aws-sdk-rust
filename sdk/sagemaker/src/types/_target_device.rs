@@ -31,10 +31,12 @@
 ///     TargetDevice::MlEia2 => { /* ... */ },
 ///     TargetDevice::MlG4Dn => { /* ... */ },
 ///     TargetDevice::MlInf1 => { /* ... */ },
+///     TargetDevice::MlInf2 => { /* ... */ },
 ///     TargetDevice::MlM4 => { /* ... */ },
 ///     TargetDevice::MlM5 => { /* ... */ },
 ///     TargetDevice::MlP2 => { /* ... */ },
 ///     TargetDevice::MlP3 => { /* ... */ },
+///     TargetDevice::MlTrn1 => { /* ... */ },
 ///     TargetDevice::Qcs603 => { /* ... */ },
 ///     TargetDevice::Qcs605 => { /* ... */ },
 ///     TargetDevice::Rasp3B => { /* ... */ },
@@ -116,6 +118,8 @@ pub enum TargetDevice {
     #[allow(missing_docs)] // documentation missing in model
     MlInf1,
     #[allow(missing_docs)] // documentation missing in model
+    MlInf2,
+    #[allow(missing_docs)] // documentation missing in model
     MlM4,
     #[allow(missing_docs)] // documentation missing in model
     MlM5,
@@ -123,6 +127,8 @@ pub enum TargetDevice {
     MlP2,
     #[allow(missing_docs)] // documentation missing in model
     MlP3,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn1,
     #[allow(missing_docs)] // documentation missing in model
     Qcs603,
     #[allow(missing_docs)] // documentation missing in model
@@ -166,10 +172,12 @@ impl ::std::convert::From<&str> for TargetDevice {
             "ml_eia2" => TargetDevice::MlEia2,
             "ml_g4dn" => TargetDevice::MlG4Dn,
             "ml_inf1" => TargetDevice::MlInf1,
+            "ml_inf2" => TargetDevice::MlInf2,
             "ml_m4" => TargetDevice::MlM4,
             "ml_m5" => TargetDevice::MlM5,
             "ml_p2" => TargetDevice::MlP2,
             "ml_p3" => TargetDevice::MlP3,
+            "ml_trn1" => TargetDevice::MlTrn1,
             "qcs603" => TargetDevice::Qcs603,
             "qcs605" => TargetDevice::Qcs605,
             "rasp3b" => TargetDevice::Rasp3B,
@@ -215,10 +223,12 @@ impl TargetDevice {
             TargetDevice::MlEia2 => "ml_eia2",
             TargetDevice::MlG4Dn => "ml_g4dn",
             TargetDevice::MlInf1 => "ml_inf1",
+            TargetDevice::MlInf2 => "ml_inf2",
             TargetDevice::MlM4 => "ml_m4",
             TargetDevice::MlM5 => "ml_m5",
             TargetDevice::MlP2 => "ml_p2",
             TargetDevice::MlP3 => "ml_p3",
+            TargetDevice::MlTrn1 => "ml_trn1",
             TargetDevice::Qcs603 => "qcs603",
             TargetDevice::Qcs605 => "qcs605",
             TargetDevice::Rasp3B => "rasp3b",
@@ -253,10 +263,12 @@ impl TargetDevice {
             "ml_eia2",
             "ml_g4dn",
             "ml_inf1",
+            "ml_inf2",
             "ml_m4",
             "ml_m5",
             "ml_p2",
             "ml_p3",
+            "ml_trn1",
             "qcs603",
             "qcs605",
             "rasp3b",

@@ -18,7 +18,7 @@ pub struct ListProfileObjectsInput {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     #[doc(hidden)]
     pub object_filter: ::std::option::Option<crate::types::ObjectFilter>,
 }
@@ -43,7 +43,7 @@ impl ListProfileObjectsInput {
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn object_filter(&self) -> ::std::option::Option<&crate::types::ObjectFilter> {
         self.object_filter.as_ref()
     }
@@ -126,12 +126,12 @@ impl ListProfileObjectsInputBuilder {
         self.profile_id = input;
         self
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn object_filter(mut self, input: crate::types::ObjectFilter) -> Self {
         self.object_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn set_object_filter(
         mut self,
         input: ::std::option::Option<crate::types::ObjectFilter>,

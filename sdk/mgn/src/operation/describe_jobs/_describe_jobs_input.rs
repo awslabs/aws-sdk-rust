@@ -12,6 +12,9 @@ pub struct DescribeJobsInput {
     /// <p>Request to describe job log items by next token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Request to describe job log items by Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsInput {
     /// <p>Request to describe Job log filters.</p>
@@ -25,6 +28,10 @@ impl DescribeJobsInput {
     /// <p>Request to describe job log items by next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Request to describe job log items by Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DescribeJobsInput {
@@ -43,6 +50,7 @@ pub struct DescribeJobsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeJobsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsInputBuilder {
     /// <p>Request to describe Job log filters.</p>
@@ -78,6 +86,16 @@ impl DescribeJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Request to describe job log items by Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Request to describe job log items by Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
     pub fn build(
         self,
@@ -89,6 +107,7 @@ impl DescribeJobsInputBuilder {
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
+            account_id: self.account_id,
         })
     }
 }

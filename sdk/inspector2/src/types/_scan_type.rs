@@ -12,6 +12,7 @@
 /// ```text
 /// # let scantype = unimplemented!();
 /// match scantype {
+///     ScanType::Code => { /* ... */ },
 ///     ScanType::Network => { /* ... */ },
 ///     ScanType::Package => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum ScanType {
     #[allow(missing_docs)] // documentation missing in model
+    Code,
+    #[allow(missing_docs)] // documentation missing in model
     Network,
     #[allow(missing_docs)] // documentation missing in model
     Package,
@@ -57,6 +60,7 @@ pub enum ScanType {
 impl ::std::convert::From<&str> for ScanType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE" => ScanType::Code,
             "NETWORK" => ScanType::Network,
             "PACKAGE" => ScanType::Package,
             other => ScanType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl ScanType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScanType::Code => "CODE",
             ScanType::Network => "NETWORK",
             ScanType::Package => "PACKAGE",
             ScanType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl ScanType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NETWORK", "PACKAGE"]
+        &["CODE", "NETWORK", "PACKAGE"]
     }
 }
 impl ::std::convert::AsRef<str> for ScanType {

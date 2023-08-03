@@ -134,6 +134,16 @@ pub fn de_object_version(
                 builder = builder.set_owner(var_10);
             }
             ,
+            s if s.matches("RestoreStatus") /* RestoreStatus com.amazonaws.s3#ObjectVersion$RestoreStatus */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_restore_status(var_11);
+            }
+            ,
             _ => {}
         }
     }

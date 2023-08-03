@@ -7,6 +7,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 
 pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
 
+pub use crate::types::_cloud_watch_logging_configuration::CloudWatchLoggingConfiguration;
+
 pub use crate::types::_managed_persistence_monitoring_configuration::ManagedPersistenceMonitoringConfiguration;
 
 pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfiguration;
@@ -64,6 +66,8 @@ mod _architecture;
 mod _auto_start_config;
 
 mod _auto_stop_config;
+
+mod _cloud_watch_logging_configuration;
 
 mod _configuration;
 

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberSummary {
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
@@ -30,7 +30,7 @@ pub struct MemberSummary {
     pub membership_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberSummary {
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -86,12 +86,12 @@ pub struct MemberSummaryBuilder {
     pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberSummaryBuilder {
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self

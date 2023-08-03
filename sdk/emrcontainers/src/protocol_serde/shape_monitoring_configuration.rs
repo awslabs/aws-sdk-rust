@@ -23,6 +23,14 @@ pub fn ser_monitoring_configuration(
         )?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.container_log_rotation_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object
+            .key("containerLogRotationConfiguration")
+            .start_object();
+        crate::protocol_serde::shape_container_log_rotation_configuration::ser_container_log_rotation_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -71,6 +79,11 @@ where
                             "s3MonitoringConfiguration" => {
                                 builder = builder.set_s3_monitoring_configuration(
                                     crate::protocol_serde::shape_s3_monitoring_configuration::de_s3_monitoring_configuration(tokens)?
+                                );
+                            }
+                            "containerLogRotationConfiguration" => {
+                                builder = builder.set_container_log_rotation_configuration(
+                                    crate::protocol_serde::shape_container_log_rotation_configuration::de_container_log_rotation_configuration(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

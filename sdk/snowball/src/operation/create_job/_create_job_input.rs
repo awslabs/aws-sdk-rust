@@ -64,12 +64,18 @@ pub struct CreateJobInput {
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     #[doc(hidden)]
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     #[doc(hidden)]
     pub remote_management: ::std::option::Option<crate::types::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    #[doc(hidden)]
+    pub impact_level: ::std::option::Option<crate::types::ImpactLevel>,
+    /// <p>Information identifying the person picking up the device.</p>
+    #[doc(hidden)]
+    pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl CreateJobInput {
     /// <p>Defines the type of job that you're creating. </p>
@@ -153,13 +159,21 @@ impl CreateJobInput {
     ) -> ::std::option::Option<&crate::types::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn remote_management(&self) -> ::std::option::Option<&crate::types::RemoteManagement> {
         self.remote_management.as_ref()
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub fn long_term_pricing_id(&self) -> ::std::option::Option<&str> {
         self.long_term_pricing_id.as_deref()
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn impact_level(&self) -> ::std::option::Option<&crate::types::ImpactLevel> {
+        self.impact_level.as_ref()
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(&self) -> ::std::option::Option<&crate::types::PickupDetails> {
+        self.pickup_details.as_ref()
     }
 }
 impl CreateJobInput {
@@ -193,6 +207,8 @@ pub struct CreateJobInputBuilder {
     pub(crate) device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
     pub(crate) remote_management: ::std::option::Option<crate::types::RemoteManagement>,
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
+    pub(crate) impact_level: ::std::option::Option<crate::types::ImpactLevel>,
+    pub(crate) pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl CreateJobInputBuilder {
     /// <p>Defines the type of job that you're creating. </p>
@@ -408,12 +424,12 @@ impl CreateJobInputBuilder {
         self.device_configuration = input;
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn remote_management(mut self, input: crate::types::RemoteManagement) -> Self {
         self.remote_management = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device. </p>
     pub fn set_remote_management(
         mut self,
         input: ::std::option::Option<crate::types::RemoteManagement>,
@@ -435,6 +451,32 @@ impl CreateJobInputBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.long_term_pricing_id = input;
+        self
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn impact_level(mut self, input: crate::types::ImpactLevel) -> Self {
+        self.impact_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
+    pub fn set_impact_level(
+        mut self,
+        input: ::std::option::Option<crate::types::ImpactLevel>,
+    ) -> Self {
+        self.impact_level = input;
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
+        self.pickup_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn set_pickup_details(
+        mut self,
+        input: ::std::option::Option<crate::types::PickupDetails>,
+    ) -> Self {
+        self.pickup_details = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
@@ -462,6 +504,8 @@ impl CreateJobInputBuilder {
             device_configuration: self.device_configuration,
             remote_management: self.remote_management,
             long_term_pricing_id: self.long_term_pricing_id,
+            impact_level: self.impact_level,
+            pickup_details: self.pickup_details,
         })
     }
 }

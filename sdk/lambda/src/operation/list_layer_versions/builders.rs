@@ -111,11 +111,13 @@ impl ListLayerVersionsFluentBuilder {
         )
     }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.inner = self.inner.compatible_runtime(input);
         self
     }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_compatible_runtime(
         mut self,
         input: ::std::option::Option<crate::types::Runtime>,

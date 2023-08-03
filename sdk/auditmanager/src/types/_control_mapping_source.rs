@@ -19,17 +19,19 @@ pub struct ControlMappingSource {
     /// <p> Specifies one of the five data source types for evidence collection. </p>
     #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
-    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p>A keyword that relates to the control data source.</p>
+    /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
+    /// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p>
     /// <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config rules supported by Audit Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security Hub controls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub source_keyword: ::std::option::Option<crate::types::SourceKeyword>,
-    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    /// <p>Specifies how often evidence is collected from the control mapping source. </p>
     #[doc(hidden)]
     pub source_frequency: ::std::option::Option<crate::types::SourceFrequency>,
     /// <p> The instructions for troubleshooting the control. </p>
@@ -57,18 +59,20 @@ impl ControlMappingSource {
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p>A keyword that relates to the control data source.</p>
+    /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
+    /// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p>
     /// <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config rules supported by Audit Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security Hub controls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
     /// </ul>
     pub fn source_keyword(&self) -> ::std::option::Option<&crate::types::SourceKeyword> {
         self.source_keyword.as_ref()
     }
-    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    /// <p>Specifies how often evidence is collected from the control mapping source. </p>
     pub fn source_frequency(&self) -> ::std::option::Option<&crate::types::SourceFrequency> {
         self.source_frequency.as_ref()
     }
@@ -162,11 +166,13 @@ impl ControlMappingSourceBuilder {
         self.source_type = input;
         self
     }
-    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p>A keyword that relates to the control data source.</p>
+    /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
+    /// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p>
     /// <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config rules supported by Audit Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security Hub controls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
     /// </ul>
@@ -174,11 +180,13 @@ impl ControlMappingSourceBuilder {
         self.source_keyword = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p>A keyword that relates to the control data source.</p>
+    /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
+    /// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p>
     /// <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config rules supported by Audit Manager</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security Hub controls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
     /// </ul>
@@ -189,12 +197,12 @@ impl ControlMappingSourceBuilder {
         self.source_keyword = input;
         self
     }
-    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    /// <p>Specifies how often evidence is collected from the control mapping source. </p>
     pub fn source_frequency(mut self, input: crate::types::SourceFrequency) -> Self {
         self.source_frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The frequency of evidence collection for the control mapping source. </p>
+    /// <p>Specifies how often evidence is collected from the control mapping source. </p>
     pub fn set_source_frequency(
         mut self,
         input: ::std::option::Option<crate::types::SourceFrequency>,

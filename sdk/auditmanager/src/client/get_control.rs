@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`control_id(impl ::std::convert::Into<String>)`](crate::operation::get_control::builders::GetControlFluentBuilder::control_id) / [`set_control_id(Option<String>)`](crate::operation::get_control::builders::GetControlFluentBuilder::set_control_id): <p> The identifier for the control. </p>
     /// - On success, responds with [`GetControlOutput`](crate::operation::get_control::GetControlOutput) with field(s):
-    ///   - [`control(Option<Control>)`](crate::operation::get_control::GetControlOutput::control): <p> The name of the control that the <code>GetControl</code> API returned. </p>
+    ///   - [`control(Option<Control>)`](crate::operation::get_control::GetControlOutput::control): <p> The details of the control that the <code>GetControl</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetControlError>`](crate::operation::get_control::GetControlError)
     pub fn get_control(&self) -> crate::operation::get_control::builders::GetControlFluentBuilder {
         crate::operation::get_control::builders::GetControlFluentBuilder::new(self.handle.clone())

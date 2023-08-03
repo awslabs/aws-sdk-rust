@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`network_profile_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileFluentBuilder::set_network_profile_arn): <p>The ARN of the network profile to associate with a device.</p>
     /// - On success, responds with [`AssociateDeviceWithNetworkProfileOutput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<AssociateDeviceWithNetworkProfileError>`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn associate_device_with_network_profile(&self) -> crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileFluentBuilder{
         crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileFluentBuilder::new(self.handle.clone())
     }

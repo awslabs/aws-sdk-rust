@@ -24,6 +24,7 @@
 ///     RelationshipType::Frequency => { /* ... */ },
 ///     RelationshipType::Negative => { /* ... */ },
 ///     RelationshipType::Overlap => { /* ... */ },
+///     RelationshipType::Quality => { /* ... */ },
 ///     RelationshipType::Rate => { /* ... */ },
 ///     RelationshipType::RouteOrMode => { /* ... */ },
 ///     RelationshipType::Strength => { /* ... */ },
@@ -31,6 +32,7 @@
 ///     RelationshipType::TestUnit => { /* ... */ },
 ///     RelationshipType::TestUnits => { /* ... */ },
 ///     RelationshipType::TestValue => { /* ... */ },
+///     RelationshipType::Usage => { /* ... */ },
 ///     RelationshipType::WithDosage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -90,6 +92,8 @@ pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     Overlap,
     #[allow(missing_docs)] // documentation missing in model
+    Quality,
+    #[allow(missing_docs)] // documentation missing in model
     Rate,
     #[allow(missing_docs)] // documentation missing in model
     RouteOrMode,
@@ -103,6 +107,8 @@ pub enum RelationshipType {
     TestUnits,
     #[allow(missing_docs)] // documentation missing in model
     TestValue,
+    #[allow(missing_docs)] // documentation missing in model
+    Usage,
     #[allow(missing_docs)] // documentation missing in model
     WithDosage,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -123,6 +129,7 @@ impl ::std::convert::From<&str> for RelationshipType {
             "FREQUENCY" => RelationshipType::Frequency,
             "NEGATIVE" => RelationshipType::Negative,
             "OVERLAP" => RelationshipType::Overlap,
+            "QUALITY" => RelationshipType::Quality,
             "RATE" => RelationshipType::Rate,
             "ROUTE_OR_MODE" => RelationshipType::RouteOrMode,
             "STRENGTH" => RelationshipType::Strength,
@@ -130,6 +137,7 @@ impl ::std::convert::From<&str> for RelationshipType {
             "TEST_UNIT" => RelationshipType::TestUnit,
             "TEST_UNITS" => RelationshipType::TestUnits,
             "TEST_VALUE" => RelationshipType::TestValue,
+            "USAGE" => RelationshipType::Usage,
             "WITH_DOSAGE" => RelationshipType::WithDosage,
             other => {
                 RelationshipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -160,6 +168,7 @@ impl RelationshipType {
             RelationshipType::Frequency => "FREQUENCY",
             RelationshipType::Negative => "NEGATIVE",
             RelationshipType::Overlap => "OVERLAP",
+            RelationshipType::Quality => "QUALITY",
             RelationshipType::Rate => "RATE",
             RelationshipType::RouteOrMode => "ROUTE_OR_MODE",
             RelationshipType::Strength => "STRENGTH",
@@ -167,6 +176,7 @@ impl RelationshipType {
             RelationshipType::TestUnit => "TEST_UNIT",
             RelationshipType::TestUnits => "TEST_UNITS",
             RelationshipType::TestValue => "TEST_VALUE",
+            RelationshipType::Usage => "USAGE",
             RelationshipType::WithDosage => "WITH_DOSAGE",
             RelationshipType::Unknown(value) => value.as_str(),
         }
@@ -186,6 +196,7 @@ impl RelationshipType {
             "FREQUENCY",
             "NEGATIVE",
             "OVERLAP",
+            "QUALITY",
             "RATE",
             "ROUTE_OR_MODE",
             "STRENGTH",
@@ -193,6 +204,7 @@ impl RelationshipType {
             "TEST_UNIT",
             "TEST_UNITS",
             "TEST_VALUE",
+            "USAGE",
             "WITH_DOSAGE",
         ]
     }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_endpoints::_describe_endpoints_input::Describ
 
 /// Fluent builder constructing a request to `DescribeEndpoints`.
 ///
-/// <p>Returns the regional endpoint information. This action must be included in your VPC endpoint policies, or access to the DescribeEndpoints API will be denied. For more information on policy permissions, please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork traffic privacy</a>.</p>
+/// <p>Returns the regional endpoint information. For more information on policy permissions, please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork traffic privacy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

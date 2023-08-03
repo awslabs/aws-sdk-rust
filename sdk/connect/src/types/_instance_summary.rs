@@ -31,6 +31,9 @@ pub struct InstanceSummary {
     /// <p>Whether outbound calls are enabled.</p>
     #[doc(hidden)]
     pub outbound_calls_enabled: ::std::option::Option<bool>,
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    #[doc(hidden)]
+    pub instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummary {
     /// <p>The identifier of the instance.</p>
@@ -69,6 +72,10 @@ impl InstanceSummary {
     pub fn outbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.outbound_calls_enabled
     }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn instance_access_url(&self) -> ::std::option::Option<&str> {
+        self.instance_access_url.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InstanceSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -82,6 +89,7 @@ impl ::std::fmt::Debug for InstanceSummary {
         formatter.field("instance_status", &self.instance_status);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("instance_access_url", &self.instance_access_url);
         formatter.finish()
     }
 }
@@ -105,6 +113,7 @@ pub struct InstanceSummaryBuilder {
     pub(crate) instance_status: ::std::option::Option<crate::types::InstanceStatus>,
     pub(crate) inbound_calls_enabled: ::std::option::Option<bool>,
     pub(crate) outbound_calls_enabled: ::std::option::Option<bool>,
+    pub(crate) instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummaryBuilder {
     /// <p>The identifier of the instance.</p>
@@ -212,6 +221,22 @@ impl InstanceSummaryBuilder {
         self.outbound_calls_enabled = input;
         self
     }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn instance_access_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_access_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    pub fn set_instance_access_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.instance_access_url = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {
         crate::types::InstanceSummary {
@@ -224,6 +249,7 @@ impl InstanceSummaryBuilder {
             instance_status: self.instance_status,
             inbound_calls_enabled: self.inbound_calls_enabled,
             outbound_calls_enabled: self.outbound_calls_enabled,
+            instance_access_url: self.instance_access_url,
         }
     }
 }
@@ -239,6 +265,7 @@ impl ::std::fmt::Debug for InstanceSummaryBuilder {
         formatter.field("instance_status", &self.instance_status);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("instance_access_url", &self.instance_access_url);
         formatter.finish()
     }
 }

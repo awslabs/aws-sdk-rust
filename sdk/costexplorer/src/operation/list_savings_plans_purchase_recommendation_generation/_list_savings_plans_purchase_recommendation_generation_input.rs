@@ -11,7 +11,7 @@ pub struct ListSavingsPlansPurchaseRecommendationGenerationInput {
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
         self.recommendation_ids.as_deref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -123,7 +123,6 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
                 recommendation_ids: self.recommendation_ids
                 ,
                 page_size: self.page_size
-                    .unwrap_or_default()
                 ,
                 next_page_token: self.next_page_token
                 ,

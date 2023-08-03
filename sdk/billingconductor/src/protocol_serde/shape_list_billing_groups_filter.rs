@@ -24,5 +24,8 @@ pub fn ser_list_billing_groups_filter(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.auto_associate {
+        object.key("AutoAssociate").boolean(*var_8);
+    }
     Ok(())
 }

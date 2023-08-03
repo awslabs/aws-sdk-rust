@@ -32,6 +32,12 @@ pub struct Attribute {
     /// <p>The default value of the attribute.</p>
     #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    #[doc(hidden)]
+    pub deprecation_message: ::std::option::Option<::std::string::String>,
+    /// <p>A comment in addition to the description.</p>
+    #[doc(hidden)]
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
@@ -71,6 +77,14 @@ impl Attribute {
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+        self.deprecation_message.as_deref()
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(&self) -> ::std::option::Option<&str> {
+        self.comment.as_deref()
+    }
 }
 impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::types::Attribute).
@@ -94,6 +108,8 @@ pub struct AttributeBuilder {
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) assigned_value: ::std::option::Option<::std::string::String>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl AttributeBuilder {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
@@ -221,6 +237,32 @@ impl AttributeBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn set_deprecation_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = input;
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comment = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {
@@ -233,6 +275,8 @@ impl AttributeBuilder {
             max: self.max,
             assigned_value: self.assigned_value,
             default_value: self.default_value,
+            deprecation_message: self.deprecation_message,
+            comment: self.comment,
         }
     }
 }

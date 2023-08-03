@@ -228,6 +228,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_toxicity_detection_settings;
+
 pub(crate) mod shape_transcription_job;
 
 pub(crate) mod shape_transcription_job_summaries;
@@ -260,6 +262,8 @@ pub(crate) mod shape_sentiment_filter;
 
 pub(crate) mod shape_subtitles_output;
 
+pub(crate) mod shape_toxicity_detection;
+
 pub(crate) mod shape_transcript;
 
 pub(crate) mod shape_transcript_filter;
@@ -281,6 +285,8 @@ pub(crate) mod shape_relative_time_range;
 pub(crate) mod shape_subtitle_file_uris;
 
 pub(crate) mod shape_subtitle_formats;
+
+pub(crate) mod shape_toxicity_categories;
 
 pub(crate) mod shape_sentiment_value_list;
 

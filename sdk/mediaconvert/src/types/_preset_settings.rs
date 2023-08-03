@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PresetSettings {
-    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
     #[doc(hidden)]
     pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
@@ -19,7 +19,7 @@ pub struct PresetSettings {
     pub video_description: ::std::option::Option<crate::types::VideoDescription>,
 }
 impl PresetSettings {
-    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
     pub fn audio_descriptions(&self) -> ::std::option::Option<&[crate::types::AudioDescription]> {
         self.audio_descriptions.as_deref()
     }
@@ -63,14 +63,14 @@ impl PresetSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
     ///
-    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
     pub fn audio_descriptions(mut self, input: crate::types::AudioDescription) -> Self {
         let mut v = self.audio_descriptions.unwrap_or_default();
         v.push(input);
         self.audio_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
     pub fn set_audio_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,

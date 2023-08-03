@@ -20,6 +20,12 @@ pub fn ser_monitoring_configuration(
         crate::protocol_serde::shape_managed_persistence_monitoring_configuration::ser_managed_persistence_monitoring_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.cloud_watch_logging_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("cloudWatchLoggingConfiguration").start_object();
+        crate::protocol_serde::shape_cloud_watch_logging_configuration::ser_cloud_watch_logging_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -55,6 +61,11 @@ where
                             "managedPersistenceMonitoringConfiguration" => {
                                 builder = builder.set_managed_persistence_monitoring_configuration(
                                     crate::protocol_serde::shape_managed_persistence_monitoring_configuration::de_managed_persistence_monitoring_configuration(tokens)?
+                                );
+                            }
+                            "cloudWatchLoggingConfiguration" => {
+                                builder = builder.set_cloud_watch_logging_configuration(
+                                    crate::protocol_serde::shape_cloud_watch_logging_configuration::de_cloud_watch_logging_configuration(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

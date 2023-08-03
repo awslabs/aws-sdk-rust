@@ -9,6 +9,9 @@ pub struct GetBucketAccelerateConfigurationInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
 }
 impl GetBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
@@ -18,6 +21,10 @@ impl GetBucketAccelerateConfigurationInput {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn request_payer(&self) -> ::std::option::Option<&crate::types::RequestPayer> {
+        self.request_payer.as_ref()
     }
 }
 impl GetBucketAccelerateConfigurationInput {
@@ -35,6 +42,7 @@ impl GetBucketAccelerateConfigurationInput {
 pub struct GetBucketAccelerateConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
 }
 impl GetBucketAccelerateConfigurationInputBuilder {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
@@ -63,6 +71,19 @@ impl GetBucketAccelerateConfigurationInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
+        self.request_payer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn set_request_payer(
+        mut self,
+        input: ::std::option::Option<crate::types::RequestPayer>,
+    ) -> Self {
+        self.request_payer = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationInput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -70,6 +91,8 @@ impl GetBucketAccelerateConfigurationInputBuilder {
                 bucket: self.bucket
                 ,
                 expected_bucket_owner: self.expected_bucket_owner
+                ,
+                request_payer: self.request_payer
                 ,
             }
         )

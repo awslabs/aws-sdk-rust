@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkOutput {
-    /// <p>The ClassicLink status of one or more VPCs.</p>
+    /// <p>The ClassicLink status of the VPCs.</p>
     #[doc(hidden)]
     pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,
     _request_id: Option<String>,
 }
 impl DescribeVpcClassicLinkOutput {
-    /// <p>The ClassicLink status of one or more VPCs.</p>
+    /// <p>The ClassicLink status of the VPCs.</p>
     pub fn vpcs(&self) -> ::std::option::Option<&[crate::types::VpcClassicLink]> {
         self.vpcs.as_deref()
     }
@@ -42,14 +42,14 @@ impl DescribeVpcClassicLinkOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
     ///
-    /// <p>The ClassicLink status of one or more VPCs.</p>
+    /// <p>The ClassicLink status of the VPCs.</p>
     pub fn vpcs(mut self, input: crate::types::VpcClassicLink) -> Self {
         let mut v = self.vpcs.unwrap_or_default();
         v.push(input);
         self.vpcs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ClassicLink status of one or more VPCs.</p>
+    /// <p>The ClassicLink status of the VPCs.</p>
     pub fn set_vpcs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,

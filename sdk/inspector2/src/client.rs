@@ -216,6 +216,8 @@ mod associate_member;
 
 mod batch_get_account_status;
 
+mod batch_get_code_snippet;
+
 mod batch_get_free_trial_info;
 
 mod batch_get_member_ec2_deep_inspection_status;
@@ -224,9 +226,13 @@ mod batch_update_member_ec2_deep_inspection_status;
 
 mod cancel_findings_report;
 
+mod cancel_sbom_export;
+
 mod create_filter;
 
 mod create_findings_report;
+
+mod create_sbom_export;
 
 /// Operation customization and supporting types.
 ///
@@ -276,9 +282,13 @@ mod get_delegated_admin_account;
 
 mod get_ec2_deep_inspection_configuration;
 
+mod get_encryption_key;
+
 mod get_findings_report_status;
 
 mod get_member;
+
+mod get_sbom_export;
 
 mod list_account_permissions;
 
@@ -300,6 +310,8 @@ mod list_tags_for_resource;
 
 mod list_usage_totals;
 
+mod reset_encryption_key;
+
 mod search_vulnerabilities;
 
 mod tag_resource;
@@ -309,6 +321,8 @@ mod untag_resource;
 mod update_configuration;
 
 mod update_ec2_deep_inspection_configuration;
+
+mod update_encryption_key;
 
 mod update_filter;
 

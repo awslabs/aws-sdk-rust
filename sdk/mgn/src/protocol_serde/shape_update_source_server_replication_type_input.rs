@@ -3,11 +3,14 @@ pub fn ser_update_source_server_replication_type_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.replication_type {
-        object.key("replicationType").string(var_1.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_server_id {
-        object.key("sourceServerID").string(var_2.as_str());
+    if let Some(var_2) = &input.replication_type {
+        object.key("replicationType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.source_server_id {
+        object.key("sourceServerID").string(var_3.as_str());
     }
     Ok(())
 }

@@ -18,6 +18,9 @@ pub fn ser_notification(
     if input.notify_all {
         object.key("NotifyAll").boolean(input.notify_all);
     }
+    if let Some(var_5) = &input.device_pickup_sns_topic_arn {
+        object.key("DevicePickupSnsTopicARN").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -66,6 +69,15 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "DevicePickupSnsTopicARN" => {
+                                builder = builder.set_device_pickup_sns_topic_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

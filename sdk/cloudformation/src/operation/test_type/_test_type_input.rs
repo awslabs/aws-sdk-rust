@@ -17,7 +17,7 @@ pub struct TestTypeInput {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
@@ -49,7 +49,7 @@ impl TestTypeInput {
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -123,14 +123,14 @@ impl TestTypeInputBuilder {
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self

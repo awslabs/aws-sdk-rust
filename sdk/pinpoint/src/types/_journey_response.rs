@@ -84,6 +84,16 @@ pub struct JourneyResponse {
     /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     #[doc(hidden)]
     pub closed_days: ::std::option::Option<crate::types::ClosedDays>,
+    /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+    /// <ul>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
+    /// </note></li>
+    /// </ul>
+    #[doc(hidden)]
+    pub timezone_estimation_methods:
+        ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
 }
 impl JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
@@ -193,6 +203,18 @@ impl JourneyResponse {
     pub fn closed_days(&self) -> ::std::option::Option<&crate::types::ClosedDays> {
         self.closed_days.as_ref()
     }
+    /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+    /// <ul>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
+    /// </note></li>
+    /// </ul>
+    pub fn timezone_estimation_methods(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::TimezoneEstimationMethodsElement]> {
+        self.timezone_estimation_methods.as_deref()
+    }
 }
 impl JourneyResponse {
     /// Creates a new builder-style object to manufacture [`JourneyResponse`](crate::types::JourneyResponse).
@@ -233,6 +255,8 @@ pub struct JourneyResponseBuilder {
     pub(crate) sending_schedule: ::std::option::Option<bool>,
     pub(crate) open_hours: ::std::option::Option<crate::types::OpenHours>,
     pub(crate) closed_days: ::std::option::Option<crate::types::ClosedDays>,
+    pub(crate) timezone_estimation_methods:
+        ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
 }
 impl JourneyResponseBuilder {
     /// Adds a key-value pair to `activities`.
@@ -543,6 +567,42 @@ impl JourneyResponseBuilder {
         self.closed_days = input;
         self
     }
+    /// Appends an item to `timezone_estimation_methods`.
+    ///
+    /// To override the contents of this collection use [`set_timezone_estimation_methods`](Self::set_timezone_estimation_methods).
+    ///
+    /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+    /// <ul>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
+    /// </note></li>
+    /// </ul>
+    pub fn timezone_estimation_methods(
+        mut self,
+        input: crate::types::TimezoneEstimationMethodsElement,
+    ) -> Self {
+        let mut v = self.timezone_estimation_methods.unwrap_or_default();
+        v.push(input);
+        self.timezone_estimation_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+    /// <ul>
+    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
+    /// </note></li>
+    /// </ul>
+    pub fn set_timezone_estimation_methods(
+        mut self,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>,
+        >,
+    ) -> Self {
+        self.timezone_estimation_methods = input;
+        self
+    }
     /// Consumes the builder and constructs a [`JourneyResponse`](crate::types::JourneyResponse).
     pub fn build(self) -> crate::types::JourneyResponse {
         crate::types::JourneyResponse {
@@ -567,6 +627,7 @@ impl JourneyResponseBuilder {
             sending_schedule: self.sending_schedule,
             open_hours: self.open_hours,
             closed_days: self.closed_days,
+            timezone_estimation_methods: self.timezone_estimation_methods,
         }
     }
 }

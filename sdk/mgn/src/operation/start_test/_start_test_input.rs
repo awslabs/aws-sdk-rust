@@ -11,6 +11,9 @@ pub struct StartTestInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Start Test for Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
@@ -25,12 +28,17 @@ impl StartTestInput {
     > {
         self.tags.as_ref()
     }
+    /// <p>Start Test for Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for StartTestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestInput");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -49,6 +57,7 @@ pub struct StartTestInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInputBuilder {
     /// Appends an item to `source_server_i_ds`.
@@ -98,6 +107,16 @@ impl StartTestInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Start Test for Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Start Test for Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
     pub fn build(
         self,
@@ -108,6 +127,7 @@ impl StartTestInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
             source_server_i_ds: self.source_server_i_ds,
             tags: self.tags,
+            account_id: self.account_id,
         })
     }
 }
@@ -116,6 +136,7 @@ impl ::std::fmt::Debug for StartTestInputBuilder {
         let mut formatter = f.debug_struct("StartTestInputBuilder");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

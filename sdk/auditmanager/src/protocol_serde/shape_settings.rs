@@ -65,6 +65,11 @@ where
                                     crate::protocol_serde::shape_deregistration_policy::de_deregistration_policy(tokens)?
                                 );
                             }
+                            "defaultExportDestination" => {
+                                builder = builder.set_default_export_destination(
+                                    crate::protocol_serde::shape_default_export_destination::de_default_export_destination(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

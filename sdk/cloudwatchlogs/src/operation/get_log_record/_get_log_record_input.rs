@@ -9,7 +9,7 @@ pub struct GetLogRecordInput {
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     #[doc(hidden)]
-    pub unmask: bool,
+    pub unmask: ::std::option::Option<bool>,
 }
 impl GetLogRecordInput {
     /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
@@ -18,7 +18,7 @@ impl GetLogRecordInput {
     }
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
-    pub fn unmask(&self) -> bool {
+    pub fn unmask(&self) -> ::std::option::Option<bool> {
         self.unmask
     }
 }
@@ -76,7 +76,7 @@ impl GetLogRecordInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::get_log_record::GetLogRecordInput {
             log_record_pointer: self.log_record_pointer,
-            unmask: self.unmask.unwrap_or_default(),
+            unmask: self.unmask,
         })
     }
 }

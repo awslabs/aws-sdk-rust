@@ -10,7 +10,7 @@ pub struct SchemaSummary {
     /// <p>The type of schema object. The only valid schema type is currently `TABLE`.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SchemaType>,
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the schema object was created.</p>
@@ -41,7 +41,7 @@ impl SchemaSummary {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SchemaType> {
         self.r#type.as_ref()
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
         self.creator_account_id.as_deref()
     }
@@ -115,7 +115,7 @@ impl SchemaSummaryBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -123,7 +123,7 @@ impl SchemaSummaryBuilder {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique account ID for the AWS account that owns the schema.</p>
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn set_creator_account_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

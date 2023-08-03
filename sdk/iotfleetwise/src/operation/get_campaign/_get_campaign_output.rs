@@ -57,6 +57,12 @@ pub struct GetCampaignOutput {
     /// <p>The last time the campaign was modified.</p>
     #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    #[doc(hidden)]
+    pub data_destination_configs:
+        ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutput {
@@ -132,6 +138,14 @@ impl GetCampaignOutput {
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    pub fn data_destination_configs(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DataDestinationConfig]> {
+        self.data_destination_configs.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetCampaignOutput {
     fn request_id(&self) -> Option<&str> {
@@ -170,6 +184,8 @@ pub struct GetCampaignOutputBuilder {
     pub(crate) data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data_destination_configs:
+        ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutputBuilder {
@@ -410,6 +426,29 @@ impl GetCampaignOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// Appends an item to `data_destination_configs`.
+    ///
+    /// To override the contents of this collection use [`set_data_destination_configs`](Self::set_data_destination_configs).
+    ///
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    pub fn data_destination_configs(mut self, input: crate::types::DataDestinationConfig) -> Self {
+        let mut v = self.data_destination_configs.unwrap_or_default();
+        v.push(input);
+        self.data_destination_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    pub fn set_data_destination_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    ) -> Self {
+        self.data_destination_configs = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -440,6 +479,7 @@ impl GetCampaignOutputBuilder {
             data_extra_dimensions: self.data_extra_dimensions,
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
+            data_destination_configs: self.data_destination_configs,
             _request_id: self._request_id,
         }
     }

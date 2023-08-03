@@ -366,6 +366,8 @@ mod get_instance_profile;
 
 mod get_login_profile;
 
+mod get_mfa_device;
+
 mod get_open_id_connect_provider;
 
 mod get_organizations_access_report;

@@ -76,6 +76,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "DiscoveryStatus" => {
+                                builder = builder.set_discovery_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::ApplicationDiscoveryStatus::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "Components" => {
                                 builder = builder.set_components(
                                     crate::protocol_serde::shape_component_id_list::de_component_id_list(tokens)?

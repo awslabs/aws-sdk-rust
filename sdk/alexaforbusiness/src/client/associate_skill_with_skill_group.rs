@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`skill_id(impl ::std::convert::Into<String>)`](crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupFluentBuilder::set_skill_id): <p>The unique identifier of the skill.</p>
     /// - On success, responds with [`AssociateSkillWithSkillGroupOutput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupOutput)
     /// - On failure, responds with [`SdkError<AssociateSkillWithSkillGroupError>`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn associate_skill_with_skill_group(&self) -> crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupFluentBuilder{
         crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupFluentBuilder::new(self.handle.clone())
     }

@@ -33,6 +33,9 @@ pub fn ser_address(
     if let Some(var_10) = &input.street3 {
         object.key("street3").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.email_address {
+        object.key("emailAddress").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -140,6 +143,15 @@ where
                             }
                             "street3" => {
                                 builder = builder.set_street3(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "emailAddress" => {
+                                builder = builder.set_email_address(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

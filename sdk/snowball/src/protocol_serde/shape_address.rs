@@ -45,6 +45,9 @@ pub fn ser_address(
     if input.is_restricted {
         object.key("IsRestricted").boolean(input.is_restricted);
     }
+    if let Some(var_14) = &input.r#type {
+        object.key("Type").string(var_14.as_str());
+    }
     Ok(())
 }
 
@@ -191,6 +194,18 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "Type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::AddressType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

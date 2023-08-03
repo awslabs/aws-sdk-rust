@@ -8,9 +8,6 @@ pub use crate::operation::delete_message_batch::_delete_message_batch_input::Del
 /// <p>Deletes up to ten messages from the specified queue. This is a batch version of <code> <code>DeleteMessage</code>.</code> The result of the action on each message is reported individually in the response.</p> <important>
 /// <p>Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
 /// </important>
-/// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:</p>
-/// <p> <code>&amp;AttributeName.1=first</code> </p>
-/// <p> <code>&amp;AttributeName.2=second</code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMessageBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,12 +117,12 @@ impl DeleteMessageBatchFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     pub fn entries(mut self, input: crate::types::DeleteMessageBatchRequestEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// <p>A list of receipt handles for the messages to be deleted.</p>
+    /// <p>Lists the receipt handles for the messages to be deleted.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,

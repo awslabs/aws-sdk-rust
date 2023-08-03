@@ -112,7 +112,7 @@ impl DescribeInternetGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -131,7 +131,7 @@ impl DescribeInternetGatewaysFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -167,7 +167,7 @@ impl DescribeInternetGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_internet_gateway_ids`](Self::set_internet_gateway_ids).
     ///
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     pub fn internet_gateway_ids(
         mut self,
@@ -176,7 +176,7 @@ impl DescribeInternetGatewaysFluentBuilder {
         self.inner = self.inner.internet_gateway_ids(input.into());
         self
     }
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     pub fn set_internet_gateway_ids(
         mut self,

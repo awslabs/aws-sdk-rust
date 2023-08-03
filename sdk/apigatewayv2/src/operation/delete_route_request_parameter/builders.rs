@@ -5,7 +5,7 @@ pub use crate::operation::delete_route_request_parameter::_delete_route_request_
 
 /// Fluent builder constructing a request to `DeleteRouteRequestParameter`.
 ///
-/// <p>Deletes a route request parameter.</p>
+/// <p>Deletes a route request parameter. Supported only for WebSocket APIs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

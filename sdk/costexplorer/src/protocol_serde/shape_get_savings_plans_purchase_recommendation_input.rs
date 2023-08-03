@@ -18,20 +18,20 @@ pub fn ser_get_savings_plans_purchase_recommendation_input(
     if let Some(var_5) = &input.next_page_token {
         object.key("NextPageToken").string(var_5.as_str());
     }
-    if input.page_size != 0 {
+    if let Some(var_6) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.page_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.lookback_period_in_days {
-        object.key("LookbackPeriodInDays").string(var_6.as_str());
+    if let Some(var_7) = &input.lookback_period_in_days {
+        object.key("LookbackPeriodInDays").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.filter {
+    if let Some(var_8) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_expression::ser_expression(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("Filter").start_object();
+        crate::protocol_serde::shape_expression::ser_expression(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

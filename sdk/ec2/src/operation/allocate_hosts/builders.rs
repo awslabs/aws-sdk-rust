@@ -168,12 +168,12 @@ impl AllocateHostsFluentBuilder {
         self.inner = self.inner.set_instance_family(input);
         self
     }
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.inner = self.inner.quantity(input);
         self
     }
-    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters.</p>
+    /// <p>The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_quantity(input);
         self
@@ -210,12 +210,14 @@ impl AllocateHostsFluentBuilder {
         self.inner = self.inner.set_host_recovery(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+    /// <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_arn(input);
         self
@@ -231,6 +233,31 @@ impl AllocateHostsFluentBuilder {
         input: ::std::option::Option<crate::types::HostMaintenance>,
     ) -> Self {
         self.inner = self.inner.set_host_maintenance(input);
+        self
+    }
+    /// Appends an item to `AssetIds`.
+    ///
+    /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
+    ///
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    pub fn asset_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.</p>
+    /// <ul>
+    /// <li> <p>If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset.</p> </li>
+    /// <li> <p>If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the number of asset IDs specified.</p> </li>
+    /// </ul>
+    pub fn set_asset_ids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_asset_ids(input);
         self
     }
 }

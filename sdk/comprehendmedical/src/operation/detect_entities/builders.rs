@@ -6,7 +6,7 @@ pub use crate::operation::detect_entities::_detect_entities_input::DetectEntitie
 /// Fluent builder constructing a request to `DetectEntities`.
 ///
 /// <p>The <code>DetectEntities</code> operation is deprecated. You should use the <code>DetectEntitiesV2</code> operation instead.</p>
-/// <p> Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information .</p>
+/// <p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information.</p>
 #[deprecated(note = "This operation is deprecated, use DetectEntitiesV2 instead.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectEntitiesFluentBuilder {
@@ -93,12 +93,12 @@ impl DetectEntitiesFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self

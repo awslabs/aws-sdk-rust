@@ -43,6 +43,9 @@ pub struct GetMonitorOutput {
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    #[doc(hidden)]
+    pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
     _request_id: Option<String>,
 }
 impl GetMonitorOutput {
@@ -103,6 +106,10 @@ impl GetMonitorOutput {
     pub fn traffic_percentage_to_monitor(&self) -> i32 {
         self.traffic_percentage_to_monitor
     }
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    pub fn health_events_config(&self) -> ::std::option::Option<&crate::types::HealthEventsConfig> {
+        self.health_events_config.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetMonitorOutput {
     fn request_id(&self) -> Option<&str> {
@@ -137,6 +144,7 @@ pub struct GetMonitorOutputBuilder {
     pub(crate) internet_measurements_log_delivery:
         ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     pub(crate) traffic_percentage_to_monitor: ::std::option::Option<i32>,
+    pub(crate) health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
     _request_id: Option<String>,
 }
 impl GetMonitorOutputBuilder {
@@ -310,6 +318,19 @@ impl GetMonitorOutputBuilder {
         self.traffic_percentage_to_monitor = input;
         self
     }
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
+        self.health_events_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    pub fn set_health_events_config(
+        mut self,
+        input: ::std::option::Option<crate::types::HealthEventsConfig>,
+    ) -> Self {
+        self.health_events_config = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -334,6 +355,7 @@ impl GetMonitorOutputBuilder {
             max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
             internet_measurements_log_delivery: self.internet_measurements_log_delivery,
             traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
+            health_events_config: self.health_events_config,
             _request_id: self._request_id,
         }
     }

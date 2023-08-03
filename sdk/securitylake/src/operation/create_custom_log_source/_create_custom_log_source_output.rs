@@ -3,43 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceOutput {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+    /// <p>The created third-party custom source.</p>
     #[doc(hidden)]
-    pub custom_data_location: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Glue crawler.</p>
-    #[doc(hidden)]
-    pub glue_crawler_name: ::std::option::Option<::std::string::String>,
-    /// <p>The table name of the Glue crawler.</p>
-    #[doc(hidden)]
-    pub glue_table_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    #[doc(hidden)]
-    pub glue_database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    #[doc(hidden)]
-    pub log_provider_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
 }
 impl CreateCustomLogSourceOutput {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(&self) -> ::std::option::Option<&str> {
-        self.custom_data_location.as_deref()
-    }
-    /// <p>The name of the Glue crawler.</p>
-    pub fn glue_crawler_name(&self) -> ::std::option::Option<&str> {
-        self.glue_crawler_name.as_deref()
-    }
-    /// <p>The table name of the Glue crawler.</p>
-    pub fn glue_table_name(&self) -> ::std::option::Option<&str> {
-        self.glue_table_name.as_deref()
-    }
-    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn glue_database_name(&self) -> ::std::option::Option<&str> {
-        self.glue_database_name.as_deref()
-    }
-    /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    pub fn log_provider_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.log_provider_access_role_arn.as_deref()
+    /// <p>The created third-party custom source.</p>
+    pub fn source(&self) -> ::std::option::Option<&crate::types::CustomLogSourceResource> {
+        self.source.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCustomLogSourceOutput {
@@ -62,92 +34,21 @@ impl CreateCustomLogSourceOutput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct CreateCustomLogSourceOutputBuilder {
-    pub(crate) custom_data_location: ::std::option::Option<::std::string::String>,
-    pub(crate) glue_crawler_name: ::std::option::Option<::std::string::String>,
-    pub(crate) glue_table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) glue_database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) log_provider_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
 }
 impl CreateCustomLogSourceOutputBuilder {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.custom_data_location = ::std::option::Option::Some(input.into());
+    /// <p>The created third-party custom source.</p>
+    pub fn source(mut self, input: crate::types::CustomLogSourceResource) -> Self {
+        self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn set_custom_data_location(
+    /// <p>The created third-party custom source.</p>
+    pub fn set_source(
         mut self,
-        input: ::std::option::Option<::std::string::String>,
+        input: ::std::option::Option<crate::types::CustomLogSourceResource>,
     ) -> Self {
-        self.custom_data_location = input;
-        self
-    }
-    /// <p>The name of the Glue crawler.</p>
-    pub fn glue_crawler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.glue_crawler_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the Glue crawler.</p>
-    pub fn set_glue_crawler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.glue_crawler_name = input;
-        self
-    }
-    /// <p>The table name of the Glue crawler.</p>
-    pub fn glue_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.glue_table_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The table name of the Glue crawler.</p>
-    pub fn set_glue_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.glue_table_name = input;
-        self
-    }
-    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn glue_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.glue_database_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn set_glue_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.glue_database_name = input;
-        self
-    }
-    /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    pub fn log_provider_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.log_provider_access_role_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    pub fn set_log_provider_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.log_provider_access_role_arn = input;
+        self.source = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -162,11 +63,7 @@ impl CreateCustomLogSourceOutputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
     pub fn build(self) -> crate::operation::create_custom_log_source::CreateCustomLogSourceOutput {
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput {
-            custom_data_location: self.custom_data_location,
-            glue_crawler_name: self.glue_crawler_name,
-            glue_table_name: self.glue_table_name,
-            glue_database_name: self.glue_database_name,
-            log_provider_access_role_arn: self.log_provider_access_role_arn,
+            source: self.source,
             _request_id: self._request_id,
         }
     }

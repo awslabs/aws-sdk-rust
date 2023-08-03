@@ -18,5 +18,8 @@ pub fn ser_get_certificates_input(
     if let Some(var_5) = &input.certificate_name {
         object.key("certificateName").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.page_token {
+        object.key("pageToken").string(var_6.as_str());
+    }
     Ok(())
 }

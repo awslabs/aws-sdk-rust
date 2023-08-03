@@ -218,6 +218,8 @@ mod cancel_task_execution;
 
 mod create_agent;
 
+mod create_location_azure_blob;
+
 mod create_location_efs;
 
 mod create_location_fsx_lustre;
@@ -277,6 +279,8 @@ mod delete_task;
 mod describe_agent;
 
 mod describe_discovery_job;
+
+mod describe_location_azure_blob;
 
 mod describe_location_efs;
 
@@ -339,6 +343,8 @@ mod untag_resource;
 mod update_agent;
 
 mod update_discovery_job;
+
+mod update_location_azure_blob;
 
 mod update_location_hdfs;
 

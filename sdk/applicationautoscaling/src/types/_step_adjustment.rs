@@ -23,7 +23,7 @@ pub struct StepAdjustment {
     /// <p>The upper bound must be greater than the lower bound.</p>
     #[doc(hidden)]
     pub metric_interval_upper_bound: ::std::option::Option<f64>,
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     #[doc(hidden)]
     pub scaling_adjustment: ::std::option::Option<i32>,
 }
@@ -37,7 +37,7 @@ impl StepAdjustment {
     pub fn metric_interval_upper_bound(&self) -> ::std::option::Option<f64> {
         self.metric_interval_upper_bound
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub fn scaling_adjustment(&self) -> ::std::option::Option<i32> {
         self.scaling_adjustment
     }
@@ -82,12 +82,12 @@ impl StepAdjustmentBuilder {
         self.metric_interval_upper_bound = input;
         self
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
         self.scaling_adjustment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scaling_adjustment = input;
         self

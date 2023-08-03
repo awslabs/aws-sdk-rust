@@ -5,7 +5,7 @@ pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Lists the tags for the trail, event data store, or channel in the current region.</p>
+/// <p>Lists the tags for the specified trails, event data stores, or channels in the current Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,6 +102,9 @@ impl ListTagsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
     ///
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     pub fn resource_id_list(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -110,6 +113,9 @@ impl ListTagsFluentBuilder {
         self
     }
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     pub fn set_resource_id_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

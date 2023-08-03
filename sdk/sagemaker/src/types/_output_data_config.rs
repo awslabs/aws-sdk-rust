@@ -18,6 +18,9 @@ pub struct OutputDataConfig {
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
     #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
+    /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+    #[doc(hidden)]
+    pub compression_type: ::std::option::Option<crate::types::OutputCompressionType>,
 }
 impl OutputDataConfig {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
@@ -36,6 +39,10 @@ impl OutputDataConfig {
     pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
+    /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::OutputCompressionType> {
+        self.compression_type.as_ref()
+    }
 }
 impl OutputDataConfig {
     /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::types::OutputDataConfig).
@@ -52,6 +59,7 @@ impl OutputDataConfig {
 pub struct OutputDataConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::OutputCompressionType>,
 }
 impl OutputDataConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats: </p>
@@ -96,11 +104,25 @@ impl OutputDataConfigBuilder {
         self.s3_output_path = input;
         self
     }
+    /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+    pub fn compression_type(mut self, input: crate::types::OutputCompressionType) -> Self {
+        self.compression_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+    pub fn set_compression_type(
+        mut self,
+        input: ::std::option::Option<crate::types::OutputCompressionType>,
+    ) -> Self {
+        self.compression_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OutputDataConfig`](crate::types::OutputDataConfig).
     pub fn build(self) -> crate::types::OutputDataConfig {
         crate::types::OutputDataConfig {
             kms_key_id: self.kms_key_id,
             s3_output_path: self.s3_output_path,
+            compression_type: self.compression_type,
         }
     }
 }

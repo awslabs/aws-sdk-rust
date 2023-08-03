@@ -143,6 +143,8 @@ pub use crate::types::_instance_resize_policy::InstanceResizePolicy;
 
 pub use crate::types::_instance_fleet_modify_config::InstanceFleetModifyConfig;
 
+pub use crate::types::_supported_instance_type::SupportedInstanceType;
+
 pub use crate::types::_session_mapping_summary::SessionMappingSummary;
 
 pub use crate::types::_studio_summary::StudioSummary;
@@ -560,6 +562,8 @@ mod _step_timeline;
 mod _studio;
 
 mod _studio_summary;
+
+mod _supported_instance_type;
 
 mod _supported_product_config;
 

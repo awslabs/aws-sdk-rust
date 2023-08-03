@@ -136,6 +136,13 @@ where
                                     crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?,
                                 );
                             }
+                            "useFipsEndpoint" => {
+                                builder = builder.set_use_fips_endpoint(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             "tags" => {
                                 builder = builder.set_tags(
                                     crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?,

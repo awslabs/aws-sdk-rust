@@ -6,14 +6,14 @@ pub fn ser_get_domain_suggestions_input(
     if let Some(var_1) = &input.domain_name {
         object.key("DomainName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.suggestion_count {
         object.key("SuggestionCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.suggestion_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.only_available {
-        object.key("OnlyAvailable").boolean(*var_2);
+    if let Some(var_3) = &input.only_available {
+        object.key("OnlyAvailable").boolean(*var_3);
     }
     Ok(())
 }

@@ -6,7 +6,7 @@ pub use crate::operation::list_public_keys::_list_public_keys_input::ListPublicK
 /// Fluent builder constructing a request to `ListPublicKeys`.
 ///
 /// <p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note>
-/// <p>CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key unique to its region. When you validate a digest file from a specific region, you must look in the same region for its corresponding public key.</p>
+/// <p>CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region for its corresponding public key.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPublicKeysFluentBuilder {

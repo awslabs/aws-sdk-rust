@@ -51,7 +51,7 @@ pub struct Connection {
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     #[doc(hidden)]
     pub aws_device: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
@@ -144,7 +144,7 @@ impl Connection {
     pub fn aws_device(&self) -> ::std::option::Option<&str> {
         self.aws_device.as_deref()
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(&self) -> ::std::option::Option<bool> {
         self.jumbo_frame_capable
     }
@@ -392,12 +392,12 @@ impl ConnectionBuilder {
         self.aws_device = input;
         self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
         self.jumbo_frame_capable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.jumbo_frame_capable = input;
         self

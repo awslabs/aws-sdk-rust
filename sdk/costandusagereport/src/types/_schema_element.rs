@@ -13,6 +13,7 @@
 /// # let schemaelement = unimplemented!();
 /// match schemaelement {
 ///     SchemaElement::Resources => { /* ... */ },
+///     SchemaElement::SplitCostAllocationData => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum SchemaElement {
     #[allow(missing_docs)] // documentation missing in model
     Resources,
+    #[allow(missing_docs)] // documentation missing in model
+    SplitCostAllocationData,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for SchemaElement {
     fn from(s: &str) -> Self {
         match s {
             "RESOURCES" => SchemaElement::Resources,
+            "SPLIT_COST_ALLOCATION_DATA" => SchemaElement::SplitCostAllocationData,
             other => {
                 SchemaElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +77,13 @@ impl SchemaElement {
     pub fn as_str(&self) -> &str {
         match self {
             SchemaElement::Resources => "RESOURCES",
+            SchemaElement::SplitCostAllocationData => "SPLIT_COST_ALLOCATION_DATA",
             SchemaElement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCES"]
+        &["RESOURCES", "SPLIT_COST_ALLOCATION_DATA"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaElement {

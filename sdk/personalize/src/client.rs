@@ -368,6 +368,8 @@ mod untag_resource;
 
 mod update_campaign;
 
+mod update_dataset;
+
 mod update_metric_attribution;
 
 mod update_recommender;

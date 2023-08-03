@@ -46,6 +46,10 @@ pub struct CreateGrantInput {
     /// <p>When this value is present, you can retry a <code>CreateGrant</code> request with identical parameters; if the grant already exists, the original <code>GrantId</code> is returned without creating a new grant. Note that the returned grant token is unique with every <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is returned. All grant tokens for the same grant ID can be used interchangeably.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateGrantInput {
     /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
@@ -98,6 +102,11 @@ impl CreateGrantInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateGrantInput {
     /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
@@ -119,6 +128,7 @@ pub struct CreateGrantInputBuilder {
     pub(crate) constraints: ::std::option::Option<crate::types::GrantConstraints>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateGrantInputBuilder {
     /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
@@ -268,6 +278,18 @@ impl CreateGrantInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
     pub fn build(
         self,
@@ -283,6 +305,7 @@ impl CreateGrantInputBuilder {
             constraints: self.constraints,
             grant_tokens: self.grant_tokens,
             name: self.name,
+            dry_run: self.dry_run,
         })
     }
 }

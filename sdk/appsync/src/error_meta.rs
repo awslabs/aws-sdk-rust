@@ -98,6 +98,104 @@ impl From<crate::operation::associate_api::AssociateApiError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError>
+    for Error
+{
+    fn from(
+        err: crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError,
+    ) -> Self {
+        match err {
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_api_cache::CreateApiCacheError,
             R,
         >,
@@ -855,6 +953,102 @@ impl From<crate::operation::disassociate_api::DisassociateApiError> for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError>
+    for Error
+{
+    fn from(
+        err: crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError>
+    for Error
+{
+    fn from(
+        err: crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::evaluate_code::EvaluateCodeError, R>>
     for Error
 where
@@ -1416,6 +1610,51 @@ impl From<crate::operation::get_schema_creation_status::GetSchemaCreationStatusE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_source_api_association::GetSourceApiAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_source_api_association::GetSourceApiAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_source_api_association::GetSourceApiAssociationError> for Error {
+    fn from(
+        err: crate::operation::get_source_api_association::GetSourceApiAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_source_api_association::GetSourceApiAssociationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_source_api_association::GetSourceApiAssociationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_source_api_association::GetSourceApiAssociationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_source_api_association::GetSourceApiAssociationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_source_api_association::GetSourceApiAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_type::GetTypeError, R>>
     for Error
 where
@@ -1818,6 +2057,53 @@ impl From<crate::operation::list_resolvers_by_function::ListResolversByFunctionE
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_source_api_associations::ListSourceApiAssociationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_tags_for_resource::ListTagsForResourceError,
             R,
         >,
@@ -1911,6 +2197,50 @@ impl From<crate::operation::list_types::ListTypesError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_types_by_association::ListTypesByAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_types_by_association::ListTypesByAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_types_by_association::ListTypesByAssociationError> for Error {
+    fn from(err: crate::operation::list_types_by_association::ListTypesByAssociationError) -> Self {
+        match err {
+            crate::operation::list_types_by_association::ListTypesByAssociationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_types_by_association::ListTypesByAssociationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::list_types_by_association::ListTypesByAssociationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_types_by_association::ListTypesByAssociationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_types_by_association::ListTypesByAssociationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_types_by_association::ListTypesByAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_schema_creation::StartSchemaCreationError,
             R,
         >,
@@ -1949,6 +2279,50 @@ impl From<crate::operation::start_schema_creation::StartSchemaCreationError> for
             crate::operation::start_schema_creation::StartSchemaCreationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::start_schema_creation::StartSchemaCreationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::start_schema_creation::StartSchemaCreationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_schema_merge::StartSchemaMergeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_schema_merge::StartSchemaMergeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_schema_merge::StartSchemaMergeError> for Error {
+    fn from(err: crate::operation::start_schema_merge::StartSchemaMergeError) -> Self {
+        match err {
+            crate::operation::start_schema_merge::StartSchemaMergeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_schema_merge::StartSchemaMergeError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::start_schema_merge::StartSchemaMergeError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_schema_merge::StartSchemaMergeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_schema_merge::StartSchemaMergeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_schema_merge::StartSchemaMergeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2369,6 +2743,54 @@ impl From<crate::operation::update_resolver::UpdateResolverError> for Error {
             crate::operation::update_resolver::UpdateResolverError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_resolver::UpdateResolverError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_resolver::UpdateResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_source_api_association::UpdateSourceApiAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_source_api_association::UpdateSourceApiAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

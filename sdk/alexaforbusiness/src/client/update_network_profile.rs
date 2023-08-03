@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`trust_anchors(Vec<String>)`](crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::trust_anchors) / [`set_trust_anchors(Option<Vec<String>>)`](crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::set_trust_anchors): <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::operation::update_network_profile::UpdateNetworkProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_network_profile(
         &self,
     ) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder {

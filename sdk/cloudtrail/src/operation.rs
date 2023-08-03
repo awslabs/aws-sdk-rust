@@ -109,6 +109,9 @@ pub mod remove_tags;
 /// Types for the `RestoreEventDataStore` operation.
 pub mod restore_event_data_store;
 
+/// Types for the `StartEventDataStoreIngestion` operation.
+pub mod start_event_data_store_ingestion;
+
 /// Types for the `StartImport` operation.
 pub mod start_import;
 
@@ -117,6 +120,9 @@ pub mod start_logging;
 
 /// Types for the `StartQuery` operation.
 pub mod start_query;
+
+/// Types for the `StopEventDataStoreIngestion` operation.
+pub mod stop_event_data_store_ingestion;
 
 /// Types for the `StopImport` operation.
 pub mod stop_import;

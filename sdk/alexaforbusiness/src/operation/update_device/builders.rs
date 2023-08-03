@@ -6,6 +6,7 @@ pub use crate::operation::update_device::_update_device_input::UpdateDeviceInput
 /// Fluent builder constructing a request to `UpdateDevice`.
 ///
 /// <p>Updates the device name by device ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

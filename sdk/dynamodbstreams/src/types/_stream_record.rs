@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamRecord {
-    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     #[doc(hidden)]
     pub approximate_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
@@ -39,7 +39,7 @@ pub struct StreamRecord {
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
 impl StreamRecord {
-    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub fn approximate_creation_date_time(
         &self,
     ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -116,12 +116,12 @@ pub struct StreamRecordBuilder {
     pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
 impl StreamRecordBuilder {
-    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub fn approximate_creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.approximate_creation_date_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub fn set_approximate_creation_date_time(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,

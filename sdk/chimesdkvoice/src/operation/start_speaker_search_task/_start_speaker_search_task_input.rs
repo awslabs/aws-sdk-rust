@@ -15,6 +15,9 @@ pub struct StartSpeakerSearchTaskInput {
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    #[doc(hidden)]
+    pub call_leg: ::std::option::Option<crate::types::CallLegType>,
 }
 impl StartSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
@@ -32,6 +35,10 @@ impl StartSpeakerSearchTaskInput {
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn call_leg(&self) -> ::std::option::Option<&crate::types::CallLegType> {
+        self.call_leg.as_ref()
     }
 }
 impl StartSpeakerSearchTaskInput {
@@ -53,6 +60,7 @@ pub struct StartSpeakerSearchTaskInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) call_leg: ::std::option::Option<crate::types::CallLegType>,
 }
 impl StartSpeakerSearchTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
@@ -119,6 +127,16 @@ impl StartSpeakerSearchTaskInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn call_leg(mut self, input: crate::types::CallLegType) -> Self {
+        self.call_leg = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn set_call_leg(mut self, input: ::std::option::Option<crate::types::CallLegType>) -> Self {
+        self.call_leg = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
     pub fn build(
         self,
@@ -132,6 +150,7 @@ impl StartSpeakerSearchTaskInputBuilder {
                 transaction_id: self.transaction_id,
                 voice_profile_domain_id: self.voice_profile_domain_id,
                 client_request_token: self.client_request_token,
+                call_leg: self.call_leg,
             },
         )
     }

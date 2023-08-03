@@ -34,5 +34,8 @@ pub fn ser_generate_data_key_without_plaintext_input(
         }
         array_9.finish();
     }
+    if let Some(var_11) = &input.dry_run {
+        object.key("DryRun").boolean(*var_11);
+    }
     Ok(())
 }

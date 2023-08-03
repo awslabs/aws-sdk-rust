@@ -156,12 +156,12 @@ impl ListWorkloadSharesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self

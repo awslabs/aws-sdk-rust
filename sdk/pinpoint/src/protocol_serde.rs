@@ -913,6 +913,9 @@ pub(crate) mod shape_in_app_message_header_config;
 #[allow(non_snake_case)]
 pub(crate) mod shape_list_of__string;
 
+#[allow(non_snake_case)]
+pub(crate) mod shape_list_of__timezone_estimation_methods_element;
+
 pub(crate) mod shape_list_of_activity_response;
 
 pub(crate) mod shape_list_of_application_response;

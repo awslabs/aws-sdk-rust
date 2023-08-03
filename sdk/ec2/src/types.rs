@@ -1513,11 +1513,19 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachment;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfo;
 
+pub use crate::types::_nitro_tpm_info::NitroTpmInfo;
+
+pub use crate::types::_nitro_tpm_support::NitroTpmSupport;
+
+pub use crate::types::_nitro_enclaves_support::NitroEnclavesSupport;
+
 pub use crate::types::_boot_mode_type::BootModeType;
 
 pub use crate::types::_inference_accelerator_info::InferenceAcceleratorInfo;
 
 pub use crate::types::_inference_device_info::InferenceDeviceInfo;
+
+pub use crate::types::_inference_device_memory_info::InferenceDeviceMemoryInfo;
 
 pub use crate::types::_placement_group_info::PlacementGroupInfo;
 
@@ -1596,6 +1604,10 @@ pub use crate::types::_status_name::StatusName;
 pub use crate::types::_reservation::Reservation;
 
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecification;
+
+pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpoint;
+
+pub use crate::types::_ec2_instance_connect_endpoint_state::Ec2InstanceConnectEndpointState;
 
 pub use crate::types::_import_snapshot_task::ImportSnapshotTask;
 
@@ -2473,6 +2485,10 @@ mod _ebs_optimized_info;
 
 mod _ebs_optimized_support;
 
+mod _ec2_instance_connect_endpoint;
+
+mod _ec2_instance_connect_endpoint_state;
+
 mod _efa_info;
 
 mod _egress_only_internet_gateway;
@@ -2732,6 +2748,8 @@ mod _import_volume_task_details;
 mod _inference_accelerator_info;
 
 mod _inference_device_info;
+
+mod _inference_device_memory_info;
 
 mod _instance;
 
@@ -3234,6 +3252,12 @@ mod _network_interface_status;
 mod _network_interface_type;
 
 mod _new_dhcp_configuration;
+
+mod _nitro_enclaves_support;
+
+mod _nitro_tpm_info;
+
+mod _nitro_tpm_support;
 
 mod _offering_class_type;
 

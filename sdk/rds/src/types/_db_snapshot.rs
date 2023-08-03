@@ -106,6 +106,9 @@ pub struct DbSnapshot {
     /// <p>Specifies the storage throughput for the DB snapshot.</p>
     #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
+    #[doc(hidden)]
+    pub db_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -244,6 +247,10 @@ impl DbSnapshot {
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
+    pub fn db_system_id(&self) -> ::std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
 }
 impl DbSnapshot {
     /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::types::DbSnapshot).
@@ -292,6 +299,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) snapshot_database_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -745,6 +753,16 @@ impl DbSnapshotBuilder {
         self.storage_throughput = input;
         self
     }
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
+    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_system_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
+    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_system_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -783,6 +801,7 @@ impl DbSnapshotBuilder {
             snapshot_database_time: self.snapshot_database_time,
             snapshot_target: self.snapshot_target,
             storage_throughput: self.storage_throughput,
+            db_system_id: self.db_system_id,
         }
     }
 }

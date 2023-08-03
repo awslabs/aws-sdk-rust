@@ -6,6 +6,7 @@ pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilde
 /// Fluent builder constructing a request to `CreateUser`.
 ///
 /// <p>Creates a user.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

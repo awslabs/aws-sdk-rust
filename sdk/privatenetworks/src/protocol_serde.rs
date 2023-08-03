@@ -116,6 +116,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_address;
 
+pub(crate) mod shape_commitment_configuration;
+
 pub(crate) mod shape_device_identifier;
 
 pub(crate) mod shape_device_identifier_list;
@@ -144,11 +146,15 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_commitment_information;
+
 pub(crate) mod shape_name_value_pair;
 
 pub(crate) mod shape_name_value_pairs;
 
 pub(crate) mod shape_network_resource_definition;
+
+pub(crate) mod shape_ordered_resource_definitions;
 
 pub(crate) mod shape_return_information;
 
@@ -159,5 +165,7 @@ pub(crate) mod shape_validation_exception_field;
 pub(crate) mod shape_network_resource_definitions;
 
 pub(crate) mod shape_options;
+
+pub(crate) mod shape_ordered_resource_definition;
 
 pub(crate) mod shape_tracking_information;

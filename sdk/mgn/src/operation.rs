@@ -103,6 +103,9 @@ pub mod list_import_errors;
 /// Types for the `ListImports` operation.
 pub mod list_imports;
 
+/// Types for the `ListManagedAccounts` operation.
+pub mod list_managed_accounts;
+
 /// Types for the `ListSourceServerActions` operation.
 pub mod list_source_server_actions;
 
@@ -118,6 +121,9 @@ pub mod list_waves;
 /// Types for the `MarkAsArchived` operation.
 pub mod mark_as_archived;
 
+/// Types for the `PauseReplication` operation.
+pub mod pause_replication;
+
 /// Types for the `PutSourceServerAction` operation.
 pub mod put_source_server_action;
 
@@ -129,6 +135,9 @@ pub mod remove_source_server_action;
 
 /// Types for the `RemoveTemplateAction` operation.
 pub mod remove_template_action;
+
+/// Types for the `ResumeReplication` operation.
+pub mod resume_replication;
 
 /// Types for the `RetryDataReplication` operation.
 pub mod retry_data_replication;
@@ -147,6 +156,9 @@ pub mod start_replication;
 
 /// Types for the `StartTest` operation.
 pub mod start_test;
+
+/// Types for the `StopReplication` operation.
+pub mod stop_replication;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

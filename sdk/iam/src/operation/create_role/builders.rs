@@ -5,7 +5,8 @@ pub use crate::operation::create_role::_create_role_input::CreateRoleInputBuilde
 
 /// Fluent builder constructing a request to `CreateRole`.
 ///
-/// <p>Creates a new role for your Amazon Web Services account. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM roles</a>. For information about quotas for role names and the number of roles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a> in the <i>IAM User Guide</i>.</p>
+/// <p>Creates a new role for your Amazon Web Services account.</p>
+/// <p> For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>. For information about quotas for role names and the number of roles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -10,19 +10,23 @@ pub struct CreateBrokerInput {
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
     #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
-    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
+    /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
+    /// </important>
     #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about the configuration.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ConfigurationId>,
-    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p> <note>
+    /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// </note>
     #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. The broker's deployment mode.</p>
     #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     #[doc(hidden)]
     pub encryption_options: ::std::option::Option<crate::types::EncryptionOptions>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -53,7 +57,7 @@ pub struct CreateBrokerInput {
     #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
-    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
     #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,12 +66,15 @@ pub struct CreateBrokerInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
-    /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    /// </important>
+    /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    #[doc(hidden)]
+    pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
+    #[doc(hidden)]
+    pub data_replication_primary_broker_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -80,7 +87,9 @@ impl CreateBrokerInput {
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
-    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
+    /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
+    /// </important>
     pub fn broker_name(&self) -> ::std::option::Option<&str> {
         self.broker_name.as_deref()
     }
@@ -88,7 +97,9 @@ impl CreateBrokerInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {
         self.configuration.as_ref()
     }
-    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p> <note>
+    /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// </note>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -96,7 +107,7 @@ impl CreateBrokerInput {
     pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn encryption_options(&self) -> ::std::option::Option<&crate::types::EncryptionOptions> {
         self.encryption_options.as_ref()
     }
@@ -141,7 +152,7 @@ impl CreateBrokerInput {
         self.storage_type.as_ref()
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
-    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
     pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
@@ -154,12 +165,19 @@ impl CreateBrokerInput {
     > {
         self.tags.as_ref()
     }
-    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
-    /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    /// </important>
+    /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
         self.users.as_deref()
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.data_replication_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_primary_broker_arn(&self) -> ::std::option::Option<&str> {
+        self.data_replication_primary_broker_arn.as_deref()
     }
 }
 impl CreateBrokerInput {
@@ -196,6 +214,8 @@ pub struct CreateBrokerInputBuilder {
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    pub(crate) data_replication_primary_broker_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBrokerInputBuilder {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -221,12 +241,16 @@ impl CreateBrokerInputBuilder {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
+    /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
+    /// </important>
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
+    /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
+    /// </important>
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_name = input;
         self
@@ -244,7 +268,9 @@ impl CreateBrokerInputBuilder {
         self.configuration = input;
         self
     }
-    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p> <note>
+    /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// </note>
     pub fn creator_request_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -252,7 +278,9 @@ impl CreateBrokerInputBuilder {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p> <note>
+    /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
+    /// </note>
     pub fn set_creator_request_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -273,12 +301,12 @@ impl CreateBrokerInputBuilder {
         self.deployment_mode = input;
         self
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn encryption_options(mut self, input: crate::types::EncryptionOptions) -> Self {
         self.encryption_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn set_encryption_options(
         mut self,
         input: ::std::option::Option<crate::types::EncryptionOptions>,
@@ -417,7 +445,7 @@ impl CreateBrokerInputBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
-    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
@@ -426,7 +454,7 @@ impl CreateBrokerInputBuilder {
         self
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
-    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+    /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
     pub fn set_subnet_ids(
         mut self,
@@ -464,25 +492,48 @@ impl CreateBrokerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
-    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
-    /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    /// </important>
+    /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input);
         self.users = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
-    /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    /// </important>
+    /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     pub fn set_users(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     ) -> Self {
         self.users = input;
+        self
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
+        self.data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn set_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.data_replication_mode = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_primary_broker_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_replication_primary_broker_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
+    pub fn set_data_replication_primary_broker_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.data_replication_primary_broker_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateBrokerInput`](crate::operation::create_broker::CreateBrokerInput).
@@ -512,6 +563,8 @@ impl CreateBrokerInputBuilder {
             subnet_ids: self.subnet_ids,
             tags: self.tags,
             users: self.users,
+            data_replication_mode: self.data_replication_mode,
+            data_replication_primary_broker_arn: self.data_replication_primary_broker_arn,
         })
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBrokerOutput {
-    /// <p>A list of actions required for a broker.</p>
+    /// <p>Actions required for a broker.</p>
     #[doc(hidden)]
     pub actions_required: ::std::option::Option<::std::vec::Vec<crate::types::ActionRequired>>,
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -21,7 +21,7 @@ pub struct DescribeBrokerOutput {
     /// <p>A list of information about allocated brokers.</p>
     #[doc(hidden)]
     pub broker_instances: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstance>>,
-    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>The broker's status.</p>
@@ -36,7 +36,7 @@ pub struct DescribeBrokerOutput {
     /// <p>The broker's deployment mode.</p>
     #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     #[doc(hidden)]
     pub encryption_options: ::std::option::Option<crate::types::EncryptionOptions>,
     /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -93,10 +93,24 @@ pub struct DescribeBrokerOutput {
     /// <p>The list of all broker usernames for the specified broker.</p>
     #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    #[doc(hidden)]
+    pub data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    #[doc(hidden)]
+    pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    #[doc(hidden)]
+    pub pending_data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    #[doc(hidden)]
+    pub pending_data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }
 impl DescribeBrokerOutput {
-    /// <p>A list of actions required for a broker.</p>
+    /// <p>Actions required for a broker.</p>
     pub fn actions_required(&self) -> ::std::option::Option<&[crate::types::ActionRequired]> {
         self.actions_required.as_deref()
     }
@@ -122,7 +136,7 @@ impl DescribeBrokerOutput {
     pub fn broker_instances(&self) -> ::std::option::Option<&[crate::types::BrokerInstance]> {
         self.broker_instances.as_deref()
     }
-    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(&self) -> ::std::option::Option<&str> {
         self.broker_name.as_deref()
     }
@@ -142,7 +156,7 @@ impl DescribeBrokerOutput {
     pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn encryption_options(&self) -> ::std::option::Option<&crate::types::EncryptionOptions> {
         self.encryption_options.as_ref()
     }
@@ -226,6 +240,30 @@ impl DescribeBrokerOutput {
     pub fn users(&self) -> ::std::option::Option<&[crate::types::UserSummary]> {
         self.users.as_deref()
     }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+        self.data_replication_metadata.as_ref()
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.data_replication_mode.as_ref()
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn pending_data_replication_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+        self.pending_data_replication_metadata.as_ref()
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn pending_data_replication_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+        self.pending_data_replication_mode.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeBrokerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -281,6 +319,13 @@ pub struct DescribeBrokerOutputBuilder {
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
+    pub(crate) data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
+    pub(crate) pending_data_replication_metadata:
+        ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    pub(crate) pending_data_replication_mode:
+        ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }
 impl DescribeBrokerOutputBuilder {
@@ -288,14 +333,14 @@ impl DescribeBrokerOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_actions_required`](Self::set_actions_required).
     ///
-    /// <p>A list of actions required for a broker.</p>
+    /// <p>Actions required for a broker.</p>
     pub fn actions_required(mut self, input: crate::types::ActionRequired) -> Self {
         let mut v = self.actions_required.unwrap_or_default();
         v.push(input);
         self.actions_required = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of actions required for a broker.</p>
+    /// <p>Actions required for a broker.</p>
     pub fn set_actions_required(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ActionRequired>>,
@@ -365,12 +410,12 @@ impl DescribeBrokerOutputBuilder {
         self.broker_instances = input;
         self
     }
-    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
+    /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.broker_name = input;
         self
@@ -427,12 +472,12 @@ impl DescribeBrokerOutputBuilder {
         self.deployment_mode = input;
         self
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn encryption_options(mut self, input: crate::types::EncryptionOptions) -> Self {
         self.encryption_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+    /// <p>Encryption options for the broker.</p>
     pub fn set_encryption_options(
         mut self,
         input: ::std::option::Option<crate::types::EncryptionOptions>,
@@ -715,6 +760,67 @@ impl DescribeBrokerOutputBuilder {
         self.users = input;
         self
     }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn data_replication_metadata(
+        mut self,
+        input: crate::types::DataReplicationMetadataOutput,
+    ) -> Self {
+        self.data_replication_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
+    pub fn set_data_replication_metadata(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    ) -> Self {
+        self.data_replication_metadata = input;
+        self
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
+        self.data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether this broker is a part of a data replication pair.</p>
+    pub fn set_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.data_replication_mode = input;
+        self
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn pending_data_replication_metadata(
+        mut self,
+        input: crate::types::DataReplicationMetadataOutput,
+    ) -> Self {
+        self.pending_data_replication_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
+    pub fn set_pending_data_replication_metadata(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
+    ) -> Self {
+        self.pending_data_replication_metadata = input;
+        self
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn pending_data_replication_mode(
+        mut self,
+        input: crate::types::DataReplicationMode,
+    ) -> Self {
+        self.pending_data_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
+    pub fn set_pending_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.pending_data_replication_mode = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -756,6 +862,10 @@ impl DescribeBrokerOutputBuilder {
             subnet_ids: self.subnet_ids,
             tags: self.tags,
             users: self.users,
+            data_replication_metadata: self.data_replication_metadata,
+            data_replication_mode: self.data_replication_mode,
+            pending_data_replication_metadata: self.pending_data_replication_metadata,
+            pending_data_replication_mode: self.pending_data_replication_mode,
             _request_id: self._request_id,
         }
     }

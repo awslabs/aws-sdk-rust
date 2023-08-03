@@ -147,6 +147,12 @@ pub struct OracleSettings {
     /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
     #[doc(hidden)]
     pub convert_timestamp_with_zone_to_utc: ::std::option::Option<bool>,
+    /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+    /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// </note>
+    #[doc(hidden)]
+    pub open_transaction_window: ::std::option::Option<i32>,
 }
 impl OracleSettings {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -337,6 +343,13 @@ impl OracleSettings {
     pub fn convert_timestamp_with_zone_to_utc(&self) -> ::std::option::Option<bool> {
         self.convert_timestamp_with_zone_to_utc
     }
+    /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+    /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// </note>
+    pub fn open_transaction_window(&self) -> ::std::option::Option<i32> {
+        self.open_transaction_window
+    }
 }
 impl ::std::fmt::Debug for OracleSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -419,6 +432,7 @@ impl ::std::fmt::Debug for OracleSettings {
             "convert_timestamp_with_zone_to_utc",
             &self.convert_timestamp_with_zone_to_utc,
         );
+        formatter.field("open_transaction_window", &self.open_transaction_window);
         formatter.finish()
     }
 }
@@ -477,6 +491,7 @@ pub struct OracleSettingsBuilder {
     pub(crate) secrets_manager_oracle_asm_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) trim_space_in_char: ::std::option::Option<bool>,
     pub(crate) convert_timestamp_with_zone_to_utc: ::std::option::Option<bool>,
+    pub(crate) open_transaction_window: ::std::option::Option<i32>,
 }
 impl OracleSettingsBuilder {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -1015,6 +1030,22 @@ impl OracleSettingsBuilder {
         self.convert_timestamp_with_zone_to_utc = input;
         self
     }
+    /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+    /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// </note>
+    pub fn open_transaction_window(mut self, input: i32) -> Self {
+        self.open_transaction_window = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+    /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// </note>
+    pub fn set_open_transaction_window(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.open_transaction_window = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OracleSettings`](crate::types::OracleSettings).
     pub fn build(self) -> crate::types::OracleSettings {
         crate::types::OracleSettings {
@@ -1062,6 +1093,7 @@ impl OracleSettingsBuilder {
             secrets_manager_oracle_asm_secret_id: self.secrets_manager_oracle_asm_secret_id,
             trim_space_in_char: self.trim_space_in_char,
             convert_timestamp_with_zone_to_utc: self.convert_timestamp_with_zone_to_utc,
+            open_transaction_window: self.open_transaction_window,
         }
     }
 }
@@ -1146,6 +1178,7 @@ impl ::std::fmt::Debug for OracleSettingsBuilder {
             "convert_timestamp_with_zone_to_utc",
             &self.convert_timestamp_with_zone_to_utc,
         );
+        formatter.field("open_transaction_window", &self.open_transaction_window);
         formatter.finish()
     }
 }

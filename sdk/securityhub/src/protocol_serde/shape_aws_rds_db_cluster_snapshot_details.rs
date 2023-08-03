@@ -78,6 +78,18 @@ pub fn ser_aws_rds_db_cluster_snapshot_details(
             .key("IamDatabaseAuthenticationEnabled")
             .boolean(input.iam_database_authentication_enabled);
     }
+    if let Some(var_16) = &input.db_cluster_snapshot_attributes {
+        let mut array_17 = object.key("DbClusterSnapshotAttributes").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute::ser_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }
 
@@ -261,6 +273,11 @@ where
                                     tokens.next(),
                                 )?,
                             );
+                        }
+                        "DbClusterSnapshotAttributes" => {
+                            builder = builder.set_db_cluster_snapshot_attributes(
+                                    crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes::de_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attributes(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -124,7 +124,7 @@ impl DescribeNatGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -143,7 +143,7 @@ impl DescribeNatGatewaysFluentBuilder {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
@@ -179,7 +179,7 @@ impl DescribeNatGatewaysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nat_gateway_ids`](Self::set_nat_gateway_ids).
     ///
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     pub fn nat_gateway_ids(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -187,7 +187,7 @@ impl DescribeNatGatewaysFluentBuilder {
         self.inner = self.inner.nat_gateway_ids(input.into());
         self
     }
-    /// <p>One or more NAT gateway IDs.</p>
+    /// <p>The IDs of the NAT gateways.</p>
     pub fn set_nat_gateway_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

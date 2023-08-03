@@ -10,8 +10,8 @@ publish = false
 
 [dependencies]
 bytes = "1"
-aws-config= { version = "0.55.3", path = "../../sdk/aws-config" }
-aws-sdk-polly= { version = "0.28.0", path = "../../sdk/polly" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-sdk-polly= { version = "0.29.0", path = "../../sdk/polly" }
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -6,7 +6,7 @@ pub use crate::operation::get_job_details::_get_job_details_input::GetJobDetails
 /// Fluent builder constructing a request to `GetJobDetails`.
 ///
 /// <p>Returns information about a job. Used for custom actions only.</p> <important>
-/// <p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also returns any secret values defined for the action.</p>
+/// <p>When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also returns any secret values defined for the action.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJobDetailsFluentBuilder {

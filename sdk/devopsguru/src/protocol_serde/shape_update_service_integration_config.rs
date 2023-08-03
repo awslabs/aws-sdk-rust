@@ -15,5 +15,11 @@ pub fn ser_update_service_integration_config(
         crate::protocol_serde::shape_logs_anomaly_detection_integration_config::ser_logs_anomaly_detection_integration_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.kms_server_side_encryption {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("KMSServerSideEncryption").start_object();
+        crate::protocol_serde::shape_kms_server_side_encryption_integration_config::ser_kms_server_side_encryption_integration_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

@@ -14,6 +14,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_stream;
 
+pub(crate) mod shape_delete_edge_configuration;
+
 pub(crate) mod shape_delete_signaling_channel;
 
 pub(crate) mod shape_delete_stream;
@@ -35,6 +37,8 @@ pub(crate) mod shape_describe_stream;
 pub(crate) mod shape_get_data_endpoint;
 
 pub(crate) mod shape_get_signaling_channel_endpoint;
+
+pub(crate) mod shape_list_edge_agent_configurations;
 
 pub(crate) mod shape_list_signaling_channels;
 
@@ -86,6 +90,8 @@ pub(crate) mod shape_create_signaling_channel_input;
 
 pub(crate) mod shape_create_stream_input;
 
+pub(crate) mod shape_delete_edge_configuration_input;
+
 pub(crate) mod shape_delete_signaling_channel_input;
 
 pub(crate) mod shape_delete_stream_input;
@@ -115,6 +121,8 @@ pub(crate) mod shape_invalid_argument_exception;
 pub(crate) mod shape_invalid_device_exception;
 
 pub(crate) mod shape_invalid_resource_format_exception;
+
+pub(crate) mod shape_list_edge_agent_configurations_input;
 
 pub(crate) mod shape_list_signaling_channels_input;
 
@@ -166,9 +174,13 @@ pub(crate) mod shape_channel_info_list;
 
 pub(crate) mod shape_channel_name_condition;
 
+pub(crate) mod shape_edge_agent_status;
+
 pub(crate) mod shape_edge_config;
 
 pub(crate) mod shape_image_generation_configuration;
+
+pub(crate) mod shape_list_edge_agent_configurations_edge_config_list;
 
 pub(crate) mod shape_mapped_resource_configuration_list;
 
@@ -197,6 +209,12 @@ pub(crate) mod shape_deletion_config;
 pub(crate) mod shape_format_config;
 
 pub(crate) mod shape_image_generation_destination_config;
+
+pub(crate) mod shape_last_recorder_status;
+
+pub(crate) mod shape_last_uploader_status;
+
+pub(crate) mod shape_list_edge_agent_configurations_edge_config;
 
 pub(crate) mod shape_mapped_resource_configuration_list_item;
 

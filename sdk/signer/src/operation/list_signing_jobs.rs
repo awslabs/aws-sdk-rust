@@ -86,27 +86,18 @@ impl ListSigningJobsInput {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if _input.is_revoked {
-                    query.push_kv(
-                        "isRevoked",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.is_revoked).encode(),
-                    );
-                }
-                if let ::std::option::Option::Some(inner_6) = &_input.signature_expires_before {
-                    {
+                if let ::std::option::Option::Some(inner_6) = &_input.is_revoked {
+                    if *inner_6 {
                         query.push_kv(
-                            "signatureExpiresBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(
-                                inner_6,
-                                ::aws_smithy_types::date_time::Format::DateTime,
-                            )?,
+                            "isRevoked",
+                            ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.signature_expires_after {
+                if let ::std::option::Option::Some(inner_7) = &_input.signature_expires_before {
                     {
                         query.push_kv(
-                            "signatureExpiresAfter",
+                            "signatureExpiresBefore",
                             &::aws_smithy_http::query::fmt_timestamp(
                                 inner_7,
                                 ::aws_smithy_types::date_time::Format::DateTime,
@@ -114,11 +105,22 @@ impl ListSigningJobsInput {
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.job_invoker {
+                if let ::std::option::Option::Some(inner_8) = &_input.signature_expires_after {
+                    {
+                        query.push_kv(
+                            "signatureExpiresAfter",
+                            &::aws_smithy_http::query::fmt_timestamp(
+                                inner_8,
+                                ::aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
+                }
+                if let ::std::option::Option::Some(inner_9) = &_input.job_invoker {
                     {
                         query.push_kv(
                             "jobInvoker",
-                            &::aws_smithy_http::query::fmt_string(&inner_8),
+                            &::aws_smithy_http::query::fmt_string(&inner_9),
                         );
                     }
                 }

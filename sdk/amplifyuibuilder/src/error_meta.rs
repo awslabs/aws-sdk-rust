@@ -13,6 +13,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>You don't have permission to perform this operation.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -26,6 +28,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceConflictException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -474,6 +477,59 @@ impl From<crate::operation::export_themes::ExportThemesError> for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_codegen_job::GetCodegenJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_codegen_job::GetCodegenJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_codegen_job::GetCodegenJobError> for Error {
+    fn from(err: crate::operation::get_codegen_job::GetCodegenJobError) -> Self {
+        match err {
+            crate::operation::get_codegen_job::GetCodegenJobError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_codegen_job::GetCodegenJobError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::get_codegen_job::GetCodegenJobError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_codegen_job::GetCodegenJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_codegen_job::GetCodegenJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError, R>>
     for Error
 where
@@ -639,6 +695,48 @@ impl From<crate::operation::get_theme::GetThemeError> for Error {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_theme::GetThemeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_codegen_jobs::ListCodegenJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_codegen_jobs::ListCodegenJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_codegen_jobs::ListCodegenJobsError> for Error {
+    fn from(err: crate::operation::list_codegen_jobs::ListCodegenJobsError) -> Self {
+        match err {
+            crate::operation::list_codegen_jobs::ListCodegenJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_codegen_jobs::ListCodegenJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_codegen_jobs::ListCodegenJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_codegen_jobs::ListCodegenJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -851,6 +949,48 @@ impl From<crate::operation::refresh_token::RefreshTokenError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::start_codegen_job::StartCodegenJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_codegen_job::StartCodegenJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_codegen_job::StartCodegenJobError> for Error {
+    fn from(err: crate::operation::start_codegen_job::StartCodegenJobError) -> Self {
+        match err {
+            crate::operation::start_codegen_job::StartCodegenJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_codegen_job::StartCodegenJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_codegen_job::StartCodegenJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_codegen_job::StartCodegenJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_component::UpdateComponentError,
             R,
         >,
@@ -994,6 +1134,7 @@ impl ::std::error::Error for Error {
             Error::ResourceConflictException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
@@ -1007,6 +1148,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ResourceConflictException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

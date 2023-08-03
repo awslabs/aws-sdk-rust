@@ -3,19 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceOutput {
-    /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    #[doc(hidden)]
-    pub processing: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
     #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteAwsLogSourceOutput {
-    /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    pub fn processing(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processing.as_deref()
-    }
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
     pub fn failed(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.failed.as_deref()
@@ -41,30 +34,10 @@ impl DeleteAwsLogSourceOutput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct DeleteAwsLogSourceOutputBuilder {
-    pub(crate) processing: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteAwsLogSourceOutputBuilder {
-    /// Appends an item to `processing`.
-    ///
-    /// To override the contents of this collection use [`set_processing`](Self::set_processing).
-    ///
-    /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    pub fn processing(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.processing.unwrap_or_default();
-        v.push(input.into());
-        self.processing = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    pub fn set_processing(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.processing = input;
-        self
-    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -96,7 +69,6 @@ impl DeleteAwsLogSourceOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceOutput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput).
     pub fn build(self) -> crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput {
         crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput {
-            processing: self.processing,
             failed: self.failed,
             _request_id: self._request_id,
         }

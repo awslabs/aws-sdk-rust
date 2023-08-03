@@ -13,7 +13,6 @@
 /// # let exportdataformat = unimplemented!();
 /// match exportdataformat {
 ///     ExportDataFormat::Csv => { /* ... */ },
-///     ExportDataFormat::Graphml => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,8 +48,6 @@
 pub enum ExportDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
-    #[allow(missing_docs)] // documentation missing in model
-    Graphml,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -58,7 +55,6 @@ impl ::std::convert::From<&str> for ExportDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => ExportDataFormat::Csv,
-            "GRAPHML" => ExportDataFormat::Graphml,
             other => {
                 ExportDataFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -77,13 +73,12 @@ impl ExportDataFormat {
     pub fn as_str(&self) -> &str {
         match self {
             ExportDataFormat::Csv => "CSV",
-            ExportDataFormat::Graphml => "GRAPHML",
             ExportDataFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "GRAPHML"]
+        &["CSV"]
     }
 }
 impl ::std::convert::AsRef<str> for ExportDataFormat {

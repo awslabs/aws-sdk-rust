@@ -214,6 +214,8 @@ impl Client {
 
 mod associate_browser_settings;
 
+mod associate_ip_access_settings;
+
 mod associate_network_settings;
 
 mod associate_trust_store;
@@ -225,6 +227,8 @@ mod associate_user_settings;
 mod create_browser_settings;
 
 mod create_identity_provider;
+
+mod create_ip_access_settings;
 
 mod create_network_settings;
 
@@ -268,6 +272,8 @@ mod delete_browser_settings;
 
 mod delete_identity_provider;
 
+mod delete_ip_access_settings;
+
 mod delete_network_settings;
 
 mod delete_portal;
@@ -280,6 +286,8 @@ mod delete_user_settings;
 
 mod disassociate_browser_settings;
 
+mod disassociate_ip_access_settings;
+
 mod disassociate_network_settings;
 
 mod disassociate_trust_store;
@@ -291,6 +299,8 @@ mod disassociate_user_settings;
 mod get_browser_settings;
 
 mod get_identity_provider;
+
+mod get_ip_access_settings;
 
 mod get_network_settings;
 
@@ -309,6 +319,8 @@ mod get_user_settings;
 mod list_browser_settings;
 
 mod list_identity_providers;
+
+mod list_ip_access_settings;
 
 mod list_network_settings;
 
@@ -331,6 +343,8 @@ mod untag_resource;
 mod update_browser_settings;
 
 mod update_identity_provider;
+
+mod update_ip_access_settings;
 
 mod update_network_settings;
 

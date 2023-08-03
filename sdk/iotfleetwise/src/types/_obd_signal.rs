@@ -16,7 +16,7 @@ pub struct ObdSignal {
     /// <p>A multiplier used to decode the message.</p>
     #[doc(hidden)]
     pub scaling: ::std::option::Option<f64>,
-    /// <p>Indicates where data appears in the message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     #[doc(hidden)]
     pub offset: ::std::option::Option<f64>,
     /// <p>Indicates the beginning of the message.</p>
@@ -49,7 +49,7 @@ impl ObdSignal {
     pub fn scaling(&self) -> ::std::option::Option<f64> {
         self.scaling
     }
-    /// <p>Indicates where data appears in the message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     pub fn offset(&self) -> ::std::option::Option<f64> {
         self.offset
     }
@@ -134,12 +134,12 @@ impl ObdSignalBuilder {
         self.scaling = input;
         self
     }
-    /// <p>Indicates where data appears in the message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     pub fn offset(mut self, input: f64) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates where data appears in the message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
         self.offset = input;
         self

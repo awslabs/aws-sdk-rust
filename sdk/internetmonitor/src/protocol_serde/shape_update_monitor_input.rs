@@ -6,11 +6,20 @@ pub fn ser_update_monitor_input(
     if let Some(var_1) = &input.client_token {
         object.key("ClientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.internet_measurements_log_delivery {
+    if let Some(var_2) = &input.health_events_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("InternetMeasurementsLogDelivery").start_object();
-        crate::protocol_serde::shape_internet_measurements_log_delivery::ser_internet_measurements_log_delivery(&mut object_3, var_2)?;
+        let mut object_3 = object.key("HealthEventsConfig").start_object();
+        crate::protocol_serde::shape_health_events_config::ser_health_events_config(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
+    }
+    if let Some(var_4) = &input.internet_measurements_log_delivery {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("InternetMeasurementsLogDelivery").start_object();
+        crate::protocol_serde::shape_internet_measurements_log_delivery::ser_internet_measurements_log_delivery(&mut object_5, var_4)?;
+        object_5.finish();
     }
     if input.max_city_networks_to_monitor != 0 {
         object.key("MaxCityNetworksToMonitor").number(
@@ -18,26 +27,26 @@ pub fn ser_update_monitor_input(
             ::aws_smithy_types::Number::NegInt((input.max_city_networks_to_monitor).into()),
         );
     }
-    if let Some(var_4) = &input.resources_to_add {
-        let mut array_5 = object.key("ResourcesToAdd").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.resources_to_add {
+        let mut array_7 = object.key("ResourcesToAdd").start_array();
+        for item_8 in var_6 {
             {
-                array_5.value().string(item_6.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_7) = &input.resources_to_remove {
-        let mut array_8 = object.key("ResourcesToRemove").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.resources_to_remove {
+        let mut array_10 = object.key("ResourcesToRemove").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.status {
-        object.key("Status").string(var_10.as_str());
+    if let Some(var_12) = &input.status {
+        object.key("Status").string(var_12.as_str());
     }
     if input.traffic_percentage_to_monitor != 0 {
         object.key("TrafficPercentageToMonitor").number(

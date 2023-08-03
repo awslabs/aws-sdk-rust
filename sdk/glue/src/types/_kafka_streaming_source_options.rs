@@ -58,6 +58,10 @@ pub struct KafkaStreamingSourceOptions {
     /// <p>When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.</p>
     #[doc(hidden)]
     pub emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+    /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+    #[doc(hidden)]
+    pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KafkaStreamingSourceOptions {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
@@ -132,6 +136,11 @@ impl KafkaStreamingSourceOptions {
     pub fn emit_consumer_lag_metrics(&self) -> ::std::option::Option<&str> {
         self.emit_consumer_lag_metrics.as_deref()
     }
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+    /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+    pub fn starting_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.starting_timestamp.as_ref()
+    }
 }
 impl KafkaStreamingSourceOptions {
     /// Creates a new builder-style object to manufacture [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
@@ -164,6 +173,7 @@ pub struct KafkaStreamingSourceOptionsBuilder {
     pub(crate) include_headers: ::std::option::Option<bool>,
     pub(crate) add_record_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
+    pub(crate) starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KafkaStreamingSourceOptionsBuilder {
     /// <p>A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.</p>
@@ -400,6 +410,21 @@ impl KafkaStreamingSourceOptionsBuilder {
         self.emit_consumer_lag_metrics = input;
         self
     }
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+    /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+    pub fn starting_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.starting_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the record in the Kafka topic to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+    /// <p>Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+    pub fn set_starting_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.starting_timestamp = input;
+        self
+    }
     /// Consumes the builder and constructs a [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
     pub fn build(self) -> crate::types::KafkaStreamingSourceOptions {
         crate::types::KafkaStreamingSourceOptions {
@@ -421,6 +446,7 @@ impl KafkaStreamingSourceOptionsBuilder {
             include_headers: self.include_headers,
             add_record_timestamp: self.add_record_timestamp,
             emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
+            starting_timestamp: self.starting_timestamp,
         }
     }
 }

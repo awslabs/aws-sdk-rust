@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyGlobalClusterInput {
-    /// <p>The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The new cluster identifier for the global database cluster when modifying a global database cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>The first character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
     #[doc(hidden)]
     pub new_global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
     #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Specifies whether to allow major version upgrades.</p>
+    /// <p>Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a different major version than the global cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.</p>
     #[doc(hidden)]
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInput {
-    /// <p>The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
@@ -45,22 +45,22 @@ impl ModifyGlobalClusterInput {
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>The new cluster identifier for the global database cluster when modifying a global database cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>The first character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.new_global_cluster_identifier.as_deref()
     }
-    /// <p>Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
@@ -68,8 +68,8 @@ impl ModifyGlobalClusterInput {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Specifies whether to allow major version upgrades.</p>
+    /// <p>Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a different major version than the global cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.</p>
     pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
@@ -97,7 +97,7 @@ pub struct ModifyGlobalClusterInputBuilder {
     pub(crate) allow_major_version_upgrade: ::std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInputBuilder {
-    /// <p>The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
@@ -109,7 +109,7 @@ impl ModifyGlobalClusterInputBuilder {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
@@ -121,12 +121,12 @@ impl ModifyGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
-    /// <p>The new cluster identifier for the global database cluster when modifying a global database cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>The first character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(
@@ -136,12 +136,12 @@ impl ModifyGlobalClusterInputBuilder {
         self.new_global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new cluster identifier for the global database cluster when modifying a global database cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>The first character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
     pub fn set_new_global_cluster_identifier(
@@ -151,17 +151,17 @@ impl ModifyGlobalClusterInputBuilder {
         self.new_global_cluster_identifier = input;
         self
     }
-    /// <p>Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be deleted when deletion protection is enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
@@ -173,7 +173,7 @@ impl ModifyGlobalClusterInputBuilder {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
@@ -185,15 +185,15 @@ impl ModifyGlobalClusterInputBuilder {
         self.engine_version = input;
         self
     }
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Specifies whether to allow major version upgrades.</p>
+    /// <p>Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a different major version than the global cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.</p>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
         self.allow_major_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Specifies whether to allow major version upgrades.</p>
+    /// <p>Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code> parameter that's a different major version than the global cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.</p>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;

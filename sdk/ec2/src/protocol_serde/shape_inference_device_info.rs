@@ -47,6 +47,16 @@ pub fn de_inference_device_info(
                 builder = builder.set_manufacturer(var_3);
             }
             ,
+            s if s.matches("memoryInfo") /* MemoryInfo com.amazonaws.ec2#InferenceDeviceInfo$MemoryInfo */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_inference_device_memory_info::de_inference_device_memory_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_memory_info(var_4);
+            }
+            ,
             _ => {}
         }
     }

@@ -7,6 +7,8 @@ pub use crate::types::_auto_enable::AutoEnable;
 
 pub use crate::types::_filter_criteria::FilterCriteria;
 
+pub use crate::types::_number_filter::NumberFilter;
+
 pub use crate::types::_string_filter::StringFilter;
 
 pub use crate::types::_string_comparison::StringComparison;
@@ -15,8 +17,6 @@ pub use crate::types::_date_filter::DateFilter;
 
 pub use crate::types::_package_filter::PackageFilter;
 
-pub use crate::types::_number_filter::NumberFilter;
-
 pub use crate::types::_port_range_filter::PortRangeFilter;
 
 pub use crate::types::_map_filter::MapFilter;
@@ -24,6 +24,10 @@ pub use crate::types::_map_filter::MapFilter;
 pub use crate::types::_map_comparison::MapComparison;
 
 pub use crate::types::_filter_action::FilterAction;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_scan_type::ScanType;
 
 pub use crate::types::_ec2_deep_inspection_status::Ec2DeepInspectionStatus;
 
@@ -62,6 +66,12 @@ pub use crate::types::_member::Member;
 pub use crate::types::_relationship_status::RelationshipStatus;
 
 pub use crate::types::_finding::Finding;
+
+pub use crate::types::_epss_details::EpssDetails;
+
+pub use crate::types::_code_vulnerability_details::CodeVulnerabilityDetails;
+
+pub use crate::types::_code_file_path::CodeFilePath;
 
 pub use crate::types::_exploitability_details::ExploitabilityDetails;
 
@@ -110,8 +120,6 @@ pub use crate::types::_runtime::Runtime;
 pub use crate::types::_aws_ecr_container_image_details::AwsEcrContainerImageDetails;
 
 pub use crate::types::_aws_ec2_instance_details::AwsEc2InstanceDetails;
-
-pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_finding_status::FindingStatus;
 
@@ -169,6 +177,8 @@ pub use crate::types::_lambda_layer_sort_by::LambdaLayerSortBy;
 
 pub use crate::types::_title_aggregation::TitleAggregation;
 
+pub use crate::types::_aggregation_finding_type::AggregationFindingType;
+
 pub use crate::types::_title_sort_by::TitleSortBy;
 
 pub use crate::types::_aggregation_resource_type::AggregationResourceType;
@@ -188,8 +198,6 @@ pub use crate::types::_image_layer_sort_by::ImageLayerSortBy;
 pub use crate::types::_finding_type_aggregation::FindingTypeAggregation;
 
 pub use crate::types::_finding_type_sort_by::FindingTypeSortBy;
-
-pub use crate::types::_aggregation_finding_type::AggregationFindingType;
 
 pub use crate::types::_ec2_instance_aggregation::Ec2InstanceAggregation;
 
@@ -218,6 +226,8 @@ pub use crate::types::_counts::Counts;
 pub use crate::types::_group_key::GroupKey;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteria;
+
+pub use crate::types::_coverage_date_filter::CoverageDateFilter;
 
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
 
@@ -249,8 +259,6 @@ pub use crate::types::_scan_status_reason::ScanStatusReason;
 
 pub use crate::types::_scan_status_code::ScanStatusCode;
 
-pub use crate::types::_scan_type::ScanType;
-
 pub use crate::types::_coverage_resource_type::CoverageResourceType;
 
 pub use crate::types::_permission::Permission;
@@ -259,11 +267,23 @@ pub use crate::types::_operation::Operation;
 
 pub use crate::types::_service::Service;
 
+pub use crate::types::_resource_filter_criteria::ResourceFilterCriteria;
+
+pub use crate::types::_resource_map_filter::ResourceMapFilter;
+
+pub use crate::types::_resource_map_comparison::ResourceMapComparison;
+
+pub use crate::types::_resource_string_filter::ResourceStringFilter;
+
+pub use crate::types::_resource_string_comparison::ResourceStringComparison;
+
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_reporting_error_code::ReportingErrorCode;
 
 pub use crate::types::_external_report_status::ExternalReportStatus;
+
+pub use crate::types::_sbom_report_format::SbomReportFormat;
 
 pub use crate::types::_delegated_admin::DelegatedAdmin;
 
@@ -304,6 +324,16 @@ pub use crate::types::_free_trial_info::FreeTrialInfo;
 pub use crate::types::_free_trial_status::FreeTrialStatus;
 
 pub use crate::types::_free_trial_type::FreeTrialType;
+
+pub use crate::types::_code_snippet_error::CodeSnippetError;
+
+pub use crate::types::_code_snippet_error_code::CodeSnippetErrorCode;
+
+pub use crate::types::_code_snippet_result::CodeSnippetResult;
+
+pub use crate::types::_suggested_fix::SuggestedFix;
+
+pub use crate::types::_code_line::CodeLine;
 
 pub use crate::types::_account_state::AccountState;
 
@@ -357,7 +387,21 @@ mod _aws_lambda_function_details;
 
 mod _cisa_data;
 
+mod _code_file_path;
+
+mod _code_line;
+
+mod _code_snippet_error;
+
+mod _code_snippet_error_code;
+
+mod _code_snippet_result;
+
+mod _code_vulnerability_details;
+
 mod _counts;
+
+mod _coverage_date_filter;
 
 mod _coverage_filter_criteria;
 
@@ -424,6 +468,8 @@ mod _ecr_rescan_duration_status;
 mod _ecr_scan_frequency;
 
 mod _epss;
+
+mod _epss_details;
 
 mod _error_code;
 
@@ -557,6 +603,12 @@ mod _resource;
 
 mod _resource_details;
 
+mod _resource_filter_criteria;
+
+mod _resource_map_comparison;
+
+mod _resource_map_filter;
+
 mod _resource_scan_metadata;
 
 mod _resource_scan_type;
@@ -565,9 +617,15 @@ mod _resource_state;
 
 mod _resource_status;
 
+mod _resource_string_comparison;
+
+mod _resource_string_filter;
+
 mod _resource_type;
 
 mod _runtime;
+
+mod _sbom_report_format;
 
 mod _scan_status;
 
@@ -600,6 +658,8 @@ mod _step;
 mod _string_comparison;
 
 mod _string_filter;
+
+mod _suggested_fix;
 
 mod _title_aggregation;
 

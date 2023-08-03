@@ -15,7 +15,7 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud providers and Amazon Web Services storage services.
+//! DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
 //!
 //! This API interface reference includes documentation for using DataSync programmatically. For complete information, see the _ [DataSync User Guide](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html) _.
 //!
@@ -30,8 +30,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-datasync = "0.28.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-datasync = "0.29.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

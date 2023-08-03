@@ -55,6 +55,8 @@ pub use crate::types::_field_value::FieldValue;
 
 pub use crate::types::_field_value_union::FieldValueUnion;
 
+pub use crate::types::_empty_field_value::EmptyFieldValue;
+
 pub use crate::types::_sort::Sort;
 
 pub use crate::types::_order::Order;
@@ -110,6 +112,8 @@ mod _contact_filter;
 mod _domain_status;
 
 mod _domain_summary;
+
+mod _empty_field_value;
 
 mod _event_bridge_configuration;
 

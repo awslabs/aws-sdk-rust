@@ -206,7 +206,7 @@ pub enum CreateEventDataStoreError {
     InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::types::error::KmsException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(

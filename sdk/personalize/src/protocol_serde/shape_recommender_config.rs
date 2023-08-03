@@ -19,6 +19,15 @@ pub fn ser_recommender_config(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.training_data_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("trainingDataConfig").start_object();
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +67,11 @@ where
                                     )?
                                     .map(i32::try_from)
                                     .transpose()?,
+                                );
+                            }
+                            "trainingDataConfig" => {
+                                builder = builder.set_training_data_config(
+                                    crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

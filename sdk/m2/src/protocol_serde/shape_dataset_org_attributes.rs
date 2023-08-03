@@ -19,6 +19,18 @@ pub fn ser_dataset_org_attributes(
             crate::protocol_serde::shape_gdg_attributes::ser_gdg_attributes(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::DatasetOrgAttributes::Po(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("po").start_object();
+            crate::protocol_serde::shape_po_attributes::ser_po_attributes(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::DatasetOrgAttributes::Ps(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("ps").start_object();
+            crate::protocol_serde::shape_ps_attributes::ser_ps_attributes(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::DatasetOrgAttributes::Unknown => {
             return Err(
                 ::aws_smithy_http::operation::error::SerializationError::unknown_variant(

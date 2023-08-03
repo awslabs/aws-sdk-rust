@@ -214,6 +214,13 @@ where
                                     crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
                                 );
                         }
+                        "runtimePlatform" => {
+                            builder = builder.set_runtime_platform(
+                                crate::protocol_serde::shape_runtime_platform::de_runtime_platform(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

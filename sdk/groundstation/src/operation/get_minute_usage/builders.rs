@@ -5,7 +5,7 @@ pub use crate::operation::get_minute_usage::_get_minute_usage_input::GetMinuteUs
 
 /// Fluent builder constructing a request to `GetMinuteUsage`.
 ///
-/// <p>Returns the number of minutes used by account.</p>
+/// <p>Returns the number of reserved minutes used by account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMinuteUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -21,24 +21,33 @@ pub fn ser_create_recording_configuration_input(
             ::aws_smithy_types::Number::NegInt((input.recording_reconnect_window_seconds).into()),
         );
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_4) = &input.rendition_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
-            {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
-            }
-        }
+        let mut object_5 = object.key("renditionConfiguration").start_object();
+        crate::protocol_serde::shape_rendition_configuration::ser_rendition_configuration(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
-    if let Some(var_8) = &input.thumbnail_configuration {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("thumbnailConfiguration").start_object();
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
+    }
+    if let Some(var_10) = &input.thumbnail_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("thumbnailConfiguration").start_object();
         crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(
-            &mut object_9,
-            var_8,
+            &mut object_11,
+            var_10,
         )?;
-        object_9.finish();
+        object_11.finish();
     }
     Ok(())
 }

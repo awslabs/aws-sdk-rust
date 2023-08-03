@@ -6,6 +6,7 @@ pub use crate::operation::get_network_profile::_get_network_profile_input::GetNe
 /// Fluent builder constructing a request to `GetNetworkProfile`.
 ///
 /// <p>Gets the network profile details by the network profile ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNetworkProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

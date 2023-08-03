@@ -28,7 +28,7 @@ pub struct InsertableImage {
     /// Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with lower values for Layer.
     #[doc(hidden)]
     pub layer: ::std::option::Option<i32>,
-    /// Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
     #[doc(hidden)]
     pub opacity: ::std::option::Option<i32>,
     /// Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
@@ -71,7 +71,7 @@ impl InsertableImage {
     pub fn layer(&self) -> ::std::option::Option<i32> {
         self.layer
     }
-    /// Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
     pub fn opacity(&self) -> ::std::option::Option<i32> {
         self.opacity
     }
@@ -196,12 +196,12 @@ impl InsertableImageBuilder {
         self.layer = input;
         self
     }
-    /// Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
     pub fn opacity(mut self, input: i32) -> Self {
         self.opacity = ::std::option::Option::Some(input);
         self
     }
-    /// Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
     pub fn set_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.opacity = input;
         self

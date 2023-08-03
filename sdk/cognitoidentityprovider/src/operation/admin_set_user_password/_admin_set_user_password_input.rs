@@ -14,7 +14,7 @@ pub struct AdminSetUserPasswordInput {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     #[doc(hidden)]
-    pub permanent: bool,
+    pub permanent: ::std::option::Option<bool>,
 }
 impl AdminSetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
@@ -30,7 +30,7 @@ impl AdminSetUserPasswordInput {
         self.password.as_deref()
     }
     /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
-    pub fn permanent(&self) -> bool {
+    pub fn permanent(&self) -> ::std::option::Option<bool> {
         self.permanent
     }
 }
@@ -114,7 +114,7 @@ impl AdminSetUserPasswordInputBuilder {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
                 password: self.password,
-                permanent: self.permanent.unwrap_or_default(),
+                permanent: self.permanent,
             },
         )
     }

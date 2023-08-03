@@ -16,6 +16,12 @@ pub struct InferenceRecommendation {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    #[doc(hidden)]
+    pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    #[doc(hidden)]
+    pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
@@ -36,6 +42,14 @@ impl InferenceRecommendation {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn invocation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.invocation_end_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn invocation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.invocation_start_time.as_ref()
+    }
 }
 impl InferenceRecommendation {
     /// Creates a new builder-style object to manufacture [`InferenceRecommendation`](crate::types::InferenceRecommendation).
@@ -55,6 +69,8 @@ pub struct InferenceRecommendationBuilder {
         ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InferenceRecommendationBuilder {
     /// <p>The metrics used to decide what recommendation to make.</p>
@@ -115,6 +131,32 @@ impl InferenceRecommendationBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn invocation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invocation_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn set_invocation_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invocation_end_time = input;
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn invocation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invocation_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn set_invocation_start_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invocation_start_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::types::InferenceRecommendation).
     pub fn build(self) -> crate::types::InferenceRecommendation {
         crate::types::InferenceRecommendation {
@@ -122,6 +164,8 @@ impl InferenceRecommendationBuilder {
             endpoint_configuration: self.endpoint_configuration,
             model_configuration: self.model_configuration,
             recommendation_id: self.recommendation_id,
+            invocation_end_time: self.invocation_end_time,
+            invocation_start_time: self.invocation_start_time,
         }
     }
 }

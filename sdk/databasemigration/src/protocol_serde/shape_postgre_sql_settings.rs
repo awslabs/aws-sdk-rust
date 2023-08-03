@@ -77,6 +77,18 @@ pub fn ser_postgre_sql_settings(
     if let Some(var_20) = &input.map_boolean_as_boolean {
         object.key("MapBooleanAsBoolean").boolean(*var_20);
     }
+    if let Some(var_21) = &input.map_jsonb_as_clob {
+        object.key("MapJsonbAsClob").boolean(*var_21);
+    }
+    if let Some(var_22) = &input.map_long_varchar_as {
+        object.key("MapLongVarcharAs").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.database_mode {
+        object.key("DatabaseMode").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.babelfish_database_name {
+        object.key("BabelfishDatabaseName").string(var_24.as_str());
+    }
     Ok(())
 }
 
@@ -276,6 +288,47 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            "MapJsonbAsClob" => {
+                                builder = builder.set_map_jsonb_as_clob(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "MapLongVarcharAs" => {
+                                builder = builder.set_map_long_varchar_as(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::LongVarcharMappingType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "DatabaseMode" => {
+                                builder = builder.set_database_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::DatabaseMode::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "BabelfishDatabaseName" => {
+                                builder = builder.set_babelfish_database_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

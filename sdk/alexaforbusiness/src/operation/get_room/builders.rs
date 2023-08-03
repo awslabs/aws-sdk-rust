@@ -6,6 +6,7 @@ pub use crate::operation::get_room::_get_room_input::GetRoomInputBuilder;
 /// Fluent builder constructing a request to `GetRoom`.
 ///
 /// <p>Gets room details by room ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

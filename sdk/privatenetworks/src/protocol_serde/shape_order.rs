@@ -75,6 +75,11 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
+                            "orderedResources" => {
+                                builder = builder.set_ordered_resources(
+                                    crate::protocol_serde::shape_ordered_resource_definitions::de_ordered_resource_definitions(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

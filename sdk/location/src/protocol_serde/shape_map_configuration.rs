@@ -6,6 +6,9 @@ pub fn ser_map_configuration(
     if let Some(var_1) = &input.style {
         object.key("Style").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.political_view {
+        object.key("PoliticalView").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -35,6 +38,15 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Style" => {
                                 builder = builder.set_style(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "PoliticalView" => {
+                                builder = builder.set_political_view(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

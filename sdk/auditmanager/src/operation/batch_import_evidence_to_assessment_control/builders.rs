@@ -5,10 +5,11 @@ pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_im
 
 /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
 ///
-/// <p>Uploads one or more pieces of evidence to a control in an Audit Manager assessment. You can upload manual evidence from any Amazon Simple Storage Service (Amazon S3) bucket by specifying the S3 URI of the evidence. </p>
-/// <p>You must upload manual evidence to your S3 bucket before you can upload it to your assessment. For instructions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> in the <i>Amazon Simple Storage Service API Reference.</i> </p>
+/// <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment. </p>
+/// <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question. </p>
 /// <p>The following restrictions apply to this action:</p>
 /// <ul>
+/// <li> <p> <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code> </p> </li>
 /// <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li>
 /// <li> <p>Number of daily manual evidence uploads per control: 100</p> </li>
 /// <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li>

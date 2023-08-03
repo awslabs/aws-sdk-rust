@@ -6,7 +6,7 @@ pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -18,7 +18,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -55,7 +55,7 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
         self.bucket = input;
         self
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -63,7 +63,7 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn set_continuation_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

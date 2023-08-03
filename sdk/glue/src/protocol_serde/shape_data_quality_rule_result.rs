@@ -65,6 +65,11 @@ where
                                 .transpose()?,
                             );
                         }
+                        "EvaluatedMetrics" => {
+                            builder = builder.set_evaluated_metrics(
+                                    crate::protocol_serde::shape_evaluated_metrics_map::de_evaluated_metrics_map(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

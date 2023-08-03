@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::created_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::parallelism_configuration): <p>The parallelism configuration applied to the pipeline.</p>
+    ///   - [`selective_execution_config(Option<SelectiveExecutionConfig>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::selective_execution_config): <p>The selective execution configuration applied to the pipeline run.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineExecutionError>`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionError)
     pub fn describe_pipeline_execution(&self) -> crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder{
         crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::new(self.handle.clone())

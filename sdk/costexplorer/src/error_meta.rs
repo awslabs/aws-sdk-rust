@@ -842,6 +842,28 @@ impl From<crate::operation::get_rightsizing_recommendation::GetRightsizingRecomm
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError> for Error {
+    fn from(err: crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError) -> Self {
+        match err {
+            crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
+            crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -1165,6 +1187,7 @@ impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_savings_
 impl From<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError> for Error {
     fn from(err: crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError) -> Self {
         match err {
+            crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1268,6 +1291,7 @@ impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_savings
 impl From<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError> for Error {
     fn from(err: crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError) -> Self {
         match err {
+            crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::GenerationExistsException(inner) => Error::GenerationExistsException(inner),
             crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

@@ -7,7 +7,7 @@ pub struct S3ImportSource {
     /// <p> The URI for the source S3 bucket. </p>
     #[doc(hidden)]
     pub s3_location_uri: ::std::option::Option<::std::string::String>,
-    /// <p> The region associated with the source S3 bucket. </p>
+    /// <p> The Region associated with the source S3 bucket. </p>
     #[doc(hidden)]
     pub s3_bucket_region: ::std::option::Option<::std::string::String>,
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
@@ -19,7 +19,7 @@ impl S3ImportSource {
     pub fn s3_location_uri(&self) -> ::std::option::Option<&str> {
         self.s3_location_uri.as_deref()
     }
-    /// <p> The region associated with the source S3 bucket. </p>
+    /// <p> The Region associated with the source S3 bucket. </p>
     pub fn s3_bucket_region(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_region.as_deref()
     }
@@ -62,7 +62,7 @@ impl S3ImportSourceBuilder {
         self.s3_location_uri = input;
         self
     }
-    /// <p> The region associated with the source S3 bucket. </p>
+    /// <p> The Region associated with the source S3 bucket. </p>
     pub fn s3_bucket_region(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -70,7 +70,7 @@ impl S3ImportSourceBuilder {
         self.s3_bucket_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The region associated with the source S3 bucket. </p>
+    /// <p> The Region associated with the source S3 bucket. </p>
     pub fn set_s3_bucket_region(
         mut self,
         input: ::std::option::Option<::std::string::String>,

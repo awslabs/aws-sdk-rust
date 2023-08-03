@@ -75,11 +75,11 @@ pub use crate::types::_h265_settings::H265SettingsBuilder;
 
 pub use crate::types::_h265_qvbr_settings::H265QvbrSettingsBuilder;
 
+pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilterBuilder;
+
 pub use crate::types::_h264_settings::H264SettingsBuilder;
 
 pub use crate::types::_h264_qvbr_settings::H264QvbrSettingsBuilder;
-
-pub use crate::types::_bandwidth_reduction_filter::BandwidthReductionFilterBuilder;
 
 pub use crate::types::_frame_capture_settings::FrameCaptureSettingsBuilder;
 

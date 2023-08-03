@@ -13,7 +13,7 @@ pub struct ApplicationSummary {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
@@ -48,7 +48,7 @@ impl ApplicationSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -132,7 +132,7 @@ impl ApplicationSummaryBuilder {
         self.arn = input;
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -140,7 +140,7 @@ impl ApplicationSummaryBuilder {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn set_release_label(
         mut self,
         input: ::std::option::Option<::std::string::String>,

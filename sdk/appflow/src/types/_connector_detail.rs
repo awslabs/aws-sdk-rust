@@ -37,6 +37,24 @@ pub struct ConnectorDetail {
     /// <p>The connection mode that the connector supports.</p>
     #[doc(hidden)]
     pub connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    #[doc(hidden)]
+    pub supported_data_transfer_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
 }
 impl ConnectorDetail {
     /// <p>A description about the registered connector.</p>
@@ -85,6 +103,26 @@ impl ConnectorDetail {
     pub fn connector_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.connector_modes.as_deref()
     }
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn supported_data_transfer_types(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
+        self.supported_data_transfer_types.as_deref()
+    }
 }
 impl ConnectorDetail {
     /// Creates a new builder-style object to manufacture [`ConnectorDetail`](crate::types::ConnectorDetail).
@@ -111,6 +149,8 @@ pub struct ConnectorDetailBuilder {
     pub(crate) connector_provisioning_type:
         ::std::option::Option<crate::types::ConnectorProvisioningType>,
     pub(crate) connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_data_transfer_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
 }
 impl ConnectorDetailBuilder {
     /// <p>A description about the registered connector.</p>
@@ -289,6 +329,56 @@ impl ConnectorDetailBuilder {
         self.connector_modes = input;
         self
     }
+    /// Appends an item to `supported_data_transfer_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_data_transfer_types`](Self::set_supported_data_transfer_types).
+    ///
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn supported_data_transfer_types(
+        mut self,
+        input: crate::types::SupportedDataTransferType,
+    ) -> Self {
+        let mut v = self.supported_data_transfer_types.unwrap_or_default();
+        v.push(input);
+        self.supported_data_transfer_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The data transfer types that the connector supports.</p>
+    /// <dl>
+    /// <dt>
+    /// RECORD
+    /// </dt>
+    /// <dd>
+    /// <p>Structured records.</p>
+    /// </dd>
+    /// <dt>
+    /// FILE
+    /// </dt>
+    /// <dd>
+    /// <p>Files or binary data.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_supported_data_transfer_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    ) -> Self {
+        self.supported_data_transfer_types = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ConnectorDetail`](crate::types::ConnectorDetail).
     pub fn build(self) -> crate::types::ConnectorDetail {
         crate::types::ConnectorDetail {
@@ -303,6 +393,7 @@ impl ConnectorDetailBuilder {
             registered_by: self.registered_by,
             connector_provisioning_type: self.connector_provisioning_type,
             connector_modes: self.connector_modes,
+            supported_data_transfer_types: self.supported_data_transfer_types,
         }
     }
 }

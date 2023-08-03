@@ -15,7 +15,7 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! This is the _Amazon Omics API Reference_. For an introduction to the service, see [What is Amazon Omics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _Amazon Omics User Guide_.
+//! This is the _AWS HealthOmics API Reference_. For an introduction to the service, see [What is AWS HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _AWS HealthOmics User Guide_.
 //!
 //! ## Getting Started
 //!
@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-omics = "0.6.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-omics = "0.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

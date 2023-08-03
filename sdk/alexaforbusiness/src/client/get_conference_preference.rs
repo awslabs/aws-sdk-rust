@@ -6,6 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetConferencePreferenceOutput`](crate::operation::get_conference_preference::GetConferencePreferenceOutput) with field(s):
     ///   - [`preference(Option<ConferencePreference>)`](crate::operation::get_conference_preference::GetConferencePreferenceOutput::preference): <p>The conference preference.</p>
     /// - On failure, responds with [`SdkError<GetConferencePreferenceError>`](crate::operation::get_conference_preference::GetConferencePreferenceError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_conference_preference(
         &self,
     ) -> crate::operation::get_conference_preference::builders::GetConferencePreferenceFluentBuilder

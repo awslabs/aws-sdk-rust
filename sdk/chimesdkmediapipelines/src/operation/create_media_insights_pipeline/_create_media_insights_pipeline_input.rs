@@ -19,7 +19,7 @@ pub struct CreateMediaInsightsPipelineInput {
     #[doc(hidden)]
     pub kinesis_video_stream_recording_source_runtime_configuration:
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     #[doc(hidden)]
     pub s3_recording_sink_runtime_configuration:
         ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
@@ -58,7 +58,7 @@ impl CreateMediaInsightsPipelineInput {
         self.kinesis_video_stream_recording_source_runtime_configuration
             .as_ref()
     }
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn s3_recording_sink_runtime_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::S3RecordingSinkRuntimeConfiguration> {
@@ -203,7 +203,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.kinesis_video_stream_recording_source_runtime_configuration = input;
         self
     }
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn s3_recording_sink_runtime_configuration(
         mut self,
         input: crate::types::S3RecordingSinkRuntimeConfiguration,
@@ -211,7 +211,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.s3_recording_sink_runtime_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn set_s3_recording_sink_runtime_configuration(
         mut self,
         input: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,

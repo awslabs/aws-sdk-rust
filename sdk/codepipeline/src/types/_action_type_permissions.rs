@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypePermissions {
-    /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
+    /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
     #[doc(hidden)]
     pub allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ActionTypePermissions {
-    /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
+    /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
     pub fn allowed_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_accounts.as_deref()
     }
@@ -34,7 +34,7 @@ impl ActionTypePermissionsBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_accounts`](Self::set_allowed_accounts).
     ///
-    /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
+    /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
     pub fn allowed_accounts(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -44,7 +44,7 @@ impl ActionTypePermissionsBuilder {
         self.allowed_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
+    /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
     pub fn set_allowed_accounts(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -7,6 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorTerminationHealthOutput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput) with field(s):
     ///   - [`termination_health(Option<TerminationHealth>)`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput::termination_health): <p>The termination health details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorTerminationHealthError>`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthError)
+    #[deprecated(
+        note = "Replaced by GetVoiceConnectorTerminationHealth in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn get_voice_connector_termination_health(&self) -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthFluentBuilder{
         crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthFluentBuilder::new(self.handle.clone())
     }

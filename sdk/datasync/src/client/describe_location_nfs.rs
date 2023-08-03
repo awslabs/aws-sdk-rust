@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::location_uri): <p>The URL of the source NFS location that was described.</p>
     ///   - [`on_prem_config(Option<OnPremConfig>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::on_prem_config): <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    ///   - [`mount_options(Option<NfsMountOptions>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::mount_options): <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    ///   - [`mount_options(Option<NfsMountOptions>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::mount_options): <p>The mount options that DataSync uses to mount your NFS share.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::creation_time): <p>The time that the NFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationNfsError>`](crate::operation::describe_location_nfs::DescribeLocationNfsError)
     pub fn describe_location_nfs(

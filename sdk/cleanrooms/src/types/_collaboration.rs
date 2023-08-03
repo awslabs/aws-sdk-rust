@@ -16,7 +16,7 @@ pub struct Collaboration {
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name of the collaboration creator.</p>
@@ -61,7 +61,7 @@ impl Collaboration {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn creator_account_id(&self) -> ::std::option::Option<&str> {
         self.creator_account_id.as_deref()
     }
@@ -171,7 +171,7 @@ impl CollaborationBuilder {
         self.description = input;
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn creator_account_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -179,7 +179,7 @@ impl CollaborationBuilder {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_creator_account_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -58,6 +58,9 @@ pub mod get_reservation_utilization;
 /// Types for the `GetRightsizingRecommendation` operation.
 pub mod get_rightsizing_recommendation;
 
+/// Types for the `GetSavingsPlanPurchaseRecommendationDetails` operation.
+pub mod get_savings_plan_purchase_recommendation_details;
+
 /// Types for the `GetSavingsPlansCoverage` operation.
 pub mod get_savings_plans_coverage;
 

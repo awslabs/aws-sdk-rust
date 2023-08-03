@@ -7,7 +7,7 @@ pub struct ChannelMessageCallback {
     /// <p>The message ID.</p>
     #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
-    /// <p>The message content.</p>
+    /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
@@ -16,7 +16,7 @@ pub struct ChannelMessageCallback {
     /// <p>The push notification configuration of the message.</p>
     #[doc(hidden)]
     pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
-    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub message_attributes: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
@@ -24,7 +24,7 @@ pub struct ChannelMessageCallback {
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
-    /// <p>The content type of the call-back message.</p>
+    /// <p>The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
@@ -33,7 +33,7 @@ impl ChannelMessageCallback {
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -47,7 +47,7 @@ impl ChannelMessageCallback {
     ) -> ::std::option::Option<&crate::types::PushNotificationConfiguration> {
         self.push_notification.as_ref()
     }
-    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
     ) -> ::std::option::Option<
@@ -59,7 +59,7 @@ impl ChannelMessageCallback {
     pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
-    /// <p>The content type of the call-back message.</p>
+    /// <p>The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -110,12 +110,12 @@ impl ChannelMessageCallbackBuilder {
         self.message_id = input;
         self
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The message content.</p>
+    /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
@@ -147,7 +147,7 @@ impl ChannelMessageCallbackBuilder {
     ///
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
-    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -158,7 +158,7 @@ impl ChannelMessageCallbackBuilder {
         self.message_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_message_attributes(
         mut self,
         input: ::std::option::Option<
@@ -184,12 +184,12 @@ impl ChannelMessageCallbackBuilder {
         self.sub_channel_id = input;
         self
     }
-    /// <p>The content type of the call-back message.</p>
+    /// <p>The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content type of the call-back message.</p>
+    /// <p>The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self

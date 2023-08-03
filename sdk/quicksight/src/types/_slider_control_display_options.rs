@@ -7,11 +7,21 @@ pub struct SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
+    /// <p>The configuration of info icon label options.</p>
+    #[doc(hidden)]
+    pub info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn title_options(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
         self.title_options.as_ref()
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+        self.info_icon_label_options.as_ref()
     }
 }
 impl SliderControlDisplayOptions {
@@ -28,6 +38,8 @@ impl SliderControlDisplayOptions {
 )]
 pub struct SliderControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
+    pub(crate) info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl SliderControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -43,10 +55,27 @@ impl SliderControlDisplayOptionsBuilder {
         self.title_options = input;
         self
     }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        mut self,
+        input: crate::types::SheetControlInfoIconLabelOptions,
+    ) -> Self {
+        self.info_icon_label_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn set_info_icon_label_options(
+        mut self,
+        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    ) -> Self {
+        self.info_icon_label_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
     pub fn build(self) -> crate::types::SliderControlDisplayOptions {
         crate::types::SliderControlDisplayOptions {
             title_options: self.title_options,
+            info_icon_label_options: self.info_icon_label_options,
         }
     }
 }

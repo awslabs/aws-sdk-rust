@@ -3,14 +3,17 @@ pub fn ser_change_server_life_cycle_state_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.life_cycle {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("lifeCycle").start_object();
-        crate::protocol_serde::shape_change_server_life_cycle_state_source_server_lifecycle::ser_change_server_life_cycle_state_source_server_lifecycle(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.source_server_id {
-        object.key("sourceServerID").string(var_3.as_str());
+    if let Some(var_2) = &input.life_cycle {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("lifeCycle").start_object();
+        crate::protocol_serde::shape_change_server_life_cycle_state_source_server_lifecycle::ser_change_server_life_cycle_state_source_server_lifecycle(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.source_server_id {
+        object.key("sourceServerID").string(var_4.as_str());
     }
     Ok(())
 }

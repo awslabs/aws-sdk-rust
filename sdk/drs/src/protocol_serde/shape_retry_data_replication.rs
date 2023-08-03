@@ -243,6 +243,15 @@ pub(crate) fn de_retry_data_replication(
                             crate::protocol_serde::shape_source_cloud_properties::de_source_cloud_properties(tokens)?
                         );
                     }
+                    "sourceNetworkID" => {
+                        builder = builder.set_source_network_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::protocol_serde::shape_source_properties::de_source_properties(

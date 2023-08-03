@@ -7,7 +7,16 @@ pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>A resource with the same name already exists.</p>
+    #[doc(hidden)]
+    pub resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ConflictException {
+    /// <p>A resource with the same name already exists.</p>
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -52,6 +61,7 @@ impl ConflictException {
 )]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -63,6 +73,16 @@ impl ConflictExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
+        self
+    }
+    /// <p>A resource with the same name already exists.</p>
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A resource with the same name already exists.</p>
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_id = input;
         self
     }
     /// Sets error metadata
@@ -83,6 +103,7 @@ impl ConflictExceptionBuilder {
     pub fn build(self) -> crate::types::error::ConflictException {
         crate::types::error::ConflictException {
             message: self.message,
+            resource_id: self.resource_id,
             meta: self.meta.unwrap_or_default(),
         }
     }

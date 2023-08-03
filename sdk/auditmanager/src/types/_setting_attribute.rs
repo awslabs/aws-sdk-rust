@@ -14,6 +14,7 @@
 /// match settingattribute {
 ///     SettingAttribute::All => { /* ... */ },
 ///     SettingAttribute::DefaultAssessmentReportsDestination => { /* ... */ },
+///     SettingAttribute::DefaultExportDestination => { /* ... */ },
 ///     SettingAttribute::DefaultProcessOwners => { /* ... */ },
 ///     SettingAttribute::DeregistrationPolicy => { /* ... */ },
 ///     SettingAttribute::EvidenceFinderEnablement => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum SettingAttribute {
     #[allow(missing_docs)] // documentation missing in model
     DefaultAssessmentReportsDestination,
     #[allow(missing_docs)] // documentation missing in model
+    DefaultExportDestination,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultProcessOwners,
     #[allow(missing_docs)] // documentation missing in model
     DeregistrationPolicy,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for SettingAttribute {
             "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" => {
                 SettingAttribute::DefaultAssessmentReportsDestination
             }
+            "DEFAULT_EXPORT_DESTINATION" => SettingAttribute::DefaultExportDestination,
             "DEFAULT_PROCESS_OWNERS" => SettingAttribute::DefaultProcessOwners,
             "DEREGISTRATION_POLICY" => SettingAttribute::DeregistrationPolicy,
             "EVIDENCE_FINDER_ENABLEMENT" => SettingAttribute::EvidenceFinderEnablement,
@@ -102,6 +106,7 @@ impl SettingAttribute {
             SettingAttribute::DefaultAssessmentReportsDestination => {
                 "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"
             }
+            SettingAttribute::DefaultExportDestination => "DEFAULT_EXPORT_DESTINATION",
             SettingAttribute::DefaultProcessOwners => "DEFAULT_PROCESS_OWNERS",
             SettingAttribute::DeregistrationPolicy => "DEREGISTRATION_POLICY",
             SettingAttribute::EvidenceFinderEnablement => "EVIDENCE_FINDER_ENABLEMENT",
@@ -115,6 +120,7 @@ impl SettingAttribute {
         &[
             "ALL",
             "DEFAULT_ASSESSMENT_REPORTS_DESTINATION",
+            "DEFAULT_EXPORT_DESTINATION",
             "DEFAULT_PROCESS_OWNERS",
             "DEREGISTRATION_POLICY",
             "EVIDENCE_FINDER_ENABLEMENT",

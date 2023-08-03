@@ -191,6 +191,11 @@ pub(crate) fn de_update_billing_group(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "AccountGrouping" => {
+                        builder = builder.set_account_grouping(
+                            crate::protocol_serde::shape_update_billing_group_account_grouping::de_update_billing_group_account_grouping(tokens)?
+                        );
+                    }
                     "Arn" => {
                         builder = builder.set_arn(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

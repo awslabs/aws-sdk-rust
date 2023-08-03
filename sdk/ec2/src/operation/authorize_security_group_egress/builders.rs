@@ -5,7 +5,7 @@ pub use crate::operation::authorize_security_group_egress::_authorize_security_g
 
 /// Fluent builder constructing a request to `AuthorizeSecurityGroupEgress`.
 ///
-/// <p>[VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>
+/// <p>Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>
 /// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the instances that are associated with the specified source security groups. When specifying an outbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a destination for the traffic.</p>
 /// <p>You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.</p>
 /// <p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>

@@ -30,6 +30,9 @@ pub struct Object {
     /// <p>The owner of the object</p>
     #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    #[doc(hidden)]
+    pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
 }
 impl Object {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
@@ -65,6 +68,10 @@ impl Object {
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn restore_status(&self) -> ::std::option::Option<&crate::types::RestoreStatus> {
+        self.restore_status.as_ref()
+    }
 }
 impl Object {
     /// Creates a new builder-style object to manufacture [`Object`](crate::types::Object).
@@ -87,6 +94,7 @@ pub struct ObjectBuilder {
     pub(crate) size: ::std::option::Option<i64>,
     pub(crate) storage_class: ::std::option::Option<crate::types::ObjectStorageClass>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
+    pub(crate) restore_status: ::std::option::Option<crate::types::RestoreStatus>,
 }
 impl ObjectBuilder {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
@@ -184,6 +192,19 @@ impl ObjectBuilder {
         self.owner = input;
         self
     }
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn restore_status(mut self, input: crate::types::RestoreStatus) -> Self {
+        self.restore_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn set_restore_status(
+        mut self,
+        input: ::std::option::Option<crate::types::RestoreStatus>,
+    ) -> Self {
+        self.restore_status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Object`](crate::types::Object).
     pub fn build(self) -> crate::types::Object {
         crate::types::Object {
@@ -194,6 +215,7 @@ impl ObjectBuilder {
             size: self.size.unwrap_or_default(),
             storage_class: self.storage_class,
             owner: self.owner,
+            restore_status: self.restore_status,
         }
     }
 }

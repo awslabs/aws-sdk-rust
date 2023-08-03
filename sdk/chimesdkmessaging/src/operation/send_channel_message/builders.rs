@@ -7,7 +7,8 @@ pub use crate::operation::send_channel_message::_send_channel_message_input::Sen
 ///
 /// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
-/// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
+/// <p>Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+/// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendChannelMessageFluentBuilder {
@@ -112,22 +113,26 @@ impl SendChannelMessageFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content of the message.</p>
+    /// <p>The content of the channel message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// <p> <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
+    /// <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn set_type(
         mut self,
         input: ::std::option::Option<crate::types::ChannelMessageType>,
@@ -244,6 +249,23 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The content type of the channel message.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
+        self
+    }
+    /// Appends an item to `Target`.
+    ///
+    /// To override the contents of this collection use [`set_target`](Self::set_target).
+    ///
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn target(mut self, input: crate::types::Target) -> Self {
+        self.inner = self.inner.target(input);
+        self
+    }
+    /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see. </p>
+    pub fn set_target(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.inner = self.inner.set_target(input);
         self
     }
 }

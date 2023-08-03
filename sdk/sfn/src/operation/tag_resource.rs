@@ -177,7 +177,7 @@ pub type TagResourceErrorKind = TagResourceError;
 pub enum TagResourceError {
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
+    /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::types::error::TooManyTags),

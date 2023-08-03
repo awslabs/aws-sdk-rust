@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`schedule_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::schedule_arn) / [`set_schedule_arn(Option<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::set_schedule_arn): <p>The ARN of the business report schedule.</p>
     /// - On success, responds with [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteBusinessReportScheduleError>`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_business_report_schedule(&self) -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder{
         crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::new(self.handle.clone())
     }

@@ -6,7 +6,9 @@ pub use crate::operation::test_dns_answer::_test_dns_answer_input::TestDnsAnswer
 /// Fluent builder constructing a request to `TestDNSAnswer`.
 ///
 /// <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
-/// <p>This call only supports querying public hosted zones.</p>
+/// <p>This call only supports querying public hosted zones.</p> <note>
+/// <p>The <code>TestDnsAnswer </code> returns information similar to what you would expect from the answer section of the <code>dig</code> command. Therefore, if you query for the name servers of a subdomain that point to the parent name servers, those will not be returned.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestDNSAnswerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

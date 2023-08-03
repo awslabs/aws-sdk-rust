@@ -240,6 +240,8 @@ mod create_slot;
 
 mod create_slot_type;
 
+mod create_test_set_discrepancy_report;
+
 mod create_upload_url;
 
 /// Operation customization and supporting types.
@@ -294,6 +296,8 @@ mod delete_slot;
 
 mod delete_slot_type;
 
+mod delete_test_set;
+
 mod delete_utterances;
 
 mod describe_bot;
@@ -320,6 +324,16 @@ mod describe_slot;
 
 mod describe_slot_type;
 
+mod describe_test_execution;
+
+mod describe_test_set;
+
+mod describe_test_set_discrepancy_report;
+
+mod describe_test_set_generation;
+
+mod get_test_execution_artifacts_url;
+
 mod list_aggregated_utterances;
 
 mod list_bot_aliases;
@@ -342,9 +356,19 @@ mod list_exports;
 
 mod list_imports;
 
+mod list_intent_metrics;
+
+mod list_intent_paths;
+
+mod list_intent_stage_metrics;
+
 mod list_intents;
 
 mod list_recommended_intents;
+
+mod list_session_analytics_data;
+
+mod list_session_metrics;
 
 mod list_slot_types;
 
@@ -352,11 +376,27 @@ mod list_slots;
 
 mod list_tags_for_resource;
 
+mod list_test_execution_result_items;
+
+mod list_test_executions;
+
+mod list_test_set_records;
+
+mod list_test_sets;
+
+mod list_utterance_analytics_data;
+
+mod list_utterance_metrics;
+
 mod search_associated_transcripts;
 
 mod start_bot_recommendation;
 
 mod start_import;
+
+mod start_test_execution;
+
+mod start_test_set_generation;
 
 mod stop_bot_recommendation;
 
@@ -381,3 +421,5 @@ mod update_resource_policy;
 mod update_slot;
 
 mod update_slot_type;
+
+mod update_test_set;

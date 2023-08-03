@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`service_id(Option<String>)`](crate::operation::get_route::GetRouteOutput::service_id): <p>The unique identifier of the service.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::get_route::GetRouteOutput::application_id): <p>The ID of the application that the route belongs to. </p>
     ///   - [`environment_id(Option<String>)`](crate::operation::get_route::GetRouteOutput::environment_id): <p>Unique identifier of the environment.</p>
-    ///   - [`source_path(Option<String>)`](crate::operation::get_route::GetRouteOutput::source_path): <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
+    ///   - [`source_path(Option<String>)`](crate::operation::get_route::GetRouteOutput::source_path): <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     ///   - [`methods(Option<Vec<HttpMethod>>)`](crate::operation::get_route::GetRouteOutput::methods): <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     ///   - [`include_child_paths(Option<bool>)`](crate::operation::get_route::GetRouteOutput::include_child_paths): <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     ///   - [`path_resource_to_id(Option<HashMap<String, String>>)`](crate::operation::get_route::GetRouteOutput::path_resource_to_id): <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_route::GetRouteOutput::error): <p>Any error associated with the route resource. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_route::GetRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_route::GetRouteOutput::created_time): <p>The timestamp of when the route is created. </p>
+    ///   - [`append_source_path(Option<bool>)`](crate::operation::get_route::GetRouteOutput::append_source_path): <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     /// - On failure, responds with [`SdkError<GetRouteError>`](crate::operation::get_route::GetRouteError)
     pub fn get_route(&self) -> crate::operation::get_route::builders::GetRouteFluentBuilder {
         crate::operation::get_route::builders::GetRouteFluentBuilder::new(self.handle.clone())

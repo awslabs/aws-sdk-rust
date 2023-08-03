@@ -70,5 +70,14 @@ pub fn ser_update_server_input(
         )?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.structured_log_destinations {
+        let mut array_21 = object.key("StructuredLogDestinations").start_array();
+        for item_22 in var_20 {
+            {
+                array_21.value().string(item_22.as_str());
+            }
+        }
+        array_21.finish();
+    }
     Ok(())
 }

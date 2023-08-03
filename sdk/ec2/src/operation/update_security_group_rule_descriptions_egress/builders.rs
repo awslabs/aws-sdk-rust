@@ -5,7 +5,7 @@ pub use crate::operation::update_security_group_rule_descriptions_egress::_updat
 
 /// Fluent builder constructing a request to `UpdateSecurityGroupRuleDescriptionsEgress`.
 ///
-/// <p>[VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing description, or add a description to a rule that did not have one previously. You can remove a description for a security group rule by omitting the description parameter in the request.</p>
+/// <p>Updates the description of an egress (outbound) security group rule. You can replace an existing description, or add a description to a rule that did not have one previously. You can remove a description for a security group rule by omitting the description parameter in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -93,12 +93,12 @@ impl UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
-    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self

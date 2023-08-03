@@ -5,7 +5,7 @@ pub use crate::operation::list_action_types::_list_action_types_input::ListActio
 
 /// Fluent builder constructing a request to `ListActionTypes`.
 ///
-/// <p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>
+/// <p>Gets a summary of all CodePipeline action types associated with your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListActionTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

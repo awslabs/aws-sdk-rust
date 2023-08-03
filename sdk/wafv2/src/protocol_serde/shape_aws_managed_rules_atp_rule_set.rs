@@ -24,6 +24,11 @@ pub fn ser_aws_managed_rules_atp_rule_set(
         )?;
         object_5.finish();
     }
+    if input.enable_regex_in_path {
+        object
+            .key("EnableRegexInPath")
+            .boolean(input.enable_regex_in_path);
+    }
     Ok(())
 }
 
@@ -68,6 +73,13 @@ where
                             "ResponseInspection" => {
                                 builder = builder.set_response_inspection(
                                     crate::protocol_serde::shape_response_inspection::de_response_inspection(tokens)?
+                                );
+                            }
+                            "EnableRegexInPath" => {
+                                builder = builder.set_enable_regex_in_path(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -34,6 +34,12 @@ pub struct ServicePipeline {
     /// <p>The service spec that was used to create the service pipeline.</p>
     #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last attempted deployment of this service pipeline.</p>
+    #[doc(hidden)]
+    pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last successful deployment of this service pipeline.</p>
+    #[doc(hidden)]
+    pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
@@ -80,6 +86,14 @@ impl ServicePipeline {
     pub fn spec(&self) -> ::std::option::Option<&str> {
         self.spec.as_deref()
     }
+    /// <p>The ID of the last attempted deployment of this service pipeline.</p>
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_attempted_deployment_id.as_deref()
+    }
+    /// <p>The ID of the last successful deployment of this service pipeline.</p>
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_succeeded_deployment_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ServicePipeline {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -103,6 +117,14 @@ impl ::std::fmt::Debug for ServicePipeline {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }
@@ -127,6 +149,8 @@ pub struct ServicePipelineBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) spec: ::std::option::Option<::std::string::String>,
+    pub(crate) last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServicePipelineBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
@@ -265,6 +289,38 @@ impl ServicePipelineBuilder {
         self.spec = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this service pipeline.</p>
+    pub fn last_attempted_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last attempted deployment of this service pipeline.</p>
+    pub fn set_last_attempted_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = input;
+        self
+    }
+    /// <p>The ID of the last successful deployment of this service pipeline.</p>
+    pub fn last_succeeded_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last successful deployment of this service pipeline.</p>
+    pub fn set_last_succeeded_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ServicePipeline`](crate::types::ServicePipeline).
     pub fn build(self) -> crate::types::ServicePipeline {
         crate::types::ServicePipeline {
@@ -278,6 +334,8 @@ impl ServicePipelineBuilder {
             deployment_status: self.deployment_status,
             deployment_status_message: self.deployment_status_message,
             spec: self.spec,
+            last_attempted_deployment_id: self.last_attempted_deployment_id,
+            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
         }
     }
 }
@@ -303,6 +361,14 @@ impl ::std::fmt::Debug for ServicePipelineBuilder {
             &"*** Sensitive Data Redacted ***",
         );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }

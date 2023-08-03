@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenNonLinearWatermarkSettings {
-    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     #[doc(hidden)]
     pub active_watermark_process:
         ::std::option::Option<crate::types::NielsenActiveWatermarkProcessType>,
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     #[doc(hidden)]
     pub adi_filename: ::std::option::Option<::std::string::String>,
     /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
@@ -17,38 +17,38 @@ pub struct NielsenNonLinearWatermarkSettings {
     /// Use the asset name that you provide to Nielsen for this asset. Required for all Nielsen non-linear watermarking.
     #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
-    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     #[doc(hidden)]
     pub cbet_source_id: ::std::option::Option<::std::string::String>,
     /// Optional. If this asset uses an episode ID with Nielsen, provide it here.
     #[doc(hidden)]
     pub episode_id: ::std::option::Option<::std::string::String>,
-    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     #[doc(hidden)]
     pub metadata_destination: ::std::option::Option<::std::string::String>,
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
     #[doc(hidden)]
     pub source_id: ::std::option::Option<i32>,
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     #[doc(hidden)]
     pub source_watermark_status:
         ::std::option::Option<crate::types::NielsenSourceWatermarkStatusType>,
     /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
     #[doc(hidden)]
     pub tic_server_url: ::std::option::Option<::std::string::String>,
-    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     #[doc(hidden)]
     pub unique_tic_per_audio_track:
         ::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType>,
 }
 impl NielsenNonLinearWatermarkSettings {
-    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub fn active_watermark_process(
         &self,
     ) -> ::std::option::Option<&crate::types::NielsenActiveWatermarkProcessType> {
         self.active_watermark_process.as_ref()
     }
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     pub fn adi_filename(&self) -> ::std::option::Option<&str> {
         self.adi_filename.as_deref()
     }
@@ -60,7 +60,7 @@ impl NielsenNonLinearWatermarkSettings {
     pub fn asset_name(&self) -> ::std::option::Option<&str> {
         self.asset_name.as_deref()
     }
-    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     pub fn cbet_source_id(&self) -> ::std::option::Option<&str> {
         self.cbet_source_id.as_deref()
     }
@@ -68,7 +68,7 @@ impl NielsenNonLinearWatermarkSettings {
     pub fn episode_id(&self) -> ::std::option::Option<&str> {
         self.episode_id.as_deref()
     }
-    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     pub fn metadata_destination(&self) -> ::std::option::Option<&str> {
         self.metadata_destination.as_deref()
     }
@@ -76,7 +76,7 @@ impl NielsenNonLinearWatermarkSettings {
     pub fn source_id(&self) -> ::std::option::Option<i32> {
         self.source_id
     }
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn source_watermark_status(
         &self,
     ) -> ::std::option::Option<&crate::types::NielsenSourceWatermarkStatusType> {
@@ -86,7 +86,7 @@ impl NielsenNonLinearWatermarkSettings {
     pub fn tic_server_url(&self) -> ::std::option::Option<&str> {
         self.tic_server_url.as_deref()
     }
-    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub fn unique_tic_per_audio_track(
         &self,
     ) -> ::std::option::Option<&crate::types::NielsenUniqueTicPerAudioTrackType> {
@@ -122,7 +122,7 @@ pub struct NielsenNonLinearWatermarkSettingsBuilder {
         ::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType>,
 }
 impl NielsenNonLinearWatermarkSettingsBuilder {
-    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub fn active_watermark_process(
         mut self,
         input: crate::types::NielsenActiveWatermarkProcessType,
@@ -130,7 +130,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.active_watermark_process = ::std::option::Option::Some(input);
         self
     }
-    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub fn set_active_watermark_process(
         mut self,
         input: ::std::option::Option<crate::types::NielsenActiveWatermarkProcessType>,
@@ -138,12 +138,12 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.active_watermark_process = input;
         self
     }
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     pub fn adi_filename(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adi_filename = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     pub fn set_adi_filename(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.adi_filename = input;
         self
@@ -168,7 +168,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.asset_name = input;
         self
     }
-    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     pub fn cbet_source_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -176,7 +176,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.cbet_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+    /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     pub fn set_cbet_source_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -194,7 +194,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.episode_id = input;
         self
     }
-    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     pub fn metadata_destination(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -202,7 +202,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.metadata_destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+    /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     pub fn set_metadata_destination(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -220,7 +220,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.source_id = input;
         self
     }
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn source_watermark_status(
         mut self,
         input: crate::types::NielsenSourceWatermarkStatusType,
@@ -228,7 +228,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.source_watermark_status = ::std::option::Option::Some(input);
         self
     }
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn set_source_watermark_status(
         mut self,
         input: ::std::option::Option<crate::types::NielsenSourceWatermarkStatusType>,
@@ -252,7 +252,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.tic_server_url = input;
         self
     }
-    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub fn unique_tic_per_audio_track(
         mut self,
         input: crate::types::NielsenUniqueTicPerAudioTrackType,
@@ -260,7 +260,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
         self.unique_tic_per_audio_track = ::std::option::Option::Some(input);
         self
     }
-    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub fn set_unique_tic_per_audio_track(
         mut self,
         input: ::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType>,

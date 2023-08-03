@@ -135,4 +135,17 @@ impl UpdateAppInstanceBotFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
+    /// <p>The configuration for the bot update.</p>
+    pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
+        self.inner = self.inner.configuration(input);
+        self
+    }
+    /// <p>The configuration for the bot update.</p>
+    pub fn set_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::Configuration>,
+    ) -> Self {
+        self.inner = self.inner.set_configuration(input);
+        self
+    }
 }

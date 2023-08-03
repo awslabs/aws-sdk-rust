@@ -30,7 +30,7 @@ pub struct TestCaseScenario {
     /// <p>Provides test case scenario failure result.</p>
     #[doc(hidden)]
     pub failure: ::std::option::Option<::std::string::String>,
-    /// <p> </p>
+    /// <p>Provides test case scenario system messages if any.</p>
     #[doc(hidden)]
     pub system_message: ::std::option::Option<::std::string::String>,
 }
@@ -67,7 +67,7 @@ impl TestCaseScenario {
     pub fn failure(&self) -> ::std::option::Option<&str> {
         self.failure.as_deref()
     }
-    /// <p> </p>
+    /// <p>Provides test case scenario system messages if any.</p>
     pub fn system_message(&self) -> ::std::option::Option<&str> {
         self.system_message.as_deref()
     }
@@ -172,7 +172,7 @@ impl TestCaseScenarioBuilder {
         self.failure = input;
         self
     }
-    /// <p> </p>
+    /// <p>Provides test case scenario system messages if any.</p>
     pub fn system_message(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -180,7 +180,7 @@ impl TestCaseScenarioBuilder {
         self.system_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> </p>
+    /// <p>Provides test case scenario system messages if any.</p>
     pub fn set_system_message(
         mut self,
         input: ::std::option::Option<::std::string::String>,

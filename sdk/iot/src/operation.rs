@@ -91,6 +91,12 @@ pub mod create_mitigation_action;
 /// Types for the `CreateOTAUpdate` operation.
 pub mod create_ota_update;
 
+/// Types for the `CreatePackage` operation.
+pub mod create_package;
+
+/// Types for the `CreatePackageVersion` operation.
+pub mod create_package_version;
+
 /// Types for the `CreatePolicy` operation.
 pub mod create_policy;
 
@@ -180,6 +186,12 @@ pub mod delete_mitigation_action;
 
 /// Types for the `DeleteOTAUpdate` operation.
 pub mod delete_ota_update;
+
+/// Types for the `DeletePackage` operation.
+pub mod delete_package;
+
+/// Types for the `DeletePackageVersion` operation.
+pub mod delete_package_version;
 
 /// Types for the `DeletePolicy` operation.
 pub mod delete_policy;
@@ -370,6 +382,15 @@ pub mod get_logging_options;
 /// Types for the `GetOTAUpdate` operation.
 pub mod get_ota_update;
 
+/// Types for the `GetPackage` operation.
+pub mod get_package;
+
+/// Types for the `GetPackageConfiguration` operation.
+pub mod get_package_configuration;
+
+/// Types for the `GetPackageVersion` operation.
+pub mod get_package_version;
+
 /// Types for the `GetPercentiles` operation.
 pub mod get_percentiles;
 
@@ -477,6 +498,12 @@ pub mod list_ota_updates;
 
 /// Types for the `ListOutgoingCertificates` operation.
 pub mod list_outgoing_certificates;
+
+/// Types for the `ListPackageVersions` operation.
+pub mod list_package_versions;
+
+/// Types for the `ListPackages` operation.
+pub mod list_packages;
 
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
@@ -684,6 +711,15 @@ pub mod update_job;
 
 /// Types for the `UpdateMitigationAction` operation.
 pub mod update_mitigation_action;
+
+/// Types for the `UpdatePackage` operation.
+pub mod update_package;
+
+/// Types for the `UpdatePackageConfiguration` operation.
+pub mod update_package_configuration;
+
+/// Types for the `UpdatePackageVersion` operation.
+pub mod update_package_version;
 
 /// Types for the `UpdateProvisioningTemplate` operation.
 pub mod update_provisioning_template;

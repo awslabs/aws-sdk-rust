@@ -168,6 +168,8 @@ pub type ResyncMFADeviceErrorKind = ResyncMFADeviceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ResyncMFADeviceError {
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
     InvalidAuthenticationCodeException(crate::types::error::InvalidAuthenticationCodeException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
@@ -196,6 +198,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for ResyncMFADeviceError {
 impl ::std::fmt::Display for ResyncMFADeviceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::InvalidAuthenticationCodeException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
@@ -207,6 +210,9 @@ impl ::std::fmt::Display for ResyncMFADeviceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResyncMFADeviceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidAuthenticationCodeException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -272,12 +278,17 @@ impl ResyncMFADeviceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConcurrentModificationException(e) => e.meta(),
             Self::InvalidAuthenticationCodeException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::NoSuchEntityException(e) => e.meta(),
             Self::ServiceFailureException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ResyncMFADeviceError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `ResyncMFADeviceError::InvalidAuthenticationCodeException`.
     pub fn is_invalid_authentication_code_exception(&self) -> bool {
@@ -299,6 +310,7 @@ impl ResyncMFADeviceError {
 impl ::std::error::Error for ResyncMFADeviceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAuthenticationCodeException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),

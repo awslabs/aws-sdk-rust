@@ -94,5 +94,14 @@ pub fn ser_write_journey_request(
         crate::protocol_serde::shape_closed_days::ser_closed_days(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.timezone_estimation_methods {
+        let mut array_31 = object.key("TimezoneEstimationMethods").start_array();
+        for item_32 in var_30 {
+            {
+                array_31.value().string(item_32.as_str());
+            }
+        }
+        array_31.finish();
+    }
     Ok(())
 }

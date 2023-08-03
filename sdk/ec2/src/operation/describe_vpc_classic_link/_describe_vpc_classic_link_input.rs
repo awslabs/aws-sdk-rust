@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -20,12 +20,12 @@ pub struct DescribeVpcClassicLinkInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     #[doc(hidden)]
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcClassicLinkInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -44,7 +44,7 @@ impl DescribeVpcClassicLinkInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     pub fn vpc_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_ids.as_deref()
     }
@@ -73,7 +73,7 @@ impl DescribeVpcClassicLinkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -91,7 +91,7 @@ impl DescribeVpcClassicLinkInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -124,14 +124,14 @@ impl DescribeVpcClassicLinkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     pub fn set_vpc_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

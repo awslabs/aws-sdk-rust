@@ -6,6 +6,7 @@ pub use crate::operation::list_business_report_schedules::_list_business_report_
 /// Fluent builder constructing a request to `ListBusinessReportSchedules`.
 ///
 /// <p>Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBusinessReportSchedulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`skill_id(impl ::std::convert::Into<String>)`](crate::operation::approve_skill::builders::ApproveSkillFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::approve_skill::builders::ApproveSkillFluentBuilder::set_skill_id): <p>The unique identifier of the skill.</p>
     /// - On success, responds with [`ApproveSkillOutput`](crate::operation::approve_skill::ApproveSkillOutput)
     /// - On failure, responds with [`SdkError<ApproveSkillError>`](crate::operation::approve_skill::ApproveSkillError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn approve_skill(
         &self,
     ) -> crate::operation::approve_skill::builders::ApproveSkillFluentBuilder {

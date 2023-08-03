@@ -6,6 +6,7 @@ pub use crate::operation::associate_contact_with_address_book::_associate_contac
 /// Fluent builder constructing a request to `AssociateContactWithAddressBook`.
 ///
 /// <p>Associates a contact with a given address book.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateContactWithAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

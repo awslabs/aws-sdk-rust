@@ -225,6 +225,13 @@ pub(crate) fn de_get_data_quality_ruleset_evaluation_run(value: &[u8], mut build
                             crate::protocol_serde::shape_data_quality_result_id_list::de_data_quality_result_id_list(tokens)?
                         );
                     }
+                    "AdditionalDataSources" => {
+                        builder = builder.set_additional_data_sources(
+                            crate::protocol_serde::shape_data_source_map::de_data_source_map(
+                                tokens,
+                            )?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

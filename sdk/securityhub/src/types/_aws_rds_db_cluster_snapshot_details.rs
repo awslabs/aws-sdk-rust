@@ -60,6 +60,11 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
     #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+    #[doc(hidden)]
+    pub db_cluster_snapshot_attributes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
+    >,
 }
 impl AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
@@ -136,6 +141,13 @@ impl AwsRdsDbClusterSnapshotDetails {
     pub fn iam_database_authentication_enabled(&self) -> bool {
         self.iam_database_authentication_enabled
     }
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+    pub fn db_cluster_snapshot_attributes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute]>
+    {
+        self.db_cluster_snapshot_attributes.as_deref()
+    }
 }
 impl AwsRdsDbClusterSnapshotDetails {
     /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
@@ -168,6 +180,9 @@ pub struct AwsRdsDbClusterSnapshotDetailsBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) db_cluster_snapshot_attributes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
+    >,
 }
 impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// Appends an item to `availability_zones`.
@@ -417,6 +432,30 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self.iam_database_authentication_enabled = input;
         self
     }
+    /// Appends an item to `db_cluster_snapshot_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_db_cluster_snapshot_attributes`](Self::set_db_cluster_snapshot_attributes).
+    ///
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+    pub fn db_cluster_snapshot_attributes(
+        mut self,
+        input: crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute,
+    ) -> Self {
+        let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
+        v.push(input);
+        self.db_cluster_snapshot_attributes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
+    pub fn set_db_cluster_snapshot_attributes(
+        mut self,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
+        >,
+    ) -> Self {
+        self.db_cluster_snapshot_attributes = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
     pub fn build(self) -> crate::types::AwsRdsDbClusterSnapshotDetails {
         crate::types::AwsRdsDbClusterSnapshotDetails {
@@ -440,6 +479,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
             iam_database_authentication_enabled: self
                 .iam_database_authentication_enabled
                 .unwrap_or_default(),
+            db_cluster_snapshot_attributes: self.db_cluster_snapshot_attributes,
         }
     }
 }

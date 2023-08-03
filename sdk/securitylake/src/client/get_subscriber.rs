@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSubscriber`](crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::set_id): <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
+    ///   - [`subscriber_id(impl ::std::convert::Into<String>)`](crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::subscriber_id) / [`set_subscriber_id(Option<String>)`](crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::set_subscriber_id): <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
     /// - On success, responds with [`GetSubscriberOutput`](crate::operation::get_subscriber::GetSubscriberOutput) with field(s):
-    ///   - [`subscriber(Option<SubscriberResource>)`](crate::operation::get_subscriber::GetSubscriberOutput::subscriber): <p>The subscription information for the specified subscription ID.</p>
+    ///   - [`subscriber(Option<SubscriberResource>)`](crate::operation::get_subscriber::GetSubscriberOutput::subscriber): <p>The subscriber information for the specified subscriber ID.</p>
     /// - On failure, responds with [`SdkError<GetSubscriberError>`](crate::operation::get_subscriber::GetSubscriberError)
     pub fn get_subscriber(
         &self,

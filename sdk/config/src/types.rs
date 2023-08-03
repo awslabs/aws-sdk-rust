@@ -75,6 +75,12 @@ pub use crate::types::_configuration_recorder::ConfigurationRecorder;
 
 pub use crate::types::_recording_group::RecordingGroup;
 
+pub use crate::types::_recording_strategy::RecordingStrategy;
+
+pub use crate::types::_recording_strategy_type::RecordingStrategyType;
+
+pub use crate::types::_exclusion_by_resource_types::ExclusionByResourceTypes;
+
 pub use crate::types::_configuration_aggregator::ConfigurationAggregator;
 
 pub use crate::types::_organization_aggregation_source::OrganizationAggregationSource;
@@ -399,6 +405,8 @@ mod _evaluation_status;
 
 mod _event_source;
 
+mod _exclusion_by_resource_types;
+
 mod _execution_controls;
 
 mod _external_evaluation;
@@ -462,6 +470,10 @@ mod _query_info;
 mod _recorder_status;
 
 mod _recording_group;
+
+mod _recording_strategy;
+
+mod _recording_strategy_type;
 
 mod _relationship;
 

@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::set_room_arn): <p>The ARN of the room with which to associate the device. Required.</p>
     /// - On success, responds with [`AssociateDeviceWithRoomOutput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput)
     /// - On failure, responds with [`SdkError<AssociateDeviceWithRoomError>`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn associate_device_with_room(
         &self,
     ) -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder

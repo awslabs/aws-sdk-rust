@@ -3,14 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLogSourceInput {
-    /// <p>The custom source name for the custom log source.</p>
+    /// <p>The source name of custom log source that you want to delete.</p>
     #[doc(hidden)]
-    pub custom_source_name: ::std::option::Option<::std::string::String>,
+    pub source_name: ::std::option::Option<::std::string::String>,
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    #[doc(hidden)]
+    pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomLogSourceInput {
-    /// <p>The custom source name for the custom log source.</p>
-    pub fn custom_source_name(&self) -> ::std::option::Option<&str> {
-        self.custom_source_name.as_deref()
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn source_name(&self) -> ::std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn source_version(&self) -> ::std::option::Option<&str> {
+        self.source_version.as_deref()
     }
 }
 impl DeleteCustomLogSourceInput {
@@ -28,23 +35,34 @@ impl DeleteCustomLogSourceInput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct DeleteCustomLogSourceInputBuilder {
-    pub(crate) custom_source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomLogSourceInputBuilder {
-    /// <p>The custom source name for the custom log source.</p>
-    pub fn custom_source_name(
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source name of custom log source that you want to delete.</p>
+    pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_name = input;
+        self
+    }
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn source_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.custom_source_name = ::std::option::Option::Some(input.into());
+        self.source_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The custom source name for the custom log source.</p>
-    pub fn set_custom_source_name(
+    /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    pub fn set_source_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
-        self.custom_source_name = input;
+        self.source_version = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomLogSourceInput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput).
@@ -56,7 +74,8 @@ impl DeleteCustomLogSourceInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_custom_log_source::DeleteCustomLogSourceInput {
-                custom_source_name: self.custom_source_name,
+                source_name: self.source_name,
+                source_version: self.source_version,
             },
         )
     }

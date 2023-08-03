@@ -15,6 +15,7 @@
 ///     SpotInstanceState::Active => { /* ... */ },
 ///     SpotInstanceState::Cancelled => { /* ... */ },
 ///     SpotInstanceState::Closed => { /* ... */ },
+///     SpotInstanceState::Disabled => { /* ... */ },
 ///     SpotInstanceState::Failed => { /* ... */ },
 ///     SpotInstanceState::Open => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +58,8 @@ pub enum SpotInstanceState {
     #[allow(missing_docs)] // documentation missing in model
     Closed,
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Open,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for SpotInstanceState {
             "active" => SpotInstanceState::Active,
             "cancelled" => SpotInstanceState::Cancelled,
             "closed" => SpotInstanceState::Closed,
+            "disabled" => SpotInstanceState::Disabled,
             "failed" => SpotInstanceState::Failed,
             "open" => SpotInstanceState::Open,
             other => {
@@ -91,6 +95,7 @@ impl SpotInstanceState {
             SpotInstanceState::Active => "active",
             SpotInstanceState::Cancelled => "cancelled",
             SpotInstanceState::Closed => "closed",
+            SpotInstanceState::Disabled => "disabled",
             SpotInstanceState::Failed => "failed",
             SpotInstanceState::Open => "open",
             SpotInstanceState::Unknown(value) => value.as_str(),
@@ -98,7 +103,14 @@ impl SpotInstanceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["active", "cancelled", "closed", "failed", "open"]
+        &[
+            "active",
+            "cancelled",
+            "closed",
+            "disabled",
+            "failed",
+            "open",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SpotInstanceState {

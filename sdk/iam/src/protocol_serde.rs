@@ -260,6 +260,10 @@ pub(crate) mod shape_get_login_profile;
 
 pub(crate) mod shape_get_login_profile_input;
 
+pub(crate) mod shape_get_mfa_device;
+
+pub(crate) mod shape_get_mfa_device_input;
+
 pub(crate) mod shape_get_open_id_connect_provider;
 
 pub(crate) mod shape_get_open_id_connect_provider_input;
@@ -711,6 +715,8 @@ pub(crate) mod shape_account_alias_list_type;
 pub(crate) mod shape_attached_policies_list_type;
 
 pub(crate) mod shape_certificate_list_type;
+
+pub(crate) mod shape_certification_map_type;
 
 pub(crate) mod shape_client_id_list_type;
 

@@ -110,12 +110,12 @@ impl ListFHIRExportJobsFluentBuilder {
             self.inner,
         )
     }
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    /// <p> This parameter limits the response to the export job with the specified data store ID. </p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self

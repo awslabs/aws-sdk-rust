@@ -322,6 +322,15 @@ pub fn ser_container_definition(
         )?;
         object_91.finish();
     }
+    if let Some(var_92) = &input.credential_specs {
+        let mut array_93 = object.key("credentialSpecs").start_array();
+        for item_94 in var_92 {
+            {
+                array_93.value().string(item_94.as_str());
+            }
+        }
+        array_93.finish();
+    }
     Ok(())
 }
 
@@ -607,6 +616,11 @@ where
                             builder = builder.set_firelens_configuration(
                                     crate::protocol_serde::shape_firelens_configuration::de_firelens_configuration(tokens)?
                                 );
+                        }
+                        "credentialSpecs" => {
+                            builder = builder.set_credential_specs(
+                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

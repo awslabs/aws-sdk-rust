@@ -16,6 +16,7 @@
 ///     SnomedctRelationshipType::Direction => { /* ... */ },
 ///     SnomedctRelationshipType::Quality => { /* ... */ },
 ///     SnomedctRelationshipType::SystemOrganSite => { /* ... */ },
+///     SnomedctRelationshipType::TestUnit => { /* ... */ },
 ///     SnomedctRelationshipType::TestUnits => { /* ... */ },
 ///     SnomedctRelationshipType::TestValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -60,6 +61,8 @@ pub enum SnomedctRelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     SystemOrganSite,
     #[allow(missing_docs)] // documentation missing in model
+    TestUnit,
+    #[allow(missing_docs)] // documentation missing in model
     TestUnits,
     #[allow(missing_docs)] // documentation missing in model
     TestValue,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for SnomedctRelationshipType {
             "DIRECTION" => SnomedctRelationshipType::Direction,
             "QUALITY" => SnomedctRelationshipType::Quality,
             "SYSTEM_ORGAN_SITE" => SnomedctRelationshipType::SystemOrganSite,
+            "TEST_UNIT" => SnomedctRelationshipType::TestUnit,
             "TEST_UNITS" => SnomedctRelationshipType::TestUnits,
             "TEST_VALUE" => SnomedctRelationshipType::TestValue,
             other => SnomedctRelationshipType::Unknown(crate::primitives::UnknownVariantValue(
@@ -96,6 +100,7 @@ impl SnomedctRelationshipType {
             SnomedctRelationshipType::Direction => "DIRECTION",
             SnomedctRelationshipType::Quality => "QUALITY",
             SnomedctRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+            SnomedctRelationshipType::TestUnit => "TEST_UNIT",
             SnomedctRelationshipType::TestUnits => "TEST_UNITS",
             SnomedctRelationshipType::TestValue => "TEST_VALUE",
             SnomedctRelationshipType::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl SnomedctRelationshipType {
             "DIRECTION",
             "QUALITY",
             "SYSTEM_ORGAN_SITE",
+            "TEST_UNIT",
             "TEST_UNITS",
             "TEST_VALUE",
         ]

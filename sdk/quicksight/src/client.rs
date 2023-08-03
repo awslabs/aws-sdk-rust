@@ -342,11 +342,19 @@ mod describe_analysis_definition;
 
 mod describe_analysis_permissions;
 
+mod describe_asset_bundle_export_job;
+
+mod describe_asset_bundle_import_job;
+
 mod describe_dashboard;
 
 mod describe_dashboard_definition;
 
 mod describe_dashboard_permissions;
+
+mod describe_dashboard_snapshot_job;
+
+mod describe_dashboard_snapshot_job_result;
 
 mod describe_data_set;
 
@@ -413,6 +421,10 @@ mod get_dashboard_embed_url;
 mod get_session_embed_url;
 
 mod list_analyses;
+
+mod list_asset_bundle_export_jobs;
+
+mod list_asset_bundle_import_jobs;
 
 mod list_dashboard_versions;
 
@@ -481,6 +493,12 @@ mod search_data_sources;
 mod search_folders;
 
 mod search_groups;
+
+mod start_asset_bundle_export_job;
+
+mod start_asset_bundle_import_job;
+
+mod start_dashboard_snapshot_job;
 
 mod tag_resource;
 

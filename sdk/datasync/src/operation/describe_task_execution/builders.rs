@@ -5,7 +5,7 @@ pub use crate::operation::describe_task_execution::_describe_task_execution_inpu
 
 /// Fluent builder constructing a request to `DescribeTaskExecution`.
 ///
-/// <p>Returns detailed metadata about a task that is being executed.</p>
+/// <p>Provides information about an DataSync transfer task that's running.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,7 +99,7 @@ impl DescribeTaskExecutionFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     pub fn task_execution_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +107,7 @@ impl DescribeTaskExecutionFluentBuilder {
         self.inner = self.inner.task_execution_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
     pub fn set_task_execution_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

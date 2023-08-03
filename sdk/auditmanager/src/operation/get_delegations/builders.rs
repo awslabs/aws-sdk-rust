@@ -5,7 +5,7 @@ pub use crate::operation::get_delegations::_get_delegations_input::GetDelegation
 
 /// Fluent builder constructing a request to `GetDelegations`.
 ///
-/// <p> Returns a list of delegations from an audit owner to a delegate. </p>
+/// <p> Gets a list of delegations from an audit owner to a delegate. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDelegationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

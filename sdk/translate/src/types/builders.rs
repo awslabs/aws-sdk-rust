@@ -7,6 +7,10 @@ pub use crate::types::_applied_terminology::AppliedTerminologyBuilder;
 
 pub use crate::types::_term::TermBuilder;
 
+pub use crate::types::_translated_document::TranslatedDocumentBuilder;
+
+pub use crate::types::_document::DocumentBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_output_data_config::OutputDataConfigBuilder;

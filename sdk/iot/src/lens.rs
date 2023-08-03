@@ -289,6 +289,26 @@ pub(crate) fn reflens_list_outgoing_certificates_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_package_versions_output_next_token(
+    input: &crate::operation::list_package_versions::ListPackageVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_packages_output_next_token(
+    input: &crate::operation::list_packages::ListPackagesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policies_output_next_marker(
     input: &crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -853,6 +873,26 @@ pub(crate) fn lens_list_outgoing_certificates_output_outgoing_certificates(
     input: crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>> {
     let input = match input.outgoing_certificates {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_package_versions_output_package_version_summaries(
+    input: crate::operation::list_package_versions::ListPackageVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>> {
+    let input = match input.package_version_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_packages_output_package_summaries(
+    input: crate::operation::list_packages::ListPackagesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
+    let input = match input.package_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

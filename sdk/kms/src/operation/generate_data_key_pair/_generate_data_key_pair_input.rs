@@ -38,6 +38,10 @@ pub struct GenerateDataKeyPairInput {
     /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyPairInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the data key pair.</p> <important>
@@ -82,6 +86,11 @@ impl GenerateDataKeyPairInput {
     pub fn recipient(&self) -> ::std::option::Option<&crate::types::RecipientInfo> {
         self.recipient.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl GenerateDataKeyPairInput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairInput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairInput).
@@ -105,6 +114,7 @@ pub struct GenerateDataKeyPairInputBuilder {
     pub(crate) key_pair_spec: ::std::option::Option<crate::types::DataKeyPairSpec>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyPairInputBuilder {
     /// Adds a key-value pair to `encryption_context`.
@@ -223,6 +233,18 @@ impl GenerateDataKeyPairInputBuilder {
         self.recipient = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateDataKeyPairInput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairInput).
     pub fn build(
         self,
@@ -237,6 +259,7 @@ impl GenerateDataKeyPairInputBuilder {
                 key_pair_spec: self.key_pair_spec,
                 grant_tokens: self.grant_tokens,
                 recipient: self.recipient,
+                dry_run: self.dry_run,
             },
         )
     }

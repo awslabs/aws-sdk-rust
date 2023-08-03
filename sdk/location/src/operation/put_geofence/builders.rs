@@ -134,4 +134,29 @@ impl PutGeofenceFluentBuilder {
         self.inner = self.inner.set_geometry(input);
         self
     }
+    /// Adds a key-value pair to `GeofenceProperties`.
+    ///
+    /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).
+    ///
+    /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn geofence_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.geofence_properties(k.into(), v.into());
+        self
+    }
+    /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn set_geofence_properties(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_geofence_properties(input);
+        self
+    }
 }

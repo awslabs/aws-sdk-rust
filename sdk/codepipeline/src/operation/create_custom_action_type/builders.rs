@@ -5,7 +5,7 @@ pub use crate::operation::create_custom_action_type::_create_custom_action_type_
 
 /// Fluent builder constructing a request to `CreateCustomActionType`.
 ///
-/// <p>Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for custom actions.</p>
+/// <p>Creates a new custom action that can be used in all pipelines associated with the Amazon Web Services account. Only used for custom actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,12 +113,12 @@ impl CreateCustomActionTypeFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self

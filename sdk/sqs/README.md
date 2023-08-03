@@ -36,8 +36,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-sqs = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-sqs = "0.29.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

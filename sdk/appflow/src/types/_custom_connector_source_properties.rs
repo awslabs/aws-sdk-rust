@@ -12,6 +12,9 @@ pub struct CustomConnectorSourceProperties {
     pub custom_properties: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
+    #[doc(hidden)]
+    pub data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
 impl CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
@@ -25,6 +28,10 @@ impl CustomConnectorSourceProperties {
         &::std::collections::HashMap<::std::string::String, ::std::string::String>,
     > {
         self.custom_properties.as_ref()
+    }
+    /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
+    pub fn data_transfer_api(&self) -> ::std::option::Option<&crate::types::DataTransferApi> {
+        self.data_transfer_api.as_ref()
     }
 }
 impl CustomConnectorSourceProperties {
@@ -44,6 +51,7 @@ pub struct CustomConnectorSourcePropertiesBuilder {
     pub(crate) custom_properties: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
 impl CustomConnectorSourcePropertiesBuilder {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
@@ -81,11 +89,25 @@ impl CustomConnectorSourcePropertiesBuilder {
         self.custom_properties = input;
         self
     }
+    /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
+    pub fn data_transfer_api(mut self, input: crate::types::DataTransferApi) -> Self {
+        self.data_transfer_api = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
+    pub fn set_data_transfer_api(
+        mut self,
+        input: ::std::option::Option<crate::types::DataTransferApi>,
+    ) -> Self {
+        self.data_transfer_api = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CustomConnectorSourceProperties`](crate::types::CustomConnectorSourceProperties).
     pub fn build(self) -> crate::types::CustomConnectorSourceProperties {
         crate::types::CustomConnectorSourceProperties {
             entity_name: self.entity_name,
             custom_properties: self.custom_properties,
+            data_transfer_api: self.data_transfer_api,
         }
     }
 }

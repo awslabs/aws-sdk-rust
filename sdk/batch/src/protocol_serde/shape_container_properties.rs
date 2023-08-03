@@ -165,6 +165,15 @@ pub fn ser_container_properties(
         )?;
         object_46.finish();
     }
+    if let Some(var_47) = &input.runtime_platform {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("runtimePlatform").start_object();
+        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(
+            &mut object_48,
+            var_47,
+        )?;
+        object_48.finish();
+    }
     Ok(())
 }
 
@@ -332,6 +341,13 @@ where
                             builder = builder.set_ephemeral_storage(
                                     crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
                                 );
+                        }
+                        "runtimePlatform" => {
+                            builder = builder.set_runtime_platform(
+                                crate::protocol_serde::shape_runtime_platform::de_runtime_platform(
+                                    tokens,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

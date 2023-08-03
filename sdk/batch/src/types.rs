@@ -85,6 +85,8 @@ pub use crate::types::_node_range_property::NodeRangeProperty;
 
 pub use crate::types::_container_properties::ContainerProperties;
 
+pub use crate::types::_runtime_platform::RuntimePlatform;
+
 pub use crate::types::_ephemeral_storage::EphemeralStorage;
 
 pub use crate::types::_fargate_platform_configuration::FargatePlatformConfiguration;
@@ -354,6 +356,8 @@ mod _resource_type;
 mod _retry_action;
 
 mod _retry_strategy;
+
+mod _runtime_platform;
 
 mod _scheduling_policy_detail;
 

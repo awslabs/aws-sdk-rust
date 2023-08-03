@@ -151,14 +151,14 @@ impl ModifyInstancePlacementFluentBuilder {
         self
     }
     /// <p>The tenancy for the instance.</p> <note>
-    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
         self.inner = self.inner.tenancy(input);
         self
     }
     /// <p>The tenancy for the instance.</p> <note>
-    /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.</p>
+    /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
         self.inner = self.inner.set_tenancy(input);
@@ -174,7 +174,7 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.set_partition_number(input);
         self
     }
-    /// <p>The ARN of the host resource group in which to place the instance.</p>
+    /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
     pub fn host_resource_group_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -182,7 +182,7 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner = self.inner.host_resource_group_arn(input.into());
         self
     }
-    /// <p>The ARN of the host resource group in which to place the instance.</p>
+    /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
     pub fn set_host_resource_group_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

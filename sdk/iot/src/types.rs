@@ -41,6 +41,10 @@ pub use crate::types::_audit_frequency::AuditFrequency;
 
 pub use crate::types::_provisioning_hook::ProvisioningHook;
 
+pub use crate::types::_package_version_action::PackageVersionAction;
+
+pub use crate::types::_version_update_by_jobs_config::VersionUpdateByJobsConfig;
+
 pub use crate::types::_mitigation_action_params::MitigationActionParams;
 
 pub use crate::types::_publish_finding_to_sns_params::PublishFindingToSnsParams;
@@ -334,6 +338,12 @@ pub use crate::types::_provisioning_template_summary::ProvisioningTemplateSummar
 pub use crate::types::_template_type::TemplateType;
 
 pub use crate::types::_policy_version::PolicyVersion;
+
+pub use crate::types::_package_version_summary::PackageVersionSummary;
+
+pub use crate::types::_package_version_status::PackageVersionStatus;
+
+pub use crate::types::_package_summary::PackageSummary;
 
 pub use crate::types::_outgoing_certificate::OutgoingCertificate;
 
@@ -899,6 +909,14 @@ mod _ota_update_summary;
 
 mod _outgoing_certificate;
 
+mod _package_summary;
+
+mod _package_version_action;
+
+mod _package_version_status;
+
+mod _package_version_summary;
+
 mod _percent_pair;
 
 mod _policy;
@@ -1076,6 +1094,8 @@ mod _user_property;
 mod _validation_error;
 
 mod _verification_state;
+
+mod _version_update_by_jobs_config;
 
 mod _violation_event;
 

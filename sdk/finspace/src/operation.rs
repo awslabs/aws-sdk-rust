@@ -4,14 +4,77 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `CreateEnvironment` operation.
 pub mod create_environment;
 
+/// Types for the `CreateKxChangeset` operation.
+pub mod create_kx_changeset;
+
+/// Types for the `CreateKxCluster` operation.
+pub mod create_kx_cluster;
+
+/// Types for the `CreateKxDatabase` operation.
+pub mod create_kx_database;
+
+/// Types for the `CreateKxEnvironment` operation.
+pub mod create_kx_environment;
+
+/// Types for the `CreateKxUser` operation.
+pub mod create_kx_user;
+
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
+
+/// Types for the `DeleteKxCluster` operation.
+pub mod delete_kx_cluster;
+
+/// Types for the `DeleteKxDatabase` operation.
+pub mod delete_kx_database;
+
+/// Types for the `DeleteKxEnvironment` operation.
+pub mod delete_kx_environment;
+
+/// Types for the `DeleteKxUser` operation.
+pub mod delete_kx_user;
 
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 
+/// Types for the `GetKxChangeset` operation.
+pub mod get_kx_changeset;
+
+/// Types for the `GetKxCluster` operation.
+pub mod get_kx_cluster;
+
+/// Types for the `GetKxConnectionString` operation.
+pub mod get_kx_connection_string;
+
+/// Types for the `GetKxDatabase` operation.
+pub mod get_kx_database;
+
+/// Types for the `GetKxEnvironment` operation.
+pub mod get_kx_environment;
+
+/// Types for the `GetKxUser` operation.
+pub mod get_kx_user;
+
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
+
+/// Types for the `ListKxChangesets` operation.
+pub mod list_kx_changesets;
+
+/// Types for the `ListKxClusterNodes` operation.
+pub mod list_kx_cluster_nodes;
+
+/// Types for the `ListKxClusters` operation.
+pub mod list_kx_clusters;
+
+/// Types for the `ListKxDatabases` operation.
+pub mod list_kx_databases;
+
+/// Types for the `ListKxEnvironments` operation.
+pub mod list_kx_environments;
+
+/// Types for the `ListKxUsers` operation.
+pub mod list_kx_users;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -24,3 +87,18 @@ pub mod untag_resource;
 
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;
+
+/// Types for the `UpdateKxClusterDatabases` operation.
+pub mod update_kx_cluster_databases;
+
+/// Types for the `UpdateKxDatabase` operation.
+pub mod update_kx_database;
+
+/// Types for the `UpdateKxEnvironment` operation.
+pub mod update_kx_environment;
+
+/// Types for the `UpdateKxEnvironmentNetwork` operation.
+pub mod update_kx_environment_network;
+
+/// Types for the `UpdateKxUser` operation.
+pub mod update_kx_user;

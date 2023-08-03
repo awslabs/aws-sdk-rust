@@ -177,11 +177,11 @@ pub type DeleteFHIRDatastoreErrorKind = DeleteFHIRDatastoreError;
 pub enum DeleteFHIRDatastoreError {
     /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The Data Store is in a transition state and the user requested action can not be performed.</p>
+    /// <p>The data store is in a transition state and the user requested action can not be performed.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Unknown error occurs in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The requested Data Store was not found.</p>
+    /// <p> The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -244,6 +244,8 @@ pub(crate) mod shape_dash_playlist_settings;
 
 pub(crate) mod shape_hls_playlist_settings;
 
+pub(crate) mod shape_key_value_pair;
+
 pub(crate) mod shape_live_source;
 
 pub(crate) mod shape_playback_configuration;
@@ -274,7 +276,11 @@ pub(crate) mod shape___list_of__string;
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_schedule_ad_break;
 
+pub(crate) mod shape_ad_break_metadata_list;
+
 pub(crate) mod shape_segmentation_descriptor;
+
+pub(crate) mod shape_ad_markup_types;
 
 pub(crate) mod shape_schedule_ad_break;
 

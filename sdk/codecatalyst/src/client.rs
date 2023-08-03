@@ -218,6 +218,8 @@ mod create_dev_environment;
 
 mod create_project;
 
+mod create_source_repository;
+
 mod create_source_repository_branch;
 
 /// Operation customization and supporting types.
@@ -252,9 +254,17 @@ mod delete_access_token;
 
 mod delete_dev_environment;
 
+mod delete_project;
+
+mod delete_source_repository;
+
+mod delete_space;
+
 mod get_dev_environment;
 
 mod get_project;
+
+mod get_source_repository;
 
 mod get_source_repository_clone_urls;
 
@@ -289,5 +299,9 @@ mod stop_dev_environment;
 mod stop_dev_environment_session;
 
 mod update_dev_environment;
+
+mod update_project;
+
+mod update_space;
 
 mod verify_session;

@@ -59,6 +59,12 @@ pub struct ResolverEndpoint {
     /// <p> The Resolver endpoint IP address type. </p>
     #[doc(hidden)]
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    #[doc(hidden)]
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p> The Amazon EC2 instance type. </p>
+    #[doc(hidden)]
+    pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -131,6 +137,14 @@ impl ResolverEndpoint {
     ) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p> The Amazon EC2 instance type. </p>
+    pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
+        self.preferred_instance_type.as_deref()
+    }
 }
 impl ResolverEndpoint {
     /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::types::ResolverEndpoint).
@@ -158,6 +172,8 @@ pub struct ResolverEndpointBuilder {
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResolverEndpointBuilder {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -367,6 +383,32 @@ impl ResolverEndpointBuilder {
         self.resolver_endpoint_type = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.outpost_arn = input;
+        self
+    }
+    /// <p> The Amazon EC2 instance type. </p>
+    pub fn preferred_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_instance_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The Amazon EC2 instance type. </p>
+    pub fn set_preferred_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.preferred_instance_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn build(self) -> crate::types::ResolverEndpoint {
         crate::types::ResolverEndpoint {
@@ -383,6 +425,8 @@ impl ResolverEndpointBuilder {
             creation_time: self.creation_time,
             modification_time: self.modification_time,
             resolver_endpoint_type: self.resolver_endpoint_type,
+            outpost_arn: self.outpost_arn,
+            preferred_instance_type: self.preferred_instance_type,
         }
     }
 }

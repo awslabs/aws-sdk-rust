@@ -178,6 +178,15 @@ pub(crate) fn de_get_certificates(
                             crate::protocol_serde::shape_certificate_summary_list::de_certificate_summary_list(tokens)?
                         );
                     }
+                    "nextPageToken" => {
+                        builder = builder.set_next_page_token(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

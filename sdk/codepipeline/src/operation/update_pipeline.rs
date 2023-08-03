@@ -181,7 +181,7 @@ pub enum UpdatePipelineError {
     InvalidStageDeclarationException(crate::types::error::InvalidStageDeclarationException),
     /// <p>The structure was specified in an invalid format.</p>
     InvalidStructureException(crate::types::error::InvalidStructureException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
+    /// <p>The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::types::error::ValidationException),

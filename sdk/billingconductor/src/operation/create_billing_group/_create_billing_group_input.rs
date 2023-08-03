@@ -9,7 +9,7 @@ pub struct CreateBillingGroupInput {
     /// <p> The billing group name. The names must be unique. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     #[doc(hidden)]
     pub account_grouping: ::std::option::Option<crate::types::AccountGrouping>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
@@ -36,7 +36,7 @@ impl CreateBillingGroupInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::AccountGrouping> {
         self.account_grouping.as_ref()
     }
@@ -119,12 +119,12 @@ impl CreateBillingGroupInputBuilder {
         self.name = input;
         self
     }
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(mut self, input: crate::types::AccountGrouping) -> Self {
         self.account_grouping = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn set_account_grouping(
         mut self,
         input: ::std::option::Option<crate::types::AccountGrouping>,

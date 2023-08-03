@@ -50,5 +50,11 @@ pub fn ser_create_hyper_parameter_tuning_job_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.autotune {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("Autotune").start_object();
+        crate::protocol_serde::shape_autotune::ser_autotune(&mut object_17, var_16)?;
+        object_17.finish();
+    }
     Ok(())
 }

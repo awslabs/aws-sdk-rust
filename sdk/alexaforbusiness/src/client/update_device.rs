@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`device_name(impl ::std::convert::Into<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::device_name) / [`set_device_name(Option<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::set_device_name): <p>The updated device name. Required.</p>
     /// - On success, responds with [`UpdateDeviceOutput`](crate::operation::update_device::UpdateDeviceOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::operation::update_device::UpdateDeviceError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_device(
         &self,
     ) -> crate::operation::update_device::builders::UpdateDeviceFluentBuilder {

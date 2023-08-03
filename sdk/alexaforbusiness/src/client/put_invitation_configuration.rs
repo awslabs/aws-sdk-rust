@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`private_skill_ids(Vec<String>)`](crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder::private_skill_ids) / [`set_private_skill_ids(Option<Vec<String>>)`](crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder::set_private_skill_ids): <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     /// - On success, responds with [`PutInvitationConfigurationOutput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutInvitationConfigurationError>`](crate::operation::put_invitation_configuration::PutInvitationConfigurationError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn put_invitation_configuration(&self) -> crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder{
         crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder::new(self.handle.clone())
     }

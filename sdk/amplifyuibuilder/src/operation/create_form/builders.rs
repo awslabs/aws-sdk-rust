@@ -5,7 +5,7 @@ pub use crate::operation::create_form::_create_form_input::CreateFormInputBuilde
 
 /// Fluent builder constructing a request to `CreateForm`.
 ///
-/// <p>Creates a new form for an Amplify app.</p>
+/// <p>Creates a new form for an Amplify.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFormFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

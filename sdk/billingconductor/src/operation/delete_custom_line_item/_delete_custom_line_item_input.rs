@@ -6,7 +6,7 @@ pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
@@ -15,7 +15,7 @@ impl DeleteCustomLineItemInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -51,7 +51,7 @@ impl DeleteCustomLineItemInputBuilder {
         self.arn = input;
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
         input: crate::types::CustomLineItemBillingPeriodRange,
@@ -59,7 +59,7 @@ impl DeleteCustomLineItemInputBuilder {
         self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(
         mut self,
         input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,

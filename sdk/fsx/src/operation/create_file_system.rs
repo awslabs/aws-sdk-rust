@@ -164,6 +164,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for CreateFileSystem {
             crate::protocol_serde::shape_create_file_system::de_create_file_system_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

@@ -100,10 +100,10 @@ impl ListTypesFluentBuilder {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
+    /// <li> <p>Private extensions you have registered in this account and Region.</p> </li>
+    /// <li> <p>Public extensions that you have activated in this account and Region.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>
@@ -115,10 +115,10 @@ impl ListTypesFluentBuilder {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
+    /// <li> <p>Private extensions you have registered in this account and Region.</p> </li>
+    /// <li> <p>Public extensions that you have activated in this account and Region.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>

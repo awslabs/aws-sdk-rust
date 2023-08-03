@@ -212,11 +212,15 @@ impl Client {
     }
 }
 
+mod associate_source_network_stack;
+
 mod create_extended_source_server;
 
 mod create_launch_configuration_template;
 
 mod create_replication_configuration_template;
+
+mod create_source_network;
 
 /// Operation customization and supporting types.
 ///
@@ -254,6 +258,8 @@ mod delete_recovery_instance;
 
 mod delete_replication_configuration_template;
 
+mod delete_source_network;
+
 mod delete_source_server;
 
 mod describe_job_log_items;
@@ -268,11 +274,15 @@ mod describe_recovery_snapshots;
 
 mod describe_replication_configuration_templates;
 
+mod describe_source_networks;
+
 mod describe_source_servers;
 
 mod disconnect_recovery_instance;
 
 mod disconnect_source_server;
+
+mod export_source_network_cfn_template;
 
 mod get_failback_replication_configuration;
 
@@ -298,9 +308,15 @@ mod start_recovery;
 
 mod start_replication;
 
+mod start_source_network_recovery;
+
+mod start_source_network_replication;
+
 mod stop_failback;
 
 mod stop_replication;
+
+mod stop_source_network_replication;
 
 mod tag_resource;
 

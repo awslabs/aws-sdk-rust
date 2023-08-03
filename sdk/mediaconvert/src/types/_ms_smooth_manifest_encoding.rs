@@ -35,7 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
+/// Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

@@ -5,8 +5,8 @@ pub use crate::operation::resume_contact_recording::_resume_contact_recording_in
 
 /// Fluent builder constructing a request to `ResumeContactRecording`.
 ///
-/// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording the call.</p>
-/// <p>Only voice recordings are supported at this time.</p>
+/// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording the call or screen.</p>
+/// <p>Voice and screen recordings are supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResumeContactRecordingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

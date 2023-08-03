@@ -6,6 +6,7 @@ pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceIn
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes metadata tags from a specified resource.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

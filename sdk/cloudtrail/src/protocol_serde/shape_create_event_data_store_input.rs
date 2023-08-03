@@ -51,5 +51,8 @@ pub fn ser_create_event_data_store_input(
     if let Some(var_14) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.start_ingestion {
+        object.key("StartIngestion").boolean(*var_15);
+    }
     Ok(())
 }

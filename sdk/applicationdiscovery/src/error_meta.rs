@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
+    /// <p>The user does not have permission to perform the action. Check the IAM policy associated with this user.</p>
     AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
     /// <p></p>
     ConflictErrorException(crate::types::error::ConflictErrorException),
-    /// <p>The home region is not set. Set the home region to continue.</p>
+    /// <p>The home Region is not set. Set the home Region to continue.</p>
     HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),

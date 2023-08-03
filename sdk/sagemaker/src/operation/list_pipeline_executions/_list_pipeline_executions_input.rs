@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsInput {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
@@ -26,7 +26,7 @@ pub struct ListPipelineExecutionsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPipelineExecutionsInput {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -79,7 +79,7 @@ pub struct ListPipelineExecutionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListPipelineExecutionsInputBuilder {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -87,7 +87,7 @@ impl ListPipelineExecutionsInputBuilder {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

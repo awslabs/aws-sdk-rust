@@ -364,4 +364,24 @@ impl DeleteItemFluentBuilder {
         self.inner = self.inner.set_expression_attribute_values(input);
         self
     }
+    /// <p>An optional parameter that returns the item attributes for a <code>DeleteItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        mut self,
+        input: crate::types::ReturnValuesOnConditionCheckFailure,
+    ) -> Self {
+        self.inner = self.inner.return_values_on_condition_check_failure(input);
+        self
+    }
+    /// <p>An optional parameter that returns the item attributes for a <code>DeleteItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn set_return_values_on_condition_check_failure(
+        mut self,
+        input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .set_return_values_on_condition_check_failure(input);
+        self
+    }
 }

@@ -71,9 +71,15 @@ pub struct ModifyDbClusterInput {
     #[doc(hidden)]
     pub cloudwatch_logs_export_configuration:
         ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
-    /// <p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
+    /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
     #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    #[doc(hidden)]
+    pub allow_major_version_upgrade: bool,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
@@ -158,9 +164,16 @@ impl ModifyDbClusterInput {
     ) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
         self.cloudwatch_logs_export_configuration.as_ref()
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
+    /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
+    }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    pub fn allow_major_version_upgrade(&self) -> bool {
+        self.allow_major_version_upgrade
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -194,6 +207,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) cloudwatch_logs_export_configuration:
         ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_major_version_upgrade: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInputBuilder {
@@ -427,7 +441,9 @@ impl ModifyDbClusterInputBuilder {
         self.cloudwatch_logs_export_configuration = input;
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
+    /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
     pub fn engine_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -435,12 +451,26 @@ impl ModifyDbClusterInputBuilder {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
+    /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
     pub fn set_engine_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.engine_version = input;
+        self
+    }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+        self.allow_major_version_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_major_version_upgrade = input;
         self
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -473,6 +503,7 @@ impl ModifyDbClusterInputBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
             engine_version: self.engine_version,
+            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
             deletion_protection: self.deletion_protection,
         })
     }

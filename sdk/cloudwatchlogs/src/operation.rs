@@ -16,6 +16,9 @@ pub mod create_log_group;
 /// Types for the `CreateLogStream` operation.
 pub mod create_log_stream;
 
+/// Types for the `DeleteAccountPolicy` operation.
+pub mod delete_account_policy;
+
 /// Types for the `DeleteDataProtectionPolicy` operation.
 pub mod delete_data_protection_policy;
 
@@ -42,6 +45,9 @@ pub mod delete_retention_policy;
 
 /// Types for the `DeleteSubscriptionFilter` operation.
 pub mod delete_subscription_filter;
+
+/// Types for the `DescribeAccountPolicies` operation.
+pub mod describe_account_policies;
 
 /// Types for the `DescribeDestinations` operation.
 pub mod describe_destinations;
@@ -96,6 +102,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTagsLogGroup` operation.
 pub mod list_tags_log_group;
+
+/// Types for the `PutAccountPolicy` operation.
+pub mod put_account_policy;
 
 /// Types for the `PutDataProtectionPolicy` operation.
 pub mod put_data_protection_policy;

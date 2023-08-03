@@ -8,16 +8,16 @@ pub struct IpPermission {
     #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 ranges.</p>
     #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
-    /// <p>[VPC only] The IPv6 ranges.</p>
+    /// <p>The IPv6 ranges.</p>
     #[doc(hidden)]
     pub ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
-    /// <p>[VPC only] The prefix list IDs.</p>
+    /// <p>The prefix list IDs.</p>
     #[doc(hidden)]
     pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
@@ -33,7 +33,7 @@ impl IpPermission {
         self.from_port
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
         self.ip_protocol.as_deref()
     }
@@ -41,11 +41,11 @@ impl IpPermission {
     pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::IpRange]> {
         self.ip_ranges.as_deref()
     }
-    /// <p>[VPC only] The IPv6 ranges.</p>
+    /// <p>The IPv6 ranges.</p>
     pub fn ipv6_ranges(&self) -> ::std::option::Option<&[crate::types::Ipv6Range]> {
         self.ipv6_ranges.as_deref()
     }
-    /// <p>[VPC only] The prefix list IDs.</p>
+    /// <p>The prefix list IDs.</p>
     pub fn prefix_list_ids(&self) -> ::std::option::Option<&[crate::types::PrefixListId]> {
         self.prefix_list_ids.as_deref()
     }
@@ -92,13 +92,13 @@ impl IpPermissionBuilder {
         self
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
-    /// <p>[VPC only] Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
+    /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
@@ -126,14 +126,14 @@ impl IpPermissionBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv6_ranges`](Self::set_ipv6_ranges).
     ///
-    /// <p>[VPC only] The IPv6 ranges.</p>
+    /// <p>The IPv6 ranges.</p>
     pub fn ipv6_ranges(mut self, input: crate::types::Ipv6Range) -> Self {
         let mut v = self.ipv6_ranges.unwrap_or_default();
         v.push(input);
         self.ipv6_ranges = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[VPC only] The IPv6 ranges.</p>
+    /// <p>The IPv6 ranges.</p>
     pub fn set_ipv6_ranges(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
@@ -145,14 +145,14 @@ impl IpPermissionBuilder {
     ///
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
     ///
-    /// <p>[VPC only] The prefix list IDs.</p>
+    /// <p>The prefix list IDs.</p>
     pub fn prefix_list_ids(mut self, input: crate::types::PrefixListId) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
         v.push(input);
         self.prefix_list_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[VPC only] The prefix list IDs.</p>
+    /// <p>The prefix list IDs.</p>
     pub fn set_prefix_list_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::operation::list_attendees::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attendees::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::operation::list_attendees::ListAttendeesError)
+    #[deprecated(note = "Replaced by ListAttendees in the Amazon Chime SDK Meetings Namespace")]
     pub fn list_attendees(
         &self,
     ) -> crate::operation::list_attendees::builders::ListAttendeesFluentBuilder {

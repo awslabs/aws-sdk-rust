@@ -102,6 +102,11 @@ where
                                     crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?,
                                 );
                             }
+                            "participatingResources" => {
+                                builder = builder.set_participating_resources(
+                                    crate::protocol_serde::shape_participating_resources::de_participating_resources(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -13,7 +13,7 @@ pub struct CreateTrailOutput {
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
     #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
     #[doc(hidden)]
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct CreateTrailOutput {
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     #[doc(hidden)]
     pub include_global_service_events: ::std::option::Option<bool>,
-    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
     #[doc(hidden)]
     pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
@@ -62,7 +62,7 @@ impl CreateTrailOutput {
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
     pub fn sns_topic_name(&self) -> ::std::option::Option<&str> {
         self.sns_topic_name.as_deref()
@@ -76,7 +76,7 @@ impl CreateTrailOutput {
     pub fn include_global_service_events(&self) -> ::std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
     pub fn is_multi_region_trail(&self) -> ::std::option::Option<bool> {
         self.is_multi_region_trail
     }
@@ -183,7 +183,7 @@ impl CreateTrailOutputBuilder {
         self.s3_key_prefix = input;
         self
     }
-    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
     pub fn sns_topic_name(
         mut self,
@@ -192,7 +192,7 @@ impl CreateTrailOutputBuilder {
         self.sns_topic_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    /// <p>This field is no longer in use. Use <code>SnsTopicARN</code>.</p>
     #[deprecated]
     pub fn set_sns_topic_name(
         mut self,
@@ -229,12 +229,12 @@ impl CreateTrailOutputBuilder {
         self.include_global_service_events = input;
         self
     }
-    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
     pub fn is_multi_region_trail(mut self, input: bool) -> Self {
         self.is_multi_region_trail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the trail exists in one region or in all regions.</p>
+    /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
     pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_multi_region_trail = input;
         self

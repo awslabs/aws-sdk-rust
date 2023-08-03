@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AddPermission` operation.
 pub mod add_permission;
 
+/// Types for the `CancelMessageMoveTask` operation.
+pub mod cancel_message_move_task;
+
 /// Types for the `ChangeMessageVisibility` operation.
 pub mod change_message_visibility;
 
@@ -31,6 +34,9 @@ pub mod get_queue_url;
 /// Types for the `ListDeadLetterSourceQueues` operation.
 pub mod list_dead_letter_source_queues;
 
+/// Types for the `ListMessageMoveTasks` operation.
+pub mod list_message_move_tasks;
+
 /// Types for the `ListQueueTags` operation.
 pub mod list_queue_tags;
 
@@ -54,6 +60,9 @@ pub mod send_message_batch;
 
 /// Types for the `SetQueueAttributes` operation.
 pub mod set_queue_attributes;
+
+/// Types for the `StartMessageMoveTask` operation.
+pub mod start_message_move_task;
 
 /// Types for the `TagQueue` operation.
 pub mod tag_queue;

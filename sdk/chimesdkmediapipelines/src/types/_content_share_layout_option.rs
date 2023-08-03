@@ -12,6 +12,7 @@
 /// ```text
 /// # let contentsharelayoutoption = unimplemented!();
 /// match contentsharelayoutoption {
+///     ContentShareLayoutOption::ActiveSpeakerOnly => { /* ... */ },
 ///     ContentShareLayoutOption::Horizontal => { /* ... */ },
 ///     ContentShareLayoutOption::PresenterOnly => { /* ... */ },
 ///     ContentShareLayoutOption::Vertical => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum ContentShareLayoutOption {
     #[allow(missing_docs)] // documentation missing in model
+    ActiveSpeakerOnly,
+    #[allow(missing_docs)] // documentation missing in model
     Horizontal,
     #[allow(missing_docs)] // documentation missing in model
     PresenterOnly,
@@ -60,6 +63,7 @@ pub enum ContentShareLayoutOption {
 impl ::std::convert::From<&str> for ContentShareLayoutOption {
     fn from(s: &str) -> Self {
         match s {
+            "ActiveSpeakerOnly" => ContentShareLayoutOption::ActiveSpeakerOnly,
             "Horizontal" => ContentShareLayoutOption::Horizontal,
             "PresenterOnly" => ContentShareLayoutOption::PresenterOnly,
             "Vertical" => ContentShareLayoutOption::Vertical,
@@ -80,6 +84,7 @@ impl ContentShareLayoutOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContentShareLayoutOption::ActiveSpeakerOnly => "ActiveSpeakerOnly",
             ContentShareLayoutOption::Horizontal => "Horizontal",
             ContentShareLayoutOption::PresenterOnly => "PresenterOnly",
             ContentShareLayoutOption::Vertical => "Vertical",
@@ -88,7 +93,12 @@ impl ContentShareLayoutOption {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Horizontal", "PresenterOnly", "Vertical"]
+        &[
+            "ActiveSpeakerOnly",
+            "Horizontal",
+            "PresenterOnly",
+            "Vertical",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ContentShareLayoutOption {

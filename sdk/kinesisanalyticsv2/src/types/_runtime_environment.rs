@@ -20,6 +20,7 @@
 ///     RuntimeEnvironment::Sql10 => { /* ... */ },
 ///     RuntimeEnvironment::ZeppelinFlink10 => { /* ... */ },
 ///     RuntimeEnvironment::ZeppelinFlink20 => { /* ... */ },
+///     RuntimeEnvironment::ZeppelinFlink30 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -69,6 +70,8 @@ pub enum RuntimeEnvironment {
     ZeppelinFlink10,
     #[allow(missing_docs)] // documentation missing in model
     ZeppelinFlink20,
+    #[allow(missing_docs)] // documentation missing in model
+    ZeppelinFlink30,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for RuntimeEnvironment {
             "SQL-1_0" => RuntimeEnvironment::Sql10,
             "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
             "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
+            "ZEPPELIN-FLINK-3_0" => RuntimeEnvironment::ZeppelinFlink30,
             other => RuntimeEnvironment::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -108,6 +112,7 @@ impl RuntimeEnvironment {
             RuntimeEnvironment::Sql10 => "SQL-1_0",
             RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
             RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
+            RuntimeEnvironment::ZeppelinFlink30 => "ZEPPELIN-FLINK-3_0",
             RuntimeEnvironment::Unknown(value) => value.as_str(),
         }
     }
@@ -122,6 +127,7 @@ impl RuntimeEnvironment {
             "SQL-1_0",
             "ZEPPELIN-FLINK-1_0",
             "ZEPPELIN-FLINK-2_0",
+            "ZEPPELIN-FLINK-3_0",
         ]
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_stale_security_groups::_describe_stale_securi
 
 /// Fluent builder constructing a request to `DescribeStaleSecurityGroups`.
 ///
-/// <p>[VPC only] Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group in a peer VPC for which the VPC peering connection has been deleted.</p>
+/// <p>Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group in a peer VPC for which the VPC peering connection has been deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

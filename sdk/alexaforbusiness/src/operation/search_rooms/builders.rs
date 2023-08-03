@@ -6,6 +6,7 @@ pub use crate::operation::search_rooms::_search_rooms_input::SearchRoomsInputBui
 /// Fluent builder constructing a request to `SearchRooms`.
 ///
 /// <p>Searches rooms and lists the ones that meet a set of filter and sort criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRoomsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

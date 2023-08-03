@@ -63,6 +63,9 @@ pub struct AssumeRoleInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     #[doc(hidden)]
     pub source_identity: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    #[doc(hidden)]
+    pub provided_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
 }
 impl AssumeRoleInput {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -136,6 +139,10 @@ impl AssumeRoleInput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn provided_contexts(&self) -> ::std::option::Option<&[crate::types::ProvidedContext]> {
+        self.provided_contexts.as_deref()
+    }
 }
 impl AssumeRoleInput {
     /// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
@@ -162,6 +169,8 @@ pub struct AssumeRoleInputBuilder {
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) token_code: ::std::option::Option<::std::string::String>,
     pub(crate) source_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) provided_contexts:
+        ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
 }
 impl AssumeRoleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -376,6 +385,25 @@ impl AssumeRoleInputBuilder {
         self.source_identity = input;
         self
     }
+    /// Appends an item to `provided_contexts`.
+    ///
+    /// To override the contents of this collection use [`set_provided_contexts`](Self::set_provided_contexts).
+    ///
+    /// <p>Reserved for future use.</p>
+    pub fn provided_contexts(mut self, input: crate::types::ProvidedContext) -> Self {
+        let mut v = self.provided_contexts.unwrap_or_default();
+        v.push(input);
+        self.provided_contexts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_provided_contexts(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
+    ) -> Self {
+        self.provided_contexts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
     pub fn build(
         self,
@@ -395,6 +423,7 @@ impl AssumeRoleInputBuilder {
             serial_number: self.serial_number,
             token_code: self.token_code,
             source_identity: self.source_identity,
+            provided_contexts: self.provided_contexts,
         })
     }
 }

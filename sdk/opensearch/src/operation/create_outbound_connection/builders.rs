@@ -154,4 +154,17 @@ impl CreateOutboundConnectionFluentBuilder {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
+    /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+    pub fn connection_properties(mut self, input: crate::types::ConnectionProperties) -> Self {
+        self.inner = self.inner.connection_properties(input);
+        self
+    }
+    /// <p>The <code>ConnectionProperties</code> for the outbound connection.</p>
+    pub fn set_connection_properties(
+        mut self,
+        input: ::std::option::Option<crate::types::ConnectionProperties>,
+    ) -> Self {
+        self.inner = self.inner.set_connection_properties(input);
+        self
+    }
 }

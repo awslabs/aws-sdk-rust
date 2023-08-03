@@ -17,6 +17,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_invalid_tag_exception::InvalidTagException;
@@ -56,6 +58,8 @@ mod _resource_in_use_exception;
 mod _resource_not_found_exception;
 
 mod _resource_unavailable_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _throttling_exception;
 

@@ -75,6 +75,42 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
                                 );
                             }
+                            "PostSetupScriptDetails" => {
+                                builder = builder.set_post_setup_script_details(
+                                    crate::protocol_serde::shape_script_details::de_script_details(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "PackagingType" => {
+                                builder = builder.set_packaging_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::PackagingType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "State" => {
+                                builder = builder.set_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::AppBlockState::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "AppBlockErrors" => {
+                                builder = builder.set_app_block_errors(
+                                    crate::protocol_serde::shape_error_details_list::de_error_details_list(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

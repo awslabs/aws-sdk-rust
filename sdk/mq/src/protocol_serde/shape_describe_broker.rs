@@ -222,6 +222,23 @@ pub(crate) fn de_describe_broker(
                             )?,
                         );
                     }
+                    "dataReplicationMetadata" => {
+                        builder = builder.set_data_replication_metadata(
+                            crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens)?
+                        );
+                    }
+                    "dataReplicationMode" => {
+                        builder = builder.set_data_replication_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::DataReplicationMode::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "deploymentMode" => {
                         builder = builder.set_deployment_mode(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -296,6 +313,23 @@ pub(crate) fn de_describe_broker(
                             .map(|s| {
                                 s.to_unescaped()
                                     .map(|u| crate::types::AuthenticationStrategy::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "pendingDataReplicationMetadata" => {
+                        builder = builder.set_pending_data_replication_metadata(
+                            crate::protocol_serde::shape_data_replication_metadata_output::de_data_replication_metadata_output(tokens)?
+                        );
+                    }
+                    "pendingDataReplicationMode" => {
+                        builder = builder.set_pending_data_replication_mode(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::DataReplicationMode::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

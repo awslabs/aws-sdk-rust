@@ -145,7 +145,7 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_charge_details(input);
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
         input: crate::types::CustomLineItemBillingPeriodRange,
@@ -153,7 +153,7 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner = self.inner.billing_period_range(input);
         self
     }
-    /// <p> The billing period range in which the custom line item request will be applied. </p>
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(
         mut self,
         input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,

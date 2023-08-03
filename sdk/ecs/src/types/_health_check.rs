@@ -4,6 +4,7 @@
 /// <p>The Amazon ECS container agent only monitors and reports on the health checks specified in the task definition. Amazon ECS does not monitor Docker health checks that are embedded in a container image and not specified in the container definition. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image.</p>
 /// </note>
 /// <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p>
+/// <p>The health check is designed to make sure that your containers survive agent restarts, upgrades, or temporary unavailability.</p>
 /// <p>The following describes the possible <code>healthStatus</code> values for a container:</p>
 /// <ul>
 /// <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li>
@@ -19,6 +20,8 @@
 /// <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p>
 /// <p>The following are notes about container health check support:</p>
 /// <ul>
+/// <li> <p>When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports the container as <code>UNHEALTHY</code>. </p> </li>
+/// <li> <p>The health check statuses are the "last heard from" response from the Amazon ECS agent. There are no assumptions made about the status of the container health checks.</p> </li>
 /// <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p> </li>
 /// <li> <p>Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a>.</p> </li>
 /// <li> <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p> </li>

@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`event_data_store(impl ::std::convert::Into<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     ///   - [`query_id(impl ::std::convert::Into<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::set_query_id): <p>The query ID.</p>
+    ///   - [`query_alias(impl ::std::convert::Into<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::query_alias) / [`set_query_alias(Option<String>)`](crate::operation::describe_query::builders::DescribeQueryFluentBuilder::set_query_alias): <p> The alias that identifies a query template. </p>
     /// - On success, responds with [`DescribeQueryOutput`](crate::operation::describe_query::DescribeQueryOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::query_id): <p>The ID of the query.</p>
     ///   - [`query_string(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::query_string): <p>The SQL code of a query.</p>

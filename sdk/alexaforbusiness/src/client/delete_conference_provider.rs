@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`conference_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::set_conference_provider_arn): <p>The ARN of the conference provider.</p>
     /// - On success, responds with [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput)
     /// - On failure, responds with [`SdkError<DeleteConferenceProviderError>`](crate::operation::delete_conference_provider::DeleteConferenceProviderError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_conference_provider(
         &self,
     ) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder

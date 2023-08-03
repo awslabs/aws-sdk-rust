@@ -2558,6 +2558,49 @@ impl From<crate::operation::create_image::CreateImageError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
+    ) -> Self {
+        match err {
+            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
             R,
         >,
@@ -5314,6 +5357,49 @@ impl From<crate::operation::delete_fpga_image::DeleteFpgaImageError> for Error {
             crate::operation::delete_fpga_image::DeleteFpgaImageError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9467,6 +9553,26 @@ impl From<crate::operation::describe_instance_attribute::DescribeInstanceAttribu
     ) -> Self {
         match err {
             crate::operation::describe_instance_attribute::DescribeInstanceAttributeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError> for Error {
+    fn from(err: crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError) -> Self {
+        match err {
+            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

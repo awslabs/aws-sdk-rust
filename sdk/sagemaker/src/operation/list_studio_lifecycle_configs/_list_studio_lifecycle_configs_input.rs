@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsInput {
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
@@ -35,7 +35,7 @@ pub struct ListStudioLifecycleConfigsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListStudioLifecycleConfigsInput {
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -103,12 +103,12 @@ pub struct ListStudioLifecycleConfigsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListStudioLifecycleConfigsInputBuilder {
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder::set_room_arn): <p>The ARN of the room with which to associate the skill group. Required.</p>
     /// - On success, responds with [`AssociateSkillGroupWithRoomOutput`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomOutput)
     /// - On failure, responds with [`SdkError<AssociateSkillGroupWithRoomError>`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn associate_skill_group_with_room(&self) -> crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder{
         crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder::new(self.handle.clone())
     }

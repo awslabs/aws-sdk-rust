@@ -101,12 +101,12 @@ impl CreateVariableFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.inner = self.inner.data_type(input);
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
         self.inner = self.inner.set_data_type(input);
         self

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubnetsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -39,7 +39,7 @@ pub struct DescribeSubnetsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,7 +54,7 @@ pub struct DescribeSubnetsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeSubnetsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -91,7 +91,7 @@ impl DescribeSubnetsInput {
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
@@ -133,7 +133,7 @@ impl DescribeSubnetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -173,7 +173,7 @@ impl DescribeSubnetsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for the subnet. You can also use <code>availabilityZone</code> as the filter name.</p> </li>
     /// <li> <p> <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use <code>availabilityZoneId</code> as the filter name.</p> </li>
@@ -218,7 +218,7 @@ impl DescribeSubnetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
@@ -226,7 +226,7 @@ impl DescribeSubnetsInputBuilder {
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more subnet IDs.</p>
+    /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
     pub fn set_subnet_ids(
         mut self,

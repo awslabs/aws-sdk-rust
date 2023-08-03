@@ -89,6 +89,14 @@ impl ListShareInvitationsInput {
                         );
                     }
                 }
+                if let ::std::option::Option::Some(inner_6) = &_input.profile_name_prefix {
+                    {
+                        query.push_kv(
+                            "ProfileNamePrefix",
+                            &::aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

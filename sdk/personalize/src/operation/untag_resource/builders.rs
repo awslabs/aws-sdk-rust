@@ -5,7 +5,7 @@ pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceIn
 
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> that are attached to a resource.</p>
+/// <p>Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> that are attached to a resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

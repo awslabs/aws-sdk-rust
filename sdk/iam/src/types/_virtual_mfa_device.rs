@@ -7,7 +7,7 @@ pub struct VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
-    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     #[doc(hidden)]
     pub base32_string_seed: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
@@ -28,7 +28,7 @@ impl VirtualMfaDevice {
     pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
     }
-    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     pub fn base32_string_seed(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.base32_string_seed.as_ref()
     }
@@ -96,12 +96,12 @@ impl VirtualMfaDeviceBuilder {
         self.serial_number = input;
         self
     }
-    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     pub fn base32_string_seed(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.base32_string_seed = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
+    /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     pub fn set_base32_string_seed(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::Blob>,

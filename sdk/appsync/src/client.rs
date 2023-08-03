@@ -214,6 +214,10 @@ impl Client {
 
 mod associate_api;
 
+mod associate_merged_graphql_api;
+
+mod associate_source_graphql_api;
+
 mod create_api_cache;
 
 mod create_api_key;
@@ -276,6 +280,10 @@ mod delete_type;
 
 mod disassociate_api;
 
+mod disassociate_merged_graphql_api;
+
+mod disassociate_source_graphql_api;
+
 mod evaluate_code;
 
 mod evaluate_mapping_template;
@@ -300,6 +308,8 @@ mod get_resolver;
 
 mod get_schema_creation_status;
 
+mod get_source_api_association;
+
 mod get_type;
 
 mod list_api_keys;
@@ -316,11 +326,17 @@ mod list_resolvers;
 
 mod list_resolvers_by_function;
 
+mod list_source_api_associations;
+
 mod list_tags_for_resource;
 
 mod list_types;
 
+mod list_types_by_association;
+
 mod start_schema_creation;
+
+mod start_schema_merge;
 
 mod tag_resource;
 
@@ -339,5 +355,7 @@ mod update_function;
 mod update_graphql_api;
 
 mod update_resolver;
+
+mod update_source_api_association;
 
 mod update_type;

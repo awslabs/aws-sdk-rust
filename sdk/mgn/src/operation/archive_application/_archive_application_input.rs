@@ -6,11 +6,18 @@ pub struct ArchiveApplicationInput {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveApplicationInput {
     /// <p>Application ID.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
+    }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl ArchiveApplicationInput {
@@ -28,6 +35,7 @@ impl ArchiveApplicationInput {
 )]
 pub struct ArchiveApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveApplicationInputBuilder {
     /// <p>Application ID.</p>
@@ -46,6 +54,16 @@ impl ArchiveApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ArchiveApplicationInput`](crate::operation::archive_application::ArchiveApplicationInput).
     pub fn build(
         self,
@@ -56,6 +74,7 @@ impl ArchiveApplicationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::archive_application::ArchiveApplicationInput {
                 application_id: self.application_id,
+                account_id: self.account_id,
             },
         )
     }

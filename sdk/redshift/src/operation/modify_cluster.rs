@@ -180,6 +180,8 @@ pub enum ModifyClusterError {
     ClusterParameterGroupNotFoundFault(crate::types::error::ClusterParameterGroupNotFoundFault),
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
+    /// <p>An error occurred when an attempt was made to change the custom domain association.</p>
+    CustomCnameAssociationFault(crate::types::error::CustomCnameAssociationFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(
         crate::types::error::DependentServiceRequestThrottlingFault,
@@ -215,6 +217,8 @@ pub enum ModifyClusterError {
     TableLimitExceededFault(crate::types::error::TableLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// <p>A request option was specified that is not supported.</p>
     UnsupportedOptionFault(crate::types::error::UnsupportedOptionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -241,6 +245,7 @@ impl ::std::fmt::Display for ModifyClusterError {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::CustomCnameAssociationFault(_inner) => _inner.fmt(f),
             Self::DependentServiceRequestThrottlingFault(_inner) => _inner.fmt(f),
             Self::HsmClientCertificateNotFoundFault(_inner) => _inner.fmt(f),
             Self::HsmConfigurationNotFoundFault(_inner) => _inner.fmt(f),
@@ -255,6 +260,7 @@ impl ::std::fmt::Display for ModifyClusterError {
             Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::TableLimitExceededFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::UnsupportedOptionFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -273,6 +279,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyCluster
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ClusterSecurityGroupNotFoundFault(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CustomCnameAssociationFault(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DependentServiceRequestThrottlingFault(_inner) => {
@@ -315,6 +324,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyCluster
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::UnauthorizedOperation(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnsupportedOperationFault(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::UnsupportedOptionFault(_inner) => {
@@ -375,6 +387,7 @@ impl ModifyClusterError {
             Self::ClusterNotFoundFault(e) => e.meta(),
             Self::ClusterParameterGroupNotFoundFault(e) => e.meta(),
             Self::ClusterSecurityGroupNotFoundFault(e) => e.meta(),
+            Self::CustomCnameAssociationFault(e) => e.meta(),
             Self::DependentServiceRequestThrottlingFault(e) => e.meta(),
             Self::HsmClientCertificateNotFoundFault(e) => e.meta(),
             Self::HsmConfigurationNotFoundFault(e) => e.meta(),
@@ -389,6 +402,7 @@ impl ModifyClusterError {
             Self::NumberOfNodesQuotaExceededFault(e) => e.meta(),
             Self::TableLimitExceededFault(e) => e.meta(),
             Self::UnauthorizedOperation(e) => e.meta(),
+            Self::UnsupportedOperationFault(e) => e.meta(),
             Self::UnsupportedOptionFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -408,6 +422,10 @@ impl ModifyClusterError {
     /// Returns `true` if the error kind is `ModifyClusterError::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(self, Self::ClusterSecurityGroupNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyClusterError::CustomCnameAssociationFault`.
+    pub fn is_custom_cname_association_fault(&self) -> bool {
+        matches!(self, Self::CustomCnameAssociationFault(_))
     }
     /// Returns `true` if the error kind is `ModifyClusterError::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
@@ -465,6 +483,10 @@ impl ModifyClusterError {
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(self, Self::UnauthorizedOperation(_))
     }
+    /// Returns `true` if the error kind is `ModifyClusterError::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationFault(_))
+    }
     /// Returns `true` if the error kind is `ModifyClusterError::UnsupportedOptionFault`.
     pub fn is_unsupported_option_fault(&self) -> bool {
         matches!(self, Self::UnsupportedOptionFault(_))
@@ -477,6 +499,7 @@ impl ::std::error::Error for ModifyClusterError {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSecurityGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::CustomCnameAssociationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DependentServiceRequestThrottlingFault(_inner) => {
                 ::std::option::Option::Some(_inner)
             }
@@ -497,6 +520,7 @@ impl ::std::error::Error for ModifyClusterError {
             Self::NumberOfNodesQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TableLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOptionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

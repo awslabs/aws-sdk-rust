@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterMarkerConfiguration {
-    /// <p>The cluster marker that is a part of the cluster marker configuration</p>
+    /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     #[doc(hidden)]
     pub cluster_marker: ::std::option::Option<crate::types::ClusterMarker>,
 }
 impl ClusterMarkerConfiguration {
-    /// <p>The cluster marker that is a part of the cluster marker configuration</p>
+    /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub fn cluster_marker(&self) -> ::std::option::Option<&crate::types::ClusterMarker> {
         self.cluster_marker.as_ref()
     }
@@ -30,12 +30,12 @@ pub struct ClusterMarkerConfigurationBuilder {
     pub(crate) cluster_marker: ::std::option::Option<crate::types::ClusterMarker>,
 }
 impl ClusterMarkerConfigurationBuilder {
-    /// <p>The cluster marker that is a part of the cluster marker configuration</p>
+    /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub fn cluster_marker(mut self, input: crate::types::ClusterMarker) -> Self {
         self.cluster_marker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cluster marker that is a part of the cluster marker configuration</p>
+    /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
     pub fn set_cluster_marker(
         mut self,
         input: ::std::option::Option<crate::types::ClusterMarker>,

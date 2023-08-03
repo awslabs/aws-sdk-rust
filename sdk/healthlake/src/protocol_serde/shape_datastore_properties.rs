@@ -99,6 +99,11 @@ where
                                     crate::protocol_serde::shape_preload_data_config::de_preload_data_config(tokens)?
                                 );
                             }
+                            "IdentityProviderConfiguration" => {
+                                builder = builder.set_identity_provider_configuration(
+                                    crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

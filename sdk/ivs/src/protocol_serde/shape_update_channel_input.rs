@@ -18,13 +18,16 @@ pub fn ser_update_channel_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.recording_configuration_arn {
+    if let Some(var_4) = &input.preset {
+        object.key("preset").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.recording_configuration_arn {
         object
             .key("recordingConfigurationArn")
-            .string(var_4.as_str());
+            .string(var_5.as_str());
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    if let Some(var_6) = &input.r#type {
+        object.key("type").string(var_6.as_str());
     }
     Ok(())
 }

@@ -55,6 +55,9 @@ pub mod list_tags;
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
+/// Types for the `Promote` operation.
+pub mod promote;
+
 /// Types for the `RebootBroker` operation.
 pub mod reboot_broker;
 

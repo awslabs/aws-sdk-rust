@@ -6,39 +6,48 @@ pub struct UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     #[doc(hidden)]
     pub as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     #[doc(hidden)]
     pub access_role: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     #[doc(hidden)]
     pub logging_role: ::std::option::Option<::std::string::String>,
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    #[doc(hidden)]
+    pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
 }
 impl UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(&self) -> ::std::option::Option<&str> {
         self.connector_id.as_deref()
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn as2_config(&self) -> ::std::option::Option<&crate::types::As2ConnectorConfig> {
         self.as2_config.as_ref()
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn access_role(&self) -> ::std::option::Option<&str> {
         self.access_role.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> ::std::option::Option<&str> {
         self.logging_role.as_deref()
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
+        self.sftp_config.as_ref()
     }
 }
 impl UpdateConnectorInput {
@@ -59,6 +68,7 @@ pub struct UpdateConnectorInputBuilder {
     pub(crate) as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
+    pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
 }
 impl UpdateConnectorInputBuilder {
     /// <p>The unique identifier for the connector.</p>
@@ -71,22 +81,22 @@ impl UpdateConnectorInputBuilder {
         self.connector_id = input;
         self
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn as2_config(mut self, input: crate::types::As2ConnectorConfig) -> Self {
         self.as2_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains the parameters for a connector object.</p>
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn set_as2_config(
         mut self,
         input: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -95,11 +105,13 @@ impl UpdateConnectorInputBuilder {
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_role = input;
         self
@@ -112,6 +124,19 @@ impl UpdateConnectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_role = input;
+        self
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn sftp_config(mut self, input: crate::types::SftpConnectorConfig) -> Self {
+        self.sftp_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn set_sftp_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    ) -> Self {
+        self.sftp_config = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
@@ -127,6 +152,7 @@ impl UpdateConnectorInputBuilder {
             as2_config: self.as2_config,
             access_role: self.access_role,
             logging_role: self.logging_role,
+            sftp_config: self.sftp_config,
         })
     }
 }

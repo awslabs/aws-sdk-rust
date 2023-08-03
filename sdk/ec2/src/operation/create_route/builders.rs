@@ -13,7 +13,7 @@ pub use crate::operation::create_route::_create_route_input::CreateRouteInputBui
 /// <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p> </li>
 /// </ul>
 /// <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route in the list covers a smaller number of IP addresses and is therefore more specific, so we use that route to determine where to target the traffic.</p>
-/// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

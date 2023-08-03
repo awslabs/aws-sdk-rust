@@ -233,7 +233,7 @@ mod create_environment;
 /// # let client: aws_sdk_m2::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_engine_versions()
+/// let result = client.get_signed_bluinsights_url()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -269,6 +269,8 @@ mod get_data_set_import_task;
 mod get_deployment;
 
 mod get_environment;
+
+mod get_signed_bluinsights_url;
 
 mod list_application_versions;
 

@@ -82,6 +82,11 @@ where
                                 .transpose()?,
                             );
                         }
+                        "FilterCategories" => {
+                            builder = builder.set_filter_categories(
+                                    crate::protocol_serde::shape_filter_place_category_list::de_filter_place_category_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

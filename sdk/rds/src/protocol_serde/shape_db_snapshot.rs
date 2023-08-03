@@ -447,6 +447,19 @@ pub fn de_db_snapshot(
                 builder = builder.set_storage_throughput(var_33);
             }
             ,
+            s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBSnapshot$DBSystemId */ =>  {
+                let var_34 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_system_id(var_34);
+            }
+            ,
             _ => {}
         }
     }

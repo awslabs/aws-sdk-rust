@@ -39,5 +39,8 @@ pub fn ser_decrypt_input(
         crate::protocol_serde::shape_recipient_info::ser_recipient_info(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.dry_run {
+        object.key("DryRun").boolean(*var_13);
+    }
     Ok(())
 }

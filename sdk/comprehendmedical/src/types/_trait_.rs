@@ -7,7 +7,7 @@ pub struct Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AttributeName>,
-    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
@@ -16,7 +16,7 @@ impl Trait {
     pub fn name(&self) -> ::std::option::Option<&crate::types::AttributeName> {
         self.name.as_ref()
     }
-    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
@@ -48,12 +48,12 @@ impl TraitBuilder {
         self.name = input;
         self
     }
-    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self

@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine.</p>
@@ -31,6 +32,7 @@ pub struct DescribeStateMachineOutput {
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
     /// <p>The date the state machine is created.</p>
+    /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
     #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
@@ -42,10 +44,18 @@ pub struct DescribeStateMachineOutput {
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
     #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
+    /// <p>The revision identifier for the state machine.</p>
+    /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    #[doc(hidden)]
+    pub revision_id: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the state machine version.</p>
+    #[doc(hidden)]
+    pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
@@ -79,6 +89,7 @@ impl DescribeStateMachineOutput {
         self.r#type.as_ref()
     }
     /// <p>The date the state machine is created.</p>
+    /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
@@ -98,6 +109,15 @@ impl DescribeStateMachineOutput {
     pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
+    /// <p>The revision identifier for the state machine.</p>
+    /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The description of the state machine version.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DescribeStateMachineOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -112,6 +132,8 @@ impl ::std::fmt::Debug for DescribeStateMachineOutput {
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("label", &self.label);
+        formatter.field("revision_id", &self.revision_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -143,10 +165,13 @@ pub struct DescribeStateMachineOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -155,6 +180,7 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -237,11 +263,13 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>The date the state machine is created.</p>
+    /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the state machine is created.</p>
+    /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
     pub fn set_creation_date(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -285,6 +313,28 @@ impl DescribeStateMachineOutputBuilder {
         self.label = input;
         self
     }
+    /// <p>The revision identifier for the state machine.</p>
+    /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision identifier for the state machine.</p>
+    /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision_id = input;
+        self
+    }
+    /// <p>The description of the state machine version.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the state machine version.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -307,6 +357,8 @@ impl DescribeStateMachineOutputBuilder {
             logging_configuration: self.logging_configuration,
             tracing_configuration: self.tracing_configuration,
             label: self.label,
+            revision_id: self.revision_id,
+            description: self.description,
             _request_id: self._request_id,
         }
     }
@@ -324,6 +376,8 @@ impl ::std::fmt::Debug for DescribeStateMachineOutputBuilder {
         formatter.field("logging_configuration", &self.logging_configuration);
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("label", &self.label);
+        formatter.field("revision_id", &self.revision_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

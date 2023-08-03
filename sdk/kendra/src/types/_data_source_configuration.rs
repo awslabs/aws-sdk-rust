@@ -53,6 +53,8 @@ pub struct DataSourceConfiguration {
     #[doc(hidden)]
     pub git_hub_configuration: ::std::option::Option<crate::types::GitHubConfiguration>,
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     #[doc(hidden)]
     pub alfresco_configuration: ::std::option::Option<crate::types::AlfrescoConfiguration>,
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
@@ -147,6 +149,8 @@ impl DataSourceConfiguration {
         self.git_hub_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn alfresco_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::AlfrescoConfiguration> {
@@ -425,11 +429,15 @@ impl DataSourceConfigurationBuilder {
         self
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn alfresco_configuration(mut self, input: crate::types::AlfrescoConfiguration) -> Self {
         self.alfresco_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn set_alfresco_configuration(
         mut self,
         input: ::std::option::Option<crate::types::AlfrescoConfiguration>,

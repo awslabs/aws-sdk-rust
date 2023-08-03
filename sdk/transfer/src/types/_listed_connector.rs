@@ -10,7 +10,7 @@ pub struct ListedConnector {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
@@ -23,7 +23,7 @@ impl ListedConnector {
     pub fn connector_id(&self) -> ::std::option::Option<&str> {
         self.connector_id.as_deref()
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -66,12 +66,12 @@ impl ListedConnectorBuilder {
         self.connector_id = input;
         self
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the partner's AS2 endpoint.</p>
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self

@@ -262,6 +262,8 @@ mod create_work_group;
 /// ```
 pub mod customize;
 
+mod delete_capacity_reservation;
+
 mod delete_data_catalog;
 
 mod delete_named_query;

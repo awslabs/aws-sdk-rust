@@ -328,12 +328,16 @@ impl CreateWorkspaceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     pub fn set_vpc_configuration(
         mut self,
         input: ::std::option::Option<crate::types::VpcConfiguration>,
@@ -378,7 +382,7 @@ impl CreateWorkspaceFluentBuilder {
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -387,7 +391,7 @@ impl CreateWorkspaceFluentBuilder {
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     pub fn set_grafana_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,

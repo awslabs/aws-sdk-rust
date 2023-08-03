@@ -123,6 +123,15 @@ pub fn ser_encoder_settings(
         }
         array_30.finish();
     }
+    if let Some(var_33) = &input.thumbnail_configuration {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("thumbnailConfiguration").start_object();
+        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(
+            &mut object_34,
+            var_33,
+        )?;
+        object_34.finish();
+    }
     Ok(())
 }
 
@@ -212,6 +221,11 @@ where
                             "videoDescriptions" => {
                                 builder = builder.set_video_descriptions(
                                     crate::protocol_serde::shape___list_of_video_description::de___list_of_video_description(tokens)?
+                                );
+                            }
+                            "thumbnailConfiguration" => {
+                                builder = builder.set_thumbnail_configuration(
+                                    crate::protocol_serde::shape_thumbnail_configuration::de_thumbnail_configuration(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

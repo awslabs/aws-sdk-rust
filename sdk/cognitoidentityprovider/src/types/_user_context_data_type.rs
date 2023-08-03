@@ -2,7 +2,7 @@
 
 /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserContextDataType {
     /// <p>The source IP address of your user's device.</p>
     #[doc(hidden)]
@@ -21,6 +21,14 @@ impl UserContextDataType {
         self.encoded_data.as_deref()
     }
 }
+impl ::std::fmt::Debug for UserContextDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserContextDataType");
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("encoded_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UserContextDataType {
     /// Creates a new builder-style object to manufacture [`UserContextDataType`](crate::types::UserContextDataType).
     pub fn builder() -> crate::types::builders::UserContextDataTypeBuilder {
@@ -30,9 +38,7 @@ impl UserContextDataType {
 
 /// A builder for [`UserContextDataType`](crate::types::UserContextDataType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserContextDataTypeBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) encoded_data: ::std::option::Option<::std::string::String>,
@@ -64,5 +70,13 @@ impl UserContextDataTypeBuilder {
             ip_address: self.ip_address,
             encoded_data: self.encoded_data,
         }
+    }
+}
+impl ::std::fmt::Debug for UserContextDataTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserContextDataTypeBuilder");
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("encoded_data", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

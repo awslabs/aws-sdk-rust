@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>The tags requested for the specified resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags::ListTagsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_tags(&self) -> crate::operation::list_tags::builders::ListTagsFluentBuilder {
         crate::operation::list_tags::builders::ListTagsFluentBuilder::new(self.handle.clone())
     }

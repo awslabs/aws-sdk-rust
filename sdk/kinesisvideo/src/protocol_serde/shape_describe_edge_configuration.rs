@@ -166,6 +166,13 @@ pub(crate) fn de_describe_edge_configuration(
                             )?,
                         );
                     }
+                    "EdgeAgentStatus" => {
+                        builder = builder.set_edge_agent_status(
+                            crate::protocol_serde::shape_edge_agent_status::de_edge_agent_status(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "EdgeConfig" => {
                         builder = builder.set_edge_config(
                             crate::protocol_serde::shape_edge_config::de_edge_config(tokens)?,

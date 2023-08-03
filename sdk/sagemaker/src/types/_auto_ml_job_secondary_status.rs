@@ -26,6 +26,7 @@
 ///     AutoMlJobSecondaryStatus::ModelDeploymentError => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::ModelInsightsError => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::ModelTuning => { /* ... */ },
+///     AutoMlJobSecondaryStatus::PreTraining => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::Starting => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::Stopped => { /* ... */ },
 ///     AutoMlJobSecondaryStatus::Stopping => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     ModelTuning,
     #[allow(missing_docs)] // documentation missing in model
+    PreTraining,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
@@ -125,6 +128,7 @@ impl ::std::convert::From<&str> for AutoMlJobSecondaryStatus {
             "ModelDeploymentError" => AutoMlJobSecondaryStatus::ModelDeploymentError,
             "ModelInsightsError" => AutoMlJobSecondaryStatus::ModelInsightsError,
             "ModelTuning" => AutoMlJobSecondaryStatus::ModelTuning,
+            "PreTraining" => AutoMlJobSecondaryStatus::PreTraining,
             "Starting" => AutoMlJobSecondaryStatus::Starting,
             "Stopped" => AutoMlJobSecondaryStatus::Stopped,
             "Stopping" => AutoMlJobSecondaryStatus::Stopping,
@@ -166,6 +170,7 @@ impl AutoMlJobSecondaryStatus {
             AutoMlJobSecondaryStatus::ModelDeploymentError => "ModelDeploymentError",
             AutoMlJobSecondaryStatus::ModelInsightsError => "ModelInsightsError",
             AutoMlJobSecondaryStatus::ModelTuning => "ModelTuning",
+            AutoMlJobSecondaryStatus::PreTraining => "PreTraining",
             AutoMlJobSecondaryStatus::Starting => "Starting",
             AutoMlJobSecondaryStatus::Stopped => "Stopped",
             AutoMlJobSecondaryStatus::Stopping => "Stopping",
@@ -190,6 +195,7 @@ impl AutoMlJobSecondaryStatus {
             "ModelDeploymentError",
             "ModelInsightsError",
             "ModelTuning",
+            "PreTraining",
             "Starting",
             "Stopped",
             "Stopping",

@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_studios_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_supported_instance_types_output_marker(
+    input: &crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_bootstrap_actions_output_bootstrap_actions(
     input: crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Command>> {

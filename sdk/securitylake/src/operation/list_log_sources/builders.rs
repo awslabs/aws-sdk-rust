@@ -5,7 +5,7 @@ pub use crate::operation::list_log_sources::_list_log_sources_input::ListLogSour
 
 /// Fluent builder constructing a request to `ListLogSources`.
 ///
-/// <p>Retrieves the log sources in the current Amazon Web Services Region. </p>
+/// <p>Retrieves the log sources in the current Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLogSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,99 +110,55 @@ impl ListLogSourcesFluentBuilder {
             self.inner,
         )
     }
-    /// Appends an item to `inputOrder`.
+    /// Appends an item to `accounts`.
     ///
-    /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
+    /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn input_order(mut self, input: crate::types::Dimension) -> Self {
-        self.inner = self.inner.input_order(input);
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.accounts(input.into());
         self
     }
-    /// <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    pub fn set_input_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
-        self.inner = self.inner.set_input_order(input);
-        self
-    }
-    /// Adds a key-value pair to `listAllDimensions`.
-    ///
-    /// To override the contents of this collection use [`set_list_all_dimensions`](Self::set_list_all_dimensions).
-    ///
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn list_all_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
-        self.inner = self.inner.list_all_dimensions(k.into(), v);
-        self
-    }
-    /// <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn set_list_all_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    ) -> Self {
-        self.inner = self.inner.set_list_all_dimensions(input);
-        self
-    }
-    /// Adds a key-value pair to `listTwoDimensions`.
-    ///
-    /// To override the contents of this collection use [`set_list_two_dimensions`](Self::set_list_two_dimensions).
-    ///
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_two_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.list_two_dimensions(k.into(), v);
-        self
-    }
-    /// <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_two_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.inner = self.inner.set_list_two_dimensions(input);
-        self
-    }
-    /// Appends an item to `listSingleDimension`.
-    ///
-    /// To override the contents of this collection use [`set_list_single_dimension`](Self::set_list_single_dimension).
-    ///
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn list_single_dimension(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.list_single_dimension(input.into());
-        self
-    }
-    /// <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    pub fn set_list_single_dimension(
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn set_accounts(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
-        self.inner = self.inner.set_list_single_dimension(input);
+        self.inner = self.inner.set_accounts(input);
+        self
+    }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.regions(input.into());
+        self
+    }
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn set_regions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_regions(input);
+        self
+    }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
+        self.inner = self.inner.sources(input);
+        self
+    }
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    ) -> Self {
+        self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>

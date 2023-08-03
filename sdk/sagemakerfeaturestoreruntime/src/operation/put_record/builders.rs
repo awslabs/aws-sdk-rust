@@ -5,7 +5,10 @@ pub use crate::operation::put_record::_put_record_input::PutRecordInputBuilder;
 
 /// Fluent builder constructing a request to `PutRecord`.
 ///
-/// <p>Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is the latest record for the <code>recordIdentifier</code>, the record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a historic record, it is written only to the <code>OfflineStore</code>.</p>
+/// <p>The <code>PutRecord</code> API is used to ingest a list of <code>Records</code> into your feature group. </p>
+/// <p>If a new record’s <code>EventTime</code> is greater, the new record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. Otherwise, the record is a historic record and it is written only to the <code>OfflineStore</code>. </p>
+/// <p>You can specify the ingestion to be applied to the <code>OnlineStore</code>, <code>OfflineStore</code>, or both by using the <code>TargetStores</code> request parameter. </p>
+/// <p>You can set the ingested record to expire at a given time to live (TTL) duration after the record’s event time, <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>, by specifying the <code>TtlDuration</code> parameter. A record level <code>TtlDuration</code> is set when specifying the <code>TtlDuration</code> parameter using the <code>PutRecord</code> API call. If the input <code>TtlDuration</code> is <code>null</code> or unspecified, <code>TtlDuration</code> is set to the default feature group level <code>TtlDuration</code>. A record level <code>TtlDuration</code> supersedes the group level <code>TtlDuration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -91,7 +94,7 @@ impl PutRecordFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the feature group that you want to insert the record into.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -99,7 +102,7 @@ impl PutRecordFluentBuilder {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the feature group that you want to insert the record into.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -149,6 +152,19 @@ impl PutRecordFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
     ) -> Self {
         self.inner = self.inner.set_target_stores(input);
+        self
+    }
+    /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
+    pub fn ttl_duration(mut self, input: crate::types::TtlDuration) -> Self {
+        self.inner = self.inner.ttl_duration(input);
+        self
+    }
+    /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
+    pub fn set_ttl_duration(
+        mut self,
+        input: ::std::option::Option<crate::types::TtlDuration>,
+    ) -> Self {
+        self.inner = self.inner.set_ttl_duration(input);
         self
     }
 }

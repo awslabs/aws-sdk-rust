@@ -67,6 +67,9 @@ pub mod delete_schedule;
 /// Types for the `DeleteTags` operation.
 pub mod delete_tags;
 
+/// Types for the `DescribeAccountConfiguration` operation.
+pub mod describe_account_configuration;
+
 /// Types for the `DescribeChannel` operation.
 pub mod describe_channel;
 
@@ -96,6 +99,9 @@ pub mod describe_reservation;
 
 /// Types for the `DescribeSchedule` operation.
 pub mod describe_schedule;
+
+/// Types for the `DescribeThumbnails` operation.
+pub mod describe_thumbnails;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
@@ -153,6 +159,9 @@ pub mod stop_multiplex;
 
 /// Types for the `TransferInputDevice` operation.
 pub mod transfer_input_device;
+
+/// Types for the `UpdateAccountConfiguration` operation.
+pub mod update_account_configuration;
 
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;

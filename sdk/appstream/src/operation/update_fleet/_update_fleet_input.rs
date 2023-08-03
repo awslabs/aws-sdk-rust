@@ -67,7 +67,7 @@ pub struct UpdateFleetInput {
     #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     #[doc(hidden)]
     pub max_user_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
@@ -191,7 +191,7 @@ impl UpdateFleetInput {
         self.vpc_config.as_ref()
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_user_duration_in_seconds
     }
@@ -457,13 +457,13 @@ impl UpdateFleetInputBuilder {
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.max_user_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_user_duration_in_seconds = input;
         self

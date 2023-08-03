@@ -8,6 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorLoggingConfigurationOutput`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput::logging_configuration): <p>The updated logging configuration details.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorLoggingConfigurationError>`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError)
+    #[deprecated(
+        note = "Replaced by PutVoiceConnectorLoggingConfiguration in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn put_voice_connector_logging_configuration(&self) -> crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder{
         crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }

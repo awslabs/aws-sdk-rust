@@ -1087,6 +1087,9 @@ impl From<crate::operation::delete_volume::DeleteVolumeError> for Error {
             crate::operation::delete_volume::DeleteVolumeError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
+            crate::operation::delete_volume::DeleteVolumeError::ServiceLimitExceeded(inner) => {
+                Error::ServiceLimitExceeded(inner)
+            }
             crate::operation::delete_volume::DeleteVolumeError::VolumeNotFound(inner) => {
                 Error::VolumeNotFound(inner)
             }

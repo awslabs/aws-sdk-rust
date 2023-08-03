@@ -289,6 +289,16 @@ pub(crate) fn reflens_describe_import_snapshot_tasks_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_instance_connect_endpoints_output_next_token(
+    input: &crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_instance_credit_specifications_output_next_token(
     input: &crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1633,6 +1643,16 @@ pub(crate) fn lens_describe_import_snapshot_tasks_output_import_snapshot_tasks(
     input: crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportSnapshotTask>> {
     let input = match input.import_snapshot_tasks {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_instance_connect_endpoints_output_instance_connect_endpoints(
+    input: crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>> {
+    let input = match input.instance_connect_endpoints {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

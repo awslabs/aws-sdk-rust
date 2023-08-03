@@ -30,8 +30,8 @@ pub fn ser_analysis_rule_aggregation(
     if let Some(var_8) = &input.join_required {
         object.key("joinRequired").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.dimension_columns {
-        let mut array_10 = object.key("dimensionColumns").start_array();
+    if let Some(var_9) = &input.allowed_join_operators {
+        let mut array_10 = object.key("allowedJoinOperators").start_array();
         for item_11 in var_9 {
             {
                 array_10.value().string(item_11.as_str());
@@ -39,8 +39,8 @@ pub fn ser_analysis_rule_aggregation(
         }
         array_10.finish();
     }
-    if let Some(var_12) = &input.scalar_functions {
-        let mut array_13 = object.key("scalarFunctions").start_array();
+    if let Some(var_12) = &input.dimension_columns {
+        let mut array_13 = object.key("dimensionColumns").start_array();
         for item_14 in var_12 {
             {
                 array_13.value().string(item_14.as_str());
@@ -48,20 +48,29 @@ pub fn ser_analysis_rule_aggregation(
         }
         array_13.finish();
     }
-    if let Some(var_15) = &input.output_constraints {
-        let mut array_16 = object.key("outputConstraints").start_array();
+    if let Some(var_15) = &input.scalar_functions {
+        let mut array_16 = object.key("scalarFunctions").start_array();
         for item_17 in var_15 {
             {
-                #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(
-                    &mut object_18,
-                    item_17,
-                )?;
-                object_18.finish();
+                array_16.value().string(item_17.as_str());
             }
         }
         array_16.finish();
+    }
+    if let Some(var_18) = &input.output_constraints {
+        let mut array_19 = object.key("outputConstraints").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_aggregation_constraint::ser_aggregation_constraint(
+                    &mut object_21,
+                    item_20,
+                )?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
     }
     Ok(())
 }
@@ -111,6 +120,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "allowedJoinOperators" => {
+                                builder = builder.set_allowed_join_operators(
+                                    crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?
                                 );
                             }
                             "dimensionColumns" => {

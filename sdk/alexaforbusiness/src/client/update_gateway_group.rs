@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder::set_description): <p>The updated description of the gateway group.</p>
     /// - On success, responds with [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateGatewayGroupError>`](crate::operation::update_gateway_group::UpdateGatewayGroupError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_gateway_group(
         &self,
     ) -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder {

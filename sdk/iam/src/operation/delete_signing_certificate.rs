@@ -166,6 +166,8 @@ pub type DeleteSigningCertificateErrorKind = DeleteSigningCertificateError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteSigningCertificateError {
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
@@ -192,6 +194,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for DeleteSigningCertificat
 impl ::std::fmt::Display for DeleteSigningCertificateError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -202,6 +205,9 @@ impl ::std::fmt::Display for DeleteSigningCertificateError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteSigningCertificateError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::LimitExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -264,11 +270,16 @@ impl DeleteSigningCertificateError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConcurrentModificationException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::NoSuchEntityException(e) => e.meta(),
             Self::ServiceFailureException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `DeleteSigningCertificateError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `DeleteSigningCertificateError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -286,6 +297,7 @@ impl DeleteSigningCertificateError {
 impl ::std::error::Error for DeleteSigningCertificateError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),

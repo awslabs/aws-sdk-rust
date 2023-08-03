@@ -2,7 +2,7 @@
 
 /// <p>Initiates the authentication response.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p> <note>
@@ -74,6 +74,17 @@ impl InitiateAuthOutput {
         self.authentication_result.as_ref()
     }
 }
+impl ::std::fmt::Debug for InitiateAuthOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InitiateAuthOutput");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for InitiateAuthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -88,9 +99,7 @@ impl InitiateAuthOutput {
 
 /// A builder for [`InitiateAuthOutput`](crate::operation::initiate_auth::InitiateAuthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InitiateAuthOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
@@ -210,5 +219,16 @@ impl InitiateAuthOutputBuilder {
             authentication_result: self.authentication_result,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for InitiateAuthOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InitiateAuthOutputBuilder");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

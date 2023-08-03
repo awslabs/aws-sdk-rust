@@ -35,6 +35,8 @@ pub use crate::types::error::_outbound_contact_not_permitted_exception::Outbound
 
 pub use crate::types::error::_destination_not_allowed_exception::DestinationNotAllowedException;
 
+pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedException;
+
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
 pub use crate::types::error::_user_not_found_exception::UserNotFoundException;
@@ -64,6 +66,8 @@ mod _invalid_parameter_exception;
 mod _invalid_request_exception;
 
 mod _limit_exceeded_exception;
+
+mod _maximum_result_returned_exception;
 
 mod _outbound_contact_not_permitted_exception;
 

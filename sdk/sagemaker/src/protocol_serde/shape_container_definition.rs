@@ -48,6 +48,15 @@ pub fn ser_container_definition(
         )?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.model_data_source {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("ModelDataSource").start_object();
+        crate::protocol_serde::shape_model_data_source::ser_model_data_source(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -147,6 +156,11 @@ where
                             "MultiModelConfig" => {
                                 builder = builder.set_multi_model_config(
                                     crate::protocol_serde::shape_multi_model_config::de_multi_model_config(tokens)?
+                                );
+                            }
+                            "ModelDataSource" => {
+                                builder = builder.set_model_data_source(
+                                    crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

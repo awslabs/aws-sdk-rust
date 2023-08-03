@@ -33,5 +33,14 @@ pub fn ser_create_table_input(
     if let Some(var_9) = &input.transaction_id {
         object.key("TransactionId").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.open_table_format_input {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("OpenTableFormatInput").start_object();
+        crate::protocol_serde::shape_open_table_format_input::ser_open_table_format_input(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
+    }
     Ok(())
 }

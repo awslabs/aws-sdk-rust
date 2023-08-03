@@ -12,9 +12,9 @@ publish = false
 http = "0.2.6"
 hyper = "0.14"
 reqwest = "0.11"
-aws-config= { version = "0.55.3", path = "../../sdk/aws-config" }
-aws-sdk-s3= { version = "0.28.0", path = "../../sdk/s3" }
-aws-smithy-client= { version = "0.55.3", path = "../../sdk/aws-smithy-client" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-sdk-s3= { version = "0.29.0", path = "../../sdk/s3" }
+aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client" }
 
 [dependencies.clap]
 version = "4.2.1"

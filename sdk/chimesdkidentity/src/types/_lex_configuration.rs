@@ -4,9 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexConfiguration {
+    /// <important>
+    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     #[doc(hidden)]
     pub responds_to: ::std::option::Option<crate::types::RespondsTo>,
+    /// <p>Specifies the type of message that triggers a bot.</p>
+    #[doc(hidden)]
+    pub invoked_by: ::std::option::Option<crate::types::InvokedBy>,
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
     #[doc(hidden)]
     pub lex_bot_alias_arn: ::std::option::Option<::std::string::String>,
@@ -18,9 +24,16 @@ pub struct LexConfiguration {
     pub welcome_intent: ::std::option::Option<::std::string::String>,
 }
 impl LexConfiguration {
+    /// <important>
+    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn responds_to(&self) -> ::std::option::Option<&crate::types::RespondsTo> {
         self.responds_to.as_ref()
+    }
+    /// <p>Specifies the type of message that triggers a bot.</p>
+    pub fn invoked_by(&self) -> ::std::option::Option<&crate::types::InvokedBy> {
+        self.invoked_by.as_ref()
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
     pub fn lex_bot_alias_arn(&self) -> ::std::option::Option<&str> {
@@ -49,22 +62,39 @@ impl LexConfiguration {
 )]
 pub struct LexConfigurationBuilder {
     pub(crate) responds_to: ::std::option::Option<crate::types::RespondsTo>,
+    pub(crate) invoked_by: ::std::option::Option<crate::types::InvokedBy>,
     pub(crate) lex_bot_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) welcome_intent: ::std::option::Option<::std::string::String>,
 }
 impl LexConfigurationBuilder {
+    /// <important>
+    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn responds_to(mut self, input: crate::types::RespondsTo) -> Self {
         self.responds_to = ::std::option::Option::Some(input);
         self
     }
+    /// <important>
+    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn set_responds_to(
         mut self,
         input: ::std::option::Option<crate::types::RespondsTo>,
     ) -> Self {
         self.responds_to = input;
+        self
+    }
+    /// <p>Specifies the type of message that triggers a bot.</p>
+    pub fn invoked_by(mut self, input: crate::types::InvokedBy) -> Self {
+        self.invoked_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of message that triggers a bot.</p>
+    pub fn set_invoked_by(mut self, input: ::std::option::Option<crate::types::InvokedBy>) -> Self {
+        self.invoked_by = input;
         self
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
@@ -113,6 +143,7 @@ impl LexConfigurationBuilder {
     pub fn build(self) -> crate::types::LexConfiguration {
         crate::types::LexConfiguration {
             responds_to: self.responds_to,
+            invoked_by: self.invoked_by,
             lex_bot_alias_arn: self.lex_bot_alias_arn,
             locale_id: self.locale_id,
             welcome_intent: self.welcome_intent,

@@ -132,6 +132,8 @@ pub(crate) mod shape_cloud_watch_monitoring_configuration;
 
 pub(crate) mod shape_configuration_list;
 
+pub(crate) mod shape_container_log_rotation_configuration;
+
 pub(crate) mod shape_eks_info;
 
 pub(crate) mod shape_parametric_monitoring_configuration;

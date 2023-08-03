@@ -17,6 +17,10 @@ pub struct RetireGrantInput {
     /// </ul>
     #[doc(hidden)]
     pub grant_id: ::std::option::Option<::std::string::String>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl RetireGrantInput {
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
@@ -36,6 +40,11 @@ impl RetireGrantInput {
     pub fn grant_id(&self) -> ::std::option::Option<&str> {
         self.grant_id.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl RetireGrantInput {
     /// Creates a new builder-style object to manufacture [`RetireGrantInput`](crate::operation::retire_grant::RetireGrantInput).
@@ -53,6 +62,7 @@ pub struct RetireGrantInputBuilder {
     pub(crate) grant_token: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl RetireGrantInputBuilder {
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
@@ -95,6 +105,18 @@ impl RetireGrantInputBuilder {
         self.grant_id = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RetireGrantInput`](crate::operation::retire_grant::RetireGrantInput).
     pub fn build(
         self,
@@ -106,6 +128,7 @@ impl RetireGrantInputBuilder {
             grant_token: self.grant_token,
             key_id: self.key_id,
             grant_id: self.grant_id,
+            dry_run: self.dry_run,
         })
     }
 }

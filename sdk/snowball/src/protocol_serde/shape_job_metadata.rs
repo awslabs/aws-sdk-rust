@@ -210,6 +210,34 @@ where
                                     crate::protocol_serde::shape_on_device_service_configuration::de_on_device_service_configuration(tokens)?
                                 );
                             }
+                            "ImpactLevel" => {
+                                builder = builder.set_impact_level(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ImpactLevel::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "PickupDetails" => {
+                                builder = builder.set_pickup_details(
+                                    crate::protocol_serde::shape_pickup_details::de_pickup_details(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "SnowballId" => {
+                                builder = builder.set_snowball_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

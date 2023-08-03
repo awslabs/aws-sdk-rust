@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::set_room_arn): <p>The room that the appliances are associated with.</p>
     /// - On success, responds with [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput)
     /// - On failure, responds with [`SdkError<ForgetSmartHomeAppliancesError>`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn forget_smart_home_appliances(&self) -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder{
         crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesFluentBuilder::new(self.handle.clone())
     }

@@ -15,6 +15,7 @@
 ///     MessageSystemAttributeName::AwsTraceHeader => { /* ... */ },
 ///     MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => { /* ... */ },
 ///     MessageSystemAttributeName::ApproximateReceiveCount => { /* ... */ },
+///     MessageSystemAttributeName::DeadLetterQueueSourceArn => { /* ... */ },
 ///     MessageSystemAttributeName::MessageDeduplicationId => { /* ... */ },
 ///     MessageSystemAttributeName::MessageGroupId => { /* ... */ },
 ///     MessageSystemAttributeName::SenderId => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum MessageSystemAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     ApproximateReceiveCount,
     #[allow(missing_docs)] // documentation missing in model
+    DeadLetterQueueSourceArn,
+    #[allow(missing_docs)] // documentation missing in model
     MessageDeduplicationId,
     #[allow(missing_docs)] // documentation missing in model
     MessageGroupId,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for MessageSystemAttributeName {
                 MessageSystemAttributeName::ApproximateFirstReceiveTimestamp
             }
             "ApproximateReceiveCount" => MessageSystemAttributeName::ApproximateReceiveCount,
+            "DeadLetterQueueSourceArn" => MessageSystemAttributeName::DeadLetterQueueSourceArn,
             "MessageDeduplicationId" => MessageSystemAttributeName::MessageDeduplicationId,
             "MessageGroupId" => MessageSystemAttributeName::MessageGroupId,
             "SenderId" => MessageSystemAttributeName::SenderId,
@@ -107,6 +111,7 @@ impl MessageSystemAttributeName {
                 "ApproximateFirstReceiveTimestamp"
             }
             MessageSystemAttributeName::ApproximateReceiveCount => "ApproximateReceiveCount",
+            MessageSystemAttributeName::DeadLetterQueueSourceArn => "DeadLetterQueueSourceArn",
             MessageSystemAttributeName::MessageDeduplicationId => "MessageDeduplicationId",
             MessageSystemAttributeName::MessageGroupId => "MessageGroupId",
             MessageSystemAttributeName::SenderId => "SenderId",
@@ -121,6 +126,7 @@ impl MessageSystemAttributeName {
             "AWSTraceHeader",
             "ApproximateFirstReceiveTimestamp",
             "ApproximateReceiveCount",
+            "DeadLetterQueueSourceArn",
             "MessageDeduplicationId",
             "MessageGroupId",
             "SenderId",

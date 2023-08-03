@@ -21,6 +21,18 @@ pub fn ser_pivot_table_cell_conditional_formatting(
         crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.scopes {
+        let mut array_7 = object.key("Scopes").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -66,6 +78,11 @@ where
                             "Scope" => {
                                 builder = builder.set_scope(
                                     crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::de_pivot_table_conditional_formatting_scope(tokens)?
+                                );
+                            }
+                            "Scopes" => {
+                                builder = builder.set_scopes(
+                                    crate::protocol_serde::shape_pivot_table_conditional_formatting_scope_list::de_pivot_table_conditional_formatting_scope_list(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -6,6 +6,10 @@
 pub enum DatasetOrgAttributes {
     /// <p>The generation data group of the data set.</p>
     Gdg(crate::types::GdgAttributes),
+    /// <p>The details of a PO type data set.</p>
+    Po(crate::types::PoAttributes),
+    /// <p>The details of a PS type data set.</p>
+    Ps(crate::types::PsAttributes),
     /// <p>The details of a VSAM data set.</p>
     Vsam(crate::types::VsamAttributes),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +35,32 @@ impl DatasetOrgAttributes {
     /// Returns true if this is a [`Gdg`](crate::types::DatasetOrgAttributes::Gdg).
     pub fn is_gdg(&self) -> bool {
         self.as_gdg().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Po`](crate::types::DatasetOrgAttributes::Po), extracting the inner [`PoAttributes`](crate::types::PoAttributes).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_po(&self) -> ::std::result::Result<&crate::types::PoAttributes, &Self> {
+        if let DatasetOrgAttributes::Po(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Po`](crate::types::DatasetOrgAttributes::Po).
+    pub fn is_po(&self) -> bool {
+        self.as_po().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Ps`](crate::types::DatasetOrgAttributes::Ps), extracting the inner [`PsAttributes`](crate::types::PsAttributes).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ps(&self) -> ::std::result::Result<&crate::types::PsAttributes, &Self> {
+        if let DatasetOrgAttributes::Ps(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Ps`](crate::types::DatasetOrgAttributes::Ps).
+    pub fn is_ps(&self) -> bool {
+        self.as_ps().is_ok()
     }
     /// Tries to convert the enum instance into [`Vsam`](crate::types::DatasetOrgAttributes::Vsam), extracting the inner [`VsamAttributes`](crate::types::VsamAttributes).
     /// Returns `Err(&Self)` if it can't be converted.

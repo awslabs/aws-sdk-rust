@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`load_balancer_dns_name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::load_balancer_dns_name): <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_application::GetApplicationOutput::status_reason): <p>The reason for the reported status.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(
         &self,

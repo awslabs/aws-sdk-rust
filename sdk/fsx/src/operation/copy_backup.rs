@@ -166,6 +166,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for CopyBackup {
             )
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

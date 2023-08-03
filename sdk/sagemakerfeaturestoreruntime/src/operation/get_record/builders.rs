@@ -91,7 +91,7 @@ impl GetRecordFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the feature group from which you want to retrieve a record.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -99,7 +99,7 @@ impl GetRecordFluentBuilder {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the feature group from which you want to retrieve a record.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -141,6 +141,19 @@ impl GetRecordFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_feature_names(input);
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
+    pub fn expiration_time_response(mut self, input: crate::types::ExpirationTimeResponse) -> Self {
+        self.inner = self.inner.expiration_time_response(input);
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
+    pub fn set_expiration_time_response(
+        mut self,
+        input: ::std::option::Option<crate::types::ExpirationTimeResponse>,
+    ) -> Self {
+        self.inner = self.inner.set_expiration_time_response(input);
         self
     }
 }

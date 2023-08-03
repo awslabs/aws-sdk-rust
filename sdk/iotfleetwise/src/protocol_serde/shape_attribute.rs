@@ -42,6 +42,12 @@ pub fn ser_attribute(
     if let Some(var_11) = &input.default_value {
         object.key("defaultValue").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.deprecation_message {
+        object.key("deprecationMessage").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.comment {
+        object.key("comment").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -137,6 +143,24 @@ where
                             }
                             "defaultValue" => {
                                 builder = builder.set_default_value(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "deprecationMessage" => {
+                                builder = builder.set_deprecation_message(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "comment" => {
+                                builder = builder.set_comment(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

@@ -7,6 +7,9 @@ pub mod create_signaling_channel;
 /// Types for the `CreateStream` operation.
 pub mod create_stream;
 
+/// Types for the `DeleteEdgeConfiguration` operation.
+pub mod delete_edge_configuration;
+
 /// Types for the `DeleteSignalingChannel` operation.
 pub mod delete_signaling_channel;
 
@@ -39,6 +42,9 @@ pub mod get_data_endpoint;
 
 /// Types for the `GetSignalingChannelEndpoint` operation.
 pub mod get_signaling_channel_endpoint;
+
+/// Types for the `ListEdgeAgentConfigurations` operation.
+pub mod list_edge_agent_configurations;
 
 /// Types for the `ListSignalingChannels` operation.
 pub mod list_signaling_channels;

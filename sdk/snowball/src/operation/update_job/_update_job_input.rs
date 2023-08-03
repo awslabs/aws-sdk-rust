@@ -35,6 +35,9 @@ pub struct UpdateJobInput {
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
     #[doc(hidden)]
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
+    /// <p>Information identifying the person picking up the device.</p>
+    #[doc(hidden)]
+    pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl UpdateJobInput {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -82,6 +85,10 @@ impl UpdateJobInput {
     pub fn forwarding_address_id(&self) -> ::std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(&self) -> ::std::option::Option<&crate::types::PickupDetails> {
+        self.pickup_details.as_ref()
+    }
 }
 impl UpdateJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
@@ -107,6 +114,7 @@ pub struct UpdateJobInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
     pub(crate) forwarding_address_id: ::std::option::Option<::std::string::String>,
+    pub(crate) pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
 impl UpdateJobInputBuilder {
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -235,6 +243,19 @@ impl UpdateJobInputBuilder {
         self.forwarding_address_id = input;
         self
     }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
+        self.pickup_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn set_pickup_details(
+        mut self,
+        input: ::std::option::Option<crate::types::PickupDetails>,
+    ) -> Self {
+        self.pickup_details = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(
         self,
@@ -253,6 +274,7 @@ impl UpdateJobInputBuilder {
             description: self.description,
             snowball_capacity_preference: self.snowball_capacity_preference,
             forwarding_address_id: self.forwarding_address_id,
+            pickup_details: self.pickup_details,
         })
     }
 }

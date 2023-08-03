@@ -7,7 +7,7 @@ pub use crate::operation::update_domain::_update_domain_input::UpdateDomainInput
 ///
 /// <p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p>
 /// <p>After a domain is created, the name can’t be changed.</p>
-/// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
+/// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true.</p>
 /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
 /// <p>To add or remove tags on an existing Domain, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -160,6 +160,19 @@ impl UpdateDomainFluentBuilder {
         input: ::std::option::Option<crate::types::MatchingRequest>,
     ) -> Self {
         self.inner = self.inner.set_matching(input);
+        self
+    }
+    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn rule_based_matching(mut self, input: crate::types::RuleBasedMatchingRequest) -> Self {
+        self.inner = self.inner.rule_based_matching(input);
+        self
+    }
+    /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn set_rule_based_matching(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
+    ) -> Self {
+        self.inner = self.inner.set_rule_based_matching(input);
         self
     }
     /// Adds a key-value pair to `Tags`.

@@ -14,6 +14,8 @@
 /// match permissiontype {
 ///     PermissionType::CellFilterPermission => { /* ... */ },
 ///     PermissionType::ColumnPermission => { /* ... */ },
+///     PermissionType::NestedCellPermission => { /* ... */ },
+///     PermissionType::NestedPermission => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +53,10 @@ pub enum PermissionType {
     CellFilterPermission,
     #[allow(missing_docs)] // documentation missing in model
     ColumnPermission,
+    #[allow(missing_docs)] // documentation missing in model
+    NestedCellPermission,
+    #[allow(missing_docs)] // documentation missing in model
+    NestedPermission,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for PermissionType {
         match s {
             "CELL_FILTER_PERMISSION" => PermissionType::CellFilterPermission,
             "COLUMN_PERMISSION" => PermissionType::ColumnPermission,
+            "NESTED_CELL_PERMISSION" => PermissionType::NestedCellPermission,
+            "NESTED_PERMISSION" => PermissionType::NestedPermission,
             other => {
                 PermissionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +86,19 @@ impl PermissionType {
         match self {
             PermissionType::CellFilterPermission => "CELL_FILTER_PERMISSION",
             PermissionType::ColumnPermission => "COLUMN_PERMISSION",
+            PermissionType::NestedCellPermission => "NESTED_CELL_PERMISSION",
+            PermissionType::NestedPermission => "NESTED_PERMISSION",
             PermissionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"]
+        &[
+            "CELL_FILTER_PERMISSION",
+            "COLUMN_PERMISSION",
+            "NESTED_CELL_PERMISSION",
+            "NESTED_PERMISSION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PermissionType {

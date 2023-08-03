@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrammarSlotTypeSource {
-    /// <p>The name of the S3 bucket that contains the grammar source.</p>
+    /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>The path to the grammar in the S3 bucket.</p>
+    /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub s3_object_key: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
+    /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrammarSlotTypeSource {
-    /// <p>The name of the S3 bucket that contains the grammar source.</p>
+    /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>The path to the grammar in the S3 bucket.</p>
+    /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     pub fn s3_object_key(&self) -> ::std::option::Option<&str> {
         self.s3_object_key.as_deref()
     }
-    /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
+    /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -46,7 +46,7 @@ pub struct GrammarSlotTypeSourceBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrammarSlotTypeSourceBuilder {
-    /// <p>The name of the S3 bucket that contains the grammar source.</p>
+    /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub fn s3_bucket_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -54,7 +54,7 @@ impl GrammarSlotTypeSourceBuilder {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the S3 bucket that contains the grammar source.</p>
+    /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub fn set_s3_bucket_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -62,7 +62,7 @@ impl GrammarSlotTypeSourceBuilder {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>The path to the grammar in the S3 bucket.</p>
+    /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     pub fn s3_object_key(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -70,7 +70,7 @@ impl GrammarSlotTypeSourceBuilder {
         self.s3_object_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the grammar in the S3 bucket.</p>
+    /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     pub fn set_s3_object_key(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -78,12 +78,12 @@ impl GrammarSlotTypeSourceBuilder {
         self.s3_object_key = input;
         self
     }
-    /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
+    /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
+    /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self

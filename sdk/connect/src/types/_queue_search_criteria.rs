@@ -12,8 +12,8 @@ pub struct QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     #[doc(hidden)]
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
@@ -30,8 +30,8 @@ impl QueueSearchCriteria {
     pub fn and_conditions(&self) -> ::std::option::Option<&[crate::types::QueueSearchCriteria]> {
         self.and_conditions.as_deref()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
@@ -102,15 +102,15 @@ impl QueueSearchCriteriaBuilder {
         self.and_conditions = input;
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
-    /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn set_string_condition(
         mut self,

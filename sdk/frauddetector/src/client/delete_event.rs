@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`event_id(impl ::std::convert::Into<String>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::set_event_id): <p>The ID of the event to delete.</p>
     ///   - [`event_type_name(impl ::std::convert::Into<String>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::set_event_type_name): <p>The name of the event type.</p>
-    ///   - [`delete_audit_history(bool)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::delete_audit_history) / [`set_delete_audit_history(Option<bool>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::set_delete_audit_history): <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    ///   - [`delete_audit_history(bool)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::delete_audit_history) / [`set_delete_audit_history(Option<bool>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::set_delete_audit_history): <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     /// - On success, responds with [`DeleteEventOutput`](crate::operation::delete_event::DeleteEventOutput)
     /// - On failure, responds with [`SdkError<DeleteEventError>`](crate::operation::delete_event::DeleteEventError)
     pub fn delete_event(

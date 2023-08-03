@@ -15,8 +15,10 @@
 ///     EnvironmentStatus::Available => { /* ... */ },
 ///     EnvironmentStatus::CreateFailed => { /* ... */ },
 ///     EnvironmentStatus::Creating => { /* ... */ },
+///     EnvironmentStatus::CreatingSnapshot => { /* ... */ },
 ///     EnvironmentStatus::Deleted => { /* ... */ },
 ///     EnvironmentStatus::Deleting => { /* ... */ },
+///     EnvironmentStatus::RollingBack => { /* ... */ },
 ///     EnvironmentStatus::Unavailable => { /* ... */ },
 ///     EnvironmentStatus::UpdateFailed => { /* ... */ },
 ///     EnvironmentStatus::Updating => { /* ... */ },
@@ -60,9 +62,13 @@ pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    CreatingSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    RollingBack,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
     #[allow(missing_docs)] // documentation missing in model
@@ -78,8 +84,10 @@ impl ::std::convert::From<&str> for EnvironmentStatus {
             "AVAILABLE" => EnvironmentStatus::Available,
             "CREATE_FAILED" => EnvironmentStatus::CreateFailed,
             "CREATING" => EnvironmentStatus::Creating,
+            "CREATING_SNAPSHOT" => EnvironmentStatus::CreatingSnapshot,
             "DELETED" => EnvironmentStatus::Deleted,
             "DELETING" => EnvironmentStatus::Deleting,
+            "ROLLING_BACK" => EnvironmentStatus::RollingBack,
             "UNAVAILABLE" => EnvironmentStatus::Unavailable,
             "UPDATE_FAILED" => EnvironmentStatus::UpdateFailed,
             "UPDATING" => EnvironmentStatus::Updating,
@@ -103,8 +111,10 @@ impl EnvironmentStatus {
             EnvironmentStatus::Available => "AVAILABLE",
             EnvironmentStatus::CreateFailed => "CREATE_FAILED",
             EnvironmentStatus::Creating => "CREATING",
+            EnvironmentStatus::CreatingSnapshot => "CREATING_SNAPSHOT",
             EnvironmentStatus::Deleted => "DELETED",
             EnvironmentStatus::Deleting => "DELETING",
+            EnvironmentStatus::RollingBack => "ROLLING_BACK",
             EnvironmentStatus::Unavailable => "UNAVAILABLE",
             EnvironmentStatus::UpdateFailed => "UPDATE_FAILED",
             EnvironmentStatus::Updating => "UPDATING",
@@ -117,8 +127,10 @@ impl EnvironmentStatus {
             "AVAILABLE",
             "CREATE_FAILED",
             "CREATING",
+            "CREATING_SNAPSHOT",
             "DELETED",
             "DELETING",
+            "ROLLING_BACK",
             "UNAVAILABLE",
             "UPDATE_FAILED",
             "UPDATING",

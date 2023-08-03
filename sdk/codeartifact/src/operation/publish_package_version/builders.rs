@@ -133,11 +133,13 @@ impl PublishPackageVersionFluentBuilder {
         self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
+    /// <p>The only supported value is <code>generic</code>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self

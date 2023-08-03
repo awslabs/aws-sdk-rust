@@ -42,6 +42,9 @@ pub struct EncoderSettings {
     /// Placeholder documentation for __listOfVideoDescription
     #[doc(hidden)]
     pub video_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>,
+    /// Thumbnail configuration settings.
+    #[doc(hidden)]
+    pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
 }
 impl EncoderSettings {
     /// Placeholder documentation for __listOfAudioDescription
@@ -100,6 +103,12 @@ impl EncoderSettings {
     pub fn video_descriptions(&self) -> ::std::option::Option<&[crate::types::VideoDescription]> {
         self.video_descriptions.as_deref()
     }
+    /// Thumbnail configuration settings.
+    pub fn thumbnail_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ThumbnailConfiguration> {
+        self.thumbnail_configuration.as_ref()
+    }
 }
 impl EncoderSettings {
     /// Creates a new builder-style object to manufacture [`EncoderSettings`](crate::types::EncoderSettings).
@@ -130,6 +139,7 @@ pub struct EncoderSettingsBuilder {
     pub(crate) timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
     pub(crate) video_descriptions:
         ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>,
+    pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
 }
 impl EncoderSettingsBuilder {
     /// Appends an item to `audio_descriptions`.
@@ -315,6 +325,19 @@ impl EncoderSettingsBuilder {
         self.video_descriptions = input;
         self
     }
+    /// Thumbnail configuration settings.
+    pub fn thumbnail_configuration(mut self, input: crate::types::ThumbnailConfiguration) -> Self {
+        self.thumbnail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Thumbnail configuration settings.
+    pub fn set_thumbnail_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ThumbnailConfiguration>,
+    ) -> Self {
+        self.thumbnail_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EncoderSettings`](crate::types::EncoderSettings).
     pub fn build(self) -> crate::types::EncoderSettings {
         crate::types::EncoderSettings {
@@ -330,6 +353,7 @@ impl EncoderSettingsBuilder {
             output_groups: self.output_groups,
             timecode_config: self.timecode_config,
             video_descriptions: self.video_descriptions,
+            thumbnail_configuration: self.thumbnail_configuration,
         }
     }
 }

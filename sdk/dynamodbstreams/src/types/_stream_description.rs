@@ -10,7 +10,7 @@ pub struct StreamDescription {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
@@ -60,7 +60,7 @@ impl StreamDescription {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
@@ -149,7 +149,7 @@ impl StreamDescriptionBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
@@ -160,7 +160,7 @@ impl StreamDescriptionBuilder {
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the Amazon Web Services customer ID.</p> </li>
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>

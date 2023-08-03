@@ -5,7 +5,6 @@ pub use crate::operation::describe_mapped_resource_configuration::_describe_mapp
 
 /// Fluent builder constructing a request to `DescribeMappedResourceConfiguration`.
 ///
-/// <p>Returns the most current information about the stream. Either streamName or streamARN should be provided in the input.</p>
 /// <p>Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code> should be provided in the input.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationFluentBuilder {

@@ -4,6 +4,12 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AssociateApi` operation.
 pub mod associate_api;
 
+/// Types for the `AssociateMergedGraphqlApi` operation.
+pub mod associate_merged_graphql_api;
+
+/// Types for the `AssociateSourceGraphqlApi` operation.
+pub mod associate_source_graphql_api;
+
 /// Types for the `CreateApiCache` operation.
 pub mod create_api_cache;
 
@@ -55,6 +61,12 @@ pub mod delete_type;
 /// Types for the `DisassociateApi` operation.
 pub mod disassociate_api;
 
+/// Types for the `DisassociateMergedGraphqlApi` operation.
+pub mod disassociate_merged_graphql_api;
+
+/// Types for the `DisassociateSourceGraphqlApi` operation.
+pub mod disassociate_source_graphql_api;
+
 /// Types for the `EvaluateCode` operation.
 pub mod evaluate_code;
 
@@ -91,6 +103,9 @@ pub mod get_resolver;
 /// Types for the `GetSchemaCreationStatus` operation.
 pub mod get_schema_creation_status;
 
+/// Types for the `GetSourceApiAssociation` operation.
+pub mod get_source_api_association;
+
 /// Types for the `GetType` operation.
 pub mod get_type;
 
@@ -115,14 +130,23 @@ pub mod list_resolvers;
 /// Types for the `ListResolversByFunction` operation.
 pub mod list_resolvers_by_function;
 
+/// Types for the `ListSourceApiAssociations` operation.
+pub mod list_source_api_associations;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `ListTypes` operation.
 pub mod list_types;
 
+/// Types for the `ListTypesByAssociation` operation.
+pub mod list_types_by_association;
+
 /// Types for the `StartSchemaCreation` operation.
 pub mod start_schema_creation;
+
+/// Types for the `StartSchemaMerge` operation.
+pub mod start_schema_merge;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -150,6 +174,9 @@ pub mod update_graphql_api;
 
 /// Types for the `UpdateResolver` operation.
 pub mod update_resolver;
+
+/// Types for the `UpdateSourceApiAssociation` operation.
+pub mod update_source_api_association;
 
 /// Types for the `UpdateType` operation.
 pub mod update_type;

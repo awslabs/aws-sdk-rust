@@ -9,6 +9,9 @@ pub fn ser_data_quality_target_table(
     if let Some(var_2) = &input.database_name {
         object.key("DatabaseName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.catalog_id {
+        object.key("CatalogId").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -47,6 +50,15 @@ where
                             }
                             "DatabaseName" => {
                                 builder = builder.set_database_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CatalogId" => {
+                                builder = builder.set_catalog_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

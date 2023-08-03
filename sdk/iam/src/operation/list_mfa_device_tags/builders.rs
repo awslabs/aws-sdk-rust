@@ -99,6 +99,17 @@ impl ListMFADeviceTagsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_mfa_device_tags::paginator::ListMfaDeviceTagsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_mfa_device_tags::paginator::ListMfaDeviceTagsPaginator {
+        crate::operation::list_mfa_device_tags::paginator::ListMfaDeviceTagsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The unique identifier for the IAM virtual MFA device whose tags you want to see. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn serial_number(

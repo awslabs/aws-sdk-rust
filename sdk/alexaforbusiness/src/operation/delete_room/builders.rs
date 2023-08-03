@@ -6,6 +6,7 @@ pub use crate::operation::delete_room::_delete_room_input::DeleteRoomInputBuilde
 /// Fluent builder constructing a request to `DeleteRoom`.
 ///
 /// <p>Deletes a room by the room ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

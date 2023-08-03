@@ -7,10 +7,10 @@ pub struct CreateWorkloadShareInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     #[doc(hidden)]
     pub shared_with: ::std::option::Option<::std::string::String>,
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
@@ -25,11 +25,11 @@ impl CreateWorkloadShareInput {
     pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
@@ -72,22 +72,22 @@ impl CreateWorkloadShareInputBuilder {
         self.workload_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn set_permission_type(
         mut self,
         input: ::std::option::Option<crate::types::PermissionType>,

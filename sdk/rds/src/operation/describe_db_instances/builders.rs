@@ -5,7 +5,7 @@ pub use crate::operation::describe_db_instances::_describe_db_instances_input::D
 
 /// Fluent builder constructing a request to `DescribeDBInstances`.
 ///
-/// <p>Returns information about provisioned RDS instances. This API supports pagination.</p> <note>
+/// <p>Describes provisioned RDS instances. This API supports pagination.</p> <note>
 /// <p>This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -115,7 +115,7 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
+    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
     pub fn db_instance_identifier(
         mut self,
@@ -127,7 +127,7 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
+    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
@@ -141,11 +141,11 @@ impl DescribeDBInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A filter that specifies one or more DB instances to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
     /// </ul>
@@ -154,11 +154,11 @@ impl DescribeDBInstancesFluentBuilder {
         self
     }
     /// <p>A filter that specifies one or more DB instances to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Supported Filters:</p>
     /// <ul>
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include information about the DB instances identified by these DB instance resource identifiers.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
     /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
     /// </ul>

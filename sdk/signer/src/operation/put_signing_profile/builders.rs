@@ -5,7 +5,7 @@ pub use crate::operation::put_signing_profile::_put_signing_profile_input::PutSi
 
 /// Fluent builder constructing a request to `PutSigningProfile`.
 ///
-/// <p>Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a> </p>
+/// <p>Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSigningProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -34,6 +34,9 @@ pub struct EventType {
     /// <p>The entity type ARN.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The event orchestration status. </p>
+    #[doc(hidden)]
+    pub event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl EventType {
     /// <p>The event type name.</p>
@@ -78,6 +81,10 @@ impl EventType {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The event orchestration status. </p>
+    pub fn event_orchestration(&self) -> ::std::option::Option<&crate::types::EventOrchestration> {
+        self.event_orchestration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -95,6 +102,7 @@ impl ::std::fmt::Debug for EventType {
         formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
         formatter.field("created_time", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_orchestration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -120,6 +128,7 @@ pub struct EventTypeBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl EventTypeBuilder {
     /// <p>The event type name.</p>
@@ -267,6 +276,19 @@ impl EventTypeBuilder {
         self.arn = input;
         self
     }
+    /// <p>The event orchestration status. </p>
+    pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
+        self.event_orchestration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event orchestration status. </p>
+    pub fn set_event_orchestration(
+        mut self,
+        input: ::std::option::Option<crate::types::EventOrchestration>,
+    ) -> Self {
+        self.event_orchestration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
     pub fn build(self) -> crate::types::EventType {
         crate::types::EventType {
@@ -280,6 +302,7 @@ impl EventTypeBuilder {
             last_updated_time: self.last_updated_time,
             created_time: self.created_time,
             arn: self.arn,
+            event_orchestration: self.event_orchestration,
         }
     }
 }
@@ -299,6 +322,7 @@ impl ::std::fmt::Debug for EventTypeBuilder {
         formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
         formatter.field("created_time", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_orchestration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

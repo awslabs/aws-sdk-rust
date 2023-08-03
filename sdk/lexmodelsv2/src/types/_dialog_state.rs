@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogState {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>Override settings to configure the intent state.</p>
@@ -17,7 +17,7 @@ pub struct DialogState {
     >,
 }
 impl DialogState {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
@@ -54,12 +54,12 @@ pub struct DialogStateBuilder {
     >,
 }
 impl DialogStateBuilder {
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     pub fn dialog_action(mut self, input: crate::types::DialogAction) -> Self {
         self.dialog_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
+    /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     pub fn set_dialog_action(
         mut self,
         input: ::std::option::Option<crate::types::DialogAction>,

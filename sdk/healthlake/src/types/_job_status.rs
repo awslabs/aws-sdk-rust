@@ -12,6 +12,10 @@
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
+///     JobStatus::CancelCompleted => { /* ... */ },
+///     JobStatus::CancelFailed => { /* ... */ },
+///     JobStatus::CancelInProgress => { /* ... */ },
+///     JobStatus::CancelSubmitted => { /* ... */ },
 ///     JobStatus::Completed => { /* ... */ },
 ///     JobStatus::CompletedWithErrors => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
@@ -51,6 +55,14 @@
 )]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CancelCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    CancelFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CancelInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    CancelSubmitted,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     CompletedWithErrors,
@@ -66,6 +78,10 @@ pub enum JobStatus {
 impl ::std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CANCEL_COMPLETED" => JobStatus::CancelCompleted,
+            "CANCEL_FAILED" => JobStatus::CancelFailed,
+            "CANCEL_IN_PROGRESS" => JobStatus::CancelInProgress,
+            "CANCEL_SUBMITTED" => JobStatus::CancelSubmitted,
             "COMPLETED" => JobStatus::Completed,
             "COMPLETED_WITH_ERRORS" => JobStatus::CompletedWithErrors,
             "FAILED" => JobStatus::Failed,
@@ -86,6 +102,10 @@ impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobStatus::CancelCompleted => "CANCEL_COMPLETED",
+            JobStatus::CancelFailed => "CANCEL_FAILED",
+            JobStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
+            JobStatus::CancelSubmitted => "CANCEL_SUBMITTED",
             JobStatus::Completed => "COMPLETED",
             JobStatus::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
             JobStatus::Failed => "FAILED",
@@ -97,6 +117,10 @@ impl JobStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CANCEL_COMPLETED",
+            "CANCEL_FAILED",
+            "CANCEL_IN_PROGRESS",
+            "CANCEL_SUBMITTED",
             "COMPLETED",
             "COMPLETED_WITH_ERRORS",
             "FAILED",

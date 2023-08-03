@@ -5,6 +5,8 @@ pub use crate::types::_monitor_processing_status_code::MonitorProcessingStatusCo
 
 pub use crate::types::_monitor_config_state::MonitorConfigState;
 
+pub use crate::types::_health_events_config::HealthEventsConfig;
+
 pub use crate::types::_internet_measurements_log_delivery::InternetMeasurementsLogDelivery;
 
 pub use crate::types::_s3_config::S3Config;
@@ -40,6 +42,8 @@ mod _health_event;
 mod _health_event_impact_type;
 
 mod _health_event_status;
+
+mod _health_events_config;
 
 mod _impacted_location;
 

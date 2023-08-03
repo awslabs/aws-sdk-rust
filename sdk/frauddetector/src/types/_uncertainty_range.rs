@@ -7,7 +7,7 @@ pub struct UncertaintyRange {
     /// <p> The lower bound value of the area under curve (auc). </p>
     #[doc(hidden)]
     pub lower_bound_value: ::std::option::Option<f32>,
-    /// <p> The lower bound value of the area under curve (auc). </p>
+    /// <p> The upper bound value of the area under curve (auc). </p>
     #[doc(hidden)]
     pub upper_bound_value: ::std::option::Option<f32>,
 }
@@ -16,7 +16,7 @@ impl UncertaintyRange {
     pub fn lower_bound_value(&self) -> ::std::option::Option<f32> {
         self.lower_bound_value
     }
-    /// <p> The lower bound value of the area under curve (auc). </p>
+    /// <p> The upper bound value of the area under curve (auc). </p>
     pub fn upper_bound_value(&self) -> ::std::option::Option<f32> {
         self.upper_bound_value
     }
@@ -48,12 +48,12 @@ impl UncertaintyRangeBuilder {
         self.lower_bound_value = input;
         self
     }
-    /// <p> The lower bound value of the area under curve (auc). </p>
+    /// <p> The upper bound value of the area under curve (auc). </p>
     pub fn upper_bound_value(mut self, input: f32) -> Self {
         self.upper_bound_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The lower bound value of the area under curve (auc). </p>
+    /// <p> The upper bound value of the area under curve (auc). </p>
     pub fn set_upper_bound_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound_value = input;
         self

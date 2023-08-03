@@ -6,7 +6,7 @@ pub use crate::operation::describe_network_acls::_describe_network_acls_input::D
 /// Fluent builder constructing a request to `DescribeNetworkAcls`.
 ///
 /// <p>Describes one or more of your network ACLs.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,7 +115,7 @@ impl DescribeNetworkAclsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -147,7 +147,7 @@ impl DescribeNetworkAclsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.association-id</code> - The ID of an association ID for the ACL.</p> </li>
     /// <li> <p> <code>association.network-acl-id</code> - The ID of the network ACL involved in the association.</p> </li>
@@ -196,7 +196,7 @@ impl DescribeNetworkAclsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_network_acl_ids`](Self::set_network_acl_ids).
     ///
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     pub fn network_acl_ids(
         mut self,
@@ -205,7 +205,7 @@ impl DescribeNetworkAclsFluentBuilder {
         self.inner = self.inner.network_acl_ids(input.into());
         self
     }
-    /// <p>One or more network ACL IDs.</p>
+    /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
     pub fn set_network_acl_ids(
         mut self,

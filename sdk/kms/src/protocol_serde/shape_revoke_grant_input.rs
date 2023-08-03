@@ -9,5 +9,8 @@ pub fn ser_revoke_grant_input(
     if let Some(var_2) = &input.grant_id {
         object.key("GrantId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.dry_run {
+        object.key("DryRun").boolean(*var_3);
+    }
     Ok(())
 }

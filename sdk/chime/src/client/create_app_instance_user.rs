@@ -12,6 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput::app_instance_user_arn): <p>The user's ARN.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceUserError>`](crate::operation::create_app_instance_user::CreateAppInstanceUserError)
+    #[deprecated(
+        note = "Replaced by CreateAppInstanceUser in the Amazon Chime SDK Identity Namespace"
+    )]
     pub fn create_app_instance_user(
         &self,
     ) -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserFluentBuilder

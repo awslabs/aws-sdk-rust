@@ -5,9 +5,7 @@ pub use crate::operation::describe_key::_describe_key_input::DescribeKeyInputBui
 
 /// Fluent builder constructing a request to `DescribeKey`.
 ///
-/// <p>Retrieves the API key resource details.</p> <important>
-/// <p>The API keys feature is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.</p>
-/// </important>
+/// <p>Retrieves the API key resource details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -198,6 +198,10 @@ pub enum DeleteAccountCustomizationError {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>A limit is exceeded.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>One or more preconditions aren't met.</p>
+    PreconditionNotMetException(crate::types::error::PreconditionNotMetException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This resource is currently unavailable.</p>
@@ -228,6 +232,8 @@ impl ::std::fmt::Display for DeleteAccountCustomizationError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::PreconditionNotMetException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceUnavailableException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -248,6 +254,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteAccount
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidParameterValueException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::PreconditionNotMetException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
@@ -316,6 +328,8 @@ impl DeleteAccountCustomizationError {
             Self::ConflictException(e) => e.meta(),
             Self::InternalFailureException(e) => e.meta(),
             Self::InvalidParameterValueException(e) => e.meta(),
+            Self::LimitExceededException(e) => e.meta(),
+            Self::PreconditionNotMetException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ResourceUnavailableException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
@@ -338,6 +352,14 @@ impl DeleteAccountCustomizationError {
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
     }
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationError::PreconditionNotMetException`.
+    pub fn is_precondition_not_met_exception(&self) -> bool {
+        matches!(self, Self::PreconditionNotMetException(_))
+    }
     /// Returns `true` if the error kind is `DeleteAccountCustomizationError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -358,6 +380,8 @@ impl ::std::error::Error for DeleteAccountCustomizationError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PreconditionNotMetException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),

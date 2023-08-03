@@ -58,6 +58,42 @@ pub fn de_domain_membership(
                 builder = builder.set_iam_role_name(var_4);
             }
             ,
+            s if s.matches("OU") /* OU com.amazonaws.rds#DomainMembership$OU */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ou(var_5);
+            }
+            ,
+            s if s.matches("AuthSecretArn") /* AuthSecretArn com.amazonaws.rds#DomainMembership$AuthSecretArn */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_auth_secret_arn(var_6);
+            }
+            ,
+            s if s.matches("DnsIps") /* DnsIps com.amazonaws.rds#DomainMembership$DnsIps */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_dns_ips(var_7);
+            }
+            ,
             _ => {}
         }
     }

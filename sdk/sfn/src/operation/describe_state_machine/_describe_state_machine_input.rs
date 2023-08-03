@@ -3,12 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStateMachineInput {
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStateMachineInput {
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
@@ -30,7 +32,8 @@ pub struct DescribeStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStateMachineInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -38,7 +41,8 @@ impl DescribeStateMachineInputBuilder {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

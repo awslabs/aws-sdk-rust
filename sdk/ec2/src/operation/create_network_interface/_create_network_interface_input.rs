@@ -52,7 +52,7 @@ pub struct CreateNetworkInterfaceInput {
     #[doc(hidden)]
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     #[doc(hidden)]
     pub interface_type: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,
     /// <p>The ID of the subnet to associate with the network interface.</p>
@@ -130,7 +130,7 @@ impl CreateNetworkInterfaceInput {
         self.ipv6_prefix_count
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     pub fn interface_type(
         &self,
     ) -> ::std::option::Option<&crate::types::NetworkInterfaceCreationType> {
@@ -383,13 +383,13 @@ impl CreateNetworkInterfaceInputBuilder {
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     pub fn interface_type(mut self, input: crate::types::NetworkInterfaceCreationType) -> Self {
         self.interface_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     pub fn set_interface_type(
         mut self,
         input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,

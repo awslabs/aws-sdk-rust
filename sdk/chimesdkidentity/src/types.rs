@@ -3,6 +3,18 @@ pub use crate::types::_error_code::ErrorCode;
 
 pub use crate::types::_allow_messages::AllowMessages;
 
+pub use crate::types::_configuration::Configuration;
+
+pub use crate::types::_lex_configuration::LexConfiguration;
+
+pub use crate::types::_invoked_by::InvokedBy;
+
+pub use crate::types::_targeted_messages::TargetedMessages;
+
+pub use crate::types::_standard_messages::StandardMessages;
+
+pub use crate::types::_responds_to::RespondsTo;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_endpoint_attributes::EndpointAttributes;
@@ -40,12 +52,6 @@ pub use crate::types::_app_instance_user_endpoint::AppInstanceUserEndpoint;
 pub use crate::types::_app_instance_user::AppInstanceUser;
 
 pub use crate::types::_app_instance_bot::AppInstanceBot;
-
-pub use crate::types::_configuration::Configuration;
-
-pub use crate::types::_lex_configuration::LexConfiguration;
-
-pub use crate::types::_responds_to::RespondsTo;
 
 pub use crate::types::_app_instance_admin::AppInstanceAdmin;
 
@@ -97,11 +103,17 @@ mod _expiration_settings;
 
 mod _identity;
 
+mod _invoked_by;
+
 mod _lex_configuration;
 
 mod _responds_to;
 
+mod _standard_messages;
+
 mod _tag;
+
+mod _targeted_messages;
 
 /// Builders
 pub mod builders;

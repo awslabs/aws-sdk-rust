@@ -31,7 +31,7 @@ pub struct ResolverRule {
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     #[doc(hidden)]
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
     /// <p>The ID of the endpoint that the rule is associated with.</p>
@@ -86,7 +86,7 @@ impl ResolverRule {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn target_ips(&self) -> ::std::option::Option<&[crate::types::TargetAddress]> {
         self.target_ips.as_deref()
     }
@@ -248,14 +248,14 @@ impl ResolverRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
     ///
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn target_ips(mut self, input: crate::types::TargetAddress) -> Self {
         let mut v = self.target_ips.unwrap_or_default();
         v.push(input);
         self.target_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
     pub fn set_target_ips(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,

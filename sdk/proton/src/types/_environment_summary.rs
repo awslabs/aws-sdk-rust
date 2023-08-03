@@ -54,6 +54,12 @@ pub struct EnvironmentSummary {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    #[doc(hidden)]
+    pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    #[doc(hidden)]
+    pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentSummary {
     /// <p>The name of the environment.</p>
@@ -126,6 +132,14 @@ impl EnvironmentSummary {
     pub fn component_role_arn(&self) -> ::std::option::Option<&str> {
         self.component_role_arn.as_deref()
     }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_attempted_deployment_id.as_deref()
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_succeeded_deployment_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for EnvironmentSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -158,6 +172,14 @@ impl ::std::fmt::Debug for EnvironmentSummary {
         formatter.field("environment_account_id", &self.environment_account_id);
         formatter.field("provisioning", &self.provisioning);
         formatter.field("component_role_arn", &self.component_role_arn);
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }
@@ -188,6 +210,8 @@ pub struct EnvironmentSummaryBuilder {
     pub(crate) environment_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning: ::std::option::Option<crate::types::Provisioning>,
     pub(crate) component_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentSummaryBuilder {
     /// <p>The name of the environment.</p>
@@ -417,6 +441,38 @@ impl EnvironmentSummaryBuilder {
         self.component_role_arn = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn last_attempted_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last attempted deployment of this environment.</p>
+    pub fn set_last_attempted_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = input;
+        self
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn last_succeeded_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last successful deployment of this environment.</p>
+    pub fn set_last_succeeded_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {
         crate::types::EnvironmentSummary {
@@ -436,6 +492,8 @@ impl EnvironmentSummaryBuilder {
             environment_account_id: self.environment_account_id,
             provisioning: self.provisioning,
             component_role_arn: self.component_role_arn,
+            last_attempted_deployment_id: self.last_attempted_deployment_id,
+            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
         }
     }
 }
@@ -470,6 +528,14 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.field("environment_account_id", &self.environment_account_id);
         formatter.field("provisioning", &self.provisioning);
         formatter.field("component_role_arn", &self.component_role_arn);
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
+        );
         formatter.finish()
     }
 }

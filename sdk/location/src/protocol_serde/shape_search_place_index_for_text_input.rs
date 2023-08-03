@@ -27,8 +27,8 @@ pub fn ser_search_place_index_for_text_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.filter_countries {
-        let mut array_8 = object.key("FilterCountries").start_array();
+    if let Some(var_7) = &input.filter_categories {
+        let mut array_8 = object.key("FilterCategories").start_array();
         for item_9 in var_7 {
             {
                 array_8.value().string(item_9.as_str());
@@ -36,8 +36,17 @@ pub fn ser_search_place_index_for_text_input(
         }
         array_8.finish();
     }
-    if let Some(var_10) = &input.language {
-        object.key("Language").string(var_10.as_str());
+    if let Some(var_10) = &input.filter_countries {
+        let mut array_11 = object.key("FilterCountries").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.language {
+        object.key("Language").string(var_13.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -45,8 +54,8 @@ pub fn ser_search_place_index_for_text_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_11) = &input.text {
-        object.key("Text").string(var_11.as_str());
+    if let Some(var_14) = &input.text {
+        object.key("Text").string(var_14.as_str());
     }
     Ok(())
 }

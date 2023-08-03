@@ -34,6 +34,10 @@ pub struct Job {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>A list of resources that the Job is acting upon.</p>
+    #[doc(hidden)]
+    pub participating_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
 }
 impl Job {
     /// <p>The ID of the Job.</p>
@@ -78,6 +82,12 @@ impl Job {
     > {
         self.tags.as_ref()
     }
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn participating_resources(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ParticipatingResource]> {
+        self.participating_resources.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Job {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -91,6 +101,7 @@ impl ::std::fmt::Debug for Job {
         formatter.field("status", &self.status);
         formatter.field("participating_servers", &self.participating_servers);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("participating_resources", &self.participating_resources);
         formatter.finish()
     }
 }
@@ -117,6 +128,8 @@ pub struct JobBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) participating_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
 }
 impl JobBuilder {
     /// <p>The ID of the Job.</p>
@@ -248,6 +261,25 @@ impl JobBuilder {
         self.tags = input;
         self
     }
+    /// Appends an item to `participating_resources`.
+    ///
+    /// To override the contents of this collection use [`set_participating_resources`](Self::set_participating_resources).
+    ///
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn participating_resources(mut self, input: crate::types::ParticipatingResource) -> Self {
+        let mut v = self.participating_resources.unwrap_or_default();
+        v.push(input);
+        self.participating_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of resources that the Job is acting upon.</p>
+    pub fn set_participating_resources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipatingResource>>,
+    ) -> Self {
+        self.participating_resources = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -260,6 +292,7 @@ impl JobBuilder {
             status: self.status,
             participating_servers: self.participating_servers,
             tags: self.tags,
+            participating_resources: self.participating_resources,
         }
     }
 }
@@ -275,6 +308,7 @@ impl ::std::fmt::Debug for JobBuilder {
         formatter.field("status", &self.status);
         formatter.field("participating_servers", &self.participating_servers);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("participating_resources", &self.participating_resources);
         formatter.finish()
     }
 }

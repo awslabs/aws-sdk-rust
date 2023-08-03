@@ -29,6 +29,13 @@ pub struct WorkloadSummary {
     /// <p>The improvement status for a workload.</p>
     #[doc(hidden)]
     pub improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
+    /// <p>Profile associated with a workload.</p>
+    #[doc(hidden)]
+    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    #[doc(hidden)]
+    pub prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -68,6 +75,16 @@ impl WorkloadSummary {
     ) -> ::std::option::Option<&crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
+    /// <p>Profile associated with a workload.</p>
+    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
+        self.profiles.as_deref()
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+        self.prioritized_risk_counts.as_ref()
+    }
 }
 impl WorkloadSummary {
     /// Creates a new builder-style object to manufacture [`WorkloadSummary`](crate::types::WorkloadSummary).
@@ -91,6 +108,9 @@ pub struct WorkloadSummaryBuilder {
     pub(crate) risk_counts:
         ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl WorkloadSummaryBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -205,6 +225,44 @@ impl WorkloadSummaryBuilder {
         self.improvement_status = input;
         self
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>Profile associated with a workload.</p>
+    pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input);
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Profile associated with a workload.</p>
+    pub fn set_profiles(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    ) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// Adds a key-value pair to `prioritized_risk_counts`.
+    ///
+    /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
+    ///
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
+        let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn set_prioritized_risk_counts(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.prioritized_risk_counts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`WorkloadSummary`](crate::types::WorkloadSummary).
     pub fn build(self) -> crate::types::WorkloadSummary {
         crate::types::WorkloadSummary {
@@ -216,6 +274,8 @@ impl WorkloadSummaryBuilder {
             lenses: self.lenses,
             risk_counts: self.risk_counts,
             improvement_status: self.improvement_status,
+            profiles: self.profiles,
+            prioritized_risk_counts: self.prioritized_risk_counts,
         }
     }
 }

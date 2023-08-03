@@ -117,6 +117,9 @@ pub struct ModifyEndpointInput {
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     #[doc(hidden)]
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    #[doc(hidden)]
+    pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl ModifyEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -272,6 +275,10 @@ impl ModifyEndpointInput {
     pub fn gcp_my_sql_settings(&self) -> ::std::option::Option<&crate::types::GcpMySqlSettings> {
         self.gcp_my_sql_settings.as_ref()
     }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn timestream_settings(&self) -> ::std::option::Option<&crate::types::TimestreamSettings> {
+        self.timestream_settings.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ModifyEndpointInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -315,6 +322,7 @@ impl ::std::fmt::Debug for ModifyEndpointInput {
         formatter.field("redis_settings", &self.redis_settings);
         formatter.field("exact_settings", &self.exact_settings);
         formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+        formatter.field("timestream_settings", &self.timestream_settings);
         formatter.finish()
     }
 }
@@ -363,6 +371,7 @@ pub struct ModifyEndpointInputBuilder {
     pub(crate) redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     pub(crate) exact_settings: ::std::option::Option<bool>,
     pub(crate) gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    pub(crate) timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl ModifyEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -820,6 +829,19 @@ impl ModifyEndpointInputBuilder {
         self.gcp_my_sql_settings = input;
         self
     }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn timestream_settings(mut self, input: crate::types::TimestreamSettings) -> Self {
+        self.timestream_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn set_timestream_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::TimestreamSettings>,
+    ) -> Self {
+        self.timestream_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyEndpointInput`](crate::operation::modify_endpoint::ModifyEndpointInput).
     pub fn build(
         self,
@@ -861,6 +883,7 @@ impl ModifyEndpointInputBuilder {
             redis_settings: self.redis_settings,
             exact_settings: self.exact_settings,
             gcp_my_sql_settings: self.gcp_my_sql_settings,
+            timestream_settings: self.timestream_settings,
         })
     }
 }
@@ -906,6 +929,7 @@ impl ::std::fmt::Debug for ModifyEndpointInputBuilder {
         formatter.field("redis_settings", &self.redis_settings);
         formatter.field("exact_settings", &self.exact_settings);
         formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+        formatter.field("timestream_settings", &self.timestream_settings);
         formatter.finish()
     }
 }

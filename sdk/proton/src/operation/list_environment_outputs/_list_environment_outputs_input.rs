@@ -9,6 +9,9 @@ pub struct ListEnvironmentOutputsInput {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    #[doc(hidden)]
+    pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
@@ -18,6 +21,10 @@ impl ListEnvironmentOutputsInput {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+        self.deployment_id.as_deref()
     }
 }
 impl ListEnvironmentOutputsInput {
@@ -37,6 +44,7 @@ impl ListEnvironmentOutputsInput {
 pub struct ListEnvironmentOutputsInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListEnvironmentOutputsInputBuilder {
     /// <p>The environment name.</p>
@@ -65,6 +73,22 @@ impl ListEnvironmentOutputsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
     pub fn build(
         self,
@@ -76,6 +100,7 @@ impl ListEnvironmentOutputsInputBuilder {
             crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
                 environment_name: self.environment_name,
                 next_token: self.next_token,
+                deployment_id: self.deployment_id,
             },
         )
     }

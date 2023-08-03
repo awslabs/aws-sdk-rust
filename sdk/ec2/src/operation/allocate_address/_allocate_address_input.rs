@@ -3,11 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateAddressInput {
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
@@ -29,12 +28,11 @@ pub struct AllocateAddressInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AllocateAddressInput {
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::DomainType> {
         self.domain.as_ref()
     }
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
@@ -84,24 +82,22 @@ pub struct AllocateAddressInputBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AllocateAddressInputBuilder {
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
-    /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
+    /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self

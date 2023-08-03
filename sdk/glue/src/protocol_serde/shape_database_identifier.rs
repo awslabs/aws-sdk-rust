@@ -41,6 +41,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Region" => {
+                                builder = builder.set_region(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -72,6 +81,9 @@ pub fn ser_database_identifier(
     }
     if let Some(var_2) = &input.database_name {
         object.key("DatabaseName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.region {
+        object.key("Region").string(var_3.as_str());
     }
     Ok(())
 }

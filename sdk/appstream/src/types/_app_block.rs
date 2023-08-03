@@ -22,11 +22,27 @@ pub struct AppBlock {
     #[doc(hidden)]
     pub source_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
     #[doc(hidden)]
     pub setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The created time of the app block.</p>
     #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The post setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+    #[doc(hidden)]
+    pub post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
+    /// <p>The packaging type of the app block.</p>
+    #[doc(hidden)]
+    pub packaging_type: ::std::option::Option<crate::types::PackagingType>,
+    /// <p>The state of the app block.</p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
+    #[doc(hidden)]
+    pub state: ::std::option::Option<crate::types::AppBlockState>,
+    /// <p>The errors of the app block.</p>
+    #[doc(hidden)]
+    pub app_block_errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl AppBlock {
     /// <p>The name of the app block.</p>
@@ -50,12 +66,32 @@ impl AppBlock {
         self.source_s3_location.as_ref()
     }
     /// <p>The setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
     pub fn setup_script_details(&self) -> ::std::option::Option<&crate::types::ScriptDetails> {
         self.setup_script_details.as_ref()
     }
     /// <p>The created time of the app block.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
+    }
+    /// <p>The post setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+    pub fn post_setup_script_details(&self) -> ::std::option::Option<&crate::types::ScriptDetails> {
+        self.post_setup_script_details.as_ref()
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn packaging_type(&self) -> ::std::option::Option<&crate::types::PackagingType> {
+        self.packaging_type.as_ref()
+    }
+    /// <p>The state of the app block.</p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AppBlockState> {
+        self.state.as_ref()
+    }
+    /// <p>The errors of the app block.</p>
+    pub fn app_block_errors(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
+        self.app_block_errors.as_deref()
     }
 }
 impl AppBlock {
@@ -78,6 +114,10 @@ pub struct AppBlockBuilder {
     pub(crate) source_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
+    pub(crate) packaging_type: ::std::option::Option<crate::types::PackagingType>,
+    pub(crate) state: ::std::option::Option<crate::types::AppBlockState>,
+    pub(crate) app_block_errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl AppBlockBuilder {
     /// <p>The name of the app block.</p>
@@ -134,11 +174,13 @@ impl AppBlockBuilder {
         self
     }
     /// <p>The setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
     pub fn setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.setup_script_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
     pub fn set_setup_script_details(
         mut self,
         input: ::std::option::Option<crate::types::ScriptDetails>,
@@ -159,6 +201,67 @@ impl AppBlockBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The post setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+    pub fn post_setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
+        self.post_setup_script_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The post setup script details of the app block.</p>
+    /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
+    pub fn set_post_setup_script_details(
+        mut self,
+        input: ::std::option::Option<crate::types::ScriptDetails>,
+    ) -> Self {
+        self.post_setup_script_details = input;
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
+        self.packaging_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn set_packaging_type(
+        mut self,
+        input: ::std::option::Option<crate::types::PackagingType>,
+    ) -> Self {
+        self.packaging_type = input;
+        self
+    }
+    /// <p>The state of the app block.</p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
+    pub fn state(mut self, input: crate::types::AppBlockState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the app block.</p>
+    /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
+    /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AppBlockState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// Appends an item to `app_block_errors`.
+    ///
+    /// To override the contents of this collection use [`set_app_block_errors`](Self::set_app_block_errors).
+    ///
+    /// <p>The errors of the app block.</p>
+    pub fn app_block_errors(mut self, input: crate::types::ErrorDetails) -> Self {
+        let mut v = self.app_block_errors.unwrap_or_default();
+        v.push(input);
+        self.app_block_errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The errors of the app block.</p>
+    pub fn set_app_block_errors(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
+    ) -> Self {
+        self.app_block_errors = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AppBlock`](crate::types::AppBlock).
     pub fn build(self) -> crate::types::AppBlock {
         crate::types::AppBlock {
@@ -169,6 +272,10 @@ impl AppBlockBuilder {
             source_s3_location: self.source_s3_location,
             setup_script_details: self.setup_script_details,
             created_time: self.created_time,
+            post_setup_script_details: self.post_setup_script_details,
+            packaging_type: self.packaging_type,
+            state: self.state,
+            app_block_errors: self.app_block_errors,
         }
     }
 }

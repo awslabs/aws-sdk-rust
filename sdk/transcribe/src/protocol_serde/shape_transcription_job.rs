@@ -181,6 +181,11 @@ where
                                     crate::protocol_serde::shape_language_id_settings_map::de_language_id_settings_map(tokens)?
                                 );
                             }
+                            "ToxicityDetection" => {
+                                builder = builder.set_toxicity_detection(
+                                    crate::protocol_serde::shape_toxicity_detection::de_toxicity_detection(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -124,6 +124,11 @@ pub struct UpdateItemInput {
     pub expression_attribute_values: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
+    /// <p>An optional parameter that returns the item attributes for an <code>UpdateItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    #[doc(hidden)]
+    pub return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl UpdateItemInput {
     /// <p>The name of the table containing the item to update.</p>
@@ -273,6 +278,13 @@ impl UpdateItemInput {
     > {
         self.expression_attribute_values.as_ref()
     }
+    /// <p>An optional parameter that returns the item attributes for an <code>UpdateItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
 }
 impl UpdateItemInput {
     /// Creates a new builder-style object to manufacture [`UpdateItemInput`](crate::operation::update_item::UpdateItemInput).
@@ -311,6 +323,8 @@ pub struct UpdateItemInputBuilder {
     pub(crate) expression_attribute_values: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
+    pub(crate) return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl UpdateItemInputBuilder {
     /// <p>The name of the table containing the item to update.</p>
@@ -684,6 +698,24 @@ impl UpdateItemInputBuilder {
         self.expression_attribute_values = input;
         self
     }
+    /// <p>An optional parameter that returns the item attributes for an <code>UpdateItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        mut self,
+        input: crate::types::ReturnValuesOnConditionCheckFailure,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that returns the item attributes for an <code>UpdateItem</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn set_return_values_on_condition_check_failure(
+        mut self,
+        input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateItemInput`](crate::operation::update_item::UpdateItemInput).
     pub fn build(
         self,
@@ -704,6 +736,7 @@ impl UpdateItemInputBuilder {
             condition_expression: self.condition_expression,
             expression_attribute_names: self.expression_attribute_names,
             expression_attribute_values: self.expression_attribute_values,
+            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
         })
     }
 }

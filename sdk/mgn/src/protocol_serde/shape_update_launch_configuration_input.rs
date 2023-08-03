@@ -3,49 +3,52 @@ pub fn ser_update_launch_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.boot_mode {
-        object.key("bootMode").string(var_1.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.copy_private_ip {
-        object.key("copyPrivateIp").boolean(*var_2);
+    if let Some(var_2) = &input.boot_mode {
+        object.key("bootMode").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.copy_tags {
-        object.key("copyTags").boolean(*var_3);
+    if let Some(var_3) = &input.copy_private_ip {
+        object.key("copyPrivateIp").boolean(*var_3);
     }
-    if let Some(var_4) = &input.enable_map_auto_tagging {
-        object.key("enableMapAutoTagging").boolean(*var_4);
+    if let Some(var_4) = &input.copy_tags {
+        object.key("copyTags").boolean(*var_4);
     }
-    if let Some(var_5) = &input.launch_disposition {
-        object.key("launchDisposition").string(var_5.as_str());
+    if let Some(var_5) = &input.enable_map_auto_tagging {
+        object.key("enableMapAutoTagging").boolean(*var_5);
     }
-    if let Some(var_6) = &input.licensing {
+    if let Some(var_6) = &input.launch_disposition {
+        object.key("launchDisposition").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.licensing {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("licensing").start_object();
-        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("licensing").start_object();
+        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.map_auto_tagging_mpe_id {
-        object.key("mapAutoTaggingMpeID").string(var_8.as_str());
+    if let Some(var_9) = &input.map_auto_tagging_mpe_id {
+        object.key("mapAutoTaggingMpeID").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.post_launch_actions {
+    if let Some(var_11) = &input.post_launch_actions {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("postLaunchActions").start_object();
+        let mut object_12 = object.key("postLaunchActions").start_object();
         crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(
-            &mut object_11,
-            var_10,
+            &mut object_12,
+            var_11,
         )?;
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_12) = &input.source_server_id {
-        object.key("sourceServerID").string(var_12.as_str());
+    if let Some(var_13) = &input.source_server_id {
+        object.key("sourceServerID").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.target_instance_type_right_sizing_method {
+    if let Some(var_14) = &input.target_instance_type_right_sizing_method {
         object
             .key("targetInstanceTypeRightSizingMethod")
-            .string(var_13.as_str());
+            .string(var_14.as_str());
     }
     Ok(())
 }

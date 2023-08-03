@@ -7,7 +7,22 @@ pub struct ConditionalCheckFailedException {
     /// <p>The conditional request failed.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
+    #[doc(hidden)]
+    pub item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    >,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ConditionalCheckFailedException {
+    /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
+    pub fn item(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        self.item.as_ref()
+    }
 }
 impl ConditionalCheckFailedException {
     /// Returns the error message.
@@ -52,6 +67,9 @@ impl ConditionalCheckFailedException {
 )]
 pub struct ConditionalCheckFailedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    >,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConditionalCheckFailedExceptionBuilder {
@@ -63,6 +81,31 @@ impl ConditionalCheckFailedExceptionBuilder {
     /// <p>The conditional request failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
+        self
+    }
+    /// Adds a key-value pair to `item`.
+    ///
+    /// To override the contents of this collection use [`set_item`](Self::set_item).
+    ///
+    /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
+    pub fn item(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::AttributeValue,
+    ) -> Self {
+        let mut hash_map = self.item.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.item = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
+    pub fn set_item(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+        >,
+    ) -> Self {
+        self.item = input;
         self
     }
     /// Sets error metadata
@@ -83,6 +126,7 @@ impl ConditionalCheckFailedExceptionBuilder {
     pub fn build(self) -> crate::types::error::ConditionalCheckFailedException {
         crate::types::error::ConditionalCheckFailedException {
             message: self.message,
+            item: self.item,
             meta: self.meta.unwrap_or_default(),
         }
     }

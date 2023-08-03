@@ -42,6 +42,17 @@ pub struct DocDbSettings {
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the DocumentDB endpoint connection details.</p>
     #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
+    #[doc(hidden)]
+    pub use_update_look_up: ::std::option::Option<bool>,
+    /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
+    /// <p>When this setting is <code>true</code>, note the following:</p>
+    /// <ul>
+    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
+    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// </ul>
+    #[doc(hidden)]
+    pub replicate_shard_collections: ::std::option::Option<bool>,
 }
 impl DocDbSettings {
     /// <p>The user name you use to access the DocumentDB source endpoint. </p>
@@ -93,6 +104,19 @@ impl DocDbSettings {
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
+    /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
+    pub fn use_update_look_up(&self) -> ::std::option::Option<bool> {
+        self.use_update_look_up
+    }
+    /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
+    /// <p>When this setting is <code>true</code>, note the following:</p>
+    /// <ul>
+    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
+    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// </ul>
+    pub fn replicate_shard_collections(&self) -> ::std::option::Option<bool> {
+        self.replicate_shard_collections
+    }
 }
 impl ::std::fmt::Debug for DocDbSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +135,11 @@ impl ::std::fmt::Debug for DocDbSettings {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("use_update_look_up", &self.use_update_look_up);
+        formatter.field(
+            "replicate_shard_collections",
+            &self.replicate_shard_collections,
+        );
         formatter.finish()
     }
 }
@@ -136,6 +165,8 @@ pub struct DocDbSettingsBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
+    pub(crate) use_update_look_up: ::std::option::Option<bool>,
+    pub(crate) replicate_shard_collections: ::std::option::Option<bool>,
 }
 impl DocDbSettingsBuilder {
     /// <p>The user name you use to access the DocumentDB source endpoint. </p>
@@ -279,6 +310,36 @@ impl DocDbSettingsBuilder {
         self.secrets_manager_secret_id = input;
         self
     }
+    /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
+    pub fn use_update_look_up(mut self, input: bool) -> Self {
+        self.use_update_look_up = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
+    pub fn set_use_update_look_up(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_update_look_up = input;
+        self
+    }
+    /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
+    /// <p>When this setting is <code>true</code>, note the following:</p>
+    /// <ul>
+    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
+    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// </ul>
+    pub fn replicate_shard_collections(mut self, input: bool) -> Self {
+        self.replicate_shard_collections = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
+    /// <p>When this setting is <code>true</code>, note the following:</p>
+    /// <ul>
+    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
+    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// </ul>
+    pub fn set_replicate_shard_collections(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replicate_shard_collections = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DocDbSettings`](crate::types::DocDbSettings).
     pub fn build(self) -> crate::types::DocDbSettings {
         crate::types::DocDbSettings {
@@ -293,6 +354,8 @@ impl DocDbSettingsBuilder {
             kms_key_id: self.kms_key_id,
             secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
             secrets_manager_secret_id: self.secrets_manager_secret_id,
+            use_update_look_up: self.use_update_look_up,
+            replicate_shard_collections: self.replicate_shard_collections,
         }
     }
 }
@@ -313,6 +376,11 @@ impl ::std::fmt::Debug for DocDbSettingsBuilder {
             &self.secrets_manager_access_role_arn,
         );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
+        formatter.field("use_update_look_up", &self.use_update_look_up);
+        formatter.field(
+            "replicate_shard_collections",
+            &self.replicate_shard_collections,
+        );
         formatter.finish()
     }
 }

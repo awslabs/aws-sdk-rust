@@ -19,7 +19,7 @@ pub struct ExportJobProperties {
     /// <p>The time an export job completed.</p>
     #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -53,7 +53,7 @@ impl ExportJobProperties {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -150,12 +150,12 @@ impl ExportJobPropertiesBuilder {
         self.end_time = input;
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

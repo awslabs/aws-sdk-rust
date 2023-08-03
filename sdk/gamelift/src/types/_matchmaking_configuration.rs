@@ -42,7 +42,7 @@ pub struct MatchmakingConfiguration {
     /// <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
     #[doc(hidden)]
     pub notification_target: ::std::option::Option<::std::string::String>,
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     #[doc(hidden)]
     pub additional_player_count: ::std::option::Option<i32>,
     /// <p>Information to attach to all events related to the matchmaking configuration. </p>
@@ -117,7 +117,7 @@ impl MatchmakingConfiguration {
     pub fn notification_target(&self) -> ::std::option::Option<&str> {
         self.notification_target.as_deref()
     }
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn additional_player_count(&self) -> ::std::option::Option<i32> {
         self.additional_player_count
     }
@@ -329,12 +329,12 @@ impl MatchmakingConfigurationBuilder {
         self.notification_target = input;
         self
     }
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn additional_player_count(mut self, input: i32) -> Self {
         self.additional_player_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 10-person team, and the additional player count is set to 2, 10 players will be selected for the match and 2 more player slots will be open for future players. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn set_additional_player_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.additional_player_count = input;
         self

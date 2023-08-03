@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-finspace = "0.28.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-finspace = "0.29.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -186,11 +186,15 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod idempotency_token;
+
 ///
 pub mod middleware;
 
 ///
 mod no_credentials;
+
+mod lens;
 
 pub(crate) mod protocol_serde;
 

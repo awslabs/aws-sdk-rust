@@ -18,5 +18,18 @@ pub fn ser_self_managed_active_directory_configuration_updates(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.domain_name {
+        object.key("DomainName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.organizational_unit_distinguished_name {
+        object
+            .key("OrganizationalUnitDistinguishedName")
+            .string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.file_system_administrators_group {
+        object
+            .key("FileSystemAdministratorsGroup")
+            .string(var_8.as_str());
+    }
     Ok(())
 }

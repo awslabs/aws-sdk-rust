@@ -7,7 +7,7 @@ pub struct ChannelMessageStatusStructure {
     /// <p>The message status value.</p>
     #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::ChannelMessageStatus>,
-    /// <p>Contains more details about the messasge status.</p>
+    /// <p>Contains more details about the message status.</p>
     #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ChannelMessageStatusStructure {
     pub fn value(&self) -> ::std::option::Option<&crate::types::ChannelMessageStatus> {
         self.value.as_ref()
     }
-    /// <p>Contains more details about the messasge status.</p>
+    /// <p>Contains more details about the message status.</p>
     pub fn detail(&self) -> ::std::option::Option<&str> {
         self.detail.as_deref()
     }
@@ -51,12 +51,12 @@ impl ChannelMessageStatusStructureBuilder {
         self.value = input;
         self
     }
-    /// <p>Contains more details about the messasge status.</p>
+    /// <p>Contains more details about the message status.</p>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Contains more details about the messasge status.</p>
+    /// <p>Contains more details about the message status.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self

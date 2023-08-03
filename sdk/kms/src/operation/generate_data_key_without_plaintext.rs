@@ -166,6 +166,8 @@ pub enum GenerateDataKeyWithoutPlaintextError {
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::types::error::DisabledException),
+    /// <p> The request was rejected because the DryRun parameter was specified. </p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::types::error::InvalidGrantTokenException),
     /// <p>The request was rejected for one of the following reasons: </p>
@@ -211,6 +213,7 @@ impl ::std::fmt::Display for GenerateDataKeyWithoutPlaintextError {
         match self {
             Self::DependencyTimeoutException(_inner) => _inner.fmt(f),
             Self::DisabledException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InvalidGrantTokenException(_inner) => _inner.fmt(f),
             Self::InvalidKeyUsageException(_inner) => _inner.fmt(f),
             Self::KeyUnavailableException(_inner) => _inner.fmt(f),
@@ -230,6 +233,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DisabledException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DryRunOperationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidGrantTokenException(_inner) => {
@@ -305,6 +311,7 @@ impl GenerateDataKeyWithoutPlaintextError {
         match self {
             Self::DependencyTimeoutException(e) => e.meta(),
             Self::DisabledException(e) => e.meta(),
+            Self::DryRunOperationException(e) => e.meta(),
             Self::InvalidGrantTokenException(e) => e.meta(),
             Self::InvalidKeyUsageException(e) => e.meta(),
             Self::KeyUnavailableException(e) => e.meta(),
@@ -321,6 +328,10 @@ impl GenerateDataKeyWithoutPlaintextError {
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextError::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(self, Self::DisabledException(_))
+    }
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextError::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
@@ -352,6 +363,7 @@ impl ::std::error::Error for GenerateDataKeyWithoutPlaintextError {
         match self {
             Self::DependencyTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::DisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGrantTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidKeyUsageException(_inner) => ::std::option::Option::Some(_inner),
             Self::KeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),

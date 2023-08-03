@@ -43,6 +43,9 @@ pub struct DescribeTrackerOutput {
     /// <p>The position filtering method of the tracker resource.</p>
     #[doc(hidden)]
     pub position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
+    /// <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
+    #[doc(hidden)]
+    pub event_bridge_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeTrackerOutput {
@@ -98,6 +101,10 @@ impl DescribeTrackerOutput {
     pub fn position_filtering(&self) -> ::std::option::Option<&crate::types::PositionFiltering> {
         self.position_filtering.as_ref()
     }
+    /// <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
+    pub fn event_bridge_enabled(&self) -> ::std::option::Option<bool> {
+        self.event_bridge_enabled
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrackerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -129,6 +136,7 @@ pub struct DescribeTrackerOutputBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
+    pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeTrackerOutputBuilder {
@@ -281,6 +289,16 @@ impl DescribeTrackerOutputBuilder {
         self.position_filtering = input;
         self
     }
+    /// <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
+    pub fn event_bridge_enabled(mut self, input: bool) -> Self {
+        self.event_bridge_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
+    pub fn set_event_bridge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.event_bridge_enabled = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -303,6 +321,7 @@ impl DescribeTrackerOutputBuilder {
             update_time: self.update_time,
             kms_key_id: self.kms_key_id,
             position_filtering: self.position_filtering,
+            event_bridge_enabled: self.event_bridge_enabled,
             _request_id: self._request_id,
         }
     }

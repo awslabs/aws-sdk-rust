@@ -12,6 +12,9 @@ pub struct ListApplicationsInput {
     /// <p>Request next token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Applications list Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInput {
     /// <p>Applications list filters.</p>
@@ -25,6 +28,10 @@ impl ListApplicationsInput {
     /// <p>Request next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Applications list Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl ListApplicationsInput {
@@ -44,6 +51,7 @@ pub struct ListApplicationsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListApplicationsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInputBuilder {
     /// <p>Applications list filters.</p>
@@ -79,6 +87,16 @@ impl ListApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Applications list Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Applications list Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
@@ -90,6 +108,7 @@ impl ListApplicationsInputBuilder {
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
+            account_id: self.account_id,
         })
     }
 }

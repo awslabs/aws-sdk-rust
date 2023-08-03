@@ -3,11 +3,14 @@ pub fn ser_list_source_server_actions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_source_server_actions::ListSourceServerActionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filters {
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.filters {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("filters").start_object();
-        crate::protocol_serde::shape_source_server_actions_request_filters::ser_source_server_actions_request_filters(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("filters").start_object();
+        crate::protocol_serde::shape_source_server_actions_request_filters::ser_source_server_actions_request_filters(&mut object_3, var_2)?;
+        object_3.finish();
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -15,11 +18,11 @@ pub fn ser_list_source_server_actions_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("nextToken").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.source_server_id {
-        object.key("sourceServerID").string(var_4.as_str());
+    if let Some(var_5) = &input.source_server_id {
+        object.key("sourceServerID").string(var_5.as_str());
     }
     Ok(())
 }

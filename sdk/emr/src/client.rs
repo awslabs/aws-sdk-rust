@@ -308,6 +308,8 @@ mod list_studio_session_mappings;
 
 mod list_studios;
 
+mod list_supported_instance_types;
+
 mod modify_cluster;
 
 mod modify_instance_fleet;

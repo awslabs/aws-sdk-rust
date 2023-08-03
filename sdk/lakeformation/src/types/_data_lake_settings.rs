@@ -7,6 +7,9 @@ pub struct DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     #[doc(hidden)]
     pub data_lake_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
+    #[doc(hidden)]
+    pub read_only_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
@@ -33,9 +36,12 @@ pub struct DataLakeSettings {
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
     #[doc(hidden)]
     pub allow_external_data_filtering: ::std::option::Option<bool>,
+    /// <p>Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.</p>
+    #[doc(hidden)]
+    pub allow_full_table_external_data_access: ::std::option::Option<bool>,
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
     #[doc(hidden)]
     pub external_data_filtering_allow_list:
@@ -49,6 +55,10 @@ impl DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     pub fn data_lake_admins(&self) -> ::std::option::Option<&[crate::types::DataLakePrincipal]> {
         self.data_lake_admins.as_deref()
+    }
+    /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
+    pub fn read_only_admins(&self) -> ::std::option::Option<&[crate::types::DataLakePrincipal]> {
+        self.read_only_admins.as_deref()
     }
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
@@ -84,9 +94,13 @@ impl DataLakeSettings {
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
     pub fn allow_external_data_filtering(&self) -> ::std::option::Option<bool> {
         self.allow_external_data_filtering
+    }
+    /// <p>Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.</p>
+    pub fn allow_full_table_external_data_access(&self) -> ::std::option::Option<bool> {
+        self.allow_full_table_external_data_access
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
     pub fn external_data_filtering_allow_list(
@@ -116,6 +130,8 @@ impl DataLakeSettings {
 pub struct DataLakeSettingsBuilder {
     pub(crate) data_lake_admins:
         ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) read_only_admins:
+        ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     pub(crate) create_database_default_permissions:
         ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) create_table_default_permissions:
@@ -126,6 +142,7 @@ pub struct DataLakeSettingsBuilder {
     pub(crate) trusted_resource_owners:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allow_external_data_filtering: ::std::option::Option<bool>,
+    pub(crate) allow_full_table_external_data_access: ::std::option::Option<bool>,
     pub(crate) external_data_filtering_allow_list:
         ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     pub(crate) authorized_session_tag_value_list:
@@ -149,6 +166,25 @@ impl DataLakeSettingsBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     ) -> Self {
         self.data_lake_admins = input;
+        self
+    }
+    /// Appends an item to `read_only_admins`.
+    ///
+    /// To override the contents of this collection use [`set_read_only_admins`](Self::set_read_only_admins).
+    ///
+    /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
+    pub fn read_only_admins(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        let mut v = self.read_only_admins.unwrap_or_default();
+        v.push(input);
+        self.read_only_admins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
+    pub fn set_read_only_admins(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    ) -> Self {
+        self.read_only_admins = input;
         self
     }
     /// Appends an item to `create_database_default_permissions`.
@@ -259,7 +295,7 @@ impl DataLakeSettingsBuilder {
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
     pub fn allow_external_data_filtering(mut self, input: bool) -> Self {
         self.allow_external_data_filtering = ::std::option::Option::Some(input);
         self
@@ -267,9 +303,22 @@ impl DataLakeSettingsBuilder {
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
-    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
     pub fn set_allow_external_data_filtering(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_external_data_filtering = input;
+        self
+    }
+    /// <p>Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.</p>
+    pub fn allow_full_table_external_data_access(mut self, input: bool) -> Self {
+        self.allow_full_table_external_data_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.</p>
+    pub fn set_allow_full_table_external_data_access(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
+        self.allow_full_table_external_data_access = input;
         self
     }
     /// Appends an item to `external_data_filtering_allow_list`.
@@ -320,11 +369,13 @@ impl DataLakeSettingsBuilder {
     pub fn build(self) -> crate::types::DataLakeSettings {
         crate::types::DataLakeSettings {
             data_lake_admins: self.data_lake_admins,
+            read_only_admins: self.read_only_admins,
             create_database_default_permissions: self.create_database_default_permissions,
             create_table_default_permissions: self.create_table_default_permissions,
             parameters: self.parameters,
             trusted_resource_owners: self.trusted_resource_owners,
             allow_external_data_filtering: self.allow_external_data_filtering,
+            allow_full_table_external_data_access: self.allow_full_table_external_data_access,
             external_data_filtering_allow_list: self.external_data_filtering_allow_list,
             authorized_session_tag_value_list: self.authorized_session_tag_value_list,
         }

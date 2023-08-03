@@ -43,7 +43,7 @@ pub struct DescribeSecurityGroupsInput {
     /// <p>Default: Describes all of your security groups.</p>
     #[doc(hidden)]
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     #[doc(hidden)]
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -100,7 +100,7 @@ impl DescribeSecurityGroupsInput {
     pub fn group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.group_ids.as_deref()
     }
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.group_names.as_deref()
@@ -251,7 +251,7 @@ impl DescribeSecurityGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
@@ -259,7 +259,7 @@ impl DescribeSecurityGroupsInputBuilder {
         self.group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn set_group_names(
         mut self,

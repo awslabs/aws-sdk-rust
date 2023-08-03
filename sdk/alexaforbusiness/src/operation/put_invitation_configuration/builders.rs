@@ -6,6 +6,7 @@ pub use crate::operation::put_invitation_configuration::_put_invitation_configur
 /// Fluent builder constructing a request to `PutInvitationConfiguration`.
 ///
 /// <p>Configures the email template for the user enrollment invitation with the specified attributes.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInvitationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

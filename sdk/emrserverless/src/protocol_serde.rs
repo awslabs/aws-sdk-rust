@@ -118,6 +118,8 @@ pub(crate) mod shape_worker_resource_config;
 
 pub(crate) mod shape_worker_type_specification_map;
 
+pub(crate) mod shape_cloud_watch_logging_configuration;
+
 pub(crate) mod shape_configuration_list;
 
 pub(crate) mod shape_managed_persistence_monitoring_configuration;
@@ -132,4 +134,8 @@ pub(crate) mod shape_worker_type_specification;
 
 pub(crate) mod shape_entry_point_arguments;
 
+pub(crate) mod shape_log_type_map;
+
 pub(crate) mod shape_sensitive_properties_map;
+
+pub(crate) mod shape_log_type_list;

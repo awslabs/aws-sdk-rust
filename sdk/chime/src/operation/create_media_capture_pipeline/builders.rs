@@ -5,7 +5,13 @@ pub use crate::operation::create_media_capture_pipeline::_create_media_capture_p
 
 /// Fluent builder constructing a request to `CreateMediaCapturePipeline`.
 ///
-/// <p>Creates a media capture pipeline.</p>
+/// <p>Creates a media capture pipeline.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaCapturePipeline">CreateMediaCapturePipeline</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by CreateMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMediaCapturePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

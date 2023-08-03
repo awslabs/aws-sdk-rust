@@ -54,6 +54,10 @@ pub struct TranscriptionJobSummary {
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification, the singular version of this parameter, <code>LanguageCode</code>, is present.</p>
     #[doc(hidden)]
     pub language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>>,
+    /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
+    #[doc(hidden)]
+    pub toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJobSummary {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -122,6 +126,12 @@ impl TranscriptionJobSummary {
     pub fn language_codes(&self) -> ::std::option::Option<&[crate::types::LanguageCodeItem]> {
         self.language_codes.as_deref()
     }
+    /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
+    pub fn toxicity_detection(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
+        self.toxicity_detection.as_deref()
+    }
 }
 impl TranscriptionJobSummary {
     /// Creates a new builder-style object to manufacture [`TranscriptionJobSummary`](crate::types::TranscriptionJobSummary).
@@ -152,6 +162,8 @@ pub struct TranscriptionJobSummaryBuilder {
     pub(crate) identified_language_score: ::std::option::Option<f32>,
     pub(crate) language_codes:
         ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>>,
+    pub(crate) toxicity_detection:
+        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
 }
 impl TranscriptionJobSummaryBuilder {
     /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -355,6 +367,25 @@ impl TranscriptionJobSummaryBuilder {
         self.language_codes = input;
         self
     }
+    /// Appends an item to `toxicity_detection`.
+    ///
+    /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
+    ///
+    /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
+    pub fn toxicity_detection(mut self, input: crate::types::ToxicityDetectionSettings) -> Self {
+        let mut v = self.toxicity_detection.unwrap_or_default();
+        v.push(input);
+        self.toxicity_detection = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
+    pub fn set_toxicity_detection(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
+    ) -> Self {
+        self.toxicity_detection = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TranscriptionJobSummary`](crate::types::TranscriptionJobSummary).
     pub fn build(self) -> crate::types::TranscriptionJobSummary {
         crate::types::TranscriptionJobSummary {
@@ -372,6 +403,7 @@ impl TranscriptionJobSummaryBuilder {
             identify_multiple_languages: self.identify_multiple_languages,
             identified_language_score: self.identified_language_score,
             language_codes: self.language_codes,
+            toxicity_detection: self.toxicity_detection,
         }
     }
 }

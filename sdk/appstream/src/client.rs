@@ -61,14 +61,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateApplicationFleet`](crate::operation::associate_application_fleet) operation has
-/// a [`Client::associate_application_fleet`], function which returns a builder for that operation.
+/// For example, the [`AssociateAppBlockBuilderAppBlock`](crate::operation::associate_app_block_builder_app_block) operation has
+/// a [`Client::associate_app_block_builder_app_block`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_application_fleet()
-///     .fleet_name("example")
+/// let result = client.associate_app_block_builder_app_block()
+///     .app_block_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod associate_app_block_builder_app_block;
+
 mod associate_application_fleet;
 
 mod associate_application_to_entitlement;
@@ -225,6 +227,10 @@ mod batch_disassociate_user_stack;
 mod copy_image;
 
 mod create_app_block;
+
+mod create_app_block_builder;
+
+mod create_app_block_builder_streaming_url;
 
 mod create_application;
 
@@ -259,7 +265,7 @@ mod create_user;
 /// # let client: aws_sdk_appstream::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_application_fleet()
+/// let result = client.associate_app_block_builder_app_block()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -277,6 +283,8 @@ mod create_user;
 pub mod customize;
 
 mod delete_app_block;
+
+mod delete_app_block_builder;
 
 mod delete_application;
 
@@ -297,6 +305,10 @@ mod delete_stack;
 mod delete_usage_report_subscription;
 
 mod delete_user;
+
+mod describe_app_block_builder_app_block_associations;
+
+mod describe_app_block_builders;
 
 mod describe_app_blocks;
 
@@ -328,6 +340,8 @@ mod describe_users;
 
 mod disable_user;
 
+mod disassociate_app_block_builder_app_block;
+
 mod disassociate_application_fleet;
 
 mod disassociate_application_from_entitlement;
@@ -346,9 +360,13 @@ mod list_entitled_applications;
 
 mod list_tags_for_resource;
 
+mod start_app_block_builder;
+
 mod start_fleet;
 
 mod start_image_builder;
+
+mod stop_app_block_builder;
 
 mod stop_fleet;
 
@@ -357,6 +375,8 @@ mod stop_image_builder;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_app_block_builder;
 
 mod update_application;
 

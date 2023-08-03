@@ -6,9 +6,6 @@ pub use crate::operation::disassociate_address::_disassociate_address_input::Dis
 /// Fluent builder constructing a request to `DisassociateAddress`.
 ///
 /// <p>Disassociates an Elastic IP address from the instance or network interface it's associated with.</p>
-/// <p>An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
 /// <p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAddressFluentBuilder {
@@ -103,7 +100,7 @@ impl DisassociateAddressFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     pub fn association_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -111,7 +108,7 @@ impl DisassociateAddressFluentBuilder {
         self.inner = self.inner.association_id(input.into());
         self
     }
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     pub fn set_association_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -119,12 +116,12 @@ impl DisassociateAddressFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self

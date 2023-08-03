@@ -75,6 +75,10 @@ pub enum Error {
     ClusterSubnetQuotaExceededFault(crate::types::error::ClusterSubnetQuotaExceededFault),
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     CopyToRegionDisabledFault(crate::types::error::CopyToRegionDisabledFault),
+    /// <p>An error occurred when an attempt was made to change the custom domain association.</p>
+    CustomCnameAssociationFault(crate::types::error::CustomCnameAssociationFault),
+    /// <p>An error occurred. The custom domain name couldn't be found.</p>
+    CustomDomainAssociationNotFoundFault(crate::types::error::CustomDomainAssociationNotFoundFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(
         crate::types::error::DependentServiceRequestThrottlingFault,
@@ -337,6 +341,8 @@ impl ::std::fmt::Display for Error {
             Error::ClusterSubnetGroupQuotaExceededFault(inner) => inner.fmt(f),
             Error::ClusterSubnetQuotaExceededFault(inner) => inner.fmt(f),
             Error::CopyToRegionDisabledFault(inner) => inner.fmt(f),
+            Error::CustomCnameAssociationFault(inner) => inner.fmt(f),
+            Error::CustomDomainAssociationNotFoundFault(inner) => inner.fmt(f),
             Error::DependentServiceRequestThrottlingFault(inner) => inner.fmt(f),
             Error::DependentServiceUnavailableFault(inner) => inner.fmt(f),
             Error::EndpointAlreadyExistsFault(inner) => inner.fmt(f),
@@ -1215,6 +1221,52 @@ impl From<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGrou
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::CustomCnameAssociationFault(inner) => Error::CustomCnameAssociationFault(inner),
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_endpoint_access::CreateEndpointAccessError,
             R,
         >,
@@ -1932,6 +1984,52 @@ impl From<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGrou
             crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::InvalidClusterSubnetGroupStateFault(inner) => Error::InvalidClusterSubnetGroupStateFault(inner),
             crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::InvalidClusterSubnetStateFault(inner) => Error::InvalidClusterSubnetStateFault(inner),
             crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::CustomCnameAssociationFault(inner) => Error::CustomCnameAssociationFault(inner),
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2815,6 +2913,28 @@ impl From<crate::operation::describe_cluster_versions::DescribeClusterVersionsEr
     ) -> Self {
         match err {
             crate::operation::describe_cluster_versions::DescribeClusterVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError> for Error {
+    fn from(err: crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError::CustomDomainAssociationNotFoundFault(inner) => Error::CustomDomainAssociationNotFoundFault(inner),
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4354,6 +4474,7 @@ impl From<crate::operation::modify_cluster::ModifyClusterError> for Error {
             crate::operation::modify_cluster::ModifyClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::ClusterParameterGroupNotFoundFault(inner) => Error::ClusterParameterGroupNotFoundFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::ClusterSecurityGroupNotFoundFault(inner) => Error::ClusterSecurityGroupNotFoundFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::CustomCnameAssociationFault(inner) => Error::CustomCnameAssociationFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::DependentServiceRequestThrottlingFault(inner) => Error::DependentServiceRequestThrottlingFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::HsmClientCertificateNotFoundFault(inner) => Error::HsmClientCertificateNotFoundFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
@@ -4368,6 +4489,7 @@ impl From<crate::operation::modify_cluster::ModifyClusterError> for Error {
             crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesQuotaExceededFault(inner) => Error::NumberOfNodesQuotaExceededFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::TableLimitExceededFault(inner) => Error::TableLimitExceededFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
+            crate::operation::modify_cluster::ModifyClusterError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::UnsupportedOptionFault(inner) => Error::UnsupportedOptionFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4678,6 +4800,52 @@ impl From<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGrou
             crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::SubnetAlreadyInUse(inner) => Error::SubnetAlreadyInUse(inner),
             crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
             crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::CustomCnameAssociationFault(inner) => Error::CustomCnameAssociationFault(inner),
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
+            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5587,6 +5755,8 @@ impl ::std::error::Error for Error {
             Error::ClusterSubnetGroupQuotaExceededFault(inner) => inner.source(),
             Error::ClusterSubnetQuotaExceededFault(inner) => inner.source(),
             Error::CopyToRegionDisabledFault(inner) => inner.source(),
+            Error::CustomCnameAssociationFault(inner) => inner.source(),
+            Error::CustomDomainAssociationNotFoundFault(inner) => inner.source(),
             Error::DependentServiceRequestThrottlingFault(inner) => inner.source(),
             Error::DependentServiceUnavailableFault(inner) => inner.source(),
             Error::EndpointAlreadyExistsFault(inner) => inner.source(),
@@ -5720,6 +5890,8 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ClusterSubnetGroupQuotaExceededFault(e) => e.request_id(),
             Self::ClusterSubnetQuotaExceededFault(e) => e.request_id(),
             Self::CopyToRegionDisabledFault(e) => e.request_id(),
+            Self::CustomCnameAssociationFault(e) => e.request_id(),
+            Self::CustomDomainAssociationNotFoundFault(e) => e.request_id(),
             Self::DependentServiceRequestThrottlingFault(e) => e.request_id(),
             Self::DependentServiceUnavailableFault(e) => e.request_id(),
             Self::EndpointAlreadyExistsFault(e) => e.request_id(),

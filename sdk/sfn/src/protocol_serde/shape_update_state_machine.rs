@@ -42,6 +42,22 @@ pub fn de_update_state_machine_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::update_state_machine::UpdateStateMachineError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_state_machine::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InvalidArn" => crate::operation::update_state_machine::UpdateStateMachineError::InvalidArn({
             #[allow(unused_mut)]
             let mut tmp =
@@ -113,6 +129,22 @@ pub fn de_update_state_machine_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingRequiredParameterBuilder::default();
                     output = crate::protocol_serde::shape_missing_required_parameter::de_missing_required_parameter_json_err(_response_body, output).map_err(crate::operation::update_state_machine::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::update_state_machine::UpdateStateMachineError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_state_machine::UpdateStateMachineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -221,6 +253,24 @@ pub(crate) fn de_update_state_machine(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
+                        );
+                    }
+                    "revisionId" => {
+                        builder = builder.set_revision_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "stateMachineVersionArn" => {
+                        builder = builder.set_state_machine_version_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

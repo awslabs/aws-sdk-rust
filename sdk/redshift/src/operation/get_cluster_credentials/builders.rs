@@ -230,4 +230,20 @@ impl GetClusterCredentialsFluentBuilder {
         self.inner = self.inner.set_db_groups(input);
         self
     }
+    /// <p>The custom domain name for the cluster credentials.</p>
+    pub fn custom_domain_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.custom_domain_name(input.into());
+        self
+    }
+    /// <p>The custom domain name for the cluster credentials.</p>
+    pub fn set_custom_domain_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_custom_domain_name(input);
+        self
+    }
 }

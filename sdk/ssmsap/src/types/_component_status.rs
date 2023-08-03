@@ -13,6 +13,12 @@
 /// # let componentstatus = unimplemented!();
 /// match componentstatus {
 ///     ComponentStatus::Activated => { /* ... */ },
+///     ComponentStatus::Running => { /* ... */ },
+///     ComponentStatus::RunningWithError => { /* ... */ },
+///     ComponentStatus::Starting => { /* ... */ },
+///     ComponentStatus::Stopped => { /* ... */ },
+///     ComponentStatus::Stopping => { /* ... */ },
+///     ComponentStatus::Undefined => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +54,18 @@
 pub enum ComponentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Activated,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    RunningWithError,
+    #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
+    Undefined,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +73,12 @@ impl ::std::convert::From<&str> for ComponentStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVATED" => ComponentStatus::Activated,
+            "RUNNING" => ComponentStatus::Running,
+            "RUNNING_WITH_ERROR" => ComponentStatus::RunningWithError,
+            "STARTING" => ComponentStatus::Starting,
+            "STOPPED" => ComponentStatus::Stopped,
+            "STOPPING" => ComponentStatus::Stopping,
+            "UNDEFINED" => ComponentStatus::Undefined,
             other => {
                 ComponentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +97,26 @@ impl ComponentStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ComponentStatus::Activated => "ACTIVATED",
+            ComponentStatus::Running => "RUNNING",
+            ComponentStatus::RunningWithError => "RUNNING_WITH_ERROR",
+            ComponentStatus::Starting => "STARTING",
+            ComponentStatus::Stopped => "STOPPED",
+            ComponentStatus::Stopping => "STOPPING",
+            ComponentStatus::Undefined => "UNDEFINED",
             ComponentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVATED"]
+        &[
+            "ACTIVATED",
+            "RUNNING",
+            "RUNNING_WITH_ERROR",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+            "UNDEFINED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ComponentStatus {

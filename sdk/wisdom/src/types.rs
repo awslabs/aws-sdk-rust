@@ -61,6 +61,8 @@ pub use crate::types::_relevance_level::RelevanceLevel;
 
 pub use crate::types::_assistant_summary::AssistantSummary;
 
+pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfiguration;
+
 pub use crate::types::_assistant_status::AssistantStatus;
 
 pub use crate::types::_assistant_type::AssistantType;
@@ -68,6 +70,8 @@ pub use crate::types::_assistant_type::AssistantType;
 pub use crate::types::_assistant_data::AssistantData;
 
 pub use crate::types::_session_data::SessionData;
+
+pub use crate::types::_session_integration_configuration::SessionIntegrationConfiguration;
 
 pub use crate::types::_assistant_association_summary::AssistantAssociationSummary;
 
@@ -92,6 +96,8 @@ mod _assistant_association_output_data;
 mod _assistant_association_summary;
 
 mod _assistant_data;
+
+mod _assistant_integration_configuration;
 
 mod _assistant_status;
 
@@ -158,6 +164,8 @@ mod _search_expression;
 mod _server_side_encryption_configuration;
 
 mod _session_data;
+
+mod _session_integration_configuration;
 
 mod _session_summary;
 

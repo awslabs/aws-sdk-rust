@@ -312,11 +312,15 @@ mod remove_tags;
 
 mod restore_event_data_store;
 
+mod start_event_data_store_ingestion;
+
 mod start_import;
 
 mod start_logging;
 
 mod start_query;
+
+mod stop_event_data_store_ingestion;
 
 mod stop_import;
 

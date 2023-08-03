@@ -58,6 +58,9 @@ pub struct OntapVolumeConfiguration {
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    #[doc(hidden)]
+    pub snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
 }
 impl OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -128,6 +131,12 @@ impl OntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    pub fn snaplock_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
+        self.snaplock_configuration.as_ref()
+    }
 }
 impl OntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
@@ -154,6 +163,7 @@ pub struct OntapVolumeConfigurationBuilder {
     pub(crate) ontap_volume_type: ::std::option::Option<crate::types::OntapVolumeType>,
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
+    pub(crate) snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
 }
 impl OntapVolumeConfigurationBuilder {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -342,6 +352,19 @@ impl OntapVolumeConfigurationBuilder {
         self.copy_tags_to_backups = input;
         self
     }
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    pub fn snaplock_configuration(mut self, input: crate::types::SnaplockConfiguration) -> Self {
+        self.snaplock_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+    pub fn set_snaplock_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::SnaplockConfiguration>,
+    ) -> Self {
+        self.snaplock_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
     pub fn build(self) -> crate::types::OntapVolumeConfiguration {
         crate::types::OntapVolumeConfiguration {
@@ -357,6 +380,7 @@ impl OntapVolumeConfigurationBuilder {
             ontap_volume_type: self.ontap_volume_type,
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
+            snaplock_configuration: self.snaplock_configuration,
         }
     }
 }

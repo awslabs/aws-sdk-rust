@@ -6,6 +6,7 @@ pub use crate::operation::associate_device_with_network_profile::_associate_devi
 /// Fluent builder constructing a request to `AssociateDeviceWithNetworkProfile`.
 ///
 /// <p>Associates a device with the specified network profile.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithNetworkProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

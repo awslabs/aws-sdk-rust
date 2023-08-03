@@ -53,6 +53,9 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
     #[doc(hidden)]
     pub current_average_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
+    /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
+    #[doc(hidden)]
+    pub recommendation_detail_id: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
@@ -122,6 +125,10 @@ impl SavingsPlansPurchaseRecommendationDetail {
     pub fn current_average_hourly_on_demand_spend(&self) -> ::std::option::Option<&str> {
         self.current_average_hourly_on_demand_spend.as_deref()
     }
+    /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
+    pub fn recommendation_detail_id(&self) -> ::std::option::Option<&str> {
+        self.recommendation_detail_id.as_deref()
+    }
 }
 impl SavingsPlansPurchaseRecommendationDetail {
     /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationDetail`](crate::types::SavingsPlansPurchaseRecommendationDetail).
@@ -153,6 +160,7 @@ pub struct SavingsPlansPurchaseRecommendationDetailBuilder {
     pub(crate) current_minimum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     pub(crate) current_maximum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     pub(crate) current_average_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_detail_id: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationDetailBuilder {
     /// <p>Details for your recommended Savings Plans.</p>
@@ -397,6 +405,22 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
         self.current_average_hourly_on_demand_spend = input;
         self
     }
+    /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
+    pub fn recommendation_detail_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommendation_detail_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
+    pub fn set_recommendation_detail_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.recommendation_detail_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendationDetail`](crate::types::SavingsPlansPurchaseRecommendationDetail).
     pub fn build(self) -> crate::types::SavingsPlansPurchaseRecommendationDetail {
         crate::types::SavingsPlansPurchaseRecommendationDetail {
@@ -417,6 +441,7 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
             current_minimum_hourly_on_demand_spend: self.current_minimum_hourly_on_demand_spend,
             current_maximum_hourly_on_demand_spend: self.current_maximum_hourly_on_demand_spend,
             current_average_hourly_on_demand_spend: self.current_average_hourly_on_demand_spend,
+            recommendation_detail_id: self.recommendation_detail_id,
         }
     }
 }

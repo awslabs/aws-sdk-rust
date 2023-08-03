@@ -76,6 +76,10 @@ pub(crate) mod shape_create_cluster_subnet_group;
 
 pub(crate) mod shape_create_cluster_subnet_group_input;
 
+pub(crate) mod shape_create_custom_domain_association;
+
+pub(crate) mod shape_create_custom_domain_association_input;
+
 pub(crate) mod shape_create_endpoint_access;
 
 pub(crate) mod shape_create_endpoint_access_input;
@@ -139,6 +143,10 @@ pub(crate) mod shape_delete_cluster_snapshot_input;
 pub(crate) mod shape_delete_cluster_subnet_group;
 
 pub(crate) mod shape_delete_cluster_subnet_group_input;
+
+pub(crate) mod shape_delete_custom_domain_association;
+
+pub(crate) mod shape_delete_custom_domain_association_input;
 
 pub(crate) mod shape_delete_endpoint_access;
 
@@ -223,6 +231,10 @@ pub(crate) mod shape_describe_cluster_versions_input;
 pub(crate) mod shape_describe_clusters;
 
 pub(crate) mod shape_describe_clusters_input;
+
+pub(crate) mod shape_describe_custom_domain_associations;
+
+pub(crate) mod shape_describe_custom_domain_associations_input;
 
 pub(crate) mod shape_describe_data_shares;
 
@@ -404,6 +416,10 @@ pub(crate) mod shape_modify_cluster_subnet_group;
 
 pub(crate) mod shape_modify_cluster_subnet_group_input;
 
+pub(crate) mod shape_modify_custom_domain_association;
+
+pub(crate) mod shape_modify_custom_domain_association_input;
+
 pub(crate) mod shape_modify_endpoint_access;
 
 pub(crate) mod shape_modify_endpoint_access_input;
@@ -541,6 +557,10 @@ pub(crate) mod shape_cluster_subnet_group_quota_exceeded_fault;
 pub(crate) mod shape_cluster_subnet_quota_exceeded_fault;
 
 pub(crate) mod shape_copy_to_region_disabled_fault;
+
+pub(crate) mod shape_custom_cname_association_fault;
+
+pub(crate) mod shape_custom_domain_association_not_found_fault;
 
 pub(crate) mod shape_delete_cluster_snapshot_message;
 
@@ -754,6 +774,8 @@ pub(crate) mod shape_aqua_configuration;
 
 pub(crate) mod shape_associated_cluster_list;
 
+pub(crate) mod shape_association_list;
+
 pub(crate) mod shape_attribute_list;
 
 pub(crate) mod shape_authentication_profile_list;
@@ -882,6 +904,8 @@ pub(crate) mod shape_account_attribute;
 
 pub(crate) mod shape_accounts_with_restore_access_list;
 
+pub(crate) mod shape_association;
+
 pub(crate) mod shape_authentication_profile;
 
 pub(crate) mod shape_cluster_associated_to_schedule;
@@ -978,6 +1002,8 @@ pub(crate) mod shape_attribute_value_list;
 
 pub(crate) mod shape_availability_zone_list;
 
+pub(crate) mod shape_certificate_association_list;
+
 pub(crate) mod shape_cluster_iam_role;
 
 pub(crate) mod shape_cluster_node;
@@ -1009,6 +1035,8 @@ pub(crate) mod shape_vpc_endpoints_list;
 pub(crate) mod shape_attribute_value_target;
 
 pub(crate) mod shape_availability_zone;
+
+pub(crate) mod shape_certificate_association;
 
 pub(crate) mod shape_cluster_parameter_status_list;
 

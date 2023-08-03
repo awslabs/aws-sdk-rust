@@ -309,6 +309,11 @@ mod list_objects_request_test {
             expected_output.encoding_type,
             "Unexpected value for `encoding_type`"
         );
+        ::pretty_assertions::assert_eq!(
+            parsed.request_charged,
+            expected_output.request_charged,
+            "Unexpected value for `request_charged`"
+        );
     }
 }
 

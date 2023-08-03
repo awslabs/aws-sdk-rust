@@ -1225,6 +1225,8 @@ impl From<crate::operation::delete_account_customization::DeleteAccountCustomiza
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_account_customization::DeleteAccountCustomizationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_account_customization::DeleteAccountCustomizationError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -2579,6 +2581,98 @@ impl From<crate::operation::describe_analysis_permissions::DescribeAnalysisPermi
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_dashboard::DescribeDashboardError,
             R,
         >,
@@ -2717,6 +2811,81 @@ impl From<crate::operation::describe_dashboard_permissions::DescribeDashboardPer
             crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
             crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError> for Error {
+    fn from(err: crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError) -> Self {
+        match err {
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::PreconditionNotMetException(inner) => Error::PreconditionNotMetException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4191,6 +4360,102 @@ impl From<crate::operation::list_analyses::ListAnalysesError> for Error {
             crate::operation::list_analyses::ListAnalysesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5815,6 +6080,158 @@ impl From<crate::operation::search_groups::SearchGroupsError> for Error {
             crate::operation::search_groups::SearchGroupsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+    ) -> Self {
+        match err {
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -272,6 +272,8 @@ mod list_tags_for_resource;
 
 mod register_connector;
 
+mod reset_connector_metadata_cache;
+
 mod start_flow;
 
 mod stop_flow;

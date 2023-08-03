@@ -22,6 +22,12 @@ pub struct CrawlerTargets {
     /// <p>Specifies Delta data store targets.</p>
     #[doc(hidden)]
     pub delta_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>,
+    /// <p>Specifies Apache Iceberg data store targets.</p>
+    #[doc(hidden)]
+    pub iceberg_targets: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
+    /// <p>Specifies Apache Hudi data store targets.</p>
+    #[doc(hidden)]
+    pub hudi_targets: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
 }
 impl CrawlerTargets {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
@@ -48,6 +54,14 @@ impl CrawlerTargets {
     pub fn delta_targets(&self) -> ::std::option::Option<&[crate::types::DeltaTarget]> {
         self.delta_targets.as_deref()
     }
+    /// <p>Specifies Apache Iceberg data store targets.</p>
+    pub fn iceberg_targets(&self) -> ::std::option::Option<&[crate::types::IcebergTarget]> {
+        self.iceberg_targets.as_deref()
+    }
+    /// <p>Specifies Apache Hudi data store targets.</p>
+    pub fn hudi_targets(&self) -> ::std::option::Option<&[crate::types::HudiTarget]> {
+        self.hudi_targets.as_deref()
+    }
 }
 impl CrawlerTargets {
     /// Creates a new builder-style object to manufacture [`CrawlerTargets`](crate::types::CrawlerTargets).
@@ -70,6 +84,8 @@ pub struct CrawlerTargetsBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>>,
     pub(crate) catalog_targets: ::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>>,
     pub(crate) delta_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>,
+    pub(crate) iceberg_targets: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
+    pub(crate) hudi_targets: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
 }
 impl CrawlerTargetsBuilder {
     /// Appends an item to `s3_targets`.
@@ -186,6 +202,44 @@ impl CrawlerTargetsBuilder {
         self.delta_targets = input;
         self
     }
+    /// Appends an item to `iceberg_targets`.
+    ///
+    /// To override the contents of this collection use [`set_iceberg_targets`](Self::set_iceberg_targets).
+    ///
+    /// <p>Specifies Apache Iceberg data store targets.</p>
+    pub fn iceberg_targets(mut self, input: crate::types::IcebergTarget) -> Self {
+        let mut v = self.iceberg_targets.unwrap_or_default();
+        v.push(input);
+        self.iceberg_targets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies Apache Iceberg data store targets.</p>
+    pub fn set_iceberg_targets(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
+    ) -> Self {
+        self.iceberg_targets = input;
+        self
+    }
+    /// Appends an item to `hudi_targets`.
+    ///
+    /// To override the contents of this collection use [`set_hudi_targets`](Self::set_hudi_targets).
+    ///
+    /// <p>Specifies Apache Hudi data store targets.</p>
+    pub fn hudi_targets(mut self, input: crate::types::HudiTarget) -> Self {
+        let mut v = self.hudi_targets.unwrap_or_default();
+        v.push(input);
+        self.hudi_targets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies Apache Hudi data store targets.</p>
+    pub fn set_hudi_targets(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
+    ) -> Self {
+        self.hudi_targets = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CrawlerTargets`](crate::types::CrawlerTargets).
     pub fn build(self) -> crate::types::CrawlerTargets {
         crate::types::CrawlerTargets {
@@ -195,6 +249,8 @@ impl CrawlerTargetsBuilder {
             dynamo_db_targets: self.dynamo_db_targets,
             catalog_targets: self.catalog_targets,
             delta_targets: self.delta_targets,
+            iceberg_targets: self.iceberg_targets,
+            hudi_targets: self.hudi_targets,
         }
     }
 }

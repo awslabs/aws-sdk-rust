@@ -119,6 +119,11 @@ pub(crate) fn de_describe_provisioning_artifact(value: &[u8], mut builder: crate
                             .transpose()?,
                         );
                     }
+                    "ProvisioningArtifactParameters" => {
+                        builder = builder.set_provisioning_artifact_parameters(
+                            crate::protocol_serde::shape_provisioning_artifact_parameters::de_provisioning_artifact_parameters(tokens)?
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

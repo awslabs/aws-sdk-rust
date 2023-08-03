@@ -81,6 +81,51 @@ impl ::std::fmt::Display for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::activate_organizations_access::ActivateOrganizationsAccessError>
+    for Error
+{
+    fn from(
+        err: crate::operation::activate_organizations_access::ActivateOrganizationsAccessError,
+    ) -> Self {
+        match err {
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::OperationNotFoundException(inner) => Error::OperationNotFoundException(inner),
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::activate_type::ActivateTypeError, R>>
     for Error
 where
@@ -405,6 +450,51 @@ impl From<crate::operation::create_stack_set::CreateStackSetError> for Error {
             crate::operation::create_stack_set::CreateStackSetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_stack_set::CreateStackSetError::NameAlreadyExistsException(inner) => Error::NameAlreadyExistsException(inner),
             crate::operation::create_stack_set::CreateStackSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError>
+    for Error
+{
+    fn from(
+        err: crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
+    ) -> Self {
+        match err {
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError::OperationNotFoundException(inner) => Error::OperationNotFoundException(inner),
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -785,6 +875,51 @@ impl From<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksErr
         match err {
             crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::ChangeSetNotFoundException(inner) => Error::ChangeSetNotFoundException(inner),
             crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError::OperationNotFoundException(inner) => Error::OperationNotFoundException(inner),
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1759,6 +1894,35 @@ impl From<crate::operation::list_imports::ListImportsError> for Error {
             crate::operation::list_imports::ListImportsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError::OperationNotFoundException(inner) => Error::OperationNotFoundException(inner),
+            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError::StackInstanceNotFoundException(inner) => Error::StackInstanceNotFoundException(inner),
+            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError::StackSetNotFoundException(inner) => Error::StackSetNotFoundException(inner),
+            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

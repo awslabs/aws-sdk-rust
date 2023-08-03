@@ -12,6 +12,12 @@ pub fn ser_geospatial_point_style_options(
         crate::protocol_serde::shape_cluster_marker_configuration::ser_cluster_marker_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.heatmap_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("HeatmapConfiguration").start_object();
+        crate::protocol_serde::shape_geospatial_heatmap_configuration::ser_geospatial_heatmap_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,11 @@ where
                         "ClusterMarkerConfiguration" => {
                             builder = builder.set_cluster_marker_configuration(
                                     crate::protocol_serde::shape_cluster_marker_configuration::de_cluster_marker_configuration(tokens)?
+                                );
+                        }
+                        "HeatmapConfiguration" => {
+                            builder = builder.set_heatmap_configuration(
+                                    crate::protocol_serde::shape_geospatial_heatmap_configuration::de_geospatial_heatmap_configuration(tokens)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -244,6 +244,8 @@ mod create_stream;
 /// ```
 pub mod customize;
 
+mod delete_edge_configuration;
+
 mod delete_signaling_channel;
 
 mod delete_stream;
@@ -265,6 +267,8 @@ mod describe_stream;
 mod get_data_endpoint;
 
 mod get_signaling_channel_endpoint;
+
+mod list_edge_agent_configurations;
 
 mod list_signaling_channels;
 

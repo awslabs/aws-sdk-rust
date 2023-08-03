@@ -44,6 +44,9 @@ pub struct NetAppOntapsvm {
     /// <p>The amount of storage in the SVM that's being used for snapshots.</p>
     #[doc(hidden)]
     pub total_snapshot_capacity_used: ::std::option::Option<i64>,
+    /// <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+    #[doc(hidden)]
+    pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapsvm {
     /// <p>The universally unique identifier (UUID) of the cluster associated with the SVM.</p>
@@ -101,6 +104,10 @@ impl NetAppOntapsvm {
     pub fn total_snapshot_capacity_used(&self) -> ::std::option::Option<i64> {
         self.total_snapshot_capacity_used
     }
+    /// <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+    pub fn lun_count(&self) -> ::std::option::Option<i64> {
+        self.lun_count
+    }
 }
 impl NetAppOntapsvm {
     /// Creates a new builder-style object to manufacture [`NetAppOntapsvm`](crate::types::NetAppOntapsvm).
@@ -129,6 +136,7 @@ pub struct NetAppOntapsvmBuilder {
     pub(crate) nfs_exported_volumes: ::std::option::Option<i64>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) total_snapshot_capacity_used: ::std::option::Option<i64>,
+    pub(crate) lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapsvmBuilder {
     /// <p>The universally unique identifier (UUID) of the cluster associated with the SVM.</p>
@@ -290,6 +298,16 @@ impl NetAppOntapsvmBuilder {
         self.total_snapshot_capacity_used = input;
         self
     }
+    /// <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+    pub fn lun_count(mut self, input: i64) -> Self {
+        self.lun_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+    pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.lun_count = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetAppOntapsvm`](crate::types::NetAppOntapsvm).
     pub fn build(self) -> crate::types::NetAppOntapsvm {
         crate::types::NetAppOntapsvm {
@@ -306,6 +324,7 @@ impl NetAppOntapsvmBuilder {
             nfs_exported_volumes: self.nfs_exported_volumes,
             recommendation_status: self.recommendation_status,
             total_snapshot_capacity_used: self.total_snapshot_capacity_used,
+            lun_count: self.lun_count,
         }
     }
 }

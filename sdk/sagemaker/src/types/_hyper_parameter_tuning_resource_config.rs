@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningResourceConfig {
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
@@ -38,7 +38,7 @@ pub struct HyperParameterTuningResourceConfig {
         ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
 }
 impl HyperParameterTuningResourceConfig {
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
@@ -100,12 +100,12 @@ pub struct HyperParameterTuningResourceConfigBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
 }
 impl HyperParameterTuningResourceConfigBuilder {
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub fn instance_type(mut self, input: crate::types::TrainingInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
+    /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub fn set_instance_type(
         mut self,
         input: ::std::option::Option<crate::types::TrainingInstanceType>,

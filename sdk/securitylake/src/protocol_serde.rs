@@ -14,61 +14,63 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_custom_log_source;
 
-pub(crate) mod shape_create_datalake;
+pub(crate) mod shape_create_data_lake;
 
-pub(crate) mod shape_create_datalake_auto_enable;
+pub(crate) mod shape_create_data_lake_exception_subscription;
 
-pub(crate) mod shape_create_datalake_delegated_admin;
-
-pub(crate) mod shape_create_datalake_exceptions_subscription;
+pub(crate) mod shape_create_data_lake_organization_configuration;
 
 pub(crate) mod shape_create_subscriber;
 
-pub(crate) mod shape_create_subscription_notification_configuration;
+pub(crate) mod shape_create_subscriber_notification;
 
 pub(crate) mod shape_delete_aws_log_source;
 
 pub(crate) mod shape_delete_custom_log_source;
 
-pub(crate) mod shape_delete_datalake;
+pub(crate) mod shape_delete_data_lake;
 
-pub(crate) mod shape_delete_datalake_auto_enable;
+pub(crate) mod shape_delete_data_lake_exception_subscription;
 
-pub(crate) mod shape_delete_datalake_delegated_admin;
-
-pub(crate) mod shape_delete_datalake_exceptions_subscription;
+pub(crate) mod shape_delete_data_lake_organization_configuration;
 
 pub(crate) mod shape_delete_subscriber;
 
-pub(crate) mod shape_delete_subscription_notification_configuration;
+pub(crate) mod shape_delete_subscriber_notification;
 
-pub(crate) mod shape_get_datalake;
+pub(crate) mod shape_deregister_data_lake_delegated_administrator;
 
-pub(crate) mod shape_get_datalake_auto_enable;
+pub(crate) mod shape_get_data_lake_exception_subscription;
 
-pub(crate) mod shape_get_datalake_exceptions_expiry;
+pub(crate) mod shape_get_data_lake_organization_configuration;
 
-pub(crate) mod shape_get_datalake_exceptions_subscription;
-
-pub(crate) mod shape_get_datalake_status;
+pub(crate) mod shape_get_data_lake_sources;
 
 pub(crate) mod shape_get_subscriber;
 
-pub(crate) mod shape_list_datalake_exceptions;
+pub(crate) mod shape_list_data_lake_exceptions;
+
+pub(crate) mod shape_list_data_lakes;
 
 pub(crate) mod shape_list_log_sources;
 
 pub(crate) mod shape_list_subscribers;
 
-pub(crate) mod shape_update_datalake;
+pub(crate) mod shape_list_tags_for_resource;
 
-pub(crate) mod shape_update_datalake_exceptions_expiry;
+pub(crate) mod shape_register_data_lake_delegated_administrator;
 
-pub(crate) mod shape_update_datalake_exceptions_subscription;
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_data_lake;
+
+pub(crate) mod shape_update_data_lake_exception_subscription;
 
 pub(crate) mod shape_update_subscriber;
 
-pub(crate) mod shape_update_subscription_notification_configuration;
+pub(crate) mod shape_update_subscriber_notification;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -80,132 +82,136 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
-pub(crate) mod shape_account_not_found_exception;
-
-pub(crate) mod shape_bucket_not_found_exception;
-
-pub(crate) mod shape_concurrent_modification_exception;
+pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_conflict_exception;
-
-pub(crate) mod shape_conflict_source_names_exception;
-
-pub(crate) mod shape_conflict_subscription_exception;
 
 pub(crate) mod shape_create_aws_log_source_input;
 
 pub(crate) mod shape_create_custom_log_source_input;
 
-pub(crate) mod shape_create_datalake_auto_enable_input;
+pub(crate) mod shape_create_data_lake_exception_subscription_input;
 
-pub(crate) mod shape_create_datalake_delegated_admin_input;
+pub(crate) mod shape_create_data_lake_input;
 
-pub(crate) mod shape_create_datalake_exceptions_subscription_input;
-
-pub(crate) mod shape_create_datalake_input;
+pub(crate) mod shape_create_data_lake_organization_configuration_input;
 
 pub(crate) mod shape_create_subscriber_input;
 
-pub(crate) mod shape_create_subscription_notification_configuration_input;
+pub(crate) mod shape_create_subscriber_notification_input;
 
 pub(crate) mod shape_delete_aws_log_source_input;
 
-pub(crate) mod shape_delete_datalake_auto_enable_input;
+pub(crate) mod shape_delete_data_lake_input;
 
-pub(crate) mod shape_event_bridge_exception;
+pub(crate) mod shape_delete_data_lake_organization_configuration_input;
 
-pub(crate) mod shape_get_datalake_status_input;
+pub(crate) mod shape_get_data_lake_sources_input;
 
 pub(crate) mod shape_internal_server_exception;
 
-pub(crate) mod shape_invalid_input_exception;
-
-pub(crate) mod shape_list_datalake_exceptions_input;
+pub(crate) mod shape_list_data_lake_exceptions_input;
 
 pub(crate) mod shape_list_log_sources_input;
 
+pub(crate) mod shape_register_data_lake_delegated_administrator_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
-pub(crate) mod shape_s3_exception;
-
-pub(crate) mod shape_service_quota_exceeded_exception;
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
-pub(crate) mod shape_update_datalake_exceptions_expiry_input;
+pub(crate) mod shape_update_data_lake_exception_subscription_input;
 
-pub(crate) mod shape_update_datalake_exceptions_subscription_input;
-
-pub(crate) mod shape_update_datalake_input;
+pub(crate) mod shape_update_data_lake_input;
 
 pub(crate) mod shape_update_subscriber_input;
 
-pub(crate) mod shape_update_subscription_notification_configuration_input;
-
-pub(crate) mod shape_validation_exception;
+pub(crate) mod shape_update_subscriber_notification_input;
 
 pub(crate) mod shape_account_list;
 
-pub(crate) mod shape_account_sources_list;
+pub(crate) mod shape_aws_identity;
 
-pub(crate) mod shape_auto_enable_new_region_configuration;
+pub(crate) mod shape_aws_log_source_configuration;
 
-pub(crate) mod shape_auto_enable_new_region_configuration_list;
+pub(crate) mod shape_custom_log_source_configuration;
 
-pub(crate) mod shape_failures_response_list;
+pub(crate) mod shape_custom_log_source_resource;
 
-pub(crate) mod shape_lake_configuration_request;
+pub(crate) mod shape_data_lake_auto_enable_new_account_configuration;
 
-pub(crate) mod shape_lake_configuration_response_map;
+pub(crate) mod shape_data_lake_auto_enable_new_account_configuration_list;
 
-pub(crate) mod shape_protocol_and_notification_endpoint;
+pub(crate) mod shape_data_lake_configuration;
 
-pub(crate) mod shape_region_source_types_accounts_list;
+pub(crate) mod shape_data_lake_exception_list;
 
-pub(crate) mod shape_source_type;
+pub(crate) mod shape_data_lake_resource_list;
 
-pub(crate) mod shape_subscriber_list;
+pub(crate) mod shape_data_lake_source_list;
+
+pub(crate) mod shape_log_source_list;
+
+pub(crate) mod shape_log_source_resource;
+
+pub(crate) mod shape_notification_configuration;
 
 pub(crate) mod shape_subscriber_resource;
 
-pub(crate) mod shape_validation_exception_field_list;
+pub(crate) mod shape_subscriber_resource_list;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_access_type_list;
 
-pub(crate) mod shape_account_sources;
+pub(crate) mod shape_aws_log_source_resource;
 
-pub(crate) mod shape_all_dimensions_map;
+pub(crate) mod shape_custom_log_source_attributes;
 
-pub(crate) mod shape_failures_response;
+pub(crate) mod shape_custom_log_source_crawler_configuration;
 
-pub(crate) mod shape_lake_configuration_response;
+pub(crate) mod shape_custom_log_source_provider;
 
-pub(crate) mod shape_retention_setting;
+pub(crate) mod shape_data_lake_encryption_configuration;
 
-pub(crate) mod shape_source_type_list;
+pub(crate) mod shape_data_lake_exception;
 
-pub(crate) mod shape_validation_exception_field;
+pub(crate) mod shape_data_lake_lifecycle_configuration;
 
-pub(crate) mod shape_aws_source_type_list;
+pub(crate) mod shape_data_lake_replication_configuration;
 
-pub(crate) mod shape_failureslist;
+pub(crate) mod shape_data_lake_resource;
 
-pub(crate) mod shape_logs_status_list;
+pub(crate) mod shape_data_lake_source;
 
-pub(crate) mod shape_region_set;
+pub(crate) mod shape_https_notification_configuration;
 
-pub(crate) mod shape_retention_setting_list;
+pub(crate) mod shape_log_source;
 
-pub(crate) mod shape_tags_map;
+pub(crate) mod shape_log_source_resource_list;
 
-pub(crate) mod shape_two_dimensions_map;
+pub(crate) mod shape_sqs_notification_configuration;
 
-pub(crate) mod shape_update_status;
+pub(crate) mod shape_aws_log_source_resource_list;
 
-pub(crate) mod shape_failures;
+pub(crate) mod shape_data_lake_lifecycle_expiration;
 
-pub(crate) mod shape_last_update_failure;
+pub(crate) mod shape_data_lake_lifecycle_transition;
 
-pub(crate) mod shape_logs_status;
+pub(crate) mod shape_data_lake_source_status_list;
 
-pub(crate) mod shape_value_set;
+pub(crate) mod shape_data_lake_update_status;
+
+pub(crate) mod shape_ocsf_event_class_list;
+
+pub(crate) mod shape_data_lake_lifecycle_transition_list;
+
+pub(crate) mod shape_data_lake_source_status;
+
+pub(crate) mod shape_data_lake_update_exception;
+
+pub(crate) mod shape_region_list;

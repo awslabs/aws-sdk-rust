@@ -5,7 +5,7 @@ pub use crate::operation::put_approval_result::_put_approval_result_input::PutAp
 
 /// Fluent builder constructing a request to `PutApprovalResult`.
 ///
-/// <p>Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and Rejected.</p>
+/// <p>Provides the response to a manual approval request to CodePipeline. Valid responses include Approved and Rejected.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutApprovalResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -14,6 +14,7 @@
 /// match serversideencryption {
 ///     ServerSideEncryption::Aes256 => { /* ... */ },
 ///     ServerSideEncryption::AwsKms => { /* ... */ },
+///     ServerSideEncryption::AwsKmsDsse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum ServerSideEncryption {
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
     AwsKms,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsKmsDsse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ServerSideEncryption {
         match s {
             "AES256" => ServerSideEncryption::Aes256,
             "aws:kms" => ServerSideEncryption::AwsKms,
+            "aws:kms:dsse" => ServerSideEncryption::AwsKmsDsse,
             other => ServerSideEncryption::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -78,12 +82,13 @@ impl ServerSideEncryption {
         match self {
             ServerSideEncryption::Aes256 => "AES256",
             ServerSideEncryption::AwsKms => "aws:kms",
+            ServerSideEncryption::AwsKmsDsse => "aws:kms:dsse",
             ServerSideEncryption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES256", "aws:kms"]
+        &["AES256", "aws:kms", "aws:kms:dsse"]
     }
 }
 impl ::std::convert::AsRef<str> for ServerSideEncryption {

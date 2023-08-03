@@ -7,11 +7,20 @@ pub mod create_activity;
 /// Types for the `CreateStateMachine` operation.
 pub mod create_state_machine;
 
+/// Types for the `CreateStateMachineAlias` operation.
+pub mod create_state_machine_alias;
+
 /// Types for the `DeleteActivity` operation.
 pub mod delete_activity;
 
 /// Types for the `DeleteStateMachine` operation.
 pub mod delete_state_machine;
+
+/// Types for the `DeleteStateMachineAlias` operation.
+pub mod delete_state_machine_alias;
+
+/// Types for the `DeleteStateMachineVersion` operation.
+pub mod delete_state_machine_version;
 
 /// Types for the `DescribeActivity` operation.
 pub mod describe_activity;
@@ -24,6 +33,9 @@ pub mod describe_map_run;
 
 /// Types for the `DescribeStateMachine` operation.
 pub mod describe_state_machine;
+
+/// Types for the `DescribeStateMachineAlias` operation.
+pub mod describe_state_machine_alias;
 
 /// Types for the `DescribeStateMachineForExecution` operation.
 pub mod describe_state_machine_for_execution;
@@ -43,11 +55,20 @@ pub mod list_executions;
 /// Types for the `ListMapRuns` operation.
 pub mod list_map_runs;
 
+/// Types for the `ListStateMachineAliases` operation.
+pub mod list_state_machine_aliases;
+
+/// Types for the `ListStateMachineVersions` operation.
+pub mod list_state_machine_versions;
+
 /// Types for the `ListStateMachines` operation.
 pub mod list_state_machines;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PublishStateMachineVersion` operation.
+pub mod publish_state_machine_version;
 
 /// Types for the `SendTaskFailure` operation.
 pub mod send_task_failure;
@@ -78,3 +99,6 @@ pub mod update_map_run;
 
 /// Types for the `UpdateStateMachine` operation.
 pub mod update_state_machine;
+
+/// Types for the `UpdateStateMachineAlias` operation.
+pub mod update_state_machine_alias;

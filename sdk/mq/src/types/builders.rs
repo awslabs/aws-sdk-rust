@@ -3,6 +3,10 @@ pub use crate::types::_sanitization_warning::SanitizationWarningBuilder;
 
 pub use crate::types::_configuration_revision::ConfigurationRevisionBuilder;
 
+pub use crate::types::_data_replication_metadata_output::DataReplicationMetadataOutputBuilder;
+
+pub use crate::types::_data_replication_counterpart::DataReplicationCounterpartBuilder;
+
 pub use crate::types::_weekly_start_time::WeeklyStartTimeBuilder;
 
 pub use crate::types::_logs::LogsBuilder;

@@ -65,6 +65,11 @@ pub fn ser_kafka_settings(
     if let Some(var_19) = &input.sasl_mechanism {
         object.key("SaslMechanism").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.ssl_endpoint_identification_algorithm {
+        object
+            .key("SslEndpointIdentificationAlgorithm")
+            .string(var_20.as_str());
+    }
     Ok(())
 }
 
@@ -90,179 +95,189 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
-                        "Broker" => {
-                            builder = builder.set_broker(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "Topic" => {
-                            builder = builder.set_topic(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "MessageFormat" => {
-                            builder = builder.set_message_format(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::MessageFormatValue::from(u.as_ref()))
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        "IncludeTransactionDetails" => {
-                            builder = builder.set_include_transaction_details(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "IncludePartitionValue" => {
-                            builder = builder.set_include_partition_value(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "PartitionIncludeSchemaTable" => {
-                            builder = builder.set_partition_include_schema_table(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "IncludeTableAlterOperations" => {
-                            builder = builder.set_include_table_alter_operations(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "IncludeControlDetails" => {
-                            builder = builder.set_include_control_details(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "MessageMaxBytes" => {
-                            builder = builder.set_message_max_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
-                            );
-                        }
-                        "IncludeNullAndEmpty" => {
-                            builder = builder.set_include_null_and_empty(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "SecurityProtocol" => {
-                            builder = builder.set_security_protocol(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::KafkaSecurityProtocol::from(u.as_ref())
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Broker" => {
+                                builder = builder.set_broker(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Topic" => {
+                                builder = builder.set_topic(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "MessageFormat" => {
+                                builder = builder.set_message_format(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::MessageFormatValue::from(u.as_ref())
+                                        })
                                     })
-                                })
-                                .transpose()?,
-                            );
+                                    .transpose()?,
+                                );
+                            }
+                            "IncludeTransactionDetails" => {
+                                builder = builder.set_include_transaction_details(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "IncludePartitionValue" => {
+                                builder = builder.set_include_partition_value(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "PartitionIncludeSchemaTable" => {
+                                builder = builder.set_partition_include_schema_table(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "IncludeTableAlterOperations" => {
+                                builder = builder.set_include_table_alter_operations(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "IncludeControlDetails" => {
+                                builder = builder.set_include_control_details(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "MessageMaxBytes" => {
+                                builder = builder.set_message_max_bytes(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "IncludeNullAndEmpty" => {
+                                builder = builder.set_include_null_and_empty(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "SecurityProtocol" => {
+                                builder = builder.set_security_protocol(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::KafkaSecurityProtocol::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "SslClientCertificateArn" => {
+                                builder = builder.set_ssl_client_certificate_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SslClientKeyArn" => {
+                                builder = builder.set_ssl_client_key_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SslClientKeyPassword" => {
+                                builder = builder.set_ssl_client_key_password(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SslCaCertificateArn" => {
+                                builder = builder.set_ssl_ca_certificate_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SaslUsername" => {
+                                builder = builder.set_sasl_username(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SaslPassword" => {
+                                builder = builder.set_sasl_password(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "NoHexPrefix" => {
+                                builder = builder.set_no_hex_prefix(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "SaslMechanism" => {
+                                builder = builder.set_sasl_mechanism(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::KafkaSaslMechanism::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "SslEndpointIdentificationAlgorithm" => {
+                                builder = builder.set_ssl_endpoint_identification_algorithm(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            crate::types::KafkaSslEndpointIdentificationAlgorithm::from(u.as_ref())
+                                        )
+                                    ).transpose()?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "SslClientCertificateArn" => {
-                            builder = builder.set_ssl_client_certificate_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SslClientKeyArn" => {
-                            builder = builder.set_ssl_client_key_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SslClientKeyPassword" => {
-                            builder = builder.set_ssl_client_key_password(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SslCaCertificateArn" => {
-                            builder = builder.set_ssl_ca_certificate_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SaslUsername" => {
-                            builder = builder.set_sasl_username(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SaslPassword" => {
-                            builder = builder.set_sasl_password(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "NoHexPrefix" => {
-                            builder = builder.set_no_hex_prefix(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
-                        }
-                        "SaslMechanism" => {
-                            builder = builder.set_sasl_mechanism(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::KafkaSaslMechanism::from(u.as_ref()))
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(
                             ::aws_smithy_json::deserialize::error::DeserializeError::custom(

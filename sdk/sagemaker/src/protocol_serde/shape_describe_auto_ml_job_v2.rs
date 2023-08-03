@@ -243,6 +243,29 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                             crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?
                         );
                     }
+                    "AutoMLJobArtifacts" => {
+                        builder = builder.set_auto_ml_job_artifacts(
+                            crate::protocol_serde::shape_auto_ml_job_artifacts::de_auto_ml_job_artifacts(tokens)?
+                        );
+                    }
+                    "ResolvedAttributes" => {
+                        builder = builder.set_resolved_attributes(
+                            crate::protocol_serde::shape_auto_ml_resolved_attributes::de_auto_ml_resolved_attributes(tokens)?
+                        );
+                    }
+                    "AutoMLProblemTypeConfigName" => {
+                        builder = builder.set_auto_ml_problem_type_config_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped().map(|u| {
+                                    crate::types::AutoMlProblemTypeConfigName::from(u.as_ref())
+                                })
+                            })
+                            .transpose()?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

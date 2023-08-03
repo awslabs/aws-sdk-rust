@@ -39,9 +39,13 @@ pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExce
 
 pub use crate::types::error::_session_not_found_exception::SessionNotFoundException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_human_loop_quota_exceeded_exception::HumanLoopQuotaExceededException;
 
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _human_loop_quota_exceeded_exception;
 

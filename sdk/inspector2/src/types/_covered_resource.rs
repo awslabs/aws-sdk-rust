@@ -22,6 +22,9 @@ pub struct CoveredResource {
     /// <p>An object that contains details about the metadata.</p>
     #[doc(hidden)]
     pub resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    #[doc(hidden)]
+    pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
@@ -48,6 +51,10 @@ impl CoveredResource {
     pub fn resource_metadata(&self) -> ::std::option::Option<&crate::types::ResourceScanMetadata> {
         self.resource_metadata.as_ref()
     }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn last_scanned_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_scanned_at.as_ref()
+    }
 }
 impl CoveredResource {
     /// Creates a new builder-style object to manufacture [`CoveredResource`](crate::types::CoveredResource).
@@ -68,6 +75,7 @@ pub struct CoveredResourceBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) scan_status: ::std::option::Option<crate::types::ScanStatus>,
     pub(crate) resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
+    pub(crate) last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
@@ -139,6 +147,19 @@ impl CoveredResourceBuilder {
         self.resource_metadata = input;
         self
     }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn last_scanned_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_scanned_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the resource was last checked for vulnerabilities.</p>
+    pub fn set_last_scanned_at(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_scanned_at = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
     pub fn build(self) -> crate::types::CoveredResource {
         crate::types::CoveredResource {
@@ -148,6 +169,7 @@ impl CoveredResourceBuilder {
             scan_type: self.scan_type,
             scan_status: self.scan_status,
             resource_metadata: self.resource_metadata,
+            last_scanned_at: self.last_scanned_at,
         }
     }
 }

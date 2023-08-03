@@ -148,7 +148,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for DeleteRecordingConfigu
         let headers = response.headers();
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
-        if !success && status != 200 {
+        if !success && status != 204 {
             crate::protocol_serde::shape_delete_recording_configuration::de_delete_recording_configuration_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_delete_recording_configuration::de_delete_recording_configuration_http_response_with_props(status, headers, body)

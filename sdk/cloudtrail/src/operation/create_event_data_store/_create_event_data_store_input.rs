@@ -13,7 +13,7 @@ pub struct CreateEventDataStoreInput {
     #[doc(hidden)]
     pub advanced_event_selectors:
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
@@ -41,6 +41,9 @@ pub struct CreateEventDataStoreInput {
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    #[doc(hidden)]
+    pub start_ingestion: ::std::option::Option<bool>,
 }
 impl CreateEventDataStoreInput {
     /// <p>The name of the event data store.</p>
@@ -56,7 +59,7 @@ impl CreateEventDataStoreInput {
     ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_region_enabled
     }
@@ -90,6 +93,10 @@ impl CreateEventDataStoreInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn start_ingestion(&self) -> ::std::option::Option<bool> {
+        self.start_ingestion
+    }
 }
 impl CreateEventDataStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateEventDataStoreInput`](crate::operation::create_event_data_store::CreateEventDataStoreInput).
@@ -114,6 +121,7 @@ pub struct CreateEventDataStoreInputBuilder {
     pub(crate) termination_protection_enabled: ::std::option::Option<bool>,
     pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) start_ingestion: ::std::option::Option<bool>,
 }
 impl CreateEventDataStoreInputBuilder {
     /// <p>The name of the event data store.</p>
@@ -151,12 +159,12 @@ impl CreateEventDataStoreInputBuilder {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self
@@ -243,6 +251,16 @@ impl CreateEventDataStoreInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn start_ingestion(mut self, input: bool) -> Self {
+        self.start_ingestion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn set_start_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.start_ingestion = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateEventDataStoreInput`](crate::operation::create_event_data_store::CreateEventDataStoreInput).
     pub fn build(
         self,
@@ -260,6 +278,7 @@ impl CreateEventDataStoreInputBuilder {
                 termination_protection_enabled: self.termination_protection_enabled,
                 tags_list: self.tags_list,
                 kms_key_id: self.kms_key_id,
+                start_ingestion: self.start_ingestion,
             },
         )
     }

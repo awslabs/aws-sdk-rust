@@ -9,6 +9,9 @@ pub fn ser_output_data_config(
     if let Some(var_2) = &input.s3_output_path {
         object.key("S3OutputPath").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.compression_type {
+        object.key("CompressionType").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -51,6 +54,19 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CompressionType" => {
+                                builder = builder.set_compression_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::OutputCompressionType::from(u.as_ref())
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }

@@ -119,4 +119,27 @@ impl ListGraphqlApisFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
+        self.inner = self.inner.api_type(input);
+        self
+    }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn set_api_type(
+        mut self,
+        input: ::std::option::Option<crate::types::GraphQlApiType>,
+    ) -> Self {
+        self.inner = self.inner.set_api_type(input);
+        self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn owner(mut self, input: crate::types::Ownership) -> Self {
+        self.inner = self.inner.owner(input);
+        self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
+        self.inner = self.inner.set_owner(input);
+        self
+    }
 }

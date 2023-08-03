@@ -63,6 +63,12 @@ pub struct Finding {
     /// <p>The details of an exploit available for a finding discovered in your environment.</p>
     #[doc(hidden)]
     pub exploitability_details: ::std::option::Option<crate::types::ExploitabilityDetails>,
+    /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
+    #[doc(hidden)]
+    pub code_vulnerability_details: ::std::option::Option<crate::types::CodeVulnerabilityDetails>,
+    /// <p>The finding's EPSS score.</p>
+    #[doc(hidden)]
+    pub epss: ::std::option::Option<crate::types::EpssDetails>,
 }
 impl Finding {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
@@ -149,6 +155,16 @@ impl Finding {
     ) -> ::std::option::Option<&crate::types::ExploitabilityDetails> {
         self.exploitability_details.as_ref()
     }
+    /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
+    pub fn code_vulnerability_details(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CodeVulnerabilityDetails> {
+        self.code_vulnerability_details.as_ref()
+    }
+    /// <p>The finding's EPSS score.</p>
+    pub fn epss(&self) -> ::std::option::Option<&crate::types::EpssDetails> {
+        self.epss.as_ref()
+    }
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::types::Finding).
@@ -184,6 +200,9 @@ pub struct FindingBuilder {
     pub(crate) fix_available: ::std::option::Option<crate::types::FixAvailable>,
     pub(crate) exploit_available: ::std::option::Option<crate::types::ExploitAvailable>,
     pub(crate) exploitability_details: ::std::option::Option<crate::types::ExploitabilityDetails>,
+    pub(crate) code_vulnerability_details:
+        ::std::option::Option<crate::types::CodeVulnerabilityDetails>,
+    pub(crate) epss: ::std::option::Option<crate::types::EpssDetails>,
 }
 impl FindingBuilder {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
@@ -427,6 +446,32 @@ impl FindingBuilder {
         self.exploitability_details = input;
         self
     }
+    /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
+    pub fn code_vulnerability_details(
+        mut self,
+        input: crate::types::CodeVulnerabilityDetails,
+    ) -> Self {
+        self.code_vulnerability_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
+    pub fn set_code_vulnerability_details(
+        mut self,
+        input: ::std::option::Option<crate::types::CodeVulnerabilityDetails>,
+    ) -> Self {
+        self.code_vulnerability_details = input;
+        self
+    }
+    /// <p>The finding's EPSS score.</p>
+    pub fn epss(mut self, input: crate::types::EpssDetails) -> Self {
+        self.epss = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The finding's EPSS score.</p>
+    pub fn set_epss(mut self, input: ::std::option::Option<crate::types::EpssDetails>) -> Self {
+        self.epss = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
@@ -449,6 +494,8 @@ impl FindingBuilder {
             fix_available: self.fix_available,
             exploit_available: self.exploit_available,
             exploitability_details: self.exploitability_details,
+            code_vulnerability_details: self.code_vulnerability_details,
+            epss: self.epss,
         }
     }
 }

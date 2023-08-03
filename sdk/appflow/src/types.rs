@@ -115,6 +115,10 @@ pub use crate::types::_pardot_source_properties::PardotSourceProperties;
 
 pub use crate::types::_custom_connector_source_properties::CustomConnectorSourceProperties;
 
+pub use crate::types::_data_transfer_api::DataTransferApi;
+
+pub use crate::types::_data_transfer_api_type::DataTransferApiType;
+
 pub use crate::types::_sapo_data_source_properties::SapoDataSourceProperties;
 
 pub use crate::types::_zendesk_source_properties::ZendeskSourceProperties;
@@ -276,6 +280,8 @@ pub use crate::types::_execution_details::ExecutionDetails;
 pub use crate::types::_execution_status::ExecutionStatus;
 
 pub use crate::types::_connector_detail::ConnectorDetail;
+
+pub use crate::types::_supported_data_transfer_type::SupportedDataTransferType;
 
 pub use crate::types::_connector_entity::ConnectorEntity;
 
@@ -452,6 +458,10 @@ mod _customer_profiles_destination_properties;
 mod _customer_profiles_metadata;
 
 mod _data_pull_mode;
+
+mod _data_transfer_api;
+
+mod _data_transfer_api_type;
 
 mod _datadog_connector_operator;
 
@@ -702,6 +712,8 @@ mod _source_field_properties;
 mod _source_flow_config;
 
 mod _success_response_handling_config;
+
+mod _supported_data_transfer_type;
 
 mod _supported_field_type_details;
 

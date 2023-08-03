@@ -515,6 +515,49 @@ impl From<crate::operation::create_work_group::CreateWorkGroupError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_capacity_reservation::DeleteCapacityReservationError> for Error {
+    fn from(
+        err: crate::operation::delete_capacity_reservation::DeleteCapacityReservationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_data_catalog::DeleteDataCatalogError,
             R,
         >,

@@ -18,12 +18,15 @@ pub struct PutEventTypeInput {
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
     #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     #[doc(hidden)]
     pub event_ingestion: ::std::option::Option<crate::types::EventIngestion>,
     /// <p>A collection of key and value pairs.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    #[doc(hidden)]
+    pub event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl PutEventTypeInput {
     /// <p>The name.</p>
@@ -46,13 +49,17 @@ impl PutEventTypeInput {
     pub fn entity_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.entity_types.as_deref()
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn event_ingestion(&self) -> ::std::option::Option<&crate::types::EventIngestion> {
         self.event_ingestion.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn event_orchestration(&self) -> ::std::option::Option<&crate::types::EventOrchestration> {
+        self.event_orchestration.as_ref()
     }
 }
 impl PutEventTypeInput {
@@ -75,6 +82,7 @@ pub struct PutEventTypeInputBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_ingestion: ::std::option::Option<crate::types::EventIngestion>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl PutEventTypeInputBuilder {
     /// <p>The name.</p>
@@ -157,12 +165,12 @@ impl PutEventTypeInputBuilder {
         self.entity_types = input;
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn event_ingestion(mut self, input: crate::types::EventIngestion) -> Self {
         self.event_ingestion = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn set_event_ingestion(
         mut self,
         input: ::std::option::Option<crate::types::EventIngestion>,
@@ -189,6 +197,19 @@ impl PutEventTypeInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
+        self.event_orchestration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
+    pub fn set_event_orchestration(
+        mut self,
+        input: ::std::option::Option<crate::types::EventOrchestration>,
+    ) -> Self {
+        self.event_orchestration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
     pub fn build(
         self,
@@ -204,6 +225,7 @@ impl PutEventTypeInputBuilder {
             entity_types: self.entity_types,
             event_ingestion: self.event_ingestion,
             tags: self.tags,
+            event_orchestration: self.event_orchestration,
         })
     }
 }

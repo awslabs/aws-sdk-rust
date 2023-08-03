@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`parameter_key(impl ::std::convert::Into<String>)`](crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder::parameter_key) / [`set_parameter_key(Option<String>)`](crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder::set_parameter_key): <p>The room skill parameter key for which to remove details.</p>
     /// - On success, responds with [`DeleteRoomSkillParameterOutput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput)
     /// - On failure, responds with [`SdkError<DeleteRoomSkillParameterError>`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_room_skill_parameter(&self) -> crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder{
         crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterFluentBuilder::new(self.handle.clone())
     }

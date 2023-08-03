@@ -175,7 +175,7 @@ pub type ListTagsForResourceErrorKind = ListTagsForResourceError;
 pub enum ListTagsForResourceError {
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
+    /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

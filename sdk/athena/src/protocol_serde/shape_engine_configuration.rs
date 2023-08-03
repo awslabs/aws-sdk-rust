@@ -57,6 +57,13 @@ where
                                     )?,
                                 );
                             }
+                            "SparkProperties" => {
+                                builder = builder.set_spark_properties(
+                                    crate::protocol_serde::shape_parameters_map::de_parameters_map(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -110,6 +117,16 @@ pub fn ser_engine_configuration(
             }
         }
         object_4.finish();
+    }
+    if let Some(var_7) = &input.spark_properties {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("SparkProperties").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                object_8.key(key_9.as_str()).string(value_10.as_str());
+            }
+        }
+        object_8.finish();
     }
     Ok(())
 }

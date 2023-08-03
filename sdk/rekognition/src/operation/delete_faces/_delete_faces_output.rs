@@ -6,12 +6,22 @@ pub struct DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
     #[doc(hidden)]
     pub deleted_faces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An array of any faces that weren't deleted.</p>
+    #[doc(hidden)]
+    pub unsuccessful_face_deletions:
+        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>>,
     _request_id: Option<String>,
 }
 impl DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
     pub fn deleted_faces(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.deleted_faces.as_deref()
+    }
+    /// <p>An array of any faces that weren't deleted.</p>
+    pub fn unsuccessful_face_deletions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDeletion]> {
+        self.unsuccessful_face_deletions.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteFacesOutput {
@@ -33,6 +43,8 @@ impl DeleteFacesOutput {
 )]
 pub struct DeleteFacesOutputBuilder {
     pub(crate) deleted_faces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) unsuccessful_face_deletions:
+        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>>,
     _request_id: Option<String>,
 }
 impl DeleteFacesOutputBuilder {
@@ -58,6 +70,28 @@ impl DeleteFacesOutputBuilder {
         self.deleted_faces = input;
         self
     }
+    /// Appends an item to `unsuccessful_face_deletions`.
+    ///
+    /// To override the contents of this collection use [`set_unsuccessful_face_deletions`](Self::set_unsuccessful_face_deletions).
+    ///
+    /// <p>An array of any faces that weren't deleted.</p>
+    pub fn unsuccessful_face_deletions(
+        mut self,
+        input: crate::types::UnsuccessfulFaceDeletion,
+    ) -> Self {
+        let mut v = self.unsuccessful_face_deletions.unwrap_or_default();
+        v.push(input);
+        self.unsuccessful_face_deletions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of any faces that weren't deleted.</p>
+    pub fn set_unsuccessful_face_deletions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>>,
+    ) -> Self {
+        self.unsuccessful_face_deletions = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -71,6 +105,7 @@ impl DeleteFacesOutputBuilder {
     pub fn build(self) -> crate::operation::delete_faces::DeleteFacesOutput {
         crate::operation::delete_faces::DeleteFacesOutput {
             deleted_faces: self.deleted_faces,
+            unsuccessful_face_deletions: self.unsuccessful_face_deletions,
             _request_id: self._request_id,
         }
     }

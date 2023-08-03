@@ -217,4 +217,17 @@ impl UpdateJobFluentBuilder {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn pickup_details(mut self, input: crate::types::PickupDetails) -> Self {
+        self.inner = self.inner.pickup_details(input);
+        self
+    }
+    /// <p>Information identifying the person picking up the device.</p>
+    pub fn set_pickup_details(
+        mut self,
+        input: ::std::option::Option<crate::types::PickupDetails>,
+    ) -> Self {
+        self.inner = self.inner.set_pickup_details(input);
+        self
+    }
 }

@@ -6,6 +6,7 @@ pub use crate::operation::create_network_profile::_create_network_profile_input:
 /// Fluent builder constructing a request to `CreateNetworkProfile`.
 ///
 /// <p>Creates a network profile with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

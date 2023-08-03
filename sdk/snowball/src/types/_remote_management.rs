@@ -14,6 +14,7 @@
 /// match remotemanagement {
 ///     RemoteManagement::InstalledAutostart => { /* ... */ },
 ///     RemoteManagement::InstalledOnly => { /* ... */ },
+///     RemoteManagement::NotInstalled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum RemoteManagement {
     InstalledAutostart,
     #[allow(missing_docs)] // documentation missing in model
     InstalledOnly,
+    #[allow(missing_docs)] // documentation missing in model
+    NotInstalled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for RemoteManagement {
         match s {
             "INSTALLED_AUTOSTART" => RemoteManagement::InstalledAutostart,
             "INSTALLED_ONLY" => RemoteManagement::InstalledOnly,
+            "NOT_INSTALLED" => RemoteManagement::NotInstalled,
             other => {
                 RemoteManagement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +82,13 @@ impl RemoteManagement {
         match self {
             RemoteManagement::InstalledAutostart => "INSTALLED_AUTOSTART",
             RemoteManagement::InstalledOnly => "INSTALLED_ONLY",
+            RemoteManagement::NotInstalled => "NOT_INSTALLED",
             RemoteManagement::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSTALLED_AUTOSTART", "INSTALLED_ONLY"]
+        &["INSTALLED_AUTOSTART", "INSTALLED_ONLY", "NOT_INSTALLED"]
     }
 }
 impl ::std::convert::AsRef<str> for RemoteManagement {

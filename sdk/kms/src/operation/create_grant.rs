@@ -179,6 +179,8 @@ pub enum CreateGrantError {
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::types::error::DisabledException),
+    /// <p> The request was rejected because the DryRun parameter was specified. </p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
@@ -218,6 +220,7 @@ impl ::std::fmt::Display for CreateGrantError {
         match self {
             Self::DependencyTimeoutException(_inner) => _inner.fmt(f),
             Self::DisabledException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidGrantTokenException(_inner) => _inner.fmt(f),
             Self::KmsInternalException(_inner) => _inner.fmt(f),
@@ -235,6 +238,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateGrantEr
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DisabledException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DryRunOperationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidArnException(_inner) => {
@@ -308,6 +314,7 @@ impl CreateGrantError {
         match self {
             Self::DependencyTimeoutException(e) => e.meta(),
             Self::DisabledException(e) => e.meta(),
+            Self::DryRunOperationException(e) => e.meta(),
             Self::InvalidArnException(e) => e.meta(),
             Self::InvalidGrantTokenException(e) => e.meta(),
             Self::KmsInternalException(e) => e.meta(),
@@ -324,6 +331,10 @@ impl CreateGrantError {
     /// Returns `true` if the error kind is `CreateGrantError::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(self, Self::DisabledException(_))
+    }
+    /// Returns `true` if the error kind is `CreateGrantError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantError::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -355,6 +366,7 @@ impl ::std::error::Error for CreateGrantError {
         match self {
             Self::DependencyTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::DisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGrantTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInternalException(_inner) => ::std::option::Option::Some(_inner),

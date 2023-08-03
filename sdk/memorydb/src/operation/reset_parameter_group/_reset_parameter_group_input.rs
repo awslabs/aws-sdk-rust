@@ -8,7 +8,7 @@ pub struct ResetParameterGroupInput {
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
     #[doc(hidden)]
-    pub all_parameters: bool,
+    pub all_parameters: ::std::option::Option<bool>,
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
     #[doc(hidden)]
     pub parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,7 +19,7 @@ impl ResetParameterGroupInput {
         self.parameter_group_name.as_deref()
     }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
-    pub fn all_parameters(&self) -> bool {
+    pub fn all_parameters(&self) -> ::std::option::Option<bool> {
         self.all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
@@ -105,7 +105,7 @@ impl ResetParameterGroupInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::reset_parameter_group::ResetParameterGroupInput {
                 parameter_group_name: self.parameter_group_name,
-                all_parameters: self.all_parameters.unwrap_or_default(),
+                all_parameters: self.all_parameters,
                 parameter_names: self.parameter_names,
             },
         )

@@ -96,14 +96,13 @@ impl DeleteBotVersionInput {
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.skip_resource_in_use_check {
-                    query.push_kv(
-                        "skipResourceInUseCheck",
-                        ::aws_smithy_types::primitive::Encoder::from(
-                            _input.skip_resource_in_use_check,
-                        )
-                        .encode(),
-                    );
+                if let ::std::option::Option::Some(inner_3) = &_input.skip_resource_in_use_check {
+                    if *inner_3 {
+                        query.push_kv(
+                            "skipResourceInUseCheck",
+                            ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

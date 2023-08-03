@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworksOutput {
-    /// <p> The list of metadata objects for the framework. </p>
+    /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     #[doc(hidden)]
     pub framework_metadata_list:
         ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
@@ -13,7 +13,7 @@ pub struct ListAssessmentFrameworksOutput {
     _request_id: Option<String>,
 }
 impl ListAssessmentFrameworksOutput {
-    /// <p> The list of metadata objects for the framework. </p>
+    /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     pub fn framework_metadata_list(
         &self,
     ) -> ::std::option::Option<&[crate::types::AssessmentFrameworkMetadata]> {
@@ -54,7 +54,7 @@ impl ListAssessmentFrameworksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_framework_metadata_list`](Self::set_framework_metadata_list).
     ///
-    /// <p> The list of metadata objects for the framework. </p>
+    /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     pub fn framework_metadata_list(
         mut self,
         input: crate::types::AssessmentFrameworkMetadata,
@@ -64,7 +64,7 @@ impl ListAssessmentFrameworksOutputBuilder {
         self.framework_metadata_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of metadata objects for the framework. </p>
+    /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     pub fn set_framework_metadata_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,

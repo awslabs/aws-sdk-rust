@@ -6,6 +6,7 @@ pub use crate::operation::forget_smart_home_appliances::_forget_smart_home_appli
 /// Fluent builder constructing a request to `ForgetSmartHomeAppliances`.
 ///
 /// <p>Forgets smart home appliances associated to a room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ForgetSmartHomeAppliancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

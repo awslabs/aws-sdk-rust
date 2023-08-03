@@ -57,14 +57,31 @@ pub fn de_list_log_sources_http_error(
                 tmp
             })
         }
-        "AccountNotFoundException" => {
-            crate::operation::list_log_sources::ListLogSourcesError::AccountNotFoundException({
+        "BadRequestException" => {
+            crate::operation::list_log_sources::ListLogSourcesError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::operation::list_log_sources::ListLogSourcesError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -82,10 +99,6 @@ pub fn de_list_log_sources_http_error(
                     let mut output =
                         crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::list_log_sources::ListLogSourcesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -112,14 +125,18 @@ pub fn de_list_log_sources_http_error(
                 tmp
             })
         }
-        "ValidationException" => {
-            crate::operation::list_log_sources::ListLogSourcesError::ValidationException({
+        "ThrottlingException" => {
+            crate::operation::list_log_sources::ListLogSourcesError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::list_log_sources::ListLogSourcesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
+                                                .map_err(|_|crate::operation::list_log_sources::ListLogSourcesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -184,9 +201,11 @@ pub(crate) fn de_list_log_sources(
                             .transpose()?,
                         );
                     }
-                    "regionSourceTypesAccountsList" => {
-                        builder = builder.set_region_source_types_accounts_list(
-                            crate::protocol_serde::shape_region_source_types_accounts_list::de_region_source_types_accounts_list(tokens)?
+                    "sources" => {
+                        builder = builder.set_sources(
+                            crate::protocol_serde::shape_log_source_list::de_log_source_list(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

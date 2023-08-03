@@ -6,6 +6,7 @@ pub use crate::operation::associate_skill_with_users::_associate_skill_with_user
 /// Fluent builder constructing a request to `AssociateSkillWithUsers`.
 ///
 /// <p>Makes a private skill available for enrolled users to enable on their devices.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSkillWithUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

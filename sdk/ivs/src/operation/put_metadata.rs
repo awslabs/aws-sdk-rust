@@ -147,7 +147,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for PutMetadata {
         let headers = response.headers();
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
-        if !success && status != 200 {
+        if !success && status != 204 {
             crate::protocol_serde::shape_put_metadata::de_put_metadata_http_error(
                 status, headers, body,
             )

@@ -100,6 +100,14 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "HealthScoreThreshold" => {
+                                builder = builder.set_health_score_threshold(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64_lossy()),
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

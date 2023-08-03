@@ -78,6 +78,8 @@ pub(crate) mod shape_list_import_errors;
 
 pub(crate) mod shape_list_imports;
 
+pub(crate) mod shape_list_managed_accounts;
+
 pub(crate) mod shape_list_source_server_actions;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -88,6 +90,8 @@ pub(crate) mod shape_list_waves;
 
 pub(crate) mod shape_mark_as_archived;
 
+pub(crate) mod shape_pause_replication;
+
 pub(crate) mod shape_put_source_server_action;
 
 pub(crate) mod shape_put_template_action;
@@ -95,6 +99,8 @@ pub(crate) mod shape_put_template_action;
 pub(crate) mod shape_remove_source_server_action;
 
 pub(crate) mod shape_remove_template_action;
+
+pub(crate) mod shape_resume_replication;
 
 pub(crate) mod shape_retry_data_replication;
 
@@ -107,6 +113,8 @@ pub(crate) mod shape_start_import;
 pub(crate) mod shape_start_replication;
 
 pub(crate) mod shape_start_test;
+
+pub(crate) mod shape_stop_replication;
 
 pub(crate) mod shape_tag_resource;
 
@@ -210,6 +218,8 @@ pub(crate) mod shape_list_import_errors_input;
 
 pub(crate) mod shape_list_imports_input;
 
+pub(crate) mod shape_list_managed_accounts_input;
+
 pub(crate) mod shape_list_source_server_actions_input;
 
 pub(crate) mod shape_list_template_actions_input;
@@ -217,6 +227,8 @@ pub(crate) mod shape_list_template_actions_input;
 pub(crate) mod shape_list_waves_input;
 
 pub(crate) mod shape_mark_as_archived_input;
+
+pub(crate) mod shape_pause_replication_input;
 
 pub(crate) mod shape_put_source_server_action_input;
 
@@ -227,6 +239,8 @@ pub(crate) mod shape_remove_source_server_action_input;
 pub(crate) mod shape_remove_template_action_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_resume_replication_input;
 
 pub(crate) mod shape_retry_data_replication_input;
 
@@ -241,6 +255,8 @@ pub(crate) mod shape_start_import_input;
 pub(crate) mod shape_start_replication_input;
 
 pub(crate) mod shape_start_test_input;
+
+pub(crate) mod shape_stop_replication_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -320,6 +336,8 @@ pub(crate) mod shape_list_imports_request_filters;
 
 pub(crate) mod shape_list_waves_request_filters;
 
+pub(crate) mod shape_managed_accounts;
+
 pub(crate) mod shape_post_launch_actions;
 
 pub(crate) mod shape_replication_configuration_replicated_disk;
@@ -393,6 +411,8 @@ pub(crate) mod shape_launch_configuration_template;
 pub(crate) mod shape_life_cycle_last_cutover;
 
 pub(crate) mod shape_life_cycle_last_test;
+
+pub(crate) mod shape_managed_account;
 
 pub(crate) mod shape_network_interfaces;
 

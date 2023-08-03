@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`agent_summary(Option<CustomerAgentInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agent_summary): <p>Details about discovered agents, including agent status and health.</p>
     ///   - [`connector_summary(Option<CustomerConnectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::connector_summary): <p>Details about discovered connectors, including connector status and health.</p>
     ///   - [`me_collector_summary(Option<CustomerMeCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::me_collector_summary): <p> Details about Migration Evaluator collectors, including collector status and health. </p>
-    ///   - [`agentless_collector_summary(Option<CustomerAgentlessCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agentless_collector_summary): (undocumented)
+    ///   - [`agentless_collector_summary(Option<CustomerAgentlessCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agentless_collector_summary): <p> Details about Agentless Collector collectors, including status. </p>
     /// - On failure, responds with [`SdkError<GetDiscoverySummaryError>`](crate::operation::get_discovery_summary::GetDiscoverySummaryError)
     pub fn get_discovery_summary(
         &self,

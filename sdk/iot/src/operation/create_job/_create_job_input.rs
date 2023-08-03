@@ -10,7 +10,7 @@ pub struct CreateJobInput {
     #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     #[doc(hidden)]
     pub document_source: ::std::option::Option<::std::string::String>,
@@ -64,6 +64,10 @@ pub struct CreateJobInput {
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     #[doc(hidden)]
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    #[doc(hidden)]
+    pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobInput {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
@@ -75,7 +79,7 @@ impl CreateJobInput {
         self.targets.as_deref()
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn document_source(&self) -> ::std::option::Option<&str> {
         self.document_source.as_deref()
@@ -148,6 +152,11 @@ impl CreateJobInput {
     pub fn scheduling_config(&self) -> ::std::option::Option<&crate::types::SchedulingConfig> {
         self.scheduling_config.as_ref()
     }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.destination_package_versions.as_deref()
+    }
 }
 impl CreateJobInput {
     /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
@@ -182,6 +191,8 @@ pub struct CreateJobInputBuilder {
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
     pub(crate) scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
+    pub(crate) destination_package_versions:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobInputBuilder {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
@@ -214,7 +225,7 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn document_source(
         mut self,
@@ -224,7 +235,7 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
-    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn set_document_source(
         mut self,
@@ -436,6 +447,30 @@ impl CreateJobInputBuilder {
         self.scheduling_config = input;
         self
     }
+    /// Appends an item to `destination_package_versions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.destination_package_versions.unwrap_or_default();
+        v.push(input.into());
+        self.destination_package_versions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.destination_package_versions = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(
         self,
@@ -460,6 +495,7 @@ impl CreateJobInputBuilder {
             job_executions_retry_config: self.job_executions_retry_config,
             document_parameters: self.document_parameters,
             scheduling_config: self.scheduling_config,
+            destination_package_versions: self.destination_package_versions,
         })
     }
 }

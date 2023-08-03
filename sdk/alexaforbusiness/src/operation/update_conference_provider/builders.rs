@@ -6,6 +6,7 @@ pub use crate::operation::update_conference_provider::_update_conference_provide
 /// Fluent builder constructing a request to `UpdateConferenceProvider`.
 ///
 /// <p>Updates an existing conference provider's settings.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

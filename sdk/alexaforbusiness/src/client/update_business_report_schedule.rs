@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`recurrence(BusinessReportRecurrence)`](crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder::recurrence) / [`set_recurrence(Option<BusinessReportRecurrence>)`](crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder::set_recurrence): <p>The recurrence of the reports.</p>
     /// - On success, responds with [`UpdateBusinessReportScheduleOutput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput)
     /// - On failure, responds with [`SdkError<UpdateBusinessReportScheduleError>`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_business_report_schedule(&self) -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder{
         crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder::new(self.handle.clone())
     }

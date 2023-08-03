@@ -125,6 +125,30 @@ impl From<crate::operation::batch_get_stream_key::BatchGetStreamKeyError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            ::aws_smithy_types::error::Unhandled::builder()
+                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError> for Error {
+    fn from(err: crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError) -> Self {
+        match err {
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
@@ -1130,6 +1154,55 @@ impl From<crate::operation::put_metadata::PutMetadataError> for Error {
             crate::operation::put_metadata::PutMetadataError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

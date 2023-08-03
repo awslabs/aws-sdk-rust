@@ -173,6 +173,11 @@ pub(crate) fn de_get_geofence(
                             .transpose()?,
                         );
                     }
+                    "GeofenceProperties" => {
+                        builder = builder.set_geofence_properties(
+                            crate::protocol_serde::shape_property_map::de_property_map(tokens)?,
+                        );
+                    }
                     "Geometry" => {
                         builder = builder.set_geometry(
                             crate::protocol_serde::shape_geofence_geometry::de_geofence_geometry(

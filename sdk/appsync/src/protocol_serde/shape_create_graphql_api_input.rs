@@ -17,60 +17,71 @@ pub fn ser_create_graphql_api_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.authentication_type {
-        object.key("authenticationType").string(var_5.as_str());
+    if let Some(var_5) = &input.api_type {
+        object.key("apiType").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.lambda_authorizer_config {
+    if let Some(var_6) = &input.authentication_type {
+        object.key("authenticationType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.lambda_authorizer_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("lambdaAuthorizerConfig").start_object();
+        let mut object_8 = object.key("lambdaAuthorizerConfig").start_object();
         crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(
-            &mut object_7,
-            var_6,
+            &mut object_8,
+            var_7,
         )?;
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_8) = &input.log_config {
+    if let Some(var_9) = &input.log_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("logConfig").start_object();
-        crate::protocol_serde::shape_log_config::ser_log_config(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("logConfig").start_object();
+        crate::protocol_serde::shape_log_config::ser_log_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_11) = &input.merged_api_execution_role_arn {
+        object
+            .key("mergedApiExecutionRoleArn")
+            .string(var_11.as_str());
     }
-    if let Some(var_11) = &input.open_id_connect_config {
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.open_id_connect_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("openIDConnectConfig").start_object();
+        let mut object_14 = object.key("openIDConnectConfig").start_object();
         crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(
-            &mut object_12,
-            var_11,
+            &mut object_14,
+            var_13,
         )?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
-            {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
-            }
-        }
         object_14.finish();
     }
-    if let Some(var_17) = &input.user_pool_config {
+    if let Some(var_15) = &input.owner_contact {
+        object.key("ownerContact").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("userPoolConfig").start_object();
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                object_17.key(key_18.as_str()).string(value_19.as_str());
+            }
+        }
+        object_17.finish();
+    }
+    if let Some(var_20) = &input.user_pool_config {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("userPoolConfig").start_object();
         crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(
-            &mut object_18,
-            var_17,
+            &mut object_21,
+            var_20,
         )?;
-        object_18.finish();
+        object_21.finish();
     }
-    if let Some(var_19) = &input.visibility {
-        object.key("visibility").string(var_19.as_str());
+    if let Some(var_22) = &input.visibility {
+        object.key("visibility").string(var_22.as_str());
     }
-    if let Some(var_20) = &input.xray_enabled {
-        object.key("xrayEnabled").boolean(*var_20);
+    if let Some(var_23) = &input.xray_enabled {
+        object.key("xrayEnabled").boolean(*var_23);
     }
     Ok(())
 }

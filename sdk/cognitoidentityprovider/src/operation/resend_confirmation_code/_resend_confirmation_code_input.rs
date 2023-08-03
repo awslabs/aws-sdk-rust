@@ -80,7 +80,7 @@ impl ::std::fmt::Debug for ResendConfirmationCodeInput {
         let mut formatter = f.debug_struct("ResendConfirmationCodeInput");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("client_metadata", &self.client_metadata);
@@ -233,7 +233,7 @@ impl ::std::fmt::Debug for ResendConfirmationCodeInputBuilder {
         let mut formatter = f.debug_struct("ResendConfirmationCodeInputBuilder");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("client_metadata", &self.client_metadata);

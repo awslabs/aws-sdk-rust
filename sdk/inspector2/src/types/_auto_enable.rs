@@ -13,6 +13,9 @@ pub struct AutoEnable {
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     #[doc(hidden)]
     pub lambda: ::std::option::Option<bool>,
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    #[doc(hidden)]
+    pub lambda_code: ::std::option::Option<bool>,
 }
 impl AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -26,6 +29,10 @@ impl AutoEnable {
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     pub fn lambda(&self) -> ::std::option::Option<bool> {
         self.lambda
+    }
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    pub fn lambda_code(&self) -> ::std::option::Option<bool> {
+        self.lambda_code
     }
 }
 impl AutoEnable {
@@ -44,6 +51,7 @@ pub struct AutoEnableBuilder {
     pub(crate) ec2: ::std::option::Option<bool>,
     pub(crate) ecr: ::std::option::Option<bool>,
     pub(crate) lambda: ::std::option::Option<bool>,
+    pub(crate) lambda_code: ::std::option::Option<bool>,
 }
 impl AutoEnableBuilder {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -76,12 +84,23 @@ impl AutoEnableBuilder {
         self.lambda = input;
         self
     }
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    pub fn lambda_code(mut self, input: bool) -> Self {
+        self.lambda_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    pub fn set_lambda_code(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.lambda_code = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AutoEnable`](crate::types::AutoEnable).
     pub fn build(self) -> crate::types::AutoEnable {
         crate::types::AutoEnable {
             ec2: self.ec2,
             ecr: self.ecr,
             lambda: self.lambda,
+            lambda_code: self.lambda_code,
         }
     }
 }

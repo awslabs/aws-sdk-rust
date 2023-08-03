@@ -381,6 +381,7 @@ impl From<crate::operation::create_resource_share::CreateResourceShareError> for
             crate::operation::create_resource_share::CreateResourceShareError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::TagPolicyViolationException(inner) => Error::TagPolicyViolationException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),

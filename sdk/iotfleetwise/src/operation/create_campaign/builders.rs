@@ -153,13 +153,13 @@ impl CreateCampaignFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
+    /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires. </p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiry_time(input);
         self
     }
-    /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
+    /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires. </p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn set_expiry_time(
         mut self,
@@ -309,6 +309,27 @@ impl CreateCampaignFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// Appends an item to `dataDestinationConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_data_destination_configs`](Self::set_data_destination_configs).
+    ///
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    pub fn data_destination_configs(mut self, input: crate::types::DataDestinationConfig) -> Self {
+        self.inner = self.inner.data_destination_configs(input);
+        self
+    }
+    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
+    /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
+    pub fn set_data_destination_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    ) -> Self {
+        self.inner = self.inner.set_data_destination_configs(input);
         self
     }
 }

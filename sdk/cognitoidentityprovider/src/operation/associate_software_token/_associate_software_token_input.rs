@@ -24,7 +24,7 @@ impl ::std::fmt::Debug for AssociateSoftwareTokenInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSoftwareTokenInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("session", &self.session);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -84,7 +84,7 @@ impl ::std::fmt::Debug for AssociateSoftwareTokenInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSoftwareTokenInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("session", &self.session);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

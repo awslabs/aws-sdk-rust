@@ -5,7 +5,7 @@ pub use crate::operation::describe_task::_describe_task_input::DescribeTaskInput
 
 /// Fluent builder constructing a request to `DescribeTask`.
 ///
-/// <p>Returns metadata about a task.</p>
+/// <p>Provides information about an DataSync transfer task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -91,12 +91,12 @@ impl DescribeTaskFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_arn(input);
         self

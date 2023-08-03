@@ -6,6 +6,7 @@ pub use crate::operation::create_business_report_schedule::_create_business_repo
 /// Fluent builder constructing a request to `CreateBusinessReportSchedule`.
 ///
 /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBusinessReportScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

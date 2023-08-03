@@ -27,6 +27,14 @@ impl ListOutpostsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `outposts`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_outposts::paginator::ListOutpostsPaginatorItems {
+        crate::operation::list_outposts::paginator::ListOutpostsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -106,6 +114,33 @@ impl ListOutpostsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListOutpostsPaginator`
+///
+/// This is created with [`.items()`](ListOutpostsPaginator::items)
+pub struct ListOutpostsPaginatorItems(ListOutpostsPaginator);
+
+impl ListOutpostsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::Outpost,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_outposts_output_outposts(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

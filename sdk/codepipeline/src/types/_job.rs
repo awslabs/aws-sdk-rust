@@ -10,10 +10,10 @@ pub struct Job {
     /// <p>Other data about a job.</p>
     #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::JobData>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
     #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the AWS account to use when performing the job.</p>
+    /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -26,11 +26,11 @@ impl Job {
     pub fn data(&self) -> ::std::option::Option<&crate::types::JobData> {
         self.data.as_ref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
     pub fn nonce(&self) -> ::std::option::Option<&str> {
         self.nonce.as_deref()
     }
-    /// <p>The ID of the AWS account to use when performing the job.</p>
+    /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -74,22 +74,22 @@ impl JobBuilder {
         self.data = input;
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self
     }
-    /// <p>The ID of the AWS account to use when performing the job.</p>
+    /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the AWS account to use when performing the job.</p>
+    /// <p>The ID of the Amazon Web Services account to use when performing the job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self

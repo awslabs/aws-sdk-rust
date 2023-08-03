@@ -3,49 +3,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberInput {
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    /// <p>The AWS identity used to access your data.</p>
     #[doc(hidden)]
-    pub source_types: ::std::option::Option<::std::vec::Vec<crate::types::SourceType>>,
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    #[doc(hidden)]
-    pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    #[doc(hidden)]
-    pub external_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 or Lake Formation access type.</p>
-    #[doc(hidden)]
-    pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
+    pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Security Lake subscriber account.</p>
     #[doc(hidden)]
     pub subscriber_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description for your subscriber account in Security Lake. </p>
+    /// <p>The description for your subscriber account in Security Lake.</p>
     #[doc(hidden)]
     pub subscriber_description: ::std::option::Option<::std::string::String>,
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    #[doc(hidden)]
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    /// <p>The Amazon S3 or Lake Formation access type.</p>
+    #[doc(hidden)]
+    pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    #[doc(hidden)]
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSubscriberInput {
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn source_types(&self) -> ::std::option::Option<&[crate::types::SourceType]> {
-        self.source_types.as_deref()
-    }
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
-    }
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
-        self.external_id.as_deref()
-    }
-    /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn access_types(&self) -> ::std::option::Option<&[crate::types::AccessType]> {
-        self.access_types.as_deref()
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn subscriber_identity(&self) -> ::std::option::Option<&crate::types::AwsIdentity> {
+        self.subscriber_identity.as_ref()
     }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn subscriber_name(&self) -> ::std::option::Option<&str> {
         self.subscriber_name.as_deref()
     }
-    /// <p>The description for your subscriber account in Security Lake. </p>
+    /// <p>The description for your subscriber account in Security Lake.</p>
     pub fn subscriber_description(&self) -> ::std::option::Option<&str> {
         self.subscriber_description.as_deref()
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSourceResource]> {
+        self.sources.as_deref()
+    }
+    /// <p>The Amazon S3 or Lake Formation access type.</p>
+    pub fn access_types(&self) -> ::std::option::Option<&[crate::types::AccessType]> {
+        self.access_types.as_deref()
+    }
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
     }
 }
 impl CreateSubscriberInput {
@@ -62,51 +62,76 @@ impl CreateSubscriberInput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct CreateSubscriberInputBuilder {
-    pub(crate) source_types: ::std::option::Option<::std::vec::Vec<crate::types::SourceType>>,
-    pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) external_id: ::std::option::Option<::std::string::String>,
-    pub(crate) access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
+    pub(crate) subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     pub(crate) subscriber_name: ::std::option::Option<::std::string::String>,
     pub(crate) subscriber_description: ::std::option::Option<::std::string::String>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub(crate) access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSubscriberInputBuilder {
-    /// Appends an item to `source_types`.
-    ///
-    /// To override the contents of this collection use [`set_source_types`](Self::set_source_types).
-    ///
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn source_types(mut self, input: crate::types::SourceType) -> Self {
-        let mut v = self.source_types.unwrap_or_default();
-        v.push(input);
-        self.source_types = ::std::option::Option::Some(v);
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
+        self.subscriber_identity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_source_types(
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn set_subscriber_identity(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceType>>,
+        input: ::std::option::Option<crate::types::AwsIdentity>,
     ) -> Self {
-        self.source_types = input;
+        self.subscriber_identity = input;
         self
     }
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.account_id = ::std::option::Option::Some(input.into());
+    /// <p>The name of your Security Lake subscriber account.</p>
+    pub fn subscriber_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscriber_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID used to access your data.</p>
-    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
+    /// <p>The name of your Security Lake subscriber account.</p>
+    pub fn set_subscriber_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.subscriber_name = input;
         self
     }
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.external_id = ::std::option::Option::Some(input.into());
+    /// <p>The description for your subscriber account in Security Lake.</p>
+    pub fn subscriber_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscriber_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
+    /// <p>The description for your subscriber account in Security Lake.</p>
+    pub fn set_subscriber_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.subscriber_description = input;
+        self
+    }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
+        let mut v = self.sources.unwrap_or_default();
+        v.push(input);
+        self.sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    ) -> Self {
+        self.sources = input;
         self
     }
     /// Appends an item to `access_types`.
@@ -128,36 +153,23 @@ impl CreateSubscriberInputBuilder {
         self.access_types = input;
         self
     }
-    /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn subscriber_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.subscriber_name = ::std::option::Option::Some(input.into());
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn set_subscriber_name(
+    /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
+    pub fn set_tags(
         mut self,
-        input: ::std::option::Option<::std::string::String>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
-        self.subscriber_name = input;
-        self
-    }
-    /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn subscriber_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.subscriber_description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The description for your subscriber account in Security Lake. </p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.subscriber_description = input;
+        self.tags = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
@@ -168,12 +180,12 @@ impl CreateSubscriberInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
-            source_types: self.source_types,
-            account_id: self.account_id,
-            external_id: self.external_id,
-            access_types: self.access_types,
+            subscriber_identity: self.subscriber_identity,
             subscriber_name: self.subscriber_name,
             subscriber_description: self.subscriber_description,
+            sources: self.sources,
+            access_types: self.access_types,
+            tags: self.tags,
         })
     }
 }

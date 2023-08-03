@@ -5,7 +5,7 @@ pub use crate::operation::deactivate_type::_deactivate_type_input::DeactivateTyp
 
 /// Fluent builder constructing a request to `DeactivateType`.
 ///
-/// <p>Deactivates a public extension that was previously activated in this account and region.</p>
+/// <p>Deactivates a public extension that was previously activated in this account and Region.</p>
 /// <p>Once deactivated, an extension can't be used in any CloudFormation operation. This includes stack update operations where the stack template includes the extension, even if no updates are being made to the extension. In addition, deactivated extensions aren't automatically updated if a new version of the extension is released.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateTypeFluentBuilder {
@@ -92,13 +92,13 @@ impl DeactivateTypeFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
         self
     }
-    /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
@@ -116,13 +116,13 @@ impl DeactivateTypeFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);

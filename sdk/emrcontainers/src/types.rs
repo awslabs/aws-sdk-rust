@@ -5,6 +5,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 
 pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
 
+pub use crate::types::_container_log_rotation_configuration::ContainerLogRotationConfiguration;
+
 pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfiguration;
 
 pub use crate::types::_cloud_watch_monitoring_configuration::CloudWatchMonitoringConfiguration;
@@ -72,6 +74,8 @@ mod _configuration;
 mod _configuration_overrides;
 
 mod _container_info;
+
+mod _container_log_rotation_configuration;
 
 mod _container_provider;
 

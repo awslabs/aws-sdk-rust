@@ -180,14 +180,14 @@ pub enum UpdateTrailError {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(
         crate::types::error::CloudTrailInvalidClientTokenIdException,
     ),
-    /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
+    /// <p>Cannot set a CloudWatch Logs delivery for this Region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::types::error::CloudWatchLogsDeliveryUnavailableException,
     ),
@@ -222,7 +222,7 @@ pub enum UpdateTrailError {
     /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
-    /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
+    /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
     InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the KMS key ARN is not valid.</p>
     InvalidKmsKeyIdException(crate::types::error::InvalidKmsKeyIdException),
@@ -250,7 +250,7 @@ pub enum UpdateTrailError {
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
     KmsKeyDisabledException(crate::types::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(

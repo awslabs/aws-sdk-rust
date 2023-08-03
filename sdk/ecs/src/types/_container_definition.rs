@@ -249,6 +249,11 @@ pub struct ContainerDefinition {
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
+    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    #[doc(hidden)]
+    pub credential_specs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ContainerDefinition {
     /// <p>The name of a container. If you're linking multiple containers together in a task definition, the <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. </p>
@@ -542,6 +547,12 @@ impl ContainerDefinition {
     ) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
         self.firelens_configuration.as_ref()
     }
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
+    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    pub fn credential_specs(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.credential_specs.as_deref()
+    }
 }
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
@@ -601,6 +612,7 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) resource_requirements:
         ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     pub(crate) firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
+    pub(crate) credential_specs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ContainerDefinitionBuilder {
     /// <p>The name of a container. If you're linking multiple containers together in a task definition, the <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. </p>
@@ -1438,6 +1450,32 @@ impl ContainerDefinitionBuilder {
         self.firelens_configuration = input;
         self
     }
+    /// Appends an item to `credential_specs`.
+    ///
+    /// To override the contents of this collection use [`set_credential_specs`](Self::set_credential_specs).
+    ///
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
+    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    pub fn credential_specs(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.credential_specs.unwrap_or_default();
+        v.push(input.into());
+        self.credential_specs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
+    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    pub fn set_credential_specs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.credential_specs = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn build(self) -> crate::types::ContainerDefinition {
         crate::types::ContainerDefinition {
@@ -1480,6 +1518,7 @@ impl ContainerDefinitionBuilder {
             system_controls: self.system_controls,
             resource_requirements: self.resource_requirements,
             firelens_configuration: self.firelens_configuration,
+            credential_specs: self.credential_specs,
         }
     }
 }

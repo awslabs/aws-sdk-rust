@@ -5,15 +5,7 @@ pub use crate::operation::modify_vpc_peering_connection_options::_modify_vpc_pee
 
 /// Fluent builder constructing a request to `ModifyVpcPeeringConnectionOptions`.
 ///
-/// <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
-/// <p>Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:</p>
-/// <ul>
-/// <li> <p>Enable/disable communication over the peering connection between an EC2-Classic instance that's linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li>
-/// <li> <p>Enable/disable communication over the peering connection between instances in your VPC and an EC2-Classic instance that's linked to the peer VPC.</p> </li>
-/// <li> <p>Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p> </li>
-/// </ul>
+/// <p>Modifies the VPC peering connection options on one side of a VPC peering connection.</p>
 /// <p>If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution for queries from the local VPC. This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not available if the peered VPCs are in different Amazon Web Services accounts or different Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must initiate a separate request to modify the peering connection options. For inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC peering options and the Region for the accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester for a VPC peering connection, use the <code>DescribeVpcPeeringConnections</code> command.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptionsFluentBuilder {

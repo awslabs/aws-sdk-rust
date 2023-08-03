@@ -9,14 +9,14 @@ pub struct GetEventDataStoreOutput {
     /// <p>The name of the event data store.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
     /// <p>The advanced event selectors used to select events for the data store.</p>
     #[doc(hidden)]
     pub advanced_event_selectors:
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
@@ -49,7 +49,7 @@ impl GetEventDataStoreOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EventDataStoreStatus> {
         self.status.as_ref()
     }
@@ -59,7 +59,7 @@ impl GetEventDataStoreOutput {
     ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_region_enabled
     }
@@ -149,12 +149,12 @@ impl GetEventDataStoreOutputBuilder {
         self.name = input;
         self
     }
-    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     pub fn status(mut self, input: crate::types::EventDataStoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    /// <p>The status of an event data store.</p>
     pub fn set_status(
         mut self,
         input: ::std::option::Option<crate::types::EventDataStoreStatus>,
@@ -181,12 +181,12 @@ impl GetEventDataStoreOutputBuilder {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self

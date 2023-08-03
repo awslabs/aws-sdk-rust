@@ -95,6 +95,9 @@ pub fn ser_radar_chart_configuration(
         crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_23, var_22)?;
         object_23.finish();
     }
+    if let Some(var_24) = &input.axes_range_scale {
+        object.key("AxesRangeScale").string(var_24.as_str());
+    }
     Ok(())
 }
 
@@ -220,6 +223,19 @@ where
                                     crate::protocol_serde::shape_legend_options::de_legend_options(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "AxesRangeScale" => {
+                                builder = builder.set_axes_range_scale(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::RadarChartAxesRangeScale::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

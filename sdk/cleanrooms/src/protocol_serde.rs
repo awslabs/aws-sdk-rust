@@ -250,6 +250,8 @@ pub(crate) mod shape_aggregation_constraints;
 
 pub(crate) mod shape_analysis_rule_column_list;
 
+pub(crate) mod shape_join_operators_list;
+
 pub(crate) mod shape_scalar_functions_list;
 
 pub(crate) mod shape_analysis_rule_column_name_list;

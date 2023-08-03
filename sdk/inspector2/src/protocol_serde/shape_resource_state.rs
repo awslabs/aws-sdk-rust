@@ -36,6 +36,11 @@ where
                                     crate::protocol_serde::shape_state::de_state(tokens)?,
                                 );
                             }
+                            "lambdaCode" => {
+                                builder = builder.set_lambda_code(
+                                    crate::protocol_serde::shape_state::de_state(tokens)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

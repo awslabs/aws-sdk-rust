@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_skill_from_skill_group::_disassociate_ski
 /// Fluent builder constructing a request to `DisassociateSkillFromSkillGroup`.
 ///
 /// <p>Disassociates a skill from a skill group.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

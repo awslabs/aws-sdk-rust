@@ -7,13 +7,11 @@ pub struct ServiceNowKnowledgeArticleConfiguration {
     /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
     #[doc(hidden)]
     pub crawl_attachments: bool,
-    /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to include knowledge article attachments. Attachments that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     #[doc(hidden)]
     pub include_attachment_file_patterns:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     #[doc(hidden)]
     pub exclude_attachment_file_patterns:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,15 +35,13 @@ impl ServiceNowKnowledgeArticleConfiguration {
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to include knowledge article attachments. Attachments that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn include_attachment_file_patterns(
         &self,
     ) -> ::std::option::Option<&[::std::string::String]> {
         self.include_attachment_file_patterns.as_deref()
     }
-    /// <p>A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn exclude_attachment_file_patterns(
         &self,
     ) -> ::std::option::Option<&[::std::string::String]> {
@@ -110,8 +106,7 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_include_attachment_file_patterns`](Self::set_include_attachment_file_patterns).
     ///
-    /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to include knowledge article attachments. Attachments that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn include_attachment_file_patterns(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -121,8 +116,7 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
         self.include_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to include knowledge article attachments. Attachments that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn set_include_attachment_file_patterns(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -134,8 +128,7 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_exclude_attachment_file_patterns`](Self::set_exclude_attachment_file_patterns).
     ///
-    /// <p>A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn exclude_attachment_file_patterns(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -145,8 +138,7 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
         self.exclude_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    /// <p>The regex is applied to the field specified in the <code>PatternTargetField</code>.</p>
+    /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub fn set_exclude_attachment_file_patterns(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

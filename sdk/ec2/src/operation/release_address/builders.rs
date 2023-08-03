@@ -6,13 +6,10 @@ pub use crate::operation::release_address::_release_address_input::ReleaseAddres
 /// Fluent builder constructing a request to `ReleaseAddress`.
 ///
 /// <p>Releases the specified Elastic IP address.</p>
-/// <p>[EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's associated with. To disassociate an Elastic IP address without releasing it, use <code>DisassociateAddress</code>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
+/// <p>[Default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's associated with. To disassociate an Elastic IP address without releasing it, use <code>DisassociateAddress</code>.</p>
 /// <p>[Nondefault VPC] You must use <code>DisassociateAddress</code> to disassociate the Elastic IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).</p>
 /// <p>After releasing an Elastic IP address, it is released to the IP address pool. Be sure to update your DNS records and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to another Amazon Web Services account.</p>
-/// <p>[EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more information, see <code>AllocateAddress</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>After you release an Elastic IP address, you might be able to recover it. For more information, see <code>AllocateAddress</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReleaseAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -98,7 +95,7 @@ impl ReleaseAddressFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     pub fn allocation_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -106,7 +103,7 @@ impl ReleaseAddressFluentBuilder {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     pub fn set_allocation_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -114,12 +111,12 @@ impl ReleaseAddressFluentBuilder {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self

@@ -3,11 +3,17 @@ pub fn ser_update_app_instance_bot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metadata {
-        object.key("Metadata").string(var_1.as_str());
+    if let Some(var_1) = &input.configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("Configuration").start_object();
+        crate::protocol_serde::shape_configuration::ser_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    if let Some(var_3) = &input.metadata {
+        object.key("Metadata").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
     }
     Ok(())
 }

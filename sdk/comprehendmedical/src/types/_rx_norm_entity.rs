@@ -28,10 +28,10 @@ pub struct RxNormEntity {
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
     #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::RxNormAttribute>>,
-    /// <p> Contextual information for the entity.</p>
+    /// <p>Contextual information for the entity.</p>
     #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     #[doc(hidden)]
     pub rx_norm_concepts: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,
 }
@@ -68,11 +68,11 @@ impl RxNormEntity {
     pub fn attributes(&self) -> ::std::option::Option<&[crate::types::RxNormAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p> Contextual information for the entity.</p>
+    /// <p>Contextual information for the entity.</p>
     pub fn traits(&self) -> ::std::option::Option<&[crate::types::RxNormTrait]> {
         self.traits.as_deref()
     }
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn rx_norm_concepts(&self) -> ::std::option::Option<&[crate::types::RxNormConcept]> {
         self.rx_norm_concepts.as_deref()
     }
@@ -202,14 +202,14 @@ impl RxNormEntityBuilder {
     ///
     /// To override the contents of this collection use [`set_traits`](Self::set_traits).
     ///
-    /// <p> Contextual information for the entity.</p>
+    /// <p>Contextual information for the entity.</p>
     pub fn traits(mut self, input: crate::types::RxNormTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
         v.push(input);
         self.traits = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Contextual information for the entity.</p>
+    /// <p>Contextual information for the entity.</p>
     pub fn set_traits(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
@@ -221,14 +221,14 @@ impl RxNormEntityBuilder {
     ///
     /// To override the contents of this collection use [`set_rx_norm_concepts`](Self::set_rx_norm_concepts).
     ///
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn rx_norm_concepts(mut self, input: crate::types::RxNormConcept) -> Self {
         let mut v = self.rx_norm_concepts.unwrap_or_default();
         v.push(input);
         self.rx_norm_concepts = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+    /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn set_rx_norm_concepts(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RxNormConcept>>,

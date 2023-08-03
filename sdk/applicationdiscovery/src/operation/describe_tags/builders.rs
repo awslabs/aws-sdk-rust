@@ -12,7 +12,7 @@ pub use crate::operation::describe_tags::_describe_tags_input::DescribeTagsInput
 /// <li> <p>tagValue</p> </li>
 /// <li> <p>configurationId</p> </li>
 /// </ul>
-/// <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
+/// <p>Also, all configuration items associated with your user that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

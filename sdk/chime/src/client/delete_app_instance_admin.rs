@@ -7,6 +7,9 @@ impl super::Client {
     ///   - [`app_instance_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminFluentBuilder::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     /// - On success, responds with [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceAdminError>`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError)
+    #[deprecated(
+        note = "Replaced by DeleteAppInstanceAdmin in the Amazon Chime SDK Identity Namespace"
+    )]
     pub fn delete_app_instance_admin(
         &self,
     ) -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminFluentBuilder

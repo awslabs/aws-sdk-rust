@@ -5,10 +5,11 @@ pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_cla
 
 /// Fluent builder constructing a request to `DisableVpcClassicLinkDnsSupport`.
 ///
-/// <p>Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP addresses when addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>You must specify a VPC ID in the request.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP addresses when addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked.</p>
+/// <p>You must specify a VPC ID in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkDnsSupportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

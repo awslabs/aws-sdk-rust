@@ -5,9 +5,10 @@ pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_in
 
 /// Fluent builder constructing a request to `DisableVpcClassicLink`.
 ///
-/// <p>Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has EC2-Classic instances linked to it.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has EC2-Classic instances linked to it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

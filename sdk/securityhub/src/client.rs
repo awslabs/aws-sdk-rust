@@ -216,9 +216,13 @@ mod accept_administrator_invitation;
 
 mod accept_invitation;
 
+mod batch_delete_automation_rules;
+
 mod batch_disable_standards;
 
 mod batch_enable_standards;
+
+mod batch_get_automation_rules;
 
 mod batch_get_security_controls;
 
@@ -226,11 +230,15 @@ mod batch_get_standards_control_associations;
 
 mod batch_import_findings;
 
+mod batch_update_automation_rules;
+
 mod batch_update_findings;
 
 mod batch_update_standards_control_associations;
 
 mod create_action_target;
+
+mod create_automation_rule;
 
 mod create_finding_aggregator;
 
@@ -329,6 +337,8 @@ mod get_master_account;
 mod get_members;
 
 mod invite_members;
+
+mod list_automation_rules;
 
 mod list_enabled_products_for_import;
 

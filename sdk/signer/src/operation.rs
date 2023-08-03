@@ -10,6 +10,9 @@ pub mod cancel_signing_profile;
 /// Types for the `DescribeSigningJob` operation.
 pub mod describe_signing_job;
 
+/// Types for the `GetRevocationStatus` operation.
+pub mod get_revocation_status;
+
 /// Types for the `GetSigningPlatform` operation.
 pub mod get_signing_platform;
 
@@ -42,6 +45,9 @@ pub mod revoke_signature;
 
 /// Types for the `RevokeSigningProfile` operation.
 pub mod revoke_signing_profile;
+
+/// Types for the `SignPayload` operation.
+pub mod sign_payload;
 
 /// Types for the `StartSigningJob` operation.
 pub mod start_signing_job;

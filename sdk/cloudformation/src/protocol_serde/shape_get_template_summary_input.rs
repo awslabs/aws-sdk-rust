@@ -32,6 +32,13 @@ pub fn ser_get_template_summary_input_input(
     if let Some(var_10) = &input.call_as {
         scope_9.string(var_10.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("TemplateSummaryConfig");
+    if let Some(var_12) = &input.template_summary_config {
+        crate::protocol_serde::shape_template_summary_config::ser_template_summary_config(
+            scope_11, var_12,
+        )?;
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

@@ -239,6 +239,18 @@ pub use crate::types::_routing_profile_search_criteria::RoutingProfileSearchCrit
 
 pub use crate::types::_routing_profile_search_filter::RoutingProfileSearchFilter;
 
+pub use crate::types::_tag_set::TagSet;
+
+pub use crate::types::_resource_tags_search_criteria::ResourceTagsSearchCriteria;
+
+pub use crate::types::_tag_search_condition::TagSearchCondition;
+
+pub use crate::types::_quick_connect::QuickConnect;
+
+pub use crate::types::_quick_connect_search_criteria::QuickConnectSearchCriteria;
+
+pub use crate::types::_quick_connect_search_filter::QuickConnectSearchFilter;
+
 pub use crate::types::_queue::Queue;
 
 pub use crate::types::_queue_search_criteria::QueueSearchCriteria;
@@ -246,6 +258,18 @@ pub use crate::types::_queue_search_criteria::QueueSearchCriteria;
 pub use crate::types::_searchable_queue_type::SearchableQueueType;
 
 pub use crate::types::_queue_search_filter::QueueSearchFilter;
+
+pub use crate::types::_prompt::Prompt;
+
+pub use crate::types::_prompt_search_criteria::PromptSearchCriteria;
+
+pub use crate::types::_prompt_search_filter::PromptSearchFilter;
+
+pub use crate::types::_hours_of_operation::HoursOfOperation;
+
+pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteria;
+
+pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilter;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummary;
 
@@ -451,10 +475,6 @@ pub use crate::types::_rule::Rule;
 
 pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSource;
 
-pub use crate::types::_quick_connect::QuickConnect;
-
-pub use crate::types::_prompt::Prompt;
-
 pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummary;
 
 pub use crate::types::_phone_number_status::PhoneNumberStatus;
@@ -464,8 +484,6 @@ pub use crate::types::_phone_number_workflow_status::PhoneNumberWorkflowStatus;
 pub use crate::types::_instance::Instance;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReason;
-
-pub use crate::types::_hours_of_operation::HoursOfOperation;
 
 pub use crate::types::_evaluation_form::EvaluationForm;
 
@@ -703,6 +721,10 @@ mod _hours_of_operation_config;
 
 mod _hours_of_operation_days;
 
+mod _hours_of_operation_search_criteria;
+
+mod _hours_of_operation_search_filter;
+
 mod _hours_of_operation_summary;
 
 mod _hours_of_operation_time_slice;
@@ -805,6 +827,10 @@ mod _problem_detail;
 
 mod _prompt;
 
+mod _prompt_search_criteria;
+
+mod _prompt_search_filter;
+
 mod _prompt_summary;
 
 mod _property_validation_exception_property;
@@ -833,6 +859,10 @@ mod _quick_connect;
 
 mod _quick_connect_config;
 
+mod _quick_connect_search_criteria;
+
+mod _quick_connect_search_filter;
+
 mod _quick_connect_summary;
 
 mod _quick_connect_type;
@@ -850,6 +880,8 @@ mod _reference_type;
 mod _rehydration_type;
 
 mod _required_field_info;
+
+mod _resource_tags_search_criteria;
 
 mod _resource_type;
 
@@ -916,6 +948,10 @@ mod _string_condition;
 mod _string_reference;
 
 mod _tag_condition;
+
+mod _tag_search_condition;
+
+mod _tag_set;
 
 mod _task_action_definition;
 

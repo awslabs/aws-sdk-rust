@@ -43,6 +43,9 @@ pub mod put_resource_permission;
 /// Types for the `RegisterApplication` operation.
 pub mod register_application;
 
+/// Types for the `StartApplicationRefresh` operation.
+pub mod start_application_refresh;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

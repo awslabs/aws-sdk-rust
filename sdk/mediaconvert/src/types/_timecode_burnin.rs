@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimecodeBurnin {
-    /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     #[doc(hidden)]
     pub font_size: ::std::option::Option<i32>,
-    /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+    /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
     #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
-    /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurnin {
-    /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     pub fn font_size(&self) -> ::std::option::Option<i32> {
         self.font_size
     }
-    /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+    /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
     pub fn position(&self) -> ::std::option::Option<&crate::types::TimecodeBurninPosition> {
         self.position.as_ref()
     }
-    /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -46,22 +46,22 @@ pub struct TimecodeBurninBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurninBuilder {
-    /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     pub fn font_size(mut self, input: i32) -> Self {
         self.font_size = ::std::option::Option::Some(input);
         self
     }
-    /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     pub fn set_font_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.font_size = input;
         self
     }
-    /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+    /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
         self
     }
-    /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
+    /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
     pub fn set_position(
         mut self,
         input: ::std::option::Option<crate::types::TimecodeBurninPosition>,
@@ -69,12 +69,12 @@ impl TimecodeBurninBuilder {
         self.position = input;
         self
     }
-    /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self

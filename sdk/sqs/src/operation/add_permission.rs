@@ -172,7 +172,7 @@ pub type AddPermissionErrorKind = AddPermissionError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AddPermissionError {
-    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
+    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::types::error::OverLimit),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

@@ -63,6 +63,11 @@ where
                                 builder = builder
                                     .set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                             }
+                            "integrationConfiguration" => {
+                                builder = builder.set_integration_configuration(
+                                    crate::protocol_serde::shape_session_integration_configuration::de_session_integration_configuration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

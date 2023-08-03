@@ -12,29 +12,44 @@ pub fn ser_create_subscriber_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.account_id {
-        object.key("accountId").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.external_id {
-        object.key("externalId").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.source_types {
-        let mut array_7 = object.key("sourceTypes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.sources {
+        let mut array_5 = object.key("sources").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_source_type::ser_source_type(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_log_source_resource::ser_log_source_resource(
+                    &mut object_7,
+                    item_6,
+                )?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.subscriber_description {
-        object.key("subscriberDescription").string(var_10.as_str());
+    if let Some(var_8) = &input.subscriber_description {
+        object.key("subscriberDescription").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.subscriber_identity {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("subscriberIdentity").start_object();
+        crate::protocol_serde::shape_aws_identity::ser_aws_identity(&mut object_10, var_9)?;
+        object_10.finish();
     }
     if let Some(var_11) = &input.subscriber_name {
         object.key("subscriberName").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
     }
     Ok(())
 }

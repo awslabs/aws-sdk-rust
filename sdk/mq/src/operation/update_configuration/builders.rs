@@ -115,12 +115,12 @@ impl UpdateConfigurationFluentBuilder {
         self.inner = self.inner.set_configuration_id(input);
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
-    /// <p>Required. The base64-encoded XML configuration.</p>
+    /// <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self

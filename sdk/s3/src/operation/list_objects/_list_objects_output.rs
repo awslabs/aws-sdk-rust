@@ -9,7 +9,9 @@ pub struct ListObjectsOutput {
     /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
+    /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
+    /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
+    /// </note>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about each object returned.</p>
@@ -28,15 +30,18 @@ pub struct ListObjectsOutput {
     #[doc(hidden)]
     pub max_keys: i32,
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
-    /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    #[doc(hidden)]
+    pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -49,7 +54,9 @@ impl ListObjectsOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
+    /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
+    /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
+    /// </note>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -74,16 +81,20 @@ impl ListObjectsOutput {
         self.max_keys
     }
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
-    /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
         self.encoding_type.as_ref()
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+        self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListObjectsOutput {
@@ -119,6 +130,7 @@ pub struct ListObjectsOutputBuilder {
     pub(crate) max_keys: ::std::option::Option<i32>,
     pub(crate) common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
+    pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -143,12 +155,16 @@ impl ListObjectsOutputBuilder {
         self.marker = input;
         self
     }
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
+    /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
+    /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
+    /// </note>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
+    /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
+    /// <p>This element is returned only if you have the <code>delimiter</code> request parameter specified. If the response does not include the <code>NextMarker</code> element and it is truncated, you can use the value of the last <code>Key</code> element in the response as the <code>marker</code> parameter in the subsequent request to get the next set of object keys.</p>
+    /// </note>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
@@ -217,10 +233,10 @@ impl ListObjectsOutputBuilder {
     /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
     ///
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
-    /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn common_prefixes(mut self, input: crate::types::CommonPrefix) -> Self {
         let mut v = self.common_prefixes.unwrap_or_default();
         v.push(input);
@@ -228,10 +244,10 @@ impl ListObjectsOutputBuilder {
         self
     }
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
-    /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn set_common_prefixes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
@@ -250,6 +266,19 @@ impl ListObjectsOutputBuilder {
         input: ::std::option::Option<crate::types::EncodingType>,
     ) -> Self {
         self.encoding_type = input;
+        self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
+        self.request_charged = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn set_request_charged(
+        mut self,
+        input: ::std::option::Option<crate::types::RequestCharged>,
+    ) -> Self {
+        self.request_charged = input;
         self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -286,6 +315,7 @@ impl ListObjectsOutputBuilder {
             max_keys: self.max_keys.unwrap_or_default(),
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,
+            request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

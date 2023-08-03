@@ -246,6 +246,8 @@ pub mod customize;
 
 mod describe_signing_job;
 
+mod get_revocation_status;
+
 mod get_signing_platform;
 
 mod get_signing_profile;
@@ -267,6 +269,8 @@ mod remove_profile_permission;
 mod revoke_signature;
 
 mod revoke_signing_profile;
+
+mod sign_payload;
 
 mod start_signing_job;
 

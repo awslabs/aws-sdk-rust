@@ -84,6 +84,11 @@ where
                                     crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?,
                                 );
                             }
+                            "DeploymentRecommendation" => {
+                                builder = builder.set_deployment_recommendation(
+                                    crate::protocol_serde::shape_deployment_recommendation::de_deployment_recommendation(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

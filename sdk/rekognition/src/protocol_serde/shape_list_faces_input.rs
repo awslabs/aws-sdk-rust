@@ -15,5 +15,17 @@ pub fn ser_list_faces_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.user_id {
+        object.key("UserId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.face_ids {
+        let mut array_6 = object.key("FaceIds").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

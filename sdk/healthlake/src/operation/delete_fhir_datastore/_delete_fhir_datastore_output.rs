@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreOutput {
-    /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p>The AWS-generated ID for the data store to be deleted.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted. </p>
     #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
-    /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     #[doc(hidden)]
     pub datastore_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteFhirDatastoreOutput {
-    /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
         self.datastore_arn.as_deref()
     }
-    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted. </p>
     pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
-    /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub fn datastore_endpoint(&self) -> ::std::option::Option<&str> {
         self.datastore_endpoint.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct DeleteFhirDatastoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteFhirDatastoreOutputBuilder {
-    /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    /// <p>The AWS-generated ID for the data store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn datastore_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -80,7 +80,7 @@ impl DeleteFhirDatastoreOutputBuilder {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn set_datastore_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -88,12 +88,12 @@ impl DeleteFhirDatastoreOutputBuilder {
         self.datastore_arn = input;
         self
     }
-    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted. </p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
+    /// <p>The status of the data store that the user has requested to be deleted. </p>
     pub fn set_datastore_status(
         mut self,
         input: ::std::option::Option<crate::types::DatastoreStatus>,
@@ -101,7 +101,7 @@ impl DeleteFhirDatastoreOutputBuilder {
         self.datastore_status = input;
         self
     }
-    /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub fn datastore_endpoint(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -109,7 +109,7 @@ impl DeleteFhirDatastoreOutputBuilder {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     pub fn set_datastore_endpoint(
         mut self,
         input: ::std::option::Option<::std::string::String>,

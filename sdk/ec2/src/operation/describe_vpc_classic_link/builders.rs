@@ -5,9 +5,10 @@ pub use crate::operation::describe_vpc_classic_link::_describe_vpc_classic_link_
 
 /// Fluent builder constructing a request to `DescribeVpcClassicLink`.
 ///
-/// <p>Describes the ClassicLink status of one or more VPCs.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <note>
+/// <p>This action is deprecated.</p>
 /// </note>
+/// <p>Describes the ClassicLink status of the specified VPCs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -106,7 +107,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -122,7 +123,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>is-classic-link-enabled</code> - Whether the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
@@ -155,12 +156,12 @@ impl DescribeVpcClassicLinkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ids(input.into());
         self
     }
-    /// <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+    /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
     pub fn set_vpc_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

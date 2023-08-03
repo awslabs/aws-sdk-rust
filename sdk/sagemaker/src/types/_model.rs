@@ -34,6 +34,9 @@ pub struct Model {
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    #[doc(hidden)]
+    pub deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl Model {
     /// <p>The name of the model.</p>
@@ -78,6 +81,12 @@ impl Model {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DeploymentRecommendation> {
+        self.deployment_recommendation.as_ref()
+    }
 }
 impl Model {
     /// Creates a new builder-style object to manufacture [`Model`](crate::types::Model).
@@ -104,6 +113,8 @@ pub struct ModelBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) deployment_recommendation:
+        ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl ModelBuilder {
     /// <p>The name of the model.</p>
@@ -242,6 +253,22 @@ impl ModelBuilder {
         self.tags = input;
         self
     }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(
+        mut self,
+        input: crate::types::DeploymentRecommendation,
+    ) -> Self {
+        self.deployment_recommendation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn set_deployment_recommendation(
+        mut self,
+        input: ::std::option::Option<crate::types::DeploymentRecommendation>,
+    ) -> Self {
+        self.deployment_recommendation = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).
     pub fn build(self) -> crate::types::Model {
         crate::types::Model {
@@ -255,6 +282,7 @@ impl ModelBuilder {
             model_arn: self.model_arn,
             enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
             tags: self.tags,
+            deployment_recommendation: self.deployment_recommendation,
         }
     }
 }

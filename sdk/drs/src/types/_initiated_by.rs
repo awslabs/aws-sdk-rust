@@ -12,12 +12,15 @@
 /// ```text
 /// # let initiatedby = unimplemented!();
 /// match initiatedby {
+///     InitiatedBy::AssociateNetworkRecovery => { /* ... */ },
+///     InitiatedBy::CreateNetworkRecovery => { /* ... */ },
 ///     InitiatedBy::Diagnostic => { /* ... */ },
 ///     InitiatedBy::Failback => { /* ... */ },
 ///     InitiatedBy::StartDrill => { /* ... */ },
 ///     InitiatedBy::StartRecovery => { /* ... */ },
 ///     InitiatedBy::TargetAccount => { /* ... */ },
 ///     InitiatedBy::TerminateRecoveryInstances => { /* ... */ },
+///     InitiatedBy::UpdateNetworkRecovery => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +55,10 @@
 )]
 pub enum InitiatedBy {
     #[allow(missing_docs)] // documentation missing in model
+    AssociateNetworkRecovery,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateNetworkRecovery,
+    #[allow(missing_docs)] // documentation missing in model
     Diagnostic,
     #[allow(missing_docs)] // documentation missing in model
     Failback,
@@ -63,18 +70,23 @@ pub enum InitiatedBy {
     TargetAccount,
     #[allow(missing_docs)] // documentation missing in model
     TerminateRecoveryInstances,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateNetworkRecovery,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for InitiatedBy {
     fn from(s: &str) -> Self {
         match s {
+            "ASSOCIATE_NETWORK_RECOVERY" => InitiatedBy::AssociateNetworkRecovery,
+            "CREATE_NETWORK_RECOVERY" => InitiatedBy::CreateNetworkRecovery,
             "DIAGNOSTIC" => InitiatedBy::Diagnostic,
             "FAILBACK" => InitiatedBy::Failback,
             "START_DRILL" => InitiatedBy::StartDrill,
             "START_RECOVERY" => InitiatedBy::StartRecovery,
             "TARGET_ACCOUNT" => InitiatedBy::TargetAccount,
             "TERMINATE_RECOVERY_INSTANCES" => InitiatedBy::TerminateRecoveryInstances,
+            "UPDATE_NETWORK_RECOVERY" => InitiatedBy::UpdateNetworkRecovery,
             other => InitiatedBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -90,24 +102,30 @@ impl InitiatedBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InitiatedBy::AssociateNetworkRecovery => "ASSOCIATE_NETWORK_RECOVERY",
+            InitiatedBy::CreateNetworkRecovery => "CREATE_NETWORK_RECOVERY",
             InitiatedBy::Diagnostic => "DIAGNOSTIC",
             InitiatedBy::Failback => "FAILBACK",
             InitiatedBy::StartDrill => "START_DRILL",
             InitiatedBy::StartRecovery => "START_RECOVERY",
             InitiatedBy::TargetAccount => "TARGET_ACCOUNT",
             InitiatedBy::TerminateRecoveryInstances => "TERMINATE_RECOVERY_INSTANCES",
+            InitiatedBy::UpdateNetworkRecovery => "UPDATE_NETWORK_RECOVERY",
             InitiatedBy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ASSOCIATE_NETWORK_RECOVERY",
+            "CREATE_NETWORK_RECOVERY",
             "DIAGNOSTIC",
             "FAILBACK",
             "START_DRILL",
             "START_RECOVERY",
             "TARGET_ACCOUNT",
             "TERMINATE_RECOVERY_INSTANCES",
+            "UPDATE_NETWORK_RECOVERY",
         ]
     }
 }

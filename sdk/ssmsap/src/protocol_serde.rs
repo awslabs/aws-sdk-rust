@@ -38,6 +38,8 @@ pub(crate) mod shape_put_resource_permission;
 
 pub(crate) mod shape_register_application;
 
+pub(crate) mod shape_start_application_refresh;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -84,6 +86,8 @@ pub(crate) mod shape_register_application_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_start_application_refresh_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_application_settings_input;
@@ -95,6 +99,8 @@ pub(crate) mod shape_application;
 pub(crate) mod shape_application_credential;
 
 pub(crate) mod shape_application_summary_list;
+
+pub(crate) mod shape_backint_config;
 
 pub(crate) mod shape_component;
 
@@ -118,6 +124,8 @@ pub(crate) mod shape_application_credential_list;
 
 pub(crate) mod shape_application_summary;
 
+pub(crate) mod shape_associated_host;
+
 pub(crate) mod shape_component_id_list;
 
 pub(crate) mod shape_component_summary;
@@ -129,5 +137,7 @@ pub(crate) mod shape_database_summary;
 pub(crate) mod shape_host_list;
 
 pub(crate) mod shape_operation_properties;
+
+pub(crate) mod shape_resilience;
 
 pub(crate) mod shape_host;

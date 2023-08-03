@@ -170,6 +170,7 @@ impl From<crate::operation::batch_import_evidence_to_assessment_control::BatchIm
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1087,6 +1088,51 @@ impl From<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEviden
             crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError> for Error {
+    fn from(
+        err: crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
+    ) -> Self {
+        match err {
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

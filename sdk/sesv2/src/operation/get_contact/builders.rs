@@ -107,7 +107,7 @@ impl GetContactFluentBuilder {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -115,7 +115,7 @@ impl GetContactFluentBuilder {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     pub fn set_email_address(
         mut self,
         input: ::std::option::Option<::std::string::String>,

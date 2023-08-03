@@ -27,6 +27,8 @@ pub use crate::types::_set_stat_option::SetStatOption;
 
 pub use crate::types::_tls_session_resumption_mode::TlsSessionResumptionMode;
 
+pub use crate::types::_sftp_connector_config::SftpConnectorConfig;
+
 pub use crate::types::_as2_connector_config::As2ConnectorConfig;
 
 pub use crate::types::_mdn_response::MdnResponse;
@@ -276,6 +278,8 @@ mod _service_metadata;
 mod _set_stat_option;
 
 mod _sftp_authentication_methods;
+
+mod _sftp_connector_config;
 
 mod _signing_alg;
 

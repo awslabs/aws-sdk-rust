@@ -6,7 +6,7 @@ pub struct UpdateContactInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
@@ -24,7 +24,7 @@ impl UpdateContactInput {
     pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -78,7 +78,7 @@ impl UpdateContactInputBuilder {
         self.contact_list_name = input;
         self
     }
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     pub fn email_address(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -86,7 +86,7 @@ impl UpdateContactInputBuilder {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The contact's email addres.</p>
+    /// <p>The contact's email address.</p>
     pub fn set_email_address(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -19,6 +19,9 @@ pub struct JobLogEventData {
     /// <p>Properties of a conversion job</p>
     #[doc(hidden)]
     pub conversion_properties: ::std::option::Option<crate::types::ConversionProperties>,
+    /// <p>Properties of resource related to a job event.</p>
+    #[doc(hidden)]
+    pub event_resource_data: ::std::option::Option<crate::types::EventResourceData>,
 }
 impl JobLogEventData {
     /// <p>The ID of a Source Server.</p>
@@ -43,6 +46,10 @@ impl JobLogEventData {
     ) -> ::std::option::Option<&crate::types::ConversionProperties> {
         self.conversion_properties.as_ref()
     }
+    /// <p>Properties of resource related to a job event.</p>
+    pub fn event_resource_data(&self) -> ::std::option::Option<&crate::types::EventResourceData> {
+        self.event_resource_data.as_ref()
+    }
 }
 impl JobLogEventData {
     /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::types::JobLogEventData).
@@ -62,6 +69,7 @@ pub struct JobLogEventDataBuilder {
     pub(crate) target_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
     pub(crate) conversion_properties: ::std::option::Option<crate::types::ConversionProperties>,
+    pub(crate) event_resource_data: ::std::option::Option<crate::types::EventResourceData>,
 }
 impl JobLogEventDataBuilder {
     /// <p>The ID of a Source Server.</p>
@@ -135,6 +143,19 @@ impl JobLogEventDataBuilder {
         self.conversion_properties = input;
         self
     }
+    /// <p>Properties of resource related to a job event.</p>
+    pub fn event_resource_data(mut self, input: crate::types::EventResourceData) -> Self {
+        self.event_resource_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Properties of resource related to a job event.</p>
+    pub fn set_event_resource_data(
+        mut self,
+        input: ::std::option::Option<crate::types::EventResourceData>,
+    ) -> Self {
+        self.event_resource_data = input;
+        self
+    }
     /// Consumes the builder and constructs a [`JobLogEventData`](crate::types::JobLogEventData).
     pub fn build(self) -> crate::types::JobLogEventData {
         crate::types::JobLogEventData {
@@ -143,6 +164,7 @@ impl JobLogEventDataBuilder {
             target_instance_id: self.target_instance_id,
             raw_error: self.raw_error,
             conversion_properties: self.conversion_properties,
+            event_resource_data: self.event_resource_data,
         }
     }
 }

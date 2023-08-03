@@ -257,6 +257,13 @@ pub enum ProfileFileError {
         /// The name of the provider
         name: String,
     },
+
+    /// Feature not enabled
+    #[non_exhaustive]
+    FeatureNotEnabled {
+        /// The feature or comma delimited list of features that must be enabled
+        feature: Cow<'static, str>,
+    },
 }
 
 impl ProfileFileError {
@@ -309,6 +316,12 @@ impl Display for ProfileFileError {
                 "profile `{}` did not contain credential information",
                 profile
             ),
+            ProfileFileError::FeatureNotEnabled { feature: message } => {
+                write!(
+                    f,
+                    "This behavior requires following cargo feature(s) enabled: {message}",
+                )
+            }
         }
     }
 }

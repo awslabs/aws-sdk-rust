@@ -41,6 +41,13 @@ where
                                     )?,
                                 );
                             }
+                            "lambdaCode" => {
+                                builder = builder.set_lambda_code(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -75,6 +82,9 @@ pub fn ser_auto_enable(
     }
     if let Some(var_3) = &input.lambda {
         object.key("lambda").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.lambda_code {
+        object.key("lambdaCode").boolean(*var_4);
     }
     Ok(())
 }

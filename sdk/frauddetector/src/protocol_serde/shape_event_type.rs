@@ -97,6 +97,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "eventOrchestration" => {
+                                builder = builder.set_event_orchestration(
+                                    crate::protocol_serde::shape_event_orchestration::de_event_orchestration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

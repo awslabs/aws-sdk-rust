@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`software_version(impl ::std::convert::Into<String>)`](crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::software_version) / [`set_software_version(Option<String>)`](crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::set_software_version): <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     /// - On success, responds with [`UpdateGatewayOutput`](crate::operation::update_gateway::UpdateGatewayOutput)
     /// - On failure, responds with [`SdkError<UpdateGatewayError>`](crate::operation::update_gateway::UpdateGatewayError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_gateway(
         &self,
     ) -> crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder {

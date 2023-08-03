@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -23,7 +23,7 @@ pub struct DescribeInternetGatewaysInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     #[doc(hidden)]
     pub internet_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -35,7 +35,7 @@ pub struct DescribeInternetGatewaysInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeInternetGatewaysInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -57,7 +57,7 @@ impl DescribeInternetGatewaysInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     pub fn internet_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.internet_gateway_ids.as_deref()
@@ -97,7 +97,7 @@ impl DescribeInternetGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -118,7 +118,7 @@ impl DescribeInternetGatewaysInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>available</code>). Present only if a VPC is attached.</p> </li>
     /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
@@ -154,7 +154,7 @@ impl DescribeInternetGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_internet_gateway_ids`](Self::set_internet_gateway_ids).
     ///
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     pub fn internet_gateway_ids(
         mut self,
@@ -165,7 +165,7 @@ impl DescribeInternetGatewaysInputBuilder {
         self.internet_gateway_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more internet gateway IDs.</p>
+    /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
     pub fn set_internet_gateway_ids(
         mut self,

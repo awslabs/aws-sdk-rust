@@ -5,7 +5,7 @@ pub use crate::operation::get_evidence_folder::_get_evidence_folder_input::GetEv
 
 /// Fluent builder constructing a request to `GetEvidenceFolder`.
 ///
-/// <p> Returns an evidence folder from the specified assessment in Audit Manager. </p>
+/// <p> Gets an evidence folder from a specified assessment in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,7 +5,13 @@ pub use crate::operation::associate_phone_numbers_with_voice_connector::_associa
 
 /// Fluent builder constructing a request to `AssociatePhoneNumbersWithVoiceConnector`.
 ///
-/// <p>Associates phone numbers with the specified Amazon Chime Voice Connector.</p>
+/// <p>Associates phone numbers with the specified Amazon Chime Voice Connector.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_AssociatePhoneNumbersWithVoiceConnector.html">AssociatePhoneNumbersWithVoiceConnector</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by AssociatePhoneNumbersWithVoiceConnector in the Amazon Chime SDK Voice Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

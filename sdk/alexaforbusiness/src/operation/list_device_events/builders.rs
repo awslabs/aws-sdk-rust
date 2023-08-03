@@ -6,6 +6,7 @@ pub use crate::operation::list_device_events::_list_device_events_input::ListDev
 /// Fluent builder constructing a request to `ListDeviceEvents`.
 ///
 /// <p>Lists the device event history, including device connection status, for up to 30 days.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeviceEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

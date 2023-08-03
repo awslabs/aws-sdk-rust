@@ -6,7 +6,7 @@ pub struct CreateVariableInput {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>The source of the data.</p>
@@ -31,7 +31,7 @@ impl CreateVariableInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
         self.data_type.as_ref()
     }
@@ -89,12 +89,12 @@ impl CreateVariableInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type.</p>
+    /// <p>The data type of the variable.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
         self.data_type = input;
         self

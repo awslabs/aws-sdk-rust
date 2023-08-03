@@ -185,4 +185,19 @@ impl DescribeProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_verbose(input);
         self
     }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn include_provisioning_artifact_parameters(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_provisioning_artifact_parameters(input);
+        self
+    }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn set_include_provisioning_artifact_parameters(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .set_include_provisioning_artifact_parameters(input);
+        self
+    }
 }

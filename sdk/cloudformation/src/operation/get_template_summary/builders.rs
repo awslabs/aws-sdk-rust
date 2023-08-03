@@ -181,4 +181,17 @@ impl GetTemplateSummaryFluentBuilder {
         self.inner = self.inner.set_call_as(input);
         self
     }
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    pub fn template_summary_config(mut self, input: crate::types::TemplateSummaryConfig) -> Self {
+        self.inner = self.inner.template_summary_config(input);
+        self
+    }
+    /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+    pub fn set_template_summary_config(
+        mut self,
+        input: ::std::option::Option<crate::types::TemplateSummaryConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_template_summary_config(input);
+        self
+    }
 }

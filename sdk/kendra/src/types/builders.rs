@@ -161,9 +161,19 @@ pub use crate::types::_relevance_feedback::RelevanceFeedbackBuilder;
 
 pub use crate::types::_click_feedback::ClickFeedbackBuilder;
 
-pub use crate::types::_featured_results_item::FeaturedResultsItemBuilder;
+pub use crate::types::_retrieve_result_item::RetrieveResultItemBuilder;
 
 pub use crate::types::_document_attribute::DocumentAttributeBuilder;
+
+pub use crate::types::_user_context::UserContextBuilder;
+
+pub use crate::types::_data_source_group::DataSourceGroupBuilder;
+
+pub use crate::types::_document_relevance_configuration::DocumentRelevanceConfigurationBuilder;
+
+pub use crate::types::_attribute_filter::AttributeFilterBuilder;
+
+pub use crate::types::_featured_results_item::FeaturedResultsItemBuilder;
 
 pub use crate::types::_text_with_highlights::TextWithHighlightsBuilder;
 
@@ -195,17 +205,9 @@ pub use crate::types::_score_attributes::ScoreAttributesBuilder;
 
 pub use crate::types::_spell_correction_configuration::SpellCorrectionConfigurationBuilder;
 
-pub use crate::types::_user_context::UserContextBuilder;
-
-pub use crate::types::_data_source_group::DataSourceGroupBuilder;
-
 pub use crate::types::_sorting_configuration::SortingConfigurationBuilder;
 
-pub use crate::types::_document_relevance_configuration::DocumentRelevanceConfigurationBuilder;
-
 pub use crate::types::_facet::FacetBuilder;
-
-pub use crate::types::_attribute_filter::AttributeFilterBuilder;
 
 pub use crate::types::_group_members::GroupMembersBuilder;
 

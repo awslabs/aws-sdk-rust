@@ -425,4 +425,21 @@ impl CreateWorkloadFluentBuilder {
         self.inner = self.inner.set_applications(input);
         self
     }
+    /// Appends an item to `ProfileArns`.
+    ///
+    /// To override the contents of this collection use [`set_profile_arns`](Self::set_profile_arns).
+    ///
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn profile_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.profile_arns(input.into());
+        self
+    }
+    /// <p>The list of profile ARNs associated with the workload.</p>
+    pub fn set_profile_arns(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_profile_arns(input);
+        self
+    }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::list_phi_detection_jobs::_list_phi_detection_jobs_inpu
 
 /// Fluent builder constructing a request to `ListPHIDetectionJobs`.
 ///
-/// <p>Gets a list of protected health information (PHI) detection jobs that you have submitted.</p>
+/// <p>Gets a list of protected health information (PHI) detection jobs you have submitted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPHIDetectionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

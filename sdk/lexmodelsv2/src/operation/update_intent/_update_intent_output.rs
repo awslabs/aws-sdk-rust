@@ -57,7 +57,7 @@ pub struct UpdateIntentOutput {
     /// <p>A timestamp of the last time that the intent was modified.</p>
     #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     _request_id: Option<String>,
@@ -143,7 +143,7 @@ impl UpdateIntentOutput {
     pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn initial_response_setting(
         &self,
     ) -> ::std::option::Option<&crate::types::InitialResponseSetting> {
@@ -443,12 +443,12 @@ impl UpdateIntentOutputBuilder {
         self.last_updated_date_time = input;
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
         self.initial_response_setting = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub fn set_initial_response_setting(
         mut self,
         input: ::std::option::Option<crate::types::InitialResponseSetting>,

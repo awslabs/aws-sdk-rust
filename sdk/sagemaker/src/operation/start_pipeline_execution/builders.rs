@@ -99,7 +99,7 @@ impl StartPipelineExecutionFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +107,7 @@ impl StartPipelineExecutionFluentBuilder {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -194,6 +194,22 @@ impl StartPipelineExecutionFluentBuilder {
         input: ::std::option::Option<crate::types::ParallelismConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
+        self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        mut self,
+        input: crate::types::SelectiveExecutionConfig,
+    ) -> Self {
+        self.inner = self.inner.selective_execution_config(input);
+        self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn set_selective_execution_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_selective_execution_config(input);
         self
     }
 }

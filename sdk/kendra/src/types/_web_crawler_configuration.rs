@@ -10,9 +10,7 @@ pub struct WebCrawlerConfiguration {
     /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
     #[doc(hidden)]
     pub urls: ::std::option::Option<crate::types::Urls>,
-    /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
-    /// <p>The default crawl depth is set to 2.</p>
+    /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
     #[doc(hidden)]
     pub crawl_depth: ::std::option::Option<i32>,
     /// <p>The maximum number of URLs on a web page to include when crawling a website. This number is per web page.</p>
@@ -56,9 +54,7 @@ impl WebCrawlerConfiguration {
     pub fn urls(&self) -> ::std::option::Option<&crate::types::Urls> {
         self.urls.as_ref()
     }
-    /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
-    /// <p>The default crawl depth is set to 2.</p>
+    /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
     pub fn crawl_depth(&self) -> ::std::option::Option<i32> {
         self.crawl_depth
     }
@@ -146,16 +142,12 @@ impl WebCrawlerConfigurationBuilder {
         self.urls = input;
         self
     }
-    /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
-    /// <p>The default crawl depth is set to 2.</p>
+    /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
     pub fn crawl_depth(mut self, input: i32) -> Self {
         self.crawl_depth = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the number of levels in a website that you want to crawl.</p>
-    /// <p>The first level begins from the website seed or starting point URL. For example, if a website has three levels—index level (the seed in this example), sections level, and subsections level—and you are only interested in crawling information up to the sections level (levels 0-1), you can set your depth to 1.</p>
-    /// <p>The default crawl depth is set to 2.</p>
+    /// <p>The 'depth' or number of levels from the seed level to crawl. For example, the seed URL page is depth 1 and any hyperlinks on this page that are also crawled are depth 2.</p>
     pub fn set_crawl_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.crawl_depth = input;
         self

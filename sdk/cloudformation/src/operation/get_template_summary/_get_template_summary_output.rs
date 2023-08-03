@@ -33,6 +33,9 @@ pub struct GetTemplateSummaryOutput {
     #[doc(hidden)]
     pub resource_identifier_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
+    /// <p>An object containing any warnings returned.</p>
+    #[doc(hidden)]
+    pub warnings: ::std::option::Option<crate::types::Warnings>,
     _request_id: Option<String>,
 }
 impl GetTemplateSummaryOutput {
@@ -75,6 +78,10 @@ impl GetTemplateSummaryOutput {
     ) -> ::std::option::Option<&[crate::types::ResourceIdentifierSummary]> {
         self.resource_identifier_summaries.as_deref()
     }
+    /// <p>An object containing any warnings returned.</p>
+    pub fn warnings(&self) -> ::std::option::Option<&crate::types::Warnings> {
+        self.warnings.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetTemplateSummaryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -106,6 +113,7 @@ pub struct GetTemplateSummaryOutputBuilder {
     pub(crate) declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_identifier_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
+    pub(crate) warnings: ::std::option::Option<crate::types::Warnings>,
     _request_id: Option<String>,
 }
 impl GetTemplateSummaryOutputBuilder {
@@ -261,6 +269,16 @@ impl GetTemplateSummaryOutputBuilder {
         self.resource_identifier_summaries = input;
         self
     }
+    /// <p>An object containing any warnings returned.</p>
+    pub fn warnings(mut self, input: crate::types::Warnings) -> Self {
+        self.warnings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing any warnings returned.</p>
+    pub fn set_warnings(mut self, input: ::std::option::Option<crate::types::Warnings>) -> Self {
+        self.warnings = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -282,6 +300,7 @@ impl GetTemplateSummaryOutputBuilder {
             metadata: self.metadata,
             declared_transforms: self.declared_transforms,
             resource_identifier_summaries: self.resource_identifier_summaries,
+            warnings: self.warnings,
             _request_id: self._request_id,
         }
     }

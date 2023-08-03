@@ -14,6 +14,10 @@ pub struct MonitoringConfiguration {
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
+    /// <p>Enable or disable container log rotation.</p>
+    #[doc(hidden)]
+    pub container_log_rotation_configuration:
+        ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfiguration {
     /// <p>Monitoring configurations for the persistent application UI. </p>
@@ -31,6 +35,12 @@ impl MonitoringConfiguration {
         &self,
     ) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
+    }
+    /// <p>Enable or disable container log rotation.</p>
+    pub fn container_log_rotation_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ContainerLogRotationConfiguration> {
+        self.container_log_rotation_configuration.as_ref()
     }
 }
 impl MonitoringConfiguration {
@@ -51,6 +61,8 @@ pub struct MonitoringConfigurationBuilder {
         ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
     pub(crate) s3_monitoring_configuration:
         ::std::option::Option<crate::types::S3MonitoringConfiguration>,
+    pub(crate) container_log_rotation_configuration:
+        ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>Monitoring configurations for the persistent application UI. </p>
@@ -98,12 +110,29 @@ impl MonitoringConfigurationBuilder {
         self.s3_monitoring_configuration = input;
         self
     }
+    /// <p>Enable or disable container log rotation.</p>
+    pub fn container_log_rotation_configuration(
+        mut self,
+        input: crate::types::ContainerLogRotationConfiguration,
+    ) -> Self {
+        self.container_log_rotation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable or disable container log rotation.</p>
+    pub fn set_container_log_rotation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
+    ) -> Self {
+        self.container_log_rotation_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     pub fn build(self) -> crate::types::MonitoringConfiguration {
         crate::types::MonitoringConfiguration {
             persistent_app_ui: self.persistent_app_ui,
             cloud_watch_monitoring_configuration: self.cloud_watch_monitoring_configuration,
             s3_monitoring_configuration: self.s3_monitoring_configuration,
+            container_log_rotation_configuration: self.container_log_rotation_configuration,
         }
     }
 }

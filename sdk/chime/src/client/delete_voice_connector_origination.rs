@@ -6,6 +6,9 @@ impl super::Client {
     ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationFluentBuilder::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorOriginationOutput`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorOriginationError>`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationError)
+    #[deprecated(
+        note = "Replaced by DeleteVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn delete_voice_connector_origination(&self) -> crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationFluentBuilder{
         crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationFluentBuilder::new(self.handle.clone())
     }

@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`source_cloud_properties(Option<SourceCloudProperties>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::source_cloud_properties): <p>Source cloud properties of the Source Server.</p>
     ///   - [`replication_direction(Option<ReplicationDirection>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::replication_direction): <p>Replication direction of the Source Server.</p>
     ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::reversed_direction_source_server_arn): <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    ///   - [`source_network_id(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::source_network_id): <p>ID of the Source Network which is protecting this Source Server's network.</p>
     /// - On failure, responds with [`SdkError<DisconnectSourceServerError>`](crate::operation::disconnect_source_server::DisconnectSourceServerError)
     pub fn disconnect_source_server(
         &self,

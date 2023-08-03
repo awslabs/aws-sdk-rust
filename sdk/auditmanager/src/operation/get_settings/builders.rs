@@ -5,7 +5,7 @@ pub use crate::operation::get_settings::_get_settings_input::GetSettingsInputBui
 
 /// Fluent builder constructing a request to `GetSettings`.
 ///
-/// <p> Returns the settings for the specified Amazon Web Services account. </p>
+/// <p> Gets the settings for a specified Amazon Web Services account. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

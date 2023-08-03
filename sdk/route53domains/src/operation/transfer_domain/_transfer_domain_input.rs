@@ -40,8 +40,10 @@ pub struct TransferDomainInput {
     /// <p>Provides detailed contact information.</p>
     #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
+    /// owner.".
+    /// </domain></p> <note>
+    /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
     #[doc(hidden)]
@@ -105,8 +107,10 @@ impl TransferDomainInput {
     pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
+    /// owner.".
+    /// </domain></p> <note>
+    /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_admin_contact(&self) -> ::std::option::Option<bool> {
@@ -311,16 +315,20 @@ impl TransferDomainInputBuilder {
         self.tech_contact = input;
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
+    /// owner.".
+    /// </domain></p> <note>
+    /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_admin_contact(mut self, input: bool) -> Self {
         self.privacy_protect_admin_contact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
+    /// owner.".
+    /// </domain></p> <note>
+    /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
     pub fn set_privacy_protect_admin_contact(mut self, input: ::std::option::Option<bool>) -> Self {

@@ -7,6 +7,9 @@ pub mod associate_member;
 /// Types for the `BatchGetAccountStatus` operation.
 pub mod batch_get_account_status;
 
+/// Types for the `BatchGetCodeSnippet` operation.
+pub mod batch_get_code_snippet;
+
 /// Types for the `BatchGetFreeTrialInfo` operation.
 pub mod batch_get_free_trial_info;
 
@@ -19,11 +22,17 @@ pub mod batch_update_member_ec2_deep_inspection_status;
 /// Types for the `CancelFindingsReport` operation.
 pub mod cancel_findings_report;
 
+/// Types for the `CancelSbomExport` operation.
+pub mod cancel_sbom_export;
+
 /// Types for the `CreateFilter` operation.
 pub mod create_filter;
 
 /// Types for the `CreateFindingsReport` operation.
 pub mod create_findings_report;
+
+/// Types for the `CreateSbomExport` operation.
+pub mod create_sbom_export;
 
 /// Types for the `DeleteFilter` operation.
 pub mod delete_filter;
@@ -55,11 +64,17 @@ pub mod get_delegated_admin_account;
 /// Types for the `GetEc2DeepInspectionConfiguration` operation.
 pub mod get_ec2_deep_inspection_configuration;
 
+/// Types for the `GetEncryptionKey` operation.
+pub mod get_encryption_key;
+
 /// Types for the `GetFindingsReportStatus` operation.
 pub mod get_findings_report_status;
 
 /// Types for the `GetMember` operation.
 pub mod get_member;
+
+/// Types for the `GetSbomExport` operation.
+pub mod get_sbom_export;
 
 /// Types for the `ListAccountPermissions` operation.
 pub mod list_account_permissions;
@@ -91,6 +106,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListUsageTotals` operation.
 pub mod list_usage_totals;
 
+/// Types for the `ResetEncryptionKey` operation.
+pub mod reset_encryption_key;
+
 /// Types for the `SearchVulnerabilities` operation.
 pub mod search_vulnerabilities;
 
@@ -105,6 +123,9 @@ pub mod update_configuration;
 
 /// Types for the `UpdateEc2DeepInspectionConfiguration` operation.
 pub mod update_ec2_deep_inspection_configuration;
+
+/// Types for the `UpdateEncryptionKey` operation.
+pub mod update_encryption_key;
 
 /// Types for the `UpdateFilter` operation.
 pub mod update_filter;

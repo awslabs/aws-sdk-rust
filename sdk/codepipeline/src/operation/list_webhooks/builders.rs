@@ -5,7 +5,7 @@ pub use crate::operation::list_webhooks::_list_webhooks_input::ListWebhooksInput
 
 /// Fluent builder constructing a request to `ListWebhooks`.
 ///
-/// <p>Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p>
+/// <p>Gets a listing of all the webhooks in this Amazon Web Services Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWebhooksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

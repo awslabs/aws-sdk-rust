@@ -24,6 +24,9 @@ pub struct DescribeEdgeConfigurationOutput {
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     #[doc(hidden)]
     pub edge_config: ::std::option::Option<crate::types::EdgeConfig>,
+    /// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
+    #[doc(hidden)]
+    pub edge_agent_status: ::std::option::Option<crate::types::EdgeAgentStatus>,
     _request_id: Option<String>,
 }
 impl DescribeEdgeConfigurationOutput {
@@ -55,6 +58,10 @@ impl DescribeEdgeConfigurationOutput {
     pub fn edge_config(&self) -> ::std::option::Option<&crate::types::EdgeConfig> {
         self.edge_config.as_ref()
     }
+    /// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
+    pub fn edge_agent_status(&self) -> ::std::option::Option<&crate::types::EdgeAgentStatus> {
+        self.edge_agent_status.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeEdgeConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -81,6 +88,7 @@ pub struct DescribeEdgeConfigurationOutputBuilder {
     pub(crate) sync_status: ::std::option::Option<crate::types::SyncStatus>,
     pub(crate) failed_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) edge_config: ::std::option::Option<crate::types::EdgeConfig>,
+    pub(crate) edge_agent_status: ::std::option::Option<crate::types::EdgeAgentStatus>,
     _request_id: Option<String>,
 }
 impl DescribeEdgeConfigurationOutputBuilder {
@@ -172,6 +180,19 @@ impl DescribeEdgeConfigurationOutputBuilder {
         self.edge_config = input;
         self
     }
+    /// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
+    pub fn edge_agent_status(mut self, input: crate::types::EdgeAgentStatus) -> Self {
+        self.edge_agent_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
+    pub fn set_edge_agent_status(
+        mut self,
+        input: ::std::option::Option<crate::types::EdgeAgentStatus>,
+    ) -> Self {
+        self.edge_agent_status = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -193,6 +214,7 @@ impl DescribeEdgeConfigurationOutputBuilder {
             sync_status: self.sync_status,
             failed_status_details: self.failed_status_details,
             edge_config: self.edge_config,
+            edge_agent_status: self.edge_agent_status,
             _request_id: self._request_id,
         }
     }

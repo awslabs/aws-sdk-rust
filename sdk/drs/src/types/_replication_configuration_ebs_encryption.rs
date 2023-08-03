@@ -14,6 +14,7 @@
 /// match replicationconfigurationebsencryption {
 ///     ReplicationConfigurationEbsEncryption::Custom => { /* ... */ },
 ///     ReplicationConfigurationEbsEncryption::Default => { /* ... */ },
+///     ReplicationConfigurationEbsEncryption::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum ReplicationConfigurationEbsEncryption {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
         match s {
             "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
             "DEFAULT" => ReplicationConfigurationEbsEncryption::Default,
+            "NONE" => ReplicationConfigurationEbsEncryption::None,
             other => ReplicationConfigurationEbsEncryption::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -78,12 +82,13 @@ impl ReplicationConfigurationEbsEncryption {
         match self {
             ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
             ReplicationConfigurationEbsEncryption::Default => "DEFAULT",
+            ReplicationConfigurationEbsEncryption::None => "NONE",
             ReplicationConfigurationEbsEncryption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "DEFAULT"]
+        &["CUSTOM", "DEFAULT", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplicationConfigurationEbsEncryption {

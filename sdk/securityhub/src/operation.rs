@@ -7,11 +7,17 @@ pub mod accept_administrator_invitation;
 /// Types for the `AcceptInvitation` operation.
 pub mod accept_invitation;
 
+/// Types for the `BatchDeleteAutomationRules` operation.
+pub mod batch_delete_automation_rules;
+
 /// Types for the `BatchDisableStandards` operation.
 pub mod batch_disable_standards;
 
 /// Types for the `BatchEnableStandards` operation.
 pub mod batch_enable_standards;
+
+/// Types for the `BatchGetAutomationRules` operation.
+pub mod batch_get_automation_rules;
 
 /// Types for the `BatchGetSecurityControls` operation.
 pub mod batch_get_security_controls;
@@ -22,6 +28,9 @@ pub mod batch_get_standards_control_associations;
 /// Types for the `BatchImportFindings` operation.
 pub mod batch_import_findings;
 
+/// Types for the `BatchUpdateAutomationRules` operation.
+pub mod batch_update_automation_rules;
+
 /// Types for the `BatchUpdateFindings` operation.
 pub mod batch_update_findings;
 
@@ -30,6 +39,9 @@ pub mod batch_update_standards_control_associations;
 
 /// Types for the `CreateActionTarget` operation.
 pub mod create_action_target;
+
+/// Types for the `CreateAutomationRule` operation.
+pub mod create_automation_rule;
 
 /// Types for the `CreateFindingAggregator` operation.
 pub mod create_finding_aggregator;
@@ -135,6 +147,9 @@ pub mod get_members;
 
 /// Types for the `InviteMembers` operation.
 pub mod invite_members;
+
+/// Types for the `ListAutomationRules` operation.
+pub mod list_automation_rules;
 
 /// Types for the `ListEnabledProductsForImport` operation.
 pub mod list_enabled_products_for_import;

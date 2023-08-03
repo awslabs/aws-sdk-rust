@@ -155,7 +155,7 @@ impl ::std::fmt::Debug for InitiateAuthInput {
         formatter.field("client_metadata", &self.client_metadata);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -390,7 +390,7 @@ impl ::std::fmt::Debug for InitiateAuthInputBuilder {
         formatter.field("client_metadata", &self.client_metadata);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

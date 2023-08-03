@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput) with field(s):
     ///   - [`gateway(Option<Gateway>)`](crate::operation::get_gateway::GetGatewayOutput::gateway): <p>The details of the gateway.</p>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_gateway(&self) -> crate::operation::get_gateway::builders::GetGatewayFluentBuilder {
         crate::operation::get_gateway::builders::GetGatewayFluentBuilder::new(self.handle.clone())
     }

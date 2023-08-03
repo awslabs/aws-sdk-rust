@@ -115,12 +115,12 @@ impl UpdateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_capacity(input);
         self
     }
-    /// <p>The desired capacity for the runtime environment to update.</p>
+    /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_capacity(input);
         self

@@ -99,12 +99,12 @@ impl DescribeFHIRExportJobFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self

@@ -121,12 +121,12 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_message_id(input);
         self
     }
-    /// <p>The content of the message being updated.</p>
+    /// <p>The content of the channel message. </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content of the message being updated.</p>
+    /// <p>The content of the channel message. </p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self

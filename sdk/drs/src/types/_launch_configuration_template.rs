@@ -31,6 +31,9 @@ pub struct LaunchConfigurationTemplate {
     /// <p>Licensing.</p>
     #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    #[doc(hidden)]
+    pub export_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -71,6 +74,10 @@ impl LaunchConfigurationTemplate {
     pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
         self.licensing.as_ref()
     }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.export_bucket_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for LaunchConfigurationTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +96,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplate {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.field("export_bucket_arn", &self.export_bucket_arn);
         formatter.finish()
     }
 }
@@ -114,6 +122,7 @@ pub struct LaunchConfigurationTemplateBuilder {
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
+    pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl LaunchConfigurationTemplateBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -226,6 +235,22 @@ impl LaunchConfigurationTemplateBuilder {
         self.licensing = input;
         self
     }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn export_bucket_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.export_bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn set_export_bucket_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.export_bucket_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     pub fn build(self) -> crate::types::LaunchConfigurationTemplate {
         crate::types::LaunchConfigurationTemplate {
@@ -237,6 +262,7 @@ impl LaunchConfigurationTemplateBuilder {
             copy_private_ip: self.copy_private_ip,
             copy_tags: self.copy_tags,
             licensing: self.licensing,
+            export_bucket_arn: self.export_bucket_arn,
         }
     }
 }
@@ -257,6 +283,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.field("export_bucket_arn", &self.export_bucket_arn);
         formatter.finish()
     }
 }

@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`update_time(Option<DateTime>)`](crate::operation::describe_tracker::DescribeTrackerOutput::update_time): <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::describe_tracker::DescribeTrackerOutput::kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     ///   - [`position_filtering(Option<PositionFiltering>)`](crate::operation::describe_tracker::DescribeTrackerOutput::position_filtering): <p>The position filtering method of the tracker resource.</p>
+    ///   - [`event_bridge_enabled(Option<bool>)`](crate::operation::describe_tracker::DescribeTrackerOutput::event_bridge_enabled): <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
     /// - On failure, responds with [`SdkError<DescribeTrackerError>`](crate::operation::describe_tracker::DescribeTrackerError)
     pub fn describe_tracker(
         &self,

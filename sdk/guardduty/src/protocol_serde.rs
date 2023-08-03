@@ -626,6 +626,8 @@ pub(crate) mod shape_scanned_item_count;
 
 pub(crate) mod shape_security_groups;
 
+pub(crate) mod shape_session_name_list;
+
 pub(crate) mod shape_source_ips;
 
 pub(crate) mod shape_subnet_ids;

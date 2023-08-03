@@ -36,14 +36,14 @@ pub fn ser_get_cost_categories_input(
         }
         array_8.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_11) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.next_page_token {
-        object.key("NextPageToken").string(var_11.as_str());
+    if let Some(var_12) = &input.next_page_token {
+        object.key("NextPageToken").string(var_12.as_str());
     }
     Ok(())
 }

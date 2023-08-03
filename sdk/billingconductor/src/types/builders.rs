@@ -63,11 +63,15 @@ pub use crate::types::_update_custom_line_item_flat_charge_details::UpdateCustom
 
 pub use crate::types::_billing_group_list_element::BillingGroupListElementBuilder;
 
+pub use crate::types::_list_billing_group_account_grouping::ListBillingGroupAccountGroupingBuilder;
+
 pub use crate::types::_computation_preference::ComputationPreferenceBuilder;
 
 pub use crate::types::_list_billing_groups_filter::ListBillingGroupsFilterBuilder;
 
 pub use crate::types::_account_grouping::AccountGroupingBuilder;
+
+pub use crate::types::_update_billing_group_account_grouping::UpdateBillingGroupAccountGroupingBuilder;
 
 pub use crate::types::_billing_group_cost_report_element::BillingGroupCostReportElementBuilder;
 

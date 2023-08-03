@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureMetadataInput {
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature.</p>
@@ -11,7 +11,7 @@ pub struct DescribeFeatureMetadataInput {
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureMetadataInput {
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -39,7 +39,7 @@ pub struct DescribeFeatureMetadataInputBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureMetadataInputBuilder {
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -47,7 +47,7 @@ impl DescribeFeatureMetadataInputBuilder {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature group containing the feature.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

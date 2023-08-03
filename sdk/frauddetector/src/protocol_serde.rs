@@ -346,6 +346,8 @@ pub(crate) mod shape_evaluated_rule_list;
 
 pub(crate) mod shape_event;
 
+pub(crate) mod shape_event_orchestration;
+
 pub(crate) mod shape_event_type_list;
 
 pub(crate) mod shape_external_events_detail;

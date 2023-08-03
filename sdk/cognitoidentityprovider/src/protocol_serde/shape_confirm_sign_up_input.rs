@@ -15,38 +15,36 @@ pub fn ser_confirm_sign_up_input(
     if let Some(var_4) = &input.confirmation_code {
         object.key("ConfirmationCode").string(var_4.as_str());
     }
-    if input.force_alias_creation {
-        object
-            .key("ForceAliasCreation")
-            .boolean(input.force_alias_creation);
+    if let Some(var_5) = &input.force_alias_creation {
+        object.key("ForceAliasCreation").boolean(*var_5);
     }
-    if let Some(var_5) = &input.analytics_metadata {
+    if let Some(var_6) = &input.analytics_metadata {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("AnalyticsMetadata").start_object();
+        let mut object_7 = object.key("AnalyticsMetadata").start_object();
         crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_7) = &input.user_context_data {
+    if let Some(var_8) = &input.user_context_data {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("UserContextData").start_object();
+        let mut object_9 = object.key("UserContextData").start_object();
         crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_9) = &input.client_metadata {
+    if let Some(var_10) = &input.client_metadata {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ClientMetadata").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("ClientMetadata").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
     Ok(())
 }

@@ -101,6 +101,22 @@ pub use crate::types::_volume_type::VolumeType;
 
 pub use crate::types::_ontap_volume_configuration::OntapVolumeConfiguration;
 
+pub use crate::types::_snaplock_configuration::SnaplockConfiguration;
+
+pub use crate::types::_snaplock_type::SnaplockType;
+
+pub use crate::types::_snaplock_retention_period::SnaplockRetentionPeriod;
+
+pub use crate::types::_retention_period::RetentionPeriod;
+
+pub use crate::types::_retention_period_type::RetentionPeriodType;
+
+pub use crate::types::_privileged_delete::PrivilegedDelete;
+
+pub use crate::types::_autocommit_period::AutocommitPeriod;
+
+pub use crate::types::_autocommit_period_type::AutocommitPeriodType;
+
 pub use crate::types::_ontap_volume_type::OntapVolumeType;
 
 pub use crate::types::_tiering_policy::TieringPolicy;
@@ -116,6 +132,8 @@ pub use crate::types::_volume_lifecycle::VolumeLifecycle;
 pub use crate::types::_update_open_zfs_volume_configuration::UpdateOpenZfsVolumeConfiguration;
 
 pub use crate::types::_update_ontap_volume_configuration::UpdateOntapVolumeConfiguration;
+
+pub use crate::types::_update_snaplock_configuration::UpdateSnaplockConfiguration;
 
 pub use crate::types::_storage_virtual_machine::StorageVirtualMachine;
 
@@ -253,6 +271,8 @@ pub use crate::types::_delete_file_system_windows_configuration::DeleteFileSyste
 
 pub use crate::types::_create_ontap_volume_configuration::CreateOntapVolumeConfiguration;
 
+pub use crate::types::_create_snaplock_configuration::CreateSnaplockConfiguration;
+
 pub use crate::types::_input_ontap_volume_type::InputOntapVolumeType;
 
 pub use crate::types::_create_open_zfs_volume_configuration::CreateOpenZfsVolumeConfiguration;
@@ -303,6 +323,10 @@ mod _auto_import_policy;
 
 mod _auto_import_policy_type;
 
+mod _autocommit_period;
+
+mod _autocommit_period_type;
+
 mod _backup;
 
 mod _backup_failure_details;
@@ -328,6 +352,8 @@ mod _create_ontap_volume_configuration;
 mod _create_open_zfs_origin_snapshot_configuration;
 
 mod _create_open_zfs_volume_configuration;
+
+mod _create_snaplock_configuration;
 
 mod _create_svm_active_directory_configuration;
 
@@ -475,6 +501,8 @@ mod _open_zfs_user_or_group_quota;
 
 mod _open_zfs_volume_configuration;
 
+mod _privileged_delete;
+
 mod _report_format;
 
 mod _report_scope;
@@ -482,6 +510,10 @@ mod _report_scope;
 mod _resource_type;
 
 mod _restore_open_zfs_volume_option;
+
+mod _retention_period;
+
+mod _retention_period_type;
 
 mod _s3_data_repository_configuration;
 
@@ -494,6 +526,12 @@ mod _self_managed_active_directory_configuration;
 mod _self_managed_active_directory_configuration_updates;
 
 mod _service_limit;
+
+mod _snaplock_configuration;
+
+mod _snaplock_retention_period;
+
+mod _snaplock_type;
 
 mod _snapshot;
 
@@ -544,6 +582,8 @@ mod _update_file_system_windows_configuration;
 mod _update_ontap_volume_configuration;
 
 mod _update_open_zfs_volume_configuration;
+
+mod _update_snaplock_configuration;
 
 mod _update_svm_active_directory_configuration;
 

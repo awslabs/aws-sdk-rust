@@ -18,6 +18,9 @@ pub struct DescribeUserOutput {
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
+    /// <p>Describes whether the user is intended for data replication</p>
+    #[doc(hidden)]
+    pub replication_user: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeUserOutput {
@@ -40,6 +43,10 @@ impl DescribeUserOutput {
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
+    }
+    /// <p>Describes whether the user is intended for data replication</p>
+    pub fn replication_user(&self) -> ::std::option::Option<bool> {
+        self.replication_user
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeUserOutput {
@@ -65,6 +72,7 @@ pub struct DescribeUserOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pending: ::std::option::Option<crate::types::UserPendingChanges>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_user: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeUserOutputBuilder {
@@ -130,6 +138,16 @@ impl DescribeUserOutputBuilder {
         self.username = input;
         self
     }
+    /// <p>Describes whether the user is intended for data replication</p>
+    pub fn replication_user(mut self, input: bool) -> Self {
+        self.replication_user = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether the user is intended for data replication</p>
+    pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replication_user = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -147,6 +165,7 @@ impl DescribeUserOutputBuilder {
             groups: self.groups,
             pending: self.pending,
             username: self.username,
+            replication_user: self.replication_user,
             _request_id: self._request_id,
         }
     }

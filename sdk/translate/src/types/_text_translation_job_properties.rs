@@ -46,7 +46,7 @@ pub struct TextTranslationJobProperties {
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Settings that modify the translation output.</p>
     #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
@@ -107,7 +107,7 @@ impl TextTranslationJobProperties {
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Settings that modify the translation output.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -345,12 +345,12 @@ impl TextTranslationJobPropertiesBuilder {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Settings that modify the translation output.</p>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Settings that modify the translation output.</p>
     pub fn set_settings(
         mut self,
         input: ::std::option::Option<crate::types::TranslationSettings>,

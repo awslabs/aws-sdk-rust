@@ -9,6 +9,9 @@ impl super::Client {
     /// - On success, responds with [`GetChannelMessageOutput`](crate::operation::get_channel_message::GetChannelMessageOutput) with field(s):
     ///   - [`channel_message(Option<ChannelMessage>)`](crate::operation::get_channel_message::GetChannelMessageOutput::channel_message): <p>The details of and content in the message.</p>
     /// - On failure, responds with [`SdkError<GetChannelMessageError>`](crate::operation::get_channel_message::GetChannelMessageError)
+    #[deprecated(
+        note = "Replaced by GetChannelMessage in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn get_channel_message(
         &self,
     ) -> crate::operation::get_channel_message::builders::GetChannelMessageFluentBuilder {

@@ -5,7 +5,7 @@ pub use crate::operation::get_assessment_report_url::_get_assessment_report_url_
 
 /// Fluent builder constructing a request to `GetAssessmentReportUrl`.
 ///
-/// <p> Returns the URL of an assessment report in Audit Manager. </p>
+/// <p> Gets the URL of an assessment report in Audit Manager. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -156,7 +156,7 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
         self.inner = self.inner.set_role_session_name(input);
         self
     }
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn web_identity_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -164,7 +164,7 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
         self.inner = self.inner.web_identity_token(input.into());
         self
     }
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn set_web_identity_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

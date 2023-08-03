@@ -42,6 +42,8 @@ pub(crate) mod shape_export_forms;
 
 pub(crate) mod shape_export_themes;
 
+pub(crate) mod shape_get_codegen_job;
+
 pub(crate) mod shape_get_component;
 
 pub(crate) mod shape_get_form;
@@ -49,6 +51,8 @@ pub(crate) mod shape_get_form;
 pub(crate) mod shape_get_metadata;
 
 pub(crate) mod shape_get_theme;
+
+pub(crate) mod shape_list_codegen_jobs;
 
 pub(crate) mod shape_list_components;
 
@@ -63,6 +67,10 @@ pub(crate) mod shape_put_metadata_flag_input;
 pub(crate) mod shape_refresh_token;
 
 pub(crate) mod shape_refresh_token_input;
+
+pub(crate) mod shape_start_codegen_job;
+
+pub(crate) mod shape_start_codegen_job_input;
 
 pub(crate) mod shape_update_component;
 
@@ -90,6 +98,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_get_codegen_job_output;
+
 pub(crate) mod shape_get_component_output;
 
 pub(crate) mod shape_get_form_output;
@@ -106,6 +116,10 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_codegen_job_output;
+
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_unauthorized_exception;
 
 pub(crate) mod shape_update_component_output;
@@ -113,6 +127,10 @@ pub(crate) mod shape_update_component_output;
 pub(crate) mod shape_update_form_output;
 
 pub(crate) mod shape_update_theme_output;
+
+pub(crate) mod shape_codegen_job;
+
+pub(crate) mod shape_codegen_job_summary_list;
 
 pub(crate) mod shape_component;
 
@@ -140,6 +158,8 @@ pub(crate) mod shape_put_metadata_flag_body;
 
 pub(crate) mod shape_refresh_token_request_body;
 
+pub(crate) mod shape_start_codegen_job_data;
+
 pub(crate) mod shape_theme;
 
 pub(crate) mod shape_theme_list;
@@ -151,6 +171,14 @@ pub(crate) mod shape_update_component_data;
 pub(crate) mod shape_update_form_data;
 
 pub(crate) mod shape_update_theme_data;
+
+pub(crate) mod shape_codegen_feature_flags;
+
+pub(crate) mod shape_codegen_job_generic_data_schema;
+
+pub(crate) mod shape_codegen_job_render_config;
+
+pub(crate) mod shape_codegen_job_summary;
 
 pub(crate) mod shape_component_binding_properties_value;
 
@@ -183,6 +211,14 @@ pub(crate) mod shape_theme_summary;
 pub(crate) mod shape_theme_values;
 
 pub(crate) mod shape_action_parameters;
+
+pub(crate) mod shape_codegen_generic_data_enum;
+
+pub(crate) mod shape_codegen_generic_data_model;
+
+pub(crate) mod shape_codegen_generic_data_non_model;
+
+pub(crate) mod shape_codegen_job_asset;
 
 pub(crate) mod shape_component_binding_properties;
 
@@ -220,6 +256,8 @@ pub(crate) mod shape_form_style_config;
 
 pub(crate) mod shape_predicate;
 
+pub(crate) mod shape_react_start_codegen_job_data;
+
 pub(crate) mod shape_sectional_element_map;
 
 pub(crate) mod shape_sort_property;
@@ -230,6 +268,14 @@ pub(crate) mod shape_theme_value;
 
 pub(crate) mod shape_theme_values_list;
 
+pub(crate) mod shape_codegen_generic_data_enums;
+
+pub(crate) mod shape_codegen_generic_data_field;
+
+pub(crate) mod shape_codegen_generic_data_models;
+
+pub(crate) mod shape_codegen_generic_data_non_models;
+
 pub(crate) mod shape_component_overrides_value;
 
 pub(crate) mod shape_file_uploader_field_config;
@@ -237,6 +283,8 @@ pub(crate) mod shape_file_uploader_field_config;
 pub(crate) mod shape_mutation_action_set_state_parameter;
 
 pub(crate) mod shape_value_mappings;
+
+pub(crate) mod shape_codegen_generic_data_relationship_type;
 
 pub(crate) mod shape_component_property_list;
 
@@ -254,6 +302,14 @@ pub(crate) mod shape_validations_list;
 
 pub(crate) mod shape_value_mapping;
 
+pub(crate) mod shape_codegen_generic_data_enum_values_list;
+
+pub(crate) mod shape_codegen_generic_data_fields;
+
+pub(crate) mod shape_codegen_generic_data_non_model_fields;
+
+pub(crate) mod shape_codegen_primary_keys_list;
+
 pub(crate) mod shape_form_input_binding_properties_value_properties;
 
 pub(crate) mod shape_form_input_value_property;
@@ -269,5 +325,9 @@ pub(crate) mod shape_num_values;
 pub(crate) mod shape_str_values;
 
 pub(crate) mod shape_value_mapping_list;
+
+pub(crate) mod shape_associated_fields_list;
+
+pub(crate) mod shape_related_model_fields_list;
 
 pub(crate) mod shape_form_input_value_property_list;

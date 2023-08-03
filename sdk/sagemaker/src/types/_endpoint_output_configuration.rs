@@ -15,7 +15,10 @@ pub struct EndpointOutputConfiguration {
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The number of instances recommended to launch initially.</p>
     #[doc(hidden)]
-    pub initial_instance_count: i32,
+    pub initial_instance_count: ::std::option::Option<i32>,
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    #[doc(hidden)]
+    pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointOutputConfiguration {
     /// <p>The name of the endpoint made during a recommendation job.</p>
@@ -33,8 +36,14 @@ impl EndpointOutputConfiguration {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances recommended to launch initially.</p>
-    pub fn initial_instance_count(&self) -> i32 {
+    pub fn initial_instance_count(&self) -> ::std::option::Option<i32> {
         self.initial_instance_count
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn serverless_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+        self.serverless_config.as_ref()
     }
 }
 impl EndpointOutputConfiguration {
@@ -54,6 +63,8 @@ pub struct EndpointOutputConfigurationBuilder {
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     pub(crate) initial_instance_count: ::std::option::Option<i32>,
+    pub(crate) serverless_config:
+        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointOutputConfigurationBuilder {
     /// <p>The name of the endpoint made during a recommendation job.</p>
@@ -105,13 +116,30 @@ impl EndpointOutputConfigurationBuilder {
         self.initial_instance_count = input;
         self
     }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn serverless_config(
+        mut self,
+        input: crate::types::ProductionVariantServerlessConfig,
+    ) -> Self {
+        self.serverless_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn set_serverless_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    ) -> Self {
+        self.serverless_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EndpointOutputConfiguration`](crate::types::EndpointOutputConfiguration).
     pub fn build(self) -> crate::types::EndpointOutputConfiguration {
         crate::types::EndpointOutputConfiguration {
             endpoint_name: self.endpoint_name,
             variant_name: self.variant_name,
             instance_type: self.instance_type,
-            initial_instance_count: self.initial_instance_count.unwrap_or_default(),
+            initial_instance_count: self.initial_instance_count,
+            serverless_config: self.serverless_config,
         }
     }
 }

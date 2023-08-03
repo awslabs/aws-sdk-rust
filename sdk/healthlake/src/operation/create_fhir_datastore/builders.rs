@@ -5,7 +5,7 @@ pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_input::C
 
 /// Fluent builder constructing a request to `CreateFHIRDatastore`.
 ///
-/// <p>Creates a Data Store that can ingest and export FHIR formatted data.</p>
+/// <p>Creates a data store that can ingest and export FHIR formatted data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFHIRDatastoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,7 +99,7 @@ impl CreateFHIRDatastoreFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The user generated name for the Data Store.</p>
+    /// <p>The user generated name for the data store.</p>
     pub fn datastore_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +107,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.datastore_name(input.into());
         self
     }
-    /// <p>The user generated name for the Data Store.</p>
+    /// <p>The user generated name for the data store.</p>
     pub fn set_datastore_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -115,12 +115,12 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
-    /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+    /// <p>The FHIR version of the data store. The only supported version is R4.</p>
     pub fn datastore_type_version(mut self, input: crate::types::FhirVersion) -> Self {
         self.inner = self.inner.datastore_type_version(input);
         self
     }
-    /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+    /// <p>The FHIR version of the data store. The only supported version is R4.</p>
     pub fn set_datastore_type_version(
         mut self,
         input: ::std::option::Option<crate::types::FhirVersion>,
@@ -128,12 +128,12 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_datastore_type_version(input);
         self
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn sse_configuration(mut self, input: crate::types::SseConfiguration) -> Self {
         self.inner = self.inner.sse_configuration(input);
         self
     }
-    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn set_sse_configuration(
         mut self,
         input: ::std::option::Option<crate::types::SseConfiguration>,
@@ -141,12 +141,12 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_sse_configuration(input);
         self
     }
-    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
+    /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn preload_data_config(mut self, input: crate::types::PreloadDataConfig) -> Self {
         self.inner = self.inner.preload_data_config(input);
         self
     }
-    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
+    /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn set_preload_data_config(
         mut self,
         input: ::std::option::Option<crate::types::PreloadDataConfig>,
@@ -168,17 +168,33 @@ impl CreateFHIRDatastoreFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> Resource tags that are applied to a Data Store when it is created. </p>
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> Resource tags that are applied to a Data Store when it is created. </p>
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The configuration of the identity provider that you want to use for your data store.</p>
+    pub fn identity_provider_configuration(
+        mut self,
+        input: crate::types::IdentityProviderConfiguration,
+    ) -> Self {
+        self.inner = self.inner.identity_provider_configuration(input);
+        self
+    }
+    /// <p>The configuration of the identity provider that you want to use for your data store.</p>
+    pub fn set_identity_provider_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_identity_provider_configuration(input);
         self
     }
 }

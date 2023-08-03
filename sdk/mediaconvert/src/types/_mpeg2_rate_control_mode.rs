@@ -35,7 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
+/// Use Rate control mode to specify whether the bitrate is variable (vbr) or constant (cbr).
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone,

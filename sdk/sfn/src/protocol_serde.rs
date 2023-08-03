@@ -14,9 +14,15 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_state_machine;
 
+pub(crate) mod shape_create_state_machine_alias;
+
 pub(crate) mod shape_delete_activity;
 
 pub(crate) mod shape_delete_state_machine;
+
+pub(crate) mod shape_delete_state_machine_alias;
+
+pub(crate) mod shape_delete_state_machine_version;
 
 pub(crate) mod shape_describe_activity;
 
@@ -25,6 +31,8 @@ pub(crate) mod shape_describe_execution;
 pub(crate) mod shape_describe_map_run;
 
 pub(crate) mod shape_describe_state_machine;
+
+pub(crate) mod shape_describe_state_machine_alias;
 
 pub(crate) mod shape_describe_state_machine_for_execution;
 
@@ -38,9 +46,15 @@ pub(crate) mod shape_list_executions;
 
 pub(crate) mod shape_list_map_runs;
 
+pub(crate) mod shape_list_state_machine_aliases;
+
+pub(crate) mod shape_list_state_machine_versions;
+
 pub(crate) mod shape_list_state_machines;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_publish_state_machine_version;
 
 pub(crate) mod shape_send_task_failure;
 
@@ -62,6 +76,8 @@ pub(crate) mod shape_update_map_run;
 
 pub(crate) mod shape_update_state_machine;
 
+pub(crate) mod shape_update_state_machine_alias;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -76,19 +92,29 @@ pub(crate) mod shape_activity_limit_exceeded;
 
 pub(crate) mod shape_activity_worker_limit_exceeded;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_activity_input;
+
+pub(crate) mod shape_create_state_machine_alias_input;
 
 pub(crate) mod shape_create_state_machine_input;
 
 pub(crate) mod shape_delete_activity_input;
 
+pub(crate) mod shape_delete_state_machine_alias_input;
+
 pub(crate) mod shape_delete_state_machine_input;
+
+pub(crate) mod shape_delete_state_machine_version_input;
 
 pub(crate) mod shape_describe_activity_input;
 
 pub(crate) mod shape_describe_execution_input;
 
 pub(crate) mod shape_describe_map_run_input;
+
+pub(crate) mod shape_describe_state_machine_alias_input;
 
 pub(crate) mod shape_describe_state_machine_for_execution_input;
 
@@ -126,11 +152,17 @@ pub(crate) mod shape_list_executions_input;
 
 pub(crate) mod shape_list_map_runs_input;
 
+pub(crate) mod shape_list_state_machine_aliases_input;
+
+pub(crate) mod shape_list_state_machine_versions_input;
+
 pub(crate) mod shape_list_state_machines_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_missing_required_parameter;
+
+pub(crate) mod shape_publish_state_machine_version_input;
 
 pub(crate) mod shape_resource_not_found;
 
@@ -139,6 +171,8 @@ pub(crate) mod shape_send_task_failure_input;
 pub(crate) mod shape_send_task_heartbeat_input;
 
 pub(crate) mod shape_send_task_success_input;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_execution_input;
 
@@ -168,6 +202,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_map_run_input;
 
+pub(crate) mod shape_update_state_machine_alias_input;
+
 pub(crate) mod shape_update_state_machine_input;
 
 pub(crate) mod shape_validation_exception;
@@ -190,7 +226,15 @@ pub(crate) mod shape_map_run_item_counts;
 
 pub(crate) mod shape_map_run_list;
 
+pub(crate) mod shape_routing_configuration_list;
+
+pub(crate) mod shape_routing_configuration_list_item;
+
+pub(crate) mod shape_state_machine_alias_list;
+
 pub(crate) mod shape_state_machine_list;
+
+pub(crate) mod shape_state_machine_version_list;
 
 pub(crate) mod shape_tag;
 
@@ -210,7 +254,11 @@ pub(crate) mod shape_log_destination_list;
 
 pub(crate) mod shape_map_run_list_item;
 
+pub(crate) mod shape_state_machine_alias_list_item;
+
 pub(crate) mod shape_state_machine_list_item;
+
+pub(crate) mod shape_state_machine_version_list_item;
 
 pub(crate) mod shape_activity_failed_event_details;
 

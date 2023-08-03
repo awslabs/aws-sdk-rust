@@ -9,6 +9,9 @@ pub enum Error {
     ActivityLimitExceeded(crate::types::error::ActivityLimitExceeded),
     /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
     ActivityWorkerLimitExceeded(crate::types::error::ActivityWorkerLimitExceeded),
+    /// <p>Updating or deleting a resource can cause an inconsistent state. This error occurs when there're concurrent requests for <code>DeleteStateMachineVersion</code>, <code>PublishStateMachineVersion</code>, or <code>UpdateStateMachine</code> with the <code>publish</code> parameter set to <code>true</code>.</p>
+    /// <p>HTTP Status Code: 409</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
     /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
     /// </note>
@@ -35,8 +38,11 @@ pub enum Error {
     InvalidTracingConfiguration(crate::types::error::InvalidTracingConfiguration),
     /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::types::error::MissingRequiredParameter),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
+    /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
+    /// <p>The request would cause a service quota to be exceeded.</p>
+    /// <p>HTTP Status Code: 402</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
     StateMachineAlreadyExists(crate::types::error::StateMachineAlreadyExists),
     /// <p>The specified state machine is being deleted.</p>
@@ -64,6 +70,7 @@ impl ::std::fmt::Display for Error {
             Error::ActivityDoesNotExist(inner) => inner.fmt(f),
             Error::ActivityLimitExceeded(inner) => inner.fmt(f),
             Error::ActivityWorkerLimitExceeded(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ExecutionAlreadyExists(inner) => inner.fmt(f),
             Error::ExecutionDoesNotExist(inner) => inner.fmt(f),
             Error::ExecutionLimitExceeded(inner) => inner.fmt(f),
@@ -77,6 +84,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidTracingConfiguration(inner) => inner.fmt(f),
             Error::MissingRequiredParameter(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::StateMachineAlreadyExists(inner) => inner.fmt(f),
             Error::StateMachineDeleting(inner) => inner.fmt(f),
             Error::StateMachineDoesNotExist(inner) => inner.fmt(f),
@@ -175,6 +183,7 @@ where
 impl From<crate::operation::create_state_machine::CreateStateMachineError> for Error {
     fn from(err: crate::operation::create_state_machine::CreateStateMachineError) -> Self {
         match err {
+            crate::operation::create_state_machine::CreateStateMachineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_state_machine::CreateStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::create_state_machine::CreateStateMachineError::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
             crate::operation::create_state_machine::CreateStateMachineError::InvalidLoggingConfiguration(inner) => Error::InvalidLoggingConfiguration(inner),
@@ -185,7 +194,56 @@ impl From<crate::operation::create_state_machine::CreateStateMachineError> for E
             crate::operation::create_state_machine::CreateStateMachineError::StateMachineLimitExceeded(inner) => Error::StateMachineLimitExceeded(inner),
             crate::operation::create_state_machine::CreateStateMachineError::StateMachineTypeNotSupported(inner) => Error::StateMachineTypeNotSupported(inner),
             crate::operation::create_state_machine::CreateStateMachineError::TooManyTags(inner) => Error::TooManyTags(inner),
+            crate::operation::create_state_machine::CreateStateMachineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_state_machine::CreateStateMachineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_state_machine_alias::CreateStateMachineAliasError> for Error {
+    fn from(
+        err: crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
+    ) -> Self {
+        match err {
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::InvalidName(inner) => Error::InvalidName(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -271,6 +329,97 @@ impl From<crate::operation::delete_state_machine::DeleteStateMachineError> for E
             crate::operation::delete_state_machine::DeleteStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::delete_state_machine::DeleteStateMachineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_state_machine::DeleteStateMachineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError> for Error {
+    fn from(
+        err: crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_state_machine_version::DeleteStateMachineVersionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -453,6 +602,52 @@ impl From<crate::operation::describe_state_machine::DescribeStateMachineError> f
             crate::operation::describe_state_machine::DescribeStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::describe_state_machine::DescribeStateMachineError::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
             crate::operation::describe_state_machine::DescribeStateMachineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -700,6 +895,52 @@ impl From<crate::operation::list_map_runs::ListMapRunsError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_state_machine_aliases::ListStateMachineAliasesError> for Error {
+    fn from(
+        err: crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_state_machines::ListStateMachinesError,
             R,
         >,
@@ -744,6 +985,50 @@ impl From<crate::operation::list_state_machines::ListStateMachinesError> for Err
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_state_machine_versions::ListStateMachineVersionsError> for Error {
+    fn from(
+        err: crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_state_machine_versions::ListStateMachineVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_tags_for_resource::ListTagsForResourceError,
             R,
         >,
@@ -779,6 +1064,55 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::publish_state_machine_version::PublishStateMachineVersionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::publish_state_machine_version::PublishStateMachineVersionError,
+    ) -> Self {
+        match err {
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1270,15 +1604,62 @@ where
 impl From<crate::operation::update_state_machine::UpdateStateMachineError> for Error {
     fn from(err: crate::operation::update_state_machine::UpdateStateMachineError) -> Self {
         match err {
+            crate::operation::update_state_machine::UpdateStateMachineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidLoggingConfiguration(inner) => Error::InvalidLoggingConfiguration(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidTracingConfiguration(inner) => Error::InvalidTracingConfiguration(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::MissingRequiredParameter(inner) => Error::MissingRequiredParameter(inner),
+            crate::operation::update_state_machine::UpdateStateMachineError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_state_machine_alias::UpdateStateMachineAliasError> for Error {
+    fn from(
+        err: crate::operation::update_state_machine_alias::UpdateStateMachineAliasError,
+    ) -> Self {
+        match err {
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1288,6 +1669,7 @@ impl ::std::error::Error for Error {
             Error::ActivityDoesNotExist(inner) => inner.source(),
             Error::ActivityLimitExceeded(inner) => inner.source(),
             Error::ActivityWorkerLimitExceeded(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::ExecutionAlreadyExists(inner) => inner.source(),
             Error::ExecutionDoesNotExist(inner) => inner.source(),
             Error::ExecutionLimitExceeded(inner) => inner.source(),
@@ -1301,6 +1683,7 @@ impl ::std::error::Error for Error {
             Error::InvalidTracingConfiguration(inner) => inner.source(),
             Error::MissingRequiredParameter(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::StateMachineAlreadyExists(inner) => inner.source(),
             Error::StateMachineDeleting(inner) => inner.source(),
             Error::StateMachineDoesNotExist(inner) => inner.source(),
@@ -1320,6 +1703,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ActivityDoesNotExist(e) => e.request_id(),
             Self::ActivityLimitExceeded(e) => e.request_id(),
             Self::ActivityWorkerLimitExceeded(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::ExecutionAlreadyExists(e) => e.request_id(),
             Self::ExecutionDoesNotExist(e) => e.request_id(),
             Self::ExecutionLimitExceeded(e) => e.request_id(),
@@ -1333,6 +1717,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidTracingConfiguration(e) => e.request_id(),
             Self::MissingRequiredParameter(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::StateMachineAlreadyExists(e) => e.request_id(),
             Self::StateMachineDeleting(e) => e.request_id(),
             Self::StateMachineDoesNotExist(e) => e.request_id(),

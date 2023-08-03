@@ -17,6 +17,7 @@
 ///     StackInstanceDetailedStatus::Inoperable => { /* ... */ },
 ///     StackInstanceDetailedStatus::Pending => { /* ... */ },
 ///     StackInstanceDetailedStatus::Running => { /* ... */ },
+///     StackInstanceDetailedStatus::SkippedSuspendedAccount => { /* ... */ },
 ///     StackInstanceDetailedStatus::Succeeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum StackInstanceDetailedStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
+    SkippedSuspendedAccount,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for StackInstanceDetailedStatus {
             "INOPERABLE" => StackInstanceDetailedStatus::Inoperable,
             "PENDING" => StackInstanceDetailedStatus::Pending,
             "RUNNING" => StackInstanceDetailedStatus::Running,
+            "SKIPPED_SUSPENDED_ACCOUNT" => StackInstanceDetailedStatus::SkippedSuspendedAccount,
             "SUCCEEDED" => StackInstanceDetailedStatus::Succeeded,
             other => StackInstanceDetailedStatus::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -97,6 +101,7 @@ impl StackInstanceDetailedStatus {
             StackInstanceDetailedStatus::Inoperable => "INOPERABLE",
             StackInstanceDetailedStatus::Pending => "PENDING",
             StackInstanceDetailedStatus::Running => "RUNNING",
+            StackInstanceDetailedStatus::SkippedSuspendedAccount => "SKIPPED_SUSPENDED_ACCOUNT",
             StackInstanceDetailedStatus::Succeeded => "SUCCEEDED",
             StackInstanceDetailedStatus::Unknown(value) => value.as_str(),
         }
@@ -109,6 +114,7 @@ impl StackInstanceDetailedStatus {
             "INOPERABLE",
             "PENDING",
             "RUNNING",
+            "SKIPPED_SUSPENDED_ACCOUNT",
             "SUCCEEDED",
         ]
     }

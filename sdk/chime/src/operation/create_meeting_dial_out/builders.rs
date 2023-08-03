@@ -6,7 +6,9 @@ pub use crate::operation::create_meeting_dial_out::_create_meeting_dial_out_inpu
 /// Fluent builder constructing a request to `CreateMeetingDialOut`.
 ///
 /// <p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs to the customer.</p>
-/// <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>
+/// <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p> <important>
+/// <p> <b>This API is is not available in a dedicated namespace.</b> </p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMeetingDialOutFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

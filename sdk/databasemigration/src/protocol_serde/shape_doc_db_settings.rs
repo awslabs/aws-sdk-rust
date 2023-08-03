@@ -44,6 +44,12 @@ pub fn ser_doc_db_settings(
     if let Some(var_11) = &input.secrets_manager_secret_id {
         object.key("SecretsManagerSecretId").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.use_update_look_up {
+        object.key("UseUpdateLookUp").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.replicate_shard_collections {
+        object.key("ReplicateShardCollections").boolean(*var_13);
+    }
     Ok(())
 }
 
@@ -170,6 +176,20 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "UseUpdateLookUp" => {
+                                builder = builder.set_use_update_look_up(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "ReplicateShardCollections" => {
+                                builder = builder.set_replicate_shard_collections(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

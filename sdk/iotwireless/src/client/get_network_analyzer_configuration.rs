@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput::description): <p>The description of the new resource.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput::name): <p>Name of the network analyzer configuration.</p>
+    ///   - [`multicast_groups(Option<Vec<String>>)`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput::multicast_groups): <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
     /// - On failure, responds with [`SdkError<GetNetworkAnalyzerConfigurationError>`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationError)
     pub fn get_network_analyzer_configuration(&self) -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationFluentBuilder{
         crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationFluentBuilder::new(self.handle.clone())

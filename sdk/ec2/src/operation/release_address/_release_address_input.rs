@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseAddressInput {
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
@@ -19,11 +19,11 @@ pub struct ReleaseAddressInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ReleaseAddressInput {
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
@@ -57,7 +57,7 @@ pub struct ReleaseAddressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ReleaseAddressInputBuilder {
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     pub fn allocation_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -65,7 +65,7 @@ impl ReleaseAddressInputBuilder {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+    /// <p>The allocation ID. This parameter is required.</p>
     pub fn set_allocation_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -73,12 +73,12 @@ impl ReleaseAddressInputBuilder {
         self.allocation_id = input;
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self

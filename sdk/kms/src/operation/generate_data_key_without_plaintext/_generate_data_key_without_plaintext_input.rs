@@ -34,6 +34,10 @@ pub struct GenerateDataKeyWithoutPlaintextInput {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyWithoutPlaintextInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -74,6 +78,11 @@ impl GenerateDataKeyWithoutPlaintextInput {
     pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.grant_tokens.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl GenerateDataKeyWithoutPlaintextInput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyWithoutPlaintextInput`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextInput).
@@ -95,6 +104,7 @@ pub struct GenerateDataKeyWithoutPlaintextInputBuilder {
     pub(crate) key_spec: ::std::option::Option<crate::types::DataKeySpec>,
     pub(crate) number_of_bytes: ::std::option::Option<i32>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyWithoutPlaintextInputBuilder {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -199,6 +209,18 @@ impl GenerateDataKeyWithoutPlaintextInputBuilder {
         self.grant_tokens = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextInput`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextInput).
     pub fn build(
         self,
@@ -217,6 +239,8 @@ impl GenerateDataKeyWithoutPlaintextInputBuilder {
                 number_of_bytes: self.number_of_bytes
                 ,
                 grant_tokens: self.grant_tokens
+                ,
+                dry_run: self.dry_run
                 ,
             }
         )

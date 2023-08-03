@@ -327,6 +327,11 @@ pub(crate) fn de_get_campaign(
                             )?,
                         );
                     }
+                    "dataDestinationConfigs" => {
+                        builder = builder.set_data_destination_configs(
+                            crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens)?
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

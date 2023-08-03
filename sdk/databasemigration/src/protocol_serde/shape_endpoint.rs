@@ -279,6 +279,11 @@ where
                                     crate::protocol_serde::shape_gcp_my_sql_settings::de_gcp_my_sql_settings(tokens)?
                                 );
                             }
+                            "TimestreamSettings" => {
+                                builder = builder.set_timestream_settings(
+                                    crate::protocol_serde::shape_timestream_settings::de_timestream_settings(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

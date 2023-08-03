@@ -287,13 +287,13 @@ impl CreateNetworkInterfaceFluentBuilder {
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     pub fn interface_type(mut self, input: crate::types::NetworkInterfaceCreationType) -> Self {
         self.inner = self.inner.interface_type(input);
         self
     }
     /// <p>The type of network interface. The default is <code>interface</code>.</p>
-    /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+    /// <p>The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.</p>
     pub fn set_interface_type(
         mut self,
         input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,

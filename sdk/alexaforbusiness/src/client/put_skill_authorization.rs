@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder::set_room_arn): <p>The room that the skill is authorized for.</p>
     /// - On success, responds with [`PutSkillAuthorizationOutput`](crate::operation::put_skill_authorization::PutSkillAuthorizationOutput)
     /// - On failure, responds with [`SdkError<PutSkillAuthorizationError>`](crate::operation::put_skill_authorization::PutSkillAuthorizationError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn put_skill_authorization(
         &self,
     ) -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationFluentBuilder

@@ -36,12 +36,14 @@
 ///     Runtime::Providedal2 => { /* ... */ },
 ///     Runtime::Python27 => { /* ... */ },
 ///     Runtime::Python310 => { /* ... */ },
+///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Python36 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
 ///     Runtime::Python39 => { /* ... */ },
 ///     Runtime::Ruby25 => { /* ... */ },
 ///     Runtime::Ruby27 => { /* ... */ },
+///     Runtime::Ruby32 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -124,6 +126,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Python310,
     #[allow(missing_docs)] // documentation missing in model
+    Python311,
+    #[allow(missing_docs)] // documentation missing in model
     Python36,
     #[allow(missing_docs)] // documentation missing in model
     Python37,
@@ -135,6 +139,8 @@ pub enum Runtime {
     Ruby25,
     #[allow(missing_docs)] // documentation missing in model
     Ruby27,
+    #[allow(missing_docs)] // documentation missing in model
+    Ruby32,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -165,12 +171,14 @@ impl ::std::convert::From<&str> for Runtime {
             "provided.al2" => Runtime::Providedal2,
             "python2.7" => Runtime::Python27,
             "python3.10" => Runtime::Python310,
+            "python3.11" => Runtime::Python311,
             "python3.6" => Runtime::Python36,
             "python3.7" => Runtime::Python37,
             "python3.8" => Runtime::Python38,
             "python3.9" => Runtime::Python39,
             "ruby2.5" => Runtime::Ruby25,
             "ruby2.7" => Runtime::Ruby27,
+            "ruby3.2" => Runtime::Ruby32,
             other => Runtime::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -210,12 +218,14 @@ impl Runtime {
             Runtime::Providedal2 => "provided.al2",
             Runtime::Python27 => "python2.7",
             Runtime::Python310 => "python3.10",
+            Runtime::Python311 => "python3.11",
             Runtime::Python36 => "python3.6",
             Runtime::Python37 => "python3.7",
             Runtime::Python38 => "python3.8",
             Runtime::Python39 => "python3.9",
             Runtime::Ruby25 => "ruby2.5",
             Runtime::Ruby27 => "ruby2.7",
+            Runtime::Ruby32 => "ruby3.2",
             Runtime::Unknown(value) => value.as_str(),
         }
     }
@@ -246,12 +256,14 @@ impl Runtime {
             "provided.al2",
             "python2.7",
             "python3.10",
+            "python3.11",
             "python3.6",
             "python3.7",
             "python3.8",
             "python3.9",
             "ruby2.5",
             "ruby2.7",
+            "ruby3.2",
         ]
     }
 }

@@ -5,16 +5,15 @@ pub use crate::operation::query::_query_input::QueryInputBuilder;
 
 /// Fluent builder constructing a request to `Query`.
 ///
-/// <p>Searches an active index. Use this API to search your documents using query. The <code>Query</code> API enables to do faceted search and to filter results based on document attributes.</p>
-/// <p>It also enables you to provide user context that Amazon Kendra uses to enforce document access control in the search results.</p>
-/// <p>Amazon Kendra searches your index for text content and question and answer (FAQ) content. By default the response contains three types of results.</p>
+/// <p>Searches an index given an input query.</p>
+/// <p>You can configure boosting or relevance tuning at the query level to override boosting at the index level, filter based on document fields/attributes and faceted search, and filter based on the user or their group access to documents. You can also include certain fields in the response that might provide useful additional information.</p>
+/// <p>A query response contains three types of results.</p>
 /// <ul>
-/// <li> <p>Relevant passages</p> </li>
-/// <li> <p>Matching FAQs</p> </li>
-/// <li> <p>Relevant documents</p> </li>
+/// <li> <p>Relevant suggested answers. The answers can be either a text excerpt or table excerpt. The answer can be highlighted in the excerpt.</p> </li>
+/// <li> <p>Matching FAQs or questions-answer from your FAQ file.</p> </li>
+/// <li> <p>Relevant documents. This result type includes an excerpt of the document with the document title. The searched terms can be highlighted in the excerpt.</p> </li>
 /// </ul>
-/// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code> parameter.</p>
-/// <p>Each query returns the 100 most relevant results. </p>
+/// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code> parameter. Each query returns the 100 most relevant results. If you filter result type to only question-answers, a maximum of four results are returned. If you filter result type to only answers, a maximum of three results are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -100,12 +99,12 @@ impl QueryFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+    /// <p>The identifier of the index for the search.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
+    /// <p>The identifier of the index for the search.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
@@ -120,14 +119,14 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
-    /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn attribute_filter(mut self, input: crate::types::AttributeFilter) -> Self {
         self.inner = self.inner.attribute_filter(input);
         self
     }
-    /// <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
-    /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
+    /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
+    /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn set_attribute_filter(
         mut self,
         input: ::std::option::Option<crate::types::AttributeFilter>,
@@ -139,12 +138,12 @@ impl QueryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_facets`](Self::set_facets).
     ///
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
+    /// <p>An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.</p>
     pub fn facets(mut self, input: crate::types::Facet) -> Self {
         self.inner = self.inner.facets(input);
         self
     }
-    /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
+    /// <p>An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.</p>
     pub fn set_facets(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
@@ -156,7 +155,7 @@ impl QueryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
     ///
-    /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
+    /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
     pub fn requested_document_attributes(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -164,7 +163,7 @@ impl QueryFluentBuilder {
         self.inner = self.inner.requested_document_attributes(input.into());
         self
     }
-    /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
+    /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
     pub fn set_requested_document_attributes(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -172,12 +171,12 @@ impl QueryFluentBuilder {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
     }
-    /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
+    /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
     pub fn query_result_type_filter(mut self, input: crate::types::QueryResultType) -> Self {
         self.inner = self.inner.query_result_type_filter(input);
         self
     }
-    /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
+    /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
     pub fn set_query_result_type_filter(
         mut self,
         input: ::std::option::Option<crate::types::QueryResultType>,
@@ -189,10 +188,9 @@ impl QueryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_document_relevance_override_configurations`](Self::set_document_relevance_override_configurations).
     ///
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-    /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub fn document_relevance_override_configurations(
         mut self,
         input: crate::types::DocumentRelevanceConfiguration,
@@ -200,10 +198,9 @@ impl QueryFluentBuilder {
         self.inner = self.inner.document_relevance_override_configurations(input);
         self
     }
-    /// <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+    /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
-    /// <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>
-    /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
+    /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub fn set_document_relevance_override_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,

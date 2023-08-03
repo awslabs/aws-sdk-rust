@@ -7,7 +7,7 @@ pub struct UserIdentity {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
     #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
-    /// <p></p>
+    /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
     #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
@@ -22,7 +22,7 @@ impl UserIdentity {
     pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.user_type.as_ref()
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -64,12 +64,12 @@ impl UserIdentityBuilder {
         self.user_type = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self

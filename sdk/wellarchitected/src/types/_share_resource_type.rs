@@ -13,6 +13,7 @@
 /// # let shareresourcetype = unimplemented!();
 /// match shareresourcetype {
 ///     ShareResourceType::Lens => { /* ... */ },
+///     ShareResourceType::Profile => { /* ... */ },
 ///     ShareResourceType::Workload => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ShareResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Lens,
     #[allow(missing_docs)] // documentation missing in model
+    Profile,
+    #[allow(missing_docs)] // documentation missing in model
     Workload,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ShareResourceType {
     fn from(s: &str) -> Self {
         match s {
             "LENS" => ShareResourceType::Lens,
+            "PROFILE" => ShareResourceType::Profile,
             "WORKLOAD" => ShareResourceType::Workload,
             other => {
                 ShareResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -77,13 +81,14 @@ impl ShareResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ShareResourceType::Lens => "LENS",
+            ShareResourceType::Profile => "PROFILE",
             ShareResourceType::Workload => "WORKLOAD",
             ShareResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LENS", "WORKLOAD"]
+        &["LENS", "PROFILE", "WORKLOAD"]
     }
 }
 impl ::std::convert::AsRef<str> for ShareResourceType {

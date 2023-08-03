@@ -10,7 +10,8 @@ pub struct SubmitJobInput {
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     #[doc(hidden)]
     pub job_queue: ::std::option::Option<::std::string::String>,
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     #[doc(hidden)]
     pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
@@ -67,7 +68,8 @@ impl SubmitJobInput {
     pub fn job_queue(&self) -> ::std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
@@ -188,7 +190,8 @@ impl SubmitJobInputBuilder {
         self.job_queue = input;
         self
     }
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -196,7 +199,8 @@ impl SubmitJobInputBuilder {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
+    /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn set_share_identifier(
         mut self,
         input: ::std::option::Option<::std::string::String>,

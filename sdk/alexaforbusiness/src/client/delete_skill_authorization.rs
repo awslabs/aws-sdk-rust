@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder::set_room_arn): <p>The room that the skill is authorized for.</p>
     /// - On success, responds with [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteSkillAuthorizationError>`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_skill_authorization(
         &self,
     ) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationFluentBuilder

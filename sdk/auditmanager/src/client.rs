@@ -294,6 +294,8 @@ mod get_evidence;
 
 mod get_evidence_by_evidence_folder;
 
+mod get_evidence_file_upload_url;
+
 mod get_evidence_folder;
 
 mod get_evidence_folders_by_assessment;

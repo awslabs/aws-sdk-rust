@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`category_list(Option<Vec<Category>>)`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput::category_list): <p>The list of categories.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput::next_token): <p>The tokens used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListSkillsStoreCategoriesError>`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_skills_store_categories(&self) -> crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder{
         crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::new(self.handle.clone())
     }

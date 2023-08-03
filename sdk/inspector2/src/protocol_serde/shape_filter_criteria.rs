@@ -558,6 +558,66 @@ pub fn ser_filter_criteria(
         }
         array_150.finish();
     }
+    if let Some(var_153) = &input.code_vulnerability_detector_name {
+        let mut array_154 = object.key("codeVulnerabilityDetectorName").start_array();
+        for item_155 in var_153 {
+            {
+                #[allow(unused_mut)]
+                let mut object_156 = array_154.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(
+                    &mut object_156,
+                    item_155,
+                )?;
+                object_156.finish();
+            }
+        }
+        array_154.finish();
+    }
+    if let Some(var_157) = &input.code_vulnerability_detector_tags {
+        let mut array_158 = object.key("codeVulnerabilityDetectorTags").start_array();
+        for item_159 in var_157 {
+            {
+                #[allow(unused_mut)]
+                let mut object_160 = array_158.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(
+                    &mut object_160,
+                    item_159,
+                )?;
+                object_160.finish();
+            }
+        }
+        array_158.finish();
+    }
+    if let Some(var_161) = &input.code_vulnerability_file_path {
+        let mut array_162 = object.key("codeVulnerabilityFilePath").start_array();
+        for item_163 in var_161 {
+            {
+                #[allow(unused_mut)]
+                let mut object_164 = array_162.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(
+                    &mut object_164,
+                    item_163,
+                )?;
+                object_164.finish();
+            }
+        }
+        array_162.finish();
+    }
+    if let Some(var_165) = &input.epss_score {
+        let mut array_166 = object.key("epssScore").start_array();
+        for item_167 in var_165 {
+            {
+                #[allow(unused_mut)]
+                let mut object_168 = array_166.value().start_object();
+                crate::protocol_serde::shape_number_filter::ser_number_filter(
+                    &mut object_168,
+                    item_167,
+                )?;
+                object_168.finish();
+            }
+        }
+        array_166.finish();
+    }
     Ok(())
 }
 
@@ -773,6 +833,26 @@ where
                             "exploitAvailable" => {
                                 builder = builder.set_exploit_available(
                                     crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
+                                );
+                            }
+                            "codeVulnerabilityDetectorName" => {
+                                builder = builder.set_code_vulnerability_detector_name(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
+                                );
+                            }
+                            "codeVulnerabilityDetectorTags" => {
+                                builder = builder.set_code_vulnerability_detector_tags(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
+                                );
+                            }
+                            "codeVulnerabilityFilePath" => {
+                                builder = builder.set_code_vulnerability_file_path(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?
+                                );
+                            }
+                            "epssScore" => {
+                                builder = builder.set_epss_score(
+                                    crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

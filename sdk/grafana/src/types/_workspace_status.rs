@@ -23,6 +23,8 @@
 ///     WorkspaceStatus::Updating => { /* ... */ },
 ///     WorkspaceStatus::UpgradeFailed => { /* ... */ },
 ///     WorkspaceStatus::Upgrading => { /* ... */ },
+///     WorkspaceStatus::VersionUpdateFailed => { /* ... */ },
+///     WorkspaceStatus::VersionUpdating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -78,6 +80,10 @@ pub enum WorkspaceStatus {
     UpgradeFailed,
     /// Workspace is being upgraded to enterprise.
     Upgrading,
+    /// Workspace version update failed.
+    VersionUpdateFailed,
+    /// Workspace version is being updated.
+    VersionUpdating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -95,6 +101,8 @@ impl ::std::convert::From<&str> for WorkspaceStatus {
             "UPDATING" => WorkspaceStatus::Updating,
             "UPGRADE_FAILED" => WorkspaceStatus::UpgradeFailed,
             "UPGRADING" => WorkspaceStatus::Upgrading,
+            "VERSION_UPDATE_FAILED" => WorkspaceStatus::VersionUpdateFailed,
+            "VERSION_UPDATING" => WorkspaceStatus::VersionUpdating,
             other => {
                 WorkspaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -123,6 +131,8 @@ impl WorkspaceStatus {
             WorkspaceStatus::Updating => "UPDATING",
             WorkspaceStatus::UpgradeFailed => "UPGRADE_FAILED",
             WorkspaceStatus::Upgrading => "UPGRADING",
+            WorkspaceStatus::VersionUpdateFailed => "VERSION_UPDATE_FAILED",
+            WorkspaceStatus::VersionUpdating => "VERSION_UPDATING",
             WorkspaceStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -140,6 +150,8 @@ impl WorkspaceStatus {
             "UPDATING",
             "UPGRADE_FAILED",
             "UPGRADING",
+            "VERSION_UPDATE_FAILED",
+            "VERSION_UPDATING",
         ]
     }
 }

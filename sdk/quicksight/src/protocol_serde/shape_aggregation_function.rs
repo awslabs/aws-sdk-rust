@@ -17,6 +17,12 @@ pub fn ser_aggregation_function(
     if let Some(var_4) = &input.date_aggregation_function {
         object.key("DateAggregationFunction").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.attribute_aggregation_function {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("AttributeAggregationFunction").start_object();
+        crate::protocol_serde::shape_attribute_aggregation_function::ser_attribute_aggregation_function(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -75,6 +81,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "AttributeAggregationFunction" => {
+                                builder = builder.set_attribute_aggregation_function(
+                                    crate::protocol_serde::shape_attribute_aggregation_function::de_attribute_aggregation_function(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -12,5 +12,14 @@ pub fn ser_claim_game_server_input(
     if let Some(var_3) = &input.game_server_data {
         object.key("GameServerData").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.filter_option {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("FilterOption").start_object();
+        crate::protocol_serde::shape_claim_filter_option::ser_claim_filter_option(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
     Ok(())
 }

@@ -107,6 +107,7 @@ pub struct TrainingJob {
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
+    /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
     #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
@@ -313,6 +314,7 @@ impl TrainingJob {
         self.role_arn.as_deref()
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
+    /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
     pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
         self.input_data_config.as_deref()
     }
@@ -808,6 +810,7 @@ impl TrainingJobBuilder {
     /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
     ///
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
+    /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
     pub fn input_data_config(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.input_data_config.unwrap_or_default();
         v.push(input);
@@ -815,6 +818,7 @@ impl TrainingJobBuilder {
         self
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
+    /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
     pub fn set_input_data_config(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,

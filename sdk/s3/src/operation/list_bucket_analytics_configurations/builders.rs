@@ -92,7 +92,7 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -100,7 +100,7 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
         self.inner = self.inner.continuation_token(input.into());
         self
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn set_continuation_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

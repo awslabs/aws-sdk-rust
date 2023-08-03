@@ -47,6 +47,15 @@ pub fn ser_solution_config(
         )?;
         object_15.finish();
     }
+    if let Some(var_16) = &input.training_data_config {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("trainingDataConfig").start_object();
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
     Ok(())
 }
 
@@ -108,6 +117,11 @@ where
                             "optimizationObjective" => {
                                 builder = builder.set_optimization_objective(
                                     crate::protocol_serde::shape_optimization_objective::de_optimization_objective(tokens)?
+                                );
+                            }
+                            "trainingDataConfig" => {
+                                builder = builder.set_training_data_config(
+                                    crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

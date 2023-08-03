@@ -951,6 +951,46 @@ impl From<crate::operation::list_long_term_pricing::ListLongTermPricingError> fo
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pickup_locations::ListPickupLocationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pickup_locations::ListPickupLocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_pickup_locations::ListPickupLocationsError> for Error {
+    fn from(err: crate::operation::list_pickup_locations::ListPickupLocationsError) -> Self {
+        match err {
+            crate::operation::list_pickup_locations::ListPickupLocationsError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::list_pickup_locations::ListPickupLocationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_service_versions::ListServiceVersionsError,
             R,
         >,

@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppInstanceOutput`](crate::operation::create_app_instance::CreateAppInstanceOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::create_app_instance::CreateAppInstanceOutput::app_instance_arn): <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceError>`](crate::operation::create_app_instance::CreateAppInstanceError)
+    #[deprecated(note = "Replaced by CreateAppInstance in the Amazon Chime SDK Identity Namespace")]
     pub fn create_app_instance(
         &self,
     ) -> crate::operation::create_app_instance::builders::CreateAppInstanceFluentBuilder {

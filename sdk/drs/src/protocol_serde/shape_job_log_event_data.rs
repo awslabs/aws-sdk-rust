@@ -64,6 +64,11 @@ where
                                     crate::protocol_serde::shape_conversion_properties::de_conversion_properties(tokens)?
                                 );
                             }
+                            "eventResourceData" => {
+                                builder = builder.set_event_resource_data(
+                                    crate::protocol_serde::shape_event_resource_data::de_event_resource_data(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

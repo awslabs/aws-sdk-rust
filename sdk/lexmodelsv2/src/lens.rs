@@ -109,6 +109,26 @@ pub(crate) fn reflens_list_imports_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_intent_metrics_output_next_token(
+    input: &crate::operation::list_intent_metrics::ListIntentMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_intent_stage_metrics_output_next_token(
+    input: &crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_intents_output_next_token(
     input: &crate::operation::list_intents::ListIntentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -129,6 +149,26 @@ pub(crate) fn reflens_list_recommended_intents_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_session_analytics_data_output_next_token(
+    input: &crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_session_metrics_output_next_token(
+    input: &crate::operation::list_session_metrics::ListSessionMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_slot_types_output_next_token(
     input: &crate::operation::list_slot_types::ListSlotTypesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -141,6 +181,66 @@ pub(crate) fn reflens_list_slot_types_output_next_token(
 
 pub(crate) fn reflens_list_slots_output_next_token(
     input: &crate::operation::list_slots::ListSlotsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_execution_result_items_output_next_token(
+    input: &crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_executions_output_next_token(
+    input: &crate::operation::list_test_executions::ListTestExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_set_records_output_next_token(
+    input: &crate::operation::list_test_set_records::ListTestSetRecordsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_sets_output_next_token(
+    input: &crate::operation::list_test_sets::ListTestSetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_utterance_analytics_data_output_next_token(
+    input: &crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_utterance_metrics_output_next_token(
+    input: &crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

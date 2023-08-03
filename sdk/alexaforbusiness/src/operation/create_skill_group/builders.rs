@@ -6,6 +6,7 @@ pub use crate::operation::create_skill_group::_create_skill_group_input::CreateS
 /// Fluent builder constructing a request to `CreateSkillGroup`.
 ///
 /// <p>Creates a skill group with a specified name and description.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

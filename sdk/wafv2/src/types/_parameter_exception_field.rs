@@ -12,6 +12,7 @@
 /// ```text
 /// # let parameterexceptionfield = unimplemented!();
 /// match parameterexceptionfield {
+///     ParameterExceptionField::AcpRuleSetResponseInspection => { /* ... */ },
 ///     ParameterExceptionField::AndStatement => { /* ... */ },
 ///     ParameterExceptionField::AssociableResource => { /* ... */ },
 ///     ParameterExceptionField::AssociatedResourceType => { /* ... */ },
@@ -114,6 +115,8 @@
     ::std::hash::Hash,
 )]
 pub enum ParameterExceptionField {
+    #[allow(missing_docs)] // documentation missing in model
+    AcpRuleSetResponseInspection,
     #[allow(missing_docs)] // documentation missing in model
     AndStatement,
     #[allow(missing_docs)] // documentation missing in model
@@ -258,6 +261,9 @@ pub enum ParameterExceptionField {
 impl ::std::convert::From<&str> for ParameterExceptionField {
     fn from(s: &str) -> Self {
         match s {
+            "ACP_RULE_SET_RESPONSE_INSPECTION" => {
+                ParameterExceptionField::AcpRuleSetResponseInspection
+            }
             "AND_STATEMENT" => ParameterExceptionField::AndStatement,
             "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
             "ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
@@ -352,6 +358,9 @@ impl ParameterExceptionField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ParameterExceptionField::AcpRuleSetResponseInspection => {
+                "ACP_RULE_SET_RESPONSE_INSPECTION"
+            }
             ParameterExceptionField::AndStatement => "AND_STATEMENT",
             ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
             ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
@@ -435,6 +444,7 @@ impl ParameterExceptionField {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACP_RULE_SET_RESPONSE_INSPECTION",
             "AND_STATEMENT",
             "ASSOCIABLE_RESOURCE",
             "ASSOCIATED_RESOURCE_TYPE",

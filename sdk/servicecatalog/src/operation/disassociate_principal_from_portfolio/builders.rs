@@ -8,6 +8,9 @@ pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_p
 /// <p>Disassociates a previously associated principal ARN from a specified portfolio.</p>
 /// <p>The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code> call request details. For example, to disassociate an association created with a <code>PrincipalARN</code> of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM when calling <code>DisassociatePrincipalFromPortfolio</code>. </p>
 /// <p>For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share recipient accounts will no longer be able to provision products in this portfolio using a role matching the name of the associated principal. </p>
+/// <p>For more information, review <a href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference. </p> <note>
+/// <p>If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>, the same principal will still have access to the portfolio if it matches one of the associated principals of type <code>IAM_PATTERN</code>. To fully remove access for a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>, and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match the principal whose access you are removing.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociatePrincipalFromPortfolioFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,7 +112,7 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
         self.inner = self.inner.set_portfolio_id(input);
         self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn principal_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -117,7 +120,7 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
     pub fn set_principal_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -125,12 +128,12 @@ impl DisassociatePrincipalFromPortfolioFluentBuilder {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
-    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
         self
     }
-    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
+    /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
     pub fn set_principal_type(
         mut self,
         input: ::std::option::Option<crate::types::PrincipalType>,

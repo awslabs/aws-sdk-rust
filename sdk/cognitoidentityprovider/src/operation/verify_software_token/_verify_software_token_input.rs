@@ -38,8 +38,8 @@ impl ::std::fmt::Debug for VerifySoftwareTokenInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySoftwareTokenInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("session", &self.session);
-        formatter.field("user_code", &self.user_code);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_code", &"*** Sensitive Data Redacted ***");
         formatter.field("friendly_device_name", &self.friendly_device_name);
         formatter.finish()
     }
@@ -130,8 +130,8 @@ impl ::std::fmt::Debug for VerifySoftwareTokenInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySoftwareTokenInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("session", &self.session);
-        formatter.field("user_code", &self.user_code);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_code", &"*** Sensitive Data Redacted ***");
         formatter.field("friendly_device_name", &self.friendly_device_name);
         formatter.finish()
     }

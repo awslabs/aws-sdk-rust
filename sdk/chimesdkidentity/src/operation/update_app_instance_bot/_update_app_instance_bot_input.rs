@@ -12,6 +12,9 @@ pub struct UpdateAppInstanceBotInput {
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for the bot update.</p>
+    #[doc(hidden)]
+    pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
 impl UpdateAppInstanceBotInput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
@@ -26,6 +29,10 @@ impl UpdateAppInstanceBotInput {
     pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
+    /// <p>The configuration for the bot update.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
+        self.configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceBotInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -33,6 +40,7 @@ impl ::std::fmt::Debug for UpdateAppInstanceBotInput {
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("configuration", &self.configuration);
         formatter.finish()
     }
 }
@@ -51,6 +59,7 @@ pub struct UpdateAppInstanceBotInputBuilder {
     pub(crate) app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::Configuration>,
 }
 impl UpdateAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
@@ -89,6 +98,19 @@ impl UpdateAppInstanceBotInputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The configuration for the bot update.</p>
+    pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the bot update.</p>
+    pub fn set_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::Configuration>,
+    ) -> Self {
+        self.configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
     pub fn build(
         self,
@@ -101,6 +123,7 @@ impl UpdateAppInstanceBotInputBuilder {
                 app_instance_bot_arn: self.app_instance_bot_arn,
                 name: self.name,
                 metadata: self.metadata,
+                configuration: self.configuration,
             },
         )
     }
@@ -111,6 +134,7 @@ impl ::std::fmt::Debug for UpdateAppInstanceBotInputBuilder {
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("configuration", &self.configuration);
         formatter.finish()
     }
 }

@@ -166,6 +166,8 @@ pub type UploadSigningCertificateErrorKind = UploadSigningCertificateError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UploadSigningCertificateError {
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because the same certificate is associated with an IAM user in the account.</p>
     DuplicateCertificateException(crate::types::error::DuplicateCertificateException),
     /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
@@ -200,6 +202,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for UploadSigningCertificat
 impl ::std::fmt::Display for UploadSigningCertificateError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::DuplicateCertificateException(_inner) => _inner.fmt(f),
             Self::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::InvalidCertificateException(_inner) => _inner.fmt(f),
@@ -214,6 +217,9 @@ impl ::std::fmt::Display for UploadSigningCertificateError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UploadSigningCertificateError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::DuplicateCertificateException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -288,6 +294,7 @@ impl UploadSigningCertificateError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConcurrentModificationException(e) => e.meta(),
             Self::DuplicateCertificateException(e) => e.meta(),
             Self::EntityAlreadyExistsException(e) => e.meta(),
             Self::InvalidCertificateException(e) => e.meta(),
@@ -297,6 +304,10 @@ impl UploadSigningCertificateError {
             Self::ServiceFailureException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `UploadSigningCertificateError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `UploadSigningCertificateError::DuplicateCertificateException`.
     pub fn is_duplicate_certificate_exception(&self) -> bool {
@@ -330,6 +341,7 @@ impl UploadSigningCertificateError {
 impl ::std::error::Error for UploadSigningCertificateError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::DuplicateCertificateException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCertificateException(_inner) => ::std::option::Option::Some(_inner),

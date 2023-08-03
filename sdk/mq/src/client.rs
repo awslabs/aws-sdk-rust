@@ -276,6 +276,8 @@ mod list_tags;
 
 mod list_users;
 
+mod promote;
+
 mod reboot_broker;
 
 mod update_broker;

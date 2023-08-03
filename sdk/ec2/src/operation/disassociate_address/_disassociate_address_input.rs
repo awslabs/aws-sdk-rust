@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateAddressInput {
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -14,11 +14,11 @@ pub struct DisassociateAddressInput {
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateAddressInput {
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
@@ -46,7 +46,7 @@ pub struct DisassociateAddressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateAddressInputBuilder {
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     pub fn association_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -54,7 +54,7 @@ impl DisassociateAddressInputBuilder {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
+    /// <p>The association ID. This parameter is required.</p>
     pub fn set_association_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -62,12 +62,12 @@ impl DisassociateAddressInputBuilder {
         self.association_id = input;
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+    /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self

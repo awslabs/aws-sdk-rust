@@ -5,7 +5,7 @@ pub use crate::operation::replace_network_acl_association::_replace_network_acl_
 
 /// Fluent builder constructing a request to `ReplaceNetworkAclAssociation`.
 ///
-/// <p>Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the default network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the default network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>
 /// <p>This is an idempotent operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationFluentBuilder {

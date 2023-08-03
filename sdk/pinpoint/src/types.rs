@@ -85,6 +85,8 @@ pub use crate::types::_apns_push_notification_template::ApnsPushNotificationTemp
 
 pub use crate::types::_journey_response::JourneyResponse;
 
+pub use crate::types::___timezone_estimation_methods_element::TimezoneEstimationMethodsElement;
+
 pub use crate::types::_closed_days::ClosedDays;
 
 pub use crate::types::_closed_days_rule::ClosedDaysRule;
@@ -466,6 +468,8 @@ pub use crate::types::_export_job_request::ExportJobRequest;
 pub use crate::types::_create_application_request::CreateApplicationRequest;
 
 mod ___endpoint_types_element;
+
+mod ___timezone_estimation_methods_element;
 
 mod _action;
 

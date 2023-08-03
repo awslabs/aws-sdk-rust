@@ -15,7 +15,7 @@ pub struct CreateAppBlockInput {
     /// <p>The source S3 location of the app block.</p>
     #[doc(hidden)]
     pub source_s3_location: ::std::option::Option<crate::types::S3Location>,
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     #[doc(hidden)]
     pub setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The tags assigned to the app block.</p>
@@ -23,6 +23,12 @@ pub struct CreateAppBlockInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    #[doc(hidden)]
+    pub post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
+    /// <p>The packaging type of the app block.</p>
+    #[doc(hidden)]
+    pub packaging_type: ::std::option::Option<crate::types::PackagingType>,
 }
 impl CreateAppBlockInput {
     /// <p>The name of the app block.</p>
@@ -41,7 +47,7 @@ impl CreateAppBlockInput {
     pub fn source_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.source_s3_location.as_ref()
     }
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn setup_script_details(&self) -> ::std::option::Option<&crate::types::ScriptDetails> {
         self.setup_script_details.as_ref()
     }
@@ -52,6 +58,14 @@ impl CreateAppBlockInput {
         &::std::collections::HashMap<::std::string::String, ::std::string::String>,
     > {
         self.tags.as_ref()
+    }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn post_setup_script_details(&self) -> ::std::option::Option<&crate::types::ScriptDetails> {
+        self.post_setup_script_details.as_ref()
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn packaging_type(&self) -> ::std::option::Option<&crate::types::PackagingType> {
+        self.packaging_type.as_ref()
     }
 }
 impl CreateAppBlockInput {
@@ -75,6 +89,8 @@ pub struct CreateAppBlockInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
+    pub(crate) packaging_type: ::std::option::Option<crate::types::PackagingType>,
 }
 impl CreateAppBlockInputBuilder {
     /// <p>The name of the app block.</p>
@@ -120,12 +136,12 @@ impl CreateAppBlockInputBuilder {
         self.source_s3_location = input;
         self
     }
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.setup_script_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn set_setup_script_details(
         mut self,
         input: ::std::option::Option<crate::types::ScriptDetails>,
@@ -158,6 +174,32 @@ impl CreateAppBlockInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn post_setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
+        self.post_setup_script_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn set_post_setup_script_details(
+        mut self,
+        input: ::std::option::Option<crate::types::ScriptDetails>,
+    ) -> Self {
+        self.post_setup_script_details = input;
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
+        self.packaging_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn set_packaging_type(
+        mut self,
+        input: ::std::option::Option<crate::types::PackagingType>,
+    ) -> Self {
+        self.packaging_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAppBlockInput`](crate::operation::create_app_block::CreateAppBlockInput).
     pub fn build(
         self,
@@ -172,6 +214,8 @@ impl CreateAppBlockInputBuilder {
             source_s3_location: self.source_s3_location,
             setup_script_details: self.setup_script_details,
             tags: self.tags,
+            post_setup_script_details: self.post_setup_script_details,
+            packaging_type: self.packaging_type,
         })
     }
 }

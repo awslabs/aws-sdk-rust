@@ -10,6 +10,9 @@ pub struct CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     #[doc(hidden)]
     pub model_insights: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
+    #[doc(hidden)]
+    pub backtest_results: ::std::option::Option<::std::string::String>,
 }
 impl CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
@@ -19,6 +22,10 @@ impl CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     pub fn model_insights(&self) -> ::std::option::Option<&str> {
         self.model_insights.as_deref()
+    }
+    /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
+    pub fn backtest_results(&self) -> ::std::option::Option<&str> {
+        self.backtest_results.as_deref()
     }
 }
 impl CandidateArtifactLocations {
@@ -36,6 +43,7 @@ impl CandidateArtifactLocations {
 pub struct CandidateArtifactLocationsBuilder {
     pub(crate) explainability: ::std::option::Option<::std::string::String>,
     pub(crate) model_insights: ::std::option::Option<::std::string::String>,
+    pub(crate) backtest_results: ::std::option::Option<::std::string::String>,
 }
 impl CandidateArtifactLocationsBuilder {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
@@ -70,11 +78,28 @@ impl CandidateArtifactLocationsBuilder {
         self.model_insights = input;
         self
     }
+    /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
+    pub fn backtest_results(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.backtest_results = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
+    pub fn set_backtest_results(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.backtest_results = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CandidateArtifactLocations`](crate::types::CandidateArtifactLocations).
     pub fn build(self) -> crate::types::CandidateArtifactLocations {
         crate::types::CandidateArtifactLocations {
             explainability: self.explainability,
             model_insights: self.model_insights,
+            backtest_results: self.backtest_results,
         }
     }
 }

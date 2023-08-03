@@ -35,8 +35,16 @@ pub use crate::types::_channel_info::ChannelInfoBuilder;
 
 pub use crate::types::_channel_name_condition::ChannelNameConditionBuilder;
 
+pub use crate::types::_list_edge_agent_configurations_edge_config::ListEdgeAgentConfigurationsEdgeConfigBuilder;
+
 pub use crate::types::_resource_endpoint_list_item::ResourceEndpointListItemBuilder;
 
 pub use crate::types::_single_master_channel_endpoint_configuration::SingleMasterChannelEndpointConfigurationBuilder;
 
 pub use crate::types::_mapped_resource_configuration_list_item::MappedResourceConfigurationListItemBuilder;
+
+pub use crate::types::_edge_agent_status::EdgeAgentStatusBuilder;
+
+pub use crate::types::_last_uploader_status::LastUploaderStatusBuilder;
+
+pub use crate::types::_last_recorder_status::LastRecorderStatusBuilder;

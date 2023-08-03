@@ -12,6 +12,7 @@
 /// ```text
 /// # let authenticationtype = unimplemented!();
 /// match authenticationtype {
+///     AuthenticationType::Iam => { /* ... */ },
 ///     AuthenticationType::NoPassword => { /* ... */ },
 ///     AuthenticationType::Password => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
+    Iam,
+    #[allow(missing_docs)] // documentation missing in model
     NoPassword,
     #[allow(missing_docs)] // documentation missing in model
     Password,
@@ -57,6 +60,7 @@ pub enum AuthenticationType {
 impl ::std::convert::From<&str> for AuthenticationType {
     fn from(s: &str) -> Self {
         match s {
+            "iam" => AuthenticationType::Iam,
             "no-password" => AuthenticationType::NoPassword,
             "password" => AuthenticationType::Password,
             other => AuthenticationType::Unknown(crate::primitives::UnknownVariantValue(
@@ -76,6 +80,7 @@ impl AuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AuthenticationType::Iam => "iam",
             AuthenticationType::NoPassword => "no-password",
             AuthenticationType::Password => "password",
             AuthenticationType::Unknown(value) => value.as_str(),
@@ -83,7 +88,7 @@ impl AuthenticationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["no-password", "password"]
+        &["iam", "no-password", "password"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationType {

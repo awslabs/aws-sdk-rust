@@ -26,6 +26,11 @@ pub struct ExecuteStatementInput {
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
     #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
+    /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    #[doc(hidden)]
+    pub return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
@@ -59,6 +64,13 @@ impl ExecuteStatementInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
+    /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
+    }
 }
 impl ExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
@@ -81,6 +93,8 @@ pub struct ExecuteStatementInputBuilder {
     pub(crate) return_consumed_capacity:
         ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The PartiQL statement representing the operation to run.</p>
@@ -165,6 +179,24 @@ impl ExecuteStatementInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        mut self,
+        input: crate::types::ReturnValuesOnConditionCheckFailure,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn set_return_values_on_condition_check_failure(
+        mut self,
+        input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
@@ -179,6 +211,7 @@ impl ExecuteStatementInputBuilder {
             next_token: self.next_token,
             return_consumed_capacity: self.return_consumed_capacity,
             limit: self.limit,
+            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
         })
     }
 }

@@ -3,17 +3,26 @@ pub fn ser_create_custom_log_source_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_custom_log_source::CreateCustomLogSourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.custom_source_name {
-        object.key("customSourceName").string(var_1.as_str());
+    if let Some(var_1) = &input.configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("configuration").start_object();
+        crate::protocol_serde::shape_custom_log_source_configuration::ser_custom_log_source_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.event_class {
-        object.key("eventClass").string(var_2.as_str());
+    if let Some(var_3) = &input.event_classes {
+        let mut array_4 = object.key("eventClasses").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
     }
-    if let Some(var_3) = &input.glue_invocation_role_arn {
-        object.key("glueInvocationRoleArn").string(var_3.as_str());
+    if let Some(var_6) = &input.source_name {
+        object.key("sourceName").string(var_6.as_str());
     }
-    if let Some(var_4) = &input.log_provider_account_id {
-        object.key("logProviderAccountId").string(var_4.as_str());
+    if let Some(var_7) = &input.source_version {
+        object.key("sourceVersion").string(var_7.as_str());
     }
     Ok(())
 }

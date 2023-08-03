@@ -7,7 +7,7 @@ pub struct RxNormAttribute {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
@@ -34,7 +34,7 @@ impl RxNormAttribute {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RxNormAttributeType> {
         self.r#type.as_ref()
     }
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
@@ -99,12 +99,12 @@ impl RxNormAttributeBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self

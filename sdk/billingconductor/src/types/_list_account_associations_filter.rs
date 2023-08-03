@@ -3,16 +3,16 @@
 /// <p>The filter on the account ID of the linked account, or any of the following:</p>
 /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
 /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
-/// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+/// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
-    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
     #[doc(hidden)]
     pub association: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Web Services account ID to filter on. </p>
+    /// <p>The Amazon Web Services account ID to filter on.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
@@ -22,11 +22,11 @@ pub struct ListAccountAssociationsFilter {
 impl ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
-    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
     pub fn association(&self) -> ::std::option::Option<&str> {
         self.association.as_deref()
     }
-    /// <p> The Amazon Web Services account ID to filter on. </p>
+    /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -55,24 +55,24 @@ pub struct ListAccountAssociationsFilterBuilder {
 impl ListAccountAssociationsFilterBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
-    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
     pub fn association(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
-    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
     pub fn set_association(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association = input;
         self
     }
-    /// <p> The Amazon Web Services account ID to filter on. </p>
+    /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services account ID to filter on. </p>
+    /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self

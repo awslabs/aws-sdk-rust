@@ -483,6 +483,7 @@ where
 impl From<crate::operation::create_account_alias::CreateAccountAliasError> for Error {
     fn from(err: crate::operation::create_account_alias::CreateAccountAliasError) -> Self {
         match err {
+            crate::operation::create_account_alias::CreateAccountAliasError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::create_account_alias::CreateAccountAliasError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
             crate::operation::create_account_alias::CreateAccountAliasError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_account_alias::CreateAccountAliasError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -1058,6 +1059,7 @@ where
 impl From<crate::operation::deactivate_mfa_device::DeactivateMFADeviceError> for Error {
     fn from(err: crate::operation::deactivate_mfa_device::DeactivateMFADeviceError) -> Self {
         match err {
+            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::deactivate_mfa_device::DeactivateMFADeviceError::EntityTemporarilyUnmodifiableException(inner) => Error::EntityTemporarilyUnmodifiableException(inner),
             crate::operation::deactivate_mfa_device::DeactivateMFADeviceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::deactivate_mfa_device::DeactivateMFADeviceError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
@@ -1151,6 +1153,7 @@ where
 impl From<crate::operation::delete_account_alias::DeleteAccountAliasError> for Error {
     fn from(err: crate::operation::delete_account_alias::DeleteAccountAliasError) -> Self {
         match err {
+            crate::operation::delete_account_alias::DeleteAccountAliasError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::delete_account_alias::DeleteAccountAliasError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_account_alias::DeleteAccountAliasError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::delete_account_alias::DeleteAccountAliasError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -1858,6 +1861,7 @@ impl From<crate::operation::delete_signing_certificate::DeleteSigningCertificate
         err: crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
     ) -> Self {
         match err {
+            crate::operation::delete_signing_certificate::DeleteSigningCertificateError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::delete_signing_certificate::DeleteSigningCertificateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_signing_certificate::DeleteSigningCertificateError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::delete_signing_certificate::DeleteSigningCertificateError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -2075,6 +2079,7 @@ where
 impl From<crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError> for Error {
     fn from(err: crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError) -> Self {
         match err {
+            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError::DeleteConflictException(inner) => Error::DeleteConflictException(inner),
             crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
@@ -2248,6 +2253,7 @@ where
 impl From<crate::operation::enable_mfa_device::EnableMFADeviceError> for Error {
     fn from(err: crate::operation::enable_mfa_device::EnableMFADeviceError) -> Self {
         match err {
+            crate::operation::enable_mfa_device::EnableMFADeviceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::enable_mfa_device::EnableMFADeviceError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
             crate::operation::enable_mfa_device::EnableMFADeviceError::EntityTemporarilyUnmodifiableException(inner) => Error::EntityTemporarilyUnmodifiableException(inner),
             crate::operation::enable_mfa_device::EnableMFADeviceError::InvalidAuthenticationCodeException(inner) => Error::InvalidAuthenticationCodeException(inner),
@@ -2749,6 +2755,50 @@ impl From<crate::operation::get_login_profile::GetLoginProfileError> for Error {
                 inner,
             ) => Error::ServiceFailureException(inner),
             crate::operation::get_login_profile::GetLoginProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mfa_device::GetMFADeviceError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mfa_device::GetMFADeviceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_mfa_device::GetMFADeviceError> for Error {
+    fn from(err: crate::operation::get_mfa_device::GetMFADeviceError) -> Self {
+        match err {
+            crate::operation::get_mfa_device::GetMFADeviceError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::get_mfa_device::GetMFADeviceError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_mfa_device::GetMFADeviceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -5095,6 +5145,7 @@ where
 impl From<crate::operation::resync_mfa_device::ResyncMFADeviceError> for Error {
     fn from(err: crate::operation::resync_mfa_device::ResyncMFADeviceError) -> Self {
         match err {
+            crate::operation::resync_mfa_device::ResyncMFADeviceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::resync_mfa_device::ResyncMFADeviceError::InvalidAuthenticationCodeException(inner) => Error::InvalidAuthenticationCodeException(inner),
             crate::operation::resync_mfa_device::ResyncMFADeviceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::resync_mfa_device::ResyncMFADeviceError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
@@ -6626,6 +6677,7 @@ impl From<crate::operation::upload_signing_certificate::UploadSigningCertificate
         err: crate::operation::upload_signing_certificate::UploadSigningCertificateError,
     ) -> Self {
         match err {
+            crate::operation::upload_signing_certificate::UploadSigningCertificateError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::upload_signing_certificate::UploadSigningCertificateError::DuplicateCertificateException(inner) => Error::DuplicateCertificateException(inner),
             crate::operation::upload_signing_certificate::UploadSigningCertificateError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
             crate::operation::upload_signing_certificate::UploadSigningCertificateError::InvalidCertificateException(inner) => Error::InvalidCertificateException(inner),

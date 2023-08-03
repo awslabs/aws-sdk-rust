@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`voice_connectors(Option<Vec<VoiceConnector>>)`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput::voice_connectors): <p>The details of the Amazon Chime Voice Connectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceConnectorsError>`](crate::operation::list_voice_connectors::ListVoiceConnectorsError)
+    #[deprecated(note = "Replaced by ListVoiceConnectors in the Amazon Chime SDK Voice Namespace")]
     pub fn list_voice_connectors(
         &self,
     ) -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsFluentBuilder {

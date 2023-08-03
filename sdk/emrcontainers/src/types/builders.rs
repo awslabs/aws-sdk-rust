@@ -5,6 +5,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverridesBuilder;
 
 pub use crate::types::_monitoring_configuration::MonitoringConfigurationBuilder;
 
+pub use crate::types::_container_log_rotation_configuration::ContainerLogRotationConfigurationBuilder;
+
 pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfigurationBuilder;
 
 pub use crate::types::_cloud_watch_monitoring_configuration::CloudWatchMonitoringConfigurationBuilder;

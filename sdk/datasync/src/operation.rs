@@ -10,6 +10,9 @@ pub mod cancel_task_execution;
 /// Types for the `CreateAgent` operation.
 pub mod create_agent;
 
+/// Types for the `CreateLocationAzureBlob` operation.
+pub mod create_location_azure_blob;
+
 /// Types for the `CreateLocationEfs` operation.
 pub mod create_location_efs;
 
@@ -57,6 +60,9 @@ pub mod describe_agent;
 
 /// Types for the `DescribeDiscoveryJob` operation.
 pub mod describe_discovery_job;
+
+/// Types for the `DescribeLocationAzureBlob` operation.
+pub mod describe_location_azure_blob;
 
 /// Types for the `DescribeLocationEfs` operation.
 pub mod describe_location_efs;
@@ -150,6 +156,9 @@ pub mod update_agent;
 
 /// Types for the `UpdateDiscoveryJob` operation.
 pub mod update_discovery_job;
+
+/// Types for the `UpdateLocationAzureBlob` operation.
+pub mod update_location_azure_blob;
 
 /// Types for the `UpdateLocationHdfs` operation.
 pub mod update_location_hdfs;

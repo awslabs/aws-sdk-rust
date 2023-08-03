@@ -15,6 +15,9 @@ pub struct Notification {
     /// <p>Any change in job state will trigger a notification for this job.</p>
     #[doc(hidden)]
     pub notify_all: bool,
+    /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
+    #[doc(hidden)]
+    pub device_pickup_sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
@@ -29,6 +32,10 @@ impl Notification {
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(&self) -> bool {
         self.notify_all
+    }
+    /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
+    pub fn device_pickup_sns_topic_arn(&self) -> ::std::option::Option<&str> {
+        self.device_pickup_sns_topic_arn.as_deref()
     }
 }
 impl Notification {
@@ -47,6 +54,7 @@ pub struct NotificationBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
     pub(crate) notify_all: ::std::option::Option<bool>,
+    pub(crate) device_pickup_sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotificationBuilder {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
@@ -96,12 +104,29 @@ impl NotificationBuilder {
         self.notify_all = input;
         self
     }
+    /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
+    pub fn device_pickup_sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_pickup_sns_topic_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
+    pub fn set_device_pickup_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.device_pickup_sns_topic_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {
         crate::types::Notification {
             sns_topic_arn: self.sns_topic_arn,
             job_states_to_notify: self.job_states_to_notify,
             notify_all: self.notify_all.unwrap_or_default(),
+            device_pickup_sns_topic_arn: self.device_pickup_sns_topic_arn,
         }
     }
 }

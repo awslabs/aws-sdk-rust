@@ -69,6 +69,12 @@ pub fn ser_field_to_match(
         crate::protocol_serde::shape_cookies::ser_cookies(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.header_order {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("HeaderOrder").start_object();
+        crate::protocol_serde::shape_header_order::ser_header_order(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -147,6 +153,11 @@ where
                         "Cookies" => {
                             builder = builder.set_cookies(
                                 crate::protocol_serde::shape_cookies::de_cookies(tokens)?,
+                            );
+                        }
+                        "HeaderOrder" => {
+                            builder = builder.set_header_order(
+                                crate::protocol_serde::shape_header_order::de_header_order(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

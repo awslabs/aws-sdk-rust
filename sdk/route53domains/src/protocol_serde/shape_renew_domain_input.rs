@@ -12,10 +12,10 @@ pub fn ser_renew_domain_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.current_expiry_year {
         object.key("CurrentExpiryYear").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.current_expiry_year).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

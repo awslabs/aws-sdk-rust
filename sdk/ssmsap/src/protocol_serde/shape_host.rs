@@ -29,6 +29,33 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "HostIp" => {
+                                builder = builder.set_host_ip(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "EC2InstanceId" => {
+                                builder = builder.set_ec2_instance_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "InstanceId" => {
+                                builder = builder.set_instance_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "HostRole" => {
                                 builder = builder.set_host_role(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -41,17 +68,8 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "HostIp" => {
-                                builder = builder.set_host_ip(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "InstanceId" => {
-                                builder = builder.set_instance_id(
+                            "OsVersion" => {
+                                builder = builder.set_os_version(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

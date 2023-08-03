@@ -38,6 +38,12 @@ pub struct ComponentSummary {
     /// <p>The message associated with the component deployment status.</p>
     #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last attempted deployment of this component.</p>
+    #[doc(hidden)]
+    pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the last successful deployment of this component.</p>
+    #[doc(hidden)]
+    pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummary {
     /// <p>The name of the component.</p>
@@ -88,6 +94,14 @@ impl ComponentSummary {
     pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
+    /// <p>The ID of the last attempted deployment of this component.</p>
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_attempted_deployment_id.as_deref()
+    }
+    /// <p>The ID of the last successful deployment of this component.</p>
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+        self.last_succeeded_deployment_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ComponentSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +125,14 @@ impl ::std::fmt::Debug for ComponentSummary {
         formatter.field(
             "deployment_status_message",
             &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
         );
         formatter.finish()
     }
@@ -137,6 +159,8 @@ pub struct ComponentSummaryBuilder {
     pub(crate) last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummaryBuilder {
     /// <p>The name of the component.</p>
@@ -282,6 +306,38 @@ impl ComponentSummaryBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>The ID of the last attempted deployment of this component.</p>
+    pub fn last_attempted_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last attempted deployment of this component.</p>
+    pub fn set_last_attempted_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_attempted_deployment_id = input;
+        self
+    }
+    /// <p>The ID of the last successful deployment of this component.</p>
+    pub fn last_succeeded_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the last successful deployment of this component.</p>
+    pub fn set_last_succeeded_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.last_succeeded_deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {
         crate::types::ComponentSummary {
@@ -296,6 +352,8 @@ impl ComponentSummaryBuilder {
             last_deployment_succeeded_at: self.last_deployment_succeeded_at,
             deployment_status: self.deployment_status,
             deployment_status_message: self.deployment_status_message,
+            last_attempted_deployment_id: self.last_attempted_deployment_id,
+            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
         }
     }
 }
@@ -321,6 +379,14 @@ impl ::std::fmt::Debug for ComponentSummaryBuilder {
         formatter.field(
             "deployment_status_message",
             &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "last_attempted_deployment_id",
+            &self.last_attempted_deployment_id,
+        );
+        formatter.field(
+            "last_succeeded_deployment_id",
+            &self.last_succeeded_deployment_id,
         );
         formatter.finish()
     }

@@ -9,6 +9,9 @@ pub struct ListServicePipelineOutputsInput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    #[doc(hidden)]
+    pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServicePipelineOutputsInput {
     /// <p>The name of the service whose pipeline's outputs you want.</p>
@@ -18,6 +21,10 @@ impl ListServicePipelineOutputsInput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+        self.deployment_id.as_deref()
     }
 }
 impl ListServicePipelineOutputsInput {
@@ -35,6 +42,7 @@ impl ListServicePipelineOutputsInput {
 pub struct ListServicePipelineOutputsInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServicePipelineOutputsInputBuilder {
     /// <p>The name of the service whose pipeline's outputs you want.</p>
@@ -57,6 +65,22 @@ impl ListServicePipelineOutputsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the deployment you want the outputs for.</p>
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListServicePipelineOutputsInput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput).
     pub fn build(
         self,
@@ -68,6 +92,7 @@ impl ListServicePipelineOutputsInputBuilder {
             crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput {
                 service_name: self.service_name,
                 next_token: self.next_token,
+                deployment_id: self.deployment_id,
             },
         )
     }

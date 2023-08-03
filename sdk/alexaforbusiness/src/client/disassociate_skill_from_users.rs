@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`skill_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder::set_skill_id): <p> The private skill ID you want to make unavailable for enrolled users.</p>
     /// - On success, responds with [`DisassociateSkillFromUsersOutput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput)
     /// - On failure, responds with [`SdkError<DisassociateSkillFromUsersError>`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn disassociate_skill_from_users(&self) -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder{
         crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder::new(self.handle.clone())
     }

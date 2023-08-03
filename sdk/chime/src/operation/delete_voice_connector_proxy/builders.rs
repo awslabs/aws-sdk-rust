@@ -5,7 +5,13 @@ pub use crate::operation::delete_voice_connector_proxy::_delete_voice_connector_
 
 /// Fluent builder constructing a request to `DeleteVoiceConnectorProxy`.
 ///
-/// <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p>
+/// <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorProxy.html">DeleteVoiceProxy</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by DeleteVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

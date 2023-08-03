@@ -25,8 +25,8 @@ pub(crate) fn de_conflict_exception_json_err(
                             .transpose()?,
                         );
                     }
-                    "resourceId" => {
-                        builder = builder.set_resource_id(
+                    "resourceName" => {
+                        builder = builder.set_resource_name(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?

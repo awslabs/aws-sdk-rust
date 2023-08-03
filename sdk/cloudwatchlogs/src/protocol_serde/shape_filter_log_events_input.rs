@@ -48,8 +48,8 @@ pub fn ser_filter_log_events_input(
     if let Some(var_12) = &input.interleaved {
         object.key("interleaved").boolean(*var_12);
     }
-    if input.unmask {
-        object.key("unmask").boolean(input.unmask);
+    if let Some(var_13) = &input.unmask {
+        object.key("unmask").boolean(*var_13);
     }
     Ok(())
 }

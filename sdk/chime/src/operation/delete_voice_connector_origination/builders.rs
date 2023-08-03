@@ -7,7 +7,13 @@ pub use crate::operation::delete_voice_connector_origination::_delete_voice_conn
 ///
 /// <p>Deletes the origination settings for the specified Amazon Chime Voice Connector.</p> <note>
 /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the origination settings.</p>
-/// </note>
+/// </note> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorOrigination.html">DeleteVoiceConnectorOrigination</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by DeleteVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -29,7 +29,7 @@ pub struct DescribeVpcsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     #[doc(hidden)]
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,7 +44,7 @@ pub struct DescribeVpcsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeVpcsInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -71,7 +71,7 @@ impl DescribeVpcsInput {
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     pub fn vpc_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_ids.as_deref()
@@ -113,7 +113,7 @@ impl DescribeVpcsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -143,7 +143,7 @@ impl DescribeVpcsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p> </li>
     /// <li> <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p> </li>
@@ -178,7 +178,7 @@ impl DescribeVpcsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
     ///
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
@@ -186,7 +186,7 @@ impl DescribeVpcsInputBuilder {
         self.vpc_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more VPC IDs.</p>
+    /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
     pub fn set_vpc_ids(
         mut self,

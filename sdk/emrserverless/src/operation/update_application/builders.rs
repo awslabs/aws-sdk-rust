@@ -252,4 +252,20 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_worker_type_specifications(input);
         self
     }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn release_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.release_label(input.into());
+        self
+    }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn set_release_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_release_label(input);
+        self
+    }
 }

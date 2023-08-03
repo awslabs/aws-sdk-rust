@@ -16,6 +16,8 @@ pub(crate) mod shape_cancel_signing_profile;
 
 pub(crate) mod shape_describe_signing_job;
 
+pub(crate) mod shape_get_revocation_status;
+
 pub(crate) mod shape_get_signing_platform;
 
 pub(crate) mod shape_get_signing_profile;
@@ -37,6 +39,8 @@ pub(crate) mod shape_remove_profile_permission;
 pub(crate) mod shape_revoke_signature;
 
 pub(crate) mod shape_revoke_signing_profile;
+
+pub(crate) mod shape_sign_payload;
 
 pub(crate) mod shape_start_signing_job;
 
@@ -74,6 +78,8 @@ pub(crate) mod shape_revoke_signing_profile_input;
 
 pub(crate) mod shape_service_limit_exceeded_exception;
 
+pub(crate) mod shape_sign_payload_input;
+
 pub(crate) mod shape_start_signing_job_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -86,7 +92,11 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_metadata;
+
 pub(crate) mod shape_permissions;
+
+pub(crate) mod shape_revoked_entities;
 
 pub(crate) mod shape_signature_validity_period;
 

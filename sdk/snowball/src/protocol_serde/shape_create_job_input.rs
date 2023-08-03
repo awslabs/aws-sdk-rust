@@ -74,5 +74,14 @@ pub fn ser_create_job_input(
     if let Some(var_22) = &input.long_term_pricing_id {
         object.key("LongTermPricingId").string(var_22.as_str());
     }
+    if let Some(var_23) = &input.impact_level {
+        object.key("ImpactLevel").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.pickup_details {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("PickupDetails").start_object();
+        crate::protocol_serde::shape_pickup_details::ser_pickup_details(&mut object_25, var_24)?;
+        object_25.finish();
+    }
     Ok(())
 }

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`gateways(Option<Vec<GatewaySummary>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>The gateways in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The token used to paginate though multiple pages of gateway summaries.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_gateways(
         &self,
     ) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {

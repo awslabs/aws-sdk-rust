@@ -40,6 +40,9 @@ pub struct ApplicationSummary {
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
     #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    #[doc(hidden)]
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSummary {
     /// <p>The name of the application.</p>
@@ -94,6 +97,10 @@ impl ApplicationSummary {
     ) -> ::std::option::Option<&crate::types::ApplicationDeploymentLifecycle> {
         self.deployment_status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::types::ApplicationSummary).
@@ -121,6 +128,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) version_status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
     pub(crate) deployment_status:
         ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSummaryBuilder {
     /// <p>The name of the application.</p>
@@ -282,6 +290,16 @@ impl ApplicationSummaryBuilder {
         self.deployment_status = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
@@ -297,6 +315,7 @@ impl ApplicationSummaryBuilder {
             last_start_time: self.last_start_time,
             version_status: self.version_status,
             deployment_status: self.deployment_status,
+            role_arn: self.role_arn,
         }
     }
 }

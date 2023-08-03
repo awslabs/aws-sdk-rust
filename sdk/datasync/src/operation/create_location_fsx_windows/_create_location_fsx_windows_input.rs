@@ -21,8 +21,8 @@ pub struct CreateLocationFsxWindowsInput {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
@@ -55,8 +55,8 @@ impl CreateLocationFsxWindowsInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
         self.tags.as_deref()
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
@@ -183,14 +183,14 @@ impl CreateLocationFsxWindowsInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self

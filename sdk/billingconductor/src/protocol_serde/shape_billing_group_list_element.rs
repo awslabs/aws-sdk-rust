@@ -113,6 +113,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "AccountGrouping" => {
+                                builder = builder.set_account_grouping(
+                                    crate::protocol_serde::shape_list_billing_group_account_grouping::de_list_billing_group_account_grouping(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

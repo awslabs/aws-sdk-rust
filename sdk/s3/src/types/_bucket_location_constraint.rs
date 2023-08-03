@@ -19,6 +19,7 @@
 ///     BucketLocationConstraint::ApNortheast2 => { /* ... */ },
 ///     BucketLocationConstraint::ApNortheast3 => { /* ... */ },
 ///     BucketLocationConstraint::ApSouth1 => { /* ... */ },
+///     BucketLocationConstraint::ApSouth2 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast1 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast2 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast3 => { /* ... */ },
@@ -28,6 +29,7 @@
 ///     BucketLocationConstraint::EuCentral1 => { /* ... */ },
 ///     BucketLocationConstraint::EuNorth1 => { /* ... */ },
 ///     BucketLocationConstraint::EuSouth1 => { /* ... */ },
+///     BucketLocationConstraint::EuSouth2 => { /* ... */ },
 ///     BucketLocationConstraint::EuWest1 => { /* ... */ },
 ///     BucketLocationConstraint::EuWest2 => { /* ... */ },
 ///     BucketLocationConstraint::EuWest3 => { /* ... */ },
@@ -86,6 +88,8 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     ApSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    ApSouth2,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
@@ -103,6 +107,8 @@ pub enum BucketLocationConstraint {
     EuNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    EuSouth2,
     #[allow(missing_docs)] // documentation missing in model
     EuWest1,
     #[allow(missing_docs)] // documentation missing in model
@@ -136,6 +142,7 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "ap-northeast-2" => BucketLocationConstraint::ApNortheast2,
             "ap-northeast-3" => BucketLocationConstraint::ApNortheast3,
             "ap-south-1" => BucketLocationConstraint::ApSouth1,
+            "ap-south-2" => BucketLocationConstraint::ApSouth2,
             "ap-southeast-1" => BucketLocationConstraint::ApSoutheast1,
             "ap-southeast-2" => BucketLocationConstraint::ApSoutheast2,
             "ap-southeast-3" => BucketLocationConstraint::ApSoutheast3,
@@ -145,6 +152,7 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "eu-central-1" => BucketLocationConstraint::EuCentral1,
             "eu-north-1" => BucketLocationConstraint::EuNorth1,
             "eu-south-1" => BucketLocationConstraint::EuSouth1,
+            "eu-south-2" => BucketLocationConstraint::EuSouth2,
             "eu-west-1" => BucketLocationConstraint::EuWest1,
             "eu-west-2" => BucketLocationConstraint::EuWest2,
             "eu-west-3" => BucketLocationConstraint::EuWest3,
@@ -179,6 +187,7 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::ApNortheast2 => "ap-northeast-2",
             BucketLocationConstraint::ApNortheast3 => "ap-northeast-3",
             BucketLocationConstraint::ApSouth1 => "ap-south-1",
+            BucketLocationConstraint::ApSouth2 => "ap-south-2",
             BucketLocationConstraint::ApSoutheast1 => "ap-southeast-1",
             BucketLocationConstraint::ApSoutheast2 => "ap-southeast-2",
             BucketLocationConstraint::ApSoutheast3 => "ap-southeast-3",
@@ -188,6 +197,7 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::EuCentral1 => "eu-central-1",
             BucketLocationConstraint::EuNorth1 => "eu-north-1",
             BucketLocationConstraint::EuSouth1 => "eu-south-1",
+            BucketLocationConstraint::EuSouth2 => "eu-south-2",
             BucketLocationConstraint::EuWest1 => "eu-west-1",
             BucketLocationConstraint::EuWest2 => "eu-west-2",
             BucketLocationConstraint::EuWest3 => "eu-west-3",
@@ -211,6 +221,7 @@ impl BucketLocationConstraint {
             "ap-northeast-2",
             "ap-northeast-3",
             "ap-south-1",
+            "ap-south-2",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -220,6 +231,7 @@ impl BucketLocationConstraint {
             "eu-central-1",
             "eu-north-1",
             "eu-south-1",
+            "eu-south-2",
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",

@@ -370,10 +370,10 @@ async fn operation_input_test_get_object_11() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: DualStack cannot be combined with a Host override (PrivateLink) [SDK::Host + access point + Dualstack is an error]");
+    let error = _result.expect_err("expected error: Cannot set dual-stack in combination with a custom endpoint. [SDK::Host + access point + Dualstack is an error]");
     assert!(
-                                    format!("{:?}", error).contains("DualStack cannot be combined with a Host override (PrivateLink)"),
-                                    "expected error to contain `DualStack cannot be combined with a Host override (PrivateLink)` but it was {:?}", error
+                                    format!("{:?}", error).contains("Cannot set dual-stack in combination with a custom endpoint."),
+                                    "expected error to contain `Cannot set dual-stack in combination with a custom endpoint.` but it was {:?}", error
                                 );
 }
 
@@ -2552,9 +2552,15 @@ async fn operation_input_test_get_object_78() {
             .send()
             .await
     );
-    let req = rcvr.expect_request();
-    let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name"), "expected URI to start with `https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name` but it was `{}`", uri);
+    rcvr.expect_no_request();
+    let error = _result.expect_err(
+        "expected error: Partition does not support FIPS [path style + fips@cn-north-1]",
+    );
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -3059,10 +3065,10 @@ async fn operation_input_test_get_object_93() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::Host + FIPS@us-west-2]");
+    let error = _result.expect_err("expected error: A custom endpoint cannot be combined with FIPS [SDK::Host + FIPS@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("A custom endpoint cannot be combined with FIPS"),
+                                    "expected error to contain `A custom endpoint cannot be combined with FIPS` but it was {:?}", error
                                 );
 }
 
@@ -3096,10 +3102,10 @@ async fn operation_input_test_get_object_94() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::Host + DualStack@us-west-2]");
+    let error = _result.expect_err("expected error: Cannot set dual-stack in combination with a custom endpoint. [SDK::Host + DualStack@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("Cannot set dual-stack in combination with a custom endpoint."),
+                                    "expected error to contain `Cannot set dual-stack in combination with a custom endpoint.` but it was {:?}", error
                                 );
 }
 
@@ -3133,10 +3139,10 @@ async fn operation_input_test_get_object_95() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::HOST + accelerate@us-west-2]");
+    let error = _result.expect_err("expected error: A custom endpoint cannot be combined with S3 Accelerate [SDK::HOST + accelerate@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("A custom endpoint cannot be combined with S3 Accelerate"),
+                                    "expected error to contain `A custom endpoint cannot be combined with S3 Accelerate` but it was {:?}", error
                                 );
 }
 
@@ -3269,10 +3275,10 @@ async fn operation_input_test_get_object_99() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::Host + DualStack@cn-north-1]");
+    let error = _result.expect_err("expected error: Cannot set dual-stack in combination with a custom endpoint. [SDK::Host + DualStack@cn-north-1]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("Cannot set dual-stack in combination with a custom endpoint."),
+                                    "expected error to contain `Cannot set dual-stack in combination with a custom endpoint.` but it was {:?}", error
                                 );
 }
 
@@ -3405,10 +3411,10 @@ async fn operation_input_test_get_object_103() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::Host + FIPS@af-south-1]");
+    let error = _result.expect_err("expected error: A custom endpoint cannot be combined with FIPS [SDK::Host + FIPS@af-south-1]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("A custom endpoint cannot be combined with FIPS"),
+                                    "expected error to contain `A custom endpoint cannot be combined with FIPS` but it was {:?}", error
                                 );
 }
 
@@ -3442,10 +3448,10 @@ async fn operation_input_test_get_object_104() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::Host + DualStack@af-south-1]");
+    let error = _result.expect_err("expected error: Cannot set dual-stack in combination with a custom endpoint. [SDK::Host + DualStack@af-south-1]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("Cannot set dual-stack in combination with a custom endpoint."),
+                                    "expected error to contain `Cannot set dual-stack in combination with a custom endpoint.` but it was {:?}", error
                                 );
 }
 
@@ -3479,10 +3485,10 @@ async fn operation_input_test_get_object_105() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate [SDK::HOST + accelerate@af-south-1]");
+    let error = _result.expect_err("expected error: A custom endpoint cannot be combined with S3 Accelerate [SDK::HOST + accelerate@af-south-1]");
     assert!(
-                                    format!("{:?}", error).contains("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"),
-                                    "expected error to contain `Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate` but it was {:?}", error
+                                    format!("{:?}", error).contains("A custom endpoint cannot be combined with S3 Accelerate"),
+                                    "expected error to contain `A custom endpoint cannot be combined with S3 Accelerate` but it was {:?}", error
                                 );
 }
 

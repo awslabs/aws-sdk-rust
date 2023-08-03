@@ -36,6 +36,34 @@ pub fn de_verified_access_logs(
                 builder = builder.set_kinesis_data_firehose(var_3);
             }
             ,
+            s if s.matches("logVersion") /* LogVersion com.amazonaws.ec2#VerifiedAccessLogs$LogVersion */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_log_version(var_4);
+            }
+            ,
+            s if s.matches("includeTrustContext") /* IncludeTrustContext com.amazonaws.ec2#VerifiedAccessLogs$IncludeTrustContext */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_include_trust_context(var_5);
+            }
+            ,
             _ => {}
         }
     }

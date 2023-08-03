@@ -11,6 +11,10 @@ pub struct UpdateServiceIntegrationConfig {
     #[doc(hidden)]
     pub logs_anomaly_detection:
         ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
+    /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
+    #[doc(hidden)]
+    pub kms_server_side_encryption:
+        ::std::option::Option<crate::types::KmsServerSideEncryptionIntegrationConfig>,
 }
 impl UpdateServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
@@ -22,6 +26,12 @@ impl UpdateServiceIntegrationConfig {
         &self,
     ) -> ::std::option::Option<&crate::types::LogsAnomalyDetectionIntegrationConfig> {
         self.logs_anomaly_detection.as_ref()
+    }
+    /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
+    pub fn kms_server_side_encryption(
+        &self,
+    ) -> ::std::option::Option<&crate::types::KmsServerSideEncryptionIntegrationConfig> {
+        self.kms_server_side_encryption.as_ref()
     }
 }
 impl UpdateServiceIntegrationConfig {
@@ -40,6 +50,8 @@ pub struct UpdateServiceIntegrationConfigBuilder {
     pub(crate) ops_center: ::std::option::Option<crate::types::OpsCenterIntegrationConfig>,
     pub(crate) logs_anomaly_detection:
         ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
+    pub(crate) kms_server_side_encryption:
+        ::std::option::Option<crate::types::KmsServerSideEncryptionIntegrationConfig>,
 }
 impl UpdateServiceIntegrationConfigBuilder {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
@@ -71,11 +83,28 @@ impl UpdateServiceIntegrationConfigBuilder {
         self.logs_anomaly_detection = input;
         self
     }
+    /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
+    pub fn kms_server_side_encryption(
+        mut self,
+        input: crate::types::KmsServerSideEncryptionIntegrationConfig,
+    ) -> Self {
+        self.kms_server_side_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
+    pub fn set_kms_server_side_encryption(
+        mut self,
+        input: ::std::option::Option<crate::types::KmsServerSideEncryptionIntegrationConfig>,
+    ) -> Self {
+        self.kms_server_side_encryption = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateServiceIntegrationConfig`](crate::types::UpdateServiceIntegrationConfig).
     pub fn build(self) -> crate::types::UpdateServiceIntegrationConfig {
         crate::types::UpdateServiceIntegrationConfig {
             ops_center: self.ops_center,
             logs_anomaly_detection: self.logs_anomaly_detection,
+            kms_server_side_encryption: self.kms_server_side_encryption,
         }
     }
 }

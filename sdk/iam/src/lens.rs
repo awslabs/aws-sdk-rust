@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_groups_for_user_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_instance_profile_tags_output_marker(
+    input: &crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_instance_profiles_output_marker(
     input: &crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -129,6 +139,16 @@ pub(crate) fn reflens_list_instance_profiles_for_role_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_mfa_device_tags_output_marker(
+    input: &crate::operation::list_mfa_device_tags::ListMfaDeviceTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_mfa_devices_output_marker(
     input: &crate::operation::list_mfa_devices::ListMfaDevicesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -139,8 +159,28 @@ pub(crate) fn reflens_list_mfa_devices_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_open_id_connect_provider_tags_output_marker(
+    input: &crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policies_output_marker(
     input: &crate::operation::list_policies::ListPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_tags_output_marker(
+    input: &crate::operation::list_policy_tags::ListPolicyTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -169,8 +209,38 @@ pub(crate) fn reflens_list_role_policies_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_role_tags_output_marker(
+    input: &crate::operation::list_role_tags::ListRoleTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_roles_output_marker(
     input: &crate::operation::list_roles::ListRolesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_saml_provider_tags_output_marker(
+    input: &crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_server_certificate_tags_output_marker(
+    input: &crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -359,6 +429,16 @@ pub(crate) fn lens_list_groups_for_user_output_groups(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_instance_profile_tags_output_tags(
+    input: crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_instance_profiles_output_instance_profiles(
     input: crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
@@ -379,6 +459,16 @@ pub(crate) fn lens_list_instance_profiles_for_role_output_instance_profiles(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_mfa_device_tags_output_tags(
+    input: crate::operation::list_mfa_device_tags::ListMfaDeviceTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_mfa_devices_output_mfa_devices(
     input: crate::operation::list_mfa_devices::ListMfaDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MfaDevice>> {
@@ -389,10 +479,30 @@ pub(crate) fn lens_list_mfa_devices_output_mfa_devices(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_open_id_connect_provider_tags_output_tags(
+    input: crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policies_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
     let input = match input.policies {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_tags_output_tags(
+    input: crate::operation::list_policy_tags::ListPolicyTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -419,10 +529,40 @@ pub(crate) fn lens_list_role_policies_output_policy_names(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_role_tags_output_tags(
+    input: crate::operation::list_role_tags::ListRoleTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_roles_output_roles(
     input: crate::operation::list_roles::ListRolesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Role>> {
     let input = match input.roles {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_saml_provider_tags_output_tags(
+    input: crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_server_certificate_tags_output_tags(
+    input: crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    let input = match input.tags {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

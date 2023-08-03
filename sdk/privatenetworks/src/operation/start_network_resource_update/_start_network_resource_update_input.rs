@@ -9,7 +9,8 @@ pub struct StartNetworkResourceUpdateInput {
     /// <p>The update type.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::UpdateType>,
@@ -19,6 +20,17 @@ pub struct StartNetworkResourceUpdateInput {
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     #[doc(hidden)]
     pub return_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
+    /// <ul>
+    /// <li> <p>Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the new commitment period.</p> </li>
+    /// <li> <p>Change a 1-year commitment to a 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the 3-year commitment period.</p> </li>
+    /// <li> <p>Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.</p> </li>
+    /// <li> <p>Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.</p> </li>
+    /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    #[doc(hidden)]
+    pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -28,7 +40,8 @@ impl StartNetworkResourceUpdateInput {
     /// <p>The update type.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
     pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
         self.update_type.as_ref()
@@ -40,6 +53,20 @@ impl StartNetworkResourceUpdateInput {
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     pub fn return_reason(&self) -> ::std::option::Option<&str> {
         self.return_reason.as_deref()
+    }
+    /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
+    /// <ul>
+    /// <li> <p>Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the new commitment period.</p> </li>
+    /// <li> <p>Change a 1-year commitment to a 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the 3-year commitment period.</p> </li>
+    /// <li> <p>Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.</p> </li>
+    /// <li> <p>Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.</p> </li>
+    /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    pub fn commitment_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+        self.commitment_configuration.as_ref()
     }
 }
 impl StartNetworkResourceUpdateInput {
@@ -59,6 +86,8 @@ pub struct StartNetworkResourceUpdateInputBuilder {
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateType>,
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) return_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) commitment_configuration:
+        ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl StartNetworkResourceUpdateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
@@ -80,7 +109,8 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// <p>The update type.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
@@ -89,7 +119,8 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// <p>The update type.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
+    /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
     pub fn set_update_type(
         mut self,
@@ -127,6 +158,38 @@ impl StartNetworkResourceUpdateInputBuilder {
         self.return_reason = input;
         self
     }
+    /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
+    /// <ul>
+    /// <li> <p>Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the new commitment period.</p> </li>
+    /// <li> <p>Change a 1-year commitment to a 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the 3-year commitment period.</p> </li>
+    /// <li> <p>Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.</p> </li>
+    /// <li> <p>Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.</p> </li>
+    /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    pub fn commitment_configuration(
+        mut self,
+        input: crate::types::CommitmentConfiguration,
+    ) -> Self {
+        self.commitment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
+    /// <ul>
+    /// <li> <p>Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the new commitment period.</p> </li>
+    /// <li> <p>Change a 1-year commitment to a 3-year commitment. The change is immediate and the hourly rate decreases to the rate for the 3-year commitment period.</p> </li>
+    /// <li> <p>Set a 1-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 1-year rate.</p> </li>
+    /// <li> <p>Set a 3-year commitment to automatically renew for an additional 1 year. The hourly rate for the additional year will continue to be the same as your existing 3-year rate.</p> </li>
+    /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    pub fn set_commitment_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
+    ) -> Self {
+        self.commitment_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
     pub fn build(
         self,
@@ -140,6 +203,7 @@ impl StartNetworkResourceUpdateInputBuilder {
                 update_type: self.update_type,
                 shipping_address: self.shipping_address,
                 return_reason: self.return_reason,
+                commitment_configuration: self.commitment_configuration,
             },
         )
     }

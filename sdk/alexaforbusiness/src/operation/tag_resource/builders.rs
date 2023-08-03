@@ -6,6 +6,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds metadata tags to a specified resource.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

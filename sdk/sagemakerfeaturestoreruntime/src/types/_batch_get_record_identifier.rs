@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordIdentifier {
-    /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for a list of record identifiers in string format.</p>
@@ -16,7 +16,7 @@ pub struct BatchGetRecordIdentifier {
     pub feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRecordIdentifier {
-    /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -50,7 +50,7 @@ pub struct BatchGetRecordIdentifierBuilder {
     pub(crate) feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRecordIdentifierBuilder {
-    /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -58,7 +58,7 @@ impl BatchGetRecordIdentifierBuilder {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving in a batch.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -79,12 +79,12 @@ pub struct GetDimensionValuesInput {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -121,7 +121,7 @@ pub struct GetDimensionValuesInput {
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -207,12 +207,12 @@ impl GetDimensionValuesInput {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -250,7 +250,7 @@ impl GetDimensionValuesInput {
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -444,12 +444,12 @@ impl GetDimensionValuesInputBuilder {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -485,12 +485,12 @@ impl GetDimensionValuesInputBuilder {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -597,7 +597,7 @@ impl GetDimensionValuesInputBuilder {
                 context: self.context,
                 filter: self.filter,
                 sort_by: self.sort_by,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_page_token: self.next_page_token,
             },
         )

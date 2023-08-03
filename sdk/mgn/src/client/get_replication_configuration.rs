@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::set_source_server_id): <p>Request to get Replication Configuration by Source Server ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::set_account_id): <p>Request to get Replication Configuration by Account ID.</p>
     /// - On success, responds with [`GetReplicationConfigurationOutput`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::source_server_id): <p>Replication Configuration Source Server ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::name): <p>Replication Configuration name.</p>
@@ -20,6 +21,7 @@ impl super::Client {
     ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::data_plane_routing): <p>Replication Configuration data plane routing.</p>
     ///   - [`create_public_ip(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::create_public_ip): <p>Replication Configuration create Public IP.</p>
     ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::staging_area_tags): <p>Replication Configuration Staging Area tags.</p>
+    ///   - [`use_fips_endpoint(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::use_fips_endpoint): <p>Replication Configuration use Fips Endpoint.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
     pub fn get_replication_configuration(&self) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder{
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::new(self.handle.clone())

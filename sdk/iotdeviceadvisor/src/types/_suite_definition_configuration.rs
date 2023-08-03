@@ -16,7 +16,8 @@ pub struct SuiteDefinitionConfiguration {
     /// <p>Verifies if the test suite is a long duration test.</p>
     #[doc(hidden)]
     pub is_long_duration_test: bool,
-    /// <p>Gets the test suite root group. This is a required parameter.</p>
+    /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
+    /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
     #[doc(hidden)]
     pub root_group: ::std::option::Option<::std::string::String>,
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
@@ -43,7 +44,8 @@ impl SuiteDefinitionConfiguration {
     pub fn is_long_duration_test(&self) -> bool {
         self.is_long_duration_test
     }
-    /// <p>Gets the test suite root group. This is a required parameter.</p>
+    /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
+    /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
     pub fn root_group(&self) -> ::std::option::Option<&str> {
         self.root_group.as_deref()
     }
@@ -133,12 +135,14 @@ impl SuiteDefinitionConfigurationBuilder {
         self.is_long_duration_test = input;
         self
     }
-    /// <p>Gets the test suite root group. This is a required parameter.</p>
+    /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
+    /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
     pub fn root_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Gets the test suite root group. This is a required parameter.</p>
+    /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
+    /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
     pub fn set_root_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_group = input;
         self

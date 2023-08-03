@@ -99,12 +99,12 @@ impl DescribeFHIRImportJobFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS-generated ID of the Data Store.</p>
+    /// <p>The AWS-generated ID of the data store.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self

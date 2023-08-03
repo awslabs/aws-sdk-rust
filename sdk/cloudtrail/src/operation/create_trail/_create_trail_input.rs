@@ -26,7 +26,7 @@ pub struct CreateTrailInput {
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     #[doc(hidden)]
     pub include_global_service_events: ::std::option::Option<bool>,
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     #[doc(hidden)]
     pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
@@ -87,7 +87,7 @@ impl CreateTrailInput {
     pub fn include_global_service_events(&self) -> ::std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn is_multi_region_trail(&self) -> ::std::option::Option<bool> {
         self.is_multi_region_trail
     }
@@ -236,12 +236,12 @@ impl CreateTrailInputBuilder {
         self.include_global_service_events = input;
         self
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn is_multi_region_trail(mut self, input: bool) -> Self {
         self.is_multi_region_trail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current Region or in all Regions. The default is false, which creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log events in all Regions.</p>
     pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_multi_region_trail = input;
         self

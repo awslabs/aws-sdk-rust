@@ -138,6 +138,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_campaign;
 
+pub(crate) mod shape_update_dataset;
+
 pub(crate) mod shape_update_metric_attribution;
 
 pub(crate) mod shape_update_recommender;
@@ -294,6 +296,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_campaign_input;
 
+pub(crate) mod shape_update_dataset_input;
+
 pub(crate) mod shape_update_metric_attribution_input;
 
 pub(crate) mod shape_update_recommender_input;
@@ -418,6 +422,8 @@ pub(crate) mod shape_dataset_schema_summary;
 
 pub(crate) mod shape_dataset_summary;
 
+pub(crate) mod shape_dataset_update_summary;
+
 pub(crate) mod shape_default_hyper_parameter_ranges;
 
 pub(crate) mod shape_event_tracker_summary;
@@ -448,6 +454,8 @@ pub(crate) mod shape_solution_summary;
 
 pub(crate) mod shape_solution_version_summary;
 
+pub(crate) mod shape_training_data_config;
+
 pub(crate) mod shape_tuned_hpo_params;
 
 pub(crate) mod shape_default_categorical_hyper_parameter_ranges;
@@ -476,11 +484,15 @@ pub(crate) mod shape_default_continuous_hyper_parameter_range;
 
 pub(crate) mod shape_default_integer_hyper_parameter_range;
 
+pub(crate) mod shape_excluded_dataset_columns;
+
 pub(crate) mod shape_integer_hyper_parameter_range;
 
 pub(crate) mod shape_categorical_hyper_parameter_ranges;
 
 pub(crate) mod shape_categorical_values;
+
+pub(crate) mod shape_column_names_list;
 
 pub(crate) mod shape_continuous_hyper_parameter_ranges;
 

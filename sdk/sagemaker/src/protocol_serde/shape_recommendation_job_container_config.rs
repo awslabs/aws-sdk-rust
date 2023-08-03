@@ -36,6 +36,9 @@ pub fn ser_recommendation_job_container_config(
     if let Some(var_11) = &input.data_input_config {
         object.key("DataInputConfig").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.supported_endpoint_type {
+        object.key("SupportedEndpointType").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -126,6 +129,15 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "SupportedEndpointType" => {
+                                builder = builder.set_supported_endpoint_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            crate::types::RecommendationJobSupportedEndpointType::from(u.as_ref())
+                                        )
+                                    ).transpose()?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

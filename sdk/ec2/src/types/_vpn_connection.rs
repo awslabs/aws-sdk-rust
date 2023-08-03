@@ -2,7 +2,7 @@
 
 /// <p>Describes a VPN connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VpnConnection {
     /// <p>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the <code>CreateVpnConnection</code> response; however, it's present in the <code>DescribeVpnConnections</code> response only if the VPN connection is in the <code>pending</code> or <code>available</code> state.</p>
     #[doc(hidden)]
@@ -114,6 +114,33 @@ impl VpnConnection {
         self.vgw_telemetry.as_deref()
     }
 }
+impl ::std::fmt::Debug for VpnConnection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VpnConnection");
+        formatter.field(
+            "customer_gateway_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("customer_gateway_id", &self.customer_gateway_id);
+        formatter.field("category", &self.category);
+        formatter.field("state", &self.state);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("vpn_connection_id", &self.vpn_connection_id);
+        formatter.field("vpn_gateway_id", &self.vpn_gateway_id);
+        formatter.field("transit_gateway_id", &self.transit_gateway_id);
+        formatter.field("core_network_arn", &self.core_network_arn);
+        formatter.field(
+            "core_network_attachment_arn",
+            &self.core_network_attachment_arn,
+        );
+        formatter.field("gateway_association_state", &self.gateway_association_state);
+        formatter.field("options", &self.options);
+        formatter.field("routes", &self.routes);
+        formatter.field("tags", &self.tags);
+        formatter.field("vgw_telemetry", &self.vgw_telemetry);
+        formatter.finish()
+    }
+}
 impl VpnConnection {
     /// Creates a new builder-style object to manufacture [`VpnConnection`](crate::types::VpnConnection).
     pub fn builder() -> crate::types::builders::VpnConnectionBuilder {
@@ -123,9 +150,7 @@ impl VpnConnection {
 
 /// A builder for [`VpnConnection`](crate::types::VpnConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VpnConnectionBuilder {
     pub(crate) customer_gateway_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) customer_gateway_id: ::std::option::Option<::std::string::String>,
@@ -392,5 +417,32 @@ impl VpnConnectionBuilder {
             tags: self.tags,
             vgw_telemetry: self.vgw_telemetry,
         }
+    }
+}
+impl ::std::fmt::Debug for VpnConnectionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VpnConnectionBuilder");
+        formatter.field(
+            "customer_gateway_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("customer_gateway_id", &self.customer_gateway_id);
+        formatter.field("category", &self.category);
+        formatter.field("state", &self.state);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("vpn_connection_id", &self.vpn_connection_id);
+        formatter.field("vpn_gateway_id", &self.vpn_gateway_id);
+        formatter.field("transit_gateway_id", &self.transit_gateway_id);
+        formatter.field("core_network_arn", &self.core_network_arn);
+        formatter.field(
+            "core_network_attachment_arn",
+            &self.core_network_attachment_arn,
+        );
+        formatter.field("gateway_association_state", &self.gateway_association_state);
+        formatter.field("options", &self.options);
+        formatter.field("routes", &self.routes);
+        formatter.field("tags", &self.tags);
+        formatter.field("vgw_telemetry", &self.vgw_telemetry);
+        formatter.finish()
     }
 }

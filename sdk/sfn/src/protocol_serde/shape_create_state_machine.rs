@@ -42,6 +42,22 @@ pub fn de_create_state_machine_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::create_state_machine::CreateStateMachineError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InvalidArn" => crate::operation::create_state_machine::CreateStateMachineError::InvalidArn({
             #[allow(unused_mut)]
             let mut tmp =
@@ -202,6 +218,22 @@ pub fn de_create_state_machine_http_error(
                                                     }
             tmp
         }),
+        "ValidationException" => crate::operation::create_state_machine::CreateStateMachineError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         _ => crate::operation::create_state_machine::CreateStateMachineError::generic(generic)
     })
 }
@@ -262,6 +294,15 @@ pub(crate) fn de_create_state_machine(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
+                        );
+                    }
+                    "stateMachineVersionArn" => {
+                        builder = builder.set_state_machine_version_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

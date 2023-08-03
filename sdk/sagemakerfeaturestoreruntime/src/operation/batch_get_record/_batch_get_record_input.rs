@@ -3,14 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordInput {
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     #[doc(hidden)]
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    #[doc(hidden)]
+    pub expiration_time_response: ::std::option::Option<crate::types::ExpirationTimeResponse>,
 }
 impl BatchGetRecordInput {
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     pub fn identifiers(&self) -> ::std::option::Option<&[crate::types::BatchGetRecordIdentifier]> {
         self.identifiers.as_deref()
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn expiration_time_response(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ExpirationTimeResponse> {
+        self.expiration_time_response.as_ref()
     }
 }
 impl BatchGetRecordInput {
@@ -28,25 +37,40 @@ impl BatchGetRecordInput {
 pub struct BatchGetRecordInputBuilder {
     pub(crate) identifiers:
         ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    pub(crate) expiration_time_response:
+        ::std::option::Option<crate::types::ExpirationTimeResponse>,
 }
 impl BatchGetRecordInputBuilder {
     /// Appends an item to `identifiers`.
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     pub fn identifiers(mut self, input: crate::types::BatchGetRecordIdentifier) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
         v.push(input);
         self.identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     pub fn set_identifiers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     ) -> Self {
         self.identifiers = input;
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn expiration_time_response(mut self, input: crate::types::ExpirationTimeResponse) -> Self {
+        self.expiration_time_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn set_expiration_time_response(
+        mut self,
+        input: ::std::option::Option<crate::types::ExpirationTimeResponse>,
+    ) -> Self {
+        self.expiration_time_response = input;
         self
     }
     /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
@@ -58,6 +82,7 @@ impl BatchGetRecordInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_record::BatchGetRecordInput {
             identifiers: self.identifiers,
+            expiration_time_response: self.expiration_time_response,
         })
     }
 }

@@ -49,6 +49,36 @@ pub fn de_network_card_info(
                 builder = builder.set_maximum_network_interfaces(var_3);
             }
             ,
+            s if s.matches("baselineBandwidthInGbps") /* BaselineBandwidthInGbps com.amazonaws.ec2#NetworkCardInfo$BaselineBandwidthInGbps */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#BaselineBandwidthInGbps`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_baseline_bandwidth_in_gbps(var_4);
+            }
+            ,
+            s if s.matches("peakBandwidthInGbps") /* PeakBandwidthInGbps com.amazonaws.ec2#NetworkCardInfo$PeakBandwidthInGbps */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#PeakBandwidthInGbps`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_peak_bandwidth_in_gbps(var_5);
+            }
+            ,
             _ => {}
         }
     }

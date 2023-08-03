@@ -33,6 +33,9 @@ pub struct GetHealthEventOutput {
     /// <p>The type of impairment of a specific health event.</p>
     #[doc(hidden)]
     pub impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
+    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    #[doc(hidden)]
+    pub health_score_threshold: f64,
     _request_id: Option<String>,
 }
 impl GetHealthEventOutput {
@@ -76,6 +79,10 @@ impl GetHealthEventOutput {
     pub fn impact_type(&self) -> ::std::option::Option<&crate::types::HealthEventImpactType> {
         self.impact_type.as_ref()
     }
+    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    pub fn health_score_threshold(&self) -> f64 {
+        self.health_score_threshold
+    }
 }
 impl ::aws_http::request_id::RequestId for GetHealthEventOutput {
     fn request_id(&self) -> Option<&str> {
@@ -106,6 +113,7 @@ pub struct GetHealthEventOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     pub(crate) impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
+    pub(crate) health_score_threshold: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl GetHealthEventOutputBuilder {
@@ -239,6 +247,16 @@ impl GetHealthEventOutputBuilder {
         self.impact_type = input;
         self
     }
+    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    pub fn health_score_threshold(mut self, input: f64) -> Self {
+        self.health_score_threshold = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    pub fn set_health_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.health_score_threshold = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -261,6 +279,7 @@ impl GetHealthEventOutputBuilder {
             status: self.status,
             percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted,
             impact_type: self.impact_type,
+            health_score_threshold: self.health_score_threshold.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

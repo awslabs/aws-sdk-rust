@@ -276,6 +276,8 @@ pub mod customize;
 
 mod delete_component;
 
+mod delete_deployment;
+
 mod delete_environment;
 
 mod delete_environment_account_connection;
@@ -299,6 +301,8 @@ mod delete_template_sync_config;
 mod get_account_settings;
 
 mod get_component;
+
+mod get_deployment;
 
 mod get_environment;
 
@@ -337,6 +341,8 @@ mod list_component_outputs;
 mod list_component_provisioned_resources;
 
 mod list_components;
+
+mod list_deployments;
 
 mod list_environment_account_connections;
 

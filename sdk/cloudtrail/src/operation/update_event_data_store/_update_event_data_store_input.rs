@@ -13,7 +13,7 @@ pub struct UpdateEventDataStoreInput {
     #[doc(hidden)]
     pub advanced_event_selectors:
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
@@ -54,7 +54,7 @@ impl UpdateEventDataStoreInput {
     ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
-    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_region_enabled
     }
@@ -155,12 +155,12 @@ impl UpdateEventDataStoreInputBuilder {
         self.advanced_event_selectors = input;
         self
     }
-    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.multi_region_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region_enabled = input;
         self

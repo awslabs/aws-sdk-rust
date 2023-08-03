@@ -8,9 +8,6 @@ pub use crate::operation::change_message_visibility_batch::_change_message_visib
 /// <p>Changes the visibility timeout of multiple messages. This is a batch version of <code> <code>ChangeMessageVisibility</code>.</code> The result of the action on each message is reported individually in the response. You can send up to 10 <code> <code>ChangeMessageVisibility</code> </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.</p> <important>
 /// <p>Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
 /// </important>
-/// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:</p>
-/// <p> <code>&amp;AttributeName.1=first</code> </p>
-/// <p> <code>&amp;AttributeName.2=second</code> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,7 +117,7 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn entries(
         mut self,
         input: crate::types::ChangeMessageVisibilityBatchRequestEntry,
@@ -128,7 +125,7 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
         self.inner = self.inner.entries(input);
         self
     }
-    /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
+    /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<

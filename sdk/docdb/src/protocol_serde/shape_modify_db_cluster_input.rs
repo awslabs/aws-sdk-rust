@@ -80,9 +80,14 @@ pub fn ser_modify_db_cluster_input_input(
         scope_25.string(var_26);
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("DeletionProtection");
-    if let Some(var_28) = &input.deletion_protection {
-        scope_27.boolean(*var_28);
+    let mut scope_27 = writer.prefix("AllowMajorVersionUpgrade");
+    if input.allow_major_version_upgrade {
+        scope_27.boolean(input.allow_major_version_upgrade);
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("DeletionProtection");
+    if let Some(var_29) = &input.deletion_protection {
+        scope_28.boolean(*var_29);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

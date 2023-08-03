@@ -138,4 +138,34 @@ impl ActivateNetworkSiteFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+    /// <p>If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you must specify the following:</p>
+    /// <ul>
+    /// <li> <p>The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p> </li>
+    /// <li> <p>Whether you want your commitment period to automatically renew for one more year after your current commitment period expires.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
+    pub fn commitment_configuration(
+        mut self,
+        input: crate::types::CommitmentConfiguration,
+    ) -> Self {
+        self.inner = self.inner.commitment_configuration(input);
+        self
+    }
+    /// <p>Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+    /// <p>If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you must specify the following:</p>
+    /// <ul>
+    /// <li> <p>The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p> </li>
+    /// <li> <p>Whether you want your commitment period to automatically renew for one more year after your current commitment period expires.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
+    pub fn set_commitment_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_commitment_configuration(input);
+        self
+    }
 }

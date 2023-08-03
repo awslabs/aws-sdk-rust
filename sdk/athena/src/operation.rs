@@ -34,6 +34,9 @@ pub mod create_presigned_notebook_url;
 /// Types for the `CreateWorkGroup` operation.
 pub mod create_work_group;
 
+/// Types for the `DeleteCapacityReservation` operation.
+pub mod delete_capacity_reservation;
+
 /// Types for the `DeleteDataCatalog` operation.
 pub mod delete_data_catalog;
 

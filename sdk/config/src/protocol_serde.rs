@@ -802,9 +802,13 @@ pub(crate) mod shape_evaluation_result_identifier;
 
 pub(crate) mod shape_excluded_accounts;
 
+pub(crate) mod shape_exclusion_by_resource_types;
+
 pub(crate) mod shape_field_info;
 
 pub(crate) mod shape_organization_custom_policy_rule_metadata_no_policy;
+
+pub(crate) mod shape_recording_strategy;
 
 pub(crate) mod shape_relationship;
 

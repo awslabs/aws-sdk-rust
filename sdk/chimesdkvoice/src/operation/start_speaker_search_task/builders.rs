@@ -166,4 +166,14 @@ impl StartSpeakerSearchTaskFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn call_leg(mut self, input: crate::types::CallLegType) -> Self {
+        self.inner = self.inner.call_leg(input);
+        self
+    }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn set_call_leg(mut self, input: ::std::option::Option<crate::types::CallLegType>) -> Self {
+        self.inner = self.inner.set_call_leg(input);
+        self
+    }
 }

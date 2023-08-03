@@ -47,6 +47,9 @@ pub struct FieldToMatch {
     /// <p>Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize cookie content in the <code>Cookies</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service. </p>
     #[doc(hidden)]
     pub cookies: ::std::option::Option<crate::types::Cookies>,
+    /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
+    #[doc(hidden)]
+    pub header_order: ::std::option::Option<crate::types::HeaderOrder>,
 }
 impl FieldToMatch {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
@@ -100,6 +103,10 @@ impl FieldToMatch {
     pub fn cookies(&self) -> ::std::option::Option<&crate::types::Cookies> {
         self.cookies.as_ref()
     }
+    /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
+    pub fn header_order(&self) -> ::std::option::Option<&crate::types::HeaderOrder> {
+        self.header_order.as_ref()
+    }
 }
 impl FieldToMatch {
     /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::types::FieldToMatch).
@@ -124,6 +131,7 @@ pub struct FieldToMatchBuilder {
     pub(crate) json_body: ::std::option::Option<crate::types::JsonBody>,
     pub(crate) headers: ::std::option::Option<crate::types::Headers>,
     pub(crate) cookies: ::std::option::Option<crate::types::Cookies>,
+    pub(crate) header_order: ::std::option::Option<crate::types::HeaderOrder>,
 }
 impl FieldToMatchBuilder {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
@@ -256,6 +264,19 @@ impl FieldToMatchBuilder {
         self.cookies = input;
         self
     }
+    /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
+    pub fn header_order(mut self, input: crate::types::HeaderOrder) -> Self {
+        self.header_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
+    pub fn set_header_order(
+        mut self,
+        input: ::std::option::Option<crate::types::HeaderOrder>,
+    ) -> Self {
+        self.header_order = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FieldToMatch`](crate::types::FieldToMatch).
     pub fn build(self) -> crate::types::FieldToMatch {
         crate::types::FieldToMatch {
@@ -269,6 +290,7 @@ impl FieldToMatchBuilder {
             json_body: self.json_body,
             headers: self.headers,
             cookies: self.cookies,
+            header_order: self.header_order,
         }
     }
 }

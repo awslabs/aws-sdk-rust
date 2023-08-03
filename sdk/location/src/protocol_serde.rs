@@ -286,6 +286,8 @@ pub(crate) mod shape_list_trackers_response_entry_list;
 
 pub(crate) mod shape_map_configuration;
 
+pub(crate) mod shape_map_configuration_update;
+
 pub(crate) mod shape_place;
 
 pub(crate) mod shape_position;
@@ -338,6 +340,8 @@ pub(crate) mod shape_country_code_list;
 
 pub(crate) mod shape_device_position;
 
+pub(crate) mod shape_filter_place_category_list;
+
 pub(crate) mod shape_geo_arn_list;
 
 pub(crate) mod shape_leg;
@@ -360,7 +364,11 @@ pub(crate) mod shape_list_route_calculators_response_entry;
 
 pub(crate) mod shape_list_trackers_response_entry;
 
+pub(crate) mod shape_place_category_list;
+
 pub(crate) mod shape_place_geometry;
+
+pub(crate) mod shape_place_supplemental_category_list;
 
 pub(crate) mod shape_referer_pattern_list;
 

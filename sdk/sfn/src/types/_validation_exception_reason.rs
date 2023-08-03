@@ -14,6 +14,7 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::ApiDoesNotSupportLabeledArns => { /* ... */ },
 ///     ValidationExceptionReason::CannotUpdateCompletedMapRun => { /* ... */ },
+///     ValidationExceptionReason::InvalidRoutingConfiguration => { /* ... */ },
 ///     ValidationExceptionReason::MissingRequiredParameter => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotUpdateCompletedMapRun,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidRoutingConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     MissingRequiredParameter,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -65,6 +68,9 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             }
             "CANNOT_UPDATE_COMPLETED_MAP_RUN" => {
                 ValidationExceptionReason::CannotUpdateCompletedMapRun
+            }
+            "INVALID_ROUTING_CONFIGURATION" => {
+                ValidationExceptionReason::InvalidRoutingConfiguration
             }
             "MISSING_REQUIRED_PARAMETER" => ValidationExceptionReason::MissingRequiredParameter,
             other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
@@ -90,6 +96,9 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::CannotUpdateCompletedMapRun => {
                 "CANNOT_UPDATE_COMPLETED_MAP_RUN"
             }
+            ValidationExceptionReason::InvalidRoutingConfiguration => {
+                "INVALID_ROUTING_CONFIGURATION"
+            }
             ValidationExceptionReason::MissingRequiredParameter => "MISSING_REQUIRED_PARAMETER",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
@@ -99,6 +108,7 @@ impl ValidationExceptionReason {
         &[
             "API_DOES_NOT_SUPPORT_LABELED_ARNS",
             "CANNOT_UPDATE_COMPLETED_MAP_RUN",
+            "INVALID_ROUTING_CONFIGURATION",
             "MISSING_REQUIRED_PARAMETER",
         ]
     }

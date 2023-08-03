@@ -15,5 +15,15 @@ pub fn ser_batch_put_geofence_request_entry(
         )?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.geofence_properties {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("GeofenceProperties").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
     Ok(())
 }

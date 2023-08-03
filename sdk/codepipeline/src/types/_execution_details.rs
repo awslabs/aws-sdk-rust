@@ -7,7 +7,7 @@ pub struct ExecutionDetails {
     /// <p>The summary of the current status of the actions.</p>
     #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
-    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
+    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
@@ -19,7 +19,7 @@ impl ExecutionDetails {
     pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
+    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
         self.external_execution_id.as_deref()
     }
@@ -56,7 +56,7 @@ impl ExecutionDetailsBuilder {
         self.summary = input;
         self
     }
-    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
+    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn external_execution_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -64,7 +64,7 @@ impl ExecutionDetailsBuilder {
         self.external_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
+    /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn set_external_execution_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

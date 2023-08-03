@@ -6,6 +6,7 @@ pub use crate::operation::search_contacts::_search_contacts_input::SearchContact
 /// Fluent builder constructing a request to `SearchContacts`.
 ///
 /// <p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchContactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

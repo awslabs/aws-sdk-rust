@@ -6,6 +6,7 @@ pub use crate::operation::get_invitation_configuration::_get_invitation_configur
 /// Fluent builder constructing a request to `GetInvitationConfiguration`.
 ///
 /// <p>Retrieves the configured values for the user enrollment invitation email template.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInvitationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

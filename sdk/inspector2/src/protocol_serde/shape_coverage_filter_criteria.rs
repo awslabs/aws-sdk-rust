@@ -183,5 +183,20 @@ pub fn ser_coverage_filter_criteria(
         }
         array_46.finish();
     }
+    if let Some(var_49) = &input.last_scanned_at {
+        let mut array_50 = object.key("lastScannedAt").start_array();
+        for item_51 in var_49 {
+            {
+                #[allow(unused_mut)]
+                let mut object_52 = array_50.value().start_object();
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(
+                    &mut object_52,
+                    item_51,
+                )?;
+                object_52.finish();
+            }
+        }
+        array_50.finish();
+    }
     Ok(())
 }

@@ -5,7 +5,8 @@ pub use crate::operation::create_location_smb::_create_location_smb_input::Creat
 
 /// Fluent builder constructing a request to `CreateLocationSmb`.
 ///
-/// <p>Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB location</a>.</p>
+/// <p>Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file server</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationSmbFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

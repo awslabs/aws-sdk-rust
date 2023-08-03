@@ -2309,6 +2309,58 @@ impl From<crate::operation::query::QueryError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::retrieve::RetrieveError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::retrieve::RetrieveError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::retrieve::RetrieveError> for Error {
+    fn from(err: crate::operation::retrieve::RetrieveError) -> Self {
+        match err {
+            crate::operation::retrieve::RetrieveError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::retrieve::RetrieveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<

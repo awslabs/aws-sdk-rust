@@ -188,6 +188,11 @@ pub(crate) fn de_describe_pipeline_execution(
                             crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens)?
                         );
                     }
+                    "SelectiveExecutionConfig" => {
+                        builder = builder.set_selective_execution_config(
+                            crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens)?
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

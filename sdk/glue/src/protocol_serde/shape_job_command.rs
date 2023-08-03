@@ -12,6 +12,9 @@ pub fn ser_job_command(
     if let Some(var_3) = &input.python_version {
         object.key("PythonVersion").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.runtime {
+        object.key("Runtime").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,15 @@ where
                             }
                             "PythonVersion" => {
                                 builder = builder.set_python_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Runtime" => {
+                                builder = builder.set_runtime(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

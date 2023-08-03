@@ -16,7 +16,7 @@ pub struct TranslateTextOutput {
     #[doc(hidden)]
     pub applied_terminologies:
         ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Optional settings that modify the translation output.</p>
     #[doc(hidden)]
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
@@ -40,7 +40,7 @@ impl TranslateTextOutput {
     ) -> ::std::option::Option<&[crate::types::AppliedTerminology]> {
         self.applied_terminologies.as_deref()
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Optional settings that modify the translation output.</p>
     pub fn applied_settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.applied_settings.as_ref()
     }
@@ -139,12 +139,12 @@ impl TranslateTextOutputBuilder {
         self.applied_terminologies = input;
         self
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Optional settings that modify the translation output.</p>
     pub fn applied_settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.applied_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings that configure the translation output.</p>
+    /// <p>Optional settings that modify the translation output.</p>
     pub fn set_applied_settings(
         mut self,
         input: ::std::option::Option<crate::types::TranslationSettings>,

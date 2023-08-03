@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobV2Input {
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAutoMlJobV2Input {
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     pub fn auto_ml_job_name(&self) -> ::std::option::Option<&str> {
         self.auto_ml_job_name.as_deref()
     }
@@ -30,7 +30,7 @@ pub struct DescribeAutoMlJobV2InputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAutoMlJobV2InputBuilder {
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     pub fn auto_ml_job_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -38,7 +38,7 @@ impl DescribeAutoMlJobV2InputBuilder {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Requests information about an AutoML V2 job using its unique name.</p>
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
     pub fn set_auto_ml_job_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

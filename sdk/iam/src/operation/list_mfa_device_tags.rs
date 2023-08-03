@@ -306,3 +306,6 @@ mod _list_mfa_device_tags_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

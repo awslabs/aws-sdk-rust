@@ -39,14 +39,14 @@ pub fn ser_get_dimension_values_input(
         }
         array_9.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_12) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.next_page_token {
-        object.key("NextPageToken").string(var_12.as_str());
+    if let Some(var_13) = &input.next_page_token {
+        object.key("NextPageToken").string(var_13.as_str());
     }
     Ok(())
 }

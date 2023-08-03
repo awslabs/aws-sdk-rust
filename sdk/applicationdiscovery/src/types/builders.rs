@@ -3,6 +3,12 @@ pub use crate::types::_agent_configuration_status::AgentConfigurationStatusBuild
 
 pub use crate::types::_import_task::ImportTaskBuilder;
 
+pub use crate::types::_ec2_recommendations_export_preferences::Ec2RecommendationsExportPreferencesBuilder;
+
+pub use crate::types::_reserved_instance_options::ReservedInstanceOptionsBuilder;
+
+pub use crate::types::_usage_metric_basis::UsageMetricBasisBuilder;
+
 pub use crate::types::_export_filter::ExportFilterBuilder;
 
 pub use crate::types::_neighbor_connection_detail::NeighborConnectionDetailBuilder;

@@ -47,6 +47,13 @@ where
                                 .transpose()?,
                             );
                         }
+                        "Item" => {
+                            builder = builder.set_item(
+                                crate::protocol_serde::shape_attribute_map::de_attribute_map(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

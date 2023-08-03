@@ -7,6 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput) with field(s):
     ///   - [`streaming_configuration(Option<StreamingConfiguration>)`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput::streaming_configuration): <p>The streaming configuration details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorStreamingConfigurationError>`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationError)
+    #[deprecated(
+        note = "Replaced by GetVoiceConnectorStreamingConfiguration in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn get_voice_connector_streaming_configuration(&self) -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder{
         crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationFluentBuilder::new(self.handle.clone())
     }

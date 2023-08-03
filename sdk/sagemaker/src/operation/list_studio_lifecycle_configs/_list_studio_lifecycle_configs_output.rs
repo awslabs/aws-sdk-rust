@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsOutput {
-    /// <p>A token for getting the next set of actions, if there are any.</p>
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Lifecycle Configurations and their properties.</p>
@@ -13,7 +13,7 @@ pub struct ListStudioLifecycleConfigsOutput {
     _request_id: Option<String>,
 }
 impl ListStudioLifecycleConfigsOutput {
-    /// <p>A token for getting the next set of actions, if there are any.</p>
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,12 +48,12 @@ pub struct ListStudioLifecycleConfigsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListStudioLifecycleConfigsOutputBuilder {
-    /// <p>A token for getting the next set of actions, if there are any.</p>
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token for getting the next set of actions, if there are any.</p>
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self

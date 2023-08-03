@@ -5,7 +5,7 @@ pub use crate::operation::describe_agents::_describe_agents_input::DescribeAgent
 
 /// Fluent builder constructing a request to `DescribeAgents`.
 ///
-/// <p>Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>
+/// <p>Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAgentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -95,12 +95,12 @@ impl DescribeAgentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
     ///
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_ids(input.into());
         self
     }
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub fn set_agent_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -127,12 +127,12 @@ impl DescribeAgentsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobOutput {
-    /// <p>The name of the tuning job.</p>
+    /// <p>The name of the hyperparameter tuning job.</p>
     #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
@@ -63,10 +63,13 @@ pub struct DescribeHyperParameterTuningJobOutput {
     #[doc(hidden)]
     pub consumed_resources:
         ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    #[doc(hidden)]
+    pub autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutput {
-    /// <p>The name of the tuning job.</p>
+    /// <p>The name of the hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<&str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
@@ -158,6 +161,10 @@ impl DescribeHyperParameterTuningJobOutput {
     ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
         self.consumed_resources.as_ref()
     }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn autotune(&self) -> ::std::option::Option<&crate::types::Autotune> {
+        self.autotune.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeHyperParameterTuningJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -205,10 +212,11 @@ pub struct DescribeHyperParameterTuningJobOutputBuilder {
         ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     pub(crate) consumed_resources:
         ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    pub(crate) autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutputBuilder {
-    /// <p>The name of the tuning job.</p>
+    /// <p>The name of the hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -216,7 +224,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the tuning job.</p>
+    /// <p>The name of the hyperparameter tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -479,6 +487,16 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         self.consumed_resources = input;
         self
     }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn autotune(mut self, input: crate::types::Autotune) -> Self {
+        self.autotune = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn set_autotune(mut self, input: ::std::option::Option<crate::types::Autotune>) -> Self {
+        self.autotune = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -527,6 +545,8 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
             tuning_job_completion_details: self.tuning_job_completion_details
             ,
             consumed_resources: self.consumed_resources
+            ,
+            autotune: self.autotune
             ,
             _request_id: self._request_id,
         }

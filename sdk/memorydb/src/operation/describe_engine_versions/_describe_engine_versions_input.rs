@@ -17,7 +17,7 @@ pub struct DescribeEngineVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
     #[doc(hidden)]
-    pub default_only: bool,
+    pub default_only: ::std::option::Option<bool>,
 }
 impl DescribeEngineVersionsInput {
     /// <p>The Redis engine version</p>
@@ -37,7 +37,7 @@ impl DescribeEngineVersionsInput {
         self.next_token.as_deref()
     }
     /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
-    pub fn default_only(&self) -> bool {
+    pub fn default_only(&self) -> ::std::option::Option<bool> {
         self.default_only
     }
 }
@@ -138,7 +138,7 @@ impl DescribeEngineVersionsInputBuilder {
                 parameter_group_family: self.parameter_group_family,
                 max_results: self.max_results,
                 next_token: self.next_token,
-                default_only: self.default_only.unwrap_or_default(),
+                default_only: self.default_only,
             },
         )
     }

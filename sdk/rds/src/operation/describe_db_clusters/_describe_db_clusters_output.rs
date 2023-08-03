@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClustersOutput {
-    /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusters</code> request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
@@ -13,7 +13,7 @@ pub struct DescribeDbClustersOutput {
     _request_id: Option<String>,
 }
 impl DescribeDbClustersOutput {
-    /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusters</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -46,12 +46,12 @@ pub struct DescribeDbClustersOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDbClustersOutputBuilder {
-    /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusters</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusters</code> request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self

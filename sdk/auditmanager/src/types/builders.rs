@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_settings::SettingsBuilder;
 
+pub use crate::types::_default_export_destination::DefaultExportDestinationBuilder;
+
 pub use crate::types::_deregistration_policy::DeregistrationPolicyBuilder;
 
 pub use crate::types::_evidence_finder_enablement::EvidenceFinderEnablementBuilder;

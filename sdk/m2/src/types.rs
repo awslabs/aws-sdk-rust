@@ -57,6 +57,10 @@ pub use crate::types::_application_version_lifecycle::ApplicationVersionLifecycl
 
 pub use crate::types::_dataset_detail_org_attributes::DatasetDetailOrgAttributes;
 
+pub use crate::types::_ps_detail_attributes::PsDetailAttributes;
+
+pub use crate::types::_po_detail_attributes::PoDetailAttributes;
+
 pub use crate::types::_gdg_detail_attributes::GdgDetailAttributes;
 
 pub use crate::types::_vsam_detail_attributes::VsamDetailAttributes;
@@ -76,6 +80,10 @@ pub use crate::types::_data_set::DataSet;
 pub use crate::types::_record_length::RecordLength;
 
 pub use crate::types::_dataset_org_attributes::DatasetOrgAttributes;
+
+pub use crate::types::_ps_attributes::PsAttributes;
+
+pub use crate::types::_po_attributes::PoAttributes;
 
 pub use crate::types::_gdg_attributes::GdgAttributes;
 
@@ -173,7 +181,15 @@ mod _maintenance_schedule;
 
 mod _pending_maintenance;
 
+mod _po_attributes;
+
+mod _po_detail_attributes;
+
 mod _primary_key;
+
+mod _ps_attributes;
+
+mod _ps_detail_attributes;
 
 mod _record_length;
 

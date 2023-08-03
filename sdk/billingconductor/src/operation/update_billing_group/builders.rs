@@ -155,4 +155,20 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn account_grouping(
+        mut self,
+        input: crate::types::UpdateBillingGroupAccountGrouping,
+    ) -> Self {
+        self.inner = self.inner.account_grouping(input);
+        self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn set_account_grouping(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
+    ) -> Self {
+        self.inner = self.inner.set_account_grouping(input);
+        self
+    }
 }

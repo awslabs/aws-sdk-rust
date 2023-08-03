@@ -122,6 +122,11 @@ where
                                     )?,
                                 );
                             }
+                            "SelectiveExecutionConfig" => {
+                                builder = builder.set_selective_execution_config(
+                                    crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

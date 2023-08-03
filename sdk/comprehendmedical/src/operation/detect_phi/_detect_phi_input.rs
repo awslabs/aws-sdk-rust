@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -29,12 +29,12 @@ pub struct DetectPhiInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
 impl DetectPhiInputBuilder {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self

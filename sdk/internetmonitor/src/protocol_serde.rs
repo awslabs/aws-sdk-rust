@@ -68,6 +68,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_health_event_list;
 
+pub(crate) mod shape_health_events_config;
+
 pub(crate) mod shape_impacted_locations_list;
 
 pub(crate) mod shape_internet_measurements_log_delivery;

@@ -101,13 +101,15 @@ pub use crate::types::_provisioned_throughput::ProvisionedThroughput;
 
 pub use crate::types::_update_global_secondary_index_action::UpdateGlobalSecondaryIndexAction;
 
-pub use crate::types::_item_collection_metrics::ItemCollectionMetrics;
-
 pub use crate::types::_attribute_value::AttributeValue;
+
+pub use crate::types::_item_collection_metrics::ItemCollectionMetrics;
 
 pub use crate::types::_consumed_capacity::ConsumedCapacity;
 
 pub use crate::types::_capacity::Capacity;
+
+pub use crate::types::_return_values_on_condition_check_failure::ReturnValuesOnConditionCheckFailure;
 
 pub use crate::types::_return_item_collection_metrics::ReturnItemCollectionMetrics;
 
@@ -164,8 +166,6 @@ pub use crate::types::_cancellation_reason::CancellationReason;
 pub use crate::types::_transact_write_item::TransactWriteItem;
 
 pub use crate::types::_update::Update;
-
-pub use crate::types::_return_values_on_condition_check_failure::ReturnValuesOnConditionCheckFailure;
 
 pub use crate::types::_delete::Delete;
 

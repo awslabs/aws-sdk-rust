@@ -413,3 +413,6 @@ mod _list_iam_policy_assignments_for_user_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

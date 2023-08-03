@@ -30,6 +30,9 @@ pub struct DescribeModelOutput {
     /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
     #[doc(hidden)]
     pub enable_network_isolation: bool,
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    #[doc(hidden)]
+    pub deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
     _request_id: Option<String>,
 }
 impl DescribeModelOutput {
@@ -71,6 +74,12 @@ impl DescribeModelOutput {
     pub fn enable_network_isolation(&self) -> bool {
         self.enable_network_isolation
     }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DeploymentRecommendation> {
+        self.deployment_recommendation.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -101,6 +110,8 @@ pub struct DescribeModelOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
+    pub(crate) deployment_recommendation:
+        ::std::option::Option<crate::types::DeploymentRecommendation>,
     _request_id: Option<String>,
 }
 impl DescribeModelOutputBuilder {
@@ -221,6 +232,22 @@ impl DescribeModelOutputBuilder {
         self.enable_network_isolation = input;
         self
     }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn deployment_recommendation(
+        mut self,
+        input: crate::types::DeploymentRecommendation,
+    ) -> Self {
+        self.deployment_recommendation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn set_deployment_recommendation(
+        mut self,
+        input: ::std::option::Option<crate::types::DeploymentRecommendation>,
+    ) -> Self {
+        self.deployment_recommendation = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -242,6 +269,7 @@ impl DescribeModelOutputBuilder {
             creation_time: self.creation_time,
             model_arn: self.model_arn,
             enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+            deployment_recommendation: self.deployment_recommendation,
             _request_id: self._request_id,
         }
     }

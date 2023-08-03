@@ -67,6 +67,10 @@ pub use crate::types::_savings_plans_coverage_data::SavingsPlansCoverageDataBuil
 
 pub use crate::types::_group_definition::GroupDefinitionBuilder;
 
+pub use crate::types::_recommendation_detail_data::RecommendationDetailDataBuilder;
+
+pub use crate::types::_recommendation_detail_hourly_metrics::RecommendationDetailHourlyMetricsBuilder;
+
 pub use crate::types::_rightsizing_recommendation_configuration::RightsizingRecommendationConfigurationBuilder;
 
 pub use crate::types::_rightsizing_recommendation::RightsizingRecommendationBuilder;

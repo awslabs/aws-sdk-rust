@@ -19,6 +19,9 @@ pub struct ListShareInvitationsInput {
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Profile name prefix.</p>
+    #[doc(hidden)]
+    pub profile_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
@@ -41,6 +44,10 @@ impl ListShareInvitationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Profile name prefix.</p>
+    pub fn profile_name_prefix(&self) -> ::std::option::Option<&str> {
+        self.profile_name_prefix.as_deref()
+    }
 }
 impl ListShareInvitationsInput {
     /// Creates a new builder-style object to manufacture [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
@@ -61,6 +68,7 @@ pub struct ListShareInvitationsInputBuilder {
     pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) profile_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInputBuilder {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
@@ -128,6 +136,22 @@ impl ListShareInvitationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Profile name prefix.</p>
+    pub fn profile_name_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.profile_name_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Profile name prefix.</p>
+    pub fn set_profile_name_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.profile_name_prefix = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
     pub fn build(
         self,
@@ -142,6 +166,7 @@ impl ListShareInvitationsInputBuilder {
                 share_resource_type: self.share_resource_type,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                profile_name_prefix: self.profile_name_prefix,
             },
         )
     }

@@ -13,13 +13,13 @@ pub struct S3Object {
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
     #[doc(hidden)]
     pub extension: ::std::option::Option<::std::string::String>,
-    /// <p>The full key (name) that's assigned to the object.</p>
+    /// <p>The full name (<i>key</i>) of the object, including the object's prefix if applicable.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
     #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The path to the object, including the full key (name).</p>
+    /// <p>The full path to the affected object, including the name of the affected bucket and the object's name (key).</p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
@@ -54,7 +54,7 @@ impl S3Object {
     pub fn extension(&self) -> ::std::option::Option<&str> {
         self.extension.as_deref()
     }
-    /// <p>The full key (name) that's assigned to the object.</p>
+    /// <p>The full name (<i>key</i>) of the object, including the object's prefix if applicable.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -62,7 +62,7 @@ impl S3Object {
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>The path to the object, including the full key (name).</p>
+    /// <p>The full path to the affected object, including the name of the affected bucket and the object's name (key).</p>
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -150,12 +150,12 @@ impl S3ObjectBuilder {
         self.extension = input;
         self
     }
-    /// <p>The full key (name) that's assigned to the object.</p>
+    /// <p>The full name (<i>key</i>) of the object, including the object's prefix if applicable.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The full key (name) that's assigned to the object.</p>
+    /// <p>The full name (<i>key</i>) of the object, including the object's prefix if applicable.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
@@ -173,12 +173,12 @@ impl S3ObjectBuilder {
         self.last_modified = input;
         self
     }
-    /// <p>The path to the object, including the full key (name).</p>
+    /// <p>The full path to the affected object, including the name of the affected bucket and the object's name (key).</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the object, including the full key (name).</p>
+    /// <p>The full path to the affected object, including the name of the affected bucket and the object's name (key).</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self

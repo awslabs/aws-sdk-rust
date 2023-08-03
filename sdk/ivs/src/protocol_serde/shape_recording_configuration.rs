@@ -79,6 +79,11 @@ where
                                 .transpose()?,
                             );
                         }
+                        "renditionConfiguration" => {
+                            builder = builder.set_rendition_configuration(
+                                    crate::protocol_serde::shape_rendition_configuration::de_rendition_configuration(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

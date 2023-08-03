@@ -103,17 +103,30 @@ impl BatchGetRecordFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     pub fn identifiers(mut self, input: crate::types::BatchGetRecordIdentifier) -> Self {
         self.inner = self.inner.identifiers(input);
         self
     }
-    /// <p>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name that have been requested to be retrieved in batch.</p>
+    /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
     pub fn set_identifiers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     ) -> Self {
         self.inner = self.inner.set_identifiers(input);
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn expiration_time_response(mut self, input: crate::types::ExpirationTimeResponse) -> Self {
+        self.inner = self.inner.expiration_time_response(input);
+        self
+    }
+    /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
+    pub fn set_expiration_time_response(
+        mut self,
+        input: ::std::option::Option<crate::types::ExpirationTimeResponse>,
+    ) -> Self {
+        self.inner = self.inner.set_expiration_time_response(input);
         self
     }
 }

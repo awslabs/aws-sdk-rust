@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput) with field(s):
     ///   - [`profile(Option<Profile>)`](crate::operation::get_profile::GetProfileOutput::profile): <p>The details of the room profile requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetProfileError>`](crate::operation::get_profile::GetProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_profile(&self) -> crate::operation::get_profile::builders::GetProfileFluentBuilder {
         crate::operation::get_profile::builders::GetProfileFluentBuilder::new(self.handle.clone())
     }

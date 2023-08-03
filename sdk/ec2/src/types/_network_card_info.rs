@@ -13,6 +13,12 @@ pub struct NetworkCardInfo {
     /// <p>The maximum number of network interfaces for the network card.</p>
     #[doc(hidden)]
     pub maximum_network_interfaces: ::std::option::Option<i32>,
+    /// <p>The baseline network performance of the network card, in Gbps.</p>
+    #[doc(hidden)]
+    pub baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
+    /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
+    #[doc(hidden)]
+    pub peak_bandwidth_in_gbps: ::std::option::Option<f64>,
 }
 impl NetworkCardInfo {
     /// <p>The index of the network card.</p>
@@ -26,6 +32,14 @@ impl NetworkCardInfo {
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn maximum_network_interfaces(&self) -> ::std::option::Option<i32> {
         self.maximum_network_interfaces
+    }
+    /// <p>The baseline network performance of the network card, in Gbps.</p>
+    pub fn baseline_bandwidth_in_gbps(&self) -> ::std::option::Option<f64> {
+        self.baseline_bandwidth_in_gbps
+    }
+    /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
+    pub fn peak_bandwidth_in_gbps(&self) -> ::std::option::Option<f64> {
+        self.peak_bandwidth_in_gbps
     }
 }
 impl NetworkCardInfo {
@@ -44,6 +58,8 @@ pub struct NetworkCardInfoBuilder {
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,
+    pub(crate) baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
+    pub(crate) peak_bandwidth_in_gbps: ::std::option::Option<f64>,
 }
 impl NetworkCardInfoBuilder {
     /// <p>The index of the network card.</p>
@@ -82,12 +98,34 @@ impl NetworkCardInfoBuilder {
         self.maximum_network_interfaces = input;
         self
     }
+    /// <p>The baseline network performance of the network card, in Gbps.</p>
+    pub fn baseline_bandwidth_in_gbps(mut self, input: f64) -> Self {
+        self.baseline_bandwidth_in_gbps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The baseline network performance of the network card, in Gbps.</p>
+    pub fn set_baseline_bandwidth_in_gbps(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.baseline_bandwidth_in_gbps = input;
+        self
+    }
+    /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
+    pub fn peak_bandwidth_in_gbps(mut self, input: f64) -> Self {
+        self.peak_bandwidth_in_gbps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
+    pub fn set_peak_bandwidth_in_gbps(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.peak_bandwidth_in_gbps = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NetworkCardInfo`](crate::types::NetworkCardInfo).
     pub fn build(self) -> crate::types::NetworkCardInfo {
         crate::types::NetworkCardInfo {
             network_card_index: self.network_card_index,
             network_performance: self.network_performance,
             maximum_network_interfaces: self.maximum_network_interfaces,
+            baseline_bandwidth_in_gbps: self.baseline_bandwidth_in_gbps,
+            peak_bandwidth_in_gbps: self.peak_bandwidth_in_gbps,
         }
     }
 }

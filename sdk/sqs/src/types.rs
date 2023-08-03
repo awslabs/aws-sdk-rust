@@ -17,6 +17,8 @@ pub use crate::types::_message::Message;
 
 pub use crate::types::_message_system_attribute_name::MessageSystemAttributeName;
 
+pub use crate::types::_list_message_move_tasks_result_entry::ListMessageMoveTasksResultEntry;
+
 pub use crate::types::_delete_message_batch_result_entry::DeleteMessageBatchResultEntry;
 
 pub use crate::types::_delete_message_batch_request_entry::DeleteMessageBatchRequestEntry;
@@ -34,6 +36,8 @@ mod _change_message_visibility_batch_result_entry;
 mod _delete_message_batch_request_entry;
 
 mod _delete_message_batch_result_entry;
+
+mod _list_message_move_tasks_result_entry;
 
 mod _message;
 

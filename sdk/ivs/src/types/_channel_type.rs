@@ -12,6 +12,8 @@
 /// ```text
 /// # let channeltype = unimplemented!();
 /// match channeltype {
+///     ChannelType::AdvancedHdChannelType => { /* ... */ },
+///     ChannelType::AdvancedSdChannelType => { /* ... */ },
 ///     ChannelType::BasicChannelType => { /* ... */ },
 ///     ChannelType::StandardChannelType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +50,10 @@
 )]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
+    AdvancedHdChannelType,
+    #[allow(missing_docs)] // documentation missing in model
+    AdvancedSdChannelType,
+    #[allow(missing_docs)] // documentation missing in model
     BasicChannelType,
     #[allow(missing_docs)] // documentation missing in model
     StandardChannelType,
@@ -57,6 +63,8 @@ pub enum ChannelType {
 impl ::std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
         match s {
+            "ADVANCED_HD" => ChannelType::AdvancedHdChannelType,
+            "ADVANCED_SD" => ChannelType::AdvancedSdChannelType,
             "BASIC" => ChannelType::BasicChannelType,
             "STANDARD" => ChannelType::StandardChannelType,
             other => ChannelType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -74,6 +82,8 @@ impl ChannelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ChannelType::AdvancedHdChannelType => "ADVANCED_HD",
+            ChannelType::AdvancedSdChannelType => "ADVANCED_SD",
             ChannelType::BasicChannelType => "BASIC",
             ChannelType::StandardChannelType => "STANDARD",
             ChannelType::Unknown(value) => value.as_str(),
@@ -81,7 +91,7 @@ impl ChannelType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "STANDARD"]
+        &["ADVANCED_HD", "ADVANCED_SD", "BASIC", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for ChannelType {

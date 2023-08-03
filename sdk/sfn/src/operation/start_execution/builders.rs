@@ -5,10 +5,42 @@ pub use crate::operation::start_execution::_start_execution_input::StartExecutio
 
 /// Fluent builder constructing a request to `StartExecution`.
 ///
-/// <p>Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p>
-/// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
-/// <p> <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p>
-/// <p> <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows. </p>
+/// <p>Starts a state machine execution.</p>
+/// <p>A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine, a version ARN, or an alias ARN.</p>
+/// <p>The following are some examples of qualified and unqualified state machine ARNs:</p>
+/// <ul>
+/// <li> <p>The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails with <code>ValidationException</code>.</p>
+/// </note> </li>
+/// <li> <p>The following qualified state machine ARN refers to an alias named <code>PROD</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine:prod></mystatemachine:prod>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.</p>
+/// </note> </li>
+/// <li> <p>The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine></mystatemachine>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> </li>
+/// </ul>
+/// <p>If you start an execution with an unqualified state machine ARN, Step Functions uses the latest revision of the state machine for the execution.</p>
+/// <p>To start executions of a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, call <code>StartExecution</code> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> that points to the version.</p> <note>
+/// <p> <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if you call <code>StartExecution</code> with the same name and input as a running execution, the call succeeds and return the same response as the original request. If the execution is closed or if the input is different, it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after 90 days. </p>
+/// <p> <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows. </p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExecutionFluentBuilder {
@@ -96,6 +128,44 @@ impl StartExecutionFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+    /// <ul>
+    /// <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine></mystatemachine>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p> </li>
+    /// <li> <p> <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10. </p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine>
+    /// :10
+    /// </mystatemachine>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p> </li>
+    /// <li> <p> <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine:prod></mystatemachine:prod>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
+    /// </ul>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -104,6 +174,44 @@ impl StartExecutionFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+    /// <ul>
+    /// <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.</p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine></mystatemachine>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.</p> </li>
+    /// <li> <p> <b>A state machine version ARN</b> – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10. </p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine>
+    /// :10
+    /// </mystatemachine>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.</p> </li>
+    /// <li> <p> <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named <code>PROD</code>.</p> <p> <code>arn:
+    /// <partition>
+    /// :states:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :stateMachine:
+    /// <mystatemachine:prod></mystatemachine:prod>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
+    /// </ul>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -111,7 +219,7 @@ impl StartExecutionFluentBuilder {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li> <p>white space</p> </li>
@@ -125,7 +233,7 @@ impl StartExecutionFluentBuilder {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li> <p>white space</p> </li>

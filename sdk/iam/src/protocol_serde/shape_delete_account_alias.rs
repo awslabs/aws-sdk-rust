@@ -28,65 +28,71 @@ pub fn de_delete_account_alias_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::operation::delete_account_alias::DeleteAccountAliasError::LimitExceededException(
-                {
+        "ConcurrentModification" => crate::operation::delete_account_alias::DeleteAccountAliasError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "NoSuchEntity" => {
-            crate::operation::delete_account_alias::DeleteAccountAliasError::NoSuchEntityException(
-                {
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceeded" => crate::operation::delete_account_alias::DeleteAccountAliasError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "ServiceFailure" => {
-            crate::operation::delete_account_alias::DeleteAccountAliasError::ServiceFailureException(
-                {
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchEntity" => crate::operation::delete_account_alias::DeleteAccountAliasError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::ServiceFailureExceptionBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        _ => crate::operation::delete_account_alias::DeleteAccountAliasError::generic(generic),
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::delete_account_alias::DeleteAccountAliasError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::delete_account_alias::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_account_alias::DeleteAccountAliasError::generic(generic)
     })
 }
 

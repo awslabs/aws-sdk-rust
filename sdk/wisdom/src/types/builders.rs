@@ -39,9 +39,13 @@ pub use crate::types::_recommendation_data::RecommendationDataBuilder;
 
 pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
 
+pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfigurationBuilder;
+
 pub use crate::types::_assistant_data::AssistantDataBuilder;
 
 pub use crate::types::_session_data::SessionDataBuilder;
+
+pub use crate::types::_session_integration_configuration::SessionIntegrationConfigurationBuilder;
 
 pub use crate::types::_assistant_association_summary::AssistantAssociationSummaryBuilder;
 

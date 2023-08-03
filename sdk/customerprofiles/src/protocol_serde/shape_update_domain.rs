@@ -223,6 +223,11 @@ pub(crate) fn de_update_domain(
                             )?,
                         );
                     }
+                    "RuleBasedMatching" => {
+                        builder = builder.set_rule_based_matching(
+                            crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens)?
+                        );
+                    }
                     "Tags" => {
                         builder = builder
                             .set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);

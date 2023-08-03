@@ -53,9 +53,17 @@ pub use crate::types::_stack_instance_comprehensive_status::StackInstanceCompreh
 
 pub use crate::types::_stack_instance_filter::StackInstanceFilterBuilder;
 
+pub use crate::types::_stack_instance_resource_drifts_summary::StackInstanceResourceDriftsSummaryBuilder;
+
+pub use crate::types::_property_difference::PropertyDifferenceBuilder;
+
+pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePairBuilder;
+
 pub use crate::types::_export::ExportBuilder;
 
 pub use crate::types::_change_set_summary::ChangeSetSummaryBuilder;
+
+pub use crate::types::_warnings::WarningsBuilder;
 
 pub use crate::types::_resource_identifier_summary::ResourceIdentifierSummaryBuilder;
 
@@ -63,11 +71,9 @@ pub use crate::types::_parameter_declaration::ParameterDeclarationBuilder;
 
 pub use crate::types::_parameter_constraints::ParameterConstraintsBuilder;
 
+pub use crate::types::_template_summary_config::TemplateSummaryConfigBuilder;
+
 pub use crate::types::_stack_resource_drift::StackResourceDriftBuilder;
-
-pub use crate::types::_property_difference::PropertyDifferenceBuilder;
-
-pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePairBuilder;
 
 pub use crate::types::_required_activated_type::RequiredActivatedTypeBuilder;
 

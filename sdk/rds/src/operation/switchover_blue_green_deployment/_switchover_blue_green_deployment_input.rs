@@ -3,20 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SwitchoverBlueGreenDeploymentInput {
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     #[doc(hidden)]
     pub switchover_timeout: ::std::option::Option<i32>,
 }
 impl SwitchoverBlueGreenDeploymentInput {
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -24,7 +25,8 @@ impl SwitchoverBlueGreenDeploymentInput {
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
     }
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     pub fn switchover_timeout(&self) -> ::std::option::Option<i32> {
         self.switchover_timeout
@@ -47,7 +49,7 @@ pub struct SwitchoverBlueGreenDeploymentInputBuilder {
     pub(crate) switchover_timeout: ::std::option::Option<i32>,
 }
 impl SwitchoverBlueGreenDeploymentInputBuilder {
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -59,7 +61,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blue/green deployment identifier.</p>
+    /// <p>The unique identifier of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
@@ -71,13 +73,15 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = input;
         self
     }
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     pub fn switchover_timeout(mut self, input: i32) -> Self {
         self.switchover_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
     pub fn set_switchover_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.switchover_timeout = input;

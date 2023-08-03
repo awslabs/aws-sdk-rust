@@ -21,6 +21,9 @@ pub struct GetNetworkAnalyzerConfigurationOutput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
+    #[doc(hidden)]
+    pub multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkAnalyzerConfigurationOutput {
@@ -48,6 +51,10 @@ impl GetNetworkAnalyzerConfigurationOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
+    pub fn multicast_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.multicast_groups.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -73,6 +80,7 @@ pub struct GetNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkAnalyzerConfigurationOutputBuilder {
@@ -163,6 +171,28 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self.name = input;
         self
     }
+    /// Appends an item to `multicast_groups`.
+    ///
+    /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
+    ///
+    /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
+    pub fn multicast_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.multicast_groups.unwrap_or_default();
+        v.push(input.into());
+        self.multicast_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
+    pub fn set_multicast_groups(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.multicast_groups = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -189,6 +219,8 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
             arn: self.arn
             ,
             name: self.name
+            ,
+            multicast_groups: self.multicast_groups
             ,
             _request_id: self._request_id,
         }

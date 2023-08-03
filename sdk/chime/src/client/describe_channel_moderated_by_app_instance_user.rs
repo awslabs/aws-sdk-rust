@@ -9,6 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput) with field(s):
     ///   - [`channel(Option<ChannelModeratedByAppInstanceUserSummary>)`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput::channel): <p>The moderated channel.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelModeratedByAppInstanceUserError>`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserError)
+    #[deprecated(
+        note = "Replaced by DescribeChannelModeratedByAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn describe_channel_moderated_by_app_instance_user(&self) -> crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserFluentBuilder{
         crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserFluentBuilder::new(self.handle.clone())
     }

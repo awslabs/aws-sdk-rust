@@ -6,12 +6,19 @@ pub struct DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
+    /// <p>The supported Grafana version for the workspace.</p>
+    #[doc(hidden)]
+    pub grafana_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn configuration(&self) -> ::std::option::Option<&str> {
         self.configuration.as_deref()
+    }
+    /// <p>The supported Grafana version for the workspace.</p>
+    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
+        self.grafana_version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeWorkspaceConfigurationOutput {
@@ -33,6 +40,7 @@ impl DescribeWorkspaceConfigurationOutput {
 )]
 pub struct DescribeWorkspaceConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceConfigurationOutputBuilder {
@@ -52,6 +60,22 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The supported Grafana version for the workspace.</p>
+    pub fn grafana_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.grafana_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The supported Grafana version for the workspace.</p>
+    pub fn set_grafana_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.grafana_version = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +92,7 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
     {
         crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
             configuration: self.configuration,
+            grafana_version: self.grafana_version,
             _request_id: self._request_id,
         }
     }

@@ -159,6 +159,16 @@ pub(crate) fn reflens_list_stream_processors_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_users_output_next_token(
+    input: &crate::operation::list_users::ListUsersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_project_versions_output_project_version_descriptions(
     input: crate::operation::describe_project_versions::DescribeProjectVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
@@ -223,6 +233,16 @@ pub(crate) fn lens_list_project_policies_output_project_policies(
     input: crate::operation::list_project_policies::ListProjectPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>> {
     let input = match input.project_policies {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_users_output_users(
+    input: crate::operation::list_users::ListUsersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::User>> {
+    let input = match input.users {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

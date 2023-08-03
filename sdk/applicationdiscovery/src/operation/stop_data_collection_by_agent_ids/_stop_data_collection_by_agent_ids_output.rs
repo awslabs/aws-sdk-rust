@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsOutput {
-    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     #[doc(hidden)]
     pub agents_configuration_status:
         ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }
 impl StopDataCollectionByAgentIdsOutput {
-    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     pub fn agents_configuration_status(
         &self,
     ) -> ::std::option::Option<&[crate::types::AgentConfigurationStatus]> {
@@ -44,7 +44,7 @@ impl StopDataCollectionByAgentIdsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agents_configuration_status`](Self::set_agents_configuration_status).
     ///
-    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     pub fn agents_configuration_status(
         mut self,
         input: crate::types::AgentConfigurationStatus,
@@ -54,7 +54,7 @@ impl StopDataCollectionByAgentIdsOutputBuilder {
         self.agents_configuration_status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     pub fn set_agents_configuration_status(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,

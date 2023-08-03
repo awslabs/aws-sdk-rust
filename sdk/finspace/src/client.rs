@@ -214,6 +214,16 @@ impl Client {
 
 mod create_environment;
 
+mod create_kx_changeset;
+
+mod create_kx_cluster;
+
+mod create_kx_database;
+
+mod create_kx_environment;
+
+mod create_kx_user;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -244,9 +254,41 @@ pub mod customize;
 
 mod delete_environment;
 
+mod delete_kx_cluster;
+
+mod delete_kx_database;
+
+mod delete_kx_environment;
+
+mod delete_kx_user;
+
 mod get_environment;
 
+mod get_kx_changeset;
+
+mod get_kx_cluster;
+
+mod get_kx_connection_string;
+
+mod get_kx_database;
+
+mod get_kx_environment;
+
+mod get_kx_user;
+
 mod list_environments;
+
+mod list_kx_changesets;
+
+mod list_kx_cluster_nodes;
+
+mod list_kx_clusters;
+
+mod list_kx_databases;
+
+mod list_kx_environments;
+
+mod list_kx_users;
 
 mod list_tags_for_resource;
 
@@ -255,3 +297,13 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_environment;
+
+mod update_kx_cluster_databases;
+
+mod update_kx_database;
+
+mod update_kx_environment;
+
+mod update_kx_environment_network;
+
+mod update_kx_user;

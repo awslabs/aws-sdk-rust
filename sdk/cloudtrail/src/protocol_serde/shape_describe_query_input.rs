@@ -9,5 +9,8 @@ pub fn ser_describe_query_input(
     if let Some(var_2) = &input.query_id {
         object.key("QueryId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.query_alias {
+        object.key("QueryAlias").string(var_3.as_str());
+    }
     Ok(())
 }

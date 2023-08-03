@@ -87,6 +87,33 @@ pub fn ser_crawler_targets(
         }
         array_22.finish();
     }
+    if let Some(var_25) = &input.iceberg_targets {
+        let mut array_26 = object.key("IcebergTargets").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_iceberg_target::ser_iceberg_target(
+                    &mut object_28,
+                    item_27,
+                )?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.hudi_targets {
+        let mut array_30 = object.key("HudiTargets").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_hudi_target::ser_hudi_target(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
+    }
     Ok(())
 }
 
@@ -144,6 +171,16 @@ where
                             "DeltaTargets" => {
                                 builder = builder.set_delta_targets(
                                     crate::protocol_serde::shape_delta_target_list::de_delta_target_list(tokens)?
+                                );
+                            }
+                            "IcebergTargets" => {
+                                builder = builder.set_iceberg_targets(
+                                    crate::protocol_serde::shape_iceberg_target_list::de_iceberg_target_list(tokens)?
+                                );
+                            }
+                            "HudiTargets" => {
+                                builder = builder.set_hudi_targets(
+                                    crate::protocol_serde::shape_hudi_target_list::de_hudi_target_list(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

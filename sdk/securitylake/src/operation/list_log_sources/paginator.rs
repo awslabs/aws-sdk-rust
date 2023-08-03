@@ -29,7 +29,7 @@ impl ListLogSourcesPaginator {
 
     /// Create a flattened paginator
     ///
-    /// This paginator automatically flattens results using `region_source_types_accounts_list`. Queries to the underlying service
+    /// This paginator automatically flattens results using `sources`. Queries to the underlying service
     /// are dispatched lazily.
     pub fn items(
         self,
@@ -137,20 +137,14 @@ impl ListLogSourcesPaginatorItems {
         self,
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
+            crate::types::LogSource,
             ::aws_smithy_http::result::SdkError<
                 crate::operation::list_log_sources::ListLogSourcesError,
             >,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_list_log_sources_output_region_source_types_accounts_list(page)
+            crate::lens::lens_list_log_sources_output_sources(page)
                 .unwrap_or_default()
                 .into_iter()
         })

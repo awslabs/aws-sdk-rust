@@ -145,6 +145,9 @@ pub mod stop_server;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TestConnection` operation.
+pub mod test_connection;
+
 /// Types for the `TestIdentityProvider` operation.
 pub mod test_identity_provider;
 

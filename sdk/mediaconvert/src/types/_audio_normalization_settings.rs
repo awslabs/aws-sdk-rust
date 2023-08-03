@@ -19,7 +19,7 @@ pub struct AudioNormalizationSettings {
     /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
     #[doc(hidden)]
     pub peak_calculation: ::std::option::Option<crate::types::AudioNormalizationPeakCalculation>,
-    /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+    /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     #[doc(hidden)]
     pub target_lkfs: ::std::option::Option<f64>,
     /// Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
@@ -53,7 +53,7 @@ impl AudioNormalizationSettings {
     ) -> ::std::option::Option<&crate::types::AudioNormalizationPeakCalculation> {
         self.peak_calculation.as_ref()
     }
-    /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+    /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     pub fn target_lkfs(&self) -> ::std::option::Option<f64> {
         self.target_lkfs
     }
@@ -158,12 +158,12 @@ impl AudioNormalizationSettingsBuilder {
         self.peak_calculation = input;
         self
     }
-    /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+    /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     pub fn target_lkfs(mut self, input: f64) -> Self {
         self.target_lkfs = ::std::option::Option::Some(input);
         self
     }
-    /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+    /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     pub fn set_target_lkfs(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_lkfs = input;
         self

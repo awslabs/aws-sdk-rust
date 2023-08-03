@@ -154,6 +154,12 @@ pub mod describe_analysis_definition;
 /// Types for the `DescribeAnalysisPermissions` operation.
 pub mod describe_analysis_permissions;
 
+/// Types for the `DescribeAssetBundleExportJob` operation.
+pub mod describe_asset_bundle_export_job;
+
+/// Types for the `DescribeAssetBundleImportJob` operation.
+pub mod describe_asset_bundle_import_job;
+
 /// Types for the `DescribeDashboard` operation.
 pub mod describe_dashboard;
 
@@ -162,6 +168,12 @@ pub mod describe_dashboard_definition;
 
 /// Types for the `DescribeDashboardPermissions` operation.
 pub mod describe_dashboard_permissions;
+
+/// Types for the `DescribeDashboardSnapshotJob` operation.
+pub mod describe_dashboard_snapshot_job;
+
+/// Types for the `DescribeDashboardSnapshotJobResult` operation.
+pub mod describe_dashboard_snapshot_job_result;
 
 /// Types for the `DescribeDataSet` operation.
 pub mod describe_data_set;
@@ -261,6 +273,12 @@ pub mod get_session_embed_url;
 
 /// Types for the `ListAnalyses` operation.
 pub mod list_analyses;
+
+/// Types for the `ListAssetBundleExportJobs` operation.
+pub mod list_asset_bundle_export_jobs;
+
+/// Types for the `ListAssetBundleImportJobs` operation.
+pub mod list_asset_bundle_import_jobs;
 
 /// Types for the `ListDashboardVersions` operation.
 pub mod list_dashboard_versions;
@@ -363,6 +381,15 @@ pub mod search_folders;
 
 /// Types for the `SearchGroups` operation.
 pub mod search_groups;
+
+/// Types for the `StartAssetBundleExportJob` operation.
+pub mod start_asset_bundle_export_job;
+
+/// Types for the `StartAssetBundleImportJob` operation.
+pub mod start_asset_bundle_import_job;
+
+/// Types for the `StartDashboardSnapshotJob` operation.
+pub mod start_dashboard_snapshot_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

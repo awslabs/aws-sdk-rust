@@ -14,6 +14,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_stream_key;
 
+pub(crate) mod shape_batch_start_viewer_session_revocation;
+
 pub(crate) mod shape_create_channel;
 
 pub(crate) mod shape_create_recording_configuration;
@@ -58,6 +60,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_metadata;
 
+pub(crate) mod shape_start_viewer_session_revocation;
+
 pub(crate) mod shape_stop_stream;
 
 pub(crate) mod shape_tag_resource;
@@ -79,6 +83,8 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_batch_get_channel_input;
 
 pub(crate) mod shape_batch_get_stream_key_input;
+
+pub(crate) mod shape_batch_start_viewer_session_revocation_input;
 
 pub(crate) mod shape_channel_not_broadcasting;
 
@@ -134,6 +140,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_viewer_session_revocation_input;
+
 pub(crate) mod shape_stop_stream_input;
 
 pub(crate) mod shape_stream_unavailable;
@@ -147,6 +155,10 @@ pub(crate) mod shape_update_channel_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_batch_errors;
+
+pub(crate) mod shape_batch_start_viewer_session_revocation_errors;
+
+pub(crate) mod shape_batch_start_viewer_session_revocation_viewer_session;
 
 pub(crate) mod shape_channel;
 
@@ -163,6 +175,8 @@ pub(crate) mod shape_playback_key_pair_list;
 pub(crate) mod shape_recording_configuration;
 
 pub(crate) mod shape_recording_configuration_list;
+
+pub(crate) mod shape_rendition_configuration;
 
 pub(crate) mod shape_stream;
 
@@ -186,6 +200,8 @@ pub(crate) mod shape_thumbnail_configuration;
 
 pub(crate) mod shape_batch_error;
 
+pub(crate) mod shape_batch_start_viewer_session_revocation_error;
+
 pub(crate) mod shape_channel_summary;
 
 pub(crate) mod shape_ingest_configuration;
@@ -206,6 +222,10 @@ pub(crate) mod shape_stream_summary;
 
 pub(crate) mod shape_audio_configuration;
 
+pub(crate) mod shape_rendition_configuration_rendition_list;
+
 pub(crate) mod shape_stream_event;
+
+pub(crate) mod shape_thumbnail_configuration_storage_list;
 
 pub(crate) mod shape_video_configuration;

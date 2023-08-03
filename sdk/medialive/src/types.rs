@@ -245,6 +245,10 @@ pub use crate::types::_audio_silence_failover_settings::AudioSilenceFailoverSett
 
 pub use crate::types::_encoder_settings::EncoderSettings;
 
+pub use crate::types::_thumbnail_configuration::ThumbnailConfiguration;
+
+pub use crate::types::_thumbnail_state::ThumbnailState;
+
 pub use crate::types::_video_description::VideoDescription;
 
 pub use crate::types::_video_description_scaling_behavior::VideoDescriptionScalingBehavior;
@@ -885,6 +889,8 @@ pub use crate::types::_cdi_input_resolution::CdiInputResolution;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
 
+pub use crate::types::_account_configuration::AccountConfiguration;
+
 pub use crate::types::_reboot_input_device_force::RebootInputDeviceForce;
 
 pub use crate::types::_offering::Offering;
@@ -902,6 +908,12 @@ pub use crate::types::_input_device_transfer_type::InputDeviceTransferType;
 pub use crate::types::_input_device_summary::InputDeviceSummary;
 
 pub use crate::types::_channel_summary::ChannelSummary;
+
+pub use crate::types::_thumbnail_detail::ThumbnailDetail;
+
+pub use crate::types::_thumbnail::Thumbnail;
+
+pub use crate::types::_thumbnail_type::ThumbnailType;
 
 pub use crate::types::_schedule_action::ScheduleAction;
 
@@ -1030,6 +1042,8 @@ mod _ac3_settings;
 mod _accept_header;
 
 mod _accessibility_type;
+
+mod _account_configuration;
 
 mod _afd_signaling;
 
@@ -1936,6 +1950,16 @@ mod _temporal_filter_post_filter_sharpening;
 mod _temporal_filter_settings;
 
 mod _temporal_filter_strength;
+
+mod _thumbnail;
+
+mod _thumbnail_configuration;
+
+mod _thumbnail_detail;
+
+mod _thumbnail_state;
+
+mod _thumbnail_type;
 
 mod _timecode_burnin_font_size;
 

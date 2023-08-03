@@ -14,10 +14,13 @@
 /// match automlmetricenum {
 ///     AutoMlMetricEnum::Auc => { /* ... */ },
 ///     AutoMlMetricEnum::Accuracy => { /* ... */ },
+///     AutoMlMetricEnum::AverageWeightedQuantileLoss => { /* ... */ },
 ///     AutoMlMetricEnum::BalancedAccuracy => { /* ... */ },
 ///     AutoMlMetricEnum::F1 => { /* ... */ },
 ///     AutoMlMetricEnum::F1Macro => { /* ... */ },
 ///     AutoMlMetricEnum::Mae => { /* ... */ },
+///     AutoMlMetricEnum::Mape => { /* ... */ },
+///     AutoMlMetricEnum::Mase => { /* ... */ },
 ///     AutoMlMetricEnum::Mse => { /* ... */ },
 ///     AutoMlMetricEnum::Precision => { /* ... */ },
 ///     AutoMlMetricEnum::PrecisionMacro => { /* ... */ },
@@ -25,6 +28,7 @@
 ///     AutoMlMetricEnum::Rmse => { /* ... */ },
 ///     AutoMlMetricEnum::Recall => { /* ... */ },
 ///     AutoMlMetricEnum::RecallMacro => { /* ... */ },
+///     AutoMlMetricEnum::Wape => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +67,8 @@ pub enum AutoMlMetricEnum {
     #[allow(missing_docs)] // documentation missing in model
     Accuracy,
     #[allow(missing_docs)] // documentation missing in model
+    AverageWeightedQuantileLoss,
+    #[allow(missing_docs)] // documentation missing in model
     BalancedAccuracy,
     #[allow(missing_docs)] // documentation missing in model
     F1,
@@ -70,6 +76,10 @@ pub enum AutoMlMetricEnum {
     F1Macro,
     #[allow(missing_docs)] // documentation missing in model
     Mae,
+    #[allow(missing_docs)] // documentation missing in model
+    Mape,
+    #[allow(missing_docs)] // documentation missing in model
+    Mase,
     #[allow(missing_docs)] // documentation missing in model
     Mse,
     #[allow(missing_docs)] // documentation missing in model
@@ -84,6 +94,8 @@ pub enum AutoMlMetricEnum {
     Recall,
     #[allow(missing_docs)] // documentation missing in model
     RecallMacro,
+    #[allow(missing_docs)] // documentation missing in model
+    Wape,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -92,10 +104,13 @@ impl ::std::convert::From<&str> for AutoMlMetricEnum {
         match s {
             "AUC" => AutoMlMetricEnum::Auc,
             "Accuracy" => AutoMlMetricEnum::Accuracy,
+            "AverageWeightedQuantileLoss" => AutoMlMetricEnum::AverageWeightedQuantileLoss,
             "BalancedAccuracy" => AutoMlMetricEnum::BalancedAccuracy,
             "F1" => AutoMlMetricEnum::F1,
             "F1macro" => AutoMlMetricEnum::F1Macro,
             "MAE" => AutoMlMetricEnum::Mae,
+            "MAPE" => AutoMlMetricEnum::Mape,
+            "MASE" => AutoMlMetricEnum::Mase,
             "MSE" => AutoMlMetricEnum::Mse,
             "Precision" => AutoMlMetricEnum::Precision,
             "PrecisionMacro" => AutoMlMetricEnum::PrecisionMacro,
@@ -103,6 +118,7 @@ impl ::std::convert::From<&str> for AutoMlMetricEnum {
             "RMSE" => AutoMlMetricEnum::Rmse,
             "Recall" => AutoMlMetricEnum::Recall,
             "RecallMacro" => AutoMlMetricEnum::RecallMacro,
+            "WAPE" => AutoMlMetricEnum::Wape,
             other => {
                 AutoMlMetricEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -122,10 +138,13 @@ impl AutoMlMetricEnum {
         match self {
             AutoMlMetricEnum::Auc => "AUC",
             AutoMlMetricEnum::Accuracy => "Accuracy",
+            AutoMlMetricEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
             AutoMlMetricEnum::BalancedAccuracy => "BalancedAccuracy",
             AutoMlMetricEnum::F1 => "F1",
             AutoMlMetricEnum::F1Macro => "F1macro",
             AutoMlMetricEnum::Mae => "MAE",
+            AutoMlMetricEnum::Mape => "MAPE",
+            AutoMlMetricEnum::Mase => "MASE",
             AutoMlMetricEnum::Mse => "MSE",
             AutoMlMetricEnum::Precision => "Precision",
             AutoMlMetricEnum::PrecisionMacro => "PrecisionMacro",
@@ -133,6 +152,7 @@ impl AutoMlMetricEnum {
             AutoMlMetricEnum::Rmse => "RMSE",
             AutoMlMetricEnum::Recall => "Recall",
             AutoMlMetricEnum::RecallMacro => "RecallMacro",
+            AutoMlMetricEnum::Wape => "WAPE",
             AutoMlMetricEnum::Unknown(value) => value.as_str(),
         }
     }
@@ -141,10 +161,13 @@ impl AutoMlMetricEnum {
         &[
             "AUC",
             "Accuracy",
+            "AverageWeightedQuantileLoss",
             "BalancedAccuracy",
             "F1",
             "F1macro",
             "MAE",
+            "MAPE",
+            "MASE",
             "MSE",
             "Precision",
             "PrecisionMacro",
@@ -152,6 +175,7 @@ impl AutoMlMetricEnum {
             "RMSE",
             "Recall",
             "RecallMacro",
+            "WAPE",
         ]
     }
 }

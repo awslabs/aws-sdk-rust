@@ -84,6 +84,11 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
                                 );
                             }
+                            "latestDatasetUpdate" => {
+                                builder = builder.set_latest_dataset_update(
+                                    crate::protocol_serde::shape_dataset_update_summary::de_dataset_update_summary(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

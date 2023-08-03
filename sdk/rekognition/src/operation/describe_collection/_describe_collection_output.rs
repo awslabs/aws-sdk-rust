@@ -16,6 +16,9 @@ pub struct DescribeCollectionOutput {
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of UserIDs assigned to the specified colleciton.</p>
+    #[doc(hidden)]
+    pub user_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeCollectionOutput {
@@ -35,6 +38,10 @@ impl DescribeCollectionOutput {
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
+    }
+    /// <p>The number of UserIDs assigned to the specified colleciton.</p>
+    pub fn user_count(&self) -> ::std::option::Option<i64> {
+        self.user_count
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCollectionOutput {
@@ -60,6 +67,7 @@ pub struct DescribeCollectionOutputBuilder {
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) collection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) user_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeCollectionOutputBuilder {
@@ -120,6 +128,16 @@ impl DescribeCollectionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The number of UserIDs assigned to the specified colleciton.</p>
+    pub fn user_count(mut self, input: i64) -> Self {
+        self.user_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of UserIDs assigned to the specified colleciton.</p>
+    pub fn set_user_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.user_count = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -136,6 +154,7 @@ impl DescribeCollectionOutputBuilder {
             face_model_version: self.face_model_version,
             collection_arn: self.collection_arn,
             creation_timestamp: self.creation_timestamp,
+            user_count: self.user_count,
             _request_id: self._request_id,
         }
     }

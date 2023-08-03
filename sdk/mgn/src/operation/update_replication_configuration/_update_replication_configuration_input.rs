@@ -55,6 +55,12 @@ pub struct UpdateReplicationConfigurationInput {
     pub staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    #[doc(hidden)]
+    pub use_fips_endpoint: ::std::option::Option<bool>,
+    /// <p>Update replication configuration Account ID request.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -132,6 +138,14 @@ impl UpdateReplicationConfigurationInput {
     > {
         self.staging_area_tags.as_ref()
     }
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_fips_endpoint
+    }
+    /// <p>Update replication configuration Account ID request.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -166,6 +180,8 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -203,6 +219,8 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -448,6 +466,26 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.use_fips_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration use Fips Endpoint.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_fips_endpoint = input;
+        self
+    }
+    /// <p>Update replication configuration Account ID request.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Update replication configuration Account ID request.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(
         self,
@@ -488,6 +526,10 @@ impl UpdateReplicationConfigurationInputBuilder {
                 ,
                 staging_area_tags: self.staging_area_tags
                 ,
+                use_fips_endpoint: self.use_fips_endpoint
+                ,
+                account_id: self.account_id
+                ,
             }
         )
     }
@@ -525,6 +567,8 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

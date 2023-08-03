@@ -117,6 +117,9 @@ pub struct Endpoint {
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     #[doc(hidden)]
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
+    #[doc(hidden)]
+    pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -269,6 +272,10 @@ impl Endpoint {
     pub fn gcp_my_sql_settings(&self) -> ::std::option::Option<&crate::types::GcpMySqlSettings> {
         self.gcp_my_sql_settings.as_ref()
     }
+    /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
+    pub fn timestream_settings(&self) -> ::std::option::Option<&crate::types::TimestreamSettings> {
+        self.timestream_settings.as_ref()
+    }
 }
 impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::types::Endpoint).
@@ -319,6 +326,7 @@ pub struct EndpointBuilder {
     pub(crate) doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
     pub(crate) redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     pub(crate) gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    pub(crate) timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl EndpointBuilder {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -780,6 +788,19 @@ impl EndpointBuilder {
         self.gcp_my_sql_settings = input;
         self
     }
+    /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
+    pub fn timestream_settings(mut self, input: crate::types::TimestreamSettings) -> Self {
+        self.timestream_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
+    pub fn set_timestream_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::TimestreamSettings>,
+    ) -> Self {
+        self.timestream_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
@@ -818,6 +839,7 @@ impl EndpointBuilder {
             doc_db_settings: self.doc_db_settings,
             redis_settings: self.redis_settings,
             gcp_my_sql_settings: self.gcp_my_sql_settings,
+            timestream_settings: self.timestream_settings,
         }
     }
 }

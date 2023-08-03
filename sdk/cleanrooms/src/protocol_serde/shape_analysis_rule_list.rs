@@ -12,14 +12,23 @@ pub fn ser_analysis_rule_list(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.list_columns {
-        let mut array_5 = object.key("listColumns").start_array();
+    if let Some(var_4) = &input.allowed_join_operators {
+        let mut array_5 = object.key("allowedJoinOperators").start_array();
         for item_6 in var_4 {
             {
                 array_5.value().string(item_6.as_str());
             }
         }
         array_5.finish();
+    }
+    if let Some(var_7) = &input.list_columns {
+        let mut array_8 = object.key("listColumns").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
     }
     Ok(())
 }
@@ -51,6 +60,11 @@ where
                             "joinColumns" => {
                                 builder = builder.set_join_columns(
                                     crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?
+                                );
+                            }
+                            "allowedJoinOperators" => {
+                                builder = builder.set_allowed_join_operators(
+                                    crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?
                                 );
                             }
                             "listColumns" => {

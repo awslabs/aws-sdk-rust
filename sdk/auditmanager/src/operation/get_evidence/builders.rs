@@ -5,7 +5,7 @@ pub use crate::operation::get_evidence::_get_evidence_input::GetEvidenceInputBui
 
 /// Fluent builder constructing a request to `GetEvidence`.
 ///
-/// <p> Returns evidence from Audit Manager. </p>
+/// <p> Gets information about a specified evidence item.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

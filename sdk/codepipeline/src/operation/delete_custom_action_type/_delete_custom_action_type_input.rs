@@ -7,7 +7,7 @@ pub struct DeleteCustomActionTypeInput {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The version of the custom action to delete.</p>
@@ -19,7 +19,7 @@ impl DeleteCustomActionTypeInput {
     pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
         self.category.as_ref()
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(&self) -> ::std::option::Option<&str> {
         self.provider.as_deref()
     }
@@ -61,12 +61,12 @@ impl DeleteCustomActionTypeInputBuilder {
         self.category = input;
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self

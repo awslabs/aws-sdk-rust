@@ -198,9 +198,6 @@ impl ::aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUserE
             crate::protocol_serde::shape_update_app_instance_user_endpoint::de_update_app_instance_user_endpoint_http_response_with_props(status, headers, body)
         }
     }
-    fn sensitive(&self) -> bool {
-        true
-    }
 }
 
 /// Do not use this.

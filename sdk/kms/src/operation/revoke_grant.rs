@@ -177,6 +177,8 @@ pub type RevokeGrantErrorKind = RevokeGrantError;
 pub enum RevokeGrantError {
     /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
+    /// <p> The request was rejected because the DryRun parameter was specified. </p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
@@ -213,6 +215,7 @@ impl ::std::fmt::Display for RevokeGrantError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::DependencyTimeoutException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidGrantIdException(_inner) => _inner.fmt(f),
             Self::KmsInternalException(_inner) => _inner.fmt(f),
@@ -226,6 +229,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RevokeGrantEr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DependencyTimeoutException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DryRunOperationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidArnException(_inner) => {
@@ -295,6 +301,7 @@ impl RevokeGrantError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::DependencyTimeoutException(e) => e.meta(),
+            Self::DryRunOperationException(e) => e.meta(),
             Self::InvalidArnException(e) => e.meta(),
             Self::InvalidGrantIdException(e) => e.meta(),
             Self::KmsInternalException(e) => e.meta(),
@@ -306,6 +313,10 @@ impl RevokeGrantError {
     /// Returns `true` if the error kind is `RevokeGrantError::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(self, Self::DependencyTimeoutException(_))
+    }
+    /// Returns `true` if the error kind is `RevokeGrantError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `RevokeGrantError::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -332,6 +343,7 @@ impl ::std::error::Error for RevokeGrantError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DependencyTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGrantIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInternalException(_inner) => ::std::option::Option::Some(_inner),

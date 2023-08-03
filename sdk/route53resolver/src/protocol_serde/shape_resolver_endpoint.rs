@@ -150,6 +150,24 @@ where
                                 .transpose()?,
                             );
                         }
+                        "OutpostArn" => {
+                            builder = builder.set_outpost_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
+                        }
+                        "PreferredInstanceType" => {
+                            builder = builder.set_preferred_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

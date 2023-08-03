@@ -70,6 +70,10 @@ pub(crate) mod shape_create_mitigation_action;
 
 pub(crate) mod shape_create_ota_update;
 
+pub(crate) mod shape_create_package;
+
+pub(crate) mod shape_create_package_version;
+
 pub(crate) mod shape_create_policy;
 
 pub(crate) mod shape_create_policy_version;
@@ -135,6 +139,10 @@ pub(crate) mod shape_delete_job_template;
 pub(crate) mod shape_delete_mitigation_action;
 
 pub(crate) mod shape_delete_ota_update;
+
+pub(crate) mod shape_delete_package;
+
+pub(crate) mod shape_delete_package_version;
 
 pub(crate) mod shape_delete_policy;
 
@@ -262,6 +270,12 @@ pub(crate) mod shape_get_logging_options;
 
 pub(crate) mod shape_get_ota_update;
 
+pub(crate) mod shape_get_package;
+
+pub(crate) mod shape_get_package_configuration;
+
+pub(crate) mod shape_get_package_version;
+
 pub(crate) mod shape_get_percentiles;
 
 pub(crate) mod shape_get_policy;
@@ -333,6 +347,10 @@ pub(crate) mod shape_list_mitigation_actions;
 pub(crate) mod shape_list_ota_updates;
 
 pub(crate) mod shape_list_outgoing_certificates;
+
+pub(crate) mod shape_list_package_versions;
+
+pub(crate) mod shape_list_packages;
 
 pub(crate) mod shape_list_policies;
 
@@ -476,6 +494,12 @@ pub(crate) mod shape_update_job;
 
 pub(crate) mod shape_update_mitigation_action;
 
+pub(crate) mod shape_update_package;
+
+pub(crate) mod shape_update_package_configuration;
+
+pub(crate) mod shape_update_package_version;
+
 pub(crate) mod shape_update_provisioning_template;
 
 pub(crate) mod shape_update_role_alias;
@@ -551,6 +575,10 @@ pub(crate) mod shape_create_job_template_input;
 pub(crate) mod shape_create_mitigation_action_input;
 
 pub(crate) mod shape_create_ota_update_input;
+
+pub(crate) mod shape_create_package_input;
+
+pub(crate) mod shape_create_package_version_input;
 
 pub(crate) mod shape_create_policy_input;
 
@@ -650,6 +678,8 @@ pub(crate) mod shape_resource_registration_failure_exception;
 
 pub(crate) mod shape_search_index_input;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_set_default_authorizer_input;
@@ -716,6 +746,12 @@ pub(crate) mod shape_update_job_input;
 
 pub(crate) mod shape_update_mitigation_action_input;
 
+pub(crate) mod shape_update_package_configuration_input;
+
+pub(crate) mod shape_update_package_input;
+
+pub(crate) mod shape_update_package_version_input;
+
 pub(crate) mod shape_update_provisioning_template_input;
 
 pub(crate) mod shape_update_role_alias_input;
@@ -735,6 +771,8 @@ pub(crate) mod shape_update_thing_input;
 pub(crate) mod shape_update_topic_rule_destination_input;
 
 pub(crate) mod shape_validate_security_profile_behaviors_input;
+
+pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_version_conflict_exception;
 
@@ -830,6 +868,8 @@ pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_configuration;
 
+pub(crate) mod shape_destination_package_versions;
+
 pub(crate) mod shape_detect_mitigation_action_execution_list;
 
 pub(crate) mod shape_detect_mitigation_actions_task_summary;
@@ -910,6 +950,10 @@ pub(crate) mod shape_ota_updates_summary;
 
 pub(crate) mod shape_outgoing_certificates;
 
+pub(crate) mod shape_package_summary_list;
+
+pub(crate) mod shape_package_version_summary_list;
+
 pub(crate) mod shape_percentiles;
 
 pub(crate) mod shape_policies;
@@ -935,6 +979,8 @@ pub(crate) mod shape_registration_config;
 pub(crate) mod shape_related_resources;
 
 pub(crate) mod shape_resource_arns;
+
+pub(crate) mod shape_resource_attributes;
 
 pub(crate) mod shape_resource_identifier;
 
@@ -1017,6 +1063,8 @@ pub(crate) mod shape_topic_rule_list;
 pub(crate) mod shape_topic_rule_payload;
 
 pub(crate) mod shape_validation_errors;
+
+pub(crate) mod shape_version_update_by_jobs_config;
 
 pub(crate) mod shape_violation_event_occurrence_range;
 
@@ -1143,6 +1191,10 @@ pub(crate) mod shape_ota_update_files;
 pub(crate) mod shape_ota_update_summary;
 
 pub(crate) mod shape_outgoing_certificate;
+
+pub(crate) mod shape_package_summary;
+
+pub(crate) mod shape_package_version_summary;
 
 pub(crate) mod shape_parameter_map;
 

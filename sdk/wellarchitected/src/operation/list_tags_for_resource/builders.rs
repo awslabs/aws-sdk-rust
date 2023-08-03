@@ -6,7 +6,7 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>List the tags for a resource.</p> <note>
-/// <p>The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+/// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {

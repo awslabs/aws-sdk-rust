@@ -137,6 +137,49 @@ impl From<crate::operation::batch_get_account_status::BatchGetAccountStatusError
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError> for Error {
+    fn from(err: crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError) -> Self {
+        match err {
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
             R,
         >,
@@ -270,6 +313,50 @@ impl From<crate::operation::cancel_findings_report::CancelFindingsReportError> f
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_sbom_export::CancelSbomExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_sbom_export::CancelSbomExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_sbom_export::CancelSbomExportError> for Error {
+    fn from(err: crate::operation::cancel_sbom_export::CancelSbomExportError) -> Self {
+        match err {
+            crate::operation::cancel_sbom_export::CancelSbomExportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_sbom_export::CancelSbomExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_sbom_export::CancelSbomExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_sbom_export::CancelSbomExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_sbom_export::CancelSbomExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_sbom_export::CancelSbomExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError, R>>
     for Error
 where
@@ -365,6 +452,50 @@ impl From<crate::operation::create_findings_report::CreateFindingsReportError> f
             crate::operation::create_findings_report::CreateFindingsReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_findings_report::CreateFindingsReportError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_findings_report::CreateFindingsReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sbom_export::CreateSbomExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sbom_export::CreateSbomExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_sbom_export::CreateSbomExportError> for Error {
+    fn from(err: crate::operation::create_sbom_export::CreateSbomExportError) -> Self {
+        match err {
+            crate::operation::create_sbom_export::CreateSbomExportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_sbom_export::CreateSbomExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_sbom_export::CreateSbomExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_sbom_export::CreateSbomExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_sbom_export::CreateSbomExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_sbom_export::CreateSbomExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -792,6 +923,50 @@ impl From<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepIns
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::get_encryption_key::GetEncryptionKeyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_encryption_key::GetEncryptionKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_encryption_key::GetEncryptionKeyError> for Error {
+    fn from(err: crate::operation::get_encryption_key::GetEncryptionKeyError) -> Self {
+        match err {
+            crate::operation::get_encryption_key::GetEncryptionKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_encryption_key::GetEncryptionKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_encryption_key::GetEncryptionKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_encryption_key::GetEncryptionKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_encryption_key::GetEncryptionKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_encryption_key::GetEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_findings_report_status::GetFindingsReportStatusError,
             R,
         >,
@@ -878,6 +1053,62 @@ impl From<crate::operation::get_member::GetMemberError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::get_member::GetMemberError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sbom_export::GetSbomExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sbom_export::GetSbomExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_sbom_export::GetSbomExportError> for Error {
+    fn from(err: crate::operation::get_sbom_export::GetSbomExportError) -> Self {
+        match err {
+            crate::operation::get_sbom_export::GetSbomExportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sbom_export::GetSbomExportError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_sbom_export::GetSbomExportError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sbom_export::GetSbomExportError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_sbom_export::GetSbomExportError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_sbom_export::GetSbomExportError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1348,6 +1579,50 @@ impl From<crate::operation::list_usage_totals::ListUsageTotalsError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reset_encryption_key::ResetEncryptionKeyError> for Error {
+    fn from(err: crate::operation::reset_encryption_key::ResetEncryptionKeyError) -> Self {
+        match err {
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
             R,
         >,
@@ -1557,6 +1832,50 @@ impl From<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2D
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_encryption_key::UpdateEncryptionKeyError> for Error {
+    fn from(err: crate::operation::update_encryption_key::UpdateEncryptionKeyError) -> Self {
+        match err {
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -28,6 +28,9 @@ pub struct AssociateResourceShareInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    #[doc(hidden)]
+    pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
@@ -59,6 +62,10 @@ impl AssociateResourceShareInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.sources.as_deref()
+    }
 }
 impl AssociateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceShareInput`](crate::operation::associate_resource_share::AssociateResourceShareInput).
@@ -79,6 +86,7 @@ pub struct AssociateResourceShareInputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
@@ -174,6 +182,25 @@ impl AssociateResourceShareInputBuilder {
         self.client_token = input;
         self
     }
+    /// Appends an item to `sources`.
+    ///
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+    ///
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.sources.unwrap_or_default();
+        v.push(input.into());
+        self.sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    pub fn set_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.sources = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateResourceShareInput`](crate::operation::associate_resource_share::AssociateResourceShareInput).
     pub fn build(
         self,
@@ -187,6 +214,7 @@ impl AssociateResourceShareInputBuilder {
                 resource_arns: self.resource_arns,
                 principals: self.principals,
                 client_token: self.client_token,
+                sources: self.sources,
             },
         )
     }

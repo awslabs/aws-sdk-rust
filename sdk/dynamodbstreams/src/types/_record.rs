@@ -19,7 +19,7 @@ pub struct Record {
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
     #[doc(hidden)]
     pub event_version: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
@@ -55,7 +55,7 @@ impl Record {
     pub fn event_version(&self) -> ::std::option::Option<&str> {
         self.event_version.as_deref()
     }
-    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
     }
@@ -149,12 +149,12 @@ impl RecordBuilder {
         self.event_version = input;
         self
     }
-    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self

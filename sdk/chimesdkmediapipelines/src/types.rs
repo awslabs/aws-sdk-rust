@@ -25,13 +25,13 @@ pub use crate::types::_kinesis_data_stream_sink_configuration::KinesisDataStream
 
 pub use crate::types::_amazon_transcribe_processor_configuration::AmazonTranscribeProcessorConfiguration;
 
+pub use crate::types::_call_analytics_language_code::CallAnalyticsLanguageCode;
+
 pub use crate::types::_content_type::ContentType;
 
 pub use crate::types::_partial_results_stability::PartialResultsStability;
 
 pub use crate::types::_vocabulary_filter_method::VocabularyFilterMethod;
-
-pub use crate::types::_call_analytics_language_code::CallAnalyticsLanguageCode;
 
 pub use crate::types::_amazon_transcribe_call_analytics_processor_configuration::AmazonTranscribeCallAnalyticsProcessorConfiguration;
 
@@ -151,6 +151,28 @@ pub use crate::types::_composited_video_artifacts_configuration::CompositedVideo
 
 pub use crate::types::_grid_view_configuration::GridViewConfiguration;
 
+pub use crate::types::_canvas_orientation::CanvasOrientation;
+
+pub use crate::types::_video_attribute::VideoAttribute;
+
+pub use crate::types::_highlight_color::HighlightColor;
+
+pub use crate::types::_border_color::BorderColor;
+
+pub use crate::types::_vertical_layout_configuration::VerticalLayoutConfiguration;
+
+pub use crate::types::_vertical_tile_position::VerticalTilePosition;
+
+pub use crate::types::_tile_order::TileOrder;
+
+pub use crate::types::_horizontal_layout_configuration::HorizontalLayoutConfiguration;
+
+pub use crate::types::_horizontal_tile_position::HorizontalTilePosition;
+
+pub use crate::types::_active_speaker_only_configuration::ActiveSpeakerOnlyConfiguration;
+
+pub use crate::types::_active_speaker_position::ActiveSpeakerPosition;
+
 pub use crate::types::_presenter_only_configuration::PresenterOnlyConfiguration;
 
 pub use crate::types::_presenter_position::PresenterPosition;
@@ -189,6 +211,10 @@ pub use crate::types::_media_pipeline_sink_type::MediaPipelineSinkType;
 
 pub use crate::types::_media_pipeline_source_type::MediaPipelineSourceType;
 
+mod _active_speaker_only_configuration;
+
+mod _active_speaker_position;
+
 mod _amazon_transcribe_call_analytics_processor_configuration;
 
 mod _amazon_transcribe_processor_configuration;
@@ -211,7 +237,11 @@ mod _audio_concatenation_configuration;
 
 mod _audio_mux_type;
 
+mod _border_color;
+
 mod _call_analytics_language_code;
+
+mod _canvas_orientation;
 
 mod _channel_definition;
 
@@ -254,6 +284,12 @@ mod _fragment_selector;
 mod _fragment_selector_type;
 
 mod _grid_view_configuration;
+
+mod _highlight_color;
+
+mod _horizontal_layout_configuration;
+
+mod _horizontal_tile_position;
 
 mod _issue_detection_configuration;
 
@@ -363,11 +399,19 @@ mod _stream_configuration;
 
 mod _tag;
 
+mod _tile_order;
+
 mod _timestamp_range;
 
 mod _transcription_messages_concatenation_configuration;
 
+mod _vertical_layout_configuration;
+
+mod _vertical_tile_position;
+
 mod _video_artifacts_configuration;
+
+mod _video_attribute;
 
 mod _video_concatenation_configuration;
 

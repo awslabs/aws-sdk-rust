@@ -168,6 +168,8 @@ pub type CreateAccountAliasErrorKind = CreateAccountAliasError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateAccountAliasError {
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
@@ -194,6 +196,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for CreateAccountAliasError
 impl ::std::fmt::Display for CreateAccountAliasError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -204,6 +207,9 @@ impl ::std::fmt::Display for CreateAccountAliasError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateAccountAliasError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::EntityAlreadyExistsException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -266,11 +272,16 @@ impl CreateAccountAliasError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConcurrentModificationException(e) => e.meta(),
             Self::EntityAlreadyExistsException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ServiceFailureException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateAccountAliasError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `CreateAccountAliasError::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
@@ -288,6 +299,7 @@ impl CreateAccountAliasError {
 impl ::std::error::Error for CreateAccountAliasError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),

@@ -19,6 +19,9 @@ pub struct Application {
     /// <p>The status of the application.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
+    /// <p>The latest discovery result for the application.</p>
+    #[doc(hidden)]
+    pub discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     /// <p>The components of the application.</p>
     #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,6 +52,12 @@ impl Application {
     /// <p>The status of the application.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.status.as_ref()
+    }
+    /// <p>The latest discovery result for the application.</p>
+    pub fn discovery_status(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApplicationDiscoveryStatus> {
+        self.discovery_status.as_ref()
     }
     /// <p>The components of the application.</p>
     pub fn components(&self) -> ::std::option::Option<&[::std::string::String]> {
@@ -81,6 +90,7 @@ pub struct ApplicationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_registry_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub(crate) discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     pub(crate) components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -145,6 +155,19 @@ impl ApplicationBuilder {
         self.status = input;
         self
     }
+    /// <p>The latest discovery result for the application.</p>
+    pub fn discovery_status(mut self, input: crate::types::ApplicationDiscoveryStatus) -> Self {
+        self.discovery_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latest discovery result for the application.</p>
+    pub fn set_discovery_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
+    ) -> Self {
+        self.discovery_status = input;
+        self
+    }
     /// Appends an item to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
@@ -201,6 +224,7 @@ impl ApplicationBuilder {
             arn: self.arn,
             app_registry_arn: self.app_registry_arn,
             status: self.status,
+            discovery_status: self.discovery_status,
             components: self.components,
             last_updated: self.last_updated,
             status_message: self.status_message,

@@ -5,7 +5,7 @@ pub use crate::operation::delete_trail::_delete_trail_input::DeleteTrailInputBui
 
 /// Fluent builder constructing a request to `DeleteTrail`.
 ///
-/// <p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
+/// <p>Deletes a trail. This operation must be called from the Region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled in all Regions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

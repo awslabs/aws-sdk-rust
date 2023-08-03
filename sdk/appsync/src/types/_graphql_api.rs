@@ -56,6 +56,19 @@ pub struct GraphqlApi {
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    #[doc(hidden)]
+    pub api_type: ::std::option::Option<crate::types::GraphQlApiType>,
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    #[doc(hidden)]
+    pub merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The account owner of the GraphQL API.</p>
+    #[doc(hidden)]
+    pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    #[doc(hidden)]
+    pub owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
@@ -136,6 +149,23 @@ impl GraphqlApi {
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::GraphQlApiVisibility> {
         self.visibility.as_ref()
     }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn api_type(&self) -> ::std::option::Option<&crate::types::GraphQlApiType> {
+        self.api_type.as_ref()
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn merged_api_execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.merged_api_execution_role_arn.as_deref()
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn owner_contact(&self) -> ::std::option::Option<&str> {
+        self.owner_contact.as_deref()
+    }
 }
 impl GraphqlApi {
     /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::types::GraphqlApi).
@@ -173,6 +203,10 @@ pub struct GraphqlApiBuilder {
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
     pub(crate) visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
+    pub(crate) api_type: ::std::option::Option<crate::types::GraphQlApiType>,
+    pub(crate) merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl GraphqlApiBuilder {
     /// <p>The API name.</p>
@@ -405,6 +439,63 @@ impl GraphqlApiBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
+        self.api_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn set_api_type(
+        mut self,
+        input: ::std::option::Option<crate::types::GraphQlApiType>,
+    ) -> Self {
+        self.api_type = input;
+        self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn merged_api_execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.merged_api_execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn set_merged_api_execution_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.merged_api_execution_role_arn = input;
+        self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn owner_contact(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owner_contact = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn set_owner_contact(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.owner_contact = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GraphqlApi`](crate::types::GraphqlApi).
     pub fn build(self) -> crate::types::GraphqlApi {
         crate::types::GraphqlApi {
@@ -423,6 +514,10 @@ impl GraphqlApiBuilder {
             lambda_authorizer_config: self.lambda_authorizer_config,
             dns: self.dns,
             visibility: self.visibility,
+            api_type: self.api_type,
+            merged_api_execution_role_arn: self.merged_api_execution_role_arn,
+            owner: self.owner,
+            owner_contact: self.owner_contact,
         }
     }
 }

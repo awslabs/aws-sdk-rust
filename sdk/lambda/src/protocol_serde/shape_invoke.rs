@@ -112,6 +112,24 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
+        "RecursiveInvocationException" => {
+            crate::operation::invoke::InvokeError::RecursiveInvocationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::RecursiveInvocationExceptionBuilder::default(
+                        );
+                    output = crate::protocol_serde::shape_recursive_invocation_exception::de_recursive_invocation_exception_json_err(_response_body, output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "SnapStartException" => crate::operation::invoke::InvokeError::SnapStartException({
             #[allow(unused_mut)]
             let mut tmp = {

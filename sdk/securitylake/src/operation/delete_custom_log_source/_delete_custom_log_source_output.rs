@@ -3,16 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLogSourceOutput {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    #[doc(hidden)]
-    pub custom_data_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
-}
-impl DeleteCustomLogSourceOutput {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(&self) -> ::std::option::Option<&str> {
-        self.custom_data_location.as_deref()
-    }
 }
 impl ::aws_http::request_id::RequestId for DeleteCustomLogSourceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -34,26 +25,9 @@ impl DeleteCustomLogSourceOutput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct DeleteCustomLogSourceOutputBuilder {
-    pub(crate) custom_data_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteCustomLogSourceOutputBuilder {
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn custom_data_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.custom_data_location = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    pub fn set_custom_data_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.custom_data_location = input;
-        self
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -66,7 +40,6 @@ impl DeleteCustomLogSourceOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput).
     pub fn build(self) -> crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput {
         crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput {
-            custom_data_location: self.custom_data_location,
             _request_id: self._request_id,
         }
     }

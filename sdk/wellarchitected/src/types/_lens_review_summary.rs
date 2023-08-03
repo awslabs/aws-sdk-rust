@@ -28,6 +28,13 @@ pub struct LensReviewSummary {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    /// <p>The profiles associated with the workload.</p>
+    #[doc(hidden)]
+    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    #[doc(hidden)]
+    pub prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewSummary {
     /// <p>The alias of the lens.</p>
@@ -63,6 +70,16 @@ impl LensReviewSummary {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
+    /// <p>The profiles associated with the workload.</p>
+    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
+        self.profiles.as_deref()
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+        self.prioritized_risk_counts.as_ref()
+    }
 }
 impl LensReviewSummary {
     /// Creates a new builder-style object to manufacture [`LensReviewSummary`](crate::types::LensReviewSummary).
@@ -84,6 +101,9 @@ pub struct LensReviewSummaryBuilder {
     pub(crate) lens_status: ::std::option::Option<crate::types::LensStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts:
         ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewSummaryBuilder {
@@ -178,6 +198,44 @@ impl LensReviewSummaryBuilder {
         self.risk_counts = input;
         self
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>The profiles associated with the workload.</p>
+    pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input);
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The profiles associated with the workload.</p>
+    pub fn set_profiles(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    ) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// Adds a key-value pair to `prioritized_risk_counts`.
+    ///
+    /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
+    ///
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
+        let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn set_prioritized_risk_counts(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.prioritized_risk_counts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LensReviewSummary`](crate::types::LensReviewSummary).
     pub fn build(self) -> crate::types::LensReviewSummary {
         crate::types::LensReviewSummary {
@@ -188,6 +246,8 @@ impl LensReviewSummaryBuilder {
             lens_status: self.lens_status,
             updated_at: self.updated_at,
             risk_counts: self.risk_counts,
+            profiles: self.profiles,
+            prioritized_risk_counts: self.prioritized_risk_counts,
         }
     }
 }

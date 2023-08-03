@@ -186,7 +186,7 @@ impl CreateMediaInsightsPipelineFluentBuilder {
             .set_kinesis_video_stream_recording_source_runtime_configuration(input);
         self
     }
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn s3_recording_sink_runtime_configuration(
         mut self,
         input: crate::types::S3RecordingSinkRuntimeConfiguration,
@@ -194,7 +194,7 @@ impl CreateMediaInsightsPipelineFluentBuilder {
         self.inner = self.inner.s3_recording_sink_runtime_configuration(input);
         self
     }
-    /// <p>The runtime configuration for the S3 recording sink.</p>
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn set_s3_recording_sink_runtime_configuration(
         mut self,
         input: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,

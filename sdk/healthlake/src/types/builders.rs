@@ -9,6 +9,8 @@ pub use crate::types::_export_job_properties::ExportJobPropertiesBuilder;
 
 pub use crate::types::_datastore_properties::DatastorePropertiesBuilder;
 
+pub use crate::types::_identity_provider_configuration::IdentityProviderConfigurationBuilder;
+
 pub use crate::types::_preload_data_config::PreloadDataConfigBuilder;
 
 pub use crate::types::_sse_configuration::SseConfigurationBuilder;

@@ -3,21 +3,42 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFileTransferInput {
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     #[doc(hidden)]
     pub send_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    #[doc(hidden)]
+    pub retrieve_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    #[doc(hidden)]
+    pub local_directory_path: ::std::option::Option<::std::string::String>,
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    #[doc(hidden)]
+    pub remote_directory_path: ::std::option::Option<::std::string::String>,
 }
 impl StartFileTransferInput {
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(&self) -> ::std::option::Option<&str> {
         self.connector_id.as_deref()
     }
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     pub fn send_file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.send_file_paths.as_deref()
+    }
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn retrieve_file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.retrieve_file_paths.as_deref()
+    }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn local_directory_path(&self) -> ::std::option::Option<&str> {
+        self.local_directory_path.as_deref()
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn remote_directory_path(&self) -> ::std::option::Option<&str> {
+        self.remote_directory_path.as_deref()
     }
 }
 impl StartFileTransferInput {
@@ -36,14 +57,17 @@ impl StartFileTransferInput {
 pub struct StartFileTransferInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) send_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) retrieve_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_directory_path: ::std::option::Option<::std::string::String>,
+    pub(crate) remote_directory_path: ::std::option::Option<::std::string::String>,
 }
 impl StartFileTransferInputBuilder {
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_id = input;
         self
@@ -52,7 +76,7 @@ impl StartFileTransferInputBuilder {
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
     ///
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     pub fn send_file_paths(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -62,12 +86,66 @@ impl StartFileTransferInputBuilder {
         self.send_file_paths = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     pub fn set_send_file_paths(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.send_file_paths = input;
+        self
+    }
+    /// Appends an item to `retrieve_file_paths`.
+    ///
+    /// To override the contents of this collection use [`set_retrieve_file_paths`](Self::set_retrieve_file_paths).
+    ///
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn retrieve_file_paths(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.retrieve_file_paths.unwrap_or_default();
+        v.push(input.into());
+        self.retrieve_file_paths = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn set_retrieve_file_paths(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.retrieve_file_paths = input;
+        self
+    }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn local_directory_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.local_directory_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn set_local_directory_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.local_directory_path = input;
+        self
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn remote_directory_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.remote_directory_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn set_remote_directory_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.remote_directory_path = input;
         self
     }
     /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
@@ -81,6 +159,9 @@ impl StartFileTransferInputBuilder {
             crate::operation::start_file_transfer::StartFileTransferInput {
                 connector_id: self.connector_id,
                 send_file_paths: self.send_file_paths,
+                retrieve_file_paths: self.retrieve_file_paths,
+                local_directory_path: self.local_directory_path,
+                remote_directory_path: self.remote_directory_path,
             },
         )
     }

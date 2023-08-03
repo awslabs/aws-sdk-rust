@@ -109,7 +109,7 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -117,7 +117,7 @@ impl CreateApplicationFluentBuilder {
         self.inner = self.inner.release_label(input.into());
         self
     }
-    /// <p>The EMR release associated with the application.</p>
+    /// <p>The Amazon EMR release associated with the application.</p>
     pub fn set_release_label(
         mut self,
         input: ::std::option::Option<::std::string::String>,

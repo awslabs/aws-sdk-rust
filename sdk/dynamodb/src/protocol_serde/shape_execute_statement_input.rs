@@ -36,5 +36,10 @@ pub fn ser_execute_statement_input(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.return_values_on_condition_check_failure {
+        object
+            .key("ReturnValuesOnConditionCheckFailure")
+            .string(var_10.as_str());
+    }
     Ok(())
 }

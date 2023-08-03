@@ -13,6 +13,7 @@ pub struct CreateVehicleInput {
     #[doc(hidden)]
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     #[doc(hidden)]
     pub attributes: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
@@ -39,6 +40,7 @@ impl CreateVehicleInput {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn attributes(
         &self,
     ) -> ::std::option::Option<
@@ -129,6 +131,7 @@ impl CreateVehicleInputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -140,6 +143,7 @@ impl CreateVehicleInputBuilder {
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub fn set_attributes(
         mut self,
         input: ::std::option::Option<

@@ -6,6 +6,7 @@ pub use crate::operation::delete_user::_delete_user_input::DeleteUserInputBuilde
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
 /// <p>Deletes a specified user by user ARN and enrollment ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

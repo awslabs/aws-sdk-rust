@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn tag_resource(
         &self,
     ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

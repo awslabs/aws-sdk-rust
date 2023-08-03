@@ -6,7 +6,7 @@ pub use crate::operation::delete_event::_delete_event_input::DeleteEventInputBui
 /// Fluent builder constructing a request to `DeleteEvent`.
 ///
 /// <p>Deletes the specified event.</p>
-/// <p>When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector.</p>
+/// <p>When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is <code>True</code>, event data is available through search for up to 30 seconds after the delete operation is completed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,12 +118,12 @@ impl DeleteEventFluentBuilder {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_audit_history(input);
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_audit_history(input);
         self

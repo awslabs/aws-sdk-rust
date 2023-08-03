@@ -13,6 +13,7 @@ pub use crate::operation::start_device_sync::_start_device_sync_input::StartDevi
 /// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li>
 /// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li>
 /// </ul>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeviceSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

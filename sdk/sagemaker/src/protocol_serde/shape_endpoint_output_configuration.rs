@@ -65,6 +65,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "ServerlessConfig" => {
+                                builder = builder.set_serverless_config(
+                                    crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -24,7 +24,7 @@ pub struct GetDiscoverySummaryOutput {
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
     #[doc(hidden)]
     pub me_collector_summary: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Details about Agentless Collector collectors, including status. </p>
     #[doc(hidden)]
     pub agentless_collector_summary:
         ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
@@ -61,7 +61,7 @@ impl GetDiscoverySummaryOutput {
     ) -> ::std::option::Option<&crate::types::CustomerMeCollectorInfo> {
         self.me_collector_summary.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Details about Agentless Collector collectors, including status. </p>
     pub fn agentless_collector_summary(
         &self,
     ) -> ::std::option::Option<&crate::types::CustomerAgentlessCollectorInfo> {
@@ -179,7 +179,7 @@ impl GetDiscoverySummaryOutputBuilder {
         self.me_collector_summary = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Details about Agentless Collector collectors, including status. </p>
     pub fn agentless_collector_summary(
         mut self,
         input: crate::types::CustomerAgentlessCollectorInfo,
@@ -187,7 +187,7 @@ impl GetDiscoverySummaryOutputBuilder {
         self.agentless_collector_summary = ::std::option::Option::Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p> Details about Agentless Collector collectors, including status. </p>
     pub fn set_agentless_collector_summary(
         mut self,
         input: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,

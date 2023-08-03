@@ -91,13 +91,15 @@
 //!   - StopStream — Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with DeleteStreamKey to prevent further streaming to a channel.
 //!   - PutMetadata — Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed.
 //!
-//! __PlaybackKeyPair Endpoints__
+//! __Private Channel Endpoints__
 //!
 //! For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html) in the _Amazon IVS User Guide_.
 //!   - ImportPlaybackKeyPair — Imports the public portion of a new key pair and returns its arn and fingerprint. The privateKey can then be used to generate viewer authorization tokens, to grant viewers access to private channels (channels enabled for playback authorization).
 //!   - GetPlaybackKeyPair — Gets a specified playback authorization key pair and returns the arn and fingerprint. The privateKey held by the caller can be used to generate viewer authorization tokens, to grant viewers access to private channels.
 //!   - ListPlaybackKeyPairs — Gets summary information about playback key pairs.
 //!   - DeletePlaybackKeyPair — Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s privateKey.
+//!   - StartViewerSessionRevocation — Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version.
+//!   - BatchStartViewerSessionRevocation — Performs StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously.
 //!
 //! __RecordingConfiguration Endpoints__
 //!   - CreateRecordingConfiguration — Creates a new recording configuration, used to enable recording to Amazon S3.
@@ -121,8 +123,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.3"
-//! aws-sdk-ivs = "0.28.0"
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-ivs = "0.29.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -31,6 +31,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_transcription_job::TranscriptionJob;
 
+pub use crate::types::_toxicity_detection_settings::ToxicityDetectionSettings;
+
+pub use crate::types::_toxicity_category::ToxicityCategory;
+
 pub use crate::types::_language_id_settings::LanguageIdSettings;
 
 pub use crate::types::_subtitles_output::SubtitlesOutput;
@@ -192,6 +196,10 @@ mod _subtitles;
 mod _subtitles_output;
 
 mod _tag;
+
+mod _toxicity_category;
+
+mod _toxicity_detection_settings;
 
 mod _transcript;
 

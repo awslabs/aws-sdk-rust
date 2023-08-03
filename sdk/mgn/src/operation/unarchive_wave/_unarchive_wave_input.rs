@@ -6,11 +6,18 @@ pub struct UnarchiveWaveInput {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveWaveInput {
     /// <p>Wave ID.</p>
     pub fn wave_id(&self) -> ::std::option::Option<&str> {
         self.wave_id.as_deref()
+    }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl UnarchiveWaveInput {
@@ -27,6 +34,7 @@ impl UnarchiveWaveInput {
 )]
 pub struct UnarchiveWaveInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UnarchiveWaveInputBuilder {
     /// <p>Wave ID.</p>
@@ -39,6 +47,16 @@ impl UnarchiveWaveInputBuilder {
         self.wave_id = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
     pub fn build(
         self,
@@ -48,6 +66,7 @@ impl UnarchiveWaveInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::unarchive_wave::UnarchiveWaveInput {
             wave_id: self.wave_id,
+            account_id: self.account_id,
         })
     }
 }

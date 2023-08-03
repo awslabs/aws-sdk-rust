@@ -12,6 +12,7 @@
 /// ```text
 /// # let workflowengine = unimplemented!();
 /// match workflowengine {
+///     WorkflowEngine::Cwl => { /* ... */ },
 ///     WorkflowEngine::Nextflow => { /* ... */ },
 ///     WorkflowEngine::Wdl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum WorkflowEngine {
     #[allow(missing_docs)] // documentation missing in model
+    Cwl,
+    #[allow(missing_docs)] // documentation missing in model
     Nextflow,
     #[allow(missing_docs)] // documentation missing in model
     Wdl,
@@ -57,6 +60,7 @@ pub enum WorkflowEngine {
 impl ::std::convert::From<&str> for WorkflowEngine {
     fn from(s: &str) -> Self {
         match s {
+            "CWL" => WorkflowEngine::Cwl,
             "NEXTFLOW" => WorkflowEngine::Nextflow,
             "WDL" => WorkflowEngine::Wdl,
             other => {
@@ -76,6 +80,7 @@ impl WorkflowEngine {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            WorkflowEngine::Cwl => "CWL",
             WorkflowEngine::Nextflow => "NEXTFLOW",
             WorkflowEngine::Wdl => "WDL",
             WorkflowEngine::Unknown(value) => value.as_str(),
@@ -83,7 +88,7 @@ impl WorkflowEngine {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NEXTFLOW", "WDL"]
+        &["CWL", "NEXTFLOW", "WDL"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowEngine {

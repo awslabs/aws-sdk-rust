@@ -44,5 +44,13 @@ pub fn ser_list_inference_recommendations_jobs_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
+    if let Some(var_11) = &input.model_name_equals {
+        object.key("ModelNameEquals").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.model_package_version_arn_equals {
+        object
+            .key("ModelPackageVersionArnEquals")
+            .string(var_12.as_str());
+    }
     Ok(())
 }

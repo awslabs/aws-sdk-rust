@@ -51,23 +51,15 @@ pub use crate::types::_label_detection_feature_name::LabelDetectionFeatureName;
 
 pub use crate::types::_face_attributes::FaceAttributes;
 
-pub use crate::types::_face_match::FaceMatch;
+pub use crate::types::_unsearched_face::UnsearchedFace;
 
-pub use crate::types::_face::Face;
+pub use crate::types::_unsearched_face_reason::UnsearchedFaceReason;
 
-pub use crate::types::_quality_filter::QualityFilter;
+pub use crate::types::_face_detail::FaceDetail;
 
-pub use crate::types::_image::Image;
+pub use crate::types::_eye_direction::EyeDirection;
 
-pub use crate::types::_orientation_correction::OrientationCorrection;
-
-pub use crate::types::_compared_face::ComparedFace;
-
-pub use crate::types::_smile::Smile;
-
-pub use crate::types::_emotion::Emotion;
-
-pub use crate::types::_emotion_name::EmotionName;
+pub use crate::types::_face_occluded::FaceOccluded;
 
 pub use crate::types::_image_quality::ImageQuality;
 
@@ -77,29 +69,9 @@ pub use crate::types::_landmark::Landmark;
 
 pub use crate::types::_landmark_type::LandmarkType;
 
-pub use crate::types::_celebrity::Celebrity;
+pub use crate::types::_emotion::Emotion;
 
-pub use crate::types::_known_gender::KnownGender;
-
-pub use crate::types::_known_gender_type::KnownGenderType;
-
-pub use crate::types::_stream_processor::StreamProcessor;
-
-pub use crate::types::_stream_processor_status::StreamProcessorStatus;
-
-pub use crate::types::_project_policy::ProjectPolicy;
-
-pub use crate::types::_dataset_label_description::DatasetLabelDescription;
-
-pub use crate::types::_dataset_label_stats::DatasetLabelStats;
-
-pub use crate::types::_unindexed_face::UnindexedFace;
-
-pub use crate::types::_face_detail::FaceDetail;
-
-pub use crate::types::_eye_direction::EyeDirection;
-
-pub use crate::types::_face_occluded::FaceOccluded;
+pub use crate::types::_emotion_name::EmotionName;
 
 pub use crate::types::_mouth_open::MouthOpen;
 
@@ -117,7 +89,53 @@ pub use crate::types::_sunglasses::Sunglasses;
 
 pub use crate::types::_eyeglasses::Eyeglasses;
 
+pub use crate::types::_smile::Smile;
+
 pub use crate::types::_age_range::AgeRange;
+
+pub use crate::types::_searched_face_details::SearchedFaceDetails;
+
+pub use crate::types::_user_match::UserMatch;
+
+pub use crate::types::_matched_user::MatchedUser;
+
+pub use crate::types::_user_status::UserStatus;
+
+pub use crate::types::_quality_filter::QualityFilter;
+
+pub use crate::types::_image::Image;
+
+pub use crate::types::_searched_user::SearchedUser;
+
+pub use crate::types::_searched_face::SearchedFace;
+
+pub use crate::types::_face_match::FaceMatch;
+
+pub use crate::types::_face::Face;
+
+pub use crate::types::_orientation_correction::OrientationCorrection;
+
+pub use crate::types::_compared_face::ComparedFace;
+
+pub use crate::types::_celebrity::Celebrity;
+
+pub use crate::types::_known_gender::KnownGender;
+
+pub use crate::types::_known_gender_type::KnownGenderType;
+
+pub use crate::types::_user::User;
+
+pub use crate::types::_stream_processor::StreamProcessor;
+
+pub use crate::types::_stream_processor_status::StreamProcessorStatus;
+
+pub use crate::types::_project_policy::ProjectPolicy;
+
+pub use crate::types::_dataset_label_description::DatasetLabelDescription;
+
+pub use crate::types::_dataset_label_stats::DatasetLabelStats;
+
+pub use crate::types::_unindexed_face::UnindexedFace;
 
 pub use crate::types::_reason::Reason;
 
@@ -204,6 +222,12 @@ pub use crate::types::_celebrity_detail::CelebrityDetail;
 pub use crate::types::_celebrity_recognition_sort_by::CelebrityRecognitionSortBy;
 
 pub use crate::types::_distribute_dataset::DistributeDataset;
+
+pub use crate::types::_unsuccessful_face_disassociation::UnsuccessfulFaceDisassociation;
+
+pub use crate::types::_unsuccessful_face_disassociation_reason::UnsuccessfulFaceDisassociationReason;
+
+pub use crate::types::_disassociated_face::DisassociatedFace;
 
 pub use crate::types::_detect_text_filters::DetectTextFilters;
 
@@ -303,6 +327,10 @@ pub use crate::types::_dataset_description::DatasetDescription;
 
 pub use crate::types::_dataset_stats::DatasetStats;
 
+pub use crate::types::_unsuccessful_face_deletion::UnsuccessfulFaceDeletion;
+
+pub use crate::types::_unsuccessful_face_deletion_reason::UnsuccessfulFaceDeletionReason;
+
 pub use crate::types::_create_face_liveness_session_request_settings::CreateFaceLivenessSessionRequestSettings;
 
 pub use crate::types::_liveness_output_config::LivenessOutputConfig;
@@ -313,9 +341,17 @@ pub use crate::types::_compare_faces_match::CompareFacesMatch;
 
 pub use crate::types::_compared_source_image_face::ComparedSourceImageFace;
 
+pub use crate::types::_unsuccessful_face_association::UnsuccessfulFaceAssociation;
+
+pub use crate::types::_unsuccessful_face_association_reason::UnsuccessfulFaceAssociationReason;
+
+pub use crate::types::_associated_face::AssociatedFace;
+
 mod _age_range;
 
 mod _asset;
+
+mod _associated_face;
 
 mod _attribute;
 
@@ -400,6 +436,8 @@ mod _detect_labels_settings;
 mod _detect_text_filters;
 
 mod _detection_filter;
+
+mod _disassociated_face;
 
 mod _distribute_dataset;
 
@@ -497,6 +535,8 @@ mod _liveness_output_config;
 
 mod _liveness_session_status;
 
+mod _matched_user;
+
 mod _moderation_label;
 
 mod _mouth_open;
@@ -552,6 +592,12 @@ mod _region_of_interest;
 mod _s3_destination;
 
 mod _s3_object;
+
+mod _searched_face;
+
+mod _searched_face_details;
+
+mod _searched_user;
 
 mod _segment_detection;
 
@@ -616,6 +662,28 @@ mod _training_data;
 mod _training_data_result;
 
 mod _unindexed_face;
+
+mod _unsearched_face;
+
+mod _unsearched_face_reason;
+
+mod _unsuccessful_face_association;
+
+mod _unsuccessful_face_association_reason;
+
+mod _unsuccessful_face_deletion;
+
+mod _unsuccessful_face_deletion_reason;
+
+mod _unsuccessful_face_disassociation;
+
+mod _unsuccessful_face_disassociation_reason;
+
+mod _user;
+
+mod _user_match;
+
+mod _user_status;
 
 mod _validation_data;
 

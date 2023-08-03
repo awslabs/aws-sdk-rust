@@ -142,6 +142,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Target" => {
+                                builder = builder.set_target(
+                                    crate::protocol_serde::shape_target_list::de_target_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

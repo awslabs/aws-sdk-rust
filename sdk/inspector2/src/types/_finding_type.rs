@@ -12,6 +12,7 @@
 /// ```text
 /// # let findingtype = unimplemented!();
 /// match findingtype {
+///     FindingType::CodeVulnerability => { /* ... */ },
 ///     FindingType::NetworkReachability => { /* ... */ },
 ///     FindingType::PackageVulnerability => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum FindingType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeVulnerability,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkReachability,
     #[allow(missing_docs)] // documentation missing in model
     PackageVulnerability,
@@ -57,6 +60,7 @@ pub enum FindingType {
 impl ::std::convert::From<&str> for FindingType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_VULNERABILITY" => FindingType::CodeVulnerability,
             "NETWORK_REACHABILITY" => FindingType::NetworkReachability,
             "PACKAGE_VULNERABILITY" => FindingType::PackageVulnerability,
             other => FindingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl FindingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FindingType::CodeVulnerability => "CODE_VULNERABILITY",
             FindingType::NetworkReachability => "NETWORK_REACHABILITY",
             FindingType::PackageVulnerability => "PACKAGE_VULNERABILITY",
             FindingType::Unknown(value) => value.as_str(),
@@ -81,7 +86,11 @@ impl FindingType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NETWORK_REACHABILITY", "PACKAGE_VULNERABILITY"]
+        &[
+            "CODE_VULNERABILITY",
+            "NETWORK_REACHABILITY",
+            "PACKAGE_VULNERABILITY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FindingType {

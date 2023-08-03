@@ -5,7 +5,11 @@ pub use crate::operation::tag_meeting::_tag_meeting_input::TagMeetingInputBuilde
 
 /// Fluent builder constructing a request to `TagMeeting`.
 ///
-/// <p>Applies the specified tags to the specified Amazon Chime SDK meeting.</p>
+/// <p>Applies the specified tags to the specified Amazon Chime SDK meeting.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_TagResource.html">TagResource</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(note = "Use TagResource in the Amazon Chime SDK Meetings Namespace.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagMeetingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -17,6 +17,10 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_version_conflict_exception::VersionConflictExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
+
 pub use crate::types::error::_invalid_query_exception::InvalidQueryExceptionBuilder;
 
 pub use crate::types::error::_invalid_aggregation_exception::InvalidAggregationExceptionBuilder;
@@ -49,8 +53,6 @@ pub use crate::types::error::_certificate_conflict_exception::CertificateConflic
 
 pub use crate::types::error::_registration_code_validation_exception::RegistrationCodeValidationExceptionBuilder;
 
-pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
-
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictExceptionBuilder;
 
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionExceptionBuilder;
@@ -58,5 +60,7 @@ pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTr
 pub use crate::types::error::_versions_limit_exceeded_exception::VersionsLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_malformed_policy_exception::MalformedPolicyExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

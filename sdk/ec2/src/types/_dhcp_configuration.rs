@@ -7,7 +7,7 @@ pub struct DhcpConfiguration {
     /// <p>The name of a DHCP option.</p>
     #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>One or more values for the DHCP option.</p>
+    /// <p>The values for the DHCP option.</p>
     #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
 }
@@ -16,7 +16,7 @@ impl DhcpConfiguration {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>One or more values for the DHCP option.</p>
+    /// <p>The values for the DHCP option.</p>
     pub fn values(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
         self.values.as_deref()
     }
@@ -52,14 +52,14 @@ impl DhcpConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>One or more values for the DHCP option.</p>
+    /// <p>The values for the DHCP option.</p>
     pub fn values(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more values for the DHCP option.</p>
+    /// <p>The values for the DHCP option.</p>
     pub fn set_values(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,

@@ -149,6 +149,8 @@ pub use crate::types::_outbound_connection::OutboundConnectionBuilder;
 
 pub use crate::types::_connection_properties::ConnectionPropertiesBuilder;
 
+pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionPropertiesBuilder;
+
 pub use crate::types::_outbound_connection_status::OutboundConnectionStatusBuilder;
 
 pub use crate::types::_filter::FilterBuilder;

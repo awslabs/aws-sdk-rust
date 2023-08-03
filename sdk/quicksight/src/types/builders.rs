@@ -115,6 +115,10 @@ pub use crate::types::_grid_layout_screen_canvas_size_options::GridLayoutScreenC
 
 pub use crate::types::_column_configuration::ColumnConfigurationBuilder;
 
+pub use crate::types::_colors_configuration::ColorsConfigurationBuilder;
+
+pub use crate::types::_custom_color::CustomColorBuilder;
+
 pub use crate::types::_format_configuration::FormatConfigurationBuilder;
 
 pub use crate::types::_date_time_format_configuration::DateTimeFormatConfigurationBuilder;
@@ -158,6 +162,8 @@ pub use crate::types::_top_bottom_filter::TopBottomFilterBuilder;
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfigurationBuilder;
 
 pub use crate::types::_aggregation_function::AggregationFunctionBuilder;
+
+pub use crate::types::_attribute_aggregation_function::AttributeAggregationFunctionBuilder;
 
 pub use crate::types::_numerical_aggregation_function::NumericalAggregationFunctionBuilder;
 
@@ -627,6 +633,12 @@ pub use crate::types::_geospatial_map_configuration::GeospatialMapConfigurationB
 
 pub use crate::types::_geospatial_point_style_options::GeospatialPointStyleOptionsBuilder;
 
+pub use crate::types::_geospatial_heatmap_configuration::GeospatialHeatmapConfigurationBuilder;
+
+pub use crate::types::_geospatial_heatmap_color_scale::GeospatialHeatmapColorScaleBuilder;
+
+pub use crate::types::_geospatial_heatmap_data_color::GeospatialHeatmapDataColorBuilder;
+
 pub use crate::types::_cluster_marker_configuration::ClusterMarkerConfigurationBuilder;
 
 pub use crate::types::_cluster_marker::ClusterMarkerBuilder;
@@ -686,6 +698,8 @@ pub use crate::types::_line_series_axis_display_options::LineSeriesAxisDisplayOp
 pub use crate::types::_missing_data_configuration::MissingDataConfigurationBuilder;
 
 pub use crate::types::_small_multiples_options::SmallMultiplesOptionsBuilder;
+
+pub use crate::types::_small_multiples_axis_properties::SmallMultiplesAxisPropertiesBuilder;
 
 pub use crate::types::_panel_configuration::PanelConfigurationBuilder;
 
@@ -811,6 +825,10 @@ pub use crate::types::_pivot_table_paginated_report_options::PivotTablePaginated
 
 pub use crate::types::_pivot_table_field_options::PivotTableFieldOptionsBuilder;
 
+pub use crate::types::_pivot_table_field_collapse_state_option::PivotTableFieldCollapseStateOptionBuilder;
+
+pub use crate::types::_pivot_table_field_collapse_state_target::PivotTableFieldCollapseStateTargetBuilder;
+
 pub use crate::types::_pivot_table_data_path_option::PivotTableDataPathOptionBuilder;
 
 pub use crate::types::_pivot_table_field_option::PivotTableFieldOptionBuilder;
@@ -902,6 +920,8 @@ pub use crate::types::_filter_control::FilterControlBuilder;
 pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTimeControlBuilder;
 
 pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptionsBuilder;
+
+pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIconLabelOptionsBuilder;
 
 pub use crate::types::_filter_slider_control::FilterSliderControlBuilder;
 
@@ -1169,6 +1189,68 @@ pub use crate::types::_account_customization::AccountCustomizationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_snapshot_configuration::SnapshotConfigurationBuilder;
+
+pub use crate::types::_snapshot_destination_configuration::SnapshotDestinationConfigurationBuilder;
+
+pub use crate::types::_snapshot_s3_destination_configuration::SnapshotS3DestinationConfigurationBuilder;
+
+pub use crate::types::_s3_bucket_configuration::S3BucketConfigurationBuilder;
+
+pub use crate::types::_snapshot_file_group::SnapshotFileGroupBuilder;
+
+pub use crate::types::_snapshot_file::SnapshotFileBuilder;
+
+pub use crate::types::_snapshot_file_sheet_selection::SnapshotFileSheetSelectionBuilder;
+
+pub use crate::types::_snapshot_user_configuration::SnapshotUserConfigurationBuilder;
+
+pub use crate::types::_snapshot_anonymous_user::SnapshotAnonymousUserBuilder;
+
+pub use crate::types::_session_tag::SessionTagBuilder;
+
+pub use crate::types::_asset_bundle_import_job_override_parameters::AssetBundleImportJobOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::AssetBundleImportJobDashboardOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_analysis_override_parameters::AssetBundleImportJobAnalysisOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_theme_override_parameters::AssetBundleImportJobThemeOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_set_override_parameters::AssetBundleImportJobDataSetOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_override_parameters::AssetBundleImportJobDataSourceOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credentials::AssetBundleImportJobDataSourceCredentialsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_data_source_credential_pair::AssetBundleImportJobDataSourceCredentialPairBuilder;
+
+pub use crate::types::_asset_bundle_import_job_refresh_schedule_override_parameters::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameters::AssetBundleImportJobVpcConnectionOverrideParametersBuilder;
+
+pub use crate::types::_asset_bundle_import_job_resource_id_override_configuration::AssetBundleImportJobResourceIdOverrideConfigurationBuilder;
+
+pub use crate::types::_asset_bundle_import_source::AssetBundleImportSourceBuilder;
+
+pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfigurationBuilder;
+
+pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::AssetBundleExportJobDashboardOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_analysis_override_properties::AssetBundleExportJobAnalysisOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_theme_override_properties::AssetBundleExportJobThemeOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_data_set_override_properties::AssetBundleExportJobDataSetOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_data_source_override_properties::AssetBundleExportJobDataSourceOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_refresh_schedule_override_properties::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_vpc_connection_override_properties::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder;
+
+pub use crate::types::_asset_bundle_export_job_resource_id_override_configuration::AssetBundleExportJobResourceIdOverrideConfigurationBuilder;
+
 pub use crate::types::_group_search_filter::GroupSearchFilterBuilder;
 
 pub use crate::types::_folder_summary::FolderSummaryBuilder;
@@ -1241,6 +1323,10 @@ pub use crate::types::_data_source_error_info::DataSourceErrorInfoBuilder;
 
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummaryBuilder;
 
+pub use crate::types::_asset_bundle_import_job_summary::AssetBundleImportJobSummaryBuilder;
+
+pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSummaryBuilder;
+
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfigurationBuilder;
 
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfigurationBuilder;
@@ -1268,8 +1354,6 @@ pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::Anon
 pub use crate::types::_anonymous_user_dashboard_visual_embedding_configuration::AnonymousUserDashboardVisualEmbeddingConfigurationBuilder;
 
 pub use crate::types::_anonymous_user_dashboard_embedding_configuration::AnonymousUserDashboardEmbeddingConfigurationBuilder;
-
-pub use crate::types::_session_tag::SessionTagBuilder;
 
 pub use crate::types::_vpc_connection::VpcConnectionBuilder;
 
@@ -1299,11 +1383,33 @@ pub use crate::types::_data_set::DataSetBuilder;
 
 pub use crate::types::_output_column::OutputColumnBuilder;
 
+pub use crate::types::_snapshot_job_error_info::SnapshotJobErrorInfoBuilder;
+
+pub use crate::types::_snapshot_job_result::SnapshotJobResultBuilder;
+
+pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResultBuilder;
+
+pub use crate::types::_snapshot_job_result_file_group::SnapshotJobResultFileGroupBuilder;
+
+pub use crate::types::_snapshot_job_s3_result::SnapshotJobS3ResultBuilder;
+
+pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfoBuilder;
+
+pub use crate::types::_snapshot_user_configuration_redacted::SnapshotUserConfigurationRedactedBuilder;
+
+pub use crate::types::_snapshot_anonymous_user_redacted::SnapshotAnonymousUserRedactedBuilder;
+
 pub use crate::types::_dashboard_error::DashboardErrorBuilder;
 
 pub use crate::types::_dashboard::DashboardBuilder;
 
 pub use crate::types::_dashboard_version::DashboardVersionBuilder;
+
+pub use crate::types::_asset_bundle_import_source_description::AssetBundleImportSourceDescriptionBuilder;
+
+pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobErrorBuilder;
+
+pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobErrorBuilder;
 
 pub use crate::types::_analysis_error::AnalysisErrorBuilder;
 

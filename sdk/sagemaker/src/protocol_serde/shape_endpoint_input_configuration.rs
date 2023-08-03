@@ -17,6 +17,12 @@ pub fn ser_endpoint_input_configuration(
         crate::protocol_serde::shape_environment_parameter_ranges::ser_environment_parameter_ranges(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.serverless_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("ServerlessConfig").start_object();
+        crate::protocol_serde::shape_production_variant_serverless_config::ser_production_variant_serverless_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -71,6 +77,11 @@ where
                             "EnvironmentParameterRanges" => {
                                 builder = builder.set_environment_parameter_ranges(
                                     crate::protocol_serde::shape_environment_parameter_ranges::de_environment_parameter_ranges(tokens)?
+                                );
+                            }
+                            "ServerlessConfig" => {
+                                builder = builder.set_serverless_config(
+                                    crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -6,6 +6,7 @@ pub use crate::operation::delete_profile::_delete_profile_input::DeleteProfileIn
 /// Fluent builder constructing a request to `DeleteProfile`.
 ///
 /// <p>Deletes a room profile by the profile ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

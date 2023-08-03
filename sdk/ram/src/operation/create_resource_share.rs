@@ -188,6 +188,8 @@ pub enum CreateResourceShareError {
     ServerInternalException(crate::types::error::ServerInternalException),
     /// <p>The operation failed because the service isn't available. Try again later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The operation failed because it would exceed the limit for tags for your Amazon Web Services account.</p>
+    TagLimitExceededException(crate::types::error::TagLimitExceededException),
     /// <p>The operation failed because the specified tag key is a reserved word and can't be used.</p>
     TagPolicyViolationException(crate::types::error::TagPolicyViolationException),
     /// <p>The operation failed because a specified resource couldn't be found.</p>
@@ -221,6 +223,7 @@ impl ::std::fmt::Display for CreateResourceShareError {
             Self::ResourceShareLimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerInternalException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::TagLimitExceededException(_inner) => _inner.fmt(f),
             Self::TagPolicyViolationException(_inner) => _inner.fmt(f),
             Self::UnknownResourceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -255,6 +258,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateResourc
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServiceUnavailableException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TagLimitExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::TagPolicyViolationException(_inner) => {
@@ -325,6 +331,7 @@ impl CreateResourceShareError {
             Self::ResourceShareLimitExceededException(e) => e.meta(),
             Self::ServerInternalException(e) => e.meta(),
             Self::ServiceUnavailableException(e) => e.meta(),
+            Self::TagLimitExceededException(e) => e.meta(),
             Self::TagPolicyViolationException(e) => e.meta(),
             Self::UnknownResourceException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -366,6 +373,10 @@ impl CreateResourceShareError {
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
     }
+    /// Returns `true` if the error kind is `CreateResourceShareError::TagLimitExceededException`.
+    pub fn is_tag_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::TagLimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `CreateResourceShareError::TagPolicyViolationException`.
     pub fn is_tag_policy_violation_exception(&self) -> bool {
         matches!(self, Self::TagPolicyViolationException(_))
@@ -391,6 +402,7 @@ impl ::std::error::Error for CreateResourceShareError {
             }
             Self::ServerInternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TagLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::TagPolicyViolationException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnknownResourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

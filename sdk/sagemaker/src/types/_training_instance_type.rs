@@ -61,6 +61,7 @@
 ///     TrainingInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn132Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlTrn1N32Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -192,6 +193,8 @@ pub enum TrainingInstanceType {
     MlTrn12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn132Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn1N32Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -247,6 +250,7 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
             "ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
+            "ml.trn1n.32xlarge" => TrainingInstanceType::MlTrn1N32Xlarge,
             other => TrainingInstanceType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -313,6 +317,7 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
+            TrainingInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
             TrainingInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -368,6 +373,7 @@ impl TrainingInstanceType {
             "ml.p4d.24xlarge",
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",
+            "ml.trn1n.32xlarge",
         ]
     }
 }

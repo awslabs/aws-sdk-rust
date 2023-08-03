@@ -12,6 +12,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_browser_settings;
 
+pub(crate) mod shape_associate_ip_access_settings;
+
 pub(crate) mod shape_associate_network_settings;
 
 pub(crate) mod shape_associate_trust_store;
@@ -23,6 +25,8 @@ pub(crate) mod shape_associate_user_settings;
 pub(crate) mod shape_create_browser_settings;
 
 pub(crate) mod shape_create_identity_provider;
+
+pub(crate) mod shape_create_ip_access_settings;
 
 pub(crate) mod shape_create_network_settings;
 
@@ -38,6 +42,8 @@ pub(crate) mod shape_delete_browser_settings;
 
 pub(crate) mod shape_delete_identity_provider;
 
+pub(crate) mod shape_delete_ip_access_settings;
+
 pub(crate) mod shape_delete_network_settings;
 
 pub(crate) mod shape_delete_portal;
@@ -50,6 +56,8 @@ pub(crate) mod shape_delete_user_settings;
 
 pub(crate) mod shape_disassociate_browser_settings;
 
+pub(crate) mod shape_disassociate_ip_access_settings;
+
 pub(crate) mod shape_disassociate_network_settings;
 
 pub(crate) mod shape_disassociate_trust_store;
@@ -61,6 +69,8 @@ pub(crate) mod shape_disassociate_user_settings;
 pub(crate) mod shape_get_browser_settings;
 
 pub(crate) mod shape_get_identity_provider;
+
+pub(crate) mod shape_get_ip_access_settings;
 
 pub(crate) mod shape_get_network_settings;
 
@@ -79,6 +89,8 @@ pub(crate) mod shape_get_user_settings;
 pub(crate) mod shape_list_browser_settings;
 
 pub(crate) mod shape_list_identity_providers;
+
+pub(crate) mod shape_list_ip_access_settings;
 
 pub(crate) mod shape_list_network_settings;
 
@@ -101,6 +113,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_browser_settings;
 
 pub(crate) mod shape_update_identity_provider;
+
+pub(crate) mod shape_update_ip_access_settings;
 
 pub(crate) mod shape_update_network_settings;
 
@@ -128,6 +142,8 @@ pub(crate) mod shape_create_browser_settings_input;
 
 pub(crate) mod shape_create_identity_provider_input;
 
+pub(crate) mod shape_create_ip_access_settings_input;
+
 pub(crate) mod shape_create_network_settings_input;
 
 pub(crate) mod shape_create_portal_input;
@@ -154,6 +170,8 @@ pub(crate) mod shape_update_browser_settings_input;
 
 pub(crate) mod shape_update_identity_provider_input;
 
+pub(crate) mod shape_update_ip_access_settings_input;
+
 pub(crate) mod shape_update_network_settings_input;
 
 pub(crate) mod shape_update_portal_input;
@@ -177,6 +195,12 @@ pub(crate) mod shape_certificate_summary_list;
 pub(crate) mod shape_identity_provider;
 
 pub(crate) mod shape_identity_provider_list;
+
+pub(crate) mod shape_ip_access_settings;
+
+pub(crate) mod shape_ip_access_settings_list;
+
+pub(crate) mod shape_ip_rule;
 
 pub(crate) mod shape_network_settings;
 
@@ -213,6 +237,10 @@ pub(crate) mod shape_certificate_summary;
 pub(crate) mod shape_identity_provider_details;
 
 pub(crate) mod shape_identity_provider_summary;
+
+pub(crate) mod shape_ip_access_settings_summary;
+
+pub(crate) mod shape_ip_rule_list;
 
 pub(crate) mod shape_network_settings_summary;
 

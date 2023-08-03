@@ -6,7 +6,7 @@ pub use crate::operation::create_route_table::_create_route_table_input::CreateR
 /// Fluent builder constructing a request to `CreateRouteTable`.
 ///
 /// <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

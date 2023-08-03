@@ -18,6 +18,9 @@ pub struct CreateTableInput {
     /// <p>The ID of the transaction.</p>
     #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    #[doc(hidden)]
+    pub open_table_format_input: ::std::option::Option<crate::types::OpenTableFormatInput>,
 }
 impl CreateTableInput {
     /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -40,6 +43,12 @@ impl CreateTableInput {
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn open_table_format_input(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OpenTableFormatInput> {
+        self.open_table_format_input.as_ref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -60,6 +69,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) partition_indexes:
         ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) open_table_format_input: ::std::option::Option<crate::types::OpenTableFormatInput>,
 }
 impl CreateTableInputBuilder {
     /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -136,6 +146,19 @@ impl CreateTableInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn open_table_format_input(mut self, input: crate::types::OpenTableFormatInput) -> Self {
+        self.open_table_format_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
+    pub fn set_open_table_format_input(
+        mut self,
+        input: ::std::option::Option<crate::types::OpenTableFormatInput>,
+    ) -> Self {
+        self.open_table_format_input = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(
         self,
@@ -149,6 +172,7 @@ impl CreateTableInputBuilder {
             table_input: self.table_input,
             partition_indexes: self.partition_indexes,
             transaction_id: self.transaction_id,
+            open_table_format_input: self.open_table_format_input,
         })
     }
 }

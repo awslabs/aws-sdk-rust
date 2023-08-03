@@ -78,6 +78,8 @@ pub(crate) mod shape_list_studio_session_mappings;
 
 pub(crate) mod shape_list_studios;
 
+pub(crate) mod shape_list_supported_instance_types;
+
 pub(crate) mod shape_modify_cluster;
 
 pub(crate) mod shape_modify_instance_fleet;
@@ -195,6 +197,8 @@ pub(crate) mod shape_list_steps_input;
 pub(crate) mod shape_list_studio_session_mappings_input;
 
 pub(crate) mod shape_list_studios_input;
+
+pub(crate) mod shape_list_supported_instance_types_input;
 
 pub(crate) mod shape_modify_cluster_input;
 
@@ -322,6 +326,8 @@ pub(crate) mod shape_studio;
 
 pub(crate) mod shape_studio_summary_list;
 
+pub(crate) mod shape_supported_instance_types_list;
+
 pub(crate) mod shape_supported_product_config;
 
 pub(crate) mod shape_tag;
@@ -407,6 +413,8 @@ pub(crate) mod shape_string_map;
 pub(crate) mod shape_studio_summary;
 
 pub(crate) mod shape_subnet_id_list;
+
+pub(crate) mod shape_supported_instance_type;
 
 pub(crate) mod shape_tag_list;
 

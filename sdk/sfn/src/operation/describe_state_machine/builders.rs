@@ -5,8 +5,39 @@ pub use crate::operation::describe_state_machine::_describe_state_machine_input:
 
 /// Fluent builder constructing a request to `DescribeStateMachine`.
 ///
-/// <p>Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the <code>Map</code> state's label.</p>
-/// <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note>
+/// <p>Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration.</p>
+/// <p>A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined within a state machine, a version ARN, or an alias ARN.</p>
+/// <p>The following are some examples of qualified and unqualified state machine ARNs:</p>
+/// <ul>
+/// <li> <p>The following qualified state machine ARN refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>, the request fails with <code>ValidationException</code>.</p>
+/// </note> </li>
+/// <li> <p>The following qualified state machine ARN refers to an alias named <code>PROD</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine:prod></mystatemachine:prod>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> <note>
+/// <p>If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.</p>
+/// </note> </li>
+/// <li> <p>The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.</p> <p> <code>arn:
+/// <partition>
+/// :states:
+/// <region>
+/// :
+/// <account-id>
+/// :stateMachine:
+/// <mystatemachine></mystatemachine>
+/// </account-id>
+/// </region>
+/// </partition></code> </p> </li>
+/// </ul>
+/// <p>This API action returns the details for a state machine version if the <code>stateMachineArn</code> you specify is a state machine version ARN.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -102,7 +133,8 @@ impl DescribeStateMachineFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -110,7 +142,8 @@ impl DescribeStateMachineFluentBuilder {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn set_state_machine_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

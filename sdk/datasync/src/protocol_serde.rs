@@ -16,6 +16,8 @@ pub(crate) mod shape_cancel_task_execution;
 
 pub(crate) mod shape_create_agent;
 
+pub(crate) mod shape_create_location_azure_blob;
+
 pub(crate) mod shape_create_location_efs;
 
 pub(crate) mod shape_create_location_fsx_lustre;
@@ -47,6 +49,8 @@ pub(crate) mod shape_delete_task;
 pub(crate) mod shape_describe_agent;
 
 pub(crate) mod shape_describe_discovery_job;
+
+pub(crate) mod shape_describe_location_azure_blob;
 
 pub(crate) mod shape_describe_location_efs;
 
@@ -110,6 +114,8 @@ pub(crate) mod shape_update_agent;
 
 pub(crate) mod shape_update_discovery_job;
 
+pub(crate) mod shape_update_location_azure_blob;
+
 pub(crate) mod shape_update_location_hdfs;
 
 pub(crate) mod shape_update_location_nfs;
@@ -137,6 +143,8 @@ pub(crate) mod shape_add_storage_system_input;
 pub(crate) mod shape_cancel_task_execution_input;
 
 pub(crate) mod shape_create_agent_input;
+
+pub(crate) mod shape_create_location_azure_blob_input;
 
 pub(crate) mod shape_create_location_efs_input;
 
@@ -169,6 +177,8 @@ pub(crate) mod shape_delete_task_input;
 pub(crate) mod shape_describe_agent_input;
 
 pub(crate) mod shape_describe_discovery_job_input;
+
+pub(crate) mod shape_describe_location_azure_blob_input;
 
 pub(crate) mod shape_describe_location_efs_input;
 
@@ -236,6 +246,8 @@ pub(crate) mod shape_update_agent_input;
 
 pub(crate) mod shape_update_discovery_job_input;
 
+pub(crate) mod shape_update_location_azure_blob_input;
+
 pub(crate) mod shape_update_location_hdfs_input;
 
 pub(crate) mod shape_update_location_nfs_input;
@@ -253,6 +265,8 @@ pub(crate) mod shape_update_task_input;
 pub(crate) mod shape_agent_arn_list;
 
 pub(crate) mod shape_agent_list;
+
+pub(crate) mod shape_azure_blob_sas_configuration;
 
 pub(crate) mod shape_credentials;
 

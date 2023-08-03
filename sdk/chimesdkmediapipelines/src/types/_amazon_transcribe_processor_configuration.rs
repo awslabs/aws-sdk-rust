@@ -59,6 +59,21 @@ pub struct AmazonTranscribeProcessorConfiguration {
     /// <p>If true, <code>TranscriptEvents</code> with <code>IsPartial: true</code> are filtered out of the insights target.</p>
     #[doc(hidden)]
     pub filter_partial_results: bool,
+    /// <p>Turns language identification on or off.</p>
+    #[doc(hidden)]
+    pub identify_language: bool,
+    /// <p>The language options for the transcription, such as automatic language detection.</p>
+    #[doc(hidden)]
+    pub language_options: ::std::option::Option<::std::string::String>,
+    /// <p>The preferred language for the transcription.</p>
+    #[doc(hidden)]
+    pub preferred_language: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
+    #[doc(hidden)]
+    pub vocabulary_names: ::std::option::Option<::std::string::String>,
+    /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
+    #[doc(hidden)]
+    pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
 }
 impl AmazonTranscribeProcessorConfiguration {
     /// <p>The language code that represents the language spoken in your audio.</p>
@@ -132,6 +147,28 @@ impl AmazonTranscribeProcessorConfiguration {
     pub fn filter_partial_results(&self) -> bool {
         self.filter_partial_results
     }
+    /// <p>Turns language identification on or off.</p>
+    pub fn identify_language(&self) -> bool {
+        self.identify_language
+    }
+    /// <p>The language options for the transcription, such as automatic language detection.</p>
+    pub fn language_options(&self) -> ::std::option::Option<&str> {
+        self.language_options.as_deref()
+    }
+    /// <p>The preferred language for the transcription.</p>
+    pub fn preferred_language(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
+        self.preferred_language.as_ref()
+    }
+    /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
+    pub fn vocabulary_names(&self) -> ::std::option::Option<&str> {
+        self.vocabulary_names.as_deref()
+    }
+    /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
+    pub fn vocabulary_filter_names(&self) -> ::std::option::Option<&str> {
+        self.vocabulary_filter_names.as_deref()
+    }
 }
 impl AmazonTranscribeProcessorConfiguration {
     /// Creates a new builder-style object to manufacture [`AmazonTranscribeProcessorConfiguration`](crate::types::AmazonTranscribeProcessorConfiguration).
@@ -160,6 +197,11 @@ pub struct AmazonTranscribeProcessorConfigurationBuilder {
     pub(crate) pii_entity_types: ::std::option::Option<::std::string::String>,
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_partial_results: ::std::option::Option<bool>,
+    pub(crate) identify_language: ::std::option::Option<bool>,
+    pub(crate) language_options: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_language: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
+    pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
 }
 impl AmazonTranscribeProcessorConfigurationBuilder {
     /// <p>The language code that represents the language spoken in your audio.</p>
@@ -365,6 +407,77 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
         self.filter_partial_results = input;
         self
     }
+    /// <p>Turns language identification on or off.</p>
+    pub fn identify_language(mut self, input: bool) -> Self {
+        self.identify_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Turns language identification on or off.</p>
+    pub fn set_identify_language(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.identify_language = input;
+        self
+    }
+    /// <p>The language options for the transcription, such as automatic language detection.</p>
+    pub fn language_options(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The language options for the transcription, such as automatic language detection.</p>
+    pub fn set_language_options(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.language_options = input;
+        self
+    }
+    /// <p>The preferred language for the transcription.</p>
+    pub fn preferred_language(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
+        self.preferred_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The preferred language for the transcription.</p>
+    pub fn set_preferred_language(
+        mut self,
+        input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    ) -> Self {
+        self.preferred_language = input;
+        self
+    }
+    /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
+    pub fn vocabulary_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vocabulary_names = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The names of the custom vocabulary or vocabularies used during transcription.</p>
+    pub fn set_vocabulary_names(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.vocabulary_names = input;
+        self
+    }
+    /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
+    pub fn vocabulary_filter_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vocabulary_filter_names = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The names of the custom vocabulary filter or filters using during transcription.</p>
+    pub fn set_vocabulary_filter_names(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.vocabulary_filter_names = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AmazonTranscribeProcessorConfiguration`](crate::types::AmazonTranscribeProcessorConfiguration).
     pub fn build(self) -> crate::types::AmazonTranscribeProcessorConfiguration {
         crate::types::AmazonTranscribeProcessorConfiguration {
@@ -382,6 +495,11 @@ impl AmazonTranscribeProcessorConfigurationBuilder {
             pii_entity_types: self.pii_entity_types,
             language_model_name: self.language_model_name,
             filter_partial_results: self.filter_partial_results.unwrap_or_default(),
+            identify_language: self.identify_language.unwrap_or_default(),
+            language_options: self.language_options,
+            preferred_language: self.preferred_language,
+            vocabulary_names: self.vocabulary_names,
+            vocabulary_filter_names: self.vocabulary_filter_names,
         }
     }
 }

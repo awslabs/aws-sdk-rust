@@ -12,6 +12,7 @@
 /// ```text
 /// # let aggregationfindingtype = unimplemented!();
 /// match aggregationfindingtype {
+///     AggregationFindingType::CodeVulnerability => { /* ... */ },
 ///     AggregationFindingType::NetworkReachability => { /* ... */ },
 ///     AggregationFindingType::PackageVulnerability => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum AggregationFindingType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeVulnerability,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkReachability,
     #[allow(missing_docs)] // documentation missing in model
     PackageVulnerability,
@@ -57,6 +60,7 @@ pub enum AggregationFindingType {
 impl ::std::convert::From<&str> for AggregationFindingType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_VULNERABILITY" => AggregationFindingType::CodeVulnerability,
             "NETWORK_REACHABILITY" => AggregationFindingType::NetworkReachability,
             "PACKAGE_VULNERABILITY" => AggregationFindingType::PackageVulnerability,
             other => AggregationFindingType::Unknown(crate::primitives::UnknownVariantValue(
@@ -76,6 +80,7 @@ impl AggregationFindingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AggregationFindingType::CodeVulnerability => "CODE_VULNERABILITY",
             AggregationFindingType::NetworkReachability => "NETWORK_REACHABILITY",
             AggregationFindingType::PackageVulnerability => "PACKAGE_VULNERABILITY",
             AggregationFindingType::Unknown(value) => value.as_str(),
@@ -83,7 +88,11 @@ impl AggregationFindingType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NETWORK_REACHABILITY", "PACKAGE_VULNERABILITY"]
+        &[
+            "CODE_VULNERABILITY",
+            "NETWORK_REACHABILITY",
+            "PACKAGE_VULNERABILITY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AggregationFindingType {

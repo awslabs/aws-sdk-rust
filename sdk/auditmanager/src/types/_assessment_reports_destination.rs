@@ -7,7 +7,7 @@ pub struct AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
     #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
-    /// <p> The destination of the assessment report. </p>
+    /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
     #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
@@ -18,7 +18,7 @@ impl AssessmentReportsDestination {
     ) -> ::std::option::Option<&crate::types::AssessmentReportDestinationType> {
         self.destination_type.as_ref()
     }
-    /// <p> The destination of the assessment report. </p>
+    /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
     pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
@@ -57,12 +57,12 @@ impl AssessmentReportsDestinationBuilder {
         self.destination_type = input;
         self
     }
-    /// <p> The destination of the assessment report. </p>
+    /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The destination of the assessment report. </p>
+    /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self

@@ -13,10 +13,13 @@ pub struct Solution {
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub perform_hpo: bool,
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
     #[doc(hidden)]
     pub perform_auto_ml: bool,
-    /// <p>The ARN of the recipe used to create the solution.</p>
+    /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
@@ -62,11 +65,14 @@ impl Solution {
     pub fn perform_hpo(&self) -> bool {
         self.perform_hpo
     }
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
     pub fn perform_auto_ml(&self) -> bool {
         self.perform_auto_ml
     }
-    /// <p>The ARN of the recipe used to create the solution.</p>
+    /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -168,22 +174,28 @@ impl SolutionBuilder {
         self.perform_hpo = input;
         self
     }
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
     pub fn perform_auto_ml(mut self, input: bool) -> Self {
         self.perform_auto_ml = ::std::option::Option::Some(input);
         self
     }
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
     /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
     pub fn set_perform_auto_ml(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_auto_ml = input;
         self
     }
-    /// <p>The ARN of the recipe used to create the solution.</p>
+    /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the recipe used to create the solution.</p>
+    /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self

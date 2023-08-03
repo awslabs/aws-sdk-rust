@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSlotTypeInput {
-    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
     #[doc(hidden)]
     pub slot_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
@@ -14,10 +14,10 @@ pub struct CreateSlotTypeInput {
     pub slot_type_values: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
+    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     #[doc(hidden)]
     pub value_selection_setting: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
     /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
@@ -41,7 +41,7 @@ pub struct CreateSlotTypeInput {
     pub composite_slot_type_setting: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
 }
 impl CreateSlotTypeInput {
-    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
     pub fn slot_type_name(&self) -> ::std::option::Option<&str> {
         self.slot_type_name.as_deref()
     }
@@ -55,10 +55,10 @@ impl CreateSlotTypeInput {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
+    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn value_selection_setting(
         &self,
     ) -> ::std::option::Option<&crate::types::SlotValueSelectionSetting> {
@@ -122,7 +122,7 @@ pub struct CreateSlotTypeInputBuilder {
         ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
 }
 impl CreateSlotTypeInputBuilder {
-    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
     pub fn slot_type_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -130,7 +130,7 @@ impl CreateSlotTypeInputBuilder {
         self.slot_type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the intent.</p>
     pub fn set_slot_type_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -169,10 +169,10 @@ impl CreateSlotTypeInputBuilder {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
+    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn value_selection_setting(
         mut self,
         input: crate::types::SlotValueSelectionSetting,
@@ -182,10 +182,10 @@ impl CreateSlotTypeInputBuilder {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
-    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
+    /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_value_selection_setting(
         mut self,
         input: ::std::option::Option<crate::types::SlotValueSelectionSetting>,

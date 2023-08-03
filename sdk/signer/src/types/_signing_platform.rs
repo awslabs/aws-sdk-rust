@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningPlatform {
-    /// <p>The ID of a code signing; platform.</p>
+    /// <p>The ID of a code signing platform.</p>
     #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a code signing platform.</p>
@@ -33,7 +33,7 @@ pub struct SigningPlatform {
     pub revocation_supported: bool,
 }
 impl SigningPlatform {
-    /// <p>The ID of a code signing; platform.</p>
+    /// <p>The ID of a code signing platform.</p>
     pub fn platform_id(&self) -> ::std::option::Option<&str> {
         self.platform_id.as_deref()
     }
@@ -96,12 +96,12 @@ pub struct SigningPlatformBuilder {
     pub(crate) revocation_supported: ::std::option::Option<bool>,
 }
 impl SigningPlatformBuilder {
-    /// <p>The ID of a code signing; platform.</p>
+    /// <p>The ID of a code signing platform.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a code signing; platform.</p>
+    /// <p>The ID of a code signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self

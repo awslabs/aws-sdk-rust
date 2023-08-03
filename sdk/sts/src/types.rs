@@ -9,6 +9,8 @@ pub use crate::types::_policy_descriptor_type::PolicyDescriptorType;
 
 pub use crate::types::_assumed_role_user::AssumedRoleUser;
 
+pub use crate::types::_provided_context::ProvidedContext;
+
 mod _assumed_role_user;
 
 mod _credentials;
@@ -16,6 +18,8 @@ mod _credentials;
 mod _federated_user;
 
 mod _policy_descriptor_type;
+
+mod _provided_context;
 
 mod _tag;
 

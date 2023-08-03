@@ -36,7 +36,7 @@ pub struct Workspace {
     /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
     #[doc(hidden)]
     pub computer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     #[doc(hidden)]
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
@@ -100,7 +100,7 @@ impl Workspace {
     pub fn computer_name(&self) -> ::std::option::Option<&str> {
         self.computer_name.as_deref()
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
@@ -278,7 +278,7 @@ impl WorkspaceBuilder {
         self.computer_name = input;
         self
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -286,7 +286,7 @@ impl WorkspaceBuilder {
         self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn set_volume_encryption_key(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -6,6 +6,7 @@ pub use crate::operation::search_profiles::_search_profiles_input::SearchProfile
 /// Fluent builder constructing a request to `SearchProfiles`.
 ///
 /// <p>Searches room profiles and lists the ones that meet a set of filter criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

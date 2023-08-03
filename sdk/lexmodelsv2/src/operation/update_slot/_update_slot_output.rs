@@ -24,7 +24,7 @@ pub struct UpdateSlotOutput {
     /// <p>The identifier of the bot that contains the slot.</p>
     #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale that contains the slot.</p>
@@ -78,7 +78,7 @@ impl UpdateSlotOutput {
     pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -224,12 +224,12 @@ impl UpdateSlotOutputBuilder {
         self.bot_id = input;
         self
     }
-    /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Will always be <code>DRAFT</code>.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self

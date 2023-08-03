@@ -6,9 +6,6 @@ pub use crate::operation::describe_security_groups::_describe_security_groups_in
 /// Fluent builder constructing a request to `DescribeSecurityGroups`.
 ///
 /// <p>Describes the specified security groups or all of your security groups.</p>
-/// <p>A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -220,13 +217,13 @@ impl DescribeSecurityGroupsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_names(input.into());
         self
     }
-    /// <p>[EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to describe security groups by name.</p>
+    /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
     pub fn set_group_names(
         mut self,

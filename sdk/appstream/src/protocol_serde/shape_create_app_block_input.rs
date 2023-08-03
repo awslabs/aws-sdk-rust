@@ -34,5 +34,14 @@ pub fn ser_create_app_block_input(
         }
         object_9.finish();
     }
+    if let Some(var_12) = &input.post_setup_script_details {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("PostSetupScriptDetails").start_object();
+        crate::protocol_serde::shape_script_details::ser_script_details(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.packaging_type {
+        object.key("PackagingType").string(var_14.as_str());
+    }
     Ok(())
 }

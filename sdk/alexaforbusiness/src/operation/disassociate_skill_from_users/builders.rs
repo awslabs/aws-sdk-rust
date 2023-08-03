@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_skill_from_users::_disassociate_skill_fro
 /// Fluent builder constructing a request to `DisassociateSkillFromUsers`.
 ///
 /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

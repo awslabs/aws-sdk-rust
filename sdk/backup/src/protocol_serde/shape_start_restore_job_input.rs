@@ -3,27 +3,32 @@ pub fn ser_start_restore_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_restore_job::StartRestoreJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_1.as_str());
+    if let Some(var_1) = &input.copy_source_tags_to_restored_resource {
+        object
+            .key("CopySourceTagsToRestoredResource")
+            .boolean(*var_1);
     }
-    if let Some(var_2) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_2.as_str());
+    if let Some(var_2) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.metadata {
+    if let Some(var_3) = &input.idempotency_token {
+        object.key("IdempotencyToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.metadata {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Metadata").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("Metadata").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_7) = &input.recovery_point_arn {
-        object.key("RecoveryPointArn").string(var_7.as_str());
+    if let Some(var_8) = &input.recovery_point_arn {
+        object.key("RecoveryPointArn").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.resource_type {
-        object.key("ResourceType").string(var_8.as_str());
+    if let Some(var_9) = &input.resource_type {
+        object.key("ResourceType").string(var_9.as_str());
     }
     Ok(())
 }

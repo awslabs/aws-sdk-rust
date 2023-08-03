@@ -27,13 +27,13 @@ pub struct ActionExecution {
     /// <p>The external ID of the run of the action.</p>
     #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
+    /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
     #[doc(hidden)]
     pub external_execution_url: ::std::option::Option<::std::string::String>,
     /// <p>A percentage of completeness of the action as it runs.</p>
     #[doc(hidden)]
     pub percent_complete: ::std::option::Option<i32>,
-    /// <p>The details of an error returned by a URL external to AWS.</p>
+    /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
     #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
@@ -68,7 +68,7 @@ impl ActionExecution {
     pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
         self.external_execution_id.as_deref()
     }
-    /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
+    /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
     pub fn external_execution_url(&self) -> ::std::option::Option<&str> {
         self.external_execution_url.as_deref()
     }
@@ -76,7 +76,7 @@ impl ActionExecution {
     pub fn percent_complete(&self) -> ::std::option::Option<i32> {
         self.percent_complete
     }
-    /// <p>The details of an error returned by a URL external to AWS.</p>
+    /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
@@ -204,7 +204,7 @@ impl ActionExecutionBuilder {
         self.external_execution_id = input;
         self
     }
-    /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
+    /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
     pub fn external_execution_url(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -212,7 +212,7 @@ impl ActionExecutionBuilder {
         self.external_execution_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
+    /// <p>The URL of a resource external to Amazon Web Services that is used when running the action (for example, an external repository URL).</p>
     pub fn set_external_execution_url(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -230,12 +230,12 @@ impl ActionExecutionBuilder {
         self.percent_complete = input;
         self
     }
-    /// <p>The details of an error returned by a URL external to AWS.</p>
+    /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of an error returned by a URL external to AWS.</p>
+    /// <p>The details of an error returned by a URL external to Amazon Web Services.</p>
     pub fn set_error_details(
         mut self,
         input: ::std::option::Option<crate::types::ErrorDetails>,

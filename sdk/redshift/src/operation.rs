@@ -52,6 +52,9 @@ pub mod create_cluster_snapshot;
 /// Types for the `CreateClusterSubnetGroup` operation.
 pub mod create_cluster_subnet_group;
 
+/// Types for the `CreateCustomDomainAssociation` operation.
+pub mod create_custom_domain_association;
+
 /// Types for the `CreateEndpointAccess` operation.
 pub mod create_endpoint_access;
 
@@ -99,6 +102,9 @@ pub mod delete_cluster_snapshot;
 
 /// Types for the `DeleteClusterSubnetGroup` operation.
 pub mod delete_cluster_subnet_group;
+
+/// Types for the `DeleteCustomDomainAssociation` operation.
+pub mod delete_custom_domain_association;
 
 /// Types for the `DeleteEndpointAccess` operation.
 pub mod delete_endpoint_access;
@@ -162,6 +168,9 @@ pub mod describe_cluster_versions;
 
 /// Types for the `DescribeClusters` operation.
 pub mod describe_clusters;
+
+/// Types for the `DescribeCustomDomainAssociations` operation.
+pub mod describe_custom_domain_associations;
 
 /// Types for the `DescribeDataShares` operation.
 pub mod describe_data_shares;
@@ -297,6 +306,9 @@ pub mod modify_cluster_snapshot_schedule;
 
 /// Types for the `ModifyClusterSubnetGroup` operation.
 pub mod modify_cluster_subnet_group;
+
+/// Types for the `ModifyCustomDomainAssociation` operation.
+pub mod modify_custom_domain_association;
 
 /// Types for the `ModifyEndpointAccess` operation.
 pub mod modify_endpoint_access;

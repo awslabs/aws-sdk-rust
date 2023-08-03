@@ -144,12 +144,12 @@ impl CreateAppBlockFluentBuilder {
         self.inner = self.inner.set_source_s3_location(input);
         self
     }
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
         self.inner = self.inner.setup_script_details(input);
         self
     }
-    /// <p>The setup script details of the app block.</p>
+    /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
     pub fn set_setup_script_details(
         mut self,
         input: ::std::option::Option<crate::types::ScriptDetails>,
@@ -178,6 +178,32 @@ impl CreateAppBlockFluentBuilder {
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn post_setup_script_details(mut self, input: crate::types::ScriptDetails) -> Self {
+        self.inner = self.inner.post_setup_script_details(input);
+        self
+    }
+    /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
+    pub fn set_post_setup_script_details(
+        mut self,
+        input: ::std::option::Option<crate::types::ScriptDetails>,
+    ) -> Self {
+        self.inner = self.inner.set_post_setup_script_details(input);
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn packaging_type(mut self, input: crate::types::PackagingType) -> Self {
+        self.inner = self.inner.packaging_type(input);
+        self
+    }
+    /// <p>The packaging type of the app block.</p>
+    pub fn set_packaging_type(
+        mut self,
+        input: ::std::option::Option<crate::types::PackagingType>,
+    ) -> Self {
+        self.inner = self.inner.set_packaging_type(input);
         self
     }
 }

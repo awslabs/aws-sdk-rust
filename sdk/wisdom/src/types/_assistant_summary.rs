@@ -31,6 +31,10 @@ pub struct AssistantSummary {
     #[doc(hidden)]
     pub server_side_encryption_configuration:
         ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    /// <p>The configuration information for the Wisdom assistant integration.</p>
+    #[doc(hidden)]
+    pub integration_configuration:
+        ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
 }
 impl AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
@@ -71,6 +75,12 @@ impl AssistantSummary {
     ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
+    /// <p>The configuration information for the Wisdom assistant integration.</p>
+    pub fn integration_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AssistantIntegrationConfiguration> {
+        self.integration_configuration.as_ref()
+    }
 }
 impl AssistantSummary {
     /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::types::AssistantSummary).
@@ -96,6 +106,8 @@ pub struct AssistantSummaryBuilder {
     >,
     pub(crate) server_side_encryption_configuration:
         ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) integration_configuration:
+        ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
 }
 impl AssistantSummaryBuilder {
     /// <p>The identifier of the Wisdom assistant.</p>
@@ -208,6 +220,22 @@ impl AssistantSummaryBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The configuration information for the Wisdom assistant integration.</p>
+    pub fn integration_configuration(
+        mut self,
+        input: crate::types::AssistantIntegrationConfiguration,
+    ) -> Self {
+        self.integration_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration information for the Wisdom assistant integration.</p>
+    pub fn set_integration_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
+    ) -> Self {
+        self.integration_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AssistantSummary`](crate::types::AssistantSummary).
     pub fn build(self) -> crate::types::AssistantSummary {
         crate::types::AssistantSummary {
@@ -219,6 +247,7 @@ impl AssistantSummaryBuilder {
             description: self.description,
             tags: self.tags,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
+            integration_configuration: self.integration_configuration,
         }
     }
 }

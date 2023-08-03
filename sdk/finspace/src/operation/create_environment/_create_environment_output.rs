@@ -9,7 +9,7 @@ pub struct CreateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
     #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
     #[doc(hidden)]
     pub environment_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl CreateEnvironmentOutput {
     pub fn environment_arn(&self) -> ::std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
     pub fn environment_url(&self) -> ::std::option::Option<&str> {
         self.environment_url.as_deref()
     }
@@ -85,7 +85,7 @@ impl CreateEnvironmentOutputBuilder {
         self.environment_arn = input;
         self
     }
-    /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
     pub fn environment_url(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -93,7 +93,7 @@ impl CreateEnvironmentOutputBuilder {
         self.environment_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sign-in url for the web application of the FinSpace environment you created.</p>
+    /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
     pub fn set_environment_url(
         mut self,
         input: ::std::option::Option<::std::string::String>,

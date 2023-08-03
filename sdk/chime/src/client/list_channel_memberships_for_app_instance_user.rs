@@ -12,6 +12,9 @@ impl super::Client {
     ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError)
+    #[deprecated(
+        note = "Replaced by ListChannelMembershipsForAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn list_channel_memberships_for_app_instance_user(&self) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder{
         crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::new(self.handle.clone())
     }

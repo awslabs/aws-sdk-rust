@@ -71,6 +71,16 @@ pub use crate::types::_campaign_summary::CampaignSummary;
 
 pub use crate::types::_campaign_status::CampaignStatus;
 
+pub use crate::types::_data_destination_config::DataDestinationConfig;
+
+pub use crate::types::_timestream_config::TimestreamConfig;
+
+pub use crate::types::_s3_config::S3Config;
+
+pub use crate::types::_storage_compression_format::StorageCompressionFormat;
+
+pub use crate::types::_data_format::DataFormat;
+
 pub use crate::types::_collection_scheme::CollectionScheme;
 
 pub use crate::types::_condition_based_collection_scheme::ConditionBasedCollectionScheme;
@@ -149,6 +159,10 @@ mod _create_vehicle_request_item;
 
 mod _create_vehicle_response_item;
 
+mod _data_destination_config;
+
+mod _data_format;
+
 mod _decoder_manifest_summary;
 
 mod _diagnostics_mode;
@@ -193,6 +207,8 @@ mod _obd_signal;
 
 mod _registration_status;
 
+mod _s3_config;
+
 mod _sensor;
 
 mod _signal_catalog_summary;
@@ -207,9 +223,13 @@ mod _signal_information;
 
 mod _spooling_mode;
 
+mod _storage_compression_format;
+
 mod _tag;
 
 mod _time_based_collection_scheme;
+
+mod _timestream_config;
 
 mod _timestream_registration_response;
 

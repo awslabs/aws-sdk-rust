@@ -10,7 +10,7 @@ pub struct Control {
     /// <p> The unique identifier for the control. </p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p> The type of control, such as a custom control or a standard control. </p>
+    /// <p> Specifies whether the control is a standard control or a custom control.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ControlType>,
     /// <p> The name of the control. </p>
@@ -62,7 +62,7 @@ impl Control {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p> The type of control, such as a custom control or a standard control. </p>
+    /// <p> Specifies whether the control is a standard control or a custom control.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ControlType> {
         self.r#type.as_ref()
     }
@@ -174,12 +174,12 @@ impl ControlBuilder {
         self.id = input;
         self
     }
-    /// <p> The type of control, such as a custom control or a standard control. </p>
+    /// <p> Specifies whether the control is a standard control or a custom control.</p>
     pub fn r#type(mut self, input: crate::types::ControlType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of control, such as a custom control or a standard control. </p>
+    /// <p> Specifies whether the control is a standard control or a custom control.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ControlType>) -> Self {
         self.r#type = input;
         self

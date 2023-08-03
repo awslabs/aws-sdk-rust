@@ -173,6 +173,8 @@ pub type UpdateEventDataStoreErrorKind = UpdateEventDataStoreError;
 pub enum UpdateEventDataStoreError {
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
+    /// <p>An event data store with that name already exists.</p>
+    EventDataStoreAlreadyExistsException(crate::types::error::EventDataStoreAlreadyExistsException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
@@ -206,7 +208,7 @@ pub enum UpdateEventDataStoreError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::types::error::KmsException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(
@@ -247,6 +249,7 @@ impl ::std::fmt::Display for UpdateEventDataStoreError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            Self::EventDataStoreAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreHasOngoingImportException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
@@ -272,6 +275,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateEventDa
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EventDataStoreAlreadyExistsException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::EventDataStoreArnInvalidException(_inner) => {
@@ -379,6 +385,7 @@ impl UpdateEventDataStoreError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::CloudTrailAccessNotEnabledException(e) => e.meta(),
+            Self::EventDataStoreAlreadyExistsException(e) => e.meta(),
             Self::EventDataStoreArnInvalidException(e) => e.meta(),
             Self::EventDataStoreHasOngoingImportException(e) => e.meta(),
             Self::EventDataStoreNotFoundException(e) => e.meta(),
@@ -402,6 +409,10 @@ impl UpdateEventDataStoreError {
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(self, Self::CloudTrailAccessNotEnabledException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreError::EventDataStoreAlreadyExistsException`.
+    pub fn is_event_data_store_already_exists_exception(&self) -> bool {
+        matches!(self, Self::EventDataStoreAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::EventDataStoreArnInvalidException`.
     pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
@@ -479,6 +490,9 @@ impl ::std::error::Error for UpdateEventDataStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => {
+                ::std::option::Option::Some(_inner)
+            }
+            Self::EventDataStoreAlreadyExistsException(_inner) => {
                 ::std::option::Option::Some(_inner)
             }
             Self::EventDataStoreArnInvalidException(_inner) => ::std::option::Option::Some(_inner),

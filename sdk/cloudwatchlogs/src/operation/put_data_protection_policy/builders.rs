@@ -10,6 +10,7 @@ pub use crate::operation::put_data_protection_policy::_put_data_protection_polic
 /// </important>
 /// <p>By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a> operation with the <code>unmask</code> parameter set to <code>true</code> to view the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the <code>unmask</code> query command.</p>
 /// <p>For more information, including a list of types of data that can be audited and masked, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive log data with masking</a>.</p>
+/// <p>The <code>PutDataProtectionPolicy</code> operation applies to only the specified log group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a> to create an account-level data protection policy that applies to all log groups in the account, including both existing log groups and log groups that are created level. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,8 +128,10 @@ impl PutDataProtectionPolicyFluentBuilder {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn policy_document(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -143,8 +146,10 @@ impl PutDataProtectionPolicyFluentBuilder {
     /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
     /// </ul>
     /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
-    /// <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn set_policy_document(
         mut self,
         input: ::std::option::Option<::std::string::String>,

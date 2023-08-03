@@ -6,6 +6,7 @@ pub use crate::operation::disassociate_device_from_room::_disassociate_device_fr
 /// Fluent builder constructing a request to `DisassociateDeviceFromRoom`.
 ///
 /// <p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

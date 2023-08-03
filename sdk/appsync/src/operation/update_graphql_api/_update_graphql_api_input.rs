@@ -31,6 +31,13 @@ pub struct UpdateGraphqlApiInput {
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    #[doc(hidden)]
+    pub merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    #[doc(hidden)]
+    pub owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGraphqlApiInput {
     /// <p>The API ID.</p>
@@ -75,6 +82,15 @@ impl UpdateGraphqlApiInput {
     ) -> ::std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn merged_api_execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.merged_api_execution_role_arn.as_deref()
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn owner_contact(&self) -> ::std::option::Option<&str> {
+        self.owner_contact.as_deref()
+    }
 }
 impl UpdateGraphqlApiInput {
     /// Creates a new builder-style object to manufacture [`UpdateGraphqlApiInput`](crate::operation::update_graphql_api::UpdateGraphqlApiInput).
@@ -101,6 +117,8 @@ pub struct UpdateGraphqlApiInputBuilder {
     pub(crate) xray_enabled: ::std::option::Option<bool>,
     pub(crate) lambda_authorizer_config:
         ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub(crate) merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGraphqlApiInputBuilder {
     /// <p>The API ID.</p>
@@ -219,6 +237,40 @@ impl UpdateGraphqlApiInputBuilder {
         self.lambda_authorizer_config = input;
         self
     }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn merged_api_execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.merged_api_execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn set_merged_api_execution_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.merged_api_execution_role_arn = input;
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn owner_contact(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owner_contact = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn set_owner_contact(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.owner_contact = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateGraphqlApiInput`](crate::operation::update_graphql_api::UpdateGraphqlApiInput).
     pub fn build(
         self,
@@ -237,6 +289,8 @@ impl UpdateGraphqlApiInputBuilder {
                 additional_authentication_providers: self.additional_authentication_providers,
                 xray_enabled: self.xray_enabled,
                 lambda_authorizer_config: self.lambda_authorizer_config,
+                merged_api_execution_role_arn: self.merged_api_execution_role_arn,
+                owner_contact: self.owner_contact,
             },
         )
     }

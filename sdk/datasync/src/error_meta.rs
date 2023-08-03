@@ -147,6 +147,49 @@ impl From<crate::operation::create_agent::CreateAgentError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_azure_blob::CreateLocationAzureBlobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_azure_blob::CreateLocationAzureBlobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_location_azure_blob::CreateLocationAzureBlobError> for Error {
+    fn from(
+        err: crate::operation::create_location_azure_blob::CreateLocationAzureBlobError,
+    ) -> Self {
+        match err {
+            crate::operation::create_location_azure_blob::CreateLocationAzureBlobError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::create_location_azure_blob::CreateLocationAzureBlobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_location_azure_blob::CreateLocationAzureBlobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_location_efs::CreateLocationEfsError,
             R,
         >,
@@ -817,6 +860,51 @@ impl From<crate::operation::describe_discovery_job::DescribeDiscoveryJobError> f
             crate::operation::describe_discovery_job::DescribeDiscoveryJobError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::describe_discovery_job::DescribeDiscoveryJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_discovery_job::DescribeDiscoveryJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2086,6 +2174,49 @@ impl From<crate::operation::update_discovery_job::UpdateDiscoveryJobError> for E
             crate::operation::update_discovery_job::UpdateDiscoveryJobError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::update_discovery_job::UpdateDiscoveryJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_discovery_job::UpdateDiscoveryJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError> for Error {
+    fn from(
+        err: crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
+    ) -> Self {
+        match err {
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

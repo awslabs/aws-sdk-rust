@@ -44,6 +44,10 @@ pub struct VerifyInput {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl VerifyInput {
     /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the same KMS key that was used to generate the signature. If you specify a different KMS key, the signature verification fails.</p>
@@ -93,6 +97,11 @@ impl VerifyInput {
     pub fn grant_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.grant_tokens.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl ::std::fmt::Debug for VerifyInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -103,6 +112,7 @@ impl ::std::fmt::Debug for VerifyInput {
         formatter.field("signature", &self.signature);
         formatter.field("signing_algorithm", &self.signing_algorithm);
         formatter.field("grant_tokens", &self.grant_tokens);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }
@@ -123,6 +133,7 @@ pub struct VerifyInputBuilder {
     pub(crate) signature: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl VerifyInputBuilder {
     /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the same KMS key that was used to generate the signature. If you specify a different KMS key, the signature verification fails.</p>
@@ -246,6 +257,18 @@ impl VerifyInputBuilder {
         self.grant_tokens = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`VerifyInput`](crate::operation::verify::VerifyInput).
     pub fn build(
         self,
@@ -260,6 +283,7 @@ impl VerifyInputBuilder {
             signature: self.signature,
             signing_algorithm: self.signing_algorithm,
             grant_tokens: self.grant_tokens,
+            dry_run: self.dry_run,
         })
     }
 }
@@ -272,6 +296,7 @@ impl ::std::fmt::Debug for VerifyInputBuilder {
         formatter.field("signature", &self.signature);
         formatter.field("signing_algorithm", &self.signing_algorithm);
         formatter.field("grant_tokens", &self.grant_tokens);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }

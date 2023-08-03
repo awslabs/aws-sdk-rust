@@ -12,6 +12,10 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_merged_graphql_api;
+
+pub(crate) mod shape_associate_source_graphql_api;
+
 pub(crate) mod shape_create_api_cache;
 
 pub(crate) mod shape_create_api_key;
@@ -46,6 +50,10 @@ pub(crate) mod shape_delete_type;
 
 pub(crate) mod shape_disassociate_api;
 
+pub(crate) mod shape_disassociate_merged_graphql_api;
+
+pub(crate) mod shape_disassociate_source_graphql_api;
+
 pub(crate) mod shape_evaluate_code;
 
 pub(crate) mod shape_evaluate_mapping_template;
@@ -70,6 +78,8 @@ pub(crate) mod shape_get_resolver;
 
 pub(crate) mod shape_get_schema_creation_status;
 
+pub(crate) mod shape_get_source_api_association;
+
 pub(crate) mod shape_get_type;
 
 pub(crate) mod shape_list_api_keys;
@@ -86,11 +96,17 @@ pub(crate) mod shape_list_resolvers;
 
 pub(crate) mod shape_list_resolvers_by_function;
 
+pub(crate) mod shape_list_source_api_associations;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_types;
 
+pub(crate) mod shape_list_types_by_association;
+
 pub(crate) mod shape_start_schema_creation;
+
+pub(crate) mod shape_start_schema_merge;
 
 pub(crate) mod shape_tag_resource;
 
@@ -109,6 +125,8 @@ pub(crate) mod shape_update_function;
 pub(crate) mod shape_update_graphql_api;
 
 pub(crate) mod shape_update_resolver;
+
+pub(crate) mod shape_update_source_api_association;
 
 pub(crate) mod shape_update_type;
 
@@ -129,6 +147,10 @@ pub(crate) mod shape_api_key_validity_out_of_bounds_exception;
 pub(crate) mod shape_api_limit_exceeded_exception;
 
 pub(crate) mod shape_associate_api_input;
+
+pub(crate) mod shape_associate_merged_graphql_api_input;
+
+pub(crate) mod shape_associate_source_graphql_api_input;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -183,6 +205,8 @@ pub(crate) mod shape_update_function_input;
 pub(crate) mod shape_update_graphql_api_input;
 
 pub(crate) mod shape_update_resolver_input;
+
+pub(crate) mod shape_update_source_api_association_input;
 
 pub(crate) mod shape_update_type_input;
 
@@ -250,6 +274,12 @@ pub(crate) mod shape_resolver;
 
 pub(crate) mod shape_resolvers;
 
+pub(crate) mod shape_source_api_association;
+
+pub(crate) mod shape_source_api_association_config;
+
+pub(crate) mod shape_source_api_association_summary_list;
+
 pub(crate) mod shape_sync_config;
 
 pub(crate) mod shape_tag_map;
@@ -275,6 +305,8 @@ pub(crate) mod shape_lambda_conflict_handler_config;
 pub(crate) mod shape_map_of_string_to_string;
 
 pub(crate) mod shape_rds_http_endpoint_config;
+
+pub(crate) mod shape_source_api_association_summary;
 
 pub(crate) mod shape_aws_iam_config;
 

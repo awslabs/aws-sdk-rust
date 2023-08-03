@@ -40,7 +40,7 @@ pub struct CreateClusterInput {
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
     #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -51,7 +51,7 @@ pub struct CreateClusterInput {
     /// </ul>
     #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -226,7 +226,7 @@ impl CreateClusterInput {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -238,7 +238,7 @@ impl CreateClusterInput {
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -549,7 +549,7 @@ impl CreateClusterInputBuilder {
         self.node_type = input;
         self
     }
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -565,7 +565,7 @@ impl CreateClusterInputBuilder {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -581,7 +581,7 @@ impl CreateClusterInputBuilder {
         self.master_username = input;
         self
     }
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -597,7 +597,7 @@ impl CreateClusterInputBuilder {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>

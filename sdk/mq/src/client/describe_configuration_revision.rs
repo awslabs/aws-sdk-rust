@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::configuration_id): <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     ///   - [`created(Option<DateTime>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::created): <p>Required. The date and time of the configuration.</p>
-    ///   - [`data(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::data): <p>Required. The base64-encoded XML configuration.</p>
+    ///   - [`data(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::data): <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::description): <p>The description of the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationRevisionError>`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionError)
     pub fn describe_configuration_revision(&self) -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionFluentBuilder{

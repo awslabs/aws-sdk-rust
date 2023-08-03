@@ -32,6 +32,7 @@ pub struct StartRestoreJobInput {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -39,12 +40,18 @@ pub struct StartRestoreJobInput {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    #[doc(hidden)]
+    pub copy_source_tags_to_restored_resource: ::std::option::Option<bool>,
 }
 impl StartRestoreJobInput {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -82,6 +89,7 @@ impl StartRestoreJobInput {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -89,12 +97,19 @@ impl StartRestoreJobInput {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    pub fn copy_source_tags_to_restored_resource(&self) -> ::std::option::Option<bool> {
+        self.copy_source_tags_to_restored_resource
     }
 }
 impl ::std::fmt::Debug for StartRestoreJobInput {
@@ -105,6 +120,10 @@ impl ::std::fmt::Debug for StartRestoreJobInput {
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("idempotency_token", &self.idempotency_token);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field(
+            "copy_source_tags_to_restored_resource",
+            &self.copy_source_tags_to_restored_resource,
+        );
         formatter.finish()
     }
 }
@@ -126,6 +145,7 @@ pub struct StartRestoreJobInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_source_tags_to_restored_resource: ::std::option::Option<bool>,
 }
 impl StartRestoreJobInputBuilder {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -221,6 +241,7 @@ impl StartRestoreJobInputBuilder {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -228,8 +249,10 @@ impl StartRestoreJobInputBuilder {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn resource_type(
@@ -243,6 +266,7 @@ impl StartRestoreJobInputBuilder {
     /// <ul>
     /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
     /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
     /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
     /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
     /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
@@ -250,8 +274,10 @@ impl StartRestoreJobInputBuilder {
     /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
     /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn set_resource_type(
@@ -259,6 +285,21 @@ impl StartRestoreJobInputBuilder {
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_type = input;
+        self
+    }
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    pub fn copy_source_tags_to_restored_resource(mut self, input: bool) -> Self {
+        self.copy_source_tags_to_restored_resource = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
+    /// <p>This can only be applied to backups created through Backup.</p>
+    pub fn set_copy_source_tags_to_restored_resource(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
+        self.copy_source_tags_to_restored_resource = input;
         self
     }
     /// Consumes the builder and constructs a [`StartRestoreJobInput`](crate::operation::start_restore_job::StartRestoreJobInput).
@@ -274,6 +315,7 @@ impl StartRestoreJobInputBuilder {
             iam_role_arn: self.iam_role_arn,
             idempotency_token: self.idempotency_token,
             resource_type: self.resource_type,
+            copy_source_tags_to_restored_resource: self.copy_source_tags_to_restored_resource,
         })
     }
 }
@@ -285,6 +327,10 @@ impl ::std::fmt::Debug for StartRestoreJobInputBuilder {
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("idempotency_token", &self.idempotency_token);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field(
+            "copy_source_tags_to_restored_resource",
+            &self.copy_source_tags_to_restored_resource,
+        );
         formatter.finish()
     }
 }

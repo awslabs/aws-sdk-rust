@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadShareSummary {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     #[doc(hidden)]
     pub shared_with: ::std::option::Option<::std::string::String>,
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>Optional message to compliment the Status field.</p>
@@ -21,19 +21,19 @@ pub struct WorkloadShareSummary {
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadShareSummary {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
@@ -62,32 +62,32 @@ pub struct WorkloadShareSummaryBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadShareSummaryBuilder {
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID associated with the workload share.</p>
+    /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Permission granted on a workload share.</p>
+    /// <p>Permission granted on a share request.</p>
     pub fn set_permission_type(
         mut self,
         input: ::std::option::Option<crate::types::PermissionType>,
@@ -95,12 +95,12 @@ impl WorkloadShareSummaryBuilder {
         self.permission_type = input;
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self

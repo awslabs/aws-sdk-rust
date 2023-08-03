@@ -619,6 +619,42 @@ pub fn ser_resource_details(
         )?;
         object_170.finish();
     }
+    if let Some(var_171) = &input.aws_amazon_mq_broker {
+        #[allow(unused_mut)]
+        let mut object_172 = object.key("AwsAmazonMqBroker").start_object();
+        crate::protocol_serde::shape_aws_amazon_mq_broker_details::ser_aws_amazon_mq_broker_details(&mut object_172, var_171)?;
+        object_172.finish();
+    }
+    if let Some(var_173) = &input.aws_app_sync_graph_ql_api {
+        #[allow(unused_mut)]
+        let mut object_174 = object.key("AwsAppSyncGraphQlApi").start_object();
+        crate::protocol_serde::shape_aws_app_sync_graph_ql_api_details::ser_aws_app_sync_graph_ql_api_details(&mut object_174, var_173)?;
+        object_174.finish();
+    }
+    if let Some(var_175) = &input.aws_event_schemas_registry {
+        #[allow(unused_mut)]
+        let mut object_176 = object.key("AwsEventSchemasRegistry").start_object();
+        crate::protocol_serde::shape_aws_event_schemas_registry_details::ser_aws_event_schemas_registry_details(&mut object_176, var_175)?;
+        object_176.finish();
+    }
+    if let Some(var_177) = &input.aws_guard_duty_detector {
+        #[allow(unused_mut)]
+        let mut object_178 = object.key("AwsGuardDutyDetector").start_object();
+        crate::protocol_serde::shape_aws_guard_duty_detector_details::ser_aws_guard_duty_detector_details(&mut object_178, var_177)?;
+        object_178.finish();
+    }
+    if let Some(var_179) = &input.aws_step_function_state_machine {
+        #[allow(unused_mut)]
+        let mut object_180 = object.key("AwsStepFunctionStateMachine").start_object();
+        crate::protocol_serde::shape_aws_step_function_state_machine_details::ser_aws_step_function_state_machine_details(&mut object_180, var_179)?;
+        object_180.finish();
+    }
+    if let Some(var_181) = &input.aws_athena_work_group {
+        #[allow(unused_mut)]
+        let mut object_182 = object.key("AwsAthenaWorkGroup").start_object();
+        crate::protocol_serde::shape_aws_athena_work_group_details::ser_aws_athena_work_group_details(&mut object_182, var_181)?;
+        object_182.finish();
+    }
     Ok(())
 }
 
@@ -1064,6 +1100,36 @@ where
                             "AwsEc2RouteTable" => {
                                 builder = builder.set_aws_ec2_route_table(
                                     crate::protocol_serde::shape_aws_ec2_route_table_details::de_aws_ec2_route_table_details(tokens)?
+                                );
+                            }
+                            "AwsAmazonMqBroker" => {
+                                builder = builder.set_aws_amazon_mq_broker(
+                                    crate::protocol_serde::shape_aws_amazon_mq_broker_details::de_aws_amazon_mq_broker_details(tokens)?
+                                );
+                            }
+                            "AwsAppSyncGraphQlApi" => {
+                                builder = builder.set_aws_app_sync_graph_ql_api(
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_details::de_aws_app_sync_graph_ql_api_details(tokens)?
+                                );
+                            }
+                            "AwsEventSchemasRegistry" => {
+                                builder = builder.set_aws_event_schemas_registry(
+                                    crate::protocol_serde::shape_aws_event_schemas_registry_details::de_aws_event_schemas_registry_details(tokens)?
+                                );
+                            }
+                            "AwsGuardDutyDetector" => {
+                                builder = builder.set_aws_guard_duty_detector(
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_details::de_aws_guard_duty_detector_details(tokens)?
+                                );
+                            }
+                            "AwsStepFunctionStateMachine" => {
+                                builder = builder.set_aws_step_function_state_machine(
+                                    crate::protocol_serde::shape_aws_step_function_state_machine_details::de_aws_step_function_state_machine_details(tokens)?
+                                );
+                            }
+                            "AwsAthenaWorkGroup" => {
+                                builder = builder.set_aws_athena_work_group(
+                                    crate::protocol_serde::shape_aws_athena_work_group_details::de_aws_athena_work_group_details(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -6,7 +6,7 @@ pub use crate::operation::attach_group_policy::_attach_group_policy_input::Attac
 /// Fluent builder constructing a request to `AttachGroupPolicy`.
 ///
 /// <p>Attaches the specified managed policy to the specified IAM group.</p>
-/// <p>You use this operation to attach a managed policy to a group. To embed an inline policy in a group, use <code>PutGroupPolicy</code>.</p>
+/// <p>You use this operation to attach a managed policy to a group. To embed an inline policy in a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html"> <code>PutGroupPolicy</code> </a>.</p>
 /// <p>As a best practice, you can validate your IAM policies. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM policies</a> in the <i>IAM User Guide</i>.</p>
 /// <p>For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

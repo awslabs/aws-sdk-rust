@@ -6,6 +6,7 @@ pub use crate::operation::delete_skill_group::_delete_skill_group_input::DeleteS
 /// Fluent builder constructing a request to `DeleteSkillGroup`.
 ///
 /// <p>Deletes a skill group by skill group ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -13,11 +13,29 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
-    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
+    /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
+    /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
+    /// <p>The ARN resource-id can be either:</p>
+    /// <ul>
+    /// <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li>
+    /// <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li>
+    /// <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::*/ResourceName</p> </li>
+    /// </ul>
+    /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p>
+    /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
+    /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
+    /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
     #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
@@ -34,12 +52,30 @@ impl AssociatePrincipalWithPortfolioInput {
     pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
-    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
+    /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
+    /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
+    /// <p>The ARN resource-id can be either:</p>
+    /// <ul>
+    /// <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li>
+    /// <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li>
+    /// <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::*/ResourceName</p> </li>
+    /// </ul>
+    /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p>
+    /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
+    /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
+    /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
     pub fn principal_arn(&self) -> ::std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
-    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
@@ -97,8 +133,26 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
         self.portfolio_id = input;
         self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
-    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
+    /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
+    /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
+    /// <p>The ARN resource-id can be either:</p>
+    /// <ul>
+    /// <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li>
+    /// <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li>
+    /// <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::*/ResourceName</p> </li>
+    /// </ul>
+    /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p>
+    /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
+    /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
+    /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
     pub fn principal_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -106,8 +160,26 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
-    /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
+    /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
+    /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
+    /// <p>The ARN resource-id can be either:</p>
+    /// <ul>
+    /// <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li>
+    /// <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li>
+    /// <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::*/ResourceName</p> </li>
+    /// </ul>
+    /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p>
+    /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
+    /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
+    /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
     pub fn set_principal_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -115,12 +187,12 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
         self.principal_arn = input;
         self
     }
-    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.principal_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     pub fn set_principal_type(
         mut self,
         input: ::std::option::Option<crate::types::PrincipalType>,

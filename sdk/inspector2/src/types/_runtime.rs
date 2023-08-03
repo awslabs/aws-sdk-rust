@@ -14,6 +14,7 @@
 /// match runtime {
 ///     Runtime::Go1X => { /* ... */ },
 ///     Runtime::Java11 => { /* ... */ },
+///     Runtime::Java17 => { /* ... */ },
 ///     Runtime::Java8 => { /* ... */ },
 ///     Runtime::Java8Al2 => { /* ... */ },
 ///     Runtime::Nodejs => { /* ... */ },
@@ -21,6 +22,7 @@
 ///     Runtime::Nodejs14X => { /* ... */ },
 ///     Runtime::Nodejs16X => { /* ... */ },
 ///     Runtime::Nodejs18X => { /* ... */ },
+///     Runtime::Python310 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
 ///     Runtime::Python39 => { /* ... */ },
@@ -63,6 +65,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Java11,
     #[allow(missing_docs)] // documentation missing in model
+    Java17,
+    #[allow(missing_docs)] // documentation missing in model
     Java8,
     #[allow(missing_docs)] // documentation missing in model
     Java8Al2,
@@ -76,6 +80,8 @@ pub enum Runtime {
     Nodejs16X,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs18X,
+    #[allow(missing_docs)] // documentation missing in model
+    Python310,
     #[allow(missing_docs)] // documentation missing in model
     Python37,
     #[allow(missing_docs)] // documentation missing in model
@@ -92,6 +98,7 @@ impl ::std::convert::From<&str> for Runtime {
         match s {
             "GO_1_X" => Runtime::Go1X,
             "JAVA_11" => Runtime::Java11,
+            "JAVA_17" => Runtime::Java17,
             "JAVA_8" => Runtime::Java8,
             "JAVA_8_AL2" => Runtime::Java8Al2,
             "NODEJS" => Runtime::Nodejs,
@@ -99,6 +106,7 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_14_X" => Runtime::Nodejs14X,
             "NODEJS_16_X" => Runtime::Nodejs16X,
             "NODEJS_18_X" => Runtime::Nodejs18X,
+            "PYTHON_3_10" => Runtime::Python310,
             "PYTHON_3_7" => Runtime::Python37,
             "PYTHON_3_8" => Runtime::Python38,
             "PYTHON_3_9" => Runtime::Python39,
@@ -120,6 +128,7 @@ impl Runtime {
         match self {
             Runtime::Go1X => "GO_1_X",
             Runtime::Java11 => "JAVA_11",
+            Runtime::Java17 => "JAVA_17",
             Runtime::Java8 => "JAVA_8",
             Runtime::Java8Al2 => "JAVA_8_AL2",
             Runtime::Nodejs => "NODEJS",
@@ -127,6 +136,7 @@ impl Runtime {
             Runtime::Nodejs14X => "NODEJS_14_X",
             Runtime::Nodejs16X => "NODEJS_16_X",
             Runtime::Nodejs18X => "NODEJS_18_X",
+            Runtime::Python310 => "PYTHON_3_10",
             Runtime::Python37 => "PYTHON_3_7",
             Runtime::Python38 => "PYTHON_3_8",
             Runtime::Python39 => "PYTHON_3_9",
@@ -139,6 +149,7 @@ impl Runtime {
         &[
             "GO_1_X",
             "JAVA_11",
+            "JAVA_17",
             "JAVA_8",
             "JAVA_8_AL2",
             "NODEJS",
@@ -146,6 +157,7 @@ impl Runtime {
             "NODEJS_14_X",
             "NODEJS_16_X",
             "NODEJS_18_X",
+            "PYTHON_3_10",
             "PYTHON_3_7",
             "PYTHON_3_8",
             "PYTHON_3_9",

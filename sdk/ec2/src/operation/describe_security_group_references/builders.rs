@@ -5,7 +5,7 @@ pub use crate::operation::describe_security_group_references::_describe_security
 
 /// Fluent builder constructing a request to `DescribeSecurityGroupReferences`.
 ///
-/// <p>[VPC only] Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've specified in this request.</p>
+/// <p>Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've specified in this request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

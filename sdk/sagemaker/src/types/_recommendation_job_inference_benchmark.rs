@@ -19,6 +19,12 @@ pub struct RecommendationJobInferenceBenchmark {
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
     #[doc(hidden)]
     pub endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    #[doc(hidden)]
+    pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    #[doc(hidden)]
+    pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecommendationJobInferenceBenchmark {
     /// <p>The metrics of recommendations.</p>
@@ -43,6 +49,14 @@ impl RecommendationJobInferenceBenchmark {
     pub fn endpoint_metrics(&self) -> ::std::option::Option<&crate::types::InferenceMetrics> {
         self.endpoint_metrics.as_ref()
     }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn invocation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.invocation_end_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn invocation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.invocation_start_time.as_ref()
+    }
 }
 impl RecommendationJobInferenceBenchmark {
     /// Creates a new builder-style object to manufacture [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).
@@ -63,6 +77,8 @@ pub struct RecommendationJobInferenceBenchmarkBuilder {
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
+    pub(crate) invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecommendationJobInferenceBenchmarkBuilder {
     /// <p>The metrics of recommendations.</p>
@@ -136,6 +152,32 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self.endpoint_metrics = input;
         self
     }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn invocation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invocation_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark completed.</p>
+    pub fn set_invocation_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invocation_end_time = input;
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn invocation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invocation_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that shows when the benchmark started.</p>
+    pub fn set_invocation_start_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invocation_start_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).
     pub fn build(self) -> crate::types::RecommendationJobInferenceBenchmark {
         crate::types::RecommendationJobInferenceBenchmark {
@@ -144,6 +186,8 @@ impl RecommendationJobInferenceBenchmarkBuilder {
             model_configuration: self.model_configuration,
             failure_reason: self.failure_reason,
             endpoint_metrics: self.endpoint_metrics,
+            invocation_end_time: self.invocation_end_time,
+            invocation_start_time: self.invocation_start_time,
         }
     }
 }

@@ -9,6 +9,9 @@ pub fn ser_trace_content(
     if let Some(var_2) = &input.log_level {
         object.key("LogLevel").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.multicast_frame_info {
+        object.key("MulticastFrameInfo").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -57,6 +60,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped()
                                             .map(|u| crate::types::LogLevel::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "MulticastFrameInfo" => {
+                                builder = builder.set_multicast_frame_info(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::MulticastFrameInfo::from(u.as_ref())
+                                        })
                                     })
                                     .transpose()?,
                                 );

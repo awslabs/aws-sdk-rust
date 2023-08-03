@@ -9,6 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceConnectorGroupOutput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupOutput) with field(s):
     ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupOutput::voice_connector_group): <p>The updated Amazon Chime Voice Connector group details.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceConnectorGroupError>`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupError)
+    #[deprecated(
+        note = "Replaced by UpdateVoiceConnectorGroup in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn update_voice_connector_group(&self) -> crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupFluentBuilder{
         crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupFluentBuilder::new(self.handle.clone())
     }

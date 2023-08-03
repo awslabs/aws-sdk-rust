@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
@@ -18,7 +18,7 @@ pub struct DescribeAgentsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.agent_ids.as_deref()
     }
@@ -27,7 +27,7 @@ impl DescribeAgentsInput {
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -59,14 +59,14 @@ impl DescribeAgentsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
     ///
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
         v.push(input.into());
         self.agent_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your Amazon Web Services user account.</p>
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
     pub fn set_agent_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,12 +95,12 @@ impl DescribeAgentsInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

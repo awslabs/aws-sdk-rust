@@ -6,6 +6,7 @@ pub use crate::operation::search_users::_search_users_input::SearchUsersInputBui
 /// Fluent builder constructing a request to `SearchUsers`.
 ///
 /// <p>Searches users and lists the ones that meet a set of filter and sort criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

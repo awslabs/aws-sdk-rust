@@ -70,6 +70,19 @@ impl SearchPlaceIndexForSuggestionsInput {
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
+            {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.key {
+                    {
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(&inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput,
@@ -80,6 +93,7 @@ impl SearchPlaceIndexForSuggestionsInput {
             > {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;

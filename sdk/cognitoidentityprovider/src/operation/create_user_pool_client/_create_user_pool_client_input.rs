@@ -12,13 +12,13 @@ pub struct CreateUserPoolClientInput {
     pub client_name: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
     #[doc(hidden)]
-    pub generate_secret: bool,
+    pub generate_secret: ::std::option::Option<bool>,
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
     /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
     #[doc(hidden)]
-    pub refresh_token_validity: i32,
+    pub refresh_token_validity: ::std::option::Option<i32>,
     /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
     /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
@@ -114,7 +114,7 @@ pub struct CreateUserPoolClientInput {
     pub allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     #[doc(hidden)]
-    pub allowed_o_auth_flows_user_pool_client: bool,
+    pub allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
     /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
@@ -150,14 +150,14 @@ impl CreateUserPoolClientInput {
         self.client_name.as_deref()
     }
     /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
-    pub fn generate_secret(&self) -> bool {
+    pub fn generate_secret(&self) -> ::std::option::Option<bool> {
         self.generate_secret
     }
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
     /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
-    pub fn refresh_token_validity(&self) -> i32 {
+    pub fn refresh_token_validity(&self) -> ::std::option::Option<i32> {
         self.refresh_token_validity
     }
     /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
@@ -269,7 +269,7 @@ impl CreateUserPoolClientInput {
         self.allowed_o_auth_scopes.as_deref()
     }
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
-    pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
+    pub fn allowed_o_auth_flows_user_pool_client(&self) -> ::std::option::Option<bool> {
         self.allowed_o_auth_flows_user_pool_client
     }
     /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p> <note>
@@ -827,8 +827,8 @@ impl CreateUserPoolClientInputBuilder {
             crate::operation::create_user_pool_client::CreateUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
                 client_name: self.client_name,
-                generate_secret: self.generate_secret.unwrap_or_default(),
-                refresh_token_validity: self.refresh_token_validity.unwrap_or_default(),
+                generate_secret: self.generate_secret,
+                refresh_token_validity: self.refresh_token_validity,
                 access_token_validity: self.access_token_validity,
                 id_token_validity: self.id_token_validity,
                 token_validity_units: self.token_validity_units,
@@ -841,9 +841,7 @@ impl CreateUserPoolClientInputBuilder {
                 default_redirect_uri: self.default_redirect_uri,
                 allowed_o_auth_flows: self.allowed_o_auth_flows,
                 allowed_o_auth_scopes: self.allowed_o_auth_scopes,
-                allowed_o_auth_flows_user_pool_client: self
-                    .allowed_o_auth_flows_user_pool_client
-                    .unwrap_or_default(),
+                allowed_o_auth_flows_user_pool_client: self.allowed_o_auth_flows_user_pool_client,
                 analytics_configuration: self.analytics_configuration,
                 prevent_user_existence_errors: self.prevent_user_existence_errors,
                 enable_token_revocation: self.enable_token_revocation,

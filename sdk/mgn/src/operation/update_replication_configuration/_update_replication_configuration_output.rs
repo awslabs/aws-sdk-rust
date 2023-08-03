@@ -55,6 +55,9 @@ pub struct UpdateReplicationConfigurationOutput {
     pub staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Replication Configuration use Fips Endpoint.</p>
+    #[doc(hidden)]
+    pub use_fips_endpoint: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutput {
@@ -133,6 +136,10 @@ impl UpdateReplicationConfigurationOutput {
     > {
         self.staging_area_tags.as_ref()
     }
+    /// <p>Replication Configuration use Fips Endpoint.</p>
+    pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_fips_endpoint
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -167,6 +174,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationOutput {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -210,6 +218,7 @@ pub struct UpdateReplicationConfigurationOutputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutputBuilder {
@@ -456,6 +465,16 @@ impl UpdateReplicationConfigurationOutputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>Replication Configuration use Fips Endpoint.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.use_fips_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Replication Configuration use Fips Endpoint.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_fips_endpoint = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -486,6 +505,7 @@ impl UpdateReplicationConfigurationOutputBuilder {
             data_plane_routing: self.data_plane_routing,
             create_public_ip: self.create_public_ip,
             staging_area_tags: self.staging_area_tags,
+            use_fips_endpoint: self.use_fips_endpoint,
             _request_id: self._request_id,
         }
     }
@@ -523,6 +543,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationOutputBuilder {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

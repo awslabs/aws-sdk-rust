@@ -47,6 +47,23 @@ pub fn ser_amazon_transcribe_processor_configuration(
             .key("FilterPartialResults")
             .boolean(input.filter_partial_results);
     }
+    if input.identify_language {
+        object
+            .key("IdentifyLanguage")
+            .boolean(input.identify_language);
+    }
+    if let Some(var_10) = &input.language_options {
+        object.key("LanguageOptions").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.preferred_language {
+        object.key("PreferredLanguage").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.vocabulary_names {
+        object.key("VocabularyNames").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.vocabulary_filter_names {
+        object.key("VocabularyFilterNames").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -195,6 +212,53 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                     tokens.next(),
                                 )?,
+                            );
+                        }
+                        "IdentifyLanguage" => {
+                            builder = builder.set_identify_language(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                    tokens.next(),
+                                )?,
+                            );
+                        }
+                        "LanguageOptions" => {
+                            builder = builder.set_language_options(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
+                        }
+                        "PreferredLanguage" => {
+                            builder = builder.set_preferred_language(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::types::CallAnalyticsLanguageCode::from(u.as_ref())
+                                    })
+                                })
+                                .transpose()?,
+                            );
+                        }
+                        "VocabularyNames" => {
+                            builder = builder.set_vocabulary_names(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                            );
+                        }
+                        "VocabularyFilterNames" => {
+                            builder = builder.set_vocabulary_filter_names(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

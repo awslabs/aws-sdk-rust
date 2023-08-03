@@ -131,6 +131,8 @@ pub use crate::types::error::_sns_invalid_topic_fault::SnsInvalidTopicFault;
 
 pub use crate::types::error::_invalid_subscription_state_fault::InvalidSubscriptionStateFault;
 
+pub use crate::types::error::_custom_cname_association_fault::CustomCnameAssociationFault;
+
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
 
 pub use crate::types::error::_cluster_subnet_quota_exceeded_fault::ClusterSubnetQuotaExceededFault;
@@ -176,6 +178,8 @@ pub use crate::types::error::_table_restore_not_found_fault::TableRestoreNotFoun
 pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFault;
 
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFault;
+
+pub use crate::types::error::_custom_domain_association_not_found_fault::CustomDomainAssociationNotFoundFault;
 
 pub use crate::types::error::_invalid_snapshot_copy_grant_state_fault::InvalidSnapshotCopyGrantStateFault;
 
@@ -308,6 +312,10 @@ mod _cluster_subnet_group_quota_exceeded_fault;
 mod _cluster_subnet_quota_exceeded_fault;
 
 mod _copy_to_region_disabled_fault;
+
+mod _custom_cname_association_fault;
+
+mod _custom_domain_association_not_found_fault;
 
 mod _dependent_service_request_throttling_fault;
 

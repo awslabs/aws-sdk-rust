@@ -136,8 +136,8 @@ impl UpdateCampaignFluentBuilder {
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
-    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. </p> </li>
-    /// <li> <p> <code>RESUME</code> - To resume collecting signal data. </p> </li>
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li>
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
     pub fn action(mut self, input: crate::types::UpdateCampaignAction) -> Self {
@@ -147,8 +147,8 @@ impl UpdateCampaignFluentBuilder {
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles. </p> </li>
-    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. </p> </li>
-    /// <li> <p> <code>RESUME</code> - To resume collecting signal data. </p> </li>
+    /// <li> <p> <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted from vehicles and all vehicles in the suspended campaign will stop sending data.</p> </li>
+    /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
     pub fn set_action(

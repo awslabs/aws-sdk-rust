@@ -7,6 +7,9 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>The tag key-value pairs.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
+    #[deprecated(
+        note = "Replaced by TagResource in the Amazon Chime SDK Voice, Amazon Chime SDK Meetings, Amazon Chime SDK Identity, Amazon Chime SDK Messaging, and Amazon Chime SDK Media Pipelines Namespaces"
+    )]
     pub fn tag_resource(
         &self,
     ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

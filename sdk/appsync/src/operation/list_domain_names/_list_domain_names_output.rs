@@ -6,7 +6,7 @@ pub struct ListDomainNamesOutput {
     /// <p>Lists configurations for multiple domain names.</p>
     #[doc(hidden)]
     pub domain_name_configs: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfig>>,
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl ListDomainNamesOutput {
     pub fn domain_name_configs(&self) -> ::std::option::Option<&[crate::types::DomainNameConfig]> {
         self.domain_name_configs.as_deref()
     }
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -65,12 +65,12 @@ impl ListDomainNamesOutputBuilder {
         self.domain_name_configs = input;
         self
     }
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The API token.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self

@@ -45,71 +45,71 @@ pub fn ser_describe_savings_plans_offerings_input(
         }
         array_11.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_14) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.next_token {
-        object.key("nextToken").string(var_14.as_str());
+    if let Some(var_15) = &input.next_token {
+        object.key("nextToken").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.offering_ids {
-        let mut array_16 = object.key("offeringIds").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.offering_ids {
+        let mut array_17 = object.key("offeringIds").start_array();
+        for item_18 in var_16 {
             {
-                array_16.value().string(item_17.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_18) = &input.operations {
-        let mut array_19 = object.key("operations").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.operations {
+        let mut array_20 = object.key("operations").start_array();
+        for item_21 in var_19 {
             {
-                array_19.value().string(item_20.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    if let Some(var_21) = &input.payment_options {
-        let mut array_22 = object.key("paymentOptions").start_array();
-        for item_23 in var_21 {
+    if let Some(var_22) = &input.payment_options {
+        let mut array_23 = object.key("paymentOptions").start_array();
+        for item_24 in var_22 {
             {
-                array_22.value().string(item_23.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_22.finish();
+        array_23.finish();
     }
-    if let Some(var_24) = &input.plan_types {
-        let mut array_25 = object.key("planTypes").start_array();
-        for item_26 in var_24 {
+    if let Some(var_25) = &input.plan_types {
+        let mut array_26 = object.key("planTypes").start_array();
+        for item_27 in var_25 {
             {
-                array_25.value().string(item_26.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_25.finish();
+        array_26.finish();
     }
-    if let Some(var_27) = &input.product_type {
-        object.key("productType").string(var_27.as_str());
+    if let Some(var_28) = &input.product_type {
+        object.key("productType").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.service_codes {
-        let mut array_29 = object.key("serviceCodes").start_array();
-        for item_30 in var_28 {
+    if let Some(var_29) = &input.service_codes {
+        let mut array_30 = object.key("serviceCodes").start_array();
+        for item_31 in var_29 {
             {
-                array_29.value().string(item_30.as_str());
+                array_30.value().string(item_31.as_str());
             }
         }
-        array_29.finish();
+        array_30.finish();
     }
-    if let Some(var_31) = &input.usage_types {
-        let mut array_32 = object.key("usageTypes").start_array();
-        for item_33 in var_31 {
+    if let Some(var_32) = &input.usage_types {
+        let mut array_33 = object.key("usageTypes").start_array();
+        for item_34 in var_32 {
             {
-                array_32.value().string(item_33.as_str());
+                array_33.value().string(item_34.as_str());
             }
         }
-        array_32.finish();
+        array_33.finish();
     }
     Ok(())
 }

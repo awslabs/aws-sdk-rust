@@ -172,6 +172,12 @@ pub fn ser_oracle_settings(
     if let Some(var_44) = &input.convert_timestamp_with_zone_to_utc {
         object.key("ConvertTimestampWithZoneToUTC").boolean(*var_44);
     }
+    if let Some(var_45) = &input.open_transaction_window {
+        object.key("OpenTransactionWindow").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_45).into()),
+        );
+    }
     Ok(())
 }
 
@@ -545,6 +551,15 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                     tokens.next(),
                                 )?,
+                            );
+                        }
+                        "OpenTransactionWindow" => {
+                            builder = builder.set_open_transaction_window(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                    tokens.next(),
+                                )?
+                                .map(i32::try_from)
+                                .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

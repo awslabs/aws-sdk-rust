@@ -161,6 +161,11 @@ pub(crate) fn de_describe_job_template(
                             .transpose()?,
                         );
                     }
+                    "destinationPackageVersions" => {
+                        builder = builder.set_destination_package_versions(
+                            crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens)?
+                        );
+                    }
                     "document" => {
                         builder = builder.set_document(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

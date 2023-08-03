@@ -7,7 +7,7 @@ pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: ::std::option::Option<i64>,
-    /// <p>The raw event message.</p>
+    /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl InputLogEvent {
     pub fn timestamp(&self) -> ::std::option::Option<i64> {
         self.timestamp
     }
-    /// <p>The raw event message.</p>
+    /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -48,12 +48,12 @@ impl InputLogEventBuilder {
         self.timestamp = input;
         self
     }
-    /// <p>The raw event message.</p>
+    /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The raw event message.</p>
+    /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self

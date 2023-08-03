@@ -135,17 +135,17 @@ impl StartFHIRImportJobFluentBuilder {
         self.inner = self.inner.set_job_output_data_config(input);
         self
     }
-    /// <p>The AWS-generated Data Store ID.</p>
+    /// <p>The AWS-generated data store ID.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS-generated Data Store ID.</p>
+    /// <p>The AWS-generated data store ID.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn data_access_role_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -153,7 +153,7 @@ impl StartFHIRImportJobFluentBuilder {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

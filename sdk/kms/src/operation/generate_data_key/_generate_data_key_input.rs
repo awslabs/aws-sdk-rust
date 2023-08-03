@@ -42,6 +42,10 @@ pub struct GenerateDataKeyInput {
     /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -91,6 +95,11 @@ impl GenerateDataKeyInput {
     pub fn recipient(&self) -> ::std::option::Option<&crate::types::RecipientInfo> {
         self.recipient.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl GenerateDataKeyInput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyInput`](crate::operation::generate_data_key::GenerateDataKeyInput).
@@ -113,6 +122,7 @@ pub struct GenerateDataKeyInputBuilder {
     pub(crate) key_spec: ::std::option::Option<crate::types::DataKeySpec>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recipient: ::std::option::Option<crate::types::RecipientInfo>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GenerateDataKeyInputBuilder {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -240,6 +250,18 @@ impl GenerateDataKeyInputBuilder {
         self.recipient = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateDataKeyInput`](crate::operation::generate_data_key::GenerateDataKeyInput).
     pub fn build(
         self,
@@ -254,6 +276,7 @@ impl GenerateDataKeyInputBuilder {
             key_spec: self.key_spec,
             grant_tokens: self.grant_tokens,
             recipient: self.recipient,
+            dry_run: self.dry_run,
         })
     }
 }

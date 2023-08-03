@@ -61,6 +61,14 @@ pub use crate::types::_hdfs_rpc_protection::HdfsRpcProtection;
 
 pub use crate::types::_hdfs_name_node::HdfsNameNode;
 
+pub use crate::types::_azure_access_tier::AzureAccessTier;
+
+pub use crate::types::_azure_blob_type::AzureBlobType;
+
+pub use crate::types::_azure_blob_sas_configuration::AzureBlobSasConfiguration;
+
+pub use crate::types::_azure_blob_authentication_type::AzureBlobAuthenticationType;
+
 pub use crate::types::_tag_list_entry::TagListEntry;
 
 pub use crate::types::_task_list_entry::TaskListEntry;
@@ -154,6 +162,14 @@ mod _agent_list_entry;
 mod _agent_status;
 
 mod _atime;
+
+mod _azure_access_tier;
+
+mod _azure_blob_authentication_type;
+
+mod _azure_blob_sas_configuration;
+
+mod _azure_blob_type;
 
 mod _capacity;
 

@@ -248,6 +248,10 @@ pub(crate) mod shape_create_vehicle_request_item;
 
 pub(crate) mod shape_create_vehicle_responses;
 
+pub(crate) mod shape_data_destination_config;
+
+pub(crate) mod shape_data_destination_configs;
+
 pub(crate) mod shape_data_extra_dimension_node_path_list;
 
 pub(crate) mod shape_decoder_manifest_summaries;
@@ -350,11 +354,15 @@ pub(crate) mod shape_obd_interface;
 
 pub(crate) mod shape_obd_signal;
 
+pub(crate) mod shape_s3_config;
+
 pub(crate) mod shape_sensor;
 
 pub(crate) mod shape_signal_catalog_summary;
 
 pub(crate) mod shape_time_based_collection_scheme;
+
+pub(crate) mod shape_timestream_config;
 
 pub(crate) mod shape_update_vehicle_error;
 

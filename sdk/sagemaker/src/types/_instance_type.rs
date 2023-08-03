@@ -40,6 +40,10 @@
 ///     InstanceType::MlG54Xlarge => { /* ... */ },
 ///     InstanceType::MlG58Xlarge => { /* ... */ },
 ///     InstanceType::MlG5Xlarge => { /* ... */ },
+///     InstanceType::MlInf124Xlarge => { /* ... */ },
+///     InstanceType::MlInf12Xlarge => { /* ... */ },
+///     InstanceType::MlInf16Xlarge => { /* ... */ },
+///     InstanceType::MlInf1Xlarge => { /* ... */ },
 ///     InstanceType::MlM410Xlarge => { /* ... */ },
 ///     InstanceType::MlM416Xlarge => { /* ... */ },
 ///     InstanceType::MlM42Xlarge => { /* ... */ },
@@ -65,6 +69,8 @@
 ///     InstanceType::MlP32Xlarge => { /* ... */ },
 ///     InstanceType::MlP38Xlarge => { /* ... */ },
 ///     InstanceType::MlP3Dn24Xlarge => { /* ... */ },
+///     InstanceType::MlP4D24Xlarge => { /* ... */ },
+///     InstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     InstanceType::MlR512Xlarge => { /* ... */ },
 ///     InstanceType::MlR516Xlarge => { /* ... */ },
 ///     InstanceType::MlR524Xlarge => { /* ... */ },
@@ -171,6 +177,14 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG5Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlInf124Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf1Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM410Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM416Xlarge,
@@ -220,6 +234,10 @@ pub enum InstanceType {
     MlP38Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP3Dn24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4De24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -286,6 +304,10 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.g5.4xlarge" => InstanceType::MlG54Xlarge,
             "ml.g5.8xlarge" => InstanceType::MlG58Xlarge,
             "ml.g5.xlarge" => InstanceType::MlG5Xlarge,
+            "ml.inf1.24xlarge" => InstanceType::MlInf124Xlarge,
+            "ml.inf1.2xlarge" => InstanceType::MlInf12Xlarge,
+            "ml.inf1.6xlarge" => InstanceType::MlInf16Xlarge,
+            "ml.inf1.xlarge" => InstanceType::MlInf1Xlarge,
             "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
@@ -311,6 +333,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
+            "ml.p4de.24xlarge" => InstanceType::MlP4De24Xlarge,
             "ml.r5.12xlarge" => InstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => InstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => InstanceType::MlR524Xlarge,
@@ -372,6 +396,10 @@ impl InstanceType {
             InstanceType::MlG54Xlarge => "ml.g5.4xlarge",
             InstanceType::MlG58Xlarge => "ml.g5.8xlarge",
             InstanceType::MlG5Xlarge => "ml.g5.xlarge",
+            InstanceType::MlInf124Xlarge => "ml.inf1.24xlarge",
+            InstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
+            InstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
+            InstanceType::MlInf1Xlarge => "ml.inf1.xlarge",
             InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -397,6 +425,8 @@ impl InstanceType {
             InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            InstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             InstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             InstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             InstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -447,6 +477,10 @@ impl InstanceType {
             "ml.g5.4xlarge",
             "ml.g5.8xlarge",
             "ml.g5.xlarge",
+            "ml.inf1.24xlarge",
+            "ml.inf1.2xlarge",
+            "ml.inf1.6xlarge",
+            "ml.inf1.xlarge",
             "ml.m4.10xlarge",
             "ml.m4.16xlarge",
             "ml.m4.2xlarge",
@@ -472,6 +506,8 @@ impl InstanceType {
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
             "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+            "ml.p4de.24xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",

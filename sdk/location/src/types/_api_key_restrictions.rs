@@ -4,24 +4,38 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiKeyRestrictions {
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
+    /// <p>The following are valid values for the actions.</p>
+    /// <ul>
+    /// <li> <p> <b>Map actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:GetMap*</code> - Allows all actions needed for map rendering.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Place actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions from text.</p> </li>
+    /// <li> <p> <code>GetPlace</code> - Allows finding a place by place ID.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Route actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:CalculateRoute</code> - Allows point to point routing.</p> </li>
+    /// <li> <p> <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     #[doc(hidden)]
     pub allow_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
-    /// <p>In this preview, you can allow only map resources.</p>
-    /// </note>
-    /// <p>Requirements:</p>
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
+    /// <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li>
+    /// <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li>
+    /// <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by colons (:).</p> </li>
+    /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     #[doc(hidden)]
     pub allow_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
@@ -36,25 +50,39 @@ pub struct ApiKeyRestrictions {
     pub allow_referers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ApiKeyRestrictions {
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
+    /// <p>The following are valid values for the actions.</p>
+    /// <ul>
+    /// <li> <p> <b>Map actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:GetMap*</code> - Allows all actions needed for map rendering.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Place actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions from text.</p> </li>
+    /// <li> <p> <code>GetPlace</code> - Allows finding a place by place ID.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Route actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:CalculateRoute</code> - Allows point to point routing.</p> </li>
+    /// <li> <p> <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn allow_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allow_actions.as_deref()
     }
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
-    /// <p>In this preview, you can allow only map resources.</p>
-    /// </note>
-    /// <p>Requirements:</p>
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
+    /// <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li>
+    /// <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li>
+    /// <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by colons (:).</p> </li>
+    /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn allow_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allow_resources.as_deref()
     }
@@ -92,8 +120,27 @@ impl ApiKeyRestrictionsBuilder {
     ///
     /// To override the contents of this collection use [`set_allow_actions`](Self::set_allow_actions).
     ///
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
+    /// <p>The following are valid values for the actions.</p>
+    /// <ul>
+    /// <li> <p> <b>Map actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:GetMap*</code> - Allows all actions needed for map rendering.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Place actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions from text.</p> </li>
+    /// <li> <p> <code>GetPlace</code> - Allows finding a place by place ID.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Route actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:CalculateRoute</code> - Allows point to point routing.</p> </li>
+    /// <li> <p> <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn allow_actions(
         mut self,
@@ -104,8 +151,27 @@ impl ApiKeyRestrictionsBuilder {
         self.allow_actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
+    /// <p>The following are valid values for the actions.</p>
+    /// <ul>
+    /// <li> <p> <b>Map actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:GetMap*</code> - Allows all actions needed for map rendering.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Place actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse geocoding.</p> </li>
+    /// <li> <p> <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions from text.</p> </li>
+    /// <li> <p> <code>GetPlace</code> - Allows finding a place by place ID.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Route actions</b> </p>
+    /// <ul>
+    /// <li> <p> <code>geo:CalculateRoute</code> - Allows point to point routing.</p> </li>
+    /// <li> <p> <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
     pub fn set_allow_actions(
         mut self,
@@ -118,19 +184,14 @@ impl ApiKeyRestrictionsBuilder {
     ///
     /// To override the contents of this collection use [`set_allow_resources`](Self::set_allow_resources).
     ///
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
-    /// <p>In this preview, you can allow only map resources.</p>
-    /// </note>
-    /// <p>Requirements:</p>
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
+    /// <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li>
+    /// <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li>
+    /// <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by colons (:).</p> </li>
+    /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn allow_resources(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -140,19 +201,14 @@ impl ApiKeyRestrictionsBuilder {
         self.allow_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
-    /// <p>In this preview, you can allow only map resources.</p>
-    /// </note>
-    /// <p>Requirements:</p>
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
+    /// <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li>
+    /// <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li>
+    /// <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by colons (:).</p> </li>
+    /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_allow_resources(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

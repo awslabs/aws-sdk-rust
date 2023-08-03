@@ -7,7 +7,7 @@ pub struct SnomedctTrait {
     /// <p> The name or contextual description of a detected trait. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SnomedctTraitName>,
-    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
@@ -16,7 +16,7 @@ impl SnomedctTrait {
     pub fn name(&self) -> ::std::option::Option<&crate::types::SnomedctTraitName> {
         self.name.as_ref()
     }
-    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
@@ -51,12 +51,12 @@ impl SnomedctTraitBuilder {
         self.name = input;
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self

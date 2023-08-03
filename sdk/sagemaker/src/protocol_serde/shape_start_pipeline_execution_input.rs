@@ -40,5 +40,14 @@ pub fn ser_start_pipeline_execution_input(
         )?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.selective_execution_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("SelectiveExecutionConfig").start_object();
+        crate::protocol_serde::shape_selective_execution_config::ser_selective_execution_config(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
     Ok(())
 }

@@ -13,6 +13,7 @@
 /// # let componenttype = unimplemented!();
 /// match componenttype {
 ///     ComponentType::Hana => { /* ... */ },
+///     ComponentType::HanaNode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum ComponentType {
     #[allow(missing_docs)] // documentation missing in model
     Hana,
+    #[allow(missing_docs)] // documentation missing in model
+    HanaNode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ComponentType {
     fn from(s: &str) -> Self {
         match s {
             "HANA" => ComponentType::Hana,
+            "HANA_NODE" => ComponentType::HanaNode,
             other => {
                 ComponentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +77,13 @@ impl ComponentType {
     pub fn as_str(&self) -> &str {
         match self {
             ComponentType::Hana => "HANA",
+            ComponentType::HanaNode => "HANA_NODE",
             ComponentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HANA"]
+        &["HANA", "HANA_NODE"]
     }
 }
 impl ::std::convert::AsRef<str> for ComponentType {

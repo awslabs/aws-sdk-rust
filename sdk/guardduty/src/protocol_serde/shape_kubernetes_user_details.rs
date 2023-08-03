@@ -46,6 +46,11 @@ where
                                     crate::protocol_serde::shape_groups::de_groups(tokens)?,
                                 );
                             }
+                            "sessionName" => {
+                                builder = builder.set_session_name(
+                                    crate::protocol_serde::shape_session_name_list::de_session_name_list(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

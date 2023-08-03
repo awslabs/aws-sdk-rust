@@ -45,6 +45,13 @@ where
                                     crate::protocol_serde::shape_require_check_in::de_require_check_in(tokens)?
                                 );
                             }
+                            "ProactiveJoin" => {
+                                builder = builder.set_proactive_join(
+                                    crate::protocol_serde::shape_proactive_join::de_proactive_join(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

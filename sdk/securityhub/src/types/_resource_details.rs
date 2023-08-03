@@ -289,6 +289,26 @@ pub struct ResourceDetails {
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     #[doc(hidden)]
     pub aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
+    #[doc(hidden)]
+    pub aws_amazon_mq_broker: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>,
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+    #[doc(hidden)]
+    pub aws_app_sync_graph_ql_api: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>,
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
+    #[doc(hidden)]
+    pub aws_event_schemas_registry:
+        ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>,
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
+    #[doc(hidden)]
+    pub aws_guard_duty_detector: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
+    #[doc(hidden)]
+    pub aws_step_function_state_machine:
+        ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
+    #[doc(hidden)]
+    pub aws_athena_work_group: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -757,6 +777,42 @@ impl ResourceDetails {
     ) -> ::std::option::Option<&crate::types::AwsEc2RouteTableDetails> {
         self.aws_ec2_route_table.as_ref()
     }
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
+    pub fn aws_amazon_mq_broker(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsAmazonMqBrokerDetails> {
+        self.aws_amazon_mq_broker.as_ref()
+    }
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+    pub fn aws_app_sync_graph_ql_api(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiDetails> {
+        self.aws_app_sync_graph_ql_api.as_ref()
+    }
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
+    pub fn aws_event_schemas_registry(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsEventSchemasRegistryDetails> {
+        self.aws_event_schemas_registry.as_ref()
+    }
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
+    pub fn aws_guard_duty_detector(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsGuardDutyDetectorDetails> {
+        self.aws_guard_duty_detector.as_ref()
+    }
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
+    pub fn aws_step_function_state_machine(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsStepFunctionStateMachineDetails> {
+        self.aws_step_function_state_machine.as_ref()
+    }
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
+    pub fn aws_athena_work_group(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupDetails> {
+        self.aws_athena_work_group.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -903,6 +959,17 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
     pub(crate) aws_wafv2_rule_group: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
     pub(crate) aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+    pub(crate) aws_amazon_mq_broker: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>,
+    pub(crate) aws_app_sync_graph_ql_api:
+        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>,
+    pub(crate) aws_event_schemas_registry:
+        ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>,
+    pub(crate) aws_guard_duty_detector:
+        ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
+    pub(crate) aws_step_function_state_machine:
+        ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
+    pub(crate) aws_athena_work_group:
+        ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -2140,6 +2207,96 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_route_table = input;
         self
     }
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
+    pub fn aws_amazon_mq_broker(mut self, input: crate::types::AwsAmazonMqBrokerDetails) -> Self {
+        self.aws_amazon_mq_broker = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
+    pub fn set_aws_amazon_mq_broker(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>,
+    ) -> Self {
+        self.aws_amazon_mq_broker = input;
+        self
+    }
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+    pub fn aws_app_sync_graph_ql_api(
+        mut self,
+        input: crate::types::AwsAppSyncGraphQlApiDetails,
+    ) -> Self {
+        self.aws_app_sync_graph_ql_api = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+    pub fn set_aws_app_sync_graph_ql_api(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>,
+    ) -> Self {
+        self.aws_app_sync_graph_ql_api = input;
+        self
+    }
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
+    pub fn aws_event_schemas_registry(
+        mut self,
+        input: crate::types::AwsEventSchemasRegistryDetails,
+    ) -> Self {
+        self.aws_event_schemas_registry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
+    pub fn set_aws_event_schemas_registry(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>,
+    ) -> Self {
+        self.aws_event_schemas_registry = input;
+        self
+    }
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
+    pub fn aws_guard_duty_detector(
+        mut self,
+        input: crate::types::AwsGuardDutyDetectorDetails,
+    ) -> Self {
+        self.aws_guard_duty_detector = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
+    pub fn set_aws_guard_duty_detector(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
+    ) -> Self {
+        self.aws_guard_duty_detector = input;
+        self
+    }
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
+    pub fn aws_step_function_state_machine(
+        mut self,
+        input: crate::types::AwsStepFunctionStateMachineDetails,
+    ) -> Self {
+        self.aws_step_function_state_machine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
+    pub fn set_aws_step_function_state_machine(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
+    ) -> Self {
+        self.aws_step_function_state_machine = input;
+        self
+    }
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
+    pub fn aws_athena_work_group(mut self, input: crate::types::AwsAthenaWorkGroupDetails) -> Self {
+        self.aws_athena_work_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
+    pub fn set_aws_athena_work_group(
+        mut self,
+        input: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
+    ) -> Self {
+        self.aws_athena_work_group = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2227,6 +2384,12 @@ impl ResourceDetailsBuilder {
             aws_wafv2_web_acl: self.aws_wafv2_web_acl,
             aws_wafv2_rule_group: self.aws_wafv2_rule_group,
             aws_ec2_route_table: self.aws_ec2_route_table,
+            aws_amazon_mq_broker: self.aws_amazon_mq_broker,
+            aws_app_sync_graph_ql_api: self.aws_app_sync_graph_ql_api,
+            aws_event_schemas_registry: self.aws_event_schemas_registry,
+            aws_guard_duty_detector: self.aws_guard_duty_detector,
+            aws_step_function_state_machine: self.aws_step_function_state_machine,
+            aws_athena_work_group: self.aws_athena_work_group,
         }
     }
 }

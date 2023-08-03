@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRequestAction {
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
@@ -15,7 +15,7 @@ pub struct DnsRequestAction {
     pub blocked: bool,
 }
 impl DnsRequestAction {
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -46,12 +46,12 @@ pub struct DnsRequestActionBuilder {
     pub(crate) blocked: ::std::option::Option<bool>,
 }
 impl DnsRequestActionBuilder {
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain information for the API request.</p>
+    /// <p>The domain information for the DNS query.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self

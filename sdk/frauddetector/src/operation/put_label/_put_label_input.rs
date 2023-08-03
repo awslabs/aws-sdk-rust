@@ -9,7 +9,7 @@ pub struct PutLabelInput {
     /// <p>The label description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A collection of key and value pairs.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -22,7 +22,7 @@ impl PutLabelInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p></p>
+    /// <p>A collection of key and value pairs.</p>
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -69,14 +69,14 @@ impl PutLabelInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p></p>
+    /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>A collection of key and value pairs.</p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

@@ -132,6 +132,11 @@ pub fn ser_create_change_set_input_input(
     if let Some(var_52) = &input.include_nested_stacks {
         scope_51.boolean(*var_52);
     }
+    #[allow(unused_mut)]
+    let mut scope_53 = writer.prefix("OnStackFailure");
+    if let Some(var_54) = &input.on_stack_failure {
+        scope_53.string(var_54.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

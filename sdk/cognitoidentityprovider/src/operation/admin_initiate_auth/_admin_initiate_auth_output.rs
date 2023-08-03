@@ -2,7 +2,7 @@
 
 /// <p>Initiates the authentication response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminInitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
@@ -76,6 +76,17 @@ impl AdminInitiateAuthOutput {
         self.authentication_result.as_ref()
     }
 }
+impl ::std::fmt::Debug for AdminInitiateAuthOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AdminInitiateAuthOutput");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for AdminInitiateAuthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -91,9 +102,7 @@ impl AdminInitiateAuthOutput {
 
 /// A builder for [`AdminInitiateAuthOutput`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminInitiateAuthOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
@@ -215,5 +224,16 @@ impl AdminInitiateAuthOutputBuilder {
             authentication_result: self.authentication_result,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for AdminInitiateAuthOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AdminInitiateAuthOutputBuilder");
+        formatter.field("challenge_name", &self.challenge_name);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("challenge_parameters", &self.challenge_parameters);
+        formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

@@ -40,6 +40,9 @@ pub struct UpdateApplicationInput {
             crate::types::WorkerTypeSpecificationInput,
         >,
     >,
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    #[doc(hidden)]
+    pub release_label: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -101,6 +104,10 @@ impl UpdateApplicationInput {
     > {
         self.worker_type_specifications.as_ref()
     }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn release_label(&self) -> ::std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -133,6 +140,7 @@ pub struct UpdateApplicationInputBuilder {
             crate::types::WorkerTypeSpecificationInput,
         >,
     >,
+    pub(crate) release_label: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
@@ -292,6 +300,22 @@ impl UpdateApplicationInputBuilder {
         self.worker_type_specifications = input;
         self
     }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn release_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.release_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
+    pub fn set_release_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.release_label = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -311,6 +335,7 @@ impl UpdateApplicationInputBuilder {
                 architecture: self.architecture,
                 image_configuration: self.image_configuration,
                 worker_type_specifications: self.worker_type_specifications,
+                release_label: self.release_label,
             },
         )
     }

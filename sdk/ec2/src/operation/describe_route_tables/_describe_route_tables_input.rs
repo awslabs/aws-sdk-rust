@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -37,7 +37,7 @@ pub struct DescribeRouteTablesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     #[doc(hidden)]
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,7 +49,7 @@ pub struct DescribeRouteTablesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeRouteTablesInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -85,7 +85,7 @@ impl DescribeRouteTablesInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.route_table_ids.as_deref()
@@ -125,7 +125,7 @@ impl DescribeRouteTablesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -160,7 +160,7 @@ impl DescribeRouteTablesInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -210,7 +210,7 @@ impl DescribeRouteTablesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     pub fn route_table_ids(
         mut self,
@@ -221,7 +221,7 @@ impl DescribeRouteTablesInputBuilder {
         self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     pub fn set_route_table_ids(
         mut self,

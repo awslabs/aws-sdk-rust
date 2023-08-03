@@ -149,6 +149,8 @@ pub type StartSavingsPlansPurchaseRecommendationGenerationErrorKind =
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartSavingsPlansPurchaseRecommendationGenerationError {
+    /// <p>The requested data is unavailable.</p>
+    DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>A request to generate a recommendation is already in progress.</p>
     GenerationExistsException(crate::types::error::GenerationExistsException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
@@ -177,6 +179,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError
 impl ::std::fmt::Display for StartSavingsPlansPurchaseRecommendationGenerationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DataUnavailableException(_inner) => _inner.fmt(f),
             Self::GenerationExistsException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -189,6 +192,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
 {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DataUnavailableException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::GenerationExistsException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -251,11 +257,16 @@ impl StartSavingsPlansPurchaseRecommendationGenerationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::DataUnavailableException(e) => e.meta(),
             Self::GenerationExistsException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `StartSavingsPlansPurchaseRecommendationGenerationError::DataUnavailableException`.
+    pub fn is_data_unavailable_exception(&self) -> bool {
+        matches!(self, Self::DataUnavailableException(_))
     }
     /// Returns `true` if the error kind is `StartSavingsPlansPurchaseRecommendationGenerationError::GenerationExistsException`.
     pub fn is_generation_exists_exception(&self) -> bool {
@@ -273,6 +284,7 @@ impl StartSavingsPlansPurchaseRecommendationGenerationError {
 impl ::std::error::Error for StartSavingsPlansPurchaseRecommendationGenerationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DataUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::GenerationExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),

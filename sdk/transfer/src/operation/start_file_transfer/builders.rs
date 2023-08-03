@@ -5,7 +5,15 @@ pub use crate::operation::start_file_transfer::_start_file_transfer_input::Start
 
 /// Fluent builder constructing a request to `StartFileTransfer`.
 ///
-/// <p>Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>
+/// <p>Begins a file transfer between local Amazon Web Services storage and a remote AS2 or SFTP server.</p>
+/// <ul>
+/// <li> <p>For an AS2 connector, you specify the <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to identify the files you want to transfer.</p> </li>
+/// <li> <p>For an SFTP connector, the file transfer can be either outbound or inbound. In both cases, you specify the <code>ConnectorId</code>. Depending on the direction of the transfer, you also specify the following items:</p>
+/// <ul>
+/// <li> <p>If you are transferring file from a partner's SFTP server to a Transfer Family server, you specify one or more <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
+/// <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web Services storage, you specify one or more <code>SendFilePaths</code> to identify the files you want to transfer, and a <code>RemoteDirectoryPath</code> to specify the destination folder.</p> </li>
+/// </ul> </li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartFileTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +107,12 @@ impl StartFileTransferFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_id(input.into());
         self
     }
-    /// <p>The unique identifier for the connector. </p>
+    /// <p>The unique identifier for the connector.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_id(input);
         self
@@ -113,7 +121,7 @@ impl StartFileTransferFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
     ///
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     pub fn send_file_paths(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -121,12 +129,64 @@ impl StartFileTransferFluentBuilder {
         self.inner = self.inner.send_file_paths(input.into());
         self
     }
-    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
     pub fn set_send_file_paths(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_send_file_paths(input);
+        self
+    }
+    /// Appends an item to `RetrieveFilePaths`.
+    ///
+    /// To override the contents of this collection use [`set_retrieve_file_paths`](Self::set_retrieve_file_paths).
+    ///
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn retrieve_file_paths(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.retrieve_file_paths(input.into());
+        self
+    }
+    /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
+    pub fn set_retrieve_file_paths(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_retrieve_file_paths(input);
+        self
+    }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn local_directory_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.local_directory_path(input.into());
+        self
+    }
+    /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
+    pub fn set_local_directory_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_local_directory_path(input);
+        self
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn remote_directory_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.remote_directory_path(input.into());
+        self
+    }
+    /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
+    pub fn set_remote_directory_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_remote_directory_path(input);
         self
     }
 }

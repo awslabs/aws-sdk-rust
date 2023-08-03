@@ -31,6 +31,9 @@ pub mod export_forms;
 /// Types for the `ExportThemes` operation.
 pub mod export_themes;
 
+/// Types for the `GetCodegenJob` operation.
+pub mod get_codegen_job;
+
 /// Types for the `GetComponent` operation.
 pub mod get_component;
 
@@ -42,6 +45,9 @@ pub mod get_metadata;
 
 /// Types for the `GetTheme` operation.
 pub mod get_theme;
+
+/// Types for the `ListCodegenJobs` operation.
+pub mod list_codegen_jobs;
 
 /// Types for the `ListComponents` operation.
 pub mod list_components;
@@ -57,6 +63,9 @@ pub mod put_metadata_flag;
 
 /// Types for the `RefreshToken` operation.
 pub mod refresh_token;
+
+/// Types for the `StartCodegenJob` operation.
+pub mod start_codegen_job;
 
 /// Types for the `UpdateComponent` operation.
 pub mod update_component;

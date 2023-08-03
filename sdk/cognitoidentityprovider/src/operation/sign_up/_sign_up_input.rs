@@ -108,7 +108,7 @@ impl ::std::fmt::Debug for SignUpInput {
         formatter.field("user_attributes", &self.user_attributes);
         formatter.field("validation_data", &self.validation_data);
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }
@@ -316,7 +316,7 @@ impl ::std::fmt::Debug for SignUpInputBuilder {
         formatter.field("user_attributes", &self.user_attributes);
         formatter.field("validation_data", &self.validation_data);
         formatter.field("analytics_metadata", &self.analytics_metadata);
-        formatter.field("user_context_data", &self.user_context_data);
+        formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
         formatter.finish()
     }

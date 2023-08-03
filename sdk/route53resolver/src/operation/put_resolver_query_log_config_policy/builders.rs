@@ -87,7 +87,6 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// <ul>
     /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
     /// <li> <p> <code>route53resolver:DisassociateResolverQueryLogConfig</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigAssociations</code> </p> </li>
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
@@ -102,7 +101,6 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// <ul>
     /// <li> <p> <code>route53resolver:AssociateResolverQueryLogConfig</code> </p> </li>
     /// <li> <p> <code>route53resolver:DisassociateResolverQueryLogConfig</code> </p> </li>
-    /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigAssociations</code> </p> </li>
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>

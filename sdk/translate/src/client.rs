@@ -270,6 +270,8 @@ mod stop_text_translation_job;
 
 mod tag_resource;
 
+mod translate_document;
+
 mod translate_text;
 
 mod untag_resource;

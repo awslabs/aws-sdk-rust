@@ -44,6 +44,9 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    #[doc(hidden)]
+    pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<
@@ -112,6 +115,10 @@ impl CreateReplicationConfigurationTemplateInput {
     > {
         self.staging_area_tags.as_ref()
     }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_fips_endpoint
+    }
     /// <p>Request to configure tags during Replication Settings template creation.</p>
     pub fn tags(
         &self,
@@ -151,6 +158,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -184,6 +192,7 @@ pub struct CreateReplicationConfigurationTemplateInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
@@ -382,6 +391,16 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.use_fips_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_fips_endpoint = input;
+        self
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -436,6 +455,8 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
                 ,
                 staging_area_tags: self.staging_area_tags
                 ,
+                use_fips_endpoint: self.use_fips_endpoint
+                ,
                 tags: self.tags
                 ,
             }
@@ -472,6 +493,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInputBuilder {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

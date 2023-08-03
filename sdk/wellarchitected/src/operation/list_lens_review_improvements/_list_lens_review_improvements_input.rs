@@ -27,6 +27,9 @@ pub struct ListLensReviewImprovementsInput {
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The priority of the question.</p>
+    #[doc(hidden)]
+    pub question_priority: ::std::option::Option<crate::types::QuestionPriority>,
 }
 impl ListLensReviewImprovementsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -58,6 +61,10 @@ impl ListLensReviewImprovementsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The priority of the question.</p>
+    pub fn question_priority(&self) -> ::std::option::Option<&crate::types::QuestionPriority> {
+        self.question_priority.as_ref()
+    }
 }
 impl ListLensReviewImprovementsInput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
@@ -78,6 +85,7 @@ pub struct ListLensReviewImprovementsInputBuilder {
     pub(crate) milestone_number: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) question_priority: ::std::option::Option<crate::types::QuestionPriority>,
 }
 impl ListLensReviewImprovementsInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -150,6 +158,19 @@ impl ListLensReviewImprovementsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The priority of the question.</p>
+    pub fn question_priority(mut self, input: crate::types::QuestionPriority) -> Self {
+        self.question_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The priority of the question.</p>
+    pub fn set_question_priority(
+        mut self,
+        input: ::std::option::Option<crate::types::QuestionPriority>,
+    ) -> Self {
+        self.question_priority = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
     pub fn build(
         self,
@@ -165,6 +186,7 @@ impl ListLensReviewImprovementsInputBuilder {
                 milestone_number: self.milestone_number,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                question_priority: self.question_priority,
             },
         )
     }

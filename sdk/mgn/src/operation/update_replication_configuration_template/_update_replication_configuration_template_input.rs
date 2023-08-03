@@ -50,6 +50,9 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     pub staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Update replication configuration template use Fips Endpoint request.</p>
+    #[doc(hidden)]
+    pub use_fips_endpoint: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
@@ -121,6 +124,10 @@ impl UpdateReplicationConfigurationTemplateInput {
     > {
         self.staging_area_tags.as_ref()
     }
+    /// <p>Update replication configuration template use Fips Endpoint request.</p>
+    pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_fips_endpoint
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -157,6 +164,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.finish()
     }
 }
@@ -191,6 +199,7 @@ pub struct UpdateReplicationConfigurationTemplateInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationTemplateInputBuilder {
     /// <p>Update replication configuration template template ID request.</p>
@@ -412,6 +421,16 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>Update replication configuration template use Fips Endpoint request.</p>
+    pub fn use_fips_endpoint(mut self, input: bool) -> Self {
+        self.use_fips_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration template use Fips Endpoint request.</p>
+    pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_fips_endpoint = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateInput`](crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -444,6 +463,8 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
                 create_public_ip: self.create_public_ip
                 ,
                 staging_area_tags: self.staging_area_tags
+                ,
+                use_fips_endpoint: self.use_fips_endpoint
                 ,
             }
         )
@@ -484,6 +505,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInputBuilder {
         formatter.field("data_plane_routing", &self.data_plane_routing);
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.finish()
     }
 }

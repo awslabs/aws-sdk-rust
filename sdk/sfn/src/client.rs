@@ -216,6 +216,8 @@ mod create_activity;
 
 mod create_state_machine;
 
+mod create_state_machine_alias;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -248,6 +250,10 @@ mod delete_activity;
 
 mod delete_state_machine;
 
+mod delete_state_machine_alias;
+
+mod delete_state_machine_version;
+
 mod describe_activity;
 
 mod describe_execution;
@@ -255,6 +261,8 @@ mod describe_execution;
 mod describe_map_run;
 
 mod describe_state_machine;
+
+mod describe_state_machine_alias;
 
 mod describe_state_machine_for_execution;
 
@@ -268,9 +276,15 @@ mod list_executions;
 
 mod list_map_runs;
 
+mod list_state_machine_aliases;
+
+mod list_state_machine_versions;
+
 mod list_state_machines;
 
 mod list_tags_for_resource;
+
+mod publish_state_machine_version;
 
 mod send_task_failure;
 
@@ -291,3 +305,5 @@ mod untag_resource;
 mod update_map_run;
 
 mod update_state_machine;
+
+mod update_state_machine_alias;

@@ -88,6 +88,10 @@ pub struct Job {
     #[doc(hidden)]
     pub scheduled_job_rollouts:
         ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    #[doc(hidden)]
+    pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -204,6 +208,11 @@ impl Job {
     ) -> ::std::option::Option<&[crate::types::ScheduledJobRollout]> {
         self.scheduled_job_rollouts.as_deref()
     }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.destination_package_versions.as_deref()
+    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::types::Job).
@@ -247,6 +256,8 @@ pub struct JobBuilder {
     pub(crate) scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     pub(crate) scheduled_job_rollouts:
         ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
+    pub(crate) destination_package_versions:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobBuilder {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -583,6 +594,30 @@ impl JobBuilder {
         self.scheduled_job_rollouts = input;
         self
     }
+    /// Appends an item to `destination_package_versions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.destination_package_versions.unwrap_or_default();
+        v.push(input.into());
+        self.destination_package_versions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.destination_package_versions = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -610,6 +645,7 @@ impl JobBuilder {
             is_concurrent: self.is_concurrent,
             scheduling_config: self.scheduling_config,
             scheduled_job_rollouts: self.scheduled_job_rollouts,
+            destination_package_versions: self.destination_package_versions,
         }
     }
 }

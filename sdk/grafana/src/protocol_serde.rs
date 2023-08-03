@@ -32,6 +32,8 @@ pub(crate) mod shape_list_permissions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_versions;
+
 pub(crate) mod shape_list_workspaces;
 
 pub(crate) mod shape_tag_resource;
@@ -83,6 +85,8 @@ pub(crate) mod shape_update_workspace_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_authentication_description;
+
+pub(crate) mod shape_grafana_version_list;
 
 pub(crate) mod shape_network_access_configuration;
 

@@ -42,5 +42,8 @@ pub fn ser_title_aggregation(
     if let Some(var_11) = &input.sort_by {
         object.key("sortBy").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.finding_type {
+        object.key("findingType").string(var_12.as_str());
+    }
     Ok(())
 }

@@ -142,6 +142,8 @@ pub(crate) mod shape_put_configuration_set_vdm_options;
 
 pub(crate) mod shape_put_dedicated_ip_in_pool;
 
+pub(crate) mod shape_put_dedicated_ip_pool_scaling_attributes;
+
 pub(crate) mod shape_put_dedicated_ip_warmup_attributes;
 
 pub(crate) mod shape_put_deliverability_dashboard_option;
@@ -265,6 +267,8 @@ pub(crate) mod shape_put_configuration_set_tracking_options_input;
 pub(crate) mod shape_put_configuration_set_vdm_options_input;
 
 pub(crate) mod shape_put_dedicated_ip_in_pool_input;
+
+pub(crate) mod shape_put_dedicated_ip_pool_scaling_attributes_input;
 
 pub(crate) mod shape_put_dedicated_ip_warmup_attributes_input;
 

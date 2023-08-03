@@ -43,31 +43,31 @@ impl DeleteSubscriberInput {
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/v1/subscribers").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::delete_subscriber::DeleteSubscriberInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.id;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                let input_1 = &_input.subscriber_id;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
                     ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "id",
+                        "subscriber_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_1.is_empty() {
+                let subscriber_id = ::aws_smithy_http::label::fmt_string(
+                    input_1,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
+                );
+                if subscriber_id.is_empty() {
                     return ::std::result::Result::Err(
                         ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
+                            "subscriber_id",
                             "cannot be empty or unset",
                         ),
                     );
                 }
-                query.push_kv("id", &::aws_smithy_http::query::fmt_string(&inner_1));
+                ::std::write!(
+                    output,
+                    "/v1/subscribers/{subscriberId}",
+                    subscriberId = subscriber_id
+                )
+                .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -80,7 +80,6 @@ impl DeleteSubscriberInput {
             > {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
@@ -181,20 +180,16 @@ pub type DeleteSubscriberErrorKind = DeleteSubscriberError;
 pub enum DeleteSubscriberError {
     /// <p>You do not have sufficient access to perform this action. Access denied errors appear when Amazon Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs when there is no applicable Deny statement and also no applicable Allow statement.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
-    AccountNotFoundException(crate::types::error::AccountNotFoundException),
-    /// <p>Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.</p>
-    BucketNotFoundException(crate::types::error::BucketNotFoundException),
-    /// <p>More than one process tried to modify a resource at the same time. </p>
-    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting, perform the operation again. </p>
+    /// <p>The request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequestException(crate::types::error::BadRequestException),
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting, perform the operation again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was rejected because a value that's not valid or is out of range was supplied for an input parameter. </p>
-    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Your signing certificate could not be validated. </p>
-    ValidationException(crate::types::error::ValidationException),
+    /// <p>The limit on the number of requests per second was exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -216,13 +211,11 @@ impl ::std::fmt::Display for DeleteSubscriberError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::AccountNotFoundException(_inner) => _inner.fmt(f),
-            Self::BucketNotFoundException(_inner) => _inner.fmt(f),
-            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -233,25 +226,19 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteSubscri
             Self::AccessDeniedException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::AccountNotFoundException(_inner) => {
+            Self::BadRequestException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::BucketNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ConcurrentModificationException(_inner) => {
+            Self::ConflictException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::InvalidInputException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
             Self::ResourceNotFoundException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
-            Self::ValidationException(_inner) => {
+            Self::ThrottlingException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -273,10 +260,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteSubscriberError {
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
-            Self::ConcurrentModificationException(inner) => {
+            Self::InternalServerException(inner) => {
                 ::std::option::Option::Some(inner.retryable_error_kind())
             }
-            Self::InternalServerException(inner) => {
+            Self::ThrottlingException(inner) => {
                 ::std::option::Option::Some(inner.retryable_error_kind())
             }
             _ => ::std::option::Option::None,
@@ -316,13 +303,11 @@ impl DeleteSubscriberError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
-            Self::AccountNotFoundException(e) => e.meta(),
-            Self::BucketNotFoundException(e) => e.meta(),
-            Self::ConcurrentModificationException(e) => e.meta(),
+            Self::BadRequestException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
-            Self::InvalidInputException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
-            Self::ValidationException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -330,46 +315,36 @@ impl DeleteSubscriberError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `DeleteSubscriberError::AccountNotFoundException`.
-    pub fn is_account_not_found_exception(&self) -> bool {
-        matches!(self, Self::AccountNotFoundException(_))
+    /// Returns `true` if the error kind is `DeleteSubscriberError::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(self, Self::BadRequestException(_))
     }
-    /// Returns `true` if the error kind is `DeleteSubscriberError::BucketNotFoundException`.
-    pub fn is_bucket_not_found_exception(&self) -> bool {
-        matches!(self, Self::BucketNotFoundException(_))
-    }
-    /// Returns `true` if the error kind is `DeleteSubscriberError::ConcurrentModificationException`.
-    pub fn is_concurrent_modification_exception(&self) -> bool {
-        matches!(self, Self::ConcurrentModificationException(_))
+    /// Returns `true` if the error kind is `DeleteSubscriberError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteSubscriberError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
-    /// Returns `true` if the error kind is `DeleteSubscriberError::InvalidInputException`.
-    pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(self, Self::InvalidInputException(_))
-    }
     /// Returns `true` if the error kind is `DeleteSubscriberError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
-    /// Returns `true` if the error kind is `DeleteSubscriberError::ValidationException`.
-    pub fn is_validation_exception(&self) -> bool {
-        matches!(self, Self::ValidationException(_))
+    /// Returns `true` if the error kind is `DeleteSubscriberError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
     }
 }
 impl ::std::error::Error for DeleteSubscriberError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::AccountNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::BucketNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

@@ -13,6 +13,7 @@
 /// # let stackinstancefiltername = unimplemented!();
 /// match stackinstancefiltername {
 ///     StackInstanceFilterName::DetailedStatus => { /* ... */ },
+///     StackInstanceFilterName::DriftStatus => { /* ... */ },
 ///     StackInstanceFilterName::LastOperationId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum StackInstanceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DetailedStatus,
     #[allow(missing_docs)] // documentation missing in model
+    DriftStatus,
+    #[allow(missing_docs)] // documentation missing in model
     LastOperationId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for StackInstanceFilterName {
     fn from(s: &str) -> Self {
         match s {
             "DETAILED_STATUS" => StackInstanceFilterName::DetailedStatus,
+            "DRIFT_STATUS" => StackInstanceFilterName::DriftStatus,
             "LAST_OPERATION_ID" => StackInstanceFilterName::LastOperationId,
             other => StackInstanceFilterName::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -77,13 +81,14 @@ impl StackInstanceFilterName {
     pub fn as_str(&self) -> &str {
         match self {
             StackInstanceFilterName::DetailedStatus => "DETAILED_STATUS",
+            StackInstanceFilterName::DriftStatus => "DRIFT_STATUS",
             StackInstanceFilterName::LastOperationId => "LAST_OPERATION_ID",
             StackInstanceFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DETAILED_STATUS", "LAST_OPERATION_ID"]
+        &["DETAILED_STATUS", "DRIFT_STATUS", "LAST_OPERATION_ID"]
     }
 }
 impl ::std::convert::AsRef<str> for StackInstanceFilterName {

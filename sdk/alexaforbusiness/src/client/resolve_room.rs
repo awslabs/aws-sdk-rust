@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`room_name(Option<String>)`](crate::operation::resolve_room::ResolveRoomOutput::room_name): <p>The name of the room from which the skill request was invoked.</p>
     ///   - [`room_skill_parameters(Option<Vec<RoomSkillParameter>>)`](crate::operation::resolve_room::ResolveRoomOutput::room_skill_parameters): <p>Response to get the room profile request. Required.</p>
     /// - On failure, responds with [`SdkError<ResolveRoomError>`](crate::operation::resolve_room::ResolveRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn resolve_room(
         &self,
     ) -> crate::operation::resolve_room::builders::ResolveRoomFluentBuilder {

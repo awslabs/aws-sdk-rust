@@ -53,6 +53,10 @@ pub use crate::types::_invitation::Invitation;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
 
+pub use crate::types::_automation_rules_metadata::AutomationRulesMetadata;
+
+pub use crate::types::_rule_status::RuleStatus;
+
 pub use crate::types::_result::Result;
 
 pub use crate::types::_insight::Insight;
@@ -136,6 +140,76 @@ pub use crate::types::_compliance_status::ComplianceStatus;
 pub use crate::types::_resource::Resource;
 
 pub use crate::types::_resource_details::ResourceDetails;
+
+pub use crate::types::_aws_athena_work_group_details::AwsAthenaWorkGroupDetails;
+
+pub use crate::types::_aws_athena_work_group_configuration_details::AwsAthenaWorkGroupConfigurationDetails;
+
+pub use crate::types::_aws_athena_work_group_configuration_result_configuration_details::AwsAthenaWorkGroupConfigurationResultConfigurationDetails;
+
+pub use crate::types::_aws_athena_work_group_configuration_result_configuration_encryption_configuration_details::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails;
+
+pub use crate::types::_aws_step_function_state_machine_details::AwsStepFunctionStateMachineDetails;
+
+pub use crate::types::_aws_step_function_state_machine_tracing_configuration_details::AwsStepFunctionStateMachineTracingConfigurationDetails;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_details::AwsStepFunctionStateMachineLoggingConfigurationDetails;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_destinations_details::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails;
+
+pub use crate::types::_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails;
+
+pub use crate::types::_aws_guard_duty_detector_details::AwsGuardDutyDetectorDetails;
+
+pub use crate::types::_aws_guard_duty_detector_features_details::AwsGuardDutyDetectorFeaturesDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_details::AwsGuardDutyDetectorDataSourcesDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_s3_logs_details::AwsGuardDutyDetectorDataSourcesS3LogsDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_ebs_volumes_details::AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_kubernetes_details::AwsGuardDutyDetectorDataSourcesKubernetesDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_flow_logs_details::AwsGuardDutyDetectorDataSourcesFlowLogsDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_dns_logs_details::AwsGuardDutyDetectorDataSourcesDnsLogsDetails;
+
+pub use crate::types::_aws_guard_duty_detector_data_sources_cloud_trail_details::AwsGuardDutyDetectorDataSourcesCloudTrailDetails;
+
+pub use crate::types::_aws_event_schemas_registry_details::AwsEventSchemasRegistryDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_details::AwsAppSyncGraphQlApiDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_additional_authentication_providers_details::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_user_pool_config_details::AwsAppSyncGraphQlApiUserPoolConfigDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_open_id_connect_config_details::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails;
+
+pub use crate::types::_aws_app_sync_graph_ql_api_log_config_details::AwsAppSyncGraphQlApiLogConfigDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_details::AwsAmazonMqBrokerDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_users_details::AwsAmazonMqBrokerUsersDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_maintenance_window_start_time_details::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_logs_details::AwsAmazonMqBrokerLogsDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_logs_pending_details::AwsAmazonMqBrokerLogsPendingDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_ldap_server_metadata_details::AwsAmazonMqBrokerLdapServerMetadataDetails;
+
+pub use crate::types::_aws_amazon_mq_broker_encryption_options_details::AwsAmazonMqBrokerEncryptionOptionsDetails;
 
 pub use crate::types::_aws_ec2_route_table_details::AwsEc2RouteTableDetails;
 
@@ -604,6 +678,8 @@ pub use crate::types::_aws_rds_db_cluster_associated_role::AwsRdsDbClusterAssoci
 pub use crate::types::_aws_rds_db_instance_vpc_security_group::AwsRdsDbInstanceVpcSecurityGroup;
 
 pub use crate::types::_aws_rds_db_cluster_snapshot_details::AwsRdsDbClusterSnapshotDetails;
+
+pub use crate::types::_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute;
 
 pub use crate::types::_aws_rds_db_snapshot_details::AwsRdsDbSnapshotDetails;
 
@@ -1157,6 +1233,18 @@ pub use crate::types::_action_target::ActionTarget;
 
 pub use crate::types::_account_details::AccountDetails;
 
+pub use crate::types::_automation_rules_action::AutomationRulesAction;
+
+pub use crate::types::_automation_rules_finding_fields_update::AutomationRulesFindingFieldsUpdate;
+
+pub use crate::types::_workflow_update::WorkflowUpdate;
+
+pub use crate::types::_severity_update::SeverityUpdate;
+
+pub use crate::types::_automation_rules_action_type::AutomationRulesActionType;
+
+pub use crate::types::_automation_rules_finding_filters::AutomationRulesFindingFilters;
+
 pub use crate::types::_unprocessed_standards_control_association_update::UnprocessedStandardsControlAssociationUpdate;
 
 pub use crate::types::_unprocessed_error_code::UnprocessedErrorCode;
@@ -1165,9 +1253,9 @@ pub use crate::types::_standards_control_association_update::StandardsControlAss
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFinding;
 
-pub use crate::types::_workflow_update::WorkflowUpdate;
+pub use crate::types::_unprocessed_automation_rule::UnprocessedAutomationRule;
 
-pub use crate::types::_severity_update::SeverityUpdate;
+pub use crate::types::_update_automation_rules_request_item::UpdateAutomationRulesRequestItem;
 
 pub use crate::types::_import_findings_error::ImportFindingsError;
 
@@ -1180,6 +1268,8 @@ pub use crate::types::_standards_control_association_detail::StandardsControlAss
 pub use crate::types::_unprocessed_security_control::UnprocessedSecurityControl;
 
 pub use crate::types::_security_control::SecurityControl;
+
+pub use crate::types::_automation_rules_config::AutomationRulesConfig;
 
 pub use crate::types::_standards_subscription_request::StandardsSubscriptionRequest;
 
@@ -1213,7 +1303,33 @@ mod _association_status;
 
 mod _auto_enable_standards;
 
+mod _automation_rules_action;
+
+mod _automation_rules_action_type;
+
+mod _automation_rules_config;
+
+mod _automation_rules_finding_fields_update;
+
+mod _automation_rules_finding_filters;
+
+mod _automation_rules_metadata;
+
 mod _availability_zone;
+
+mod _aws_amazon_mq_broker_details;
+
+mod _aws_amazon_mq_broker_encryption_options_details;
+
+mod _aws_amazon_mq_broker_ldap_server_metadata_details;
+
+mod _aws_amazon_mq_broker_logs_details;
+
+mod _aws_amazon_mq_broker_logs_pending_details;
+
+mod _aws_amazon_mq_broker_maintenance_window_start_time_details;
+
+mod _aws_amazon_mq_broker_users_details;
 
 mod _aws_api_call_action;
 
@@ -1236,6 +1352,26 @@ mod _aws_api_gateway_v2_api_details;
 mod _aws_api_gateway_v2_route_settings;
 
 mod _aws_api_gateway_v2_stage_details;
+
+mod _aws_app_sync_graph_ql_api_additional_authentication_providers_details;
+
+mod _aws_app_sync_graph_ql_api_details;
+
+mod _aws_app_sync_graph_ql_api_lambda_authorizer_config_details;
+
+mod _aws_app_sync_graph_ql_api_log_config_details;
+
+mod _aws_app_sync_graph_ql_api_open_id_connect_config_details;
+
+mod _aws_app_sync_graph_ql_api_user_pool_config_details;
+
+mod _aws_athena_work_group_configuration_details;
+
+mod _aws_athena_work_group_configuration_result_configuration_details;
+
+mod _aws_athena_work_group_configuration_result_configuration_encryption_configuration_details;
+
+mod _aws_athena_work_group_details;
 
 mod _aws_auto_scaling_auto_scaling_group_availability_zones_list_details;
 
@@ -1725,6 +1861,32 @@ mod _aws_elbv2_load_balancer_attribute;
 
 mod _aws_elbv2_load_balancer_details;
 
+mod _aws_event_schemas_registry_details;
+
+mod _aws_guard_duty_detector_data_sources_cloud_trail_details;
+
+mod _aws_guard_duty_detector_data_sources_details;
+
+mod _aws_guard_duty_detector_data_sources_dns_logs_details;
+
+mod _aws_guard_duty_detector_data_sources_flow_logs_details;
+
+mod _aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details;
+
+mod _aws_guard_duty_detector_data_sources_kubernetes_details;
+
+mod _aws_guard_duty_detector_data_sources_malware_protection_details;
+
+mod _aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_details;
+
+mod _aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_ebs_volumes_details;
+
+mod _aws_guard_duty_detector_data_sources_s3_logs_details;
+
+mod _aws_guard_duty_detector_details;
+
+mod _aws_guard_duty_detector_features_details;
+
 mod _aws_iam_access_key_details;
 
 mod _aws_iam_access_key_session_context;
@@ -1824,6 +1986,8 @@ mod _aws_rds_db_cluster_details;
 mod _aws_rds_db_cluster_member;
 
 mod _aws_rds_db_cluster_option_group_membership;
+
+mod _aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute;
 
 mod _aws_rds_db_cluster_snapshot_details;
 
@@ -1986,6 +2150,16 @@ mod _aws_ssm_compliance_summary;
 mod _aws_ssm_patch;
 
 mod _aws_ssm_patch_compliance_details;
+
+mod _aws_step_function_state_machine_details;
+
+mod _aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details;
+
+mod _aws_step_function_state_machine_logging_configuration_destinations_details;
+
+mod _aws_step_function_state_machine_logging_configuration_details;
+
+mod _aws_step_function_state_machine_tracing_configuration_details;
 
 mod _aws_waf_rate_based_rule_details;
 
@@ -2263,6 +2437,8 @@ mod _rule_group_variables_ip_sets_details;
 
 mod _rule_group_variables_port_sets_details;
 
+mod _rule_status;
+
 mod _security_control;
 
 mod _security_control_definition;
@@ -2329,6 +2505,8 @@ mod _threat_intel_indicator_category;
 
 mod _threat_intel_indicator_type;
 
+mod _unprocessed_automation_rule;
+
 mod _unprocessed_error_code;
 
 mod _unprocessed_security_control;
@@ -2336,6 +2514,8 @@ mod _unprocessed_security_control;
 mod _unprocessed_standards_control_association;
 
 mod _unprocessed_standards_control_association_update;
+
+mod _update_automation_rules_request_item;
 
 mod _verification_state;
 

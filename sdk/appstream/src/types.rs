@@ -75,9 +75,21 @@ pub use crate::types::_application::Application;
 
 pub use crate::types::_application_attribute::ApplicationAttribute;
 
-pub use crate::types::_image_builder::ImageBuilder;
+pub use crate::types::_app_block_builder::AppBlockBuilder;
+
+pub use crate::types::_app_block_builder_state_change_reason::AppBlockBuilderStateChangeReason;
+
+pub use crate::types::_app_block_builder_state_change_reason_code::AppBlockBuilderStateChangeReasonCode;
 
 pub use crate::types::_resource_error::ResourceError;
+
+pub use crate::types::_app_block_builder_state::AppBlockBuilderState;
+
+pub use crate::types::_app_block_builder_platform_type::AppBlockBuilderPlatformType;
+
+pub use crate::types::_app_block_builder_attribute::AppBlockBuilderAttribute;
+
+pub use crate::types::_image_builder::ImageBuilder;
 
 pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
 
@@ -125,7 +137,15 @@ pub use crate::types::_application_fleet_association::ApplicationFleetAssociatio
 
 pub use crate::types::_app_block::AppBlock;
 
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_app_block_state::AppBlockState;
+
+pub use crate::types::_packaging_type::PackagingType;
+
 pub use crate::types::_script_details::ScriptDetails;
+
+pub use crate::types::_app_block_builder_app_block_association::AppBlockBuilderAppBlockAssociation;
 
 pub use crate::types::_message_action::MessageAction;
 
@@ -140,6 +160,22 @@ mod _access_endpoint_type;
 mod _action;
 
 mod _app_block;
+
+mod _app_block_builder;
+
+mod _app_block_builder_app_block_association;
+
+mod _app_block_builder_attribute;
+
+mod _app_block_builder_platform_type;
+
+mod _app_block_builder_state;
+
+mod _app_block_builder_state_change_reason;
+
+mod _app_block_builder_state_change_reason_code;
+
+mod _app_block_state;
 
 mod _app_visibility;
 
@@ -172,6 +208,8 @@ mod _entitled_application;
 mod _entitlement;
 
 mod _entitlement_attribute;
+
+mod _error_details;
 
 mod _fleet;
 
@@ -208,6 +246,8 @@ mod _last_report_generation_execution_error;
 mod _message_action;
 
 mod _network_access_configuration;
+
+mod _packaging_type;
 
 mod _permission;
 

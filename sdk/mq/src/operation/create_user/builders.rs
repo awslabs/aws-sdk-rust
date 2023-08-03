@@ -5,7 +5,9 @@ pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilde
 
 /// Fluent builder constructing a request to `CreateUser`.
 ///
-/// <p>Creates an ActiveMQ user.</p>
+/// <p>Creates an ActiveMQ user.</p> <important>
+/// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -146,6 +148,16 @@ impl CreateUserFluentBuilder {
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
+        self
+    }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn replication_user(mut self, input: bool) -> Self {
+        self.inner = self.inner.replication_user(input);
+        self
+    }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_replication_user(input);
         self
     }
 }

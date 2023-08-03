@@ -105,6 +105,14 @@ impl GetRecordInput {
                         }
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.expiration_time_response {
+                    {
+                        query.push_kv(
+                            "ExpirationTimeResponse",
+                            &::aws_smithy_http::query::fmt_string(&inner_5),
+                        );
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

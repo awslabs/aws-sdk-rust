@@ -10,6 +10,11 @@ pub struct BatchStatementError {
     /// <p> The error message associated with the PartiQL batch response. </p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+    #[doc(hidden)]
+    pub item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    >,
 }
 impl BatchStatementError {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
@@ -19,6 +24,14 @@ impl BatchStatementError {
     /// <p> The error message associated with the PartiQL batch response. </p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
+    }
+    /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+    pub fn item(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        self.item.as_ref()
     }
 }
 impl BatchStatementError {
@@ -36,6 +49,9 @@ impl BatchStatementError {
 pub struct BatchStatementErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    >,
 }
 impl BatchStatementErrorBuilder {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
@@ -61,11 +77,37 @@ impl BatchStatementErrorBuilder {
         self.message = input;
         self
     }
+    /// Adds a key-value pair to `item`.
+    ///
+    /// To override the contents of this collection use [`set_item`](Self::set_item).
+    ///
+    /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+    pub fn item(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::AttributeValue,
+    ) -> Self {
+        let mut hash_map = self.item.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.item = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+    pub fn set_item(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+        >,
+    ) -> Self {
+        self.item = input;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchStatementError`](crate::types::BatchStatementError).
     pub fn build(self) -> crate::types::BatchStatementError {
         crate::types::BatchStatementError {
             code: self.code,
             message: self.message,
+            item: self.item,
         }
     }
 }

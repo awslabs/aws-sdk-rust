@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
     ///   - [`device(Option<Device>)`](crate::operation::get_device::GetDeviceOutput::device): <p>The details of the device requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn get_device(&self) -> crate::operation::get_device::builders::GetDeviceFluentBuilder {
         crate::operation::get_device::builders::GetDeviceFluentBuilder::new(self.handle.clone())
     }

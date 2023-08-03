@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Comprehend Medical; extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents.
+Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see [Guidelines and quotas](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html) in the _Amazon Comprehend Medical Developer Guide_.
 
 ## Getting Started
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-comprehendmedical = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-comprehendmedical = "0.29.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

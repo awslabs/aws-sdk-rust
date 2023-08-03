@@ -19,6 +19,9 @@ pub struct TitleAggregation {
     /// <p>The value to sort results by.</p>
     #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::TitleSortBy>,
+    /// <p>The type of finding to aggregate on.</p>
+    #[doc(hidden)]
+    pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
 }
 impl TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
@@ -41,6 +44,10 @@ impl TitleAggregation {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TitleSortBy> {
         self.sort_by.as_ref()
     }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
+        self.finding_type.as_ref()
+    }
 }
 impl TitleAggregation {
     /// Creates a new builder-style object to manufacture [`TitleAggregation`](crate::types::TitleAggregation).
@@ -61,6 +68,7 @@ pub struct TitleAggregationBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::TitleSortBy>,
+    pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
 }
 impl TitleAggregationBuilder {
     /// Appends an item to `titles`.
@@ -134,6 +142,19 @@ impl TitleAggregationBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn finding_type(mut self, input: crate::types::AggregationFindingType) -> Self {
+        self.finding_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of finding to aggregate on.</p>
+    pub fn set_finding_type(
+        mut self,
+        input: ::std::option::Option<crate::types::AggregationFindingType>,
+    ) -> Self {
+        self.finding_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TitleAggregation`](crate::types::TitleAggregation).
     pub fn build(self) -> crate::types::TitleAggregation {
         crate::types::TitleAggregation {
@@ -142,6 +163,7 @@ impl TitleAggregationBuilder {
             resource_type: self.resource_type,
             sort_order: self.sort_order,
             sort_by: self.sort_by,
+            finding_type: self.finding_type,
         }
     }
 }

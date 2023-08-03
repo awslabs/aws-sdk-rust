@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_device_arn): <p>The ARN of the device for which to request details.</p>
     /// - On success, responds with [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::operation::delete_device::DeleteDeviceError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_device(
         &self,
     ) -> crate::operation::delete_device::builders::DeleteDeviceFluentBuilder {

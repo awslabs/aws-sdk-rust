@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAttendeeOutput`](crate::operation::get_attendee::GetAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::operation::get_attendee::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
     /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::operation::get_attendee::GetAttendeeError)
+    #[deprecated(note = "Replaced by GetAttendee in the Amazon Chime SDK Meetings Namespace")]
     pub fn get_attendee(
         &self,
     ) -> crate::operation::get_attendee::builders::GetAttendeeFluentBuilder {

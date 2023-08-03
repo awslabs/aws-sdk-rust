@@ -9,7 +9,7 @@ pub struct ListUserPoolsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListUserPoolsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -17,7 +17,7 @@ impl ListUserPoolsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -67,7 +67,7 @@ impl ListUserPoolsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_user_pools::ListUserPoolsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

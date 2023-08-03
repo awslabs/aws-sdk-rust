@@ -13,10 +13,11 @@ pub struct CanSignal {
     /// <p>Whether the message data is specified as a signed value.</p>
     #[doc(hidden)]
     pub is_signed: bool,
-    /// <p>Indicates the beginning of the CAN message.</p>
+    /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+    /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
     #[doc(hidden)]
     pub start_bit: i32,
-    /// <p>Indicates where data appears in the CAN message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
     #[doc(hidden)]
     pub offset: ::std::option::Option<f64>,
     /// <p>A multiplier used to decode the CAN message.</p>
@@ -42,11 +43,12 @@ impl CanSignal {
     pub fn is_signed(&self) -> bool {
         self.is_signed
     }
-    /// <p>Indicates the beginning of the CAN message.</p>
+    /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+    /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
     pub fn start_bit(&self) -> i32 {
         self.start_bit
     }
-    /// <p>Indicates where data appears in the CAN message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
     pub fn offset(&self) -> ::std::option::Option<f64> {
         self.offset
     }
@@ -116,22 +118,24 @@ impl CanSignalBuilder {
         self.is_signed = input;
         self
     }
-    /// <p>Indicates the beginning of the CAN message.</p>
+    /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+    /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
     pub fn start_bit(mut self, input: i32) -> Self {
         self.start_bit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the beginning of the CAN message.</p>
+    /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+    /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
     pub fn set_start_bit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_bit = input;
         self
     }
-    /// <p>Indicates where data appears in the CAN message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
     pub fn offset(mut self, input: f64) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates where data appears in the CAN message.</p>
+    /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
         self.offset = input;
         self

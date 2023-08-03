@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_identity_providers_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_ip_access_settings_output_next_token(
+    input: &crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_network_settings_output_next_token(
     input: &crate::operation::list_network_settings::ListNetworkSettingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

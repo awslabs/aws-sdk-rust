@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`ArchiveWaveOutput`](crate::operation::archive_wave::ArchiveWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::archive_wave::ArchiveWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::archive_wave::ArchiveWaveOutput::arn): <p>Wave ARN.</p>

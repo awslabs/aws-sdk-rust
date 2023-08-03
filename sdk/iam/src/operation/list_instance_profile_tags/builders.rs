@@ -100,6 +100,15 @@ impl ListInstanceProfileTagsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator
+    {
+        crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn instance_profile_name(

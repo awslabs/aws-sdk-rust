@@ -24,12 +24,12 @@ pub struct GetReservationPurchaseRecommendationInput {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -65,7 +65,7 @@ pub struct GetReservationPurchaseRecommendationInput {
     pub service_specification: ::std::option::Option<crate::types::ServiceSpecification>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     #[doc(hidden)]
-    pub page_size: i32,
+    pub page_size: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +94,12 @@ impl GetReservationPurchaseRecommendationInput {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -144,7 +144,7 @@ impl GetReservationPurchaseRecommendationInput {
         self.service_specification.as_ref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    pub fn page_size(&self) -> i32 {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -212,12 +212,12 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -253,12 +253,12 @@ impl GetReservationPurchaseRecommendationInputBuilder {
     /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
     /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
-    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
     /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
     /// </ul> </li>
     /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li> <p>For example, you can filter for linked account names that start with “a”.</p> </li>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
     /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
     /// </ul> </li>
     /// </ul> </li>
@@ -391,7 +391,6 @@ impl GetReservationPurchaseRecommendationInputBuilder {
                 service_specification: self.service_specification
                 ,
                 page_size: self.page_size
-                    .unwrap_or_default()
                 ,
                 next_page_token: self.next_page_token
                 ,

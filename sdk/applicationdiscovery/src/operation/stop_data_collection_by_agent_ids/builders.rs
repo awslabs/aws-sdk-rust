@@ -5,7 +5,7 @@ pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collecti
 
 /// Fluent builder constructing a request to `StopDataCollectionByAgentIds`.
 ///
-/// <p>Instructs the specified agents or connectors to stop collecting data.</p>
+/// <p>Instructs the specified agents to stop collecting data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -103,12 +103,12 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
     ///
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_ids(input.into());
         self
     }
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn set_agent_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

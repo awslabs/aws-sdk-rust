@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_devices::SearchDevicesOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_devices::SearchDevicesOutput::total_count): <p>The total number of devices returned.</p>
     /// - On failure, responds with [`SdkError<SearchDevicesError>`](crate::operation::search_devices::SearchDevicesError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_devices(
         &self,
     ) -> crate::operation::search_devices::builders::SearchDevicesFluentBuilder {

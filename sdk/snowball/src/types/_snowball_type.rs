@@ -16,6 +16,7 @@
 ///     SnowballType::EdgeC => { /* ... */ },
 ///     SnowballType::EdgeCg => { /* ... */ },
 ///     SnowballType::EdgeS => { /* ... */ },
+///     SnowballType::Rack5Uc => { /* ... */ },
 ///     SnowballType::Snc1Hdd => { /* ... */ },
 ///     SnowballType::Snc1Ssd => { /* ... */ },
 ///     SnowballType::Standard => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum SnowballType {
     #[allow(missing_docs)] // documentation missing in model
     EdgeS,
     #[allow(missing_docs)] // documentation missing in model
+    Rack5Uc,
+    #[allow(missing_docs)] // documentation missing in model
     Snc1Hdd,
     #[allow(missing_docs)] // documentation missing in model
     Snc1Ssd,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for SnowballType {
             "EDGE_C" => SnowballType::EdgeC,
             "EDGE_CG" => SnowballType::EdgeCg,
             "EDGE_S" => SnowballType::EdgeS,
+            "RACK_5U_C" => SnowballType::Rack5Uc,
             "SNC1_HDD" => SnowballType::Snc1Hdd,
             "SNC1_SSD" => SnowballType::Snc1Ssd,
             "STANDARD" => SnowballType::Standard,
@@ -108,6 +112,7 @@ impl SnowballType {
             SnowballType::EdgeC => "EDGE_C",
             SnowballType::EdgeCg => "EDGE_CG",
             SnowballType::EdgeS => "EDGE_S",
+            SnowballType::Rack5Uc => "RACK_5U_C",
             SnowballType::Snc1Hdd => "SNC1_HDD",
             SnowballType::Snc1Ssd => "SNC1_SSD",
             SnowballType::Standard => "STANDARD",
@@ -119,7 +124,15 @@ impl SnowballType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C",
+            "EDGE",
+            "EDGE_C",
+            "EDGE_CG",
+            "EDGE_S",
+            "RACK_5U_C",
+            "SNC1_HDD",
+            "SNC1_SSD",
+            "STANDARD",
+            "V3_5C",
             "V3_5S",
         ]
     }

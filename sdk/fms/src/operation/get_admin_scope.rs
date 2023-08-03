@@ -179,6 +179,8 @@ pub enum GetAdminScopeError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -204,6 +206,7 @@ impl ::std::fmt::Display for GetAdminScopeError {
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::InvalidOperationException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -219,6 +222,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetAdminScope
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidOperationException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
@@ -278,6 +284,7 @@ impl GetAdminScopeError {
             Self::InternalErrorException(e) => e.meta(),
             Self::InvalidInputException(e) => e.meta(),
             Self::InvalidOperationException(e) => e.meta(),
+            Self::LimitExceededException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -294,6 +301,10 @@ impl GetAdminScopeError {
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(self, Self::InvalidOperationException(_))
     }
+    /// Returns `true` if the error kind is `GetAdminScopeError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `GetAdminScopeError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -305,6 +316,7 @@ impl ::std::error::Error for GetAdminScopeError {
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

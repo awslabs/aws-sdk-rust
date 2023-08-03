@@ -32,6 +32,8 @@ pub(crate) mod shape_create_presigned_notebook_url;
 
 pub(crate) mod shape_create_work_group;
 
+pub(crate) mod shape_delete_capacity_reservation;
+
 pub(crate) mod shape_delete_data_catalog;
 
 pub(crate) mod shape_delete_named_query;
@@ -173,6 +175,8 @@ pub(crate) mod shape_create_prepared_statement_input;
 pub(crate) mod shape_create_presigned_notebook_url_input;
 
 pub(crate) mod shape_create_work_group_input;
+
+pub(crate) mod shape_delete_capacity_reservation_input;
 
 pub(crate) mod shape_delete_data_catalog_input;
 

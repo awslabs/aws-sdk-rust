@@ -5,7 +5,6 @@ pub use crate::operation::search_queues::_search_queues_input::SearchQueuesInput
 
 /// Fluent builder constructing a request to `SearchQueues`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Searches queues in an Amazon Connect instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchQueuesFluentBuilder {

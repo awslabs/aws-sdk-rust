@@ -69,6 +69,8 @@ pub use crate::types::_clip_range::ClipRangeBuilder;
 
 pub use crate::types::_ad_break::AdBreakBuilder;
 
+pub use crate::types::_key_value_pair::KeyValuePairBuilder;
+
 pub use crate::types::_time_signal_message::TimeSignalMessageBuilder;
 
 pub use crate::types::_segmentation_descriptor::SegmentationDescriptorBuilder;

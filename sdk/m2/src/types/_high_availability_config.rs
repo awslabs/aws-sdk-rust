@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HighAvailabilityConfig {
-    /// <p>The number of instances in a high availability configuration.</p>
+    /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
     #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
 }
 impl HighAvailabilityConfig {
-    /// <p>The number of instances in a high availability configuration.</p>
+    /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
         self.desired_capacity
     }
@@ -30,12 +30,12 @@ pub struct HighAvailabilityConfigBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
 }
 impl HighAvailabilityConfigBuilder {
-    /// <p>The number of instances in a high availability configuration.</p>
+    /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances in a high availability configuration.</p>
+    /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_capacity = input;
         self

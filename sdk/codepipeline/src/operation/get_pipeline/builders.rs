@@ -91,12 +91,12 @@ impl GetPipelineFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self

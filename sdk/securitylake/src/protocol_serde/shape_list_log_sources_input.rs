@@ -3,8 +3,8 @@ pub fn ser_list_log_sources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_log_sources::ListLogSourcesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.input_order {
-        let mut array_2 = object.key("inputOrder").start_array();
+    if let Some(var_1) = &input.accounts {
+        let mut array_2 = object.key("accounts").start_array();
         for item_3 in var_1 {
             {
                 array_2.value().string(item_3.as_str());
@@ -12,62 +12,38 @@ pub fn ser_list_log_sources_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.list_all_dimensions {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("listAllDimensions").start_object();
-        for (key_6, value_7) in var_4 {
-            {
-                #[allow(unused_mut)]
-                let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                for (key_9, value_10) in value_7 {
-                    {
-                        let mut array_11 = object_8.key(key_9.as_str()).start_array();
-                        for item_12 in value_10 {
-                            {
-                                array_11.value().string(item_12.as_str());
-                            }
-                        }
-                        array_11.finish();
-                    }
-                }
-                object_8.finish();
-            }
-        }
-        object_5.finish();
-    }
-    if let Some(var_13) = &input.list_single_dimension {
-        let mut array_14 = object.key("listSingleDimension").start_array();
-        for item_15 in var_13 {
-            {
-                array_14.value().string(item_15.as_str());
-            }
-        }
-        array_14.finish();
-    }
-    if let Some(var_16) = &input.list_two_dimensions {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("listTwoDimensions").start_object();
-        for (key_18, value_19) in var_16 {
-            {
-                let mut array_20 = object_17.key(key_18.as_str()).start_array();
-                for item_21 in value_19 {
-                    {
-                        array_20.value().string(item_21.as_str());
-                    }
-                }
-                array_20.finish();
-            }
-        }
-        object_17.finish();
-    }
-    if let Some(var_22) = &input.max_results {
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_23) = &input.next_token {
-        object.key("nextToken").string(var_23.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.regions {
+        let mut array_7 = object.key("regions").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.sources {
+        let mut array_10 = object.key("sources").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_log_source_resource::ser_log_source_resource(
+                    &mut object_12,
+                    item_11,
+                )?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }

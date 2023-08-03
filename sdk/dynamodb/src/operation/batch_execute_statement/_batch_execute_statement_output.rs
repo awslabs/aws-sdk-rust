@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementOutput {
-    /// <p>The response to each PartiQL statement in the batch.</p>
+    /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
     #[doc(hidden)]
     pub responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementResponse>>,
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
@@ -12,7 +12,7 @@ pub struct BatchExecuteStatementOutput {
     _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutput {
-    /// <p>The response to each PartiQL statement in the batch.</p>
+    /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
     pub fn responses(&self) -> ::std::option::Option<&[crate::types::BatchStatementResponse]> {
         self.responses.as_deref()
     }
@@ -52,14 +52,14 @@ impl BatchExecuteStatementOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_responses`](Self::set_responses).
     ///
-    /// <p>The response to each PartiQL statement in the batch.</p>
+    /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
     pub fn responses(mut self, input: crate::types::BatchStatementResponse) -> Self {
         let mut v = self.responses.unwrap_or_default();
         v.push(input);
         self.responses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The response to each PartiQL statement in the batch.</p>
+    /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
     pub fn set_responses(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementResponse>>,

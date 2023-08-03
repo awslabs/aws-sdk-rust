@@ -29,6 +29,16 @@ pub(crate) fn reflens_export_themes_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_codegen_jobs_output_next_token(
+    input: &crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_components_output_next_token(
     input: &crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -82,6 +92,16 @@ pub(crate) fn lens_export_forms_output_entities(
 pub(crate) fn lens_export_themes_output_entities(
     input: crate::operation::export_themes::ExportThemesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Theme>> {
+    let input = match input.entities {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_codegen_jobs_output_entities(
+    input: crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>> {
     let input = match input.entities {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

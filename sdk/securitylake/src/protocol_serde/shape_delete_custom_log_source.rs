@@ -45,13 +45,13 @@ pub fn de_delete_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "AccountNotFoundException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::AccountNotFoundException({
+        "BadRequestException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -61,29 +61,13 @@ pub fn de_delete_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "BucketNotFoundException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::BucketNotFoundException({
+        "ConflictException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BucketNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bucket_not_found_exception::de_bucket_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ConflictSourceNamesException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ConflictSourceNamesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictSourceNamesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_source_names_exception::de_conflict_source_names_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -100,10 +84,6 @@ pub fn de_delete_custom_log_source_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -129,13 +109,17 @@ pub fn de_delete_custom_log_source_http_error(
                                                     }
             tmp
         }),
-        "ValidationException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ValidationException({
+        "ThrottlingException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
+                                                .map_err(|_|crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -161,66 +145,9 @@ pub fn de_delete_custom_log_source_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_delete_custom_log_source::de_delete_custom_log_source(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled,
-            )?;
         output._set_request_id(
             ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
-}
-
-pub(crate) fn de_delete_custom_log_source(
-    value: &[u8],
-    mut builder: crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder,
-) -> Result<
-    crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "customDataLocation" => {
-                        builder = builder.set_custom_data_location(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
-    }
-    Ok(builder)
 }

@@ -21,5 +21,10 @@ pub fn ser_parameterized_statement(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.return_values_on_condition_check_failure {
+        object
+            .key("ReturnValuesOnConditionCheckFailure")
+            .string(var_6.as_str());
+    }
     Ok(())
 }

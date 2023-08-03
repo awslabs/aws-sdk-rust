@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationNfsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
+    /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLocationNfsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
+    /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -38,12 +38,12 @@ pub struct CreateLocationNfsOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLocationNfsOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
+    /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
+    /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self

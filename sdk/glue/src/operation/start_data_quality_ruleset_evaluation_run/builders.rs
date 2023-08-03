@@ -162,4 +162,27 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
         self.inner = self.inner.set_ruleset_names(input);
         self
     }
+    /// Adds a key-value pair to `AdditionalDataSources`.
+    ///
+    /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).
+    ///
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn additional_data_sources(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::DataSource,
+    ) -> Self {
+        self.inner = self.inner.additional_data_sources(k.into(), v);
+        self
+    }
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn set_additional_data_sources(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_additional_data_sources(input);
+        self
+    }
 }

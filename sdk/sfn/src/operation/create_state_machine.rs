@@ -175,6 +175,9 @@ pub type CreateStateMachineErrorKind = CreateStateMachineError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateStateMachineError {
+    /// <p>Updating or deleting a resource can cause an inconsistent state. This error occurs when there're concurrent requests for <code>DeleteStateMachineVersion</code>, <code>PublishStateMachineVersion</code>, or <code>UpdateStateMachine</code> with the <code>publish</code> parameter set to <code>true</code>.</p>
+    /// <p>HTTP Status Code: 409</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
@@ -195,6 +198,8 @@ pub enum CreateStateMachineError {
     StateMachineTypeNotSupported(crate::types::error::StateMachineTypeNotSupported),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::types::error::TooManyTags),
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -215,6 +220,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for CreateStateMachineError
 impl ::std::fmt::Display for CreateStateMachineError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::InvalidDefinition(_inner) => _inner.fmt(f),
             Self::InvalidLoggingConfiguration(_inner) => _inner.fmt(f),
@@ -225,6 +231,7 @@ impl ::std::fmt::Display for CreateStateMachineError {
             Self::StateMachineLimitExceeded(_inner) => _inner.fmt(f),
             Self::StateMachineTypeNotSupported(_inner) => _inner.fmt(f),
             Self::TooManyTags(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -232,6 +239,9 @@ impl ::std::fmt::Display for CreateStateMachineError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateStateMachineError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidArn(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -260,6 +270,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateStateMa
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::TooManyTags(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ValidationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -315,6 +328,7 @@ impl CreateStateMachineError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ConflictException(e) => e.meta(),
             Self::InvalidArn(e) => e.meta(),
             Self::InvalidDefinition(e) => e.meta(),
             Self::InvalidLoggingConfiguration(e) => e.meta(),
@@ -325,8 +339,13 @@ impl CreateStateMachineError {
             Self::StateMachineLimitExceeded(e) => e.meta(),
             Self::StateMachineTypeNotSupported(e) => e.meta(),
             Self::TooManyTags(e) => e.meta(),
+            Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateStateMachineError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateStateMachineError::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
@@ -368,10 +387,15 @@ impl CreateStateMachineError {
     pub fn is_too_many_tags(&self) -> bool {
         matches!(self, Self::TooManyTags(_))
     }
+    /// Returns `true` if the error kind is `CreateStateMachineError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for CreateStateMachineError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDefinition(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::std::option::Option::Some(_inner),
@@ -382,6 +406,7 @@ impl ::std::error::Error for CreateStateMachineError {
             Self::StateMachineLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineTypeNotSupported(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyTags(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

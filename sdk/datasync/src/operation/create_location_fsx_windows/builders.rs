@@ -174,14 +174,14 @@ impl CreateLocationFsxWindowsFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user(input.into());
         self
     }
-    /// <p>Specifies the user who has the permissions to access files and folders in the file system.</p>
-    /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    /// <p>Specifies the user who has the permissions to access files, folders, and metadata in your file system.</p>
+    /// <p>For information about choosing a user with sufficient permissions, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">Required permissions</a>.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user(input);
         self

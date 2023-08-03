@@ -19,6 +19,22 @@ pub fn de_start_savings_plans_purchase_recommendation_generation_http_error(_res
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DataUnavailableException" => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::DataUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DataUnavailableExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "GenerationExistsException" => crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError::GenerationExistsException({
             #[allow(unused_mut)]
             let mut tmp =

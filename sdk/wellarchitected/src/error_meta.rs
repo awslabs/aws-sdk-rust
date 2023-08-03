@@ -96,6 +96,51 @@ impl From<crate::operation::associate_lenses::AssociateLensesError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_profiles::AssociateProfilesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_profiles::AssociateProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_profiles::AssociateProfilesError> for Error {
+    fn from(err: crate::operation::associate_profiles::AssociateProfilesError) -> Self {
+        match err {
+            crate::operation::associate_profiles::AssociateProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_profiles::AssociateProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_lens_share::CreateLensShareError,
             R,
         >,
@@ -228,6 +273,111 @@ impl From<crate::operation::create_milestone::CreateMilestoneError> for Error {
             crate::operation::create_milestone::CreateMilestoneError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_milestone::CreateMilestoneError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_milestone::CreateMilestoneError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile::CreateProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile::CreateProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_profile::CreateProfileError> for Error {
+    fn from(err: crate::operation::create_profile::CreateProfileError) -> Self {
+        match err {
+            crate::operation::create_profile::CreateProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_profile::CreateProfileError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_profile::CreateProfileError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::create_profile::CreateProfileError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_profile::CreateProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_profile::CreateProfileError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_profile::CreateProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile_share::CreateProfileShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile_share::CreateProfileShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_profile_share::CreateProfileShareError> for Error {
+    fn from(err: crate::operation::create_profile_share::CreateProfileShareError) -> Self {
+        match err {
+            crate::operation::create_profile_share::CreateProfileShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_profile_share::CreateProfileShareError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -422,6 +572,110 @@ impl From<crate::operation::delete_lens_share::DeleteLensShareError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile::DeleteProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile::DeleteProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_profile::DeleteProfileError> for Error {
+    fn from(err: crate::operation::delete_profile::DeleteProfileError) -> Self {
+        match err {
+            crate::operation::delete_profile::DeleteProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_profile::DeleteProfileError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_profile::DeleteProfileError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_profile::DeleteProfileError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile::DeleteProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_profile::DeleteProfileError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_profile::DeleteProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile_share::DeleteProfileShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile_share::DeleteProfileShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_profile_share::DeleteProfileShareError> for Error {
+    fn from(err: crate::operation::delete_profile_share::DeleteProfileShareError) -> Self {
+        match err {
+            crate::operation::delete_profile_share::DeleteProfileShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_profile_share::DeleteProfileShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_workload::DeleteWorkloadError,
             R,
         >,
@@ -565,6 +819,51 @@ impl From<crate::operation::disassociate_lenses::DisassociateLensesError> for Er
             crate::operation::disassociate_lenses::DisassociateLensesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_lenses::DisassociateLensesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_lenses::DisassociateLensesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_profiles::DisassociateProfilesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_profiles::DisassociateProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_profiles::DisassociateProfilesError> for Error {
+    fn from(err: crate::operation::disassociate_profiles::DisassociateProfilesError) -> Self {
+        match err {
+            crate::operation::disassociate_profiles::DisassociateProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_profiles::DisassociateProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -949,6 +1248,98 @@ impl From<crate::operation::get_milestone::GetMilestoneError> for Error {
             crate::operation::get_milestone::GetMilestoneError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_profile::GetProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_profile::GetProfileError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_profile::GetProfileError> for Error {
+    fn from(err: crate::operation::get_profile::GetProfileError) -> Self {
+        match err {
+            crate::operation::get_profile::GetProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_profile::GetProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_profile::GetProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_profile::GetProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_profile::GetProfileError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_profile::GetProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_profile_template::GetProfileTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_profile_template::GetProfileTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_profile_template::GetProfileTemplateError> for Error {
+    fn from(err: crate::operation::get_profile_template::GetProfileTemplateError) -> Self {
+        match err {
+            crate::operation::get_profile_template::GetProfileTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_profile_template::GetProfileTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_profile_template::GetProfileTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_profile_template::GetProfileTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_profile_template::GetProfileTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_profile_template::GetProfileTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1493,6 +1884,144 @@ impl From<crate::operation::list_notifications::ListNotificationsError> for Erro
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_notifications::ListProfileNotificationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_notifications::ListProfileNotificationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_profile_notifications::ListProfileNotificationsError> for Error {
+    fn from(
+        err: crate::operation::list_profile_notifications::ListProfileNotificationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_profile_notifications::ListProfileNotificationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profile_notifications::ListProfileNotificationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profile_notifications::ListProfileNotificationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profile_notifications::ListProfileNotificationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_profile_notifications::ListProfileNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_profiles::ListProfilesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profiles::ListProfilesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_profiles::ListProfilesError> for Error {
+    fn from(err: crate::operation::list_profiles::ListProfilesError) -> Self {
+        match err {
+            crate::operation::list_profiles::ListProfilesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_profiles::ListProfilesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_profiles::ListProfilesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_profiles::ListProfilesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_profiles::ListProfilesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_shares::ListProfileSharesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_shares::ListProfileSharesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_profile_shares::ListProfileSharesError> for Error {
+    fn from(err: crate::operation::list_profile_shares::ListProfileSharesError) -> Self {
+        match err {
+            crate::operation::list_profile_shares::ListProfileSharesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profile_shares::ListProfileSharesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profile_shares::ListProfileSharesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_profile_shares::ListProfileSharesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profile_shares::ListProfileSharesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_profile_shares::ListProfileSharesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_share_invitations::ListShareInvitationsError,
             R,
         >,
@@ -1908,6 +2437,65 @@ impl From<crate::operation::update_lens_review::UpdateLensReviewError> for Error
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::update_profile::UpdateProfileError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_profile::UpdateProfileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_profile::UpdateProfileError> for Error {
+    fn from(err: crate::operation::update_profile::UpdateProfileError) -> Self {
+        match err {
+            crate::operation::update_profile::UpdateProfileError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_profile::UpdateProfileError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_profile::UpdateProfileError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_profile::UpdateProfileError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_profile::UpdateProfileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_profile::UpdateProfileError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_profile::UpdateProfileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_share_invitation::UpdateShareInvitationError,
             R,
         >,
@@ -2096,6 +2684,51 @@ impl From<crate::operation::upgrade_lens_review::UpgradeLensReviewError> for Err
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::upgrade_profile_version::UpgradeProfileVersionError> for Error {
+    fn from(err: crate::operation::upgrade_profile_version::UpgradeProfileVersionError) -> Self {
+        match err {
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -34,5 +34,8 @@ pub fn ser_generate_data_key_pair_input(
         crate::protocol_serde::shape_recipient_info::ser_recipient_info(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.dry_run {
+        object.key("DryRun").boolean(*var_12);
+    }
     Ok(())
 }

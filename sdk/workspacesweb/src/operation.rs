@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AssociateBrowserSettings` operation.
 pub mod associate_browser_settings;
 
+/// Types for the `AssociateIpAccessSettings` operation.
+pub mod associate_ip_access_settings;
+
 /// Types for the `AssociateNetworkSettings` operation.
 pub mod associate_network_settings;
 
@@ -21,6 +24,9 @@ pub mod create_browser_settings;
 
 /// Types for the `CreateIdentityProvider` operation.
 pub mod create_identity_provider;
+
+/// Types for the `CreateIpAccessSettings` operation.
+pub mod create_ip_access_settings;
 
 /// Types for the `CreateNetworkSettings` operation.
 pub mod create_network_settings;
@@ -43,6 +49,9 @@ pub mod delete_browser_settings;
 /// Types for the `DeleteIdentityProvider` operation.
 pub mod delete_identity_provider;
 
+/// Types for the `DeleteIpAccessSettings` operation.
+pub mod delete_ip_access_settings;
+
 /// Types for the `DeleteNetworkSettings` operation.
 pub mod delete_network_settings;
 
@@ -61,6 +70,9 @@ pub mod delete_user_settings;
 /// Types for the `DisassociateBrowserSettings` operation.
 pub mod disassociate_browser_settings;
 
+/// Types for the `DisassociateIpAccessSettings` operation.
+pub mod disassociate_ip_access_settings;
+
 /// Types for the `DisassociateNetworkSettings` operation.
 pub mod disassociate_network_settings;
 
@@ -78,6 +90,9 @@ pub mod get_browser_settings;
 
 /// Types for the `GetIdentityProvider` operation.
 pub mod get_identity_provider;
+
+/// Types for the `GetIpAccessSettings` operation.
+pub mod get_ip_access_settings;
 
 /// Types for the `GetNetworkSettings` operation.
 pub mod get_network_settings;
@@ -105,6 +120,9 @@ pub mod list_browser_settings;
 
 /// Types for the `ListIdentityProviders` operation.
 pub mod list_identity_providers;
+
+/// Types for the `ListIpAccessSettings` operation.
+pub mod list_ip_access_settings;
 
 /// Types for the `ListNetworkSettings` operation.
 pub mod list_network_settings;
@@ -138,6 +156,9 @@ pub mod update_browser_settings;
 
 /// Types for the `UpdateIdentityProvider` operation.
 pub mod update_identity_provider;
+
+/// Types for the `UpdateIpAccessSettings` operation.
+pub mod update_ip_access_settings;
 
 /// Types for the `UpdateNetworkSettings` operation.
 pub mod update_network_settings;

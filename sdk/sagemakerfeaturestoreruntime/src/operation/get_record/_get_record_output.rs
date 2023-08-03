@@ -6,12 +6,19 @@ pub struct GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     #[doc(hidden)]
     pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    #[doc(hidden)]
+    pub expires_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     pub fn record(&self) -> ::std::option::Option<&[crate::types::FeatureValue]> {
         self.record.as_deref()
+    }
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    pub fn expires_at(&self) -> ::std::option::Option<&str> {
+        self.expires_at.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRecordOutput {
@@ -33,6 +40,7 @@ impl GetRecordOutput {
 )]
 pub struct GetRecordOutputBuilder {
     pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    pub(crate) expires_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRecordOutputBuilder {
@@ -55,6 +63,16 @@ impl GetRecordOutputBuilder {
         self.record = input;
         self
     }
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    pub fn expires_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expires_at = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expires_at = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +86,7 @@ impl GetRecordOutputBuilder {
     pub fn build(self) -> crate::operation::get_record::GetRecordOutput {
         crate::operation::get_record::GetRecordOutput {
             record: self.record,
+            expires_at: self.expires_at,
             _request_id: self._request_id,
         }
     }

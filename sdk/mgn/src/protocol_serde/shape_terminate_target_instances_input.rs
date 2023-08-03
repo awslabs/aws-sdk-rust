@@ -3,24 +3,27 @@ pub fn ser_terminate_target_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::terminate_target_instances::TerminateTargetInstancesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_server_i_ds {
-        let mut array_2 = object.key("sourceServerIDs").start_array();
-        for item_3 in var_1 {
-            {
-                array_2.value().string(item_3.as_str());
-            }
-        }
-        array_2.finish();
+    if let Some(var_1) = &input.account_id {
+        object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+    if let Some(var_2) = &input.source_server_i_ds {
+        let mut array_3 = object.key("sourceServerIDs").start_array();
+        for item_4 in var_2 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        object_5.finish();
+        array_3.finish();
+    }
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
     }
     Ok(())
 }

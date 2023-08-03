@@ -79,6 +79,8 @@ pub use crate::types::_update_custom_line_item_flat_charge_details::UpdateCustom
 
 pub use crate::types::_billing_group_list_element::BillingGroupListElement;
 
+pub use crate::types::_list_billing_group_account_grouping::ListBillingGroupAccountGrouping;
+
 pub use crate::types::_billing_group_status::BillingGroupStatus;
 
 pub use crate::types::_computation_preference::ComputationPreference;
@@ -86,6 +88,8 @@ pub use crate::types::_computation_preference::ComputationPreference;
 pub use crate::types::_list_billing_groups_filter::ListBillingGroupsFilter;
 
 pub use crate::types::_account_grouping::AccountGrouping;
+
+pub use crate::types::_update_billing_group_account_grouping::UpdateBillingGroupAccountGrouping;
 
 pub use crate::types::_billing_group_cost_report_element::BillingGroupCostReportElement;
 
@@ -143,6 +147,8 @@ mod _free_tier_config;
 
 mod _list_account_associations_filter;
 
+mod _list_billing_group_account_grouping;
+
 mod _list_billing_group_cost_reports_filter;
 
 mod _list_billing_groups_filter;
@@ -176,6 +182,8 @@ mod _pricing_rule_scope;
 mod _pricing_rule_type;
 
 mod _tiering;
+
+mod _update_billing_group_account_grouping;
 
 mod _update_custom_line_item_charge_details;
 

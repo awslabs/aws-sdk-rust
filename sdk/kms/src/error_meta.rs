@@ -47,6 +47,8 @@ pub enum Error {
     DependencyTimeoutException(crate::types::error::DependencyTimeoutException),
     /// <p>The request was rejected because the specified KMS key is not enabled.</p>
     DisabledException(crate::types::error::DisabledException),
+    /// <p> The request was rejected because the DryRun parameter was specified. </p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
     ExpiredImportTokenException(crate::types::error::ExpiredImportTokenException),
     /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
@@ -160,6 +162,7 @@ impl ::std::fmt::Display for Error {
             Error::CustomKeyStoreNotFoundException(inner) => inner.fmt(f),
             Error::DependencyTimeoutException(inner) => inner.fmt(f),
             Error::DisabledException(inner) => inner.fmt(f),
+            Error::DryRunOperationException(inner) => inner.fmt(f),
             Error::ExpiredImportTokenException(inner) => inner.fmt(f),
             Error::IncorrectKeyException(inner) => inner.fmt(f),
             Error::IncorrectKeyMaterialException(inner) => inner.fmt(f),
@@ -437,6 +440,9 @@ impl From<crate::operation::create_grant::CreateGrantError> for Error {
             crate::operation::create_grant::CreateGrantError::DisabledException(inner) => {
                 Error::DisabledException(inner)
             }
+            crate::operation::create_grant::CreateGrantError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::create_grant::CreateGrantError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
@@ -537,6 +543,9 @@ impl From<crate::operation::decrypt::DecryptError> for Error {
             }
             crate::operation::decrypt::DecryptError::DisabledException(inner) => {
                 Error::DisabledException(inner)
+            }
+            crate::operation::decrypt::DecryptError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::decrypt::DecryptError::IncorrectKeyException(inner) => {
                 Error::IncorrectKeyException(inner)
@@ -1068,6 +1077,9 @@ impl From<crate::operation::encrypt::EncryptError> for Error {
             crate::operation::encrypt::EncryptError::DisabledException(inner) => {
                 Error::DisabledException(inner)
             }
+            crate::operation::encrypt::EncryptError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::encrypt::EncryptError::InvalidGrantTokenException(inner) => {
                 Error::InvalidGrantTokenException(inner)
             }
@@ -1127,6 +1139,7 @@ impl From<crate::operation::generate_data_key::GenerateDataKeyError> for Error {
         match err {
             crate::operation::generate_data_key::GenerateDataKeyError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
             crate::operation::generate_data_key::GenerateDataKeyError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::generate_data_key::GenerateDataKeyError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::generate_data_key::GenerateDataKeyError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
             crate::operation::generate_data_key::GenerateDataKeyError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
             crate::operation::generate_data_key::GenerateDataKeyError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
@@ -1174,6 +1187,7 @@ impl From<crate::operation::generate_data_key_pair::GenerateDataKeyPairError> fo
         match err {
             crate::operation::generate_data_key_pair::GenerateDataKeyPairError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
             crate::operation::generate_data_key_pair::GenerateDataKeyPairError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::generate_data_key_pair::GenerateDataKeyPairError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::generate_data_key_pair::GenerateDataKeyPairError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
             crate::operation::generate_data_key_pair::GenerateDataKeyPairError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
             crate::operation::generate_data_key_pair::GenerateDataKeyPairError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
@@ -1203,6 +1217,7 @@ impl From<crate::operation::generate_data_key_pair_without_plaintext::GenerateDa
         match err {
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
@@ -1238,6 +1253,7 @@ impl
         match err {
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
@@ -1281,6 +1297,9 @@ impl From<crate::operation::generate_mac::GenerateMacError> for Error {
         match err {
             crate::operation::generate_mac::GenerateMacError::DisabledException(inner) => {
                 Error::DisabledException(inner)
+            }
+            crate::operation::generate_mac::GenerateMacError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::generate_mac::GenerateMacError::InvalidGrantTokenException(inner) => {
                 Error::InvalidGrantTokenException(inner)
@@ -1974,6 +1993,9 @@ impl From<crate::operation::re_encrypt::ReEncryptError> for Error {
             crate::operation::re_encrypt::ReEncryptError::DisabledException(inner) => {
                 Error::DisabledException(inner)
             }
+            crate::operation::re_encrypt::ReEncryptError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::re_encrypt::ReEncryptError::IncorrectKeyException(inner) => {
                 Error::IncorrectKeyException(inner)
             }
@@ -2083,6 +2105,9 @@ impl From<crate::operation::retire_grant::RetireGrantError> for Error {
             crate::operation::retire_grant::RetireGrantError::DependencyTimeoutException(inner) => {
                 Error::DependencyTimeoutException(inner)
             }
+            crate::operation::retire_grant::RetireGrantError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::retire_grant::RetireGrantError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
@@ -2140,6 +2165,9 @@ impl From<crate::operation::revoke_grant::RevokeGrantError> for Error {
         match err {
             crate::operation::revoke_grant::RevokeGrantError::DependencyTimeoutException(inner) => {
                 Error::DependencyTimeoutException(inner)
+            }
+            crate::operation::revoke_grant::RevokeGrantError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::revoke_grant::RevokeGrantError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
@@ -2237,6 +2265,9 @@ impl From<crate::operation::sign::SignError> for Error {
             }
             crate::operation::sign::SignError::DisabledException(inner) => {
                 Error::DisabledException(inner)
+            }
+            crate::operation::sign::SignError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::sign::SignError::InvalidGrantTokenException(inner) => {
                 Error::InvalidGrantTokenException(inner)
@@ -2601,6 +2632,9 @@ impl From<crate::operation::verify::VerifyError> for Error {
             crate::operation::verify::VerifyError::DisabledException(inner) => {
                 Error::DisabledException(inner)
             }
+            crate::operation::verify::VerifyError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::verify::VerifyError::InvalidGrantTokenException(inner) => {
                 Error::InvalidGrantTokenException(inner)
             }
@@ -2656,6 +2690,9 @@ impl From<crate::operation::verify_mac::VerifyMacError> for Error {
             crate::operation::verify_mac::VerifyMacError::DisabledException(inner) => {
                 Error::DisabledException(inner)
             }
+            crate::operation::verify_mac::VerifyMacError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::verify_mac::VerifyMacError::InvalidGrantTokenException(inner) => {
                 Error::InvalidGrantTokenException(inner)
             }
@@ -2698,6 +2735,7 @@ impl ::std::error::Error for Error {
             Error::CustomKeyStoreNotFoundException(inner) => inner.source(),
             Error::DependencyTimeoutException(inner) => inner.source(),
             Error::DisabledException(inner) => inner.source(),
+            Error::DryRunOperationException(inner) => inner.source(),
             Error::ExpiredImportTokenException(inner) => inner.source(),
             Error::IncorrectKeyException(inner) => inner.source(),
             Error::IncorrectKeyMaterialException(inner) => inner.source(),
@@ -2751,6 +2789,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::CustomKeyStoreNotFoundException(e) => e.request_id(),
             Self::DependencyTimeoutException(e) => e.request_id(),
             Self::DisabledException(e) => e.request_id(),
+            Self::DryRunOperationException(e) => e.request_id(),
             Self::ExpiredImportTokenException(e) => e.request_id(),
             Self::IncorrectKeyException(e) => e.request_id(),
             Self::IncorrectKeyMaterialException(e) => e.request_id(),

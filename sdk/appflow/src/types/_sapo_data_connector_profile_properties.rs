@@ -25,6 +25,10 @@ pub struct SapoDataConnectorProfileProperties {
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
     #[doc(hidden)]
     pub o_auth_properties: ::std::option::Option<crate::types::OAuthProperties>,
+    /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
+    /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
+    #[doc(hidden)]
+    pub disable_sso: bool,
 }
 impl SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
@@ -55,6 +59,11 @@ impl SapoDataConnectorProfileProperties {
     pub fn o_auth_properties(&self) -> ::std::option::Option<&crate::types::OAuthProperties> {
         self.o_auth_properties.as_ref()
     }
+    /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
+    /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
+    pub fn disable_sso(&self) -> bool {
+        self.disable_sso
+    }
 }
 impl SapoDataConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
@@ -76,6 +85,7 @@ pub struct SapoDataConnectorProfilePropertiesBuilder {
     pub(crate) logon_language: ::std::option::Option<::std::string::String>,
     pub(crate) private_link_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth_properties: ::std::option::Option<crate::types::OAuthProperties>,
+    pub(crate) disable_sso: ::std::option::Option<bool>,
 }
 impl SapoDataConnectorProfilePropertiesBuilder {
     /// <p> The location of the SAPOData resource. </p>
@@ -181,6 +191,18 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self.o_auth_properties = input;
         self
     }
+    /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
+    /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
+    pub fn disable_sso(mut self, input: bool) -> Self {
+        self.disable_sso = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.</p>
+    /// <p>Whether you need this option depends on the types of credentials that you applied to your SAP OData connection profile. If your profile uses basic authentication credentials, SAP SSO can prevent Amazon AppFlow from connecting to your account with your username and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to connect successfully. However, if your profile uses OAuth credentials, this parameter has no affect.</p>
+    pub fn set_disable_sso(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_sso = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
     pub fn build(self) -> crate::types::SapoDataConnectorProfileProperties {
         crate::types::SapoDataConnectorProfileProperties {
@@ -191,6 +213,7 @@ impl SapoDataConnectorProfilePropertiesBuilder {
             logon_language: self.logon_language,
             private_link_service_name: self.private_link_service_name,
             o_auth_properties: self.o_auth_properties,
+            disable_sso: self.disable_sso.unwrap_or_default(),
         }
     }
 }

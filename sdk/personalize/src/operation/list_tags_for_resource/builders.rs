@@ -5,7 +5,7 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> attached to a resource.</p>
+/// <p>Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> attached to a resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

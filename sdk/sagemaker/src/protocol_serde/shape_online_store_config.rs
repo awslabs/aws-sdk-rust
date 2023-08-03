@@ -14,6 +14,12 @@ pub fn ser_online_store_config(
             .key("EnableOnlineStore")
             .boolean(input.enable_online_store);
     }
+    if let Some(var_3) = &input.ttl_duration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("TtlDuration").start_object();
+        crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -39,23 +45,29 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SecurityConfig" => {
-                                builder = builder.set_security_config(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
+                        .to_unescaped()?
+                        .as_ref()
+                    {
+                        "SecurityConfig" => {
+                            builder = builder.set_security_config(
                                     crate::protocol_serde::shape_online_store_security_config::de_online_store_security_config(tokens)?
                                 );
-                            }
-                            "EnableOnlineStore" => {
-                                builder = builder.set_enable_online_store(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "EnableOnlineStore" => {
+                            builder = builder.set_enable_online_store(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                    tokens.next(),
+                                )?,
+                            );
+                        }
+                        "TtlDuration" => {
+                            builder = builder.set_ttl_duration(
+                                crate::protocol_serde::shape_ttl_duration::de_ttl_duration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(
                             ::aws_smithy_json::deserialize::error::DeserializeError::custom(

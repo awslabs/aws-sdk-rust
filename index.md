@@ -57,8 +57,10 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Elemental MediaLive | [aws-sdk-medialive](https://crates.io/crates/aws-sdk-medialive) ([docs](https://docs.rs/aws-sdk-medialive)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/medialive)) |
 | AWS Elemental MediaPackage | [aws-sdk-mediapackage](https://crates.io/crates/aws-sdk-mediapackage) ([docs](https://docs.rs/aws-sdk-mediapackage)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/mediapackage)) |
 | AWS Elemental MediaPackage VOD | [aws-sdk-mediapackagevod](https://crates.io/crates/aws-sdk-mediapackagevod) ([docs](https://docs.rs/aws-sdk-mediapackagevod)) |
+| AWS Elemental MediaPackage v2 | [aws-sdk-mediapackagev2](https://crates.io/crates/aws-sdk-mediapackagev2) ([docs](https://docs.rs/aws-sdk-mediapackagev2)) |
 | AWS Elemental MediaStore | [aws-sdk-mediastore](https://crates.io/crates/aws-sdk-mediastore) ([docs](https://docs.rs/aws-sdk-mediastore)) |
 | AWS Elemental MediaStore Data Plane | [aws-sdk-mediastoredata](https://crates.io/crates/aws-sdk-mediastoredata) ([docs](https://docs.rs/aws-sdk-mediastoredata)) |
+| AWS EntityResolution | [aws-sdk-entityresolution](https://crates.io/crates/aws-sdk-entityresolution) ([docs](https://docs.rs/aws-sdk-entityresolution)) |
 | AWS Fault Injection Simulator | [aws-sdk-fis](https://crates.io/crates/aws-sdk-fis) ([docs](https://docs.rs/aws-sdk-fis)) |
 | AWS Global Accelerator | [aws-sdk-globalaccelerator](https://crates.io/crates/aws-sdk-globalaccelerator) ([docs](https://docs.rs/aws-sdk-globalaccelerator)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/globalaccelerator)) |
 | AWS Glue | [aws-sdk-glue](https://crates.io/crates/aws-sdk-glue) ([docs](https://docs.rs/aws-sdk-glue)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/glue)) |
@@ -185,6 +187,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CodeCatalyst | [aws-sdk-codecatalyst](https://crates.io/crates/aws-sdk-codecatalyst) ([docs](https://docs.rs/aws-sdk-codecatalyst)) |
 | Amazon CodeGuru Profiler | [aws-sdk-codeguruprofiler](https://crates.io/crates/aws-sdk-codeguruprofiler) ([docs](https://docs.rs/aws-sdk-codeguruprofiler)) |
 | Amazon CodeGuru Reviewer | [aws-sdk-codegurureviewer](https://crates.io/crates/aws-sdk-codegurureviewer) ([docs](https://docs.rs/aws-sdk-codegurureviewer)) |
+| Amazon CodeGuru Security | [aws-sdk-codegurusecurity](https://crates.io/crates/aws-sdk-codegurusecurity) ([docs](https://docs.rs/aws-sdk-codegurusecurity)) |
 | Amazon Cognito Identity | [aws-sdk-cognitoidentity](https://crates.io/crates/aws-sdk-cognitoidentity) ([docs](https://docs.rs/aws-sdk-cognitoidentity)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cognitoidentity)) |
 | Amazon Cognito Identity Provider | [aws-sdk-cognitoidentityprovider](https://crates.io/crates/aws-sdk-cognitoidentityprovider) ([docs](https://docs.rs/aws-sdk-cognitoidentityprovider)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cognitoidentityprovider)) |
 | Amazon Cognito Sync | [aws-sdk-cognitosync](https://crates.io/crates/aws-sdk-cognitosync) ([docs](https://docs.rs/aws-sdk-cognitosync)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cognitosync)) |
@@ -257,6 +260,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Macie | [aws-sdk-macie](https://crates.io/crates/aws-sdk-macie) ([docs](https://docs.rs/aws-sdk-macie)) |
 | Amazon Macie 2 | [aws-sdk-macie2](https://crates.io/crates/aws-sdk-macie2) ([docs](https://docs.rs/aws-sdk-macie2)) |
 | Amazon Managed Blockchain | [aws-sdk-managedblockchain](https://crates.io/crates/aws-sdk-managedblockchain) ([docs](https://docs.rs/aws-sdk-managedblockchain)) |
+| Amazon Managed Blockchain Query | [aws-sdk-managedblockchainquery](https://crates.io/crates/aws-sdk-managedblockchainquery) ([docs](https://docs.rs/aws-sdk-managedblockchainquery)) |
 | Amazon Managed Grafana | [aws-sdk-grafana](https://crates.io/crates/aws-sdk-grafana) ([docs](https://docs.rs/aws-sdk-grafana)) |
 | Amazon Mechanical Turk | [aws-sdk-mturk](https://crates.io/crates/aws-sdk-mturk) ([docs](https://docs.rs/aws-sdk-mturk)) |
 | Amazon MemoryDB | [aws-sdk-memorydb](https://crates.io/crates/aws-sdk-memorydb) ([docs](https://docs.rs/aws-sdk-memorydb)) |
@@ -303,6 +307,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Transcribe Streaming Service | [aws-sdk-transcribestreaming](https://crates.io/crates/aws-sdk-transcribestreaming) ([docs](https://docs.rs/aws-sdk-transcribestreaming)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/transcribestreaming)) |
 | Amazon Translate | [aws-sdk-translate](https://crates.io/crates/aws-sdk-translate) ([docs](https://docs.rs/aws-sdk-translate)) |
 | Amazon VPC Lattice | [aws-sdk-vpclattice](https://crates.io/crates/aws-sdk-vpclattice) ([docs](https://docs.rs/aws-sdk-vpclattice)) |
+| Amazon Verified Permissions | [aws-sdk-verifiedpermissions](https://crates.io/crates/aws-sdk-verifiedpermissions) ([docs](https://docs.rs/aws-sdk-verifiedpermissions)) |
 | Amazon Voice ID | [aws-sdk-voiceid](https://crates.io/crates/aws-sdk-voiceid) ([docs](https://docs.rs/aws-sdk-voiceid)) |
 | Amazon WorkDocs | [aws-sdk-workdocs](https://crates.io/crates/aws-sdk-workdocs) ([docs](https://docs.rs/aws-sdk-workdocs)) |
 | Amazon WorkLink | [aws-sdk-worklink](https://crates.io/crates/aws-sdk-worklink) ([docs](https://docs.rs/aws-sdk-worklink)) |
@@ -317,6 +322,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AmazonMWAA | [aws-sdk-mwaa](https://crates.io/crates/aws-sdk-mwaa) ([docs](https://docs.rs/aws-sdk-mwaa)) |
 | AmazonNimbleStudio | [aws-sdk-nimble](https://crates.io/crates/aws-sdk-nimble) ([docs](https://docs.rs/aws-sdk-nimble)) |
 | AmplifyBackend | [aws-sdk-amplifybackend](https://crates.io/crates/aws-sdk-amplifybackend) ([docs](https://docs.rs/aws-sdk-amplifybackend)) |
+| AppFabric | [aws-sdk-appfabric](https://crates.io/crates/aws-sdk-appfabric) ([docs](https://docs.rs/aws-sdk-appfabric)) |
 | Application Auto Scaling | [aws-sdk-applicationautoscaling](https://crates.io/crates/aws-sdk-applicationautoscaling) ([docs](https://docs.rs/aws-sdk-applicationautoscaling)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/applicationautoscaling)) |
 | Application Migration Service | [aws-sdk-mgn](https://crates.io/crates/aws-sdk-mgn) ([docs](https://docs.rs/aws-sdk-mgn)) |
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/autoscaling)) |
@@ -339,6 +345,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
+| Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
+| Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |

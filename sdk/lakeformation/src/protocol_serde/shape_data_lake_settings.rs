@@ -28,6 +28,11 @@ where
                                     crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(tokens)?
                                 );
                             }
+                            "ReadOnlyAdmins" => {
+                                builder = builder.set_read_only_admins(
+                                    crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(tokens)?
+                                );
+                            }
                             "CreateDatabaseDefaultPermissions" => {
                                 builder = builder.set_create_database_default_permissions(
                                     crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens)?
@@ -52,6 +57,13 @@ where
                             }
                             "AllowExternalDataFiltering" => {
                                 builder = builder.set_allow_external_data_filtering(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "AllowFullTableExternalDataAccess" => {
+                                builder = builder.set_allow_full_table_external_data_access(
                                     ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
@@ -108,13 +120,13 @@ pub fn ser_data_lake_settings(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.create_database_default_permissions {
-        let mut array_6 = object.key("CreateDatabaseDefaultPermissions").start_array();
+    if let Some(var_5) = &input.read_only_admins {
+        let mut array_6 = object.key("ReadOnlyAdmins").start_array();
         for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_principal_permissions::ser_principal_permissions(
+                crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(
                     &mut object_8,
                     item_7,
                 )?;
@@ -123,8 +135,8 @@ pub fn ser_data_lake_settings(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.create_table_default_permissions {
-        let mut array_10 = object.key("CreateTableDefaultPermissions").start_array();
+    if let Some(var_9) = &input.create_database_default_permissions {
+        let mut array_10 = object.key("CreateDatabaseDefaultPermissions").start_array();
         for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
@@ -138,51 +150,71 @@ pub fn ser_data_lake_settings(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.parameters {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("Parameters").start_object();
-        for (key_15, value_16) in var_13 {
-            {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
-            }
-        }
-        object_14.finish();
-    }
-    if let Some(var_17) = &input.trusted_resource_owners {
-        let mut array_18 = object.key("TrustedResourceOwners").start_array();
-        for item_19 in var_17 {
-            {
-                array_18.value().string(item_19.as_str());
-            }
-        }
-        array_18.finish();
-    }
-    if let Some(var_20) = &input.allow_external_data_filtering {
-        object.key("AllowExternalDataFiltering").boolean(*var_20);
-    }
-    if let Some(var_21) = &input.external_data_filtering_allow_list {
-        let mut array_22 = object.key("ExternalDataFilteringAllowList").start_array();
-        for item_23 in var_21 {
+    if let Some(var_13) = &input.create_table_default_permissions {
+        let mut array_14 = object.key("CreateTableDefaultPermissions").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(
-                    &mut object_24,
-                    item_23,
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_principal_permissions::ser_principal_permissions(
+                    &mut object_16,
+                    item_15,
                 )?;
-                object_24.finish();
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Parameters").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
+    }
+    if let Some(var_21) = &input.trusted_resource_owners {
+        let mut array_22 = object.key("TrustedResourceOwners").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
             }
         }
         array_22.finish();
     }
-    if let Some(var_25) = &input.authorized_session_tag_value_list {
-        let mut array_26 = object.key("AuthorizedSessionTagValueList").start_array();
-        for item_27 in var_25 {
+    if let Some(var_24) = &input.allow_external_data_filtering {
+        object.key("AllowExternalDataFiltering").boolean(*var_24);
+    }
+    if let Some(var_25) = &input.allow_full_table_external_data_access {
+        object
+            .key("AllowFullTableExternalDataAccess")
+            .boolean(*var_25);
+    }
+    if let Some(var_26) = &input.external_data_filtering_allow_list {
+        let mut array_27 = object.key("ExternalDataFilteringAllowList").start_array();
+        for item_28 in var_26 {
             {
-                array_26.value().string(item_27.as_str());
+                #[allow(unused_mut)]
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(
+                    &mut object_29,
+                    item_28,
+                )?;
+                object_29.finish();
             }
         }
-        array_26.finish();
+        array_27.finish();
+    }
+    if let Some(var_30) = &input.authorized_session_tag_value_list {
+        let mut array_31 = object.key("AuthorizedSessionTagValueList").start_array();
+        for item_32 in var_30 {
+            {
+                array_31.value().string(item_32.as_str());
+            }
+        }
+        array_31.finish();
     }
     Ok(())
 }

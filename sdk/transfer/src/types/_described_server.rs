@@ -89,6 +89,14 @@ pub struct DescribedServer {
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     #[doc(hidden)]
     pub workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    #[doc(hidden)]
+    pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -199,6 +207,15 @@ impl DescribedServer {
     pub fn workflow_details(&self) -> ::std::option::Option<&crate::types::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn structured_log_destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.structured_log_destinations.as_deref()
+    }
 }
 impl DescribedServer {
     /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::types::DescribedServer).
@@ -233,6 +250,8 @@ pub struct DescribedServerBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
+    pub(crate) structured_log_destinations:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -544,6 +563,38 @@ impl DescribedServerBuilder {
         self.workflow_details = input;
         self
     }
+    /// Appends an item to `structured_log_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_structured_log_destinations`](Self::set_structured_log_destinations).
+    ///
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn structured_log_destinations(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.structured_log_destinations.unwrap_or_default();
+        v.push(input.into());
+        self.structured_log_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn set_structured_log_destinations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.structured_log_destinations = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     pub fn build(self) -> crate::types::DescribedServer {
         crate::types::DescribedServer {
@@ -566,6 +617,7 @@ impl DescribedServerBuilder {
             tags: self.tags,
             user_count: self.user_count,
             workflow_details: self.workflow_details,
+            structured_log_destinations: self.structured_log_destinations,
         }
     }
 }

@@ -19,6 +19,9 @@ pub struct UpdateUserInput {
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
+    /// <p>Defines whether the user is intended for data replication.</p>
+    #[doc(hidden)]
+    pub replication_user: ::std::option::Option<bool>,
 }
 impl UpdateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -41,6 +44,10 @@ impl UpdateUserInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn replication_user(&self) -> ::std::option::Option<bool> {
+        self.replication_user
+    }
 }
 impl UpdateUserInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
@@ -60,6 +67,7 @@ pub struct UpdateUserInputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_user: ::std::option::Option<bool>,
 }
 impl UpdateUserInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -121,6 +129,16 @@ impl UpdateUserInputBuilder {
         self.username = input;
         self
     }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn replication_user(mut self, input: bool) -> Self {
+        self.replication_user = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines whether the user is intended for data replication.</p>
+    pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replication_user = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(
         self,
@@ -134,6 +152,7 @@ impl UpdateUserInputBuilder {
             groups: self.groups,
             password: self.password,
             username: self.username,
+            replication_user: self.replication_user,
         })
     }
 }

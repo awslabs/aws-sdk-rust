@@ -5,7 +5,7 @@ pub use crate::operation::get_assessment::_get_assessment_input::GetAssessmentIn
 
 /// Fluent builder constructing a request to `GetAssessment`.
 ///
-/// <p>Returns an assessment from Audit Manager. </p>
+/// <p>Gets information about a specified assessment. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

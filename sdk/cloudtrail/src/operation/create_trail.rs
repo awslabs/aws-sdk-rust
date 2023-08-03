@@ -181,7 +181,7 @@ pub enum CreateTrailError {
     CloudTrailInvalidClientTokenIdException(
         crate::types::error::CloudTrailInvalidClientTokenIdException,
     ),
-    /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
+    /// <p>Cannot set a CloudWatch Logs delivery for this Region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::types::error::CloudWatchLogsDeliveryUnavailableException,
     ),
@@ -233,7 +233,7 @@ pub enum CreateTrailError {
     /// <p>This exception is no longer in use.</p>
     #[deprecated]
     KmsKeyDisabledException(crate::types::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(

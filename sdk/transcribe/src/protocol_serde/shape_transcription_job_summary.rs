@@ -133,6 +133,11 @@ where
                                     crate::protocol_serde::shape_language_code_list::de_language_code_list(tokens)?
                                 );
                             }
+                            "ToxicityDetection" => {
+                                builder = builder.set_toxicity_detection(
+                                    crate::protocol_serde::shape_toxicity_detection::de_toxicity_detection(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

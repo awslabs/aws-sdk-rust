@@ -190,6 +190,11 @@ pub(crate) fn de_delete_faces(
                             crate::protocol_serde::shape_face_id_list::de_face_id_list(tokens)?,
                         );
                     }
+                    "UnsuccessfulFaceDeletions" => {
+                        builder = builder.set_unsuccessful_face_deletions(
+                            crate::protocol_serde::shape_unsuccessful_face_deletions_list::de_unsuccessful_face_deletions_list(tokens)?
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

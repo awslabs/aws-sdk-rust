@@ -9,12 +9,12 @@ pub use crate::operation::put_subscription_filter::_put_subscription_filter_inpu
 /// <p>The following destinations are supported for subscription filters:</p>
 /// <ul>
 /// <li> <p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
-/// <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li>
+/// <li> <p>A logical destination created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis Data Streams and Kinesis Data Firehose as logical destinations.</p> </li>
 /// <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
 /// <li> <p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
 /// </ul>
 /// <p>Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. </p>
-/// <p>To perform a <code>PutSubscriptionFilter</code> operation, you must also have the <code>iam:PassRole</code> permission.</p>
+/// <p>To perform a <code>PutSubscriptionFilter</code> operation for any destination except a Lambda function, you must also have the <code>iam:PassRole</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSubscriptionFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -177,7 +177,7 @@ pub enum CreateReplicationInstanceError {
     InsufficientResourceCapacityFault(crate::types::error::InsufficientResourceCapacityFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::types::error::InvalidResourceStateFault),
-    /// <p>The subnet provided is invalid.</p>
+    /// <p>The subnet provided isn't valid.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>DMS cannot access the KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),

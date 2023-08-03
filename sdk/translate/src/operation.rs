@@ -46,6 +46,9 @@ pub mod stop_text_translation_job;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TranslateDocument` operation.
+pub mod translate_document;
+
 /// Types for the `TranslateText` operation.
 pub mod translate_text;
 

@@ -114,6 +114,8 @@ pub(crate) mod shape_put_principal_mapping;
 
 pub(crate) mod shape_query;
 
+pub(crate) mod shape_retrieve;
+
 pub(crate) mod shape_start_data_source_sync_job;
 
 pub(crate) mod shape_stop_data_source_sync_job;
@@ -270,6 +272,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_unavailable_exception;
 
+pub(crate) mod shape_retrieve_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_data_source_sync_job_input;
@@ -412,6 +416,8 @@ pub(crate) mod shape_query_text_list;
 
 pub(crate) mod shape_relevance_feedback;
 
+pub(crate) mod shape_retrieve_result_item_list;
+
 pub(crate) mod shape_s3_path;
 
 pub(crate) mod shape_server_side_encryption_configuration;
@@ -539,6 +545,8 @@ pub(crate) mod shape_query_suggestions_block_list_summary;
 pub(crate) mod shape_quip_configuration;
 
 pub(crate) mod shape_relevance;
+
+pub(crate) mod shape_retrieve_result_item;
 
 pub(crate) mod shape_s3_data_source_configuration;
 

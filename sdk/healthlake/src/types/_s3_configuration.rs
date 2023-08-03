@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
-    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
+    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake. </p>
     #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> The KMS key ID used to access the S3 bucket. </p>
@@ -12,7 +12,7 @@ pub struct S3Configuration {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {
-    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
+    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake. </p>
     pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -38,12 +38,12 @@ pub struct S3ConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigurationBuilder {
-    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
+    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake. </p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
+    /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake. </p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self

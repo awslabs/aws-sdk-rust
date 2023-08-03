@@ -5,6 +5,22 @@ pub use crate::types::_import_task::ImportTask;
 
 pub use crate::types::_import_status::ImportStatus;
 
+pub use crate::types::_export_preferences::ExportPreferences;
+
+pub use crate::types::_ec2_recommendations_export_preferences::Ec2RecommendationsExportPreferences;
+
+pub use crate::types::_reserved_instance_options::ReservedInstanceOptions;
+
+pub use crate::types::_term_length::TermLength;
+
+pub use crate::types::_offering_class::OfferingClass;
+
+pub use crate::types::_purchasing_option::PurchasingOption;
+
+pub use crate::types::_tenancy::Tenancy;
+
+pub use crate::types::_usage_metric_basis::UsageMetricBasis;
+
 pub use crate::types::_export_filter::ExportFilter;
 
 pub use crate::types::_export_data_format::ExportDataFormat;
@@ -87,11 +103,15 @@ mod _customer_me_collector_info;
 
 mod _data_source;
 
+mod _ec2_recommendations_export_preferences;
+
 mod _export_data_format;
 
 mod _export_filter;
 
 mod _export_info;
+
+mod _export_preferences;
 
 mod _export_status;
 
@@ -107,13 +127,25 @@ mod _import_task_filter_name;
 
 mod _neighbor_connection_detail;
 
+mod _offering_class;
+
 mod _order_by_element;
 
 mod _order_string;
 
+mod _purchasing_option;
+
+mod _reserved_instance_options;
+
 mod _tag;
 
 mod _tag_filter;
+
+mod _tenancy;
+
+mod _term_length;
+
+mod _usage_metric_basis;
 
 /// Builders
 pub mod builders;

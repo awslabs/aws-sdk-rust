@@ -17,6 +17,10 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_version_conflict_exception::VersionConflictException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_internal_server_exception::InternalServerException;
+
 pub use crate::types::error::_invalid_query_exception::InvalidQueryException;
 
 pub use crate::types::error::_invalid_aggregation_exception::InvalidAggregationException;
@@ -49,8 +53,6 @@ pub use crate::types::error::_certificate_conflict_exception::CertificateConflic
 
 pub use crate::types::error::_registration_code_validation_exception::RegistrationCodeValidationException;
 
-pub use crate::types::error::_internal_server_exception::InternalServerException;
-
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictException;
 
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionException;
@@ -58,6 +60,8 @@ pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTr
 pub use crate::types::error::_versions_limit_exceeded_exception::VersionsLimitExceededException;
 
 pub use crate::types::error::_malformed_policy_exception::MalformedPolicyException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
@@ -105,6 +109,8 @@ mod _resource_not_found_exception;
 
 mod _resource_registration_failure_exception;
 
+mod _service_quota_exceeded_exception;
+
 mod _service_unavailable_exception;
 
 mod _sql_parse_exception;
@@ -118,6 +124,8 @@ mod _transfer_already_completed_exception;
 mod _transfer_conflict_exception;
 
 mod _unauthorized_exception;
+
+mod _validation_exception;
 
 mod _version_conflict_exception;
 

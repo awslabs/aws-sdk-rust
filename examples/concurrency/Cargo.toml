@@ -27,6 +27,6 @@ features = ["env-filter"]
 
 [dev-dependencies]
 fastrand = "1.8.0"
-aws-config= { version = "0.55.3", path = "../../sdk/aws-config" }
-aws-sdk-s3= { version = "0.28.0", path = "../../sdk/s3" }
-aws-sdk-sqs= { version = "0.28.0", path = "../../sdk/sqs" }
+aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
+aws-sdk-s3= { version = "0.29.0", path = "../../sdk/s3" }
+aws-sdk-sqs= { version = "0.29.0", path = "../../sdk/sqs" }

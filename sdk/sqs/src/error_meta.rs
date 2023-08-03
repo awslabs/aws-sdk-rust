@@ -19,7 +19,7 @@ pub enum Error {
     InvalidMessageContents(crate::types::error::InvalidMessageContents),
     /// <p>The specified message isn't in flight.</p>
     MessageNotInflight(crate::types::error::MessageNotInflight),
-    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
+    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::types::error::OverLimit),
     /// <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
     PurgeQueueInProgress(crate::types::error::PurgeQueueInProgress),
@@ -31,6 +31,8 @@ pub enum Error {
     QueueNameExists(crate::types::error::QueueNameExists),
     /// <p>The specified receipt handle isn't valid.</p>
     ReceiptHandleIsInvalid(crate::types::error::ReceiptHandleIsInvalid),
+    /// <p>One or more specified resources don't exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The batch request contains more entries than permissible.</p>
     TooManyEntriesInBatchRequest(crate::types::error::TooManyEntriesInBatchRequest),
     /// <p>Error code 400. Unsupported operation.</p>
@@ -55,6 +57,7 @@ impl ::std::fmt::Display for Error {
             Error::QueueDoesNotExist(inner) => inner.fmt(f),
             Error::QueueNameExists(inner) => inner.fmt(f),
             Error::ReceiptHandleIsInvalid(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::TooManyEntriesInBatchRequest(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -102,6 +105,47 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
             crate::operation::add_permission::AddPermissionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_message_move_task::CancelMessageMoveTaskError> for Error {
+    fn from(err: crate::operation::cancel_message_move_task::CancelMessageMoveTaskError) -> Self {
+        match err {
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::cancel_message_move_task::CancelMessageMoveTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -489,6 +533,47 @@ impl From<crate::operation::list_dead_letter_source_queues::ListDeadLetterSource
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_message_move_tasks::ListMessageMoveTasksError> for Error {
+    fn from(err: crate::operation::list_message_move_tasks::ListMessageMoveTasksError) -> Self {
+        match err {
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::list_message_move_tasks::ListMessageMoveTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError, R>>
     for Error
 where
@@ -815,6 +900,47 @@ impl From<crate::operation::set_queue_attributes::SetQueueAttributesError> for E
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_message_move_task::StartMessageMoveTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::start_message_move_task::StartMessageMoveTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_message_move_task::StartMessageMoveTaskError> for Error {
+    fn from(err: crate::operation::start_message_move_task::StartMessageMoveTaskError) -> Self {
+        match err {
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::start_message_move_task::StartMessageMoveTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_queue::TagQueueError, R>>
     for Error
 where
@@ -896,6 +1022,7 @@ impl ::std::error::Error for Error {
             Error::QueueDoesNotExist(inner) => inner.source(),
             Error::QueueNameExists(inner) => inner.source(),
             Error::ReceiptHandleIsInvalid(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::TooManyEntriesInBatchRequest(inner) => inner.source(),
             Error::UnsupportedOperation(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
@@ -919,6 +1046,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::QueueDoesNotExist(e) => e.request_id(),
             Self::QueueNameExists(e) => e.request_id(),
             Self::ReceiptHandleIsInvalid(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::TooManyEntriesInBatchRequest(e) => e.request_id(),
             Self::UnsupportedOperation(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),

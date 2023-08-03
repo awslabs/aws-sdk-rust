@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsInput {
-    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
     /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
@@ -20,26 +20,30 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a minimum of 20.</p> </li>
+    /// <li> <p>Can't exceed 100.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeBlueGreenDeploymentsInput {
-    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
     }
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
     /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
@@ -49,13 +53,17 @@ impl DescribeBlueGreenDeploymentsInput {
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a minimum of 20.</p> </li>
+    /// <li> <p>Can't exceed 100.</p> </li>
+    /// </ul>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -79,10 +87,10 @@ pub struct DescribeBlueGreenDeploymentsInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
 }
 impl DescribeBlueGreenDeploymentsInputBuilder {
-    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn blue_green_deployment_identifier(
         mut self,
@@ -91,10 +99,10 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p>
+    /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing blue/green deployment identifier.</p> </li>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(
         mut self,
@@ -108,7 +116,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
     /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
@@ -122,7 +130,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
         self
     }
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
-    /// <p>Supported filters:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li>
     /// <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li>
@@ -136,26 +144,34 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
         self.filters = input;
         self
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a minimum of 20.</p> </li>
+    /// <li> <p>Can't exceed 100.</p> </li>
+    /// </ul>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be a minimum of 20.</p> </li>
+    /// <li> <p>Can't exceed 100.</p> </li>
+    /// </ul>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self

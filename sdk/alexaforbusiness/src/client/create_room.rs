@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRoomOutput`](crate::operation::create_room::CreateRoomOutput) with field(s):
     ///   - [`room_arn(Option<String>)`](crate::operation::create_room::CreateRoomOutput::room_arn): <p>The ARN of the newly created room in the response.</p>
     /// - On failure, responds with [`SdkError<CreateRoomError>`](crate::operation::create_room::CreateRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn create_room(&self) -> crate::operation::create_room::builders::CreateRoomFluentBuilder {
         crate::operation::create_room::builders::CreateRoomFluentBuilder::new(self.handle.clone())
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConfig {
-    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
+    /// <p> Specifies whether the channel applies to a single Region or to all Regions.</p>
     #[doc(hidden)]
     pub apply_to_all_regions: ::std::option::Option<bool>,
     /// <p> The advanced event selectors that are configured for the channel.</p>
@@ -13,7 +13,7 @@ pub struct SourceConfig {
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
 }
 impl SourceConfig {
-    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
+    /// <p> Specifies whether the channel applies to a single Region or to all Regions.</p>
     pub fn apply_to_all_regions(&self) -> ::std::option::Option<bool> {
         self.apply_to_all_regions
     }
@@ -42,12 +42,12 @@ pub struct SourceConfigBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
 }
 impl SourceConfigBuilder {
-    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
+    /// <p> Specifies whether the channel applies to a single Region or to all Regions.</p>
     pub fn apply_to_all_regions(mut self, input: bool) -> Self {
         self.apply_to_all_regions = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies whether the channel applies to a single region or to all regions.</p>
+    /// <p> Specifies whether the channel applies to a single Region or to all Regions.</p>
     pub fn set_apply_to_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_to_all_regions = input;
         self

@@ -5,7 +5,7 @@ pub use crate::operation::start_protected_query::_start_protected_query_input::S
 
 /// Fluent builder constructing a request to `StartProtectedQuery`.
 ///
-/// <p>Creates a protected query that is started by AWS Clean Rooms.</p>
+/// <p>Creates a protected query that is started by Clean Rooms .</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartProtectedQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

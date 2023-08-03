@@ -15,6 +15,10 @@ pub struct DescribeProvisioningArtifactOutput {
     /// <p>The status of the current request.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>Information about the parameters used to provision the product. </p>
+    #[doc(hidden)]
+    pub provisioning_artifact_parameters:
+        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeProvisioningArtifactOutput {
@@ -35,6 +39,12 @@ impl DescribeProvisioningArtifactOutput {
     /// <p>The status of the current request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
+    }
+    /// <p>Information about the parameters used to provision the product. </p>
+    pub fn provisioning_artifact_parameters(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ProvisioningArtifactParameter]> {
+        self.provisioning_artifact_parameters.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProvisioningArtifactOutput {
@@ -61,6 +71,8 @@ pub struct DescribeProvisioningArtifactOutputBuilder {
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) provisioning_artifact_parameters:
+        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeProvisioningArtifactOutputBuilder {
@@ -115,6 +127,28 @@ impl DescribeProvisioningArtifactOutputBuilder {
         self.status = input;
         self
     }
+    /// Appends an item to `provisioning_artifact_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_provisioning_artifact_parameters`](Self::set_provisioning_artifact_parameters).
+    ///
+    /// <p>Information about the parameters used to provision the product. </p>
+    pub fn provisioning_artifact_parameters(
+        mut self,
+        input: crate::types::ProvisioningArtifactParameter,
+    ) -> Self {
+        let mut v = self.provisioning_artifact_parameters.unwrap_or_default();
+        v.push(input);
+        self.provisioning_artifact_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the parameters used to provision the product. </p>
+    pub fn set_provisioning_artifact_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
+    ) -> Self {
+        self.provisioning_artifact_parameters = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -132,6 +166,7 @@ impl DescribeProvisioningArtifactOutputBuilder {
             provisioning_artifact_detail: self.provisioning_artifact_detail,
             info: self.info,
             status: self.status,
+            provisioning_artifact_parameters: self.provisioning_artifact_parameters,
             _request_id: self._request_id,
         }
     }

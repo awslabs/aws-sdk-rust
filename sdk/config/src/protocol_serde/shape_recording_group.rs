@@ -20,6 +20,24 @@ pub fn ser_recording_group(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.exclusion_by_resource_types {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("exclusionByResourceTypes").start_object();
+        crate::protocol_serde::shape_exclusion_by_resource_types::ser_exclusion_by_resource_types(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.recording_strategy {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("recordingStrategy").start_object();
+        crate::protocol_serde::shape_recording_strategy::ser_recording_strategy(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -64,6 +82,16 @@ where
                             "resourceTypes" => {
                                 builder = builder.set_resource_types(
                                     crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?
+                                );
+                            }
+                            "exclusionByResourceTypes" => {
+                                builder = builder.set_exclusion_by_resource_types(
+                                    crate::protocol_serde::shape_exclusion_by_resource_types::de_exclusion_by_resource_types(tokens)?
+                                );
+                            }
+                            "recordingStrategy" => {
+                                builder = builder.set_recording_strategy(
+                                    crate::protocol_serde::shape_recording_strategy::de_recording_strategy(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

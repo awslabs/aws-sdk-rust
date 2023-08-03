@@ -475,4 +475,23 @@ impl StartTranscriptionJobFluentBuilder {
         self.inner = self.inner.set_language_id_settings(input);
         self
     }
+    /// Appends an item to `ToxicityDetection`.
+    ///
+    /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
+    ///
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn toxicity_detection(mut self, input: crate::types::ToxicityDetectionSettings) -> Self {
+        self.inner = self.inner.toxicity_detection(input);
+        self
+    }
+    /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
+    /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
+    pub fn set_toxicity_detection(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>,
+    ) -> Self {
+        self.inner = self.inner.set_toxicity_detection(input);
+        self
+    }
 }

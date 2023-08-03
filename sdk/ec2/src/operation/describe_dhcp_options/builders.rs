@@ -6,7 +6,7 @@ pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_input::D
 /// Fluent builder constructing a request to `DescribeDhcpOptions`.
 ///
 /// <p>Describes one or more of your DHCP options sets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDhcpOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,7 +137,7 @@ impl DescribeDhcpOptionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>
@@ -156,7 +156,7 @@ impl DescribeDhcpOptionsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>dhcp-options-id</code> - The ID of a DHCP options set.</p> </li>
     /// <li> <p> <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).</p> </li>

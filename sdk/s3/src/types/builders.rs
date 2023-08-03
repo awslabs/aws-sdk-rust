@@ -221,6 +221,8 @@ pub use crate::types::_delete_marker_entry::DeleteMarkerEntryBuilder;
 
 pub use crate::types::_object_version::ObjectVersionBuilder;
 
+pub use crate::types::_restore_status::RestoreStatusBuilder;
+
 pub use crate::types::_object::ObjectBuilder;
 
 pub use crate::types::_multipart_upload::MultipartUploadBuilder;

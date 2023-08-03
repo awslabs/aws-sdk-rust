@@ -6,6 +6,7 @@ pub use crate::operation::update_contact::_update_contact_input::UpdateContactIn
 /// Fluent builder constructing a request to `UpdateContact`.
 ///
 /// <p>Updates the contact details by the contact ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -389,8 +389,48 @@ pub(crate) fn reflens_search_available_phone_numbers_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_hours_of_operations_output_next_token(
+    input: &crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_prompts_output_next_token(
+    input: &crate::operation::search_prompts::SearchPromptsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_queues_output_next_token(
     input: &crate::operation::search_queues::SearchQueuesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_quick_connects_output_next_token(
+    input: &crate::operation::search_quick_connects::SearchQuickConnectsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_resource_tags_output_next_token(
+    input: &crate::operation::search_resource_tags::SearchResourceTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -789,10 +829,50 @@ pub(crate) fn lens_search_available_phone_numbers_output_available_numbers_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_search_hours_of_operations_output_hours_of_operations(
+    input: crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
+    let input = match input.hours_of_operations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_prompts_output_prompts(
+    input: crate::operation::search_prompts::SearchPromptsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Prompt>> {
+    let input = match input.prompts {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_queues_output_queues(
     input: crate::operation::search_queues::SearchQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
     let input = match input.queues {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_quick_connects_output_quick_connects(
+    input: crate::operation::search_quick_connects::SearchQuickConnectsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>> {
+    let input = match input.quick_connects {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_resource_tags_output_tags(
+    input: crate::operation::search_resource_tags::SearchResourceTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TagSet>> {
+    let input = match input.tags {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

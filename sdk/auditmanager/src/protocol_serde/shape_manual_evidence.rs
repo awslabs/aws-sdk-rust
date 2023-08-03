@@ -6,6 +6,12 @@ pub fn ser_manual_evidence(
     if let Some(var_1) = &input.s3_resource_path {
         object.key("s3ResourcePath").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.text_response {
+        object.key("textResponse").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.evidence_file_name {
+        object.key("evidenceFileName").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -35,6 +41,24 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "s3ResourcePath" => {
                                 builder = builder.set_s3_resource_path(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "textResponse" => {
+                                builder = builder.set_text_response(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "evidenceFileName" => {
+                                builder = builder.set_evidence_file_name(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

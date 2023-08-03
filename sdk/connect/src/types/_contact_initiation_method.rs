@@ -15,6 +15,7 @@
 ///     ContactInitiationMethod::Api => { /* ... */ },
 ///     ContactInitiationMethod::Callback => { /* ... */ },
 ///     ContactInitiationMethod::Disconnect => { /* ... */ },
+///     ContactInitiationMethod::ExternalOutbound => { /* ... */ },
 ///     ContactInitiationMethod::Inbound => { /* ... */ },
 ///     ContactInitiationMethod::Monitor => { /* ... */ },
 ///     ContactInitiationMethod::Outbound => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
     Disconnect,
     #[allow(missing_docs)] // documentation missing in model
+    ExternalOutbound,
+    #[allow(missing_docs)] // documentation missing in model
     Inbound,
     #[allow(missing_docs)] // documentation missing in model
     Monitor,
@@ -78,6 +81,7 @@ impl ::std::convert::From<&str> for ContactInitiationMethod {
             "API" => ContactInitiationMethod::Api,
             "CALLBACK" => ContactInitiationMethod::Callback,
             "DISCONNECT" => ContactInitiationMethod::Disconnect,
+            "EXTERNAL_OUTBOUND" => ContactInitiationMethod::ExternalOutbound,
             "INBOUND" => ContactInitiationMethod::Inbound,
             "MONITOR" => ContactInitiationMethod::Monitor,
             "OUTBOUND" => ContactInitiationMethod::Outbound,
@@ -103,6 +107,7 @@ impl ContactInitiationMethod {
             ContactInitiationMethod::Api => "API",
             ContactInitiationMethod::Callback => "CALLBACK",
             ContactInitiationMethod::Disconnect => "DISCONNECT",
+            ContactInitiationMethod::ExternalOutbound => "EXTERNAL_OUTBOUND",
             ContactInitiationMethod::Inbound => "INBOUND",
             ContactInitiationMethod::Monitor => "MONITOR",
             ContactInitiationMethod::Outbound => "OUTBOUND",
@@ -117,6 +122,7 @@ impl ContactInitiationMethod {
             "API",
             "CALLBACK",
             "DISCONNECT",
+            "EXTERNAL_OUTBOUND",
             "INBOUND",
             "MONITOR",
             "OUTBOUND",

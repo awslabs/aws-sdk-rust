@@ -15,14 +15,14 @@ pub fn ser_list_savings_plans_purchase_recommendation_generation_input(
         }
         array_3.finish();
     }
-    if input.page_size != 0 {
+    if let Some(var_5) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.page_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_page_token {
-        object.key("NextPageToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_page_token {
+        object.key("NextPageToken").string(var_6.as_str());
     }
     Ok(())
 }

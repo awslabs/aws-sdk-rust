@@ -3,59 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceInput {
-    /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
     #[doc(hidden)]
-    pub input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    #[doc(hidden)]
-    pub disable_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-    #[doc(hidden)]
-    pub disable_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    #[doc(hidden)]
-    pub disable_single_dimension: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl DeleteAwsLogSourceInput {
-    /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-    pub fn input_order(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.input_order.as_deref()
-    }
-    /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn disable_all_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
-        self.disable_all_dimensions.as_ref()
-    }
-    /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-    pub fn disable_two_dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
-        self.disable_two_dimensions.as_ref()
-    }
-    /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    pub fn disable_single_dimension(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disable_single_dimension.as_deref()
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AwsLogSourceConfiguration]> {
+        self.sources.as_deref()
     }
 }
 impl DeleteAwsLogSourceInput {
@@ -72,124 +27,27 @@ impl DeleteAwsLogSourceInput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct DeleteAwsLogSourceInputBuilder {
-    pub(crate) input_order: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    pub(crate) disable_all_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
-    pub(crate) disable_two_dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) disable_single_dimension:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sources:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl DeleteAwsLogSourceInputBuilder {
-    /// Appends an item to `input_order`.
+    /// Appends an item to `sources`.
     ///
-    /// To override the contents of this collection use [`set_input_order`](Self::set_input_order).
+    /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-    pub fn input_order(mut self, input: crate::types::Dimension) -> Self {
-        let mut v = self.input_order.unwrap_or_default();
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
+    pub fn sources(mut self, input: crate::types::AwsLogSourceConfiguration) -> Self {
+        let mut v = self.sources.unwrap_or_default();
         v.push(input);
-        self.input_order = ::std::option::Option::Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-    pub fn set_input_order(
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
+    pub fn set_sources(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
     ) -> Self {
-        self.input_order = input;
-        self
-    }
-    /// Adds a key-value pair to `disable_all_dimensions`.
-    ///
-    /// To override the contents of this collection use [`set_disable_all_dimensions`](Self::set_disable_all_dimensions).
-    ///
-    /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn disable_all_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
-        let mut hash_map = self.disable_all_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.disable_all_dimensions = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    pub fn set_disable_all_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
-    ) -> Self {
-        self.disable_all_dimensions = input;
-        self
-    }
-    /// Adds a key-value pair to `disable_two_dimensions`.
-    ///
-    /// To override the contents of this collection use [`set_disable_two_dimensions`](Self::set_disable_two_dimensions).
-    ///
-    /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-    pub fn disable_two_dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
-        let mut hash_map = self.disable_two_dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.disable_two_dimensions = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-    pub fn set_disable_two_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.disable_two_dimensions = input;
-        self
-    }
-    /// Appends an item to `disable_single_dimension`.
-    ///
-    /// To override the contents of this collection use [`set_disable_single_dimension`](Self::set_disable_single_dimension).
-    ///
-    /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    pub fn disable_single_dimension(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self.disable_single_dimension.unwrap_or_default();
-        v.push(input.into());
-        self.disable_single_dimension = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    pub fn set_disable_single_dimension(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.disable_single_dimension = input;
+        self.sources = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
@@ -201,10 +59,7 @@ impl DeleteAwsLogSourceInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput {
-                input_order: self.input_order,
-                disable_all_dimensions: self.disable_all_dimensions,
-                disable_two_dimensions: self.disable_two_dimensions,
-                disable_single_dimension: self.disable_single_dimension,
+                sources: self.sources,
             },
         )
     }

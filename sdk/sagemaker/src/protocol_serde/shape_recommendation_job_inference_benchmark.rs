@@ -53,6 +53,16 @@ where
                                     crate::protocol_serde::shape_inference_metrics::de_inference_metrics(tokens)?
                                 );
                             }
+                            "InvocationEndTime" => {
+                                builder = builder.set_invocation_end_time(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
+                                );
+                            }
+                            "InvocationStartTime" => {
+                                builder = builder.set_invocation_start_time(
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

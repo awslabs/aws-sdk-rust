@@ -15,7 +15,7 @@ pub struct DescribeTypeOutput {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
+    /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     #[doc(hidden)]
     pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the specified extension version is set as the default version.</p>
@@ -101,7 +101,7 @@ pub struct DescribeTypeOutput {
     /// <p>When the specified private extension version was registered or activated in your account.</p>
     #[doc(hidden)]
     pub time_created: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub configuration_schema: ::std::option::Option<::std::string::String>,
@@ -109,11 +109,11 @@ pub struct DescribeTypeOutput {
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub original_type_name: ::std::option::Option<::std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     #[doc(hidden)]
     pub original_type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a public third-party extension.</p>
@@ -124,11 +124,11 @@ pub struct DescribeTypeOutput {
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub latest_public_version: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     #[doc(hidden)]
     pub is_activated: ::std::option::Option<bool>,
-    /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
     pub auto_update: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -149,7 +149,7 @@ impl DescribeTypeOutput {
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
+    /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn default_version_id(&self) -> ::std::option::Option<&str> {
         self.default_version_id.as_deref()
     }
@@ -252,7 +252,7 @@ impl DescribeTypeOutput {
     pub fn time_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
         self.configuration_schema.as_deref()
@@ -262,12 +262,12 @@ impl DescribeTypeOutput {
     pub fn publisher_id(&self) -> ::std::option::Option<&str> {
         self.publisher_id.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(&self) -> ::std::option::Option<&str> {
         self.original_type_name.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     pub fn original_type_arn(&self) -> ::std::option::Option<&str> {
         self.original_type_arn.as_deref()
     }
@@ -281,12 +281,12 @@ impl DescribeTypeOutput {
     pub fn latest_public_version(&self) -> ::std::option::Option<&str> {
         self.latest_public_version.as_deref()
     }
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn is_activated(&self) -> ::std::option::Option<bool> {
         self.is_activated
     }
-    /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn auto_update(&self) -> ::std::option::Option<bool> {
         self.auto_update
     }
@@ -374,7 +374,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
+    /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn default_version_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -384,7 +384,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>.</p>
+    /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn set_default_version_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -664,7 +664,7 @@ impl DescribeTypeOutputBuilder {
         self.time_created = input;
         self
     }
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn configuration_schema(
         mut self,
@@ -673,7 +673,7 @@ impl DescribeTypeOutputBuilder {
         self.configuration_schema = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON string that represent the current configuration data for the extension in this account and region.</p>
+    /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_configuration_schema(
         mut self,
@@ -694,8 +694,8 @@ impl DescribeTypeOutputBuilder {
         self.publisher_id = input;
         self
     }
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -703,8 +703,8 @@ impl DescribeTypeOutputBuilder {
         self.original_type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_original_type_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -712,7 +712,7 @@ impl DescribeTypeOutputBuilder {
         self.original_type_name = input;
         self
     }
-    /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     pub fn original_type_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -720,7 +720,7 @@ impl DescribeTypeOutputBuilder {
         self.original_type_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the public extension.</p>
+    /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     pub fn set_original_type_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -764,24 +764,24 @@ impl DescribeTypeOutputBuilder {
         self.latest_public_version = input;
         self
     }
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn is_activated(mut self, input: bool) -> Self {
         self.is_activated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the extension is activated in the account and region.</p>
+    /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_is_activated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_activated = input;
         self
     }
-    /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn auto_update(mut self, input: bool) -> Self {
         self.auto_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_update = input;
         self

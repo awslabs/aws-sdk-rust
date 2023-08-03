@@ -14,6 +14,7 @@
 /// match startingposition {
 ///     StartingPosition::Earliest => { /* ... */ },
 ///     StartingPosition::Latest => { /* ... */ },
+///     StartingPosition::Timestamp => { /* ... */ },
 ///     StartingPosition::TrimHorizon => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum StartingPosition {
     #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
+    Timestamp,
+    #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for StartingPosition {
         match s {
             "earliest" => StartingPosition::Earliest,
             "latest" => StartingPosition::Latest,
+            "timestamp" => StartingPosition::Timestamp,
             "trim_horizon" => StartingPosition::TrimHorizon,
             other => {
                 StartingPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -82,13 +86,14 @@ impl StartingPosition {
         match self {
             StartingPosition::Earliest => "earliest",
             StartingPosition::Latest => "latest",
+            StartingPosition::Timestamp => "timestamp",
             StartingPosition::TrimHorizon => "trim_horizon",
             StartingPosition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["earliest", "latest", "trim_horizon"]
+        &["earliest", "latest", "timestamp", "trim_horizon"]
     }
 }
 impl ::std::convert::AsRef<str> for StartingPosition {

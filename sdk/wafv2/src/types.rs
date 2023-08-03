@@ -57,9 +57,11 @@ pub use crate::types::_text_transformation_type::TextTransformationType;
 
 pub use crate::types::_field_to_match::FieldToMatch;
 
-pub use crate::types::_cookies::Cookies;
+pub use crate::types::_header_order::HeaderOrder;
 
 pub use crate::types::_oversize_handling::OversizeHandling;
+
+pub use crate::types::_cookies::Cookies;
 
 pub use crate::types::_map_match_scope::MapMatchScope;
 
@@ -103,7 +105,7 @@ pub use crate::types::_rule_action_override::RuleActionOverride;
 
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfig;
 
-pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSet;
+pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleSet;
 
 pub use crate::types::_response_inspection::ResponseInspection;
 
@@ -115,13 +117,23 @@ pub use crate::types::_response_inspection_header::ResponseInspectionHeader;
 
 pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCode;
 
-pub use crate::types::_request_inspection::RequestInspection;
+pub use crate::types::_request_inspection_acfp::RequestInspectionAcfp;
+
+pub use crate::types::_address_field::AddressField;
+
+pub use crate::types::_phone_number_field::PhoneNumberField;
+
+pub use crate::types::_email_field::EmailField;
 
 pub use crate::types::_password_field::PasswordField;
 
 pub use crate::types::_username_field::UsernameField;
 
 pub use crate::types::_payload_type::PayloadType;
+
+pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSet;
+
+pub use crate::types::_request_inspection::RequestInspection;
 
 pub use crate::types::_aws_managed_rules_bot_control_rule_set::AwsManagedRulesBotControlRuleSet;
 
@@ -138,6 +150,8 @@ pub use crate::types::_and_statement::AndStatement;
 pub use crate::types::_rate_based_statement::RateBasedStatement;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKey;
+
+pub use crate::types::_rate_limit_uri_path::RateLimitUriPath;
 
 pub use crate::types::_rate_limit_label_namespace::RateLimitLabelNamespace;
 
@@ -281,9 +295,13 @@ pub use crate::types::_ip_set::IpSet;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
+pub use crate::types::_managed_product_descriptor::ManagedProductDescriptor;
+
 mod _action_condition;
 
 mod _action_value;
+
+mod _address_field;
 
 mod _all;
 
@@ -298,6 +316,8 @@ mod _api_key_summary;
 mod _associated_resource_type;
 
 mod _association_config;
+
+mod _aws_managed_rules_acfp_rule_set;
 
 mod _aws_managed_rules_atp_rule_set;
 
@@ -345,6 +365,8 @@ mod _custom_response_body;
 
 mod _default_action;
 
+mod _email_field;
+
 mod _excluded_rule;
 
 mod _failure_reason;
@@ -370,6 +392,8 @@ mod _forwarded_ip_position;
 mod _geo_match_statement;
 
 mod _header_match_pattern;
+
+mod _header_order;
 
 mod _headers;
 
@@ -411,6 +435,8 @@ mod _logging_configuration;
 
 mod _logging_filter;
 
+mod _managed_product_descriptor;
+
 mod _managed_rule_group_config;
 
 mod _managed_rule_group_statement;
@@ -447,6 +473,8 @@ mod _password_field;
 
 mod _payload_type;
 
+mod _phone_number_field;
+
 mod _platform;
 
 mod _positional_constraint;
@@ -477,6 +505,8 @@ mod _rate_limit_query_argument;
 
 mod _rate_limit_query_string;
 
+mod _rate_limit_uri_path;
+
 mod _regex;
 
 mod _regex_match_statement;
@@ -492,6 +522,8 @@ mod _release_summary;
 mod _request_body_associated_resource_type_config;
 
 mod _request_inspection;
+
+mod _request_inspection_acfp;
 
 mod _resource_type;
 

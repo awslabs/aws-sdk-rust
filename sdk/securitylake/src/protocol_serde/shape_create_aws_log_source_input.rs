@@ -3,62 +3,17 @@ pub fn ser_create_aws_log_source_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_aws_log_source::CreateAwsLogSourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enable_all_dimensions {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("enableAllDimensions").start_object();
-        for (key_3, value_4) in var_1 {
+    if let Some(var_1) = &input.sources {
+        let mut array_2 = object.key("sources").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                for (key_6, value_7) in value_4 {
-                    {
-                        let mut array_8 = object_5.key(key_6.as_str()).start_array();
-                        for item_9 in value_7 {
-                            {
-                                array_8.value().string(item_9.as_str());
-                            }
-                        }
-                        array_8.finish();
-                    }
-                }
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_aws_log_source_configuration::ser_aws_log_source_configuration(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        object_2.finish();
-    }
-    if let Some(var_10) = &input.enable_single_dimension {
-        let mut array_11 = object.key("enableSingleDimension").start_array();
-        for item_12 in var_10 {
-            {
-                array_11.value().string(item_12.as_str());
-            }
-        }
-        array_11.finish();
-    }
-    if let Some(var_13) = &input.enable_two_dimensions {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("enableTwoDimensions").start_object();
-        for (key_15, value_16) in var_13 {
-            {
-                let mut array_17 = object_14.key(key_15.as_str()).start_array();
-                for item_18 in value_16 {
-                    {
-                        array_17.value().string(item_18.as_str());
-                    }
-                }
-                array_17.finish();
-            }
-        }
-        object_14.finish();
-    }
-    if let Some(var_19) = &input.input_order {
-        let mut array_20 = object.key("inputOrder").start_array();
-        for item_21 in var_19 {
-            {
-                array_20.value().string(item_21.as_str());
-            }
-        }
-        array_20.finish();
+        array_2.finish();
     }
     Ok(())
 }

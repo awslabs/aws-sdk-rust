@@ -8,6 +8,10 @@ pub fn parse_http_error_metadata(
     crate::rest_xml_wrapped_errors::parse_error_metadata(response_body)
 }
 
+pub(crate) mod shape_activate_organizations_access;
+
+pub(crate) mod shape_activate_organizations_access_input;
+
 pub(crate) mod shape_activate_type;
 
 pub(crate) mod shape_activate_type_input;
@@ -39,6 +43,10 @@ pub(crate) mod shape_create_stack_instances_input;
 pub(crate) mod shape_create_stack_set;
 
 pub(crate) mod shape_create_stack_set_input;
+
+pub(crate) mod shape_deactivate_organizations_access;
+
+pub(crate) mod shape_deactivate_organizations_access_input;
 
 pub(crate) mod shape_deactivate_type;
 
@@ -75,6 +83,10 @@ pub(crate) mod shape_describe_change_set_hooks;
 pub(crate) mod shape_describe_change_set_hooks_input;
 
 pub(crate) mod shape_describe_change_set_input;
+
+pub(crate) mod shape_describe_organizations_access;
+
+pub(crate) mod shape_describe_organizations_access_input;
 
 pub(crate) mod shape_describe_publisher;
 
@@ -171,6 +183,10 @@ pub(crate) mod shape_list_exports_input;
 pub(crate) mod shape_list_imports;
 
 pub(crate) mod shape_list_imports_input;
+
+pub(crate) mod shape_list_stack_instance_resource_drifts;
+
+pub(crate) mod shape_list_stack_instance_resource_drifts_input;
 
 pub(crate) mod shape_list_stack_instances;
 
@@ -332,6 +348,8 @@ pub(crate) mod shape_stale_request_exception;
 
 pub(crate) mod shape_tag;
 
+pub(crate) mod shape_template_summary_config;
+
 pub(crate) mod shape_token_already_exists_exception;
 
 pub(crate) mod shape_type_configuration_identifier;
@@ -378,6 +396,8 @@ pub(crate) mod shape_stack_events;
 
 pub(crate) mod shape_stack_instance;
 
+pub(crate) mod shape_stack_instance_resource_drifts_summaries;
+
 pub(crate) mod shape_stack_instance_summaries;
 
 pub(crate) mod shape_stack_resource_detail;
@@ -420,6 +440,8 @@ pub(crate) mod shape_type_version_summaries;
 
 pub(crate) mod shape_unprocessed_type_configurations;
 
+pub(crate) mod shape_warnings;
+
 pub(crate) mod shape_account_limit;
 
 pub(crate) mod shape_batch_describe_type_configurations_error;
@@ -455,6 +477,8 @@ pub(crate) mod shape_stack;
 pub(crate) mod shape_stack_event;
 
 pub(crate) mod shape_stack_instance_comprehensive_status;
+
+pub(crate) mod shape_stack_instance_resource_drifts_summary;
 
 pub(crate) mod shape_stack_instance_summary;
 

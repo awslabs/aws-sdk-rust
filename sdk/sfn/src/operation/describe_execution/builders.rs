@@ -5,10 +5,11 @@ pub use crate::operation::describe_execution::_describe_execution_input::Describ
 
 /// Fluent builder constructing a request to `DescribeExecution`.
 ///
-/// <p>Provides all information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map Run ARN if the execution was dispatched by a Map Run.</p> <note>
+/// <p>Provides information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map Run Amazon Resource Name (ARN) if the execution was dispatched by a Map Run.</p>
+/// <p>If you specify a version or alias ARN when you call the <code>StartExecution</code> API action, <code>DescribeExecution</code> returns that ARN.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
-/// <p>This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by a Map Run.</p>
+/// <p>Executions of an <code>EXPRESS</code> state machinearen't supported by <code>DescribeExecution</code> unless a Map Run dispatched them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

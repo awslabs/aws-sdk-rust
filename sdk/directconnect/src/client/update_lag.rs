@@ -22,7 +22,7 @@ impl super::Client {
     ///   - [`aws_logical_device_id(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::update_lag::UpdateLagOutput::connections): <p>The connections bundled by the LAG.</p>
     ///   - [`allows_hosted_connections(bool)`](crate::operation::update_lag::UpdateLagOutput::allows_hosted_connections): <p>Indicates whether the LAG can host other connections.</p>
-    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::operation::update_lag::UpdateLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::operation::update_lag::UpdateLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames are supported.</p>
     ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::operation::update_lag::UpdateLagOutput::has_logical_redundancy): <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::update_lag::UpdateLagOutput::tags): <p>The tags associated with the LAG.</p>
     ///   - [`provider_name(Option<String>)`](crate::operation::update_lag::UpdateLagOutput::provider_name): <p>The name of the service provider associated with the LAG.</p>

@@ -10,6 +10,9 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::redact_channel_message::RedactChannelMessageOutput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
     ///   - [`message_id(Option<String>)`](crate::operation::redact_channel_message::RedactChannelMessageOutput::message_id): <p>The ID of the message being redacted.</p>
     /// - On failure, responds with [`SdkError<RedactChannelMessageError>`](crate::operation::redact_channel_message::RedactChannelMessageError)
+    #[deprecated(
+        note = "Replaced by RedactChannelMessage in the Amazon Chime SDK Messaging Namespace"
+    )]
     pub fn redact_channel_message(
         &self,
     ) -> crate::operation::redact_channel_message::builders::RedactChannelMessageFluentBuilder {

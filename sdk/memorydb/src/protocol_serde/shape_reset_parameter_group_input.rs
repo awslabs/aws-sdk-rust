@@ -6,17 +6,17 @@ pub fn ser_reset_parameter_group_input(
     if let Some(var_1) = &input.parameter_group_name {
         object.key("ParameterGroupName").string(var_1.as_str());
     }
-    if input.all_parameters {
-        object.key("AllParameters").boolean(input.all_parameters);
+    if let Some(var_2) = &input.all_parameters {
+        object.key("AllParameters").boolean(*var_2);
     }
-    if let Some(var_2) = &input.parameter_names {
-        let mut array_3 = object.key("ParameterNames").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.parameter_names {
+        let mut array_4 = object.key("ParameterNames").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

@@ -77,6 +77,11 @@ where
                                 builder = builder
                                     .set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                             }
+                            "SftpConfig" => {
+                                builder = builder.set_sftp_config(
+                                    crate::protocol_serde::shape_sftp_connector_config::de_sftp_connector_config(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

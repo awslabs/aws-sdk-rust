@@ -15,44 +15,47 @@ pub fn ser_update_broker_input(
         crate::protocol_serde::shape_configuration_id::ser_configuration_id(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.engine_version {
-        object.key("engineVersion").string(var_5.as_str());
+    if let Some(var_5) = &input.data_replication_mode {
+        object.key("dataReplicationMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.host_instance_type {
-        object.key("hostInstanceType").string(var_6.as_str());
+    if let Some(var_6) = &input.engine_version {
+        object.key("engineVersion").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.ldap_server_metadata {
+    if let Some(var_7) = &input.host_instance_type {
+        object.key("hostInstanceType").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ldapServerMetadata").start_object();
+        let mut object_9 = object.key("ldapServerMetadata").start_object();
         crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_9) = &input.logs {
+    if let Some(var_10) = &input.logs {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("logs").start_object();
-        crate::protocol_serde::shape_logs::ser_logs(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("logs").start_object();
+        crate::protocol_serde::shape_logs::ser_logs(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.maintenance_window_start_time {
+    if let Some(var_12) = &input.maintenance_window_start_time {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("maintenanceWindowStartTime").start_object();
+        let mut object_13 = object.key("maintenanceWindowStartTime").start_object();
         crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(
-            &mut object_12,
-            var_11,
+            &mut object_13,
+            var_12,
         )?;
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_13) = &input.security_groups {
-        let mut array_14 = object.key("securityGroups").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.security_groups {
+        let mut array_15 = object.key("securityGroups").start_array();
+        for item_16 in var_14 {
             {
-                array_14.value().string(item_15.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

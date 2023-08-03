@@ -14,6 +14,9 @@ pub struct EndpointInputConfiguration {
     #[doc(hidden)]
     pub environment_parameter_ranges:
         ::std::option::Option<crate::types::EnvironmentParameterRanges>,
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    #[doc(hidden)]
+    pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointInputConfiguration {
     /// <p>The instance types to use for the load test.</p>
@@ -31,6 +34,12 @@ impl EndpointInputConfiguration {
         &self,
     ) -> ::std::option::Option<&crate::types::EnvironmentParameterRanges> {
         self.environment_parameter_ranges.as_ref()
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn serverless_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+        self.serverless_config.as_ref()
     }
 }
 impl EndpointInputConfiguration {
@@ -50,6 +59,8 @@ pub struct EndpointInputConfigurationBuilder {
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameter_ranges:
         ::std::option::Option<crate::types::EnvironmentParameterRanges>,
+    pub(crate) serverless_config:
+        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl EndpointInputConfigurationBuilder {
     /// <p>The instance types to use for the load test.</p>
@@ -97,12 +108,29 @@ impl EndpointInputConfigurationBuilder {
         self.environment_parameter_ranges = input;
         self
     }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn serverless_config(
+        mut self,
+        input: crate::types::ProductionVariantServerlessConfig,
+    ) -> Self {
+        self.serverless_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the serverless configuration for an endpoint variant.</p>
+    pub fn set_serverless_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    ) -> Self {
+        self.serverless_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EndpointInputConfiguration`](crate::types::EndpointInputConfiguration).
     pub fn build(self) -> crate::types::EndpointInputConfiguration {
         crate::types::EndpointInputConfiguration {
             instance_type: self.instance_type,
             inference_specification_name: self.inference_specification_name,
             environment_parameter_ranges: self.environment_parameter_ranges,
+            serverless_config: self.serverless_config,
         }
     }
 }

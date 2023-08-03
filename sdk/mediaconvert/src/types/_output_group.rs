@@ -7,7 +7,7 @@ pub struct OutputGroup {
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
     #[doc(hidden)]
     pub automated_encoding_settings: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
-    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    /// Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     #[doc(hidden)]
     pub custom_name: ::std::option::Option<::std::string::String>,
     /// Name of the output group
@@ -27,7 +27,7 @@ impl OutputGroup {
     ) -> ::std::option::Option<&crate::types::AutomatedEncodingSettings> {
         self.automated_encoding_settings.as_ref()
     }
-    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    /// Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     pub fn custom_name(&self) -> ::std::option::Option<&str> {
         self.custom_name.as_deref()
     }
@@ -83,12 +83,12 @@ impl OutputGroupBuilder {
         self.automated_encoding_settings = input;
         self
     }
-    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    /// Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     pub fn custom_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Use Custom Group Name (CustomName) to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
+    /// Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
     pub fn set_custom_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_name = input;
         self

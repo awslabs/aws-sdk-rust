@@ -5,7 +5,13 @@ pub use crate::operation::put_app_instance_retention_settings::_put_app_instance
 
 /// Fluent builder constructing a request to `PutAppInstanceRetentionSettings`.
 ///
-/// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>
+/// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html">PutAppInstanceRetentionSettings</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by PutAppInstanceRetentionSettings in the Amazon Chime SDK Identity Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

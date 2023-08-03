@@ -27,6 +27,18 @@ pub fn ser_pivot_table_field_options(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.collapse_state_options {
+        let mut array_10 = object.key("CollapseStateOptions").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_pivot_table_field_collapse_state_option::ser_pivot_table_field_collapse_state_option(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }
 
@@ -62,6 +74,11 @@ where
                             "DataPathOptions" => {
                                 builder = builder.set_data_path_options(
                                     crate::protocol_serde::shape_pivot_table_data_path_option_list::de_pivot_table_data_path_option_list(tokens)?
+                                );
+                            }
+                            "CollapseStateOptions" => {
+                                builder = builder.set_collapse_state_options(
+                                    crate::protocol_serde::shape_pivot_table_field_collapse_state_option_list::de_pivot_table_field_collapse_state_option_list(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -157,6 +157,9 @@ pub mod put_principal_mapping;
 /// Types for the `Query` operation.
 pub mod query;
 
+/// Types for the `Retrieve` operation.
+pub mod retrieve;
+
 /// Types for the `StartDataSourceSyncJob` operation.
 pub mod start_data_source_sync_job;
 

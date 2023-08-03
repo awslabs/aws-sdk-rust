@@ -304,3 +304,6 @@ mod _list_saml_provider_tags_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

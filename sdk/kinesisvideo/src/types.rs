@@ -59,6 +59,8 @@ pub use crate::types::_channel_type::ChannelType;
 
 pub use crate::types::_channel_name_condition::ChannelNameCondition;
 
+pub use crate::types::_list_edge_agent_configurations_edge_config::ListEdgeAgentConfigurationsEdgeConfig;
+
 pub use crate::types::_resource_endpoint_list_item::ResourceEndpointListItem;
 
 pub use crate::types::_channel_protocol::ChannelProtocol;
@@ -70,6 +72,16 @@ pub use crate::types::_channel_role::ChannelRole;
 pub use crate::types::_api_name::ApiName;
 
 pub use crate::types::_mapped_resource_configuration_list_item::MappedResourceConfigurationListItem;
+
+pub use crate::types::_edge_agent_status::EdgeAgentStatus;
+
+pub use crate::types::_last_uploader_status::LastUploaderStatus;
+
+pub use crate::types::_uploader_status::UploaderStatus;
+
+pub use crate::types::_last_recorder_status::LastRecorderStatus;
+
+pub use crate::types::_recorder_status::RecorderStatus;
 
 mod _api_name;
 
@@ -89,6 +101,8 @@ mod _configuration_status;
 
 mod _deletion_config;
 
+mod _edge_agent_status;
+
 mod _edge_config;
 
 mod _format;
@@ -100,6 +114,12 @@ mod _image_generation_configuration;
 mod _image_generation_destination_config;
 
 mod _image_selector_type;
+
+mod _last_recorder_status;
+
+mod _last_uploader_status;
+
+mod _list_edge_agent_configurations_edge_config;
 
 mod _local_size_config;
 
@@ -118,6 +138,8 @@ mod _notification_configuration;
 mod _notification_destination_config;
 
 mod _recorder_config;
+
+mod _recorder_status;
 
 mod _resource_endpoint_list_item;
 
@@ -142,6 +164,8 @@ mod _tag;
 mod _update_data_retention_operation;
 
 mod _uploader_config;
+
+mod _uploader_status;
 
 /// Builders
 pub mod builders;

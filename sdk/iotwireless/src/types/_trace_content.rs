@@ -10,6 +10,9 @@ pub struct TraceContent {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
+    /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+    #[doc(hidden)]
+    pub multicast_frame_info: ::std::option::Option<crate::types::MulticastFrameInfo>,
 }
 impl TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
@@ -21,6 +24,10 @@ impl TraceContent {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
+    }
+    /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+    pub fn multicast_frame_info(&self) -> ::std::option::Option<&crate::types::MulticastFrameInfo> {
+        self.multicast_frame_info.as_ref()
     }
 }
 impl TraceContent {
@@ -39,6 +46,7 @@ pub struct TraceContentBuilder {
     pub(crate) wireless_device_frame_info:
         ::std::option::Option<crate::types::WirelessDeviceFrameInfo>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
+    pub(crate) multicast_frame_info: ::std::option::Option<crate::types::MulticastFrameInfo>,
 }
 impl TraceContentBuilder {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
@@ -67,11 +75,25 @@ impl TraceContentBuilder {
         self.log_level = input;
         self
     }
+    /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+    pub fn multicast_frame_info(mut self, input: crate::types::MulticastFrameInfo) -> Self {
+        self.multicast_frame_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your LoRaWAN end devices and the network server.</p>
+    pub fn set_multicast_frame_info(
+        mut self,
+        input: ::std::option::Option<crate::types::MulticastFrameInfo>,
+    ) -> Self {
+        self.multicast_frame_info = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TraceContent`](crate::types::TraceContent).
     pub fn build(self) -> crate::types::TraceContent {
         crate::types::TraceContent {
             wireless_device_frame_info: self.wireless_device_frame_info,
             log_level: self.log_level,
+            multicast_frame_info: self.multicast_frame_info,
         }
     }
 }

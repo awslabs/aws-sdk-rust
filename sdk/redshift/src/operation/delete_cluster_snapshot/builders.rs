@@ -118,7 +118,7 @@ impl DeleteClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(
         mut self,
@@ -127,7 +127,7 @@ impl DeleteClusterSnapshotFluentBuilder {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,

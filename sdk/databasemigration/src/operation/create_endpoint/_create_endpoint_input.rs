@@ -116,6 +116,9 @@ pub struct CreateEndpointInput {
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     #[doc(hidden)]
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    #[doc(hidden)]
+    pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl CreateEndpointInput {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
@@ -271,6 +274,10 @@ impl CreateEndpointInput {
     pub fn gcp_my_sql_settings(&self) -> ::std::option::Option<&crate::types::GcpMySqlSettings> {
         self.gcp_my_sql_settings.as_ref()
     }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn timestream_settings(&self) -> ::std::option::Option<&crate::types::TimestreamSettings> {
+        self.timestream_settings.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -315,6 +322,7 @@ impl ::std::fmt::Debug for CreateEndpointInput {
         formatter.field("doc_db_settings", &self.doc_db_settings);
         formatter.field("redis_settings", &self.redis_settings);
         formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+        formatter.field("timestream_settings", &self.timestream_settings);
         formatter.finish()
     }
 }
@@ -364,6 +372,7 @@ pub struct CreateEndpointInputBuilder {
     pub(crate) doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
     pub(crate) redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     pub(crate) gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
+    pub(crate) timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl CreateEndpointInputBuilder {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
@@ -838,6 +847,19 @@ impl CreateEndpointInputBuilder {
         self.gcp_my_sql_settings = input;
         self
     }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn timestream_settings(mut self, input: crate::types::TimestreamSettings) -> Self {
+        self.timestream_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+    pub fn set_timestream_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::TimestreamSettings>,
+    ) -> Self {
+        self.timestream_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(
         self,
@@ -880,6 +902,7 @@ impl CreateEndpointInputBuilder {
             doc_db_settings: self.doc_db_settings,
             redis_settings: self.redis_settings,
             gcp_my_sql_settings: self.gcp_my_sql_settings,
+            timestream_settings: self.timestream_settings,
         })
     }
 }
@@ -926,6 +949,7 @@ impl ::std::fmt::Debug for CreateEndpointInputBuilder {
         formatter.field("doc_db_settings", &self.doc_db_settings);
         formatter.field("redis_settings", &self.redis_settings);
         formatter.field("gcp_my_sql_settings", &self.gcp_my_sql_settings);
+        formatter.field("timestream_settings", &self.timestream_settings);
         formatter.finish()
     }
 }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_edge_configuration::_describe_edge_configurat
 
 /// Fluent builder constructing a request to `DescribeEdgeConfiguration`.
 ///
-/// <p>Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of the configuration if the configuration is in sync with the Edge Agent.</p>
+/// <p>Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API and the latest status of the edge agent's recorder and uploader jobs. Use this API to get the status of the configuration to determine if the configuration is in sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEdgeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

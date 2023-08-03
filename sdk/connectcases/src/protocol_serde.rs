@@ -216,6 +216,8 @@ pub(crate) mod shape_template_summary;
 
 pub(crate) mod shape_case_event_included_data;
 
+pub(crate) mod shape_empty_field_value;
+
 pub(crate) mod shape_layout_sections;
 
 pub(crate) mod shape_related_item_content;

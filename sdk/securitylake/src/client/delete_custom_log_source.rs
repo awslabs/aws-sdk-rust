@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomLogSource`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`custom_source_name(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::custom_source_name) / [`set_custom_source_name(Option<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::set_custom_source_name): <p>The custom source name for the custom log source.</p>
-    /// - On success, responds with [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput) with field(s):
-    ///   - [`custom_data_location(Option<String>)`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput::custom_data_location): <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+    ///   - [`source_name(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::source_name) / [`set_source_name(Option<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::set_source_name): <p>The source name of custom log source that you want to delete.</p>
+    ///   - [`source_version(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::source_version) / [`set_source_version(Option<String>)`](crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceFluentBuilder::set_source_version): <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
+    /// - On success, responds with [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomLogSourceError>`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceError)
     pub fn delete_custom_log_source(
         &self,

@@ -9,7 +9,7 @@ pub struct UpdateStorageSystemInput {
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
     #[doc(hidden)]
     pub server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
     #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
@@ -33,7 +33,7 @@ impl UpdateStorageSystemInput {
     ) -> ::std::option::Option<&crate::types::DiscoveryServerConfiguration> {
         self.server_configuration.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
     pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.agent_arns.as_deref()
     }
@@ -110,14 +110,14 @@ impl UpdateStorageSystemInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
     pub fn set_agent_arns(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

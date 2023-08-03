@@ -201,6 +201,11 @@ where
                                     )?,
                                 );
                             }
+                            "TimezoneEstimationMethods" => {
+                                builder = builder.set_timezone_estimation_methods(
+                                    crate::protocol_serde::shape_list_of__timezone_estimation_methods_element::de_list_of__timezone_estimation_methods_element(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

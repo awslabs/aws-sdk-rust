@@ -18,6 +18,9 @@ pub struct ComponentSummary {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
+    #[doc(hidden)]
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummary {
     /// <p>The ID of the application.</p>
@@ -40,6 +43,10 @@ impl ComponentSummary {
     > {
         self.tags.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl ComponentSummary {
     /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::types::ComponentSummary).
@@ -60,6 +67,7 @@ pub struct ComponentSummaryBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummaryBuilder {
     /// <p>The ID of the application.</p>
@@ -126,6 +134,16 @@ impl ComponentSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {
         crate::types::ComponentSummary {
@@ -133,6 +151,7 @@ impl ComponentSummaryBuilder {
             component_id: self.component_id,
             component_type: self.component_type,
             tags: self.tags,
+            arn: self.arn,
         }
     }
 }

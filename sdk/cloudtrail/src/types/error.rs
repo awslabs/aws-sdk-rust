@@ -71,6 +71,8 @@ pub use crate::types::error::_event_data_store_has_ongoing_import_exception::Eve
 
 pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataStoreArnInvalidException;
 
+pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsException;
+
 pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryException;
 
 pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundException;
@@ -81,13 +83,13 @@ pub use crate::types::error::_channel_already_exists_exception::ChannelAlreadyEx
 
 pub use crate::types::error::_import_not_found_exception::ImportNotFoundException;
 
+pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusException;
+
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesException;
 
 pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementException;
 
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceException;
-
-pub use crate::types::error::_invalid_event_data_store_status_exception::InvalidEventDataStoreStatusException;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportException;
 
@@ -148,8 +150,6 @@ pub use crate::types::error::_trail_already_exists_exception::TrailAlreadyExists
 pub use crate::types::error::_tags_limit_exceeded_exception::TagsLimitExceededException;
 
 pub use crate::types::error::_maximum_number_of_trails_exceeded_exception::MaximumNumberOfTrailsExceededException;
-
-pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsException;
 
 pub use crate::types::error::_invalid_source_exception::InvalidSourceException;
 

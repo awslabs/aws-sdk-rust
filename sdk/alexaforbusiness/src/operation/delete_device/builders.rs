@@ -6,6 +6,7 @@ pub use crate::operation::delete_device::_delete_device_input::DeleteDeviceInput
 /// Fluent builder constructing a request to `DeleteDevice`.
 ///
 /// <p>Removes a device from Alexa For Business.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

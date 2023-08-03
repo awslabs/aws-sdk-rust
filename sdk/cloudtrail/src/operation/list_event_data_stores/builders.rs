@@ -5,7 +5,7 @@ pub use crate::operation::list_event_data_stores::_list_event_data_stores_input:
 
 /// Fluent builder constructing a request to `ListEventDataStores`.
 ///
-/// <p>Returns information about all event data stores in the account, in the current region.</p>
+/// <p>Returns information about all event data stores in the account, in the current Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventDataStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

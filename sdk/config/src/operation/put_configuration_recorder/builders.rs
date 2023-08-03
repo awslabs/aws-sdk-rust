@@ -5,10 +5,10 @@ pub use crate::operation::put_configuration_recorder::_put_configuration_recorde
 
 /// Fluent builder constructing a request to `PutConfigurationRecorder`.
 ///
-/// <p>Creates a new configuration recorder to record the selected resource configurations.</p>
-/// <p>You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note>
-/// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
-/// <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p>
+/// <p>Creates a new configuration recorder to record configuration changes for specified resource types.</p>
+/// <p>You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.</p> <note>
+/// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
+/// <p>If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to record all supported resource types.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderFluentBuilder {
@@ -103,12 +103,12 @@ impl PutConfigurationRecorderFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.inner = self.inner.configuration_recorder(input);
         self
     }
-    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
     pub fn set_configuration_recorder(
         mut self,
         input: ::std::option::Option<crate::types::ConfigurationRecorder>,

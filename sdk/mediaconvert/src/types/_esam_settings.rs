@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EsamSettings {
-    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     #[doc(hidden)]
     pub manifest_confirm_condition_notification:
         ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     #[doc(hidden)]
     pub response_signal_preroll: ::std::option::Option<i32>,
-    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     #[doc(hidden)]
     pub signal_processing_notification:
         ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
 }
 impl EsamSettings {
-    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     pub fn manifest_confirm_condition_notification(
         &self,
     ) -> ::std::option::Option<&crate::types::EsamManifestConfirmConditionNotification> {
@@ -27,7 +27,7 @@ impl EsamSettings {
     pub fn response_signal_preroll(&self) -> ::std::option::Option<i32> {
         self.response_signal_preroll
     }
-    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub fn signal_processing_notification(
         &self,
     ) -> ::std::option::Option<&crate::types::EsamSignalProcessingNotification> {
@@ -54,7 +54,7 @@ pub struct EsamSettingsBuilder {
         ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
 }
 impl EsamSettingsBuilder {
-    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     pub fn manifest_confirm_condition_notification(
         mut self,
         input: crate::types::EsamManifestConfirmConditionNotification,
@@ -62,7 +62,7 @@ impl EsamSettingsBuilder {
         self.manifest_confirm_condition_notification = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+    /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     pub fn set_manifest_confirm_condition_notification(
         mut self,
         input: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
@@ -80,7 +80,7 @@ impl EsamSettingsBuilder {
         self.response_signal_preroll = input;
         self
     }
-    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub fn signal_processing_notification(
         mut self,
         input: crate::types::EsamSignalProcessingNotification,
@@ -88,7 +88,7 @@ impl EsamSettingsBuilder {
         self.signal_processing_notification = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
+    /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub fn set_signal_processing_notification(
         mut self,
         input: ::std::option::Option<crate::types::EsamSignalProcessingNotification>,

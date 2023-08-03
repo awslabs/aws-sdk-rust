@@ -7,7 +7,8 @@ pub struct FindingHistoryRecord {
     /// <p>Identifies which finding to get the finding history for.</p>
     #[doc(hidden)]
     pub finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    /// <p> An ISO 8601-formatted timestamp that indicates when the security findings provider last updated the finding record. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
+    /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created. </p>
@@ -30,7 +31,8 @@ impl FindingHistoryRecord {
     ) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
-    /// <p> An ISO 8601-formatted timestamp that indicates when the security findings provider last updated the finding record. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
+    /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -88,12 +90,14 @@ impl FindingHistoryRecordBuilder {
         self.finding_identifier = input;
         self
     }
-    /// <p> An ISO 8601-formatted timestamp that indicates when the security findings provider last updated the finding record. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
+    /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An ISO 8601-formatted timestamp that indicates when the security findings provider last updated the finding record. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
+    /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     pub fn set_update_time(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,

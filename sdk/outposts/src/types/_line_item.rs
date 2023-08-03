@@ -26,7 +26,7 @@ pub struct LineItem {
     /// <p>The ID of the previous line item.</p>
     #[doc(hidden)]
     pub previous_line_item_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the previous order.</p>
+    /// <p>The ID of the previous order item.</p>
     #[doc(hidden)]
     pub previous_order_id: ::std::option::Option<::std::string::String>,
 }
@@ -63,7 +63,7 @@ impl LineItem {
     pub fn previous_line_item_id(&self) -> ::std::option::Option<&str> {
         self.previous_line_item_id.as_deref()
     }
-    /// <p>The ID of the previous order.</p>
+    /// <p>The ID of the previous order item.</p>
     pub fn previous_order_id(&self) -> ::std::option::Option<&str> {
         self.previous_order_id.as_deref()
     }
@@ -189,7 +189,7 @@ impl LineItemBuilder {
         self.previous_line_item_id = input;
         self
     }
-    /// <p>The ID of the previous order.</p>
+    /// <p>The ID of the previous order item.</p>
     pub fn previous_order_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -197,7 +197,7 @@ impl LineItemBuilder {
         self.previous_order_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the previous order.</p>
+    /// <p>The ID of the previous order item.</p>
     pub fn set_previous_order_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

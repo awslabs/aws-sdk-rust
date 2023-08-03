@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput::total_count): <p>The total number of network profiles returned.</p>
     /// - On failure, responds with [`SdkError<SearchNetworkProfilesError>`](crate::operation::search_network_profiles::SearchNetworkProfilesError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_network_profiles(
         &self,
     ) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesFluentBuilder

@@ -22,6 +22,9 @@ pub struct ImportErrorData {
     /// <p>Import error data raw error.</p>
     #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
+    /// <p>Import error data source account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportErrorData {
     /// <p>Import error data source server ID.</p>
@@ -48,6 +51,10 @@ impl ImportErrorData {
     pub fn raw_error(&self) -> ::std::option::Option<&str> {
         self.raw_error.as_deref()
     }
+    /// <p>Import error data source account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ImportErrorData {
     /// Creates a new builder-style object to manufacture [`ImportErrorData`](crate::types::ImportErrorData).
@@ -68,6 +75,7 @@ pub struct ImportErrorDataBuilder {
     pub(crate) ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) row_number: ::std::option::Option<i64>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportErrorDataBuilder {
     /// <p>Import error data source server ID.</p>
@@ -148,6 +156,16 @@ impl ImportErrorDataBuilder {
         self.raw_error = input;
         self
     }
+    /// <p>Import error data source account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Import error data source account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ImportErrorData`](crate::types::ImportErrorData).
     pub fn build(self) -> crate::types::ImportErrorData {
         crate::types::ImportErrorData {
@@ -157,6 +175,7 @@ impl ImportErrorDataBuilder {
             ec2_launch_template_id: self.ec2_launch_template_id,
             row_number: self.row_number.unwrap_or_default(),
             raw_error: self.raw_error,
+            account_id: self.account_id,
         }
     }
 }

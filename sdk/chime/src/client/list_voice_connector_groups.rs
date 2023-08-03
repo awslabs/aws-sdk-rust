@@ -10,6 +10,9 @@ impl super::Client {
     ///   - [`voice_connector_groups(Option<Vec<VoiceConnectorGroup>>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::voice_connector_groups): <p>The details of the Amazon Chime Voice Connector groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceConnectorGroupsError>`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsError)
+    #[deprecated(
+        note = "Replaced by ListVoiceConnectorGroups in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn list_voice_connector_groups(&self) -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder{
         crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsFluentBuilder::new(self.handle.clone())
     }

@@ -19,6 +19,12 @@ pub use crate::types::_input_log_event::InputLogEvent;
 
 pub use crate::types::_destination::Destination;
 
+pub use crate::types::_account_policy::AccountPolicy;
+
+pub use crate::types::_scope::Scope;
+
+pub use crate::types::_policy_type::PolicyType;
+
 pub use crate::types::_query_status::QueryStatus;
 
 pub use crate::types::_query_statistics::QueryStatistics;
@@ -47,6 +53,8 @@ pub use crate::types::_order_by::OrderBy;
 
 pub use crate::types::_log_group::LogGroup;
 
+pub use crate::types::_inherited_property::InheritedProperty;
+
 pub use crate::types::_data_protection_status::DataProtectionStatus;
 
 pub use crate::types::_export_task::ExportTask;
@@ -56,6 +64,8 @@ pub use crate::types::_export_task_execution_info::ExportTaskExecutionInfo;
 pub use crate::types::_export_task_status::ExportTaskStatus;
 
 pub use crate::types::_export_task_status_code::ExportTaskStatusCode;
+
+mod _account_policy;
 
 mod _data_protection_status;
 
@@ -72,6 +82,8 @@ mod _export_task_status;
 mod _export_task_status_code;
 
 mod _filtered_log_event;
+
+mod _inherited_property;
 
 mod _input_log_event;
 
@@ -91,6 +103,8 @@ mod _order_by;
 
 mod _output_log_event;
 
+mod _policy_type;
+
 mod _query_compile_error;
 
 mod _query_compile_error_location;
@@ -108,6 +122,8 @@ mod _rejected_log_events_info;
 mod _resource_policy;
 
 mod _result_field;
+
+mod _scope;
 
 mod _searched_log_stream;
 

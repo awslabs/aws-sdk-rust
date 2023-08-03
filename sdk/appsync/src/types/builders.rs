@@ -7,6 +7,10 @@ pub use crate::types::_code_error_location::CodeErrorLocationBuilder;
 
 pub use crate::types::_type_::TypeBuilder;
 
+pub use crate::types::_source_api_association::SourceApiAssociationBuilder;
+
+pub use crate::types::_source_api_association_config::SourceApiAssociationConfigBuilder;
+
 pub use crate::types::_resolver::ResolverBuilder;
 
 pub use crate::types::_app_sync_runtime::AppSyncRuntimeBuilder;
@@ -64,6 +68,8 @@ pub use crate::types::_delta_sync_config::DeltaSyncConfigBuilder;
 pub use crate::types::_api_key::ApiKeyBuilder;
 
 pub use crate::types::_api_cache::ApiCacheBuilder;
+
+pub use crate::types::_source_api_association_summary::SourceApiAssociationSummaryBuilder;
 
 pub use crate::types::_api_association::ApiAssociationBuilder;
 

@@ -6,7 +6,7 @@ pub struct DescribeEgressOnlyInternetGatewaysInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     #[doc(hidden)]
     pub egress_only_internet_gateway_ids:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +16,7 @@ pub struct DescribeEgressOnlyInternetGatewaysInput {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
@@ -35,7 +35,7 @@ impl DescribeEgressOnlyInternetGatewaysInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     pub fn egress_only_internet_gateway_ids(
         &self,
     ) -> ::std::option::Option<&[::std::string::String]> {
@@ -49,7 +49,7 @@ impl DescribeEgressOnlyInternetGatewaysInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
@@ -99,7 +99,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_egress_only_internet_gateway_ids`](Self::set_egress_only_internet_gateway_ids).
     ///
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     pub fn egress_only_internet_gateway_ids(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -109,7 +109,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
         self.egress_only_internet_gateway_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more egress-only internet gateway IDs.</p>
+    /// <p>The IDs of the egress-only internet gateways.</p>
     pub fn set_egress_only_internet_gateway_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -141,7 +141,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
@@ -158,7 +158,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key

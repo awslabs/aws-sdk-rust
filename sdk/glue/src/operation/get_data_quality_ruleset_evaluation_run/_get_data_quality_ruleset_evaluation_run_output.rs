@@ -46,6 +46,11 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
     /// <p>A list of result IDs for the data quality results for the run.</p>
     #[doc(hidden)]
     pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    #[doc(hidden)]
+    pub additional_data_sources: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+    >,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetEvaluationRunOutput {
@@ -107,6 +112,14 @@ impl GetDataQualityRulesetEvaluationRunOutput {
     pub fn result_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.result_ids.as_deref()
     }
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn additional_data_sources(
+        &self,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+    > {
+        self.additional_data_sources.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetDataQualityRulesetEvaluationRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -141,6 +154,9 @@ pub struct GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub(crate) execution_time: ::std::option::Option<i32>,
     pub(crate) ruleset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_data_sources: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+    >,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetEvaluationRunOutputBuilder {
@@ -326,6 +342,31 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self.result_ids = input;
         self
     }
+    /// Adds a key-value pair to `additional_data_sources`.
+    ///
+    /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).
+    ///
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn additional_data_sources(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::DataSource,
+    ) -> Self {
+        let mut hash_map = self.additional_data_sources.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.additional_data_sources = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
+    pub fn set_additional_data_sources(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
+        >,
+    ) -> Self {
+        self.additional_data_sources = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -366,6 +407,8 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
             ruleset_names: self.ruleset_names
             ,
             result_ids: self.result_ids
+            ,
+            additional_data_sources: self.additional_data_sources
             ,
             _request_id: self._request_id,
         }

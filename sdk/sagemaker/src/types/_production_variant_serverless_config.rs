@@ -10,7 +10,9 @@ pub struct ProductionVariantServerlessConfig {
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
-    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p> <note>
+    /// <p>This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more information about creating an Inference Recommender job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+    /// </note>
     #[doc(hidden)]
     pub provisioned_concurrency: ::std::option::Option<i32>,
 }
@@ -23,7 +25,9 @@ impl ProductionVariantServerlessConfig {
     pub fn max_concurrency(&self) -> ::std::option::Option<i32> {
         self.max_concurrency
     }
-    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p> <note>
+    /// <p>This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more information about creating an Inference Recommender job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+    /// </note>
     pub fn provisioned_concurrency(&self) -> ::std::option::Option<i32> {
         self.provisioned_concurrency
     }
@@ -66,12 +70,16 @@ impl ProductionVariantServerlessConfigBuilder {
         self.max_concurrency = input;
         self
     }
-    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p> <note>
+    /// <p>This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more information about creating an Inference Recommender job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+    /// </note>
     pub fn provisioned_concurrency(mut self, input: i32) -> Self {
         self.provisioned_concurrency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p> <note>
+    /// <p>This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more information about creating an Inference Recommender job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+    /// </note>
     pub fn set_provisioned_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_concurrency = input;
         self

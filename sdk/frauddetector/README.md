@@ -7,7 +7,7 @@ This is the Amazon Fraud Detector API Reference. This guide is for developers wh
 
 We provide the Query API as well as AWS software development kits (SDK) for Amazon Fraud Detector in Java and Python programming languages.
 
-The Amazon Fraud Detector Query API provides HTTPS requests that use the HTTP verb GET or POST and a Query parameter Action. AWS SDK provides libraries, sample code, tutorials, and other resources for software developers who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS. These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more information about the AWS SDKs, see [Tools to build on AWS](https://docs.aws.amazon.com/https:/aws.amazon.com/tools/).
+The Amazon Fraud Detector Query API provides HTTPS requests that use the HTTP verb GET or POST and a Query parameter Action. AWS SDK provides libraries, sample code, tutorials, and other resources for software developers who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS. These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more information about the AWS SDKs, go to [Tools to build on AWS](https://aws.amazon.com/developer/tools/) page, scroll down to the __SDK__ section, and choose plus (+) sign to expand the section.
 
 ## Getting Started
 
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.55.3"
-aws-sdk-frauddetector = "0.28.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-frauddetector = "0.29.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

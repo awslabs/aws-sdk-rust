@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`skill_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder::set_skill_group_arn): <p>The ARN of the skill group to delete. Required.</p>
     /// - On success, responds with [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteSkillGroupError>`](crate::operation::delete_skill_group::DeleteSkillGroupError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn delete_skill_group(
         &self,
     ) -> crate::operation::delete_skill_group::builders::DeleteSkillGroupFluentBuilder {

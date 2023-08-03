@@ -152,6 +152,11 @@ pub(crate) fn de_get_network_analyzer_configuration(value: &[u8], mut builder: c
                             .transpose()?,
                         );
                     }
+                    "MulticastGroups" => {
+                        builder = builder.set_multicast_groups(
+                            crate::protocol_serde::shape_network_analyzer_multicast_group_list::de_network_analyzer_multicast_group_list(tokens)?
+                        );
+                    }
                     "Name" => {
                         builder = builder.set_name(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -9,5 +9,8 @@ pub fn ser_list_component_outputs_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.deployment_id {
+        object.key("deploymentId").string(var_3.as_str());
+    }
     Ok(())
 }

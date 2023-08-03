@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_description): <p>The updated description of the room.</p>
     /// - On success, responds with [`UpdateAddressBookOutput`](crate::operation::update_address_book::UpdateAddressBookOutput)
     /// - On failure, responds with [`SdkError<UpdateAddressBookError>`](crate::operation::update_address_book::UpdateAddressBookError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_address_book(
         &self,
     ) -> crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder {

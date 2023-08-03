@@ -67,7 +67,7 @@ pub struct InstanceTypeInfo {
     /// <p>Indicates whether On-Demand hibernation is supported.</p>
     #[doc(hidden)]
     pub hibernation_supported: ::std::option::Option<bool>,
-    /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
+    /// <p>Indicates whether the instance type is a burstable performance T instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     #[doc(hidden)]
     pub burstable_performance_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
@@ -79,6 +79,15 @@ pub struct InstanceTypeInfo {
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub supported_boot_modes: ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
+    /// <p>Indicates whether Nitro Enclaves is supported.</p>
+    #[doc(hidden)]
+    pub nitro_enclaves_support: ::std::option::Option<crate::types::NitroEnclavesSupport>,
+    /// <p>Indicates whether NitroTPM is supported.</p>
+    #[doc(hidden)]
+    pub nitro_tpm_support: ::std::option::Option<crate::types::NitroTpmSupport>,
+    /// <p>Describes the supported NitroTPM versions for the instance type.</p>
+    #[doc(hidden)]
+    pub nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -171,7 +180,7 @@ impl InstanceTypeInfo {
     pub fn hibernation_supported(&self) -> ::std::option::Option<bool> {
         self.hibernation_supported
     }
-    /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
+    /// <p>Indicates whether the instance type is a burstable performance T instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     pub fn burstable_performance_supported(&self) -> ::std::option::Option<bool> {
         self.burstable_performance_supported
     }
@@ -186,6 +195,20 @@ impl InstanceTypeInfo {
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn supported_boot_modes(&self) -> ::std::option::Option<&[crate::types::BootModeType]> {
         self.supported_boot_modes.as_deref()
+    }
+    /// <p>Indicates whether Nitro Enclaves is supported.</p>
+    pub fn nitro_enclaves_support(
+        &self,
+    ) -> ::std::option::Option<&crate::types::NitroEnclavesSupport> {
+        self.nitro_enclaves_support.as_ref()
+    }
+    /// <p>Indicates whether NitroTPM is supported.</p>
+    pub fn nitro_tpm_support(&self) -> ::std::option::Option<&crate::types::NitroTpmSupport> {
+        self.nitro_tpm_support.as_ref()
+    }
+    /// <p>Describes the supported NitroTPM versions for the instance type.</p>
+    pub fn nitro_tpm_info(&self) -> ::std::option::Option<&crate::types::NitroTpmInfo> {
+        self.nitro_tpm_info.as_ref()
     }
 }
 impl InstanceTypeInfo {
@@ -230,6 +253,9 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) auto_recovery_supported: ::std::option::Option<bool>,
     pub(crate) supported_boot_modes:
         ::std::option::Option<::std::vec::Vec<crate::types::BootModeType>>,
+    pub(crate) nitro_enclaves_support: ::std::option::Option<crate::types::NitroEnclavesSupport>,
+    pub(crate) nitro_tpm_support: ::std::option::Option<crate::types::NitroTpmSupport>,
+    pub(crate) nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -489,12 +515,12 @@ impl InstanceTypeInfoBuilder {
         self.hibernation_supported = input;
         self
     }
-    /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
+    /// <p>Indicates whether the instance type is a burstable performance T instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     pub fn burstable_performance_supported(mut self, input: bool) -> Self {
         self.burstable_performance_supported = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the instance type is a burstable performance instance type.</p>
+    /// <p>Indicates whether the instance type is a burstable performance T instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     pub fn set_burstable_performance_supported(
         mut self,
         input: ::std::option::Option<bool>,
@@ -541,6 +567,45 @@ impl InstanceTypeInfoBuilder {
         self.supported_boot_modes = input;
         self
     }
+    /// <p>Indicates whether Nitro Enclaves is supported.</p>
+    pub fn nitro_enclaves_support(mut self, input: crate::types::NitroEnclavesSupport) -> Self {
+        self.nitro_enclaves_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Nitro Enclaves is supported.</p>
+    pub fn set_nitro_enclaves_support(
+        mut self,
+        input: ::std::option::Option<crate::types::NitroEnclavesSupport>,
+    ) -> Self {
+        self.nitro_enclaves_support = input;
+        self
+    }
+    /// <p>Indicates whether NitroTPM is supported.</p>
+    pub fn nitro_tpm_support(mut self, input: crate::types::NitroTpmSupport) -> Self {
+        self.nitro_tpm_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether NitroTPM is supported.</p>
+    pub fn set_nitro_tpm_support(
+        mut self,
+        input: ::std::option::Option<crate::types::NitroTpmSupport>,
+    ) -> Self {
+        self.nitro_tpm_support = input;
+        self
+    }
+    /// <p>Describes the supported NitroTPM versions for the instance type.</p>
+    pub fn nitro_tpm_info(mut self, input: crate::types::NitroTpmInfo) -> Self {
+        self.nitro_tpm_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the supported NitroTPM versions for the instance type.</p>
+    pub fn set_nitro_tpm_info(
+        mut self,
+        input: ::std::option::Option<crate::types::NitroTpmInfo>,
+    ) -> Self {
+        self.nitro_tpm_info = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
@@ -568,6 +633,9 @@ impl InstanceTypeInfoBuilder {
             dedicated_hosts_supported: self.dedicated_hosts_supported,
             auto_recovery_supported: self.auto_recovery_supported,
             supported_boot_modes: self.supported_boot_modes,
+            nitro_enclaves_support: self.nitro_enclaves_support,
+            nitro_tpm_support: self.nitro_tpm_support,
+            nitro_tpm_info: self.nitro_tpm_info,
         }
     }
 }

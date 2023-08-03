@@ -67,6 +67,8 @@ pub use crate::types::error::_invalid_subnet_id_exception::InvalidSubnetIdExcept
 
 pub use crate::types::error::_snap_start_exception::SnapStartException;
 
+pub use crate::types::error::_recursive_invocation_exception::RecursiveInvocationException;
+
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundException;
 
 pub use crate::types::error::_provisioned_concurrency_config_not_found_exception::ProvisionedConcurrencyConfigNotFoundException;
@@ -122,6 +124,8 @@ mod _policy_length_exceeded_exception;
 mod _precondition_failed_exception;
 
 mod _provisioned_concurrency_config_not_found_exception;
+
+mod _recursive_invocation_exception;
 
 mod _request_too_large_exception;
 

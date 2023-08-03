@@ -262,6 +262,8 @@ mod list_permissions;
 
 mod list_tags_for_resource;
 
+mod list_versions;
+
 mod list_workspaces;
 
 mod tag_resource;

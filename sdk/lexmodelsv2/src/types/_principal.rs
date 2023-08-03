@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
@@ -12,7 +12,7 @@ pub struct Principal {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Principal {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -38,12 +38,12 @@ pub struct PrincipalBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl PrincipalBuilder {
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
+    /// <p>The name of the Amazon Web Services service that should allowed or denied access to an Amazon Lex action.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self

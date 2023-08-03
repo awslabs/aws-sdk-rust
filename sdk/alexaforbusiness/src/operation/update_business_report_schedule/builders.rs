@@ -6,6 +6,7 @@ pub use crate::operation::update_business_report_schedule::_update_business_repo
 /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
 ///
 /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

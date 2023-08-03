@@ -46,6 +46,9 @@ pub mod get_deployment;
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 
+/// Types for the `GetSignedBluinsightsUrl` operation.
+pub mod get_signed_bluinsights_url;
+
 /// Types for the `ListApplicationVersions` operation.
 pub mod list_application_versions;
 

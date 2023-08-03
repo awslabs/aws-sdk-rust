@@ -27,6 +27,8 @@ pub use crate::types::_user_settings::UserSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_workspace_settings::WorkspaceSettingsBuilder;
+
 pub use crate::types::_model_register_settings::ModelRegisterSettingsBuilder;
 
 pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSettingsBuilder;
@@ -143,6 +145,10 @@ pub use crate::types::_inference_experiment_schedule::InferenceExperimentSchedul
 
 pub use crate::types::_feature_parameter::FeatureParameterBuilder;
 
+pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdateBuilder;
+
+pub use crate::types::_ttl_duration::TtlDurationBuilder;
+
 pub use crate::types::_feature_definition::FeatureDefinitionBuilder;
 
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacityBuilder;
@@ -151,6 +157,10 @@ pub use crate::types::_production_variant_serverless_update_config::ProductionVa
 
 pub use crate::types::_deployment_config::DeploymentConfigBuilder;
 
+pub use crate::types::_rolling_update_policy::RollingUpdatePolicyBuilder;
+
+pub use crate::types::_capacity_size::CapacitySizeBuilder;
+
 pub use crate::types::_auto_rollback_config::AutoRollbackConfigBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
@@ -158,8 +168,6 @@ pub use crate::types::_alarm::AlarmBuilder;
 pub use crate::types::_blue_green_update_policy::BlueGreenUpdatePolicyBuilder;
 
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfigBuilder;
-
-pub use crate::types::_capacity_size::CapacitySizeBuilder;
 
 pub use crate::types::_variant_property::VariantPropertyBuilder;
 
@@ -180,6 +188,10 @@ pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuil
 pub use crate::types::_file_system_config::FileSystemConfigBuilder;
 
 pub use crate::types::_kernel_spec::KernelSpecBuilder;
+
+pub use crate::types::_selective_execution_config::SelectiveExecutionConfigBuilder;
+
+pub use crate::types::_selected_step::SelectedStepBuilder;
 
 pub use crate::types::_parameter::ParameterBuilder;
 
@@ -231,9 +243,17 @@ pub use crate::types::_model_dashboard_endpoint::ModelDashboardEndpointBuilder;
 
 pub use crate::types::_model::ModelBuilder;
 
+pub use crate::types::_deployment_recommendation::DeploymentRecommendationBuilder;
+
+pub use crate::types::_real_time_inference_recommendation::RealTimeInferenceRecommendationBuilder;
+
 pub use crate::types::_inference_execution_config::InferenceExecutionConfigBuilder;
 
 pub use crate::types::_container_definition::ContainerDefinitionBuilder;
+
+pub use crate::types::_model_data_source::ModelDataSourceBuilder;
+
+pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
 
 pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
 
@@ -292,6 +312,8 @@ pub use crate::types::_hyper_parameter_algorithm_specification::HyperParameterAl
 pub use crate::types::_metric_definition::MetricDefinitionBuilder;
 
 pub use crate::types::_parameter_ranges::ParameterRangesBuilder;
+
+pub use crate::types::_auto_parameter::AutoParameterBuilder;
 
 pub use crate::types::_categorical_parameter_range::CategoricalParameterRangeBuilder;
 
@@ -515,6 +537,8 @@ pub use crate::types::_device_deployment_summary::DeviceDeploymentSummaryBuilder
 
 pub use crate::types::_space_details::SpaceDetailsBuilder;
 
+pub use crate::types::_resource_catalog::ResourceCatalogBuilder;
+
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
 pub use crate::types::_processing_job_summary::ProcessingJobSummaryBuilder;
@@ -522,6 +546,8 @@ pub use crate::types::_processing_job_summary::ProcessingJobSummaryBuilder;
 pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
 
 pub use crate::types::_pipeline_execution_step::PipelineExecutionStepBuilder;
+
+pub use crate::types::_selective_execution_result::SelectiveExecutionResultBuilder;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadataBuilder;
 
@@ -801,6 +827,8 @@ pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummaryBu
 
 pub use crate::types::_endpoint_metadata::EndpointMetadataBuilder;
 
+pub use crate::types::_autotune::AutotuneBuilder;
+
 pub use crate::types::_ui_template_info::UiTemplateInfoBuilder;
 
 pub use crate::types::_hub_content_dependency::HubContentDependencyBuilder;
@@ -883,6 +911,16 @@ pub use crate::types::_input_config::InputConfigBuilder;
 
 pub use crate::types::_model_digests::ModelDigestsBuilder;
 
+pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
+
+pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributesBuilder;
+
+pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteriaBuilder;
+
+pub use crate::types::_auto_ml_job_objective::AutoMlJobObjectiveBuilder;
+
+pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifactsBuilder;
+
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
 
 pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
@@ -891,13 +929,21 @@ pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
 
+pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfigBuilder;
+
+pub use crate::types::_time_series_config::TimeSeriesConfigBuilder;
+
+pub use crate::types::_time_series_transformations::TimeSeriesTransformationsBuilder;
+
+pub use crate::types::_tabular_job_config::TabularJobConfigBuilder;
+
+pub use crate::types::_candidate_generation_config::CandidateGenerationConfigBuilder;
+
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
+
 pub use crate::types::_text_classification_job_config::TextClassificationJobConfigBuilder;
 
-pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteriaBuilder;
-
 pub use crate::types::_image_classification_job_config::ImageClassificationJobConfigBuilder;
-
-pub use crate::types::_auto_ml_job_objective::AutoMlJobObjectiveBuilder;
 
 pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfigBuilder;
 
@@ -909,13 +955,9 @@ pub use crate::types::_auto_mls3_data_source::AutoMls3DataSourceBuilder;
 
 pub use crate::types::_resolved_attributes::ResolvedAttributesBuilder;
 
-pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifactsBuilder;
-
 pub use crate::types::_auto_ml_job_config::AutoMlJobConfigBuilder;
 
 pub use crate::types::_auto_ml_candidate_generation_config::AutoMlCandidateGenerationConfigBuilder;
-
-pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 
 pub use crate::types::_auto_ml_channel::AutoMlChannelBuilder;
 

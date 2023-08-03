@@ -6,6 +6,7 @@ pub use crate::operation::delete_contact::_delete_contact_input::DeleteContactIn
 /// Fluent builder constructing a request to `DeleteContact`.
 ///
 /// <p>Deletes a contact by the contact ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

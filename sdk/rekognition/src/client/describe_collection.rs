@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`face_model_version(Option<String>)`](crate::operation::describe_collection::DescribeCollectionOutput::face_model_version): <p>The version of the face model that's used by the collection for face detection.</p>  <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
     ///   - [`collection_arn(Option<String>)`](crate::operation::describe_collection::DescribeCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) of the collection.</p>
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::describe_collection::DescribeCollectionOutput::creation_timestamp): <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    ///   - [`user_count(Option<i64>)`](crate::operation::describe_collection::DescribeCollectionOutput::user_count): <p>The number of UserIDs assigned to the specified colleciton.</p>
     /// - On failure, responds with [`SdkError<DescribeCollectionError>`](crate::operation::describe_collection::DescribeCollectionError)
     pub fn describe_collection(
         &self,

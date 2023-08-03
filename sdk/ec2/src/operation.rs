@@ -211,6 +211,9 @@ pub mod create_fpga_image;
 /// Types for the `CreateImage` operation.
 pub mod create_image;
 
+/// Types for the `CreateInstanceConnectEndpoint` operation.
+pub mod create_instance_connect_endpoint;
+
 /// Types for the `CreateInstanceEventWindow` operation.
 pub mod create_instance_event_window;
 
@@ -438,6 +441,9 @@ pub mod delete_flow_logs;
 
 /// Types for the `DeleteFpgaImage` operation.
 pub mod delete_fpga_image;
+
+/// Types for the `DeleteInstanceConnectEndpoint` operation.
+pub mod delete_instance_connect_endpoint;
 
 /// Types for the `DeleteInstanceEventWindow` operation.
 pub mod delete_instance_event_window;
@@ -780,6 +786,9 @@ pub mod describe_import_snapshot_tasks;
 
 /// Types for the `DescribeInstanceAttribute` operation.
 pub mod describe_instance_attribute;
+
+/// Types for the `DescribeInstanceConnectEndpoints` operation.
+pub mod describe_instance_connect_endpoints;
 
 /// Types for the `DescribeInstanceCreditSpecifications` operation.
 pub mod describe_instance_credit_specifications;

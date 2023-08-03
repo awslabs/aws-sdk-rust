@@ -5,7 +5,12 @@ pub use crate::operation::tag_attendee::_tag_attendee_input::TagAttendeeInputBui
 
 /// Fluent builder constructing a request to `TagAttendee`.
 ///
-/// <p>Applies the specified tags to the specified Amazon Chime SDK attendee.</p>
+/// <p>Applies the specified tags to the specified Amazon Chime attendee.</p> <important>
+/// <p>TagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
+/// </important>
+#[deprecated(
+    note = "Attendee Tags are not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagAttendeeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

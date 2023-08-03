@@ -112,11 +112,19 @@ pub(crate) mod shape_describe_analysis_definition;
 
 pub(crate) mod shape_describe_analysis_permissions;
 
+pub(crate) mod shape_describe_asset_bundle_export_job;
+
+pub(crate) mod shape_describe_asset_bundle_import_job;
+
 pub(crate) mod shape_describe_dashboard;
 
 pub(crate) mod shape_describe_dashboard_definition;
 
 pub(crate) mod shape_describe_dashboard_permissions;
+
+pub(crate) mod shape_describe_dashboard_snapshot_job;
+
+pub(crate) mod shape_describe_dashboard_snapshot_job_result;
 
 pub(crate) mod shape_describe_data_set;
 
@@ -183,6 +191,10 @@ pub(crate) mod shape_get_dashboard_embed_url;
 pub(crate) mod shape_get_session_embed_url;
 
 pub(crate) mod shape_list_analyses;
+
+pub(crate) mod shape_list_asset_bundle_export_jobs;
+
+pub(crate) mod shape_list_asset_bundle_import_jobs;
 
 pub(crate) mod shape_list_dashboard_versions;
 
@@ -251,6 +263,12 @@ pub(crate) mod shape_search_data_sources;
 pub(crate) mod shape_search_folders;
 
 pub(crate) mod shape_search_groups;
+
+pub(crate) mod shape_start_asset_bundle_export_job;
+
+pub(crate) mod shape_start_asset_bundle_import_job;
+
+pub(crate) mod shape_start_dashboard_snapshot_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -412,6 +430,12 @@ pub(crate) mod shape_search_groups_input;
 
 pub(crate) mod shape_session_lifetime_in_minutes_invalid_exception;
 
+pub(crate) mod shape_start_asset_bundle_export_job_input;
+
+pub(crate) mod shape_start_asset_bundle_import_job_input;
+
+pub(crate) mod shape_start_dashboard_snapshot_job_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -497,6 +521,24 @@ pub(crate) mod shape_analysis_source_entity;
 pub(crate) mod shape_analysis_summary_list;
 
 pub(crate) mod shape_anonymous_user_embedding_experience_configuration;
+
+pub(crate) mod shape_asset_bundle_cloud_formation_override_property_configuration;
+
+pub(crate) mod shape_asset_bundle_export_job_error_list;
+
+pub(crate) mod shape_asset_bundle_export_job_summary_list;
+
+pub(crate) mod shape_asset_bundle_import_job_error_list;
+
+pub(crate) mod shape_asset_bundle_import_job_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_summary_list;
+
+pub(crate) mod shape_asset_bundle_import_source;
+
+pub(crate) mod shape_asset_bundle_import_source_description;
+
+pub(crate) mod shape_asset_bundle_resource_arns;
 
 pub(crate) mod shape_column_group;
 
@@ -606,6 +648,16 @@ pub(crate) mod shape_session_tag;
 
 pub(crate) mod shape_signup_response;
 
+pub(crate) mod shape_snapshot_configuration;
+
+pub(crate) mod shape_snapshot_job_error_info;
+
+pub(crate) mod shape_snapshot_job_result;
+
+pub(crate) mod shape_snapshot_user_configuration;
+
+pub(crate) mod shape_snapshot_user_configuration_redacted;
+
 pub(crate) mod shape_ssl_properties;
 
 pub(crate) mod shape_tag;
@@ -681,6 +733,76 @@ pub(crate) mod shape_anonymous_user_dashboard_embedding_configuration;
 pub(crate) mod shape_anonymous_user_dashboard_visual_embedding_configuration;
 
 pub(crate) mod shape_anonymous_user_q_search_bar_embedding_configuration;
+
+pub(crate) mod shape_anonymous_user_snapshot_job_result_list;
+
+pub(crate) mod shape_asset_bundle_export_job_analysis_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_analysis_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_dashboard_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_dashboard_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_data_set_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_data_set_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_data_source_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_data_source_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_error;
+
+pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_resource_id_override_configuration;
+
+pub(crate) mod shape_asset_bundle_export_job_summary;
+
+pub(crate) mod shape_asset_bundle_export_job_theme_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_theme_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_export_job_vpc_connection_override_properties;
+
+pub(crate) mod shape_asset_bundle_export_job_vpc_connection_override_properties_list;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_analysis_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_dashboard_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_data_set_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_error;
+
+pub(crate) mod shape_asset_bundle_import_job_refresh_schedule_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_refresh_schedule_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_resource_id_override_configuration;
+
+pub(crate) mod shape_asset_bundle_import_job_summary;
+
+pub(crate) mod shape_asset_bundle_import_job_theme_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_theme_override_parameters_list;
+
+pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters;
+
+pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters_list;
 
 pub(crate) mod shape_athena_parameters;
 
@@ -862,6 +984,16 @@ pub(crate) mod shape_sheet_list;
 
 pub(crate) mod shape_sheet_style;
 
+pub(crate) mod shape_snapshot_anonymous_user;
+
+pub(crate) mod shape_snapshot_anonymous_user_redacted_list;
+
+pub(crate) mod shape_snapshot_destination_configuration;
+
+pub(crate) mod shape_snapshot_file_group;
+
+pub(crate) mod shape_snapshot_file_group_list;
+
 pub(crate) mod shape_snowflake_parameters;
 
 pub(crate) mod shape_spark_parameters;
@@ -914,7 +1046,13 @@ pub(crate) mod shape_vpc_connection_summary;
 
 pub(crate) mod shape_action_list;
 
+pub(crate) mod shape_anonymous_user_snapshot_job_result;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_credentials;
+
 pub(crate) mod shape_cast_column_type_operation;
+
+pub(crate) mod shape_colors_configuration;
 
 pub(crate) mod shape_column_group_schema;
 
@@ -934,9 +1072,13 @@ pub(crate) mod shape_date_time_dataset_parameter_default_values;
 
 pub(crate) mod shape_date_time_parameter_declaration;
 
+pub(crate) mod shape_date_time_parameter_list;
+
 pub(crate) mod shape_decimal_dataset_parameter_default_values;
 
 pub(crate) mod shape_decimal_parameter_declaration;
+
+pub(crate) mod shape_decimal_parameter_list;
 
 pub(crate) mod shape_default_new_sheet_configuration;
 
@@ -963,6 +1105,8 @@ pub(crate) mod shape_input_column;
 pub(crate) mod shape_integer_dataset_parameter_default_values;
 
 pub(crate) mod shape_integer_parameter_declaration;
+
+pub(crate) mod shape_integer_parameter_list;
 
 pub(crate) mod shape_join_instruction;
 
@@ -998,9 +1142,19 @@ pub(crate) mod shape_sheet_control_layout;
 
 pub(crate) mod shape_sheet_text_box;
 
+pub(crate) mod shape_snapshot_anonymous_user_redacted;
+
+pub(crate) mod shape_snapshot_file;
+
+pub(crate) mod shape_snapshot_s3_destination_configuration;
+
+pub(crate) mod shape_snapshot_s3_destination_configuration_list;
+
 pub(crate) mod shape_string_dataset_parameter_default_values;
 
 pub(crate) mod shape_string_parameter_declaration;
+
+pub(crate) mod shape_string_parameter_list;
 
 pub(crate) mod shape_tag_column_operation;
 
@@ -1023,6 +1177,22 @@ pub(crate) mod shape_untag_column_operation;
 pub(crate) mod shape_upload_settings;
 
 pub(crate) mod shape_visual;
+
+pub(crate) mod shape_asset_bundle_export_job_analysis_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_dashboard_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_data_set_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_data_source_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_refresh_schedule_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_theme_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_export_job_vpc_connection_property_to_override_list;
+
+pub(crate) mod shape_asset_bundle_import_job_data_source_credential_pair;
 
 pub(crate) mod shape_bar_chart_visual;
 
@@ -1052,6 +1222,8 @@ pub(crate) mod shape_combo_chart_visual;
 
 pub(crate) mod shape_comparative_order;
 
+pub(crate) mod shape_custom_color;
+
 pub(crate) mod shape_custom_content_visual;
 
 pub(crate) mod shape_date_time_default_values;
@@ -1069,6 +1241,8 @@ pub(crate) mod shape_default_formatting;
 pub(crate) mod shape_default_interactive_layout_configuration;
 
 pub(crate) mod shape_default_paginated_layout_configuration;
+
+pub(crate) mod shape_dns_resolver_list;
 
 pub(crate) mod shape_empty_visual;
 
@@ -1166,6 +1340,8 @@ pub(crate) mod shape_relative_dates_filter;
 
 pub(crate) mod shape_row_level_permission_tag_rule_configuration;
 
+pub(crate) mod shape_s3_bucket_configuration;
+
 pub(crate) mod shape_sankey_diagram_visual;
 
 pub(crate) mod shape_scatter_plot_visual;
@@ -1176,11 +1352,19 @@ pub(crate) mod shape_semantic_entity_type;
 
 pub(crate) mod shape_semantic_type;
 
+pub(crate) mod shape_session_tag_key_list;
+
 pub(crate) mod shape_sheet_control_layout_configuration;
 
 pub(crate) mod shape_sheet_control_layout_list;
 
 pub(crate) mod shape_sheet_text_box_list;
+
+pub(crate) mod shape_snapshot_file_list;
+
+pub(crate) mod shape_snapshot_file_sheet_selection;
+
+pub(crate) mod shape_snapshot_job_result_file_group_list;
 
 pub(crate) mod shape_state_persistence_configurations;
 
@@ -1189,6 +1373,8 @@ pub(crate) mod shape_string_default_values;
 pub(crate) mod shape_string_format_configuration;
 
 pub(crate) mod shape_string_value_when_unset_configuration;
+
+pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_table_visual;
 
@@ -1253,6 +1439,8 @@ pub(crate) mod shape_column_list;
 pub(crate) mod shape_column_schema_list;
 
 pub(crate) mod shape_combo_chart_configuration;
+
+pub(crate) mod shape_custom_colors_list;
 
 pub(crate) mod shape_custom_content_configuration;
 
@@ -1338,9 +1526,19 @@ pub(crate) mod shape_scatter_plot_configuration;
 
 pub(crate) mod shape_section_based_layout_configuration;
 
+pub(crate) mod shape_sensitive_double_list;
+
+pub(crate) mod shape_sensitive_long_list;
+
+pub(crate) mod shape_sensitive_string_list;
+
+pub(crate) mod shape_sensitive_timestamp_list;
+
 pub(crate) mod shape_sheet_visual_scoping_configuration;
 
 pub(crate) mod shape_slider_control_display_options;
+
+pub(crate) mod shape_snapshot_job_result_file_group;
 
 pub(crate) mod shape_table_conditional_formatting;
 
@@ -1369,6 +1567,8 @@ pub(crate) mod shape_visual_title_label_options;
 pub(crate) mod shape_waterfall_chart_configuration;
 
 pub(crate) mod shape_word_cloud_chart_configuration;
+
+pub(crate) mod shape_attribute_aggregation_function;
 
 pub(crate) mod shape_author_specified_aggregations;
 
@@ -1558,11 +1758,17 @@ pub(crate) mod shape_section_based_layout_canvas_size_options;
 
 pub(crate) mod shape_series_item;
 
+pub(crate) mod shape_sheet_control_info_icon_label_options;
+
 pub(crate) mod shape_sheet_visual_scoping_configurations;
 
 pub(crate) mod shape_short_format_text;
 
 pub(crate) mod shape_small_multiples_options;
+
+pub(crate) mod shape_snapshot_file_sheet_selection_list;
+
+pub(crate) mod shape_snapshot_job_s3_result_list;
 
 pub(crate) mod shape_string_dataset_parameter_value_list;
 
@@ -1706,6 +1912,8 @@ pub(crate) mod shape_gauge_chart_primary_value_conditional_formatting;
 
 pub(crate) mod shape_geospatial_coordinate_bounds;
 
+pub(crate) mod shape_geospatial_heatmap_configuration;
+
 pub(crate) mod shape_geospatial_map_aggregated_field_wells;
 
 pub(crate) mod shape_grid_layout_screen_canvas_size_options;
@@ -1762,6 +1970,8 @@ pub(crate) mod shape_pivot_table_cell_conditional_formatting;
 
 pub(crate) mod shape_pivot_table_data_path_option;
 
+pub(crate) mod shape_pivot_table_field_collapse_state_option;
+
 pub(crate) mod shape_pivot_table_field_option;
 
 pub(crate) mod shape_pivot_total_options;
@@ -1800,9 +2010,11 @@ pub(crate) mod shape_section_page_break_configuration;
 
 pub(crate) mod shape_section_style;
 
-pub(crate) mod shape_sensitive_string_list;
-
 pub(crate) mod shape_sheet_element_rendering_rule;
+
+pub(crate) mod shape_small_multiples_axis_properties;
+
+pub(crate) mod shape_snapshot_job_s3_result;
 
 pub(crate) mod shape_subtotal_options;
 
@@ -1904,6 +2116,8 @@ pub(crate) mod shape_free_from_layout_element_list;
 
 pub(crate) mod shape_gauge_chart_conditional_formatting_option_list;
 
+pub(crate) mod shape_geospatial_heatmap_color_scale;
+
 pub(crate) mod shape_global_table_border_options;
 
 pub(crate) mod shape_grid_layout_element_list;
@@ -1936,6 +2150,8 @@ pub(crate) mod shape_pivot_table_conditional_formatting_option_list;
 
 pub(crate) mod shape_pivot_table_conditional_formatting_scope;
 
+pub(crate) mod shape_pivot_table_field_collapse_state_target;
+
 pub(crate) mod shape_pivot_table_field_subtotal_options;
 
 pub(crate) mod shape_pivot_table_sort_by;
@@ -1961,6 +2177,10 @@ pub(crate) mod shape_set_parameter_value_configuration;
 pub(crate) mod shape_shape_conditional_format;
 
 pub(crate) mod shape_sheet_element_configuration_overrides;
+
+pub(crate) mod shape_snapshot_file_sheet_selection_visual_id_list;
+
+pub(crate) mod shape_snapshot_job_result_error_info_list;
 
 pub(crate) mod shape_spacing;
 
@@ -2024,6 +2244,8 @@ pub(crate) mod shape_field_sort_options_list;
 
 pub(crate) mod shape_field_tooltip_item;
 
+pub(crate) mod shape_geospatial_heatmap_data_color;
+
 pub(crate) mod shape_measure_field_list;
 
 pub(crate) mod shape_missing_data_configuration_list;
@@ -2034,6 +2256,8 @@ pub(crate) mod shape_pivot_field_sort_options_list;
 
 pub(crate) mod shape_pivot_table_data_path_option_list;
 
+pub(crate) mod shape_pivot_table_field_collapse_state_option_list;
+
 pub(crate) mod shape_pivot_table_field_option_list;
 
 pub(crate) mod shape_row_sort_list;
@@ -2041,6 +2265,8 @@ pub(crate) mod shape_row_sort_list;
 pub(crate) mod shape_same_sheet_target_visual_configuration;
 
 pub(crate) mod shape_simple_cluster_marker;
+
+pub(crate) mod shape_snapshot_job_result_error_info;
 
 pub(crate) mod shape_table_border_options;
 
@@ -2134,7 +2360,11 @@ pub(crate) mod shape_custom_parameter_values;
 
 pub(crate) mod shape_data_path_value_list;
 
+pub(crate) mod shape_geospatial_heatmap_data_color_list;
+
 pub(crate) mod shape_gradient_stop;
+
+pub(crate) mod shape_pivot_table_conditional_formatting_scope_list;
 
 pub(crate) mod shape_table_field_custom_icon_content;
 

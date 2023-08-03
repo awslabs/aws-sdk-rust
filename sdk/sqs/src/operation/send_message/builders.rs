@@ -107,7 +107,7 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.set_queue_url(input);
         self
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
     /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
@@ -116,7 +116,7 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.message_body(input.into());
         self
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
     /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>

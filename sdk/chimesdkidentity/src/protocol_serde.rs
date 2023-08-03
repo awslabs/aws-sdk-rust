@@ -171,3 +171,5 @@ pub(crate) mod shape_channel_retention_settings;
 pub(crate) mod shape_endpoint_state;
 
 pub(crate) mod shape_lex_configuration;
+
+pub(crate) mod shape_invoked_by;

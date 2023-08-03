@@ -5,7 +5,6 @@ pub use crate::operation::search_security_profiles::_search_security_profiles_in
 
 /// Fluent builder constructing a request to `SearchSecurityProfiles`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Searches security profiles in an Amazon Connect instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchSecurityProfilesFluentBuilder {

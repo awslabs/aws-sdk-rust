@@ -19,7 +19,7 @@ pub struct CreateDevEnvironmentInput {
     #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
@@ -57,7 +57,7 @@ impl CreateDevEnvironmentInput {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn ides(&self) -> ::std::option::Option<&[crate::types::IdeConfiguration]> {
         self.ides.as_deref()
@@ -169,7 +169,7 @@ impl CreateDevEnvironmentInputBuilder {
     /// To override the contents of this collection use [`set_ides`](Self::set_ides).
     ///
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn ides(mut self, input: crate::types::IdeConfiguration) -> Self {
         let mut v = self.ides.unwrap_or_default();
@@ -178,7 +178,7 @@ impl CreateDevEnvironmentInputBuilder {
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
-    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
+    /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
     pub fn set_ides(
         mut self,

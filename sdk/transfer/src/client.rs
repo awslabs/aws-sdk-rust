@@ -336,6 +336,8 @@ mod stop_server;
 
 mod tag_resource;
 
+mod test_connection;
+
 mod test_identity_provider;
 
 mod untag_resource;

@@ -34,7 +34,7 @@ pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>The language code of the input documents.</p>
     #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
-    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
     #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path to the file that describes the results of a batch job.</p>
@@ -88,7 +88,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -252,7 +252,7 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self.language_code = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
     pub fn data_access_role_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -260,7 +260,7 @@ impl ComprehendMedicalAsyncJobPropertiesBuilder {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,

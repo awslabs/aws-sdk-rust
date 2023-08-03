@@ -2,7 +2,7 @@
 
 /// <p>The tunnel options for a single VPN tunnel.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. </p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
@@ -244,6 +244,47 @@ impl VpnTunnelOptionsSpecification {
         self.enable_tunnel_lifecycle_control
     }
 }
+impl ::std::fmt::Debug for VpnTunnelOptionsSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VpnTunnelOptionsSpecification");
+        formatter.field("tunnel_inside_cidr", &self.tunnel_inside_cidr);
+        formatter.field("tunnel_inside_ipv6_cidr", &self.tunnel_inside_ipv6_cidr);
+        formatter.field("pre_shared_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase1_lifetime_seconds", &self.phase1_lifetime_seconds);
+        formatter.field("phase2_lifetime_seconds", &self.phase2_lifetime_seconds);
+        formatter.field("rekey_margin_time_seconds", &self.rekey_margin_time_seconds);
+        formatter.field("rekey_fuzz_percentage", &self.rekey_fuzz_percentage);
+        formatter.field("replay_window_size", &self.replay_window_size);
+        formatter.field("dpd_timeout_seconds", &self.dpd_timeout_seconds);
+        formatter.field("dpd_timeout_action", &self.dpd_timeout_action);
+        formatter.field(
+            "phase1_encryption_algorithms",
+            &self.phase1_encryption_algorithms,
+        );
+        formatter.field(
+            "phase2_encryption_algorithms",
+            &self.phase2_encryption_algorithms,
+        );
+        formatter.field(
+            "phase1_integrity_algorithms",
+            &self.phase1_integrity_algorithms,
+        );
+        formatter.field(
+            "phase2_integrity_algorithms",
+            &self.phase2_integrity_algorithms,
+        );
+        formatter.field("phase1_dh_group_numbers", &self.phase1_dh_group_numbers);
+        formatter.field("phase2_dh_group_numbers", &self.phase2_dh_group_numbers);
+        formatter.field("ike_versions", &self.ike_versions);
+        formatter.field("startup_action", &self.startup_action);
+        formatter.field("log_options", &self.log_options);
+        formatter.field(
+            "enable_tunnel_lifecycle_control",
+            &self.enable_tunnel_lifecycle_control,
+        );
+        formatter.finish()
+    }
+}
 impl VpnTunnelOptionsSpecification {
     /// Creates a new builder-style object to manufacture [`VpnTunnelOptionsSpecification`](crate::types::VpnTunnelOptionsSpecification).
     pub fn builder() -> crate::types::builders::VpnTunnelOptionsSpecificationBuilder {
@@ -253,9 +294,7 @@ impl VpnTunnelOptionsSpecification {
 
 /// A builder for [`VpnTunnelOptionsSpecification`](crate::types::VpnTunnelOptionsSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VpnTunnelOptionsSpecificationBuilder {
     pub(crate) tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_ipv6_cidr: ::std::option::Option<::std::string::String>,
@@ -713,5 +752,46 @@ impl VpnTunnelOptionsSpecificationBuilder {
             log_options: self.log_options,
             enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
         }
+    }
+}
+impl ::std::fmt::Debug for VpnTunnelOptionsSpecificationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("VpnTunnelOptionsSpecificationBuilder");
+        formatter.field("tunnel_inside_cidr", &self.tunnel_inside_cidr);
+        formatter.field("tunnel_inside_ipv6_cidr", &self.tunnel_inside_ipv6_cidr);
+        formatter.field("pre_shared_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase1_lifetime_seconds", &self.phase1_lifetime_seconds);
+        formatter.field("phase2_lifetime_seconds", &self.phase2_lifetime_seconds);
+        formatter.field("rekey_margin_time_seconds", &self.rekey_margin_time_seconds);
+        formatter.field("rekey_fuzz_percentage", &self.rekey_fuzz_percentage);
+        formatter.field("replay_window_size", &self.replay_window_size);
+        formatter.field("dpd_timeout_seconds", &self.dpd_timeout_seconds);
+        formatter.field("dpd_timeout_action", &self.dpd_timeout_action);
+        formatter.field(
+            "phase1_encryption_algorithms",
+            &self.phase1_encryption_algorithms,
+        );
+        formatter.field(
+            "phase2_encryption_algorithms",
+            &self.phase2_encryption_algorithms,
+        );
+        formatter.field(
+            "phase1_integrity_algorithms",
+            &self.phase1_integrity_algorithms,
+        );
+        formatter.field(
+            "phase2_integrity_algorithms",
+            &self.phase2_integrity_algorithms,
+        );
+        formatter.field("phase1_dh_group_numbers", &self.phase1_dh_group_numbers);
+        formatter.field("phase2_dh_group_numbers", &self.phase2_dh_group_numbers);
+        formatter.field("ike_versions", &self.ike_versions);
+        formatter.field("startup_action", &self.startup_action);
+        formatter.field("log_options", &self.log_options);
+        formatter.field(
+            "enable_tunnel_lifecycle_control",
+            &self.enable_tunnel_lifecycle_control,
+        );
+        formatter.finish()
     }
 }

@@ -93,12 +93,12 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
@@ -124,7 +124,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_rule_descriptions`](Self::set_security_group_rule_descriptions).
     ///
-    /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
+    /// <p>The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
     pub fn security_group_rule_descriptions(
         mut self,
         input: crate::types::SecurityGroupRuleDescription,
@@ -132,7 +132,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
         self.inner = self.inner.security_group_rule_descriptions(input);
         self
     }
-    /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
+    /// <p>The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
     pub fn set_security_group_rule_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,

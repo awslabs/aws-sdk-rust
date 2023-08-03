@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsOutput {
-    /// <p>Contains a list of blue/green deployments for the user.</p>
+    /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub blue_green_deployments:
         ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
-    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBlueGreenDeploymentsOutput {
-    /// <p>Contains a list of blue/green deployments for the user.</p>
+    /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     pub fn blue_green_deployments(
         &self,
     ) -> ::std::option::Option<&[crate::types::BlueGreenDeployment]> {
         self.blue_green_deployments.as_deref()
     }
-    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -52,14 +52,14 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_blue_green_deployments`](Self::set_blue_green_deployments).
     ///
-    /// <p>Contains a list of blue/green deployments for the user.</p>
+    /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     pub fn blue_green_deployments(mut self, input: crate::types::BlueGreenDeployment) -> Self {
         let mut v = self.blue_green_deployments.unwrap_or_default();
         v.push(input);
         self.blue_green_deployments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains a list of blue/green deployments for the user.</p>
+    /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     pub fn set_blue_green_deployments(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>>,
@@ -67,12 +67,12 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
         self.blue_green_deployments = input;
         self
     }
-    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
+    /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self

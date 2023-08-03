@@ -27,6 +27,14 @@ impl ListOrdersPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `orders`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_orders::paginator::ListOrdersPaginatorItems {
+        crate::operation::list_orders::paginator::ListOrdersPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -106,6 +114,33 @@ impl ListOrdersPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListOrdersPaginator`
+///
+/// This is created with [`.items()`](ListOrdersPaginator::items)
+pub struct ListOrdersPaginatorItems(ListOrdersPaginator);
+
+impl ListOrdersPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::OrderSummary,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_orders::ListOrdersError>,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_orders_output_orders(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

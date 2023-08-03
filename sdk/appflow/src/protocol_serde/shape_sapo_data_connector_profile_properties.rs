@@ -33,6 +33,9 @@ pub fn ser_sapo_data_connector_profile_properties(
         )?;
         object_8.finish();
     }
+    if input.disable_sso {
+        object.key("disableSSO").boolean(input.disable_sso);
+    }
     Ok(())
 }
 
@@ -118,6 +121,13 @@ where
                             "oAuthProperties" => {
                                 builder = builder.set_o_auth_properties(
                                     crate::protocol_serde::shape_o_auth_properties::de_o_auth_properties(tokens)?
+                                );
+                            }
+                            "disableSSO" => {
+                                builder = builder.set_disable_sso(
+                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

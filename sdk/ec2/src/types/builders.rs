@@ -1039,9 +1039,13 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachmentBui
 
 pub use crate::types::_instance_type_info::InstanceTypeInfoBuilder;
 
+pub use crate::types::_nitro_tpm_info::NitroTpmInfoBuilder;
+
 pub use crate::types::_inference_accelerator_info::InferenceAcceleratorInfoBuilder;
 
 pub use crate::types::_inference_device_info::InferenceDeviceInfoBuilder;
+
+pub use crate::types::_inference_device_memory_info::InferenceDeviceMemoryInfoBuilder;
 
 pub use crate::types::_placement_group_info::PlacementGroupInfoBuilder;
 
@@ -1088,6 +1092,8 @@ pub use crate::types::_instance_status_details::InstanceStatusDetailsBuilder;
 pub use crate::types::_reservation::ReservationBuilder;
 
 pub use crate::types::_instance_credit_specification::InstanceCreditSpecificationBuilder;
+
+pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpointBuilder;
 
 pub use crate::types::_import_snapshot_task::ImportSnapshotTaskBuilder;
 

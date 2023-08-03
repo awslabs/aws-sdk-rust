@@ -25,7 +25,7 @@ pub struct Backup {
     /// <p>The type of the file-system backup.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BackupType>,
-    /// <p>The current percent of progress of an asynchronous task.</p>
+    /// <p>Displays the current percent of progress of an asynchronous task.</p>
     #[doc(hidden)]
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time when a particular backup was created.</p>
@@ -88,7 +88,7 @@ impl Backup {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::BackupType> {
         self.r#type.as_ref()
     }
-    /// <p>The current percent of progress of an asynchronous task.</p>
+    /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn progress_percent(&self) -> ::std::option::Option<i32> {
         self.progress_percent
     }
@@ -235,12 +235,12 @@ impl BackupBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The current percent of progress of an asynchronous task.</p>
+    /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current percent of progress of an asynchronous task.</p>
+    /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self

@@ -232,6 +232,8 @@ pub(crate) mod shape_put_provisioned_concurrency_config_input;
 
 pub(crate) mod shape_put_runtime_management_config_input;
 
+pub(crate) mod shape_recursive_invocation_exception;
+
 pub(crate) mod shape_request_too_large_exception;
 
 pub(crate) mod shape_resource_conflict_exception;

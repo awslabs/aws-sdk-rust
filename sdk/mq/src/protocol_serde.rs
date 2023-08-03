@@ -46,6 +46,8 @@ pub(crate) mod shape_list_tags;
 
 pub(crate) mod shape_list_users;
 
+pub(crate) mod shape_promote;
+
 pub(crate) mod shape_reboot_broker;
 
 pub(crate) mod shape_update_broker;
@@ -79,6 +81,8 @@ pub(crate) mod shape_forbidden_exception;
 pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_not_found_exception;
+
+pub(crate) mod shape_promote_input;
 
 pub(crate) mod shape_unauthorized_exception;
 
@@ -127,6 +131,8 @@ pub(crate) mod shape_configuration_revision;
 
 pub(crate) mod shape_configurations;
 
+pub(crate) mod shape_data_replication_metadata_output;
+
 pub(crate) mod shape_encryption_options;
 
 pub(crate) mod shape_ldap_server_metadata_input;
@@ -157,6 +163,8 @@ pub(crate) mod shape_broker_instance_option;
 pub(crate) mod shape_broker_summary;
 
 pub(crate) mod shape_configuration;
+
+pub(crate) mod shape_data_replication_counterpart;
 
 pub(crate) mod shape_pending_logs;
 

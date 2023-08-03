@@ -38,6 +38,9 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>The optional category filter specified in the request.</p>
+    #[doc(hidden)]
+    pub filter_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchPlaceIndexForTextSummary {
     /// <p>The search text specified in the request.</p>
@@ -82,6 +85,10 @@ impl SearchPlaceIndexForTextSummary {
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
+    /// <p>The optional category filter specified in the request.</p>
+    pub fn filter_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.filter_categories.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SearchPlaceIndexForTextSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -94,6 +101,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextSummary {
         formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
+        formatter.field("filter_categories", &self.filter_categories);
         formatter.finish()
     }
 }
@@ -116,6 +124,7 @@ pub struct SearchPlaceIndexForTextSummaryBuilder {
     pub(crate) result_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchPlaceIndexForTextSummaryBuilder {
     /// <p>The search text specified in the request.</p>
@@ -248,6 +257,28 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.language = input;
         self
     }
+    /// Appends an item to `filter_categories`.
+    ///
+    /// To override the contents of this collection use [`set_filter_categories`](Self::set_filter_categories).
+    ///
+    /// <p>The optional category filter specified in the request.</p>
+    pub fn filter_categories(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.filter_categories.unwrap_or_default();
+        v.push(input.into());
+        self.filter_categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The optional category filter specified in the request.</p>
+    pub fn set_filter_categories(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.filter_categories = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::types::SearchPlaceIndexForTextSummary).
     pub fn build(self) -> crate::types::SearchPlaceIndexForTextSummary {
         crate::types::SearchPlaceIndexForTextSummary {
@@ -259,6 +290,7 @@ impl SearchPlaceIndexForTextSummaryBuilder {
             result_b_box: self.result_b_box,
             data_source: self.data_source,
             language: self.language,
+            filter_categories: self.filter_categories,
         }
     }
 }
@@ -273,6 +305,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextSummaryBuilder {
         formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
+        formatter.field("filter_categories", &self.filter_categories);
         formatter.finish()
     }
 }

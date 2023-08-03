@@ -123,6 +123,10 @@ pub use crate::types::_default_cluster_parameters::DefaultClusterParametersBuild
 
 pub use crate::types::_data_share::DataShareBuilder;
 
+pub use crate::types::_association::AssociationBuilder;
+
+pub use crate::types::_certificate_association::CertificateAssociationBuilder;
+
 pub use crate::types::_cluster_version::ClusterVersionBuilder;
 
 pub use crate::types::_maintenance_track::MaintenanceTrackBuilder;

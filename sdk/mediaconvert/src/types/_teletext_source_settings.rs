@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeletextSourceSettings {
-    /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     #[doc(hidden)]
     pub page_number: ::std::option::Option<::std::string::String>,
 }
 impl TeletextSourceSettings {
-    /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub fn page_number(&self) -> ::std::option::Option<&str> {
         self.page_number.as_deref()
     }
@@ -30,12 +30,12 @@ pub struct TeletextSourceSettingsBuilder {
     pub(crate) page_number: ::std::option::Option<::std::string::String>,
 }
 impl TeletextSourceSettingsBuilder {
-    /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub fn page_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// Use Page Number (PageNumber) to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub fn set_page_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_number = input;
         self

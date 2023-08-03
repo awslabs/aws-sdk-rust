@@ -206,6 +206,8 @@ pub(crate) mod shape_pricing_rule_list;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_update_billing_group_account_grouping;
+
 pub(crate) mod shape_update_custom_line_item_charge_details;
 
 pub(crate) mod shape_update_tiering_input;
@@ -253,6 +255,8 @@ pub(crate) mod shape_update_free_tier_config;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_associate_resource_error;
+
+pub(crate) mod shape_list_billing_group_account_grouping;
 
 pub(crate) mod shape_tiering;
 

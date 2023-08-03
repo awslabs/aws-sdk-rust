@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventDataStoresOutput {
-    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    /// <p>Contains information about event data stores in the account, in the current Region.</p>
     #[doc(hidden)]
     pub event_data_stores: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
     /// <p>A token you can use to get the next page of results.</p>
@@ -12,7 +12,7 @@ pub struct ListEventDataStoresOutput {
     _request_id: Option<String>,
 }
 impl ListEventDataStoresOutput {
-    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    /// <p>Contains information about event data stores in the account, in the current Region.</p>
     pub fn event_data_stores(&self) -> ::std::option::Option<&[crate::types::EventDataStore]> {
         self.event_data_stores.as_deref()
     }
@@ -50,14 +50,14 @@ impl ListEventDataStoresOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_data_stores`](Self::set_event_data_stores).
     ///
-    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    /// <p>Contains information about event data stores in the account, in the current Region.</p>
     pub fn event_data_stores(mut self, input: crate::types::EventDataStore) -> Self {
         let mut v = self.event_data_stores.unwrap_or_default();
         v.push(input);
         self.event_data_stores = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    /// <p>Contains information about event data stores in the account, in the current Region.</p>
     pub fn set_event_data_stores(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,

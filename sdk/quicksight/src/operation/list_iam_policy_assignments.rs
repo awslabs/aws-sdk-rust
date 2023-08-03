@@ -403,3 +403,6 @@ mod _list_iam_policy_assignments_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

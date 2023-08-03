@@ -6,5 +6,8 @@ pub fn ser_disassociate_kms_key_input(
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.resource_identifier {
+        object.key("resourceIdentifier").string(var_2.as_str());
+    }
     Ok(())
 }

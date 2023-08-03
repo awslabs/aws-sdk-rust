@@ -5,7 +5,7 @@ pub use crate::operation::delete_subscriber::_delete_subscriber_input::DeleteSub
 
 /// Fluent builder constructing a request to `DeleteSubscriber`.
 ///
-/// <p>Deletes the subscription permission for accounts that are already enabled in Amazon Security Lake. You can delete a subscriber and remove access to data in the current Amazon Web Services Region.</p>
+/// <p>Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in the current Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSubscriberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,14 +99,20 @@ impl DeleteSubscriberFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.id(input.into());
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn subscriber_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.subscriber_id(input.into());
         self
     }
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_id(input);
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn set_subscriber_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_subscriber_id(input);
         self
     }
 }

@@ -6,6 +6,7 @@ pub use crate::operation::update_profile::_update_profile_input::UpdateProfileIn
 /// Fluent builder constructing a request to `UpdateProfile`.
 ///
 /// <p>Updates an existing room profile by room profile ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

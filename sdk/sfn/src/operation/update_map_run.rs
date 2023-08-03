@@ -177,7 +177,7 @@ pub type UpdateMapRunErrorKind = UpdateMapRunError;
 pub enum UpdateMapRunError {
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
+    /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),

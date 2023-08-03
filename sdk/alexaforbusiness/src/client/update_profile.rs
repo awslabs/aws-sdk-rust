@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`meeting_room_configuration(UpdateMeetingRoomConfiguration)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::meeting_room_configuration) / [`set_meeting_room_configuration(Option<UpdateMeetingRoomConfiguration>)`](crate::operation::update_profile::builders::UpdateProfileFluentBuilder::set_meeting_room_configuration): <p>The updated meeting room settings of a room profile.</p>
     /// - On success, responds with [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::operation::update_profile::UpdateProfileError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_profile(
         &self,
     ) -> crate::operation::update_profile::builders::UpdateProfileFluentBuilder {

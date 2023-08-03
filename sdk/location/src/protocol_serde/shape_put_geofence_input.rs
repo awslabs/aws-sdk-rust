@@ -3,14 +3,24 @@ pub fn ser_put_geofence_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_geofence::PutGeofenceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.geometry {
+    if let Some(var_1) = &input.geofence_properties {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Geometry").start_object();
-        crate::protocol_serde::shape_geofence_geometry::ser_geofence_geometry(
-            &mut object_2,
-            var_1,
-        )?;
+        let mut object_2 = object.key("GeofenceProperties").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                object_2.key(key_3.as_str()).string(value_4.as_str());
+            }
+        }
         object_2.finish();
+    }
+    if let Some(var_5) = &input.geometry {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Geometry").start_object();
+        crate::protocol_serde::shape_geofence_geometry::ser_geofence_geometry(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
     }
     Ok(())
 }

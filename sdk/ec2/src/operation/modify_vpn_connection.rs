@@ -155,6 +155,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for ModifyVpnConnection {
             crate::protocol_serde::shape_modify_vpn_connection::de_modify_vpn_connection_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

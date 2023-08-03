@@ -162,6 +162,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for ReleaseFileSystemNfsV3
             crate::protocol_serde::shape_release_file_system_nfs_v3_locks::de_release_file_system_nfs_v3_locks_http_response_with_props(status, headers, body)
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

@@ -47,9 +47,9 @@ pub enum Error {
     InvalidWebhookFilterPatternException(crate::types::error::InvalidWebhookFilterPatternException),
     /// <p>The job was specified in an invalid format or cannot be found.</p>
     JobNotFoundException(crate::types::error::JobNotFoundException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
+    /// <p>The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
+    /// <p>The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code> associated with the request is out of date.</p>
     NotLatestPipelineExecutionException(crate::types::error::NotLatestPipelineExecutionException),
     /// <p>Exceeded the total size limit for all variables in the pipeline.</p>
     OutputVariablesSizeExceededException(crate::types::error::OutputVariablesSizeExceededException),

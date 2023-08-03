@@ -21,6 +21,10 @@ pub struct SessionData {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>The configuration information for the session integration.</p>
+    #[doc(hidden)]
+    pub integration_configuration:
+        ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -47,6 +51,12 @@ impl SessionData {
     > {
         self.tags.as_ref()
     }
+    /// <p>The configuration information for the session integration.</p>
+    pub fn integration_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SessionIntegrationConfiguration> {
+        self.integration_configuration.as_ref()
+    }
 }
 impl SessionData {
     /// Creates a new builder-style object to manufacture [`SessionData`](crate::types::SessionData).
@@ -68,6 +78,8 @@ pub struct SessionDataBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) integration_configuration:
+        ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -135,6 +147,22 @@ impl SessionDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The configuration information for the session integration.</p>
+    pub fn integration_configuration(
+        mut self,
+        input: crate::types::SessionIntegrationConfiguration,
+    ) -> Self {
+        self.integration_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration information for the session integration.</p>
+    pub fn set_integration_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
+    ) -> Self {
+        self.integration_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     pub fn build(self) -> crate::types::SessionData {
         crate::types::SessionData {
@@ -143,6 +171,7 @@ impl SessionDataBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            integration_configuration: self.integration_configuration,
         }
     }
 }

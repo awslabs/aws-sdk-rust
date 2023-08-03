@@ -10,6 +10,9 @@ pub mod create_dev_environment;
 /// Types for the `CreateProject` operation.
 pub mod create_project;
 
+/// Types for the `CreateSourceRepository` operation.
+pub mod create_source_repository;
+
 /// Types for the `CreateSourceRepositoryBranch` operation.
 pub mod create_source_repository_branch;
 
@@ -19,11 +22,23 @@ pub mod delete_access_token;
 /// Types for the `DeleteDevEnvironment` operation.
 pub mod delete_dev_environment;
 
+/// Types for the `DeleteProject` operation.
+pub mod delete_project;
+
+/// Types for the `DeleteSourceRepository` operation.
+pub mod delete_source_repository;
+
+/// Types for the `DeleteSpace` operation.
+pub mod delete_space;
+
 /// Types for the `GetDevEnvironment` operation.
 pub mod get_dev_environment;
 
 /// Types for the `GetProject` operation.
 pub mod get_project;
+
+/// Types for the `GetSourceRepository` operation.
+pub mod get_source_repository;
 
 /// Types for the `GetSourceRepositoryCloneUrls` operation.
 pub mod get_source_repository_clone_urls;
@@ -75,6 +90,12 @@ pub mod stop_dev_environment_session;
 
 /// Types for the `UpdateDevEnvironment` operation.
 pub mod update_dev_environment;
+
+/// Types for the `UpdateProject` operation.
+pub mod update_project;
+
+/// Types for the `UpdateSpace` operation.
+pub mod update_space;
 
 /// Types for the `VerifySession` operation.
 pub mod verify_session;

@@ -51,11 +51,31 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
+pub use crate::types::_snowflake_target::SnowflakeTargetBuilder;
+
+pub use crate::types::_snowflake_node_data::SnowflakeNodeDataBuilder;
+
+pub use crate::types::_option::OptionBuilder;
+
+pub use crate::types::_snowflake_source::SnowflakeSourceBuilder;
+
+pub use crate::types::_glue_schema::GlueSchemaBuilder;
+
+pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
+
+pub use crate::types::_recipe::RecipeBuilder;
+
+pub use crate::types::_recipe_reference::RecipeReferenceBuilder;
+
+pub use crate::types::_evaluate_data_quality_multi_frame::EvaluateDataQualityMultiFrameBuilder;
+
+pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptionsBuilder;
+
+pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptionsBuilder;
+
 pub use crate::types::_amazon_redshift_target::AmazonRedshiftTargetBuilder;
 
 pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeDataBuilder;
-
-pub use crate::types::_option::OptionBuilder;
 
 pub use crate::types::_amazon_redshift_advanced_option::AmazonRedshiftAdvancedOptionBuilder;
 
@@ -70,10 +90,6 @@ pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTargetBuilder;
 pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicyBuilder;
 
 pub use crate::types::_s3_delta_source::S3DeltaSourceBuilder;
-
-pub use crate::types::_glue_schema::GlueSchemaBuilder;
-
-pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
 
 pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptionsBuilder;
 
@@ -94,10 +110,6 @@ pub use crate::types::_catalog_hudi_source::CatalogHudiSourceBuilder;
 pub use crate::types::_s3_catalog_hudi_source::S3CatalogHudiSourceBuilder;
 
 pub use crate::types::_evaluate_data_quality::EvaluateDataQualityBuilder;
-
-pub use crate::types::_dq_stop_job_on_failure_options::DqStopJobOnFailureOptionsBuilder;
-
-pub use crate::types::_dq_results_publishing_options::DqResultsPublishingOptionsBuilder;
 
 pub use crate::types::_dynamic_transform::DynamicTransformBuilder;
 
@@ -261,6 +273,10 @@ pub use crate::types::_schema_change_policy::SchemaChangePolicyBuilder;
 
 pub use crate::types::_crawler_targets::CrawlerTargetsBuilder;
 
+pub use crate::types::_hudi_target::HudiTargetBuilder;
+
+pub use crate::types::_iceberg_target::IcebergTargetBuilder;
+
 pub use crate::types::_delta_target::DeltaTargetBuilder;
 
 pub use crate::types::_catalog_target::CatalogTargetBuilder;
@@ -309,11 +325,11 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequestBuilder;
 
-pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;
-
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_glue_table::GlueTableBuilder;
+
+pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;
 
 pub use crate::types::_table::TableBuilder;
 
@@ -530,6 +546,10 @@ pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
 pub use crate::types::_schema_version_error_item::SchemaVersionErrorItemBuilder;
 
 pub use crate::types::_error_details::ErrorDetailsBuilder;
+
+pub use crate::types::_open_table_format_input::OpenTableFormatInputBuilder;
+
+pub use crate::types::_iceberg_input::IcebergInputBuilder;
 
 pub use crate::types::_partition_index::PartitionIndexBuilder;
 

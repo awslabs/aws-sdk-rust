@@ -6,9 +6,9 @@ pub use crate::operation::attach_classic_link_vpc::_attach_classic_link_vpc_inpu
 /// Fluent builder constructing a request to `AttachClassicLinkVpc`.
 ///
 /// <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>This action is deprecated.</p>
 /// </note>
-/// <p>Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups. You cannot link an EC2-Classic instance to more than one VPC at a time. You can only link an instance that's in the <code>running</code> state. An instance is automatically unlinked from a VPC when it's stopped - you can link it to the VPC again when you restart it.</p>
+/// <p>Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC security groups. You cannot link an EC2-Classic instance to more than one VPC at a time. You can only link an instance that's in the <code>running</code> state. An instance is automatically unlinked from a VPC when it's stopped - you can link it to the VPC again when you restart it.</p>
 /// <p>After you've linked an instance, you cannot change the VPC security groups that are associated with it. To change the security groups, you must first unlink the instance, and then link it again.</p>
 /// <p>Linking your instance to a VPC is sometimes referred to as <i>attaching</i> your instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -118,12 +118,12 @@ impl AttachClassicLinkVpcFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groups(input.into());
         self
     }
-    /// <p>The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.</p>
+    /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
     pub fn set_groups(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -131,22 +131,22 @@ impl AttachClassicLinkVpcFluentBuilder {
         self.inner = self.inner.set_groups(input);
         self
     }
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the EC2-Classic instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
-    /// <p>The ID of a ClassicLink-enabled VPC.</p>
+    /// <p>The ID of the ClassicLink-enabled VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self

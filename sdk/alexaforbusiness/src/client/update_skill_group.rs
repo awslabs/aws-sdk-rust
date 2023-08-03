@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder::set_description): <p>The updated description for the skill group.</p>
     /// - On success, responds with [`UpdateSkillGroupOutput`](crate::operation::update_skill_group::UpdateSkillGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateSkillGroupError>`](crate::operation::update_skill_group::UpdateSkillGroupError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_skill_group(
         &self,
     ) -> crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder {

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateConfig {
-    /// <p>The launch template.</p>
+    /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
     #[doc(hidden)]
     pub launch_template_specification:
         ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
@@ -13,7 +13,7 @@ pub struct LaunchTemplateConfig {
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateConfig {
-    /// <p>The launch template.</p>
+    /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
     pub fn launch_template_specification(
         &self,
     ) -> ::std::option::Option<&crate::types::FleetLaunchTemplateSpecification> {
@@ -43,7 +43,7 @@ pub struct LaunchTemplateConfigBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateConfigBuilder {
-    /// <p>The launch template.</p>
+    /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
     pub fn launch_template_specification(
         mut self,
         input: crate::types::FleetLaunchTemplateSpecification,
@@ -51,7 +51,7 @@ impl LaunchTemplateConfigBuilder {
         self.launch_template_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The launch template.</p>
+    /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
     pub fn set_launch_template_specification(
         mut self,
         input: ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,

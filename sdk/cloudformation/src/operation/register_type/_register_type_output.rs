@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTypeOutput {
     /// <p>The identifier for this registration request.</p>
-    /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
+    /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
     #[doc(hidden)]
     pub registration_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterTypeOutput {
     /// <p>The identifier for this registration request.</p>
-    /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
+    /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
     pub fn registration_token(&self) -> ::std::option::Option<&str> {
         self.registration_token.as_deref()
     }
@@ -39,7 +39,7 @@ pub struct RegisterTypeOutputBuilder {
 }
 impl RegisterTypeOutputBuilder {
     /// <p>The identifier for this registration request.</p>
-    /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
+    /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
     pub fn registration_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -48,7 +48,7 @@ impl RegisterTypeOutputBuilder {
         self
     }
     /// <p>The identifier for this registration request.</p>
-    /// <p>Use this registration token when calling <code> <code>DescribeTypeRegistration</code> </code>, which returns information about the status and IDs of the extension registration.</p>
+    /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
     pub fn set_registration_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

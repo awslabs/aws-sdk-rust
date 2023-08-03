@@ -9,5 +9,17 @@ pub fn ser_start_query_input(
     if let Some(var_2) = &input.delivery_s3_uri {
         object.key("DeliveryS3Uri").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.query_alias {
+        object.key("QueryAlias").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.query_parameters {
+        let mut array_5 = object.key("QueryParameters").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

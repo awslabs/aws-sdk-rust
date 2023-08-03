@@ -6,6 +6,7 @@ pub use crate::operation::search_network_profiles::_search_network_profiles_inpu
 /// Fluent builder constructing a request to `SearchNetworkProfiles`.
 ///
 /// <p>Searches network profiles and lists the ones that meet a set of filter and sort criteria.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchNetworkProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

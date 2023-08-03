@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_max_results): <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     /// - On success, responds with [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queues::ListQueuesOutput::next_token): <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    ///   - [`queue_urls(Option<Vec<String>>)`](crate::operation::list_queues::ListQueuesOutput::queue_urls): <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
+    ///   - [`queue_urls(Option<Vec<String>>)`](crate::operation::list_queues::ListQueuesOutput::queue_urls): <p>A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.</p>
     /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::operation::list_queues::ListQueuesError)
     pub fn list_queues(&self) -> crate::operation::list_queues::builders::ListQueuesFluentBuilder {
         crate::operation::list_queues::builders::ListQueuesFluentBuilder::new(self.handle.clone())

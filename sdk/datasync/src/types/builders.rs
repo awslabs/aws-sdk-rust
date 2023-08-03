@@ -19,6 +19,8 @@ pub use crate::types::_qop_configuration::QopConfigurationBuilder;
 
 pub use crate::types::_hdfs_name_node::HdfsNameNodeBuilder;
 
+pub use crate::types::_azure_blob_sas_configuration::AzureBlobSasConfigurationBuilder;
+
 pub use crate::types::_tag_list_entry::TagListEntryBuilder;
 
 pub use crate::types::_task_list_entry::TaskListEntryBuilder;

@@ -5,13 +5,13 @@ pub use crate::types::_auto_enable::AutoEnableBuilder;
 
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
 
+pub use crate::types::_number_filter::NumberFilterBuilder;
+
 pub use crate::types::_string_filter::StringFilterBuilder;
 
 pub use crate::types::_date_filter::DateFilterBuilder;
 
 pub use crate::types::_package_filter::PackageFilterBuilder;
-
-pub use crate::types::_number_filter::NumberFilterBuilder;
 
 pub use crate::types::_port_range_filter::PortRangeFilterBuilder;
 
@@ -42,6 +42,12 @@ pub use crate::types::_usage::UsageBuilder;
 pub use crate::types::_member::MemberBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
+
+pub use crate::types::_epss_details::EpssDetailsBuilder;
+
+pub use crate::types::_code_vulnerability_details::CodeVulnerabilityDetailsBuilder;
+
+pub use crate::types::_code_file_path::CodeFilePathBuilder;
 
 pub use crate::types::_exploitability_details::ExploitabilityDetailsBuilder;
 
@@ -137,6 +143,8 @@ pub use crate::types::_counts::CountsBuilder;
 
 pub use crate::types::_coverage_filter_criteria::CoverageFilterCriteriaBuilder;
 
+pub use crate::types::_coverage_date_filter::CoverageDateFilterBuilder;
+
 pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
 
 pub use crate::types::_coverage_map_filter::CoverageMapFilterBuilder;
@@ -156,6 +164,12 @@ pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
 pub use crate::types::_scan_status::ScanStatusBuilder;
 
 pub use crate::types::_permission::PermissionBuilder;
+
+pub use crate::types::_resource_filter_criteria::ResourceFilterCriteriaBuilder;
+
+pub use crate::types::_resource_map_filter::ResourceMapFilterBuilder;
+
+pub use crate::types::_resource_string_filter::ResourceStringFilterBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
 
@@ -182,6 +196,14 @@ pub use crate::types::_free_trial_info_error::FreeTrialInfoErrorBuilder;
 pub use crate::types::_free_trial_account_info::FreeTrialAccountInfoBuilder;
 
 pub use crate::types::_free_trial_info::FreeTrialInfoBuilder;
+
+pub use crate::types::_code_snippet_error::CodeSnippetErrorBuilder;
+
+pub use crate::types::_code_snippet_result::CodeSnippetResultBuilder;
+
+pub use crate::types::_suggested_fix::SuggestedFixBuilder;
+
+pub use crate::types::_code_line::CodeLineBuilder;
 
 pub use crate::types::_account_state::AccountStateBuilder;
 

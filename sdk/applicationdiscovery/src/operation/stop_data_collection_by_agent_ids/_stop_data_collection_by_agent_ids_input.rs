@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     #[doc(hidden)]
     pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StopDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.agent_ids.as_deref()
     }
@@ -33,14 +33,14 @@ impl StopDataCollectionByAgentIdsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
     ///
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
         v.push(input.into());
         self.agent_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn set_agent_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

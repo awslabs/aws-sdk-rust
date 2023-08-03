@@ -22,6 +22,9 @@ pub struct SearchPlaceIndexForPositionInput {
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    #[doc(hidden)]
+    pub key: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
@@ -47,6 +50,10 @@ impl SearchPlaceIndexForPositionInput {
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn key(&self) -> ::std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SearchPlaceIndexForPositionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +62,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForPositionInput {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -73,6 +81,7 @@ pub struct SearchPlaceIndexForPositionInputBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>The name of the place index resource you want to use for the search.</p>
@@ -135,6 +144,16 @@ impl SearchPlaceIndexForPositionInputBuilder {
         self.language = input;
         self
     }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
     pub fn build(
         self,
@@ -148,6 +167,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
                 position: self.position,
                 max_results: self.max_results.unwrap_or_default(),
                 language: self.language,
+                key: self.key,
             },
         )
     }
@@ -159,6 +179,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForPositionInputBuilder {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

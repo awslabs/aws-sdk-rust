@@ -16,6 +16,7 @@
 ///     ManagedDataIdentifierSelector::Exclude => { /* ... */ },
 ///     ManagedDataIdentifierSelector::Include => { /* ... */ },
 ///     ManagedDataIdentifierSelector::None => { /* ... */ },
+///     ManagedDataIdentifierSelector::Recommended => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +58,8 @@ pub enum ManagedDataIdentifierSelector {
     Include,
     #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
+    Recommended,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ManagedDataIdentifierSelector {
             "EXCLUDE" => ManagedDataIdentifierSelector::Exclude,
             "INCLUDE" => ManagedDataIdentifierSelector::Include,
             "NONE" => ManagedDataIdentifierSelector::None,
+            "RECOMMENDED" => ManagedDataIdentifierSelector::Recommended,
             other => ManagedDataIdentifierSelector::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -88,12 +92,13 @@ impl ManagedDataIdentifierSelector {
             ManagedDataIdentifierSelector::Exclude => "EXCLUDE",
             ManagedDataIdentifierSelector::Include => "INCLUDE",
             ManagedDataIdentifierSelector::None => "NONE",
+            ManagedDataIdentifierSelector::Recommended => "RECOMMENDED",
             ManagedDataIdentifierSelector::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "EXCLUDE", "INCLUDE", "NONE"]
+        &["ALL", "EXCLUDE", "INCLUDE", "NONE", "RECOMMENDED"]
     }
 }
 impl ::std::convert::AsRef<str> for ManagedDataIdentifierSelector {

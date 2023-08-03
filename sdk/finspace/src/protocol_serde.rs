@@ -12,11 +12,53 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_kx_changeset;
+
+pub(crate) mod shape_create_kx_cluster;
+
+pub(crate) mod shape_create_kx_database;
+
+pub(crate) mod shape_create_kx_environment;
+
+pub(crate) mod shape_create_kx_user;
+
 pub(crate) mod shape_delete_environment;
+
+pub(crate) mod shape_delete_kx_cluster;
+
+pub(crate) mod shape_delete_kx_database;
+
+pub(crate) mod shape_delete_kx_environment;
+
+pub(crate) mod shape_delete_kx_user;
 
 pub(crate) mod shape_get_environment;
 
+pub(crate) mod shape_get_kx_changeset;
+
+pub(crate) mod shape_get_kx_cluster;
+
+pub(crate) mod shape_get_kx_connection_string;
+
+pub(crate) mod shape_get_kx_database;
+
+pub(crate) mod shape_get_kx_environment;
+
+pub(crate) mod shape_get_kx_user;
+
 pub(crate) mod shape_list_environments;
+
+pub(crate) mod shape_list_kx_changesets;
+
+pub(crate) mod shape_list_kx_cluster_nodes;
+
+pub(crate) mod shape_list_kx_clusters;
+
+pub(crate) mod shape_list_kx_databases;
+
+pub(crate) mod shape_list_kx_environments;
+
+pub(crate) mod shape_list_kx_users;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -25,6 +67,16 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_environment;
+
+pub(crate) mod shape_update_kx_cluster_databases;
+
+pub(crate) mod shape_update_kx_database;
+
+pub(crate) mod shape_update_kx_environment;
+
+pub(crate) mod shape_update_kx_environment_network;
+
+pub(crate) mod shape_update_kx_user;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -36,13 +88,27 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_environment_input;
+
+pub(crate) mod shape_create_kx_changeset_input;
+
+pub(crate) mod shape_create_kx_cluster_input;
+
+pub(crate) mod shape_create_kx_database_input;
+
+pub(crate) mod shape_create_kx_environment_input;
+
+pub(crate) mod shape_create_kx_user_input;
 
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_resource_already_exists_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -54,16 +120,96 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_environment_input;
 
+pub(crate) mod shape_update_kx_cluster_databases_input;
+
+pub(crate) mod shape_update_kx_database_input;
+
+pub(crate) mod shape_update_kx_environment_input;
+
+pub(crate) mod shape_update_kx_environment_network_input;
+
+pub(crate) mod shape_update_kx_user_input;
+
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_auto_scaling_configuration;
+
+pub(crate) mod shape_availability_zone_ids;
+
+pub(crate) mod shape_capacity_configuration;
+
+pub(crate) mod shape_change_request;
+
+pub(crate) mod shape_change_requests;
+
+pub(crate) mod shape_code_configuration;
+
+pub(crate) mod shape_custom_dns_configuration;
+
+pub(crate) mod shape_custom_dns_server;
 
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_list;
 
+pub(crate) mod shape_error_info;
+
 pub(crate) mod shape_federation_parameters;
+
+pub(crate) mod shape_kx_cache_storage_configuration;
+
+pub(crate) mod shape_kx_cache_storage_configurations;
+
+pub(crate) mod shape_kx_changesets;
+
+pub(crate) mod shape_kx_clusters;
+
+pub(crate) mod shape_kx_command_line_argument;
+
+pub(crate) mod shape_kx_command_line_arguments;
+
+pub(crate) mod shape_kx_database_configuration;
+
+pub(crate) mod shape_kx_database_configurations;
+
+pub(crate) mod shape_kx_databases;
+
+pub(crate) mod shape_kx_environment_list;
+
+pub(crate) mod shape_kx_node_summaries;
+
+pub(crate) mod shape_kx_savedown_storage_configuration;
+
+pub(crate) mod shape_kx_user_list;
 
 pub(crate) mod shape_superuser_parameters;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_transit_gateway_configuration;
+
+pub(crate) mod shape_vpc_configuration;
+
+pub(crate) mod shape_kx_changeset_list_entry;
+
+pub(crate) mod shape_kx_cluster;
+
+pub(crate) mod shape_kx_database_cache_configuration;
+
+pub(crate) mod shape_kx_database_list_entry;
+
+pub(crate) mod shape_kx_environment;
+
+pub(crate) mod shape_kx_node;
+
+pub(crate) mod shape_kx_user;
+
+pub(crate) mod shape_security_group_id_list;
+
+pub(crate) mod shape_subnet_id_list;
+
 pub(crate) mod shape_attribute_map;
+
+pub(crate) mod shape_kx_database_cache_configurations;
+
+pub(crate) mod shape_db_paths;

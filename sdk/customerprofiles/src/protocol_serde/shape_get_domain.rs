@@ -214,6 +214,11 @@ pub(crate) fn de_get_domain(
                             )?,
                         );
                     }
+                    "RuleBasedMatching" => {
+                        builder = builder.set_rule_based_matching(
+                            crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens)?
+                        );
+                    }
                     "Stats" => {
                         builder = builder.set_stats(
                             crate::protocol_serde::shape_domain_stats::de_domain_stats(tokens)?,

@@ -16,15 +16,25 @@ pub(crate) mod shape_create_dev_environment;
 
 pub(crate) mod shape_create_project;
 
+pub(crate) mod shape_create_source_repository;
+
 pub(crate) mod shape_create_source_repository_branch;
 
 pub(crate) mod shape_delete_access_token;
 
 pub(crate) mod shape_delete_dev_environment;
 
+pub(crate) mod shape_delete_project;
+
+pub(crate) mod shape_delete_source_repository;
+
+pub(crate) mod shape_delete_space;
+
 pub(crate) mod shape_get_dev_environment;
 
 pub(crate) mod shape_get_project;
+
+pub(crate) mod shape_get_source_repository;
 
 pub(crate) mod shape_get_source_repository_clone_urls;
 
@@ -60,6 +70,10 @@ pub(crate) mod shape_stop_dev_environment_session;
 
 pub(crate) mod shape_update_dev_environment;
 
+pub(crate) mod shape_update_project;
+
+pub(crate) mod shape_update_space;
+
 pub(crate) mod shape_verify_session;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -81,6 +95,8 @@ pub(crate) mod shape_create_dev_environment_input;
 pub(crate) mod shape_create_project_input;
 
 pub(crate) mod shape_create_source_repository_branch_input;
+
+pub(crate) mod shape_create_source_repository_input;
 
 pub(crate) mod shape_list_access_tokens_input;
 
@@ -109,6 +125,10 @@ pub(crate) mod shape_start_dev_environment_session_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_dev_environment_input;
+
+pub(crate) mod shape_update_project_input;
+
+pub(crate) mod shape_update_space_input;
 
 pub(crate) mod shape_validation_exception;
 

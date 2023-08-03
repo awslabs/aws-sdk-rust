@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`app_instances(Option<Vec<AppInstanceSummary>>)`](crate::operation::list_app_instances::ListAppInstancesOutput::app_instances): <p>The information for each <code>AppInstance</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instances::ListAppInstancesOutput::next_token): <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     /// - On failure, responds with [`SdkError<ListAppInstancesError>`](crate::operation::list_app_instances::ListAppInstancesError)
+    #[deprecated(note = "Replaced by ListAppInstances in the Amazon Chime SDK Identity Namespace")]
     pub fn list_app_instances(
         &self,
     ) -> crate::operation::list_app_instances::builders::ListAppInstancesFluentBuilder {

@@ -246,6 +246,8 @@ mod create_cluster_snapshot;
 
 mod create_cluster_subnet_group;
 
+mod create_custom_domain_association;
+
 mod create_endpoint_access;
 
 mod create_event_subscription;
@@ -306,6 +308,8 @@ mod delete_cluster_snapshot;
 
 mod delete_cluster_subnet_group;
 
+mod delete_custom_domain_association;
+
 mod delete_endpoint_access;
 
 mod delete_event_subscription;
@@ -347,6 +351,8 @@ mod describe_cluster_tracks;
 mod describe_cluster_versions;
 
 mod describe_clusters;
+
+mod describe_custom_domain_associations;
 
 mod describe_data_shares;
 
@@ -437,6 +443,8 @@ mod modify_cluster_snapshot;
 mod modify_cluster_snapshot_schedule;
 
 mod modify_cluster_subnet_group;
+
+mod modify_custom_domain_association;
 
 mod modify_endpoint_access;
 

@@ -33,6 +33,12 @@ pub struct ListInferenceRecommendationsJobsInput {
     /// <p>The maximum number of recommendations to return in the response.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    #[doc(hidden)]
+    pub model_name_equals: ::std::option::Option<::std::string::String>,
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    #[doc(hidden)]
+    pub model_package_version_arn_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceRecommendationsJobsInput {
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
@@ -79,6 +85,14 @@ impl ListInferenceRecommendationsJobsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn model_name_equals(&self) -> ::std::option::Option<&str> {
+        self.model_name_equals.as_deref()
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn model_package_version_arn_equals(&self) -> ::std::option::Option<&str> {
+        self.model_package_version_arn_equals.as_deref()
+    }
 }
 impl ListInferenceRecommendationsJobsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
@@ -103,6 +117,8 @@ pub struct ListInferenceRecommendationsJobsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) model_name_equals: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_version_arn_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceRecommendationsJobsInputBuilder {
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
@@ -229,6 +245,38 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn model_name_equals(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_name_equals = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this model.</p>
+    pub fn set_model_name_equals(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.model_name_equals = input;
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn model_package_version_arn_equals(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_version_arn_equals = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
+    pub fn set_model_package_version_arn_equals(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.model_package_version_arn_equals = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(
@@ -252,6 +300,10 @@ impl ListInferenceRecommendationsJobsInputBuilder {
                 next_token: self.next_token
                 ,
                 max_results: self.max_results
+                ,
+                model_name_equals: self.model_name_equals
+                ,
+                model_package_version_arn_equals: self.model_package_version_arn_equals
                 ,
             }
         )

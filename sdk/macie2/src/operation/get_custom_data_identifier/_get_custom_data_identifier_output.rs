@@ -33,7 +33,7 @@ pub struct GetCustomDataIdentifierOutput {
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     #[doc(hidden)]
     pub severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
@@ -84,7 +84,7 @@ impl GetCustomDataIdentifierOutput {
     pub fn regex(&self) -> ::std::option::Option<&str> {
         self.regex.as_deref()
     }
-    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub fn severity_levels(&self) -> ::std::option::Option<&[crate::types::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
@@ -259,14 +259,14 @@ impl GetCustomDataIdentifierOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
     ///
-    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub fn severity_levels(mut self, input: crate::types::SeverityLevel) -> Self {
         let mut v = self.severity_levels.unwrap_or_default();
         v.push(input);
         self.severity_levels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub fn set_severity_levels(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,

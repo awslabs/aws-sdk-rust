@@ -201,6 +201,19 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     #[doc(hidden)]
     pub amazon_redshift_target: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
+    /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
+    #[doc(hidden)]
+    pub evaluate_data_quality_multi_frame:
+        ::std::option::Option<crate::types::EvaluateDataQualityMultiFrame>,
+    /// <p>Specifies a Glue DataBrew recipe node.</p>
+    #[doc(hidden)]
+    pub recipe: ::std::option::Option<crate::types::Recipe>,
+    /// <p>Specifies a Snowflake data source.</p>
+    #[doc(hidden)]
+    pub snowflake_source: ::std::option::Option<crate::types::SnowflakeSource>,
+    /// <p>Specifies a target that writes to a Snowflake data source.</p>
+    #[doc(hidden)]
+    pub snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -523,6 +536,24 @@ impl CodeGenConfigurationNode {
     ) -> ::std::option::Option<&crate::types::AmazonRedshiftTarget> {
         self.amazon_redshift_target.as_ref()
     }
+    /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
+    pub fn evaluate_data_quality_multi_frame(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EvaluateDataQualityMultiFrame> {
+        self.evaluate_data_quality_multi_frame.as_ref()
+    }
+    /// <p>Specifies a Glue DataBrew recipe node.</p>
+    pub fn recipe(&self) -> ::std::option::Option<&crate::types::Recipe> {
+        self.recipe.as_ref()
+    }
+    /// <p>Specifies a Snowflake data source.</p>
+    pub fn snowflake_source(&self) -> ::std::option::Option<&crate::types::SnowflakeSource> {
+        self.snowflake_source.as_ref()
+    }
+    /// <p>Specifies a target that writes to a Snowflake data source.</p>
+    pub fn snowflake_target(&self) -> ::std::option::Option<&crate::types::SnowflakeTarget> {
+        self.snowflake_target.as_ref()
+    }
 }
 impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
@@ -609,6 +640,11 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) s3_delta_direct_target: ::std::option::Option<crate::types::S3DeltaDirectTarget>,
     pub(crate) amazon_redshift_source: ::std::option::Option<crate::types::AmazonRedshiftSource>,
     pub(crate) amazon_redshift_target: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
+    pub(crate) evaluate_data_quality_multi_frame:
+        ::std::option::Option<crate::types::EvaluateDataQualityMultiFrame>,
+    pub(crate) recipe: ::std::option::Option<crate::types::Recipe>,
+    pub(crate) snowflake_source: ::std::option::Option<crate::types::SnowflakeSource>,
+    pub(crate) snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -1456,6 +1492,58 @@ impl CodeGenConfigurationNodeBuilder {
         self.amazon_redshift_target = input;
         self
     }
+    /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
+    pub fn evaluate_data_quality_multi_frame(
+        mut self,
+        input: crate::types::EvaluateDataQualityMultiFrame,
+    ) -> Self {
+        self.evaluate_data_quality_multi_frame = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
+    pub fn set_evaluate_data_quality_multi_frame(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluateDataQualityMultiFrame>,
+    ) -> Self {
+        self.evaluate_data_quality_multi_frame = input;
+        self
+    }
+    /// <p>Specifies a Glue DataBrew recipe node.</p>
+    pub fn recipe(mut self, input: crate::types::Recipe) -> Self {
+        self.recipe = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a Glue DataBrew recipe node.</p>
+    pub fn set_recipe(mut self, input: ::std::option::Option<crate::types::Recipe>) -> Self {
+        self.recipe = input;
+        self
+    }
+    /// <p>Specifies a Snowflake data source.</p>
+    pub fn snowflake_source(mut self, input: crate::types::SnowflakeSource) -> Self {
+        self.snowflake_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a Snowflake data source.</p>
+    pub fn set_snowflake_source(
+        mut self,
+        input: ::std::option::Option<crate::types::SnowflakeSource>,
+    ) -> Self {
+        self.snowflake_source = input;
+        self
+    }
+    /// <p>Specifies a target that writes to a Snowflake data source.</p>
+    pub fn snowflake_target(mut self, input: crate::types::SnowflakeTarget) -> Self {
+        self.snowflake_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a target that writes to a Snowflake data source.</p>
+    pub fn set_snowflake_target(
+        mut self,
+        input: ::std::option::Option<crate::types::SnowflakeTarget>,
+    ) -> Self {
+        self.snowflake_target = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
     pub fn build(self) -> crate::types::CodeGenConfigurationNode {
         crate::types::CodeGenConfigurationNode {
@@ -1524,6 +1612,10 @@ impl CodeGenConfigurationNodeBuilder {
             s3_delta_direct_target: self.s3_delta_direct_target,
             amazon_redshift_source: self.amazon_redshift_source,
             amazon_redshift_target: self.amazon_redshift_target,
+            evaluate_data_quality_multi_frame: self.evaluate_data_quality_multi_frame,
+            recipe: self.recipe,
+            snowflake_source: self.snowflake_source,
+            snowflake_target: self.snowflake_target,
         }
     }
 }

@@ -56,6 +56,23 @@ pub fn de_revoke_grant_http_error(
                 tmp
             })
         }
+        "DryRunOperationException" => {
+            crate::operation::revoke_grant::RevokeGrantError::DryRunOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output).map_err(crate::operation::revoke_grant::RevokeGrantError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidArnException" => {
             crate::operation::revoke_grant::RevokeGrantError::InvalidArnException({
                 #[allow(unused_mut)]

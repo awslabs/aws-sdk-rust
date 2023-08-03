@@ -14,6 +14,9 @@ pub struct CreateWaveInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Account ID.</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWaveInput {
     /// <p>Wave name.</p>
@@ -32,6 +35,10 @@ impl CreateWaveInput {
     > {
         self.tags.as_ref()
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateWaveInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +46,7 @@ impl ::std::fmt::Debug for CreateWaveInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -58,6 +66,7 @@ pub struct CreateWaveInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWaveInputBuilder {
     /// <p>Wave name.</p>
@@ -105,6 +114,16 @@ impl CreateWaveInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWaveInput`](crate::operation::create_wave::CreateWaveInput).
     pub fn build(
         self,
@@ -116,6 +135,7 @@ impl CreateWaveInputBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            account_id: self.account_id,
         })
     }
 }
@@ -125,6 +145,7 @@ impl ::std::fmt::Debug for CreateWaveInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

@@ -12,6 +12,33 @@ pub fn ser_grid_view_configuration(
         crate::protocol_serde::shape_presenter_only_configuration::ser_presenter_only_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.active_speaker_only_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ActiveSpeakerOnlyConfiguration").start_object();
+        crate::protocol_serde::shape_active_speaker_only_configuration::ser_active_speaker_only_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.horizontal_layout_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("HorizontalLayoutConfiguration").start_object();
+        crate::protocol_serde::shape_horizontal_layout_configuration::ser_horizontal_layout_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.vertical_layout_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("VerticalLayoutConfiguration").start_object();
+        crate::protocol_serde::shape_vertical_layout_configuration::ser_vertical_layout_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.video_attribute {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("VideoAttribute").start_object();
+        crate::protocol_serde::shape_video_attribute::ser_video_attribute(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.canvas_orientation {
+        object.key("CanvasOrientation").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -55,6 +82,39 @@ where
                             "PresenterOnlyConfiguration" => {
                                 builder = builder.set_presenter_only_configuration(
                                     crate::protocol_serde::shape_presenter_only_configuration::de_presenter_only_configuration(tokens)?
+                                );
+                            }
+                            "ActiveSpeakerOnlyConfiguration" => {
+                                builder = builder.set_active_speaker_only_configuration(
+                                    crate::protocol_serde::shape_active_speaker_only_configuration::de_active_speaker_only_configuration(tokens)?
+                                );
+                            }
+                            "HorizontalLayoutConfiguration" => {
+                                builder = builder.set_horizontal_layout_configuration(
+                                    crate::protocol_serde::shape_horizontal_layout_configuration::de_horizontal_layout_configuration(tokens)?
+                                );
+                            }
+                            "VerticalLayoutConfiguration" => {
+                                builder = builder.set_vertical_layout_configuration(
+                                    crate::protocol_serde::shape_vertical_layout_configuration::de_vertical_layout_configuration(tokens)?
+                                );
+                            }
+                            "VideoAttribute" => {
+                                builder = builder.set_video_attribute(
+                                    crate::protocol_serde::shape_video_attribute::de_video_attribute(tokens)?
+                                );
+                            }
+                            "CanvasOrientation" => {
+                                builder = builder.set_canvas_orientation(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::CanvasOrientation::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -5,7 +5,7 @@ pub use crate::operation::list_account_aliases::_list_account_aliases_input::Lis
 
 /// Fluent builder constructing a request to `ListAccountAliases`.
 ///
-/// <p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only one). For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.</p>
+/// <p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only one). For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating, deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

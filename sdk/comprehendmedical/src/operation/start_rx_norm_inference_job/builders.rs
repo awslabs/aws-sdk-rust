@@ -125,7 +125,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -133,7 +133,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn set_data_access_role_arn(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -151,7 +151,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -159,7 +159,7 @@ impl StartRxNormInferenceJobFluentBuilder {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn set_client_request_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

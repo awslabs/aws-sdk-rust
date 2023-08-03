@@ -59,6 +59,13 @@ where
                                 )?,
                             );
                         }
+                        "AppendSourcePath" => {
+                            builder = builder.set_append_source_path(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                    tokens.next(),
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -101,6 +108,9 @@ pub fn ser_uri_path_route_input(
     }
     if let Some(var_6) = &input.include_child_paths {
         object.key("IncludeChildPaths").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.append_source_path {
+        object.key("AppendSourcePath").boolean(*var_7);
     }
     Ok(())
 }

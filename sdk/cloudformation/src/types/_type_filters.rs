@@ -6,8 +6,8 @@
 pub struct TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
     /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
     /// <li> <p>Private extensions registered in the account.</p> </li>
@@ -28,8 +28,8 @@ pub struct TypeFilters {
 impl TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
     /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
     /// <li> <p>Private extensions registered in the account.</p> </li>
@@ -70,8 +70,8 @@ pub struct TypeFiltersBuilder {
 impl TypeFiltersBuilder {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
     /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
     /// <li> <p>Private extensions registered in the account.</p> </li>
@@ -85,8 +85,8 @@ impl TypeFiltersBuilder {
     }
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
     /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
     /// <li> <p>Private extensions registered in the account.</p> </li>

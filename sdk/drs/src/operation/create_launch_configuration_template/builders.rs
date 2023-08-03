@@ -157,4 +157,20 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_licensing(input);
         self
     }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn export_bucket_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.export_bucket_arn(input.into());
+        self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn set_export_bucket_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_export_bucket_arn(input);
+        self
+    }
 }

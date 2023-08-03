@@ -7,11 +7,9 @@ pub use crate::operation::revoke_security_group_ingress::_revoke_security_group_
 ///
 /// <p>Removes the specified inbound (ingress) rules from a security group.</p>
 /// <p>You can specify rules using either rule IDs or security group rule properties. If you use rule properties, the values that you specify (for example, ports) must match the existing rule's values exactly. Each rule has a protocol, from and to ports, and source (CIDR range, security group, or prefix list). For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If the security group rule has a description, you do not need to specify the description to revoke the rule.</p>
-/// <p>[EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the output describes the security group rules that were not revoked.</p>
+/// <p>For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and the output describes the security group rules that were not revoked.</p>
 /// <p>Amazon Web Services recommends that you describe the security group to verify that the rules were removed.</p>
-/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// </note>
+/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,22 +123,22 @@ impl RevokeSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_from_port(input);
         self
     }
-    /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
-    /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
@@ -172,7 +170,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ip_protocol(input);
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
     pub fn source_security_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -180,7 +178,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.source_security_group_name(input.into());
         self
     }
-    /// <p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
     pub fn set_source_security_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -188,7 +186,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
-    /// <p>[EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>Not supported.</p>
     pub fn source_security_group_owner_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -196,7 +194,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.source_security_group_owner_id(input.into());
         self
     }
-    /// <p>[EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>Not supported.</p>
     pub fn set_source_security_group_owner_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,

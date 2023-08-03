@@ -6,6 +6,7 @@ pub use crate::operation::create_room::_create_room_input::CreateRoomInputBuilde
 /// Fluent builder constructing a request to `CreateRoom`.
 ///
 /// <p>Creates a room with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

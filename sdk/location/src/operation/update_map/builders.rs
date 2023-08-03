@@ -132,4 +132,17 @@ impl UpdateMapFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn configuration_update(mut self, input: crate::types::MapConfigurationUpdate) -> Self {
+        self.inner = self.inner.configuration_update(input);
+        self
+    }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn set_configuration_update(
+        mut self,
+        input: ::std::option::Option<crate::types::MapConfigurationUpdate>,
+    ) -> Self {
+        self.inner = self.inner.set_configuration_update(input);
+        self
+    }
 }

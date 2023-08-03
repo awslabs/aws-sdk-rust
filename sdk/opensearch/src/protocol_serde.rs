@@ -346,6 +346,8 @@ pub(crate) mod shape_cold_storage_options;
 
 pub(crate) mod shape_compatible_versions_map;
 
+pub(crate) mod shape_cross_cluster_search_connection_properties;
+
 pub(crate) mod shape_domain_endpoint_options_status;
 
 pub(crate) mod shape_domain_info;

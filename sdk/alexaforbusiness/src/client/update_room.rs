@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`profile_arn(impl ::std::convert::Into<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::update_room::builders::UpdateRoomFluentBuilder::set_profile_arn): <p>The updated profile ARN for the room.</p>
     /// - On success, responds with [`UpdateRoomOutput`](crate::operation::update_room::UpdateRoomOutput)
     /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::operation::update_room::UpdateRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn update_room(&self) -> crate::operation::update_room::builders::UpdateRoomFluentBuilder {
         crate::operation::update_room::builders::UpdateRoomFluentBuilder::new(self.handle.clone())
     }

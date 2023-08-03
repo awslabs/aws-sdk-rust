@@ -50,6 +50,8 @@ pub(crate) mod shape_feature_value;
 
 pub(crate) mod shape_record;
 
+pub(crate) mod shape_ttl_duration;
+
 pub(crate) mod shape_unprocessed_identifiers;
 
 pub(crate) mod shape_batch_get_record_error;

@@ -31,6 +31,21 @@ pub fn ser_case_filter(
             }
             array_3.finish();
         }
+        crate::types::CaseFilter::OrAll(inner) => {
+            let mut array_6 = object_6.key("orAll").start_array();
+            for item_7 in inner {
+                {
+                    #[allow(unused_mut)]
+                    let mut object_8 = array_6.value().start_object();
+                    crate::protocol_serde::shape_case_filter::ser_case_filter(
+                        &mut object_8,
+                        item_7,
+                    )?;
+                    object_8.finish();
+                }
+            }
+            array_6.finish();
+        }
         crate::types::CaseFilter::Unknown => {
             return Err(
                 ::aws_smithy_http::operation::error::SerializationError::unknown_variant(

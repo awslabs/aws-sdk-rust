@@ -5,7 +5,7 @@ pub use crate::operation::describe_continuous_exports::_describe_continuous_expo
 
 /// Fluent builder constructing a request to `DescribeContinuousExports`.
 ///
-/// <p>Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>
+/// <p>Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContinuousExportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

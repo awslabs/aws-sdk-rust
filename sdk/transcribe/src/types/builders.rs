@@ -17,6 +17,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_transcription_job::TranscriptionJobBuilder;
 
+pub use crate::types::_toxicity_detection_settings::ToxicityDetectionSettingsBuilder;
+
 pub use crate::types::_language_id_settings::LanguageIdSettingsBuilder;
 
 pub use crate::types::_subtitles_output::SubtitlesOutputBuilder;

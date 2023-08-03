@@ -113,6 +113,13 @@ pub struct Workload {
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
     #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Profile associated with a workload.</p>
+    #[doc(hidden)]
+    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    #[doc(hidden)]
+    pub prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -257,6 +264,16 @@ impl Workload {
     pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.applications.as_deref()
     }
+    /// <p>Profile associated with a workload.</p>
+    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
+        self.profiles.as_deref()
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+        self.prioritized_risk_counts.as_ref()
+    }
 }
 impl Workload {
     /// Creates a new builder-style object to manufacture [`Workload`](crate::types::Workload).
@@ -299,6 +316,9 @@ pub struct WorkloadBuilder {
     >,
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl WorkloadBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -741,6 +761,44 @@ impl WorkloadBuilder {
         self.applications = input;
         self
     }
+    /// Appends an item to `profiles`.
+    ///
+    /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+    ///
+    /// <p>Profile associated with a workload.</p>
+    pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
+        let mut v = self.profiles.unwrap_or_default();
+        v.push(input);
+        self.profiles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Profile associated with a workload.</p>
+    pub fn set_profiles(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    ) -> Self {
+        self.profiles = input;
+        self
+    }
+    /// Adds a key-value pair to `prioritized_risk_counts`.
+    ///
+    /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
+    ///
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
+        let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn set_prioritized_risk_counts(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.prioritized_risk_counts = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
     pub fn build(self) -> crate::types::Workload {
         crate::types::Workload {
@@ -771,6 +829,8 @@ impl WorkloadBuilder {
             tags: self.tags,
             discovery_config: self.discovery_config,
             applications: self.applications,
+            profiles: self.profiles,
+            prioritized_risk_counts: self.prioritized_risk_counts,
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     #[doc(hidden)]
     pub role_session_name: ::std::option::Option<::std::string::String>,
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     #[doc(hidden)]
     pub web_identity_token: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified host component of the domain name of the OAuth 2.0 identity provider. Do not specify this value for an OpenID Connect identity provider.</p>
@@ -49,7 +49,7 @@ impl AssumeRoleWithWebIdentityInput {
     pub fn role_session_name(&self) -> ::std::option::Option<&str> {
         self.role_session_name.as_deref()
     }
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn web_identity_token(&self) -> ::std::option::Option<&str> {
         self.web_identity_token.as_deref()
     }
@@ -145,7 +145,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
         self.role_session_name = input;
         self
     }
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn web_identity_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -153,7 +153,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
         self.web_identity_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+    /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn set_web_identity_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,

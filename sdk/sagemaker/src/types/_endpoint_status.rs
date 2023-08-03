@@ -19,6 +19,7 @@
 ///     EndpointStatus::OutOfService => { /* ... */ },
 ///     EndpointStatus::RollingBack => { /* ... */ },
 ///     EndpointStatus::SystemUpdating => { /* ... */ },
+///     EndpointStatus::UpdateRollbackFailed => { /* ... */ },
 ///     EndpointStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum EndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
     SystemUpdating,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateRollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for EndpointStatus {
             "OutOfService" => EndpointStatus::OutOfService,
             "RollingBack" => EndpointStatus::RollingBack,
             "SystemUpdating" => EndpointStatus::SystemUpdating,
+            "UpdateRollbackFailed" => EndpointStatus::UpdateRollbackFailed,
             "Updating" => EndpointStatus::Updating,
             other => {
                 EndpointStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -107,6 +111,7 @@ impl EndpointStatus {
             EndpointStatus::OutOfService => "OutOfService",
             EndpointStatus::RollingBack => "RollingBack",
             EndpointStatus::SystemUpdating => "SystemUpdating",
+            EndpointStatus::UpdateRollbackFailed => "UpdateRollbackFailed",
             EndpointStatus::Updating => "Updating",
             EndpointStatus::Unknown(value) => value.as_str(),
         }
@@ -121,6 +126,7 @@ impl EndpointStatus {
             "OutOfService",
             "RollingBack",
             "SystemUpdating",
+            "UpdateRollbackFailed",
             "Updating",
         ]
     }

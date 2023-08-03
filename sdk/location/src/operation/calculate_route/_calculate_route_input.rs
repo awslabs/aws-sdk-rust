@@ -78,6 +78,9 @@ pub struct CalculateRouteInput {
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     #[doc(hidden)]
     pub truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    #[doc(hidden)]
+    pub key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
@@ -170,6 +173,10 @@ impl CalculateRouteInput {
     ) -> ::std::option::Option<&crate::types::CalculateRouteTruckModeOptions> {
         self.truck_mode_options.as_ref()
     }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn key(&self) -> ::std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CalculateRouteInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -185,6 +192,7 @@ impl ::std::fmt::Debug for CalculateRouteInput {
         formatter.field("include_leg_geometry", &self.include_leg_geometry);
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -211,6 +219,7 @@ pub struct CalculateRouteInputBuilder {
     pub(crate) car_mode_options: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
     pub(crate) truck_mode_options:
         ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteInputBuilder {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
@@ -458,6 +467,16 @@ impl CalculateRouteInputBuilder {
         self.truck_mode_options = input;
         self
     }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CalculateRouteInput`](crate::operation::calculate_route::CalculateRouteInput).
     pub fn build(
         self,
@@ -477,6 +496,7 @@ impl CalculateRouteInputBuilder {
             include_leg_geometry: self.include_leg_geometry,
             car_mode_options: self.car_mode_options,
             truck_mode_options: self.truck_mode_options,
+            key: self.key,
         })
     }
 }
@@ -494,6 +514,7 @@ impl ::std::fmt::Debug for CalculateRouteInputBuilder {
         formatter.field("include_leg_geometry", &self.include_leg_geometry);
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

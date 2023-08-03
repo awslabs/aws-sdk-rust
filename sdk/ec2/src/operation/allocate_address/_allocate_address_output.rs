@@ -6,7 +6,7 @@ pub struct AllocateAddressOutput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
-    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an address pool.</p>
@@ -15,7 +15,7 @@ pub struct AllocateAddressOutput {
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
     /// <p>The customer-owned IP address.</p>
@@ -24,7 +24,7 @@ pub struct AllocateAddressOutput {
     /// <p>The ID of the customer-owned address pool.</p>
     #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
-    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     #[doc(hidden)]
     pub carrier_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -34,7 +34,7 @@ impl AllocateAddressOutput {
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
-    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
@@ -46,7 +46,7 @@ impl AllocateAddressOutput {
     pub fn network_border_group(&self) -> ::std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(&self) -> ::std::option::Option<&crate::types::DomainType> {
         self.domain.as_ref()
     }
@@ -58,7 +58,7 @@ impl AllocateAddressOutput {
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
@@ -102,7 +102,7 @@ impl AllocateAddressOutputBuilder {
         self.public_ip = input;
         self
     }
-    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn allocation_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -110,7 +110,7 @@ impl AllocateAddressOutputBuilder {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub fn set_allocation_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -150,12 +150,12 @@ impl AllocateAddressOutputBuilder {
         self.network_border_group = input;
         self
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.domain = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>The network (<code>vpc</code>).</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain = input;
         self
@@ -192,12 +192,12 @@ impl AllocateAddressOutputBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self

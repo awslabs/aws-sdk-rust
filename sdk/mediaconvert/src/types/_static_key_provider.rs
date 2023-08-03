@@ -10,7 +10,7 @@ pub struct StaticKeyProvider {
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     #[doc(hidden)]
     pub key_format_versions: ::std::option::Option<::std::string::String>,
-    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
     #[doc(hidden)]
     pub static_key_value: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. The location of the license server used for protecting content.
@@ -26,7 +26,7 @@ impl StaticKeyProvider {
     pub fn key_format_versions(&self) -> ::std::option::Option<&str> {
         self.key_format_versions.as_deref()
     }
-    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
     pub fn static_key_value(&self) -> ::std::option::Option<&str> {
         self.static_key_value.as_deref()
     }
@@ -80,7 +80,7 @@ impl StaticKeyProviderBuilder {
         self.key_format_versions = input;
         self
     }
-    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
     pub fn static_key_value(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -88,7 +88,7 @@ impl StaticKeyProviderBuilder {
         self.static_key_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
+    /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value.
     pub fn set_static_key_value(
         mut self,
         input: ::std::option::Option<::std::string::String>,

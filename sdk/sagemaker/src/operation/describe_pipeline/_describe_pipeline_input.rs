@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelineInput {
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInput {
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -30,7 +30,7 @@ pub struct DescribePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInputBuilder {
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -38,7 +38,7 @@ impl DescribePipelineInputBuilder {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

@@ -352,6 +352,8 @@ mod create_fpga_image;
 
 mod create_image;
 
+mod create_instance_connect_endpoint;
+
 mod create_instance_event_window;
 
 mod create_instance_export_task;
@@ -531,6 +533,8 @@ mod delete_fleets;
 mod delete_flow_logs;
 
 mod delete_fpga_image;
+
+mod delete_instance_connect_endpoint;
 
 mod delete_instance_event_window;
 
@@ -759,6 +763,8 @@ mod describe_import_image_tasks;
 mod describe_import_snapshot_tasks;
 
 mod describe_instance_attribute;
+
+mod describe_instance_connect_endpoints;
 
 mod describe_instance_credit_specifications;
 

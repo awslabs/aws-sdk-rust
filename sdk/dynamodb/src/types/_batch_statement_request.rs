@@ -13,6 +13,11 @@ pub struct BatchStatementRequest {
     /// <p> The read consistency of the PartiQL batch request. </p>
     #[doc(hidden)]
     pub consistent_read: ::std::option::Option<bool>,
+    /// <p>An optional parameter that returns the item attributes for a PartiQL batch request operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    #[doc(hidden)]
+    pub return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl BatchStatementRequest {
     /// <p> A valid PartiQL statement. </p>
@@ -26,6 +31,13 @@ impl BatchStatementRequest {
     /// <p> The read consistency of the PartiQL batch request. </p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
         self.consistent_read
+    }
+    /// <p>An optional parameter that returns the item attributes for a PartiQL batch request operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ReturnValuesOnConditionCheckFailure> {
+        self.return_values_on_condition_check_failure.as_ref()
     }
 }
 impl BatchStatementRequest {
@@ -44,6 +56,8 @@ pub struct BatchStatementRequestBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     pub(crate) consistent_read: ::std::option::Option<bool>,
+    pub(crate) return_values_on_condition_check_failure:
+        ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl BatchStatementRequestBuilder {
     /// <p> A valid PartiQL statement. </p>
@@ -85,12 +99,31 @@ impl BatchStatementRequestBuilder {
         self.consistent_read = input;
         self
     }
+    /// <p>An optional parameter that returns the item attributes for a PartiQL batch request operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn return_values_on_condition_check_failure(
+        mut self,
+        input: crate::types::ReturnValuesOnConditionCheckFailure,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that returns the item attributes for a PartiQL batch request operation that failed a condition check.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
+    pub fn set_return_values_on_condition_check_failure(
+        mut self,
+        input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    ) -> Self {
+        self.return_values_on_condition_check_failure = input;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchStatementRequest`](crate::types::BatchStatementRequest).
     pub fn build(self) -> crate::types::BatchStatementRequest {
         crate::types::BatchStatementRequest {
             statement: self.statement,
             parameters: self.parameters,
             consistent_read: self.consistent_read,
+            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
         }
     }
 }

@@ -6,6 +6,7 @@ pub use crate::operation::create_gateway_group::_create_gateway_group_input::Cre
 /// Fluent builder constructing a request to `CreateGatewayGroup`.
 ///
 /// <p>Creates a gateway group with the specified details.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGatewayGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

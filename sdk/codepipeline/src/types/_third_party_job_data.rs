@@ -21,13 +21,13 @@ pub struct ThirdPartyJobData {
     /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
     #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
-    /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
     #[doc(hidden)]
     pub artifact_credentials: ::std::option::Option<crate::types::AwsSessionCredentials>,
-    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
+    /// <p>A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
     #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
-    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.</p>
     #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
@@ -56,17 +56,17 @@ impl ThirdPartyJobData {
     pub fn output_artifacts(&self) -> ::std::option::Option<&[crate::types::Artifact]> {
         self.output_artifacts.as_deref()
     }
-    /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
     pub fn artifact_credentials(
         &self,
     ) -> ::std::option::Option<&crate::types::AwsSessionCredentials> {
         self.artifact_credentials.as_ref()
     }
-    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
+    /// <p>A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
@@ -187,12 +187,12 @@ impl ThirdPartyJobDataBuilder {
         self.output_artifacts = input;
         self
     }
-    /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
     pub fn artifact_credentials(mut self, input: crate::types::AwsSessionCredentials) -> Self {
         self.artifact_credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
+    /// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline. </p>
     pub fn set_artifact_credentials(
         mut self,
         input: ::std::option::Option<crate::types::AwsSessionCredentials>,
@@ -200,7 +200,7 @@ impl ThirdPartyJobDataBuilder {
         self.artifact_credentials = input;
         self
     }
-    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
+    /// <p>A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
     pub fn continuation_token(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -208,7 +208,7 @@ impl ThirdPartyJobDataBuilder {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
+    /// <p>A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
     pub fn set_continuation_token(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -216,12 +216,12 @@ impl ThirdPartyJobDataBuilder {
         self.continuation_token = input;
         self
     }
-    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
         self.encryption_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.</p>
     pub fn set_encryption_key(
         mut self,
         input: ::std::option::Option<crate::types::EncryptionKey>,

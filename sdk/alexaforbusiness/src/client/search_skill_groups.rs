@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_skill_groups::SearchSkillGroupsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_skill_groups::SearchSkillGroupsOutput::total_count): <p>The total number of skill groups returned.</p>
     /// - On failure, responds with [`SdkError<SearchSkillGroupsError>`](crate::operation::search_skill_groups::SearchSkillGroupsError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_skill_groups(
         &self,
     ) -> crate::operation::search_skill_groups::builders::SearchSkillGroupsFluentBuilder {

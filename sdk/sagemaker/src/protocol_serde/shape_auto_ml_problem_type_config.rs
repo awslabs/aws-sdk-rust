@@ -16,6 +16,23 @@ pub fn ser_auto_ml_problem_type_config(
             crate::protocol_serde::shape_text_classification_job_config::ser_text_classification_job_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::AutoMlProblemTypeConfig::TabularJobConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_9.key("TabularJobConfig").start_object();
+            crate::protocol_serde::shape_tabular_job_config::ser_tabular_job_config(
+                &mut object_3,
+                inner,
+            )?;
+            object_3.finish();
+        }
+        crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_9
+                .key("TimeSeriesForecastingJobConfig")
+                .start_object();
+            crate::protocol_serde::shape_time_series_forecasting_job_config::ser_time_series_forecasting_job_config(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::AutoMlProblemTypeConfig::Unknown => {
             return Err(
                 ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
@@ -66,6 +83,18 @@ where
                                 Some(crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig(
                                     crate::protocol_serde::shape_text_classification_job_config::de_text_classification_job_config(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TextClassificationJobConfig' cannot be null"))?
+                                ))
+                            }
+                            "TabularJobConfig" => {
+                                Some(crate::types::AutoMlProblemTypeConfig::TabularJobConfig(
+                                    crate::protocol_serde::shape_tabular_job_config::de_tabular_job_config(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TabularJobConfig' cannot be null"))?
+                                ))
+                            }
+                            "TimeSeriesForecastingJobConfig" => {
+                                Some(crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig(
+                                    crate::protocol_serde::shape_time_series_forecasting_job_config::de_time_series_forecasting_job_config(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TimeSeriesForecastingJobConfig' cannot be null"))?
                                 ))
                             }
                             _ => {

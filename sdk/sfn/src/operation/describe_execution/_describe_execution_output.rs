@@ -27,7 +27,7 @@ pub struct DescribeExecutionOutput {
     /// <p>The date the execution is started.</p>
     #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    /// <p>If the execution ended, the date the execution stopped.</p>
     #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -56,6 +56,14 @@ pub struct DescribeExecutionOutput {
     /// <p>The cause string if the state machine execution failed.</p>
     #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
+    #[doc(hidden)]
+    pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
+    #[doc(hidden)]
+    pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeExecutionOutput {
@@ -88,7 +96,7 @@ impl DescribeExecutionOutput {
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
@@ -130,6 +138,16 @@ impl DescribeExecutionOutput {
     pub fn cause(&self) -> ::std::option::Option<&str> {
         self.cause.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_version_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+        self.state_machine_alias_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DescribeExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -148,6 +166,8 @@ impl ::std::fmt::Debug for DescribeExecutionOutput {
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("error", &"*** Sensitive Data Redacted ***");
         formatter.field("cause", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
+        formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -185,6 +205,8 @@ pub struct DescribeExecutionOutputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) cause: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeExecutionOutputBuilder {
@@ -274,12 +296,12 @@ impl DescribeExecutionOutputBuilder {
         self.start_date = input;
         self
     }
-    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    /// <p>If the execution ended, the date the execution stopped.</p>
     pub fn set_stop_date(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -383,6 +405,42 @@ impl DescribeExecutionOutputBuilder {
         self.cause = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
+    pub fn state_machine_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
+    pub fn set_state_machine_version_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_version_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
+    pub fn state_machine_alias_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
+    /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
+    pub fn set_state_machine_alias_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.state_machine_alias_arn = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -409,6 +467,8 @@ impl DescribeExecutionOutputBuilder {
             map_run_arn: self.map_run_arn,
             error: self.error,
             cause: self.cause,
+            state_machine_version_arn: self.state_machine_version_arn,
+            state_machine_alias_arn: self.state_machine_alias_arn,
             _request_id: self._request_id,
         }
     }
@@ -430,6 +490,8 @@ impl ::std::fmt::Debug for DescribeExecutionOutputBuilder {
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("error", &"*** Sensitive Data Redacted ***");
         formatter.field("cause", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_machine_version_arn", &self.state_machine_version_arn);
+        formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

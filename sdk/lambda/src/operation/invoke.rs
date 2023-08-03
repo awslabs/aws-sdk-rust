@@ -214,6 +214,8 @@ pub enum InvokeError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
+    RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
     SnapStartException(crate::types::error::SnapStartException),
     /// <p>The subnet ID provided in the Lambda function VPC configuration is not valid.</p>
@@ -290,6 +292,7 @@ impl ::std::fmt::Display for InvokeError {
         match self {
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::KmsNotFoundException(_inner) => _inner.fmt(f),
+            Self::RecursiveInvocationException(_inner) => _inner.fmt(f),
             Self::SnapStartException(_inner) => _inner.fmt(f),
             Self::InvalidSubnetIdException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
@@ -328,6 +331,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::KmsNotFoundException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RecursiveInvocationException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::SnapStartException(_inner) => {
@@ -464,6 +470,7 @@ impl InvokeError {
         match self {
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::KmsNotFoundException(e) => e.meta(),
+            Self::RecursiveInvocationException(e) => e.meta(),
             Self::SnapStartException(e) => e.meta(),
             Self::InvalidSubnetIdException(e) => e.meta(),
             Self::ServiceException(e) => e.meta(),
@@ -501,6 +508,10 @@ impl InvokeError {
     /// Returns `true` if the error kind is `InvokeError::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(self, Self::KmsNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::RecursiveInvocationException`.
+    pub fn is_recursive_invocation_exception(&self) -> bool {
+        matches!(self, Self::RecursiveInvocationException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::SnapStartException`.
     pub fn is_snap_start_exception(&self) -> bool {
@@ -616,6 +627,7 @@ impl ::std::error::Error for InvokeError {
         match self {
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RecursiveInvocationException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnetIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),

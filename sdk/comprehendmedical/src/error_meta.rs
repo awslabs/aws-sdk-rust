@@ -11,7 +11,7 @@ pub enum Error {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),

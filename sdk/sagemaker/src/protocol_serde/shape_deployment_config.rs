@@ -21,6 +21,15 @@ pub fn ser_deployment_config(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.rolling_update_policy {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("RollingUpdatePolicy").start_object();
+        crate::protocol_serde::shape_rolling_update_policy::ser_rolling_update_policy(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +65,11 @@ where
                             "AutoRollbackConfiguration" => {
                                 builder = builder.set_auto_rollback_configuration(
                                     crate::protocol_serde::shape_auto_rollback_config::de_auto_rollback_config(tokens)?
+                                );
+                            }
+                            "RollingUpdatePolicy" => {
+                                builder = builder.set_rolling_update_policy(
+                                    crate::protocol_serde::shape_rolling_update_policy::de_rolling_update_policy(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

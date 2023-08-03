@@ -172,6 +172,8 @@ pub(crate) mod shape_assistant_association_output_data;
 
 pub(crate) mod shape_assistant_association_summary;
 
+pub(crate) mod shape_assistant_integration_configuration;
+
 pub(crate) mod shape_assistant_summary;
 
 pub(crate) mod shape_content_metadata;
@@ -187,6 +189,8 @@ pub(crate) mod shape_recommendation_data;
 pub(crate) mod shape_recommendation_trigger;
 
 pub(crate) mod shape_result_data;
+
+pub(crate) mod shape_session_integration_configuration;
 
 pub(crate) mod shape_session_summary;
 

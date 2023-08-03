@@ -6,7 +6,9 @@ pub struct GetWirelessDeviceStatisticsOutput {
     /// <p>The ID of the wireless device.</p>
     #[doc(hidden)]
     pub wireless_device_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
     #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>Information about the wireless device's operations.</p>
@@ -22,7 +24,9 @@ impl GetWirelessDeviceStatisticsOutput {
     pub fn wireless_device_id(&self) -> ::std::option::Option<&str> {
         self.wireless_device_id.as_deref()
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
     pub fn last_uplink_received_at(&self) -> ::std::option::Option<&str> {
         self.last_uplink_received_at.as_deref()
     }
@@ -76,7 +80,9 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self.wireless_device_id = input;
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
     pub fn last_uplink_received_at(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -84,7 +90,9 @@ impl GetWirelessDeviceStatisticsOutputBuilder {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>This value is only valid for 3 months.</p>
+    /// </note>
     pub fn set_last_uplink_received_at(
         mut self,
         input: ::std::option::Option<::std::string::String>,

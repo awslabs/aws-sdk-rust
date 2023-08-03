@@ -106,6 +106,14 @@ pub struct CreateServerInput {
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     #[doc(hidden)]
     pub workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    #[doc(hidden)]
+    pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -230,6 +238,15 @@ impl CreateServerInput {
     pub fn workflow_details(&self) -> ::std::option::Option<&crate::types::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn structured_log_destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.structured_log_destinations.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateServerInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -255,6 +272,10 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
+        formatter.field(
+            "structured_log_destinations",
+            &self.structured_log_destinations,
+        );
         formatter.finish()
     }
 }
@@ -285,6 +306,8 @@ pub struct CreateServerInputBuilder {
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
+    pub(crate) structured_log_destinations:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -610,6 +633,38 @@ impl CreateServerInputBuilder {
         self.workflow_details = input;
         self
     }
+    /// Appends an item to `structured_log_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_structured_log_destinations`](Self::set_structured_log_destinations).
+    ///
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn structured_log_destinations(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.structured_log_destinations.unwrap_or_default();
+        v.push(input.into());
+        self.structured_log_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn set_structured_log_destinations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.structured_log_destinations = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn build(
         self,
@@ -633,6 +688,7 @@ impl CreateServerInputBuilder {
             security_policy_name: self.security_policy_name,
             tags: self.tags,
             workflow_details: self.workflow_details,
+            structured_log_destinations: self.structured_log_destinations,
         })
     }
 }
@@ -660,6 +716,10 @@ impl ::std::fmt::Debug for CreateServerInputBuilder {
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
+        formatter.field(
+            "structured_log_destinations",
+            &self.structured_log_destinations,
+        );
         formatter.finish()
     }
 }

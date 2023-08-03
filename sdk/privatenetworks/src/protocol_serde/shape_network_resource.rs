@@ -162,6 +162,11 @@ where
                                     crate::protocol_serde::shape_return_information::de_return_information(tokens)?
                                 );
                             }
+                            "commitmentInformation" => {
+                                builder = builder.set_commitment_information(
+                                    crate::protocol_serde::shape_commitment_information::de_commitment_information(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

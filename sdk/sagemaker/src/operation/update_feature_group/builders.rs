@@ -5,7 +5,9 @@ pub use crate::operation::update_feature_group::_update_feature_group_input::Upd
 
 /// Fluent builder constructing a request to `UpdateFeatureGroup`.
 ///
-/// <p>Updates the feature group.</p>
+/// <p>Updates the feature group by either adding features or updating the online store configuration. Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code> API.</p>
+/// <p>You can add features for your feature group using the <code>FeatureAdditions</code> request parameter. Features cannot be removed from a feature group.</p>
+/// <p>You can update the online store configuration by using the <code>OnlineStoreConfig</code> request parameter. If a <code>TtlDuration</code> is specified, the default <code>TtlDuration</code> applies for all records added to the feature group <i>after the feature group is updated</i>. If a record level <code>TtlDuration</code> exists from using the <code>PutRecord</code> API, the record level <code>TtlDuration</code> applies to that record instead of the default <code>TtlDuration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeatureGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,7 +101,7 @@ impl UpdateFeatureGroupFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -107,7 +109,7 @@ impl UpdateFeatureGroupFluentBuilder {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the feature group that you're updating.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -130,6 +132,19 @@ impl UpdateFeatureGroupFluentBuilder {
         input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_feature_additions(input);
+        self
+    }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn online_store_config(mut self, input: crate::types::OnlineStoreConfigUpdate) -> Self {
+        self.inner = self.inner.online_store_config(input);
+        self
+    }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn set_online_store_config(
+        mut self,
+        input: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
+    ) -> Self {
+        self.inner = self.inner.set_online_store_config(input);
         self
     }
 }

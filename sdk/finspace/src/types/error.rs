@@ -5,23 +5,31 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_internal_server_exception::InternalServerException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
+pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
-
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _internal_server_exception;
 
 mod _invalid_request_exception;
 
 mod _limit_exceeded_exception;
+
+mod _resource_already_exists_exception;
 
 mod _resource_not_found_exception;
 

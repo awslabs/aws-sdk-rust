@@ -67,18 +67,21 @@ pub fn ser_update_application_input(
         )?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.worker_type_specifications {
+    if let Some(var_18) = &input.release_label {
+        object.key("releaseLabel").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.worker_type_specifications {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("workerTypeSpecifications").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("workerTypeSpecifications").start_object();
+        for (key_21, value_22) in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = object_19.key(key_20.as_str()).start_object();
-                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_22, value_21)?;
-                object_22.finish();
+                let mut object_23 = object_20.key(key_21.as_str()).start_object();
+                crate::protocol_serde::shape_worker_type_specification_input::ser_worker_type_specification_input(&mut object_23, value_22)?;
+                object_23.finish();
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
     Ok(())
 }

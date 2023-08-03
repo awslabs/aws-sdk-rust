@@ -12,8 +12,8 @@ pub fn ser_admin_set_user_password_input(
     if let Some(var_3) = &input.password {
         object.key("Password").string(var_3.as_str());
     }
-    if input.permanent {
-        object.key("Permanent").boolean(input.permanent);
+    if let Some(var_4) = &input.permanent {
+        object.key("Permanent").boolean(*var_4);
     }
     Ok(())
 }

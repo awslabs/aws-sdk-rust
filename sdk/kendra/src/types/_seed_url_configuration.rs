@@ -11,9 +11,9 @@ pub struct SeedUrlConfiguration {
     pub seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
-    /// <li> <p> <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
-    /// <li> <p> <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
-    /// <li> <p> <code>EVERYTHING</code> – crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
+    /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
+    /// <li> <p> <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
+    /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     #[doc(hidden)]
@@ -27,9 +27,9 @@ impl SeedUrlConfiguration {
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
-    /// <li> <p> <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
-    /// <li> <p> <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
-    /// <li> <p> <code>EVERYTHING</code> – crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
+    /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
+    /// <li> <p> <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
+    /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub fn web_crawler_mode(&self) -> ::std::option::Option<&crate::types::WebCrawlerMode> {
@@ -76,9 +76,9 @@ impl SeedUrlConfigurationBuilder {
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
-    /// <li> <p> <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
-    /// <li> <p> <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
-    /// <li> <p> <code>EVERYTHING</code> – crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
+    /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
+    /// <li> <p> <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
+    /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub fn web_crawler_mode(mut self, input: crate::types::WebCrawlerMode) -> Self {
@@ -87,9 +87,9 @@ impl SeedUrlConfigurationBuilder {
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
-    /// <li> <p> <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
-    /// <li> <p> <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
-    /// <li> <p> <code>EVERYTHING</code> – crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
+    /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
+    /// <li> <p> <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example, if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li>
+    /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub fn set_web_crawler_mode(

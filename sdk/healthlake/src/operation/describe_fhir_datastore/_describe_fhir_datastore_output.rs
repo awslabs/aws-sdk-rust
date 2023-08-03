@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreOutput {
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
     #[doc(hidden)]
     pub datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,
 }
 impl DescribeFhirDatastoreOutput {
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
     pub fn datastore_properties(
         &self,
     ) -> ::std::option::Option<&crate::types::DatastoreProperties> {
@@ -40,12 +40,12 @@ pub struct DescribeFhirDatastoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFhirDatastoreOutputBuilder {
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
     pub fn datastore_properties(mut self, input: crate::types::DatastoreProperties) -> Self {
         self.datastore_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
     pub fn set_datastore_properties(
         mut self,
         input: ::std::option::Option<crate::types::DatastoreProperties>,

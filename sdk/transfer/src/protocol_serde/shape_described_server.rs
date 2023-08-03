@@ -182,6 +182,11 @@ where
                                     crate::protocol_serde::shape_workflow_details::de_workflow_details(tokens)?
                                 );
                             }
+                            "StructuredLogDestinations" => {
+                                builder = builder.set_structured_log_destinations(
+                                    crate::protocol_serde::shape_structured_log_destinations::de_structured_log_destinations(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

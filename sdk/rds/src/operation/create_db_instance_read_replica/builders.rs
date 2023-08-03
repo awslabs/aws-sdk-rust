@@ -712,6 +712,96 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.set_domain_iam_role_name(input);
         self
     }
+    /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    pub fn domain_fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_fqdn(input.into());
+        self
+    }
+    /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    pub fn set_domain_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_fqdn(input);
+        self
+    }
+    /// <p>The Active Directory organizational unit for your DB instance to join.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    pub fn domain_ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_ou(input.into());
+        self
+    }
+    /// <p>The Active Directory organizational unit for your DB instance to join.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the distinguished name format.</p> </li>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    pub fn set_domain_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_ou(input);
+        self
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    pub fn domain_auth_secret_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.domain_auth_secret_arn(input.into());
+        self
+    }
+    /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    pub fn set_domain_auth_secret_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_domain_auth_secret_arn(input);
+        self
+    }
+    /// Appends an item to `DomainDnsIps`.
+    ///
+    /// To override the contents of this collection use [`set_domain_dns_ips`](Self::set_domain_dns_ips).
+    ///
+    /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    pub fn domain_dns_ips(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.domain_dns_ips(input.into());
+        self
+    }
+    /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    pub fn set_domain_dns_ips(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_domain_dns_ips(input);
+        self
+    }
     /// <p>The open mode of the replica database: mounted or read-only.</p> <note>
     /// <p>This parameter is only supported for Oracle DB instances.</p>
     /// </note>

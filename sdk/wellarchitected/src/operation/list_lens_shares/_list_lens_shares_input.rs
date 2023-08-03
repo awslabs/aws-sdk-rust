@@ -18,7 +18,7 @@ pub struct ListLensSharesInput {
     /// <p>The maximum number of results to return for this request.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
 }
@@ -42,7 +42,7 @@ impl ListLensSharesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
@@ -119,12 +119,12 @@ impl ListLensSharesInputBuilder {
         self.max_results = input;
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a workload share.</p>
+    /// <p>The status of the share request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self

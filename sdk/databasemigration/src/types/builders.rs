@@ -5,6 +5,12 @@ pub use crate::types::_replication_task::ReplicationTaskBuilder;
 
 pub use crate::types::_replication_task_stats::ReplicationTaskStatsBuilder;
 
+pub use crate::types::_replication::ReplicationBuilder;
+
+pub use crate::types::_replication_stats::ReplicationStatsBuilder;
+
+pub use crate::types::_provision_data::ProvisionDataBuilder;
+
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRunBuilder;
 
 pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgressBuilder;
@@ -27,9 +33,15 @@ pub use crate::types::_availability_zone::AvailabilityZoneBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;
 
+pub use crate::types::_replication_config::ReplicationConfigBuilder;
+
+pub use crate::types::_compute_config::ComputeConfigBuilder;
+
 pub use crate::types::_event_subscription::EventSubscriptionBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_timestream_settings::TimestreamSettingsBuilder;
 
 pub use crate::types::_gcp_my_sql_settings::GcpMySqlSettingsBuilder;
 

@@ -5,7 +5,9 @@ pub use crate::operation::delete_control::_delete_control_input::DeleteControlIn
 
 /// Fluent builder constructing a request to `DeleteControl`.
 ///
-/// <p> Deletes a custom control in Audit Manager. </p>
+/// <p> Deletes a custom control in Audit Manager. </p> <important>
+/// <p>When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of your assessments. This includes assessments that you previously created before you deleted the custom control.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

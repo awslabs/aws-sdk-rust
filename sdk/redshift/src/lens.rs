@@ -89,6 +89,16 @@ pub(crate) fn reflens_describe_clusters_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_custom_domain_associations_output_marker(
+    input: &crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_data_shares_output_marker(
     input: &crate::operation::describe_data_shares::DescribeDataSharesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -407,6 +417,16 @@ pub(crate) fn lens_describe_clusters_output_clusters(
     input: crate::operation::describe_clusters::DescribeClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
     let input = match input.clusters {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_custom_domain_associations_output_associations(
+    input: crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+    let input = match input.associations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

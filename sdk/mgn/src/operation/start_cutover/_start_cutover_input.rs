@@ -11,6 +11,9 @@ pub struct StartCutoverInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    /// <p>Start Cutover by Account IDs</p>
+    #[doc(hidden)]
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartCutoverInput {
     /// <p>Start Cutover by Source Server IDs.</p>
@@ -25,12 +28,17 @@ impl StartCutoverInput {
     > {
         self.tags.as_ref()
     }
+    /// <p>Start Cutover by Account IDs</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for StartCutoverInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartCutoverInput");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -49,6 +57,7 @@ pub struct StartCutoverInputBuilder {
     pub(crate) tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartCutoverInputBuilder {
     /// Appends an item to `source_server_i_ds`.
@@ -98,6 +107,16 @@ impl StartCutoverInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Start Cutover by Account IDs</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Start Cutover by Account IDs</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartCutoverInput`](crate::operation::start_cutover::StartCutoverInput).
     pub fn build(
         self,
@@ -108,6 +127,7 @@ impl StartCutoverInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_cutover::StartCutoverInput {
             source_server_i_ds: self.source_server_i_ds,
             tags: self.tags,
+            account_id: self.account_id,
         })
     }
 }
@@ -116,6 +136,7 @@ impl ::std::fmt::Debug for StartCutoverInputBuilder {
         let mut formatter = f.debug_struct("StartCutoverInputBuilder");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

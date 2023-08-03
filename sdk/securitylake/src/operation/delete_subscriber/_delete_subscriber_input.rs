@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriberInput {
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
     #[doc(hidden)]
-    pub id: ::std::option::Option<::std::string::String>,
+    pub subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriberInput {
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn subscriber_id(&self) -> ::std::option::Option<&str> {
+        self.subscriber_id.as_deref()
     }
 }
 impl DeleteSubscriberInput {
@@ -27,17 +27,23 @@ impl DeleteSubscriberInput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct DeleteSubscriberInputBuilder {
-    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriberInputBuilder {
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.id = ::std::option::Option::Some(input.into());
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn subscriber_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
+    /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    pub fn set_subscriber_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.subscriber_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
@@ -48,7 +54,7 @@ impl DeleteSubscriberInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subscriber::DeleteSubscriberInput {
-            id: self.id,
+            subscriber_id: self.subscriber_id,
         })
     }
 }

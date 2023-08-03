@@ -19,7 +19,9 @@ pub struct WirelessDeviceStatistics {
     /// <p>The name of the destination to which the device is assigned.</p>
     #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>Theis value is only valid for 3 months.</p>
+    /// </note>
     #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN device info.</p>
@@ -59,7 +61,9 @@ impl WirelessDeviceStatistics {
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>Theis value is only valid for 3 months.</p>
+    /// </note>
     pub fn last_uplink_received_at(&self) -> ::std::option::Option<&str> {
         self.last_uplink_received_at.as_deref()
     }
@@ -169,7 +173,9 @@ impl WirelessDeviceStatisticsBuilder {
         self.destination_name = input;
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>Theis value is only valid for 3 months.</p>
+    /// </note>
     pub fn last_uplink_received_at(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -177,7 +183,9 @@ impl WirelessDeviceStatisticsBuilder {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time when the most recent uplink was received.</p>
+    /// <p>The date and time when the most recent uplink was received.</p> <note>
+    /// <p>Theis value is only valid for 3 months.</p>
+    /// </note>
     pub fn set_last_uplink_received_at(
         mut self,
         input: ::std::option::Option<::std::string::String>,

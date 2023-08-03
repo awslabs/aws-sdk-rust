@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_rooms::SearchRoomsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_rooms::SearchRoomsOutput::total_count): <p>The total number of rooms returned.</p>
     /// - On failure, responds with [`SdkError<SearchRoomsError>`](crate::operation::search_rooms::SearchRoomsError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_rooms(
         &self,
     ) -> crate::operation::search_rooms::builders::SearchRoomsFluentBuilder {

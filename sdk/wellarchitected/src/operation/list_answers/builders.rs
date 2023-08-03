@@ -170,4 +170,17 @@ impl ListAnswersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The priority of the question.</p>
+    pub fn question_priority(mut self, input: crate::types::QuestionPriority) -> Self {
+        self.inner = self.inner.question_priority(input);
+        self
+    }
+    /// <p>The priority of the question.</p>
+    pub fn set_question_priority(
+        mut self,
+        input: ::std::option::Option<crate::types::QuestionPriority>,
+    ) -> Self {
+        self.inner = self.inner.set_question_priority(input);
+        self
+    }
 }

@@ -6,7 +6,7 @@ pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
     #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the position update details for each device.</p>
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
     #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
 }
@@ -15,7 +15,7 @@ impl BatchUpdateDevicePositionInput {
     pub fn tracker_name(&self) -> ::std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>Contains the position update details for each device.</p>
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
     pub fn updates(&self) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
         self.updates.as_deref()
     }
@@ -51,14 +51,14 @@ impl BatchUpdateDevicePositionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
     ///
-    /// <p>Contains the position update details for each device.</p>
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
     pub fn updates(mut self, input: crate::types::DevicePositionUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
         v.push(input);
         self.updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the position update details for each device.</p>
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
     pub fn set_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,

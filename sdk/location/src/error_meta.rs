@@ -714,6 +714,9 @@ impl From<crate::operation::create_tracker::CreateTrackerError> for Error {
             crate::operation::create_tracker::CreateTrackerError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
+            crate::operation::create_tracker::CreateTrackerError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_tracker::CreateTrackerError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }

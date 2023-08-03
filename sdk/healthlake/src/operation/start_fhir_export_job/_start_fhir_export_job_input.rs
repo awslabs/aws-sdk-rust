@@ -9,7 +9,7 @@ pub struct StartFhirExportJobInput {
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
@@ -28,7 +28,7 @@ impl StartFhirExportJobInput {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -85,12 +85,12 @@ impl StartFhirExportJobInputBuilder {
         self.output_data_config = input;
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self

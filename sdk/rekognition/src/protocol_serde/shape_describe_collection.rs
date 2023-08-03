@@ -218,6 +218,15 @@ pub(crate) fn de_describe_collection(
                             )?,
                         );
                     }
+                    "UserCount" => {
+                        builder = builder.set_user_count(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i64::try_from)
+                            .transpose()?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

@@ -132,12 +132,12 @@ impl CreateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_region_enabled(input);
         self
     }
-    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_region_enabled(input);
         self
@@ -220,6 +220,16 @@ impl CreateEventDataStoreFluentBuilder {
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
+        self
+    }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn start_ingestion(mut self, input: bool) -> Self {
+        self.inner = self.inner.start_ingestion(input);
+        self
+    }
+    /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
+    pub fn set_start_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_start_ingestion(input);
         self
     }
 }

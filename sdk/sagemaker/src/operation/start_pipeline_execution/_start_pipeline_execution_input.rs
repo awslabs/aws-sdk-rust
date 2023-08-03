@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPipelineExecutionInput {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
@@ -21,9 +21,12 @@ pub struct StartPipelineExecutionInput {
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    #[doc(hidden)]
+    pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
 }
 impl StartPipelineExecutionInput {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -49,6 +52,12 @@ impl StartPipelineExecutionInput {
     ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SelectiveExecutionConfig> {
+        self.selective_execution_config.as_ref()
+    }
 }
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
@@ -72,9 +81,11 @@ pub struct StartPipelineExecutionInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) parallelism_configuration:
         ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) selective_execution_config:
+        ::std::option::Option<crate::types::SelectiveExecutionConfig>,
 }
 impl StartPipelineExecutionInputBuilder {
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -82,7 +93,7 @@ impl StartPipelineExecutionInputBuilder {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pipeline.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -173,6 +184,22 @@ impl StartPipelineExecutionInputBuilder {
         self.parallelism_configuration = input;
         self
     }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn selective_execution_config(
+        mut self,
+        input: crate::types::SelectiveExecutionConfig,
+    ) -> Self {
+        self.selective_execution_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The selective execution configuration applied to the pipeline run.</p>
+    pub fn set_selective_execution_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
+    ) -> Self {
+        self.selective_execution_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
@@ -188,6 +215,7 @@ impl StartPipelineExecutionInputBuilder {
                 pipeline_execution_description: self.pipeline_execution_description,
                 client_request_token: self.client_request_token,
                 parallelism_configuration: self.parallelism_configuration,
+                selective_execution_config: self.selective_execution_config,
             },
         )
     }

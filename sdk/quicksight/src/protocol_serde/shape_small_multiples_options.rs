@@ -24,6 +24,18 @@ pub fn ser_small_multiples_options(
         )?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.x_axis {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("XAxis").start_object();
+        crate::protocol_serde::shape_small_multiples_axis_properties::ser_small_multiples_axis_properties(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.y_axis {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("YAxis").start_object();
+        crate::protocol_serde::shape_small_multiples_axis_properties::ser_small_multiples_axis_properties(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +84,16 @@ where
                             "PanelConfiguration" => {
                                 builder = builder.set_panel_configuration(
                                     crate::protocol_serde::shape_panel_configuration::de_panel_configuration(tokens)?
+                                );
+                            }
+                            "XAxis" => {
+                                builder = builder.set_x_axis(
+                                    crate::protocol_serde::shape_small_multiples_axis_properties::de_small_multiples_axis_properties(tokens)?
+                                );
+                            }
+                            "YAxis" => {
+                                builder = builder.set_y_axis(
+                                    crate::protocol_serde::shape_small_multiples_axis_properties::de_small_multiples_axis_properties(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

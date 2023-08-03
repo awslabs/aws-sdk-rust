@@ -22,7 +22,7 @@ pub struct SlotTypeSummary {
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
     /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"> <code>AMAZON.AlphaNumeric</code> </a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -52,7 +52,7 @@ impl SlotTypeSummary {
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
     /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"> <code>AMAZON.AlphaNumeric</code> </a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
     pub fn slot_type_category(&self) -> ::std::option::Option<&crate::types::SlotTypeCategory> {
@@ -148,7 +148,7 @@ impl SlotTypeSummaryBuilder {
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
     /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"> <code>AMAZON.AlphaNumeric</code> </a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
     pub fn slot_type_category(mut self, input: crate::types::SlotTypeCategory) -> Self {
@@ -158,7 +158,7 @@ impl SlotTypeSummaryBuilder {
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
     /// <li> <p> <code>Custom</code> - A slot type that you created using custom values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating custom slot types</a>.</p> </li>
-    /// <li> <p> <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p> </li>
+    /// <li> <p> <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"> <code>AMAZON.AlphaNumeric</code> </a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
     pub fn set_slot_type_category(

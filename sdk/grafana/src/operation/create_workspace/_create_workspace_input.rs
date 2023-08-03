@@ -54,7 +54,9 @@ pub struct CreateWorkspaceInput {
     pub tags: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
@@ -66,7 +68,7 @@ pub struct CreateWorkspaceInput {
     #[doc(hidden)]
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
@@ -139,7 +141,9 @@ impl CreateWorkspaceInput {
     > {
         self.tags.as_ref()
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
@@ -156,7 +160,7 @@ impl CreateWorkspaceInput {
         self.network_access_control.as_ref()
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
@@ -465,12 +469,16 @@ impl CreateWorkspaceInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
+    /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
+    /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+    /// </note>
     pub fn set_vpc_configuration(
         mut self,
         input: ::std::option::Option<crate::types::VpcConfiguration>,
@@ -515,7 +523,7 @@ impl CreateWorkspaceInputBuilder {
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     pub fn grafana_version(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -524,7 +532,7 @@ impl CreateWorkspaceInputBuilder {
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
-    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
     pub fn set_grafana_version(
         mut self,
         input: ::std::option::Option<::std::string::String>,

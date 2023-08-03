@@ -8,6 +8,8 @@ pub enum FieldValueUnion {
     BooleanValue(bool),
     /// <p>Can be either null, or have a Double number value type. Only one value can be provided.</p>
     DoubleValue(f64),
+    /// <p>An empty value.</p>
+    EmptyValue(crate::types::EmptyFieldValue),
     /// <p>String value type.</p>
     StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl FieldValueUnion {
     /// Returns true if this is a [`DoubleValue`](crate::types::FieldValueUnion::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmptyValue`](crate::types::FieldValueUnion::EmptyValue), extracting the inner [`EmptyFieldValue`](crate::types::EmptyFieldValue).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_empty_value(&self) -> ::std::result::Result<&crate::types::EmptyFieldValue, &Self> {
+        if let FieldValueUnion::EmptyValue(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmptyValue`](crate::types::FieldValueUnion::EmptyValue).
+    pub fn is_empty_value(&self) -> bool {
+        self.as_empty_value().is_ok()
     }
     /// Tries to convert the enum instance into [`StringValue`](crate::types::FieldValueUnion::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -51,5 +51,11 @@ pub fn ser_create_resolver_endpoint_input(
     if let Some(var_15) = &input.resolver_endpoint_type {
         object.key("ResolverEndpointType").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.outpost_arn {
+        object.key("OutpostArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.preferred_instance_type {
+        object.key("PreferredInstanceType").string(var_17.as_str());
+    }
     Ok(())
 }

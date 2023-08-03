@@ -288,6 +288,10 @@ pub(crate) mod shape_create_image;
 
 pub(crate) mod shape_create_image_input;
 
+pub(crate) mod shape_create_instance_connect_endpoint;
+
+pub(crate) mod shape_create_instance_connect_endpoint_input;
+
 pub(crate) mod shape_create_instance_event_window;
 
 pub(crate) mod shape_create_instance_event_window_input;
@@ -591,6 +595,10 @@ pub(crate) mod shape_delete_flow_logs_input;
 pub(crate) mod shape_delete_fpga_image;
 
 pub(crate) mod shape_delete_fpga_image_input;
+
+pub(crate) mod shape_delete_instance_connect_endpoint;
+
+pub(crate) mod shape_delete_instance_connect_endpoint_input;
 
 pub(crate) mod shape_delete_instance_event_window;
 
@@ -1047,6 +1055,10 @@ pub(crate) mod shape_describe_import_snapshot_tasks_input;
 pub(crate) mod shape_describe_instance_attribute;
 
 pub(crate) mod shape_describe_instance_attribute_input;
+
+pub(crate) mod shape_describe_instance_connect_endpoints;
+
+pub(crate) mod shape_describe_instance_connect_endpoints_input;
 
 pub(crate) mod shape_describe_instance_credit_specifications;
 
@@ -2762,6 +2774,8 @@ pub(crate) mod shape_ebs_block_device;
 
 pub(crate) mod shape_ebs_instance_block_device_specification;
 
+pub(crate) mod shape_ec2_instance_connect_endpoint;
+
 pub(crate) mod shape_egress_only_internet_gateway;
 
 pub(crate) mod shape_egress_only_internet_gateway_list;
@@ -2845,6 +2859,8 @@ pub(crate) mod shape_import_image_task_list;
 pub(crate) mod shape_import_snapshot_task_list;
 
 pub(crate) mod shape_instance_block_device_mapping_list;
+
+pub(crate) mod shape_instance_connect_endpoint_set;
 
 pub(crate) mod shape_instance_credit_specification_list;
 
@@ -3682,6 +3698,8 @@ pub(crate) mod shape_network_acl_entry_list;
 
 pub(crate) mod shape_network_interface_association;
 
+pub(crate) mod shape_network_interface_id_set;
+
 pub(crate) mod shape_network_interface_ipv6_addresses_list;
 
 pub(crate) mod shape_network_interface_permission_state;
@@ -3757,6 +3775,8 @@ pub(crate) mod shape_scheduled_instances_private_ip_address_config;
 pub(crate) mod shape_security_group;
 
 pub(crate) mod shape_security_group_id_list;
+
+pub(crate) mod shape_security_group_id_set;
 
 pub(crate) mod shape_security_group_reference;
 
@@ -4114,6 +4134,8 @@ pub(crate) mod shape_network_interface_ipv6_address;
 
 pub(crate) mod shape_network_interface_private_ip_address;
 
+pub(crate) mod shape_nitro_tpm_info;
+
 pub(crate) mod shape_on_demand_options;
 
 pub(crate) mod shape_path_component;
@@ -4340,6 +4362,8 @@ pub(crate) mod shape_metric_point;
 
 pub(crate) mod shape_network_card_info_list;
 
+pub(crate) mod shape_nitro_tpm_supported_versions_list;
+
 pub(crate) mod shape_occurrence_day_set;
 
 pub(crate) mod shape_path_statement;
@@ -4481,6 +4505,8 @@ pub(crate) mod shape_fpga_device_memory_info;
 pub(crate) mod shape_gpu_device_memory_info;
 
 pub(crate) mod shape_ike_versions_list_value;
+
+pub(crate) mod shape_inference_device_memory_info;
 
 pub(crate) mod shape_instance_ipv4_prefix;
 

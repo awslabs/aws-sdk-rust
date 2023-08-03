@@ -5,7 +5,13 @@ pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcriptio
 
 /// Fluent builder constructing a request to `StopMeetingTranscription`.
 ///
-/// <p>Stops transcription for the specified <code>meetingId</code>.</p>
+/// <p>Stops transcription for the specified <code>meetingId</code>.</p> <important>
+/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_StopMeetingTranscription.html">StopMeetingTranscription</a>, in the Amazon Chime SDK.</p>
+/// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
+/// </important>
+#[deprecated(
+    note = "Replaced by StopMeetingTranscription in the Amazon Chime SDK Meetings Namespace"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopMeetingTranscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

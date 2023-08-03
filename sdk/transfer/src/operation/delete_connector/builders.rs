@@ -5,7 +5,7 @@ pub use crate::operation::delete_connector::_delete_connector_input::DeleteConne
 
 /// Fluent builder constructing a request to `DeleteConnector`.
 ///
-/// <p>Deletes the agreement that's specified in the provided <code>ConnectorId</code>.</p>
+/// <p>Deletes the connector that's specified in the provided <code>ConnectorId</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

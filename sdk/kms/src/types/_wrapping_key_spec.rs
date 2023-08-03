@@ -13,6 +13,8 @@
 /// # let wrappingkeyspec = unimplemented!();
 /// match wrappingkeyspec {
 ///     WrappingKeySpec::Rsa2048 => { /* ... */ },
+///     WrappingKeySpec::Rsa3072 => { /* ... */ },
+///     WrappingKeySpec::Rsa4096 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +50,10 @@
 pub enum WrappingKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
+    #[allow(missing_docs)] // documentation missing in model
+    Rsa3072,
+    #[allow(missing_docs)] // documentation missing in model
+    Rsa4096,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for WrappingKeySpec {
     fn from(s: &str) -> Self {
         match s {
             "RSA_2048" => WrappingKeySpec::Rsa2048,
+            "RSA_3072" => WrappingKeySpec::Rsa3072,
+            "RSA_4096" => WrappingKeySpec::Rsa4096,
             other => {
                 WrappingKeySpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +81,14 @@ impl WrappingKeySpec {
     pub fn as_str(&self) -> &str {
         match self {
             WrappingKeySpec::Rsa2048 => "RSA_2048",
+            WrappingKeySpec::Rsa3072 => "RSA_3072",
+            WrappingKeySpec::Rsa4096 => "RSA_4096",
             WrappingKeySpec::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RSA_2048"]
+        &["RSA_2048", "RSA_3072", "RSA_4096"]
     }
 }
 impl ::std::convert::AsRef<str> for WrappingKeySpec {

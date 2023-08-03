@@ -688,6 +688,9 @@ pub mod list_processing_jobs;
 /// Types for the `ListProjects` operation.
 pub mod list_projects;
 
+/// Types for the `ListResourceCatalogs` operation.
+pub mod list_resource_catalogs;
+
 /// Types for the `ListSpaces` operation.
 pub mod list_spaces;
 

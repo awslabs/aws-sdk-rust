@@ -56,6 +56,13 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
+                            "GeofenceProperties" => {
+                                builder = builder.set_geofence_properties(
+                                    crate::protocol_serde::shape_property_map::de_property_map(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

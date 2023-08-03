@@ -186,7 +186,7 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_node_type(input);
         self
     }
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -202,7 +202,7 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.master_username(input.into());
         self
     }
-    /// <p>The user name associated with the admin user for the cluster that is being created.</p>
+    /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
@@ -218,7 +218,7 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_master_username(input);
         self
     }
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -234,7 +234,7 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
-    /// <p>The password associated with the admin user for the cluster that is being created.</p>
+    /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>

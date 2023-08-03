@@ -42,6 +42,10 @@ pub struct SignInput {
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     #[doc(hidden)]
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl SignInput {
     /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to sign the message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -88,6 +92,11 @@ impl SignInput {
     pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlgorithmSpec> {
         self.signing_algorithm.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl ::std::fmt::Debug for SignInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +106,7 @@ impl ::std::fmt::Debug for SignInput {
         formatter.field("message_type", &self.message_type);
         formatter.field("grant_tokens", &self.grant_tokens);
         formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }
@@ -116,6 +126,7 @@ pub struct SignInputBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl SignInputBuilder {
     /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to sign the message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -231,6 +242,18 @@ impl SignInputBuilder {
         self.signing_algorithm = input;
         self
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SignInput`](crate::operation::sign::SignInput).
     pub fn build(
         self,
@@ -244,6 +267,7 @@ impl SignInputBuilder {
             message_type: self.message_type,
             grant_tokens: self.grant_tokens,
             signing_algorithm: self.signing_algorithm,
+            dry_run: self.dry_run,
         })
     }
 }
@@ -255,6 +279,7 @@ impl ::std::fmt::Debug for SignInputBuilder {
         formatter.field("message_type", &self.message_type);
         formatter.field("grant_tokens", &self.grant_tokens);
         formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The Amazon Web Services Site-to-Site VPN tunnel options to modify.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. </p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
@@ -244,6 +244,65 @@ impl ModifyVpnTunnelOptionsSpecification {
         self.enable_tunnel_lifecycle_control
     }
 }
+impl ::std::fmt::Debug for ModifyVpnTunnelOptionsSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyVpnTunnelOptionsSpecification");
+        formatter.field("tunnel_inside_cidr", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "tunnel_inside_ipv6_cidr",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("pre_shared_key", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "phase1_lifetime_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_lifetime_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "rekey_margin_time_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("rekey_fuzz_percentage", &"*** Sensitive Data Redacted ***");
+        formatter.field("replay_window_size", &"*** Sensitive Data Redacted ***");
+        formatter.field("dpd_timeout_seconds", &"*** Sensitive Data Redacted ***");
+        formatter.field("dpd_timeout_action", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "phase1_encryption_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_encryption_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase1_integrity_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_integrity_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase1_dh_group_numbers",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_dh_group_numbers",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("ike_versions", &"*** Sensitive Data Redacted ***");
+        formatter.field("startup_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("log_options", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "enable_tunnel_lifecycle_control",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
+    }
+}
 impl ModifyVpnTunnelOptionsSpecification {
     /// Creates a new builder-style object to manufacture [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
     pub fn builder() -> crate::types::builders::ModifyVpnTunnelOptionsSpecificationBuilder {
@@ -253,9 +312,7 @@ impl ModifyVpnTunnelOptionsSpecification {
 
 /// A builder for [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ModifyVpnTunnelOptionsSpecificationBuilder {
     pub(crate) tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_ipv6_cidr: ::std::option::Option<::std::string::String>,
@@ -713,5 +770,64 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
             log_options: self.log_options,
             enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
         }
+    }
+}
+impl ::std::fmt::Debug for ModifyVpnTunnelOptionsSpecificationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyVpnTunnelOptionsSpecificationBuilder");
+        formatter.field("tunnel_inside_cidr", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "tunnel_inside_ipv6_cidr",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("pre_shared_key", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "phase1_lifetime_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_lifetime_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "rekey_margin_time_seconds",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("rekey_fuzz_percentage", &"*** Sensitive Data Redacted ***");
+        formatter.field("replay_window_size", &"*** Sensitive Data Redacted ***");
+        formatter.field("dpd_timeout_seconds", &"*** Sensitive Data Redacted ***");
+        formatter.field("dpd_timeout_action", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "phase1_encryption_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_encryption_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase1_integrity_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_integrity_algorithms",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase1_dh_group_numbers",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "phase2_dh_group_numbers",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("ike_versions", &"*** Sensitive Data Redacted ***");
+        formatter.field("startup_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("log_options", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "enable_tunnel_lifecycle_control",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
     }
 }

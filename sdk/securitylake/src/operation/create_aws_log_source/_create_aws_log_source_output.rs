@@ -3,19 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceOutput {
-    /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    #[doc(hidden)]
-    pub processing: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateAwsLogSourceOutput {
-    /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn processing(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processing.as_deref()
-    }
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     pub fn failed(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.failed.as_deref()
@@ -41,30 +34,10 @@ impl CreateAwsLogSourceOutput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct CreateAwsLogSourceOutputBuilder {
-    pub(crate) processing: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateAwsLogSourceOutputBuilder {
-    /// Appends an item to `processing`.
-    ///
-    /// To override the contents of this collection use [`set_processing`](Self::set_processing).
-    ///
-    /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn processing(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.processing.unwrap_or_default();
-        v.push(input.into());
-        self.processing = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn set_processing(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.processing = input;
-        self
-    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -96,7 +69,6 @@ impl CreateAwsLogSourceOutputBuilder {
     /// Consumes the builder and constructs a [`CreateAwsLogSourceOutput`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput).
     pub fn build(self) -> crate::operation::create_aws_log_source::CreateAwsLogSourceOutput {
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput {
-            processing: self.processing,
             failed: self.failed,
             _request_id: self._request_id,
         }

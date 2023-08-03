@@ -1010,6 +1010,8 @@ pub(crate) mod shape_data_quality_target_table;
 
 pub(crate) mod shape_data_source;
 
+pub(crate) mod shape_data_source_map;
+
 pub(crate) mod shape_database;
 
 pub(crate) mod shape_database_input;
@@ -1083,6 +1085,8 @@ pub(crate) mod shape_name_string_list;
 pub(crate) mod shape_node_id_list;
 
 pub(crate) mod shape_notification_property;
+
+pub(crate) mod shape_open_table_format_input;
 
 pub(crate) mod shape_partition;
 
@@ -1328,6 +1332,8 @@ pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_evaluate_data_quality;
 
+pub(crate) mod shape_evaluate_data_quality_multi_frame;
+
 pub(crate) mod shape_export_labels_task_run_properties;
 
 pub(crate) mod shape_federated_database;
@@ -1353,6 +1359,12 @@ pub(crate) mod shape_governed_catalog_source;
 pub(crate) mod shape_governed_catalog_target;
 
 pub(crate) mod shape_grok_classifier;
+
+pub(crate) mod shape_hudi_target;
+
+pub(crate) mod shape_iceberg_input;
+
+pub(crate) mod shape_iceberg_target;
 
 pub(crate) mod shape_import_labels_task_run_properties;
 
@@ -1422,6 +1434,8 @@ pub(crate) mod shape_principal_permissions_list;
 
 pub(crate) mod shape_public_keys_list;
 
+pub(crate) mod shape_recipe;
+
 pub(crate) mod shape_redshift_source;
 
 pub(crate) mod shape_redshift_target;
@@ -1483,6 +1497,10 @@ pub(crate) mod shape_schema_version_list_item;
 pub(crate) mod shape_select_fields;
 
 pub(crate) mod shape_select_from_collection;
+
+pub(crate) mod shape_snowflake_source;
+
+pub(crate) mod shape_snowflake_target;
 
 pub(crate) mod shape_spark_connector_source;
 
@@ -1570,11 +1588,17 @@ pub(crate) mod shape_edge_list;
 
 pub(crate) mod shape_error_details;
 
+pub(crate) mod shape_evaluated_metrics_map;
+
 pub(crate) mod shape_filter_expression;
 
 pub(crate) mod shape_glue_schema;
 
 pub(crate) mod shape_glue_table_additional_options;
+
+pub(crate) mod shape_hudi_target_list;
+
+pub(crate) mod shape_iceberg_target_list;
 
 pub(crate) mod shape_jdbc_connector_options;
 
@@ -1612,6 +1636,8 @@ pub(crate) mod shape_other_metadata_value_list;
 
 pub(crate) mod shape_predecessor;
 
+pub(crate) mod shape_recipe_reference;
+
 pub(crate) mod shape_s3_direct_source_additional_options;
 
 pub(crate) mod shape_s3_encryption_list;
@@ -1627,6 +1653,8 @@ pub(crate) mod shape_security_group_id_list;
 pub(crate) mod shape_ser_de_info;
 
 pub(crate) mod shape_skewed_info;
+
+pub(crate) mod shape_snowflake_node_data;
 
 pub(crate) mod shape_sql_alias;
 
@@ -1679,6 +1707,10 @@ pub(crate) mod shape_backfill_errored_partitions_list;
 pub(crate) mod shape_catalog_tables_list;
 
 pub(crate) mod shape_crawler_node_details;
+
+pub(crate) mod shape_dq_additional_options;
+
+pub(crate) mod shape_dqdl_aliases;
 
 pub(crate) mod shape_enable_additional_metadata;
 

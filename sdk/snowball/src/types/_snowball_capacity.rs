@@ -14,6 +14,7 @@
 /// match snowballcapacity {
 ///     SnowballCapacity::NoPreference => { /* ... */ },
 ///     SnowballCapacity::T100 => { /* ... */ },
+///     SnowballCapacity::T13 => { /* ... */ },
 ///     SnowballCapacity::T14 => { /* ... */ },
 ///     SnowballCapacity::T240 => { /* ... */ },
 ///     SnowballCapacity::T32 => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum SnowballCapacity {
     #[allow(missing_docs)] // documentation missing in model
     T100,
     #[allow(missing_docs)] // documentation missing in model
+    T13,
+    #[allow(missing_docs)] // documentation missing in model
     T14,
     #[allow(missing_docs)] // documentation missing in model
     T240,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for SnowballCapacity {
         match s {
             "NoPreference" => SnowballCapacity::NoPreference,
             "T100" => SnowballCapacity::T100,
+            "T13" => SnowballCapacity::T13,
             "T14" => SnowballCapacity::T14,
             "T240" => SnowballCapacity::T240,
             "T32" => SnowballCapacity::T32,
@@ -110,6 +114,7 @@ impl SnowballCapacity {
         match self {
             SnowballCapacity::NoPreference => "NoPreference",
             SnowballCapacity::T100 => "T100",
+            SnowballCapacity::T13 => "T13",
             SnowballCapacity::T14 => "T14",
             SnowballCapacity::T240 => "T240",
             SnowballCapacity::T32 => "T32",
@@ -126,6 +131,7 @@ impl SnowballCapacity {
         &[
             "NoPreference",
             "T100",
+            "T13",
             "T14",
             "T240",
             "T32",

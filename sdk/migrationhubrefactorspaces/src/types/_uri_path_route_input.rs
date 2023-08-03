@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UriPathRouteInput {
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
@@ -16,9 +16,12 @@ pub struct UriPathRouteInput {
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     #[doc(hidden)]
     pub include_child_paths: ::std::option::Option<bool>,
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    #[doc(hidden)]
+    pub append_source_path: ::std::option::Option<bool>,
 }
 impl UriPathRouteInput {
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
@@ -33,6 +36,10 @@ impl UriPathRouteInput {
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(&self) -> ::std::option::Option<bool> {
         self.include_child_paths
+    }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn append_source_path(&self) -> ::std::option::Option<bool> {
+        self.append_source_path
     }
 }
 impl UriPathRouteInput {
@@ -52,14 +59,15 @@ pub struct UriPathRouteInputBuilder {
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
     pub(crate) methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
     pub(crate) include_child_paths: ::std::option::Option<bool>,
+    pub(crate) append_source_path: ::std::option::Option<bool>,
 }
 impl UriPathRouteInputBuilder {
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
+    /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
@@ -106,6 +114,16 @@ impl UriPathRouteInputBuilder {
         self.include_child_paths = input;
         self
     }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn append_source_path(mut self, input: bool) -> Self {
+        self.append_source_path = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
+    pub fn set_append_source_path(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.append_source_path = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::types::UriPathRouteInput).
     pub fn build(self) -> crate::types::UriPathRouteInput {
         crate::types::UriPathRouteInput {
@@ -113,6 +131,7 @@ impl UriPathRouteInputBuilder {
             activation_state: self.activation_state,
             methods: self.methods,
             include_child_paths: self.include_child_paths,
+            append_source_path: self.append_source_path,
         }
     }
 }

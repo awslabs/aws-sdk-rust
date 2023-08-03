@@ -5,7 +5,7 @@ pub use crate::operation::get_control::_get_control_input::GetControlInputBuilde
 
 /// Fluent builder constructing a request to `GetControl`.
 ///
-/// <p> Returns a control from Audit Manager. </p>
+/// <p> Gets information about a specified control.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

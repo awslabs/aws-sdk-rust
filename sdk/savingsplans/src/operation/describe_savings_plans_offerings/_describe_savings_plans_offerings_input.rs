@@ -43,7 +43,7 @@ pub struct DescribeSavingsPlansOfferingsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
@@ -99,7 +99,7 @@ impl DescribeSavingsPlansOfferingsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -392,7 +392,6 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
                 next_token: self.next_token
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
             }
         )

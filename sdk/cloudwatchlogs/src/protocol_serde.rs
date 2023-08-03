@@ -20,6 +20,8 @@ pub(crate) mod shape_create_log_group;
 
 pub(crate) mod shape_create_log_stream;
 
+pub(crate) mod shape_delete_account_policy;
+
 pub(crate) mod shape_delete_data_protection_policy;
 
 pub(crate) mod shape_delete_destination;
@@ -37,6 +39,8 @@ pub(crate) mod shape_delete_resource_policy;
 pub(crate) mod shape_delete_retention_policy;
 
 pub(crate) mod shape_delete_subscription_filter;
+
+pub(crate) mod shape_describe_account_policies;
 
 pub(crate) mod shape_describe_destinations;
 
@@ -73,6 +77,8 @@ pub(crate) mod shape_get_query_results;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_tags_log_group;
+
+pub(crate) mod shape_put_account_policy;
 
 pub(crate) mod shape_put_data_protection_policy;
 
@@ -126,6 +132,8 @@ pub(crate) mod shape_create_log_stream_input;
 
 pub(crate) mod shape_data_already_accepted_exception;
 
+pub(crate) mod shape_delete_account_policy_input;
+
 pub(crate) mod shape_delete_data_protection_policy_input;
 
 pub(crate) mod shape_delete_destination_input;
@@ -143,6 +151,8 @@ pub(crate) mod shape_delete_resource_policy_input;
 pub(crate) mod shape_delete_retention_policy_input;
 
 pub(crate) mod shape_delete_subscription_filter_input;
+
+pub(crate) mod shape_describe_account_policies_input;
 
 pub(crate) mod shape_describe_destinations_input;
 
@@ -192,6 +202,8 @@ pub(crate) mod shape_malformed_query_exception;
 
 pub(crate) mod shape_operation_aborted_exception;
 
+pub(crate) mod shape_put_account_policy_input;
+
 pub(crate) mod shape_put_data_protection_policy_input;
 
 pub(crate) mod shape_put_destination_input;
@@ -233,6 +245,10 @@ pub(crate) mod shape_unrecognized_client_exception;
 pub(crate) mod shape_untag_log_group_input;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_account_policies;
+
+pub(crate) mod shape_account_policy;
 
 pub(crate) mod shape_destination;
 
@@ -315,6 +331,8 @@ pub(crate) mod shape_export_task_execution_info;
 pub(crate) mod shape_export_task_status;
 
 pub(crate) mod shape_extracted_values;
+
+pub(crate) mod shape_inherited_properties;
 
 pub(crate) mod shape_log_group_names;
 

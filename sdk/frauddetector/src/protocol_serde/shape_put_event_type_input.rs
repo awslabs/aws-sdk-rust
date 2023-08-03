@@ -51,5 +51,14 @@ pub fn ser_put_event_type_input(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.event_orchestration {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("eventOrchestration").start_object();
+        crate::protocol_serde::shape_event_orchestration::ser_event_orchestration(
+            &mut object_18,
+            var_17,
+        )?;
+        object_18.finish();
+    }
     Ok(())
 }

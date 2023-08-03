@@ -7,7 +7,7 @@ pub use crate::operation::describe_route_tables::_describe_route_tables_input::D
 ///
 /// <p>Describes one or more of your route tables.</p>
 /// <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,7 +116,7 @@ impl DescribeRouteTablesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -149,7 +149,7 @@ impl DescribeRouteTablesFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p> </li>
     /// <li> <p> <code>association.route-table-id</code> - The ID of the route table involved in the association.</p> </li>
@@ -199,7 +199,7 @@ impl DescribeRouteTablesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     pub fn route_table_ids(
         mut self,
@@ -208,7 +208,7 @@ impl DescribeRouteTablesFluentBuilder {
         self.inner = self.inner.route_table_ids(input.into());
         self
     }
-    /// <p>One or more route table IDs.</p>
+    /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
     pub fn set_route_table_ids(
         mut self,

@@ -13,6 +13,7 @@
 /// # let geospatialselectedpointstyle = unimplemented!();
 /// match geospatialselectedpointstyle {
 ///     GeospatialSelectedPointStyle::Cluster => { /* ... */ },
+///     GeospatialSelectedPointStyle::Heatmap => { /* ... */ },
 ///     GeospatialSelectedPointStyle::Point => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum GeospatialSelectedPointStyle {
     #[allow(missing_docs)] // documentation missing in model
     Cluster,
     #[allow(missing_docs)] // documentation missing in model
+    Heatmap,
+    #[allow(missing_docs)] // documentation missing in model
     Point,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for GeospatialSelectedPointStyle {
     fn from(s: &str) -> Self {
         match s {
             "CLUSTER" => GeospatialSelectedPointStyle::Cluster,
+            "HEATMAP" => GeospatialSelectedPointStyle::Heatmap,
             "POINT" => GeospatialSelectedPointStyle::Point,
             other => GeospatialSelectedPointStyle::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
@@ -77,13 +81,14 @@ impl GeospatialSelectedPointStyle {
     pub fn as_str(&self) -> &str {
         match self {
             GeospatialSelectedPointStyle::Cluster => "CLUSTER",
+            GeospatialSelectedPointStyle::Heatmap => "HEATMAP",
             GeospatialSelectedPointStyle::Point => "POINT",
             GeospatialSelectedPointStyle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLUSTER", "POINT"]
+        &["CLUSTER", "HEATMAP", "POINT"]
     }
 }
 impl ::std::convert::AsRef<str> for GeospatialSelectedPointStyle {

@@ -101,12 +101,12 @@ impl DetectEntitiesV2FluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self

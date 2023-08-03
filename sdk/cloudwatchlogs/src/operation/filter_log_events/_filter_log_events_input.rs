@@ -47,7 +47,7 @@ pub struct FilterLogEventsInput {
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     #[doc(hidden)]
-    pub unmask: bool,
+    pub unmask: ::std::option::Option<bool>,
 }
 impl FilterLogEventsInput {
     /// <p>The name of the log group to search.</p> <note>
@@ -103,7 +103,7 @@ impl FilterLogEventsInput {
     }
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
-    pub fn unmask(&self) -> bool {
+    pub fn unmask(&self) -> ::std::option::Option<bool> {
         self.unmask
     }
 }
@@ -321,7 +321,7 @@ impl FilterLogEventsInputBuilder {
             next_token: self.next_token,
             limit: self.limit,
             interleaved: self.interleaved,
-            unmask: self.unmask.unwrap_or_default(),
+            unmask: self.unmask,
         })
     }
 }

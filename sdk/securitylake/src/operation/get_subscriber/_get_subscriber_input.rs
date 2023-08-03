@@ -5,12 +5,12 @@
 pub struct GetSubscriberInput {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
     #[doc(hidden)]
-    pub id: ::std::option::Option<::std::string::String>,
+    pub subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriberInput {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn subscriber_id(&self) -> ::std::option::Option<&str> {
+        self.subscriber_id.as_deref()
     }
 }
 impl GetSubscriberInput {
@@ -26,17 +26,23 @@ impl GetSubscriberInput {
     ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
 )]
 pub struct GetSubscriberInputBuilder {
-    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriberInputBuilder {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.id = ::std::option::Option::Some(input.into());
+    pub fn subscriber_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
+    pub fn set_subscriber_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.subscriber_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
@@ -47,7 +53,7 @@ impl GetSubscriberInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_subscriber::GetSubscriberInput {
-            id: self.id,
+            subscriber_id: self.subscriber_id,
         })
     }
 }

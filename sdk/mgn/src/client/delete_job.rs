@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_id): <p>Request to delete Job from service by Job ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_account_id): <p>Request to delete Job from service by Account ID.</p>
     /// - On success, responds with [`DeleteJobOutput`](crate::operation::delete_job::DeleteJobOutput)
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::operation::delete_job::DeleteJobError)
     pub fn delete_job(&self) -> crate::operation::delete_job::builders::DeleteJobFluentBuilder {

@@ -476,6 +476,8 @@ pub(crate) mod shape_build_list;
 
 pub(crate) mod shape_certificate_configuration;
 
+pub(crate) mod shape_claim_filter_option;
+
 pub(crate) mod shape_compute;
 
 pub(crate) mod shape_compute_list;

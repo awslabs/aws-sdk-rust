@@ -181,7 +181,7 @@ pub enum InferSNOMEDCTError {
     InvalidEncodingException(crate::types::error::InvalidEncodingException),
     /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),

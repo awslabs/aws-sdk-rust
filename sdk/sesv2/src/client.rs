@@ -372,6 +372,8 @@ mod put_configuration_set_vdm_options;
 
 mod put_dedicated_ip_in_pool;
 
+mod put_dedicated_ip_pool_scaling_attributes;
+
 mod put_dedicated_ip_warmup_attributes;
 
 mod put_deliverability_dashboard_option;

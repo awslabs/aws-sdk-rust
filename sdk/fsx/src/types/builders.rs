@@ -55,11 +55,21 @@ pub use crate::types::_file_system_failure_details::FileSystemFailureDetailsBuil
 
 pub use crate::types::_ontap_volume_configuration::OntapVolumeConfigurationBuilder;
 
+pub use crate::types::_snaplock_configuration::SnaplockConfigurationBuilder;
+
+pub use crate::types::_snaplock_retention_period::SnaplockRetentionPeriodBuilder;
+
+pub use crate::types::_retention_period::RetentionPeriodBuilder;
+
+pub use crate::types::_autocommit_period::AutocommitPeriodBuilder;
+
 pub use crate::types::_tiering_policy::TieringPolicyBuilder;
 
 pub use crate::types::_update_open_zfs_volume_configuration::UpdateOpenZfsVolumeConfigurationBuilder;
 
 pub use crate::types::_update_ontap_volume_configuration::UpdateOntapVolumeConfigurationBuilder;
+
+pub use crate::types::_update_snaplock_configuration::UpdateSnaplockConfigurationBuilder;
 
 pub use crate::types::_storage_virtual_machine::StorageVirtualMachineBuilder;
 
@@ -148,6 +158,8 @@ pub use crate::types::_delete_file_system_lustre_configuration::DeleteFileSystem
 pub use crate::types::_delete_file_system_windows_configuration::DeleteFileSystemWindowsConfigurationBuilder;
 
 pub use crate::types::_create_ontap_volume_configuration::CreateOntapVolumeConfigurationBuilder;
+
+pub use crate::types::_create_snaplock_configuration::CreateSnaplockConfigurationBuilder;
 
 pub use crate::types::_create_open_zfs_volume_configuration::CreateOpenZfsVolumeConfigurationBuilder;
 

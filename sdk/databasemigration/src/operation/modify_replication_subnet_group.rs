@@ -173,7 +173,7 @@ pub type ModifyReplicationSubnetGroupErrorKind = ModifyReplicationSubnetGroupErr
 pub enum ModifyReplicationSubnetGroupError {
     /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::types::error::AccessDeniedFault),
-    /// <p>The subnet provided is invalid.</p>
+    /// <p>The subnet provided isn't valid.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>
     ReplicationSubnetGroupDoesNotCoverEnoughAZs(

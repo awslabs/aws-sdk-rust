@@ -121,6 +121,21 @@ pub struct FilterCriteria {
     /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
     #[doc(hidden)]
     pub exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
+    #[doc(hidden)]
+    pub code_vulnerability_detector_name:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    #[doc(hidden)]
+    pub code_vulnerability_detector_tags:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
+    #[doc(hidden)]
+    pub code_vulnerability_file_path:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The EPSS score used to filter findings.</p>
+    #[doc(hidden)]
+    pub epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
 }
 impl FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
@@ -281,6 +296,28 @@ impl FilterCriteria {
     pub fn exploit_available(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.exploit_available.as_deref()
     }
+    /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
+    pub fn code_vulnerability_detector_name(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+        self.code_vulnerability_detector_name.as_deref()
+    }
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    pub fn code_vulnerability_detector_tags(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+        self.code_vulnerability_detector_tags.as_deref()
+    }
+    /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
+    pub fn code_vulnerability_file_path(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+        self.code_vulnerability_file_path.as_deref()
+    }
+    /// <p>The EPSS score used to filter findings.</p>
+    pub fn epss_score(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
+        self.epss_score.as_deref()
+    }
 }
 impl FilterCriteria {
     /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::types::FilterCriteria).
@@ -349,6 +386,13 @@ pub struct FilterCriteriaBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) exploit_available:
         ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_detector_name:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_detector_tags:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_file_path:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
 }
 impl FilterCriteriaBuilder {
     /// Appends an item to `finding_arn`.
@@ -1073,6 +1117,82 @@ impl FilterCriteriaBuilder {
         self.exploit_available = input;
         self
     }
+    /// Appends an item to `code_vulnerability_detector_name`.
+    ///
+    /// To override the contents of this collection use [`set_code_vulnerability_detector_name`](Self::set_code_vulnerability_detector_name).
+    ///
+    /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
+    pub fn code_vulnerability_detector_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.code_vulnerability_detector_name.unwrap_or_default();
+        v.push(input);
+        self.code_vulnerability_detector_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
+    pub fn set_code_vulnerability_detector_name(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.code_vulnerability_detector_name = input;
+        self
+    }
+    /// Appends an item to `code_vulnerability_detector_tags`.
+    ///
+    /// To override the contents of this collection use [`set_code_vulnerability_detector_tags`](Self::set_code_vulnerability_detector_tags).
+    ///
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    pub fn code_vulnerability_detector_tags(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.code_vulnerability_detector_tags.unwrap_or_default();
+        v.push(input);
+        self.code_vulnerability_detector_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    pub fn set_code_vulnerability_detector_tags(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.code_vulnerability_detector_tags = input;
+        self
+    }
+    /// Appends an item to `code_vulnerability_file_path`.
+    ///
+    /// To override the contents of this collection use [`set_code_vulnerability_file_path`](Self::set_code_vulnerability_file_path).
+    ///
+    /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
+    pub fn code_vulnerability_file_path(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.code_vulnerability_file_path.unwrap_or_default();
+        v.push(input);
+        self.code_vulnerability_file_path = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
+    pub fn set_code_vulnerability_file_path(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.code_vulnerability_file_path = input;
+        self
+    }
+    /// Appends an item to `epss_score`.
+    ///
+    /// To override the contents of this collection use [`set_epss_score`](Self::set_epss_score).
+    ///
+    /// <p>The EPSS score used to filter findings.</p>
+    pub fn epss_score(mut self, input: crate::types::NumberFilter) -> Self {
+        let mut v = self.epss_score.unwrap_or_default();
+        v.push(input);
+        self.epss_score = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The EPSS score used to filter findings.</p>
+    pub fn set_epss_score(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    ) -> Self {
+        self.epss_score = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
@@ -1114,6 +1234,10 @@ impl FilterCriteriaBuilder {
             lambda_function_last_modified_at: self.lambda_function_last_modified_at,
             lambda_function_execution_role_arn: self.lambda_function_execution_role_arn,
             exploit_available: self.exploit_available,
+            code_vulnerability_detector_name: self.code_vulnerability_detector_name,
+            code_vulnerability_detector_tags: self.code_vulnerability_detector_tags,
+            code_vulnerability_file_path: self.code_vulnerability_file_path,
+            epss_score: self.epss_score,
         }
     }
 }

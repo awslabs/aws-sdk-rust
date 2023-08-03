@@ -225,4 +225,17 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_security_groups(input);
         self
     }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
+        self.inner = self.inner.data_replication_mode(input);
+        self
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn set_data_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DataReplicationMode>,
+    ) -> Self {
+        self.inner = self.inner.set_data_replication_mode(input);
+        self
+    }
 }

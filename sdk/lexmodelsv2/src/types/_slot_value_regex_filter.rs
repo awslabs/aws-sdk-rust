@@ -9,11 +9,11 @@ pub struct SlotValueRegexFilter {
     /// <ul>
     /// <li> <p>A-Z, a-z</p> </li>
     /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li> <p>Unicode characters ("\⁠u<unicode>
     /// ")
     /// </unicode></p> </li>
     /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
+    /// <p> Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A". </p>
     /// <p> The following regular expression operators are not supported: </p>
     /// <ul>
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
@@ -28,11 +28,11 @@ impl SlotValueRegexFilter {
     /// <ul>
     /// <li> <p>A-Z, a-z</p> </li>
     /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li> <p>Unicode characters ("\⁠u<unicode>
     /// ")
     /// </unicode></p> </li>
     /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
+    /// <p> Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A". </p>
     /// <p> The following regular expression operators are not supported: </p>
     /// <ul>
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
@@ -63,11 +63,11 @@ impl SlotValueRegexFilterBuilder {
     /// <ul>
     /// <li> <p>A-Z, a-z</p> </li>
     /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li> <p>Unicode characters ("\⁠u<unicode>
     /// ")
     /// </unicode></p> </li>
     /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
+    /// <p> Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A". </p>
     /// <p> The following regular expression operators are not supported: </p>
     /// <ul>
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
@@ -82,11 +82,11 @@ impl SlotValueRegexFilterBuilder {
     /// <ul>
     /// <li> <p>A-Z, a-z</p> </li>
     /// <li> <p>0-9</p> </li>
-    /// <li> <p>Unicode characters ("\ u<unicode>
+    /// <li> <p>Unicode characters ("\⁠u<unicode>
     /// ")
     /// </unicode></p> </li>
     /// </ul>
-    /// <p> Represent Unicode characters with four digits, for example "\u0041" or "\u005A". </p>
+    /// <p> Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A". </p>
     /// <p> The following regular expression operators are not supported: </p>
     /// <ul>
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>

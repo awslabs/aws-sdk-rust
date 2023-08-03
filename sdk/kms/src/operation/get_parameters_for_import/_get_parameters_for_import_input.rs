@@ -3,7 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParametersForImportInput {
-    /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -13,17 +14,27 @@ pub struct GetParametersForImportInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
-    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
-    /// </important>
+    /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
+    /// <p>The wrapping algorithms that you can use depend on the type of key material that you are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.</p>
+    /// <ul>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_256</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_1</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_256</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_256 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub wrapping_algorithm: ::std::option::Option<crate::types::AlgorithmSpec>,
-    /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public keys are supported.</p>
+    /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import. </p>
+    /// <p>Use the longest RSA wrapping key that is practical. </p>
+    /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     #[doc(hidden)]
     pub wrapping_key_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
 impl GetParametersForImportInput {
-    /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -34,13 +45,22 @@ impl GetParametersForImportInput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
-    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
-    /// </important>
+    /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
+    /// <p>The wrapping algorithms that you can use depend on the type of key material that you are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.</p>
+    /// <ul>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_256</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_1</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_256</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_256 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p> </li>
+    /// </ul>
     pub fn wrapping_algorithm(&self) -> ::std::option::Option<&crate::types::AlgorithmSpec> {
         self.wrapping_algorithm.as_ref()
     }
-    /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public keys are supported.</p>
+    /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import. </p>
+    /// <p>Use the longest RSA wrapping key that is practical. </p>
+    /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     pub fn wrapping_key_spec(&self) -> ::std::option::Option<&crate::types::WrappingKeySpec> {
         self.wrapping_key_spec.as_ref()
     }
@@ -65,7 +85,8 @@ pub struct GetParametersForImportInputBuilder {
     pub(crate) wrapping_key_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
 impl GetParametersForImportInputBuilder {
-    /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -77,7 +98,8 @@ impl GetParametersForImportInputBuilder {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the symmetric encryption KMS key into which you will import key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -89,16 +111,30 @@ impl GetParametersForImportInputBuilder {
         self.key_id = input;
         self
     }
-    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
-    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
-    /// </important>
+    /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
+    /// <p>The wrapping algorithms that you can use depend on the type of key material that you are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.</p>
+    /// <ul>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_256</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_1</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_256</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_256 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p> </li>
+    /// </ul>
     pub fn wrapping_algorithm(mut self, input: crate::types::AlgorithmSpec) -> Self {
         self.wrapping_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The algorithm you will use to encrypt the key material before using the <code>ImportKeyMaterial</code> operation to import it. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the key material</a> in the <i>Key Management Service Developer Guide</i>.</p> <important>
-    /// <p>The <code>RSAES_PKCS1_V1_5</code> wrapping algorithm is deprecated. We recommend that you begin using a different wrapping algorithm immediately. KMS will end support for <code>RSAES_PKCS1_V1_5</code> by October 1, 2023 pursuant to <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">cryptographic key management guidance</a> from the National Institute of Standards and Technology (NIST).</p>
-    /// </important>
+    /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
+    /// <p>The wrapping algorithms that you can use depend on the type of key material that you are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.</p>
+    /// <ul>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_256</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSA_AES_KEY_WRAP_SHA_1</b> — Supported for wrapping RSA and ECC key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_256</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_256 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
+    /// <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p> </li>
+    /// </ul>
     pub fn set_wrapping_algorithm(
         mut self,
         input: ::std::option::Option<crate::types::AlgorithmSpec>,
@@ -106,12 +142,16 @@ impl GetParametersForImportInputBuilder {
         self.wrapping_algorithm = input;
         self
     }
-    /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public keys are supported.</p>
+    /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import. </p>
+    /// <p>Use the longest RSA wrapping key that is practical. </p>
+    /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     pub fn wrapping_key_spec(mut self, input: crate::types::WrappingKeySpec) -> Self {
         self.wrapping_key_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public keys are supported.</p>
+    /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import. </p>
+    /// <p>Use the longest RSA wrapping key that is practical. </p>
+    /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     pub fn set_wrapping_key_spec(
         mut self,
         input: ::std::option::Option<crate::types::WrappingKeySpec>,

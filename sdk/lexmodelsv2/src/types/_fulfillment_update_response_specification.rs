@@ -7,7 +7,7 @@ pub struct FulfillmentUpdateResponseSpecification {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
     #[doc(hidden)]
     pub frequency_in_seconds: ::std::option::Option<i32>,
-    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
     #[doc(hidden)]
     pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
@@ -19,7 +19,7 @@ impl FulfillmentUpdateResponseSpecification {
     pub fn frequency_in_seconds(&self) -> ::std::option::Option<i32> {
         self.frequency_in_seconds
     }
-    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
     pub fn message_groups(&self) -> ::std::option::Option<&[crate::types::MessageGroup]> {
         self.message_groups.as_deref()
     }
@@ -60,14 +60,14 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_message_groups`](Self::set_message_groups).
     ///
-    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
         v.push(input);
         self.message_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
     pub fn set_message_groups(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,

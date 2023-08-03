@@ -10,6 +10,12 @@ pub struct Branch {
     /// <p>A brief description of the branch.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    #[doc(hidden)]
+    pub deprecation_message: ::std::option::Option<::std::string::String>,
+    /// <p>A comment in addition to the description.</p>
+    #[doc(hidden)]
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
@@ -19,6 +25,14 @@ impl Branch {
     /// <p>A brief description of the branch.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+        self.deprecation_message.as_deref()
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(&self) -> ::std::option::Option<&str> {
+        self.comment.as_deref()
     }
 }
 impl Branch {
@@ -36,6 +50,8 @@ impl Branch {
 pub struct BranchBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl BranchBuilder {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
@@ -64,11 +80,39 @@ impl BranchBuilder {
         self.description = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn deprecation_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn set_deprecation_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.deprecation_message = input;
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.comment = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
     pub fn build(self) -> crate::types::Branch {
         crate::types::Branch {
             fully_qualified_name: self.fully_qualified_name,
             description: self.description,
+            deprecation_message: self.deprecation_message,
+            comment: self.comment,
         }
     }
 }

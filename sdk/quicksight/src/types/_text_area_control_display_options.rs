@@ -10,6 +10,10 @@ pub struct TextAreaControlDisplayOptions {
     /// <p>The configuration of the placeholder options in a text area control.</p>
     #[doc(hidden)]
     pub placeholder_options: ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
+    /// <p>The configuration of info icon label options.</p>
+    #[doc(hidden)]
+    pub info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl TextAreaControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -21,6 +25,12 @@ impl TextAreaControlDisplayOptions {
         &self,
     ) -> ::std::option::Option<&crate::types::TextControlPlaceholderOptions> {
         self.placeholder_options.as_ref()
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+        self.info_icon_label_options.as_ref()
     }
 }
 impl TextAreaControlDisplayOptions {
@@ -39,6 +49,8 @@ pub struct TextAreaControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) placeholder_options:
         ::std::option::Option<crate::types::TextControlPlaceholderOptions>,
+    pub(crate) info_icon_label_options:
+        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl TextAreaControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -70,11 +82,28 @@ impl TextAreaControlDisplayOptionsBuilder {
         self.placeholder_options = input;
         self
     }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn info_icon_label_options(
+        mut self,
+        input: crate::types::SheetControlInfoIconLabelOptions,
+    ) -> Self {
+        self.info_icon_label_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn set_info_icon_label_options(
+        mut self,
+        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    ) -> Self {
+        self.info_icon_label_options = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TextAreaControlDisplayOptions`](crate::types::TextAreaControlDisplayOptions).
     pub fn build(self) -> crate::types::TextAreaControlDisplayOptions {
         crate::types::TextAreaControlDisplayOptions {
             title_options: self.title_options,
             placeholder_options: self.placeholder_options,
+            info_icon_label_options: self.info_icon_label_options,
         }
     }
 }

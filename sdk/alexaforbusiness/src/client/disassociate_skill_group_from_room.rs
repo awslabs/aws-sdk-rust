@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomFluentBuilder::set_room_arn): <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     /// - On success, responds with [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput)
     /// - On failure, responds with [`SdkError<DisassociateSkillGroupFromRoomError>`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomError)
+    #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn disassociate_skill_group_from_room(&self) -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomFluentBuilder{
         crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomFluentBuilder::new(self.handle.clone())
     }

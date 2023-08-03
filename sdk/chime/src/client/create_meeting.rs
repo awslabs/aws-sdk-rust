@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMeetingOutput`](crate::operation::create_meeting::CreateMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::operation::create_meeting::CreateMeetingOutput::meeting): <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::operation::create_meeting::CreateMeetingError)
+    #[deprecated(note = "Replaced by CreateMeeting in the Amazon Chime SDK Meetings Namespace")]
     pub fn create_meeting(
         &self,
     ) -> crate::operation::create_meeting::builders::CreateMeetingFluentBuilder {

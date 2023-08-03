@@ -46,6 +46,10 @@ pub struct CreateJobTemplateInput {
     #[doc(hidden)]
     pub maintenance_windows:
         ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    #[doc(hidden)]
+    pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobTemplateInput {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
@@ -105,6 +109,11 @@ impl CreateJobTemplateInput {
     pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
         self.maintenance_windows.as_deref()
     }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.destination_package_versions.as_deref()
+    }
 }
 impl CreateJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
@@ -135,6 +144,8 @@ pub struct CreateJobTemplateInputBuilder {
         ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     pub(crate) maintenance_windows:
         ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub(crate) destination_package_versions:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobTemplateInputBuilder {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
@@ -318,6 +329,30 @@ impl CreateJobTemplateInputBuilder {
         self.maintenance_windows = input;
         self
     }
+    /// Appends an item to `destination_package_versions`.
+    ///
+    /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
+    ///
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn destination_package_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut v = self.destination_package_versions.unwrap_or_default();
+        v.push(input.into());
+        self.destination_package_versions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn set_destination_package_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    ) -> Self {
+        self.destination_package_versions = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
     pub fn build(
         self,
@@ -339,6 +374,7 @@ impl CreateJobTemplateInputBuilder {
                 tags: self.tags,
                 job_executions_retry_config: self.job_executions_retry_config,
                 maintenance_windows: self.maintenance_windows,
+                destination_package_versions: self.destination_package_versions,
             },
         )
     }

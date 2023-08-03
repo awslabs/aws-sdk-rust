@@ -19,6 +19,8 @@ pub use crate::types::_channel_mode::ChannelMode;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_target::Target;
+
 pub use crate::types::_message_attribute_value::MessageAttributeValue;
 
 pub use crate::types::_push_notification_configuration::PushNotificationConfiguration;
@@ -202,6 +204,8 @@ mod _streaming_configuration;
 mod _sub_channel_summary;
 
 mod _tag;
+
+mod _target;
 
 /// Builders
 pub mod builders;

@@ -44,5 +44,11 @@ pub fn ser_update_job_input(
     if let Some(var_13) = &input.forwarding_address_id {
         object.key("ForwardingAddressId").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.pickup_details {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("PickupDetails").start_object();
+        crate::protocol_serde::shape_pickup_details::ser_pickup_details(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }

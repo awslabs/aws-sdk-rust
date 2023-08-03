@@ -93,6 +93,11 @@ where
                                     crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(tokens)?
                                 );
                             }
+                            "integrationConfiguration" => {
+                                builder = builder.set_integration_configuration(
+                                    crate::protocol_serde::shape_assistant_integration_configuration::de_assistant_integration_configuration(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -177,7 +177,7 @@ pub type RetryStageExecutionErrorKind = RetryStageExecutionError;
 pub enum RetryStageExecutionError {
     /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
+    /// <p>The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code> associated with the request is out of date.</p>
     NotLatestPipelineExecutionException(crate::types::error::NotLatestPipelineExecutionException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),

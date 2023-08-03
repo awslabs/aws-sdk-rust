@@ -124,5 +124,17 @@ pub fn ser_start_transcription_job_input(
         }
         object_34.finish();
     }
+    if let Some(var_38) = &input.toxicity_detection {
+        let mut array_39 = object.key("ToxicityDetection").start_array();
+        for item_40 in var_38 {
+            {
+                #[allow(unused_mut)]
+                let mut object_41 = array_39.value().start_object();
+                crate::protocol_serde::shape_toxicity_detection_settings::ser_toxicity_detection_settings(&mut object_41, item_40)?;
+                object_41.finish();
+            }
+        }
+        array_39.finish();
+    }
     Ok(())
 }

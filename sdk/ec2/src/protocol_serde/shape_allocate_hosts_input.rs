@@ -67,6 +67,17 @@ pub fn ser_allocate_hosts_input_input(
     if let Some(var_23) = &input.host_maintenance {
         scope_22.string(var_23.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("AssetId");
+    if let Some(var_25) = &input.asset_ids {
+        let mut list_27 = scope_24.start_list(true, None);
+        for item_26 in var_25 {
+            #[allow(unused_mut)]
+            let mut entry_28 = list_27.entry();
+            entry_28.string(item_26);
+        }
+        list_27.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

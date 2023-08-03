@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClassicLinkInstancesInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -15,14 +15,14 @@ pub struct DescribeClassicLinkInstancesInput {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -34,7 +34,7 @@ pub struct DescribeClassicLinkInstancesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClassicLinkInstancesInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -46,7 +46,7 @@ impl DescribeClassicLinkInstancesInput {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
@@ -55,7 +55,7 @@ impl DescribeClassicLinkInstancesInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_ids.as_deref()
     }
@@ -93,7 +93,7 @@ impl DescribeClassicLinkInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -105,7 +105,7 @@ impl DescribeClassicLinkInstancesInputBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -113,7 +113,7 @@ impl DescribeClassicLinkInstancesInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
@@ -125,7 +125,7 @@ impl DescribeClassicLinkInstancesInputBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> <p> <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC to which the instance is linked.</p> </li>
     /// </ul>
     pub fn set_filters(
         mut self,
@@ -148,14 +148,14 @@ impl DescribeClassicLinkInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
     ///
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
         v.push(input.into());
         self.instance_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
+    /// <p>The instance IDs. Must be instances linked to a VPC through ClassicLink.</p>
     pub fn set_instance_ids(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

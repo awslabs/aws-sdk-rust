@@ -15,6 +15,10 @@ pub use crate::types::_applied_terminology::AppliedTerminology;
 
 pub use crate::types::_term::Term;
 
+pub use crate::types::_translated_document::TranslatedDocument;
+
+pub use crate::types::_document::Document;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_job_status::JobStatus;
@@ -58,6 +62,8 @@ mod _applied_terminology;
 mod _directionality;
 
 mod _display_language_code;
+
+mod _document;
 
 mod _encryption_key;
 
@@ -104,6 +110,8 @@ mod _terminology_properties;
 mod _text_translation_job_filter;
 
 mod _text_translation_job_properties;
+
+mod _translated_document;
 
 mod _translation_settings;
 

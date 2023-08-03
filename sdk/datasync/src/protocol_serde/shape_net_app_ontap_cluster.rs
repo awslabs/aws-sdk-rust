@@ -109,6 +109,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "LunCount" => {
+                                builder = builder.set_lun_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

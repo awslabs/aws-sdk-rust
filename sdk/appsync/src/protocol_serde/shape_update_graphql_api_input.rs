@@ -35,29 +35,37 @@ pub fn ser_update_graphql_api_input(
         crate::protocol_serde::shape_log_config::ser_log_config(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_10) = &input.merged_api_execution_role_arn {
+        object
+            .key("mergedApiExecutionRoleArn")
+            .string(var_10.as_str());
     }
-    if let Some(var_11) = &input.open_id_connect_config {
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.open_id_connect_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("openIDConnectConfig").start_object();
+        let mut object_13 = object.key("openIDConnectConfig").start_object();
         crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(
-            &mut object_12,
-            var_11,
+            &mut object_13,
+            var_12,
         )?;
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_13) = &input.user_pool_config {
+    if let Some(var_14) = &input.owner_contact {
+        object.key("ownerContact").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.user_pool_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("userPoolConfig").start_object();
+        let mut object_16 = object.key("userPoolConfig").start_object();
         crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(
-            &mut object_14,
-            var_13,
+            &mut object_16,
+            var_15,
         )?;
-        object_14.finish();
+        object_16.finish();
     }
-    if let Some(var_15) = &input.xray_enabled {
-        object.key("xrayEnabled").boolean(*var_15);
+    if let Some(var_17) = &input.xray_enabled {
+        object.key("xrayEnabled").boolean(*var_17);
     }
     Ok(())
 }

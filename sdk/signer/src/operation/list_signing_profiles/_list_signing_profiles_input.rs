@@ -5,7 +5,7 @@
 pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     #[doc(hidden)]
-    pub include_canceled: bool,
+    pub include_canceled: ::std::option::Option<bool>,
     /// <p>The maximum number of profiles to be returned.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -21,7 +21,7 @@ pub struct ListSigningProfilesInput {
 }
 impl ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
-    pub fn include_canceled(&self) -> bool {
+    pub fn include_canceled(&self) -> ::std::option::Option<bool> {
         self.include_canceled
     }
     /// <p>The maximum number of profiles to be returned.</p>
@@ -131,7 +131,7 @@ impl ListSigningProfilesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_signing_profiles::ListSigningProfilesInput {
-                include_canceled: self.include_canceled.unwrap_or_default(),
+                include_canceled: self.include_canceled,
                 max_results: self.max_results,
                 next_token: self.next_token,
                 platform_id: self.platform_id,

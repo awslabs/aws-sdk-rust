@@ -95,7 +95,7 @@ impl CreateVolumeFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     pub fn availability_zone(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -103,7 +103,7 @@ impl CreateVolumeFluentBuilder {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The Availability Zone in which to create the volume.</p>
+    /// <p>The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</p>
     pub fn set_availability_zone(
         mut self,
         input: ::std::option::Option<::std::string::String>,

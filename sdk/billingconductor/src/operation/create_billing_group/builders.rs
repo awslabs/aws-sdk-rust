@@ -119,12 +119,12 @@ impl CreateBillingGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(mut self, input: crate::types::AccountGrouping) -> Self {
         self.inner = self.inner.account_grouping(input);
         self
     }
-    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
+    /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn set_account_grouping(
         mut self,
         input: ::std::option::Option<crate::types::AccountGrouping>,

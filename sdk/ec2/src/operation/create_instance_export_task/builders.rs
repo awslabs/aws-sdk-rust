@@ -6,7 +6,7 @@ pub use crate::operation::create_instance_export_task::_create_instance_export_t
 /// Fluent builder constructing a request to `CreateInstanceExportTask`.
 ///
 /// <p>Exports a running or stopped instance to an Amazon S3 bucket.</p>
-/// <p>For information about the supported operating systems, image formats, and known limitations for the types of instances you can export, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
+/// <p>For information about the prerequisites for your Amazon S3 bucket, supported operating systems, image formats, and known limitations for the types of instances you can export, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

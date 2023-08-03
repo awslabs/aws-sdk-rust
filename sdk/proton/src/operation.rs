@@ -55,6 +55,9 @@ pub mod create_template_sync_config;
 /// Types for the `DeleteComponent` operation.
 pub mod delete_component;
 
+/// Types for the `DeleteDeployment` operation.
+pub mod delete_deployment;
+
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
 
@@ -90,6 +93,9 @@ pub mod get_account_settings;
 
 /// Types for the `GetComponent` operation.
 pub mod get_component;
+
+/// Types for the `GetDeployment` operation.
+pub mod get_deployment;
 
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
@@ -147,6 +153,9 @@ pub mod list_component_provisioned_resources;
 
 /// Types for the `ListComponents` operation.
 pub mod list_components;
+
+/// Types for the `ListDeployments` operation.
+pub mod list_deployments;
 
 /// Types for the `ListEnvironmentAccountConnections` operation.
 pub mod list_environment_account_connections;

@@ -6,6 +6,7 @@ pub use crate::operation::get_skill_group::_get_skill_group_input::GetSkillGroup
 /// Fluent builder constructing a request to `GetSkillGroup`.
 ///
 /// <p>Gets skill group details by skill group ARN.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSkillGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

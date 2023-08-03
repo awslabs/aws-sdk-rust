@@ -32,6 +32,10 @@ pub struct RecommendationJobContainerConfig {
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
     #[doc(hidden)]
     pub data_input_config: ::std::option::Option<::std::string::String>,
+    /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
+    #[doc(hidden)]
+    pub supported_endpoint_type:
+        ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
 }
 impl RecommendationJobContainerConfig {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -72,6 +76,12 @@ impl RecommendationJobContainerConfig {
     pub fn data_input_config(&self) -> ::std::option::Option<&str> {
         self.data_input_config.as_deref()
     }
+    /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
+    pub fn supported_endpoint_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RecommendationJobSupportedEndpointType> {
+        self.supported_endpoint_type.as_ref()
+    }
 }
 impl RecommendationJobContainerConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
@@ -95,6 +105,8 @@ pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) supported_instance_types:
         ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_endpoint_type:
+        ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
 }
 impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -218,6 +230,22 @@ impl RecommendationJobContainerConfigBuilder {
         self.data_input_config = input;
         self
     }
+    /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
+    pub fn supported_endpoint_type(
+        mut self,
+        input: crate::types::RecommendationJobSupportedEndpointType,
+    ) -> Self {
+        self.supported_endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
+    pub fn set_supported_endpoint_type(
+        mut self,
+        input: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
+    ) -> Self {
+        self.supported_endpoint_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
     pub fn build(self) -> crate::types::RecommendationJobContainerConfig {
         crate::types::RecommendationJobContainerConfig {
@@ -229,6 +257,7 @@ impl RecommendationJobContainerConfigBuilder {
             nearest_model_name: self.nearest_model_name,
             supported_instance_types: self.supported_instance_types,
             data_input_config: self.data_input_config,
+            supported_endpoint_type: self.supported_endpoint_type,
         }
     }
 }

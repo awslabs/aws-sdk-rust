@@ -5,7 +5,7 @@ pub use crate::operation::get_assessment_framework::_get_assessment_framework_in
 
 /// Fluent builder constructing a request to `GetAssessmentFramework`.
 ///
-/// <p>Returns a framework from Audit Manager. </p>
+/// <p>Gets information about a specified framework.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

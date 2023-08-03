@@ -5,7 +5,7 @@ pub use crate::operation::detect_phi::_detect_phi_input::DetectPhiInputBuilder;
 
 /// Fluent builder constructing a request to `DetectPHI`.
 ///
-/// <p> Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>
+/// <p>Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectPHIFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -91,12 +91,12 @@ impl DetectPHIFluentBuilder {
     > {
         self.customize_middleware().await
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self

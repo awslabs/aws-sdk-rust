@@ -5,9 +5,9 @@ pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_
 
 /// Fluent builder constructing a request to `SuspendContactRecording`.
 ///
-/// <p>When a contact is being recorded, this API suspends recording the call. For example, you might suspend the call recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording. </p>
-/// <p>The period of time that the recording is suspended is filled with silence in the final recording. </p>
-/// <p>Only voice recordings are supported at this time.</p>
+/// <p>When a contact is being recorded, this API suspends recording the call or screen. For example, you might suspend the call or screen recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording.</p>
+/// <p>The period of time that the recording is suspended is filled with silence in the final recording.</p>
+/// <p>Voice and screen recordings are supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuspendContactRecordingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

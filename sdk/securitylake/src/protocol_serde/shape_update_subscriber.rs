@@ -42,123 +42,113 @@ pub fn de_update_subscriber_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::update_subscriber::UpdateSubscriberError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "AccountNotFoundException" => crate::operation::update_subscriber::UpdateSubscriberError::AccountNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ConcurrentModificationException" => crate::operation::update_subscriber::UpdateSubscriberError::ConcurrentModificationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ConflictSubscriptionException" => crate::operation::update_subscriber::UpdateSubscriberError::ConflictSubscriptionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictSubscriptionExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_subscription_exception::de_conflict_subscription_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::update_subscriber::UpdateSubscriberError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::update_subscriber::UpdateSubscriberError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
                                                 .map_err(|_|crate::operation::update_subscriber::UpdateSubscriberError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidInputException" => crate::operation::update_subscriber::UpdateSubscriberError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ValidationException" => crate::operation::update_subscriber::UpdateSubscriberError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::update_subscriber::UpdateSubscriberError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::update_subscriber::UpdateSubscriberError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::update_subscriber::UpdateSubscriberError::generic(generic),
     })
 }
 

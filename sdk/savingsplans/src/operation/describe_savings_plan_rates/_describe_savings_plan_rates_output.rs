@@ -9,7 +9,7 @@ pub struct DescribeSavingsPlanRatesOutput {
     /// <p>Information about the Savings Plans rates.</p>
     #[doc(hidden)]
     pub search_results: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl DescribeSavingsPlanRatesOutput {
     pub fn search_results(&self) -> ::std::option::Option<&[crate::types::SavingsPlanRate]> {
         self.search_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -88,12 +88,12 @@ impl DescribeSavingsPlanRatesOutputBuilder {
         self.search_results = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self

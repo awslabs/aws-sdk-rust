@@ -26,12 +26,14 @@ pub struct DataResource {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -70,12 +72,14 @@ impl DataResource {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -132,12 +136,14 @@ impl DataResourceBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
@@ -159,12 +165,14 @@ impl DataResourceBuilder {
     /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
+    /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::CodeWhisperer::Profile</code> </p> </li>
     /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::EMRWAL::Workspace</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>

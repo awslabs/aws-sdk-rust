@@ -7,10 +7,10 @@ pub struct UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
@@ -64,7 +64,7 @@ pub struct UpdateEventSourceMappingOutput {
     #[doc(hidden)]
     pub self_managed_event_source: ::std::option::Option<crate::types::SelfManagedEventSource>,
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.</p> <note>
-    /// <p>The minimum value that can be set is 60 seconds.</p>
+    /// <p>The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed</p>
     /// </note>
     #[doc(hidden)]
     pub maximum_record_age_in_seconds: ::std::option::Option<i32>,
@@ -103,11 +103,11 @@ impl UpdateEventSourceMappingOutput {
     pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn starting_position_timestamp(
         &self,
     ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -182,7 +182,7 @@ impl UpdateEventSourceMappingOutput {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.</p> <note>
-    /// <p>The minimum value that can be set is 60 seconds.</p>
+    /// <p>The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed</p>
     /// </note>
     pub fn maximum_record_age_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_record_age_in_seconds
@@ -292,12 +292,12 @@ impl UpdateEventSourceMappingOutputBuilder {
         self.uuid = input;
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn starting_position(mut self, input: crate::types::EventSourcePosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn set_starting_position(
         mut self,
         input: ::std::option::Option<crate::types::EventSourcePosition>,
@@ -305,12 +305,12 @@ impl UpdateEventSourceMappingOutputBuilder {
         self.starting_position = input;
         self
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn starting_position_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.starting_position_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn set_starting_position_timestamp(
         mut self,
         input: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -543,14 +543,14 @@ impl UpdateEventSourceMappingOutputBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.</p> <note>
-    /// <p>The minimum value that can be set is 60 seconds.</p>
+    /// <p>The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed</p>
     /// </note>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_record_age_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.</p> <note>
-    /// <p>The minimum value that can be set is 60 seconds.</p>
+    /// <p>The minimum valid value for maximum record age is 60s. Although values less than 60 and greater than -1 fall within the parameter's absolute range, they are not allowed</p>
     /// </note>
     pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_record_age_in_seconds = input;

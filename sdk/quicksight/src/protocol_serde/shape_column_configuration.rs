@@ -24,6 +24,15 @@ pub fn ser_column_configuration(
     if let Some(var_5) = &input.role {
         object.key("Role").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.colors_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ColorsConfiguration").start_object();
+        crate::protocol_serde::shape_colors_configuration::ser_colors_configuration(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -71,6 +80,11 @@ where
                                             .map(|u| crate::types::ColumnRole::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "ColorsConfiguration" => {
+                                builder = builder.set_colors_configuration(
+                                    crate::protocol_serde::shape_colors_configuration::de_colors_configuration(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

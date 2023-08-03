@@ -6,12 +6,19 @@ pub struct GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
     #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    #[doc(hidden)]
+    pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
     pub fn certificates(&self) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
         self.certificates.as_deref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+        self.next_page_token.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCertificatesOutput {
@@ -34,6 +41,7 @@ impl GetCertificatesOutput {
 pub struct GetCertificatesOutputBuilder {
     pub(crate) certificates:
         ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCertificatesOutputBuilder {
@@ -56,6 +64,22 @@ impl GetCertificatesOutputBuilder {
         self.certificates = input;
         self
     }
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_page_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.next_page_token = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -69,6 +93,7 @@ impl GetCertificatesOutputBuilder {
     pub fn build(self) -> crate::operation::get_certificates::GetCertificatesOutput {
         crate::operation::get_certificates::GetCertificatesOutput {
             certificates: self.certificates,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

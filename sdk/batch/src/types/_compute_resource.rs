@@ -34,17 +34,17 @@ pub struct ComputeResource {
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<crate::types::CrAllocationStrategy>,
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
     pub minv_cpus: ::std::option::Option<i32>,
-    /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+    /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     #[doc(hidden)]
     pub maxv_cpus: ::std::option::Option<i32>,
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     #[doc(hidden)]
@@ -159,19 +159,19 @@ impl ComputeResource {
     ) -> ::std::option::Option<&crate::types::CrAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(&self) -> ::std::option::Option<i32> {
         self.minv_cpus
     }
-    /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+    /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn maxv_cpus(&self) -> ::std::option::Option<i32> {
         self.maxv_cpus
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn desiredv_cpus(&self) -> ::std::option::Option<i32> {
@@ -374,42 +374,42 @@ impl ComputeResourceBuilder {
         self.allocation_strategy = input;
         self
     }
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn minv_cpus(mut self, input: i32) -> Self {
         self.minv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
+    /// <p>The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn set_minv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minv_cpus = input;
         self
     }
-    /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+    /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn maxv_cpus(mut self, input: i32) -> Self {
         self.maxv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+    /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
     /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn set_maxv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maxv_cpus = input;
         self
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn desiredv_cpus(mut self, input: i32) -> Self {
         self.desiredv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
+    /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn set_desiredv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {

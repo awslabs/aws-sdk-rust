@@ -109,7 +109,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -134,7 +134,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
     /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
@@ -176,7 +176,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_peering_connection_ids`](Self::set_vpc_peering_connection_ids).
     ///
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn vpc_peering_connection_ids(
         mut self,
@@ -185,7 +185,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self.inner = self.inner.vpc_peering_connection_ids(input.into());
         self
     }
-    /// <p>One or more VPC peering connection IDs.</p>
+    /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn set_vpc_peering_connection_ids(
         mut self,

@@ -181,6 +181,49 @@ impl From<crate::operation::describe_signing_job::DescribeSigningJobError> for E
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::get_revocation_status::GetRevocationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_revocation_status::GetRevocationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_revocation_status::GetRevocationStatusError> for Error {
+    fn from(err: crate::operation::get_revocation_status::GetRevocationStatusError) -> Self {
+        match err {
+            crate::operation::get_revocation_status::GetRevocationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_revocation_status::GetRevocationStatusError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_revocation_status::GetRevocationStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_revocation_status::GetRevocationStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_revocation_status::GetRevocationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_signing_platform::GetSigningPlatformError,
             R,
         >,
@@ -655,6 +698,58 @@ impl From<crate::operation::revoke_signing_profile::RevokeSigningProfileError> f
             crate::operation::revoke_signing_profile::RevokeSigningProfileError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::revoke_signing_profile::RevokeSigningProfileError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::revoke_signing_profile::RevokeSigningProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::sign_payload::SignPayloadError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::sign_payload::SignPayloadError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::sign_payload::SignPayloadError> for Error {
+    fn from(err: crate::operation::sign_payload::SignPayloadError) -> Self {
+        match err {
+            crate::operation::sign_payload::SignPayloadError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::sign_payload::SignPayloadError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::operation::sign_payload::SignPayloadError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::sign_payload::SignPayloadError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::sign_payload::SignPayloadError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::sign_payload::SignPayloadError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

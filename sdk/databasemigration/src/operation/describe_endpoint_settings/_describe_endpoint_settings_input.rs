@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointSettingsInput {
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -14,7 +14,7 @@ pub struct DescribeEndpointSettingsInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointSettingsInput {
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
     }
@@ -47,12 +47,12 @@ pub struct DescribeEndpointSettingsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointSettingsInputBuilder {
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The databse engine used for your source or target endpoint.</p>
+    /// <p>The database engine used for your source or target endpoint.</p>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self

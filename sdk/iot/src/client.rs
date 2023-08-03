@@ -272,6 +272,10 @@ mod create_mitigation_action;
 
 mod create_ota_update;
 
+mod create_package;
+
+mod create_package_version;
+
 mod create_policy;
 
 mod create_policy_version;
@@ -359,6 +363,10 @@ mod delete_job_template;
 mod delete_mitigation_action;
 
 mod delete_ota_update;
+
+mod delete_package;
+
+mod delete_package_version;
 
 mod delete_policy;
 
@@ -486,6 +494,12 @@ mod get_logging_options;
 
 mod get_ota_update;
 
+mod get_package;
+
+mod get_package_configuration;
+
+mod get_package_version;
+
 mod get_percentiles;
 
 mod get_policy;
@@ -557,6 +571,10 @@ mod list_mitigation_actions;
 mod list_ota_updates;
 
 mod list_outgoing_certificates;
+
+mod list_package_versions;
+
+mod list_packages;
 
 mod list_policies;
 
@@ -695,6 +713,12 @@ mod update_indexing_configuration;
 mod update_job;
 
 mod update_mitigation_action;
+
+mod update_package;
+
+mod update_package_configuration;
+
+mod update_package_version;
 
 mod update_provisioning_template;
 

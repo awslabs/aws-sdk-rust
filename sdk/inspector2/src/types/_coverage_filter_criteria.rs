@@ -18,7 +18,7 @@ pub struct CoverageFilterCriteria {
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
     #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
@@ -46,6 +46,9 @@ pub struct CoverageFilterCriteria {
     #[doc(hidden)]
     pub lambda_function_runtime:
         ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
+    #[doc(hidden)]
+    pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on.</p>
@@ -66,7 +69,7 @@ impl CoverageFilterCriteria {
     pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.resource_id.as_deref()
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.resource_type.as_deref()
     }
@@ -106,6 +109,10 @@ impl CoverageFilterCriteria {
     ) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.lambda_function_runtime.as_deref()
     }
+    /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
+    pub fn last_scanned_at(&self) -> ::std::option::Option<&[crate::types::CoverageDateFilter]> {
+        self.last_scanned_at.as_deref()
+    }
 }
 impl CoverageFilterCriteria {
     /// Creates a new builder-style object to manufacture [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
@@ -144,6 +151,8 @@ pub struct CoverageFilterCriteriaBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     pub(crate) lambda_function_runtime:
         ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) last_scanned_at:
+        ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -226,14 +235,14 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     pub fn resource_type(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
         self.resource_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
     pub fn set_resource_type(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -374,6 +383,25 @@ impl CoverageFilterCriteriaBuilder {
         self.lambda_function_runtime = input;
         self
     }
+    /// Appends an item to `last_scanned_at`.
+    ///
+    /// To override the contents of this collection use [`set_last_scanned_at`](Self::set_last_scanned_at).
+    ///
+    /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
+    pub fn last_scanned_at(mut self, input: crate::types::CoverageDateFilter) -> Self {
+        let mut v = self.last_scanned_at.unwrap_or_default();
+        v.push(input);
+        self.last_scanned_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
+    pub fn set_last_scanned_at(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    ) -> Self {
+        self.last_scanned_at = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
@@ -389,6 +417,7 @@ impl CoverageFilterCriteriaBuilder {
             lambda_function_name: self.lambda_function_name,
             lambda_function_tags: self.lambda_function_tags,
             lambda_function_runtime: self.lambda_function_runtime,
+            last_scanned_at: self.last_scanned_at,
         }
     }
 }

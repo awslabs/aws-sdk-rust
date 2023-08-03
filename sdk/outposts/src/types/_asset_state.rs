@@ -13,6 +13,7 @@
 /// # let assetstate = unimplemented!();
 /// match assetstate {
 ///     AssetState::Active => { /* ... */ },
+///     AssetState::Isolated => { /* ... */ },
 ///     AssetState::Retiring => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Isolated,
+    #[allow(missing_docs)] // documentation missing in model
     Retiring,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for AssetState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AssetState::Active,
+            "ISOLATED" => AssetState::Isolated,
             "RETIRING" => AssetState::Retiring,
             other => AssetState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl AssetState {
     pub fn as_str(&self) -> &str {
         match self {
             AssetState::Active => "ACTIVE",
+            AssetState::Isolated => "ISOLATED",
             AssetState::Retiring => "RETIRING",
             AssetState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "RETIRING"]
+        &["ACTIVE", "ISOLATED", "RETIRING"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetState {

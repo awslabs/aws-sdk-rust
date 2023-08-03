@@ -53,5 +53,8 @@ pub fn ser_re_encrypt_input(
         }
         array_15.finish();
     }
+    if let Some(var_17) = &input.dry_run {
+        object.key("DryRun").boolean(*var_17);
+    }
     Ok(())
 }

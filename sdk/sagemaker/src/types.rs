@@ -29,6 +29,8 @@ pub use crate::types::_user_settings::UserSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
+pub use crate::types::_workspace_settings::WorkspaceSettings;
+
 pub use crate::types::_model_register_settings::ModelRegisterSettings;
 
 pub use crate::types::_feature_status::FeatureStatus;
@@ -191,6 +193,12 @@ pub use crate::types::_vendor_guidance::VendorGuidance;
 
 pub use crate::types::_feature_parameter::FeatureParameter;
 
+pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdate;
+
+pub use crate::types::_ttl_duration::TtlDuration;
+
+pub use crate::types::_ttl_duration_unit::TtlDurationUnit;
+
 pub use crate::types::_feature_definition::FeatureDefinition;
 
 pub use crate::types::_feature_type::FeatureType;
@@ -201,6 +209,12 @@ pub use crate::types::_production_variant_serverless_update_config::ProductionVa
 
 pub use crate::types::_deployment_config::DeploymentConfig;
 
+pub use crate::types::_rolling_update_policy::RollingUpdatePolicy;
+
+pub use crate::types::_capacity_size::CapacitySize;
+
+pub use crate::types::_capacity_size_type::CapacitySizeType;
+
 pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
 
 pub use crate::types::_alarm::Alarm;
@@ -208,10 +222,6 @@ pub use crate::types::_alarm::Alarm;
 pub use crate::types::_blue_green_update_policy::BlueGreenUpdatePolicy;
 
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfig;
-
-pub use crate::types::_capacity_size::CapacitySize;
-
-pub use crate::types::_capacity_size_type::CapacitySizeType;
 
 pub use crate::types::_traffic_routing_config_type::TrafficRoutingConfigType;
 
@@ -248,6 +258,10 @@ pub use crate::types::_action_status::ActionStatus;
 pub use crate::types::_inference_experiment_stop_desired_state::InferenceExperimentStopDesiredState;
 
 pub use crate::types::_model_variant_action::ModelVariantAction;
+
+pub use crate::types::_selective_execution_config::SelectiveExecutionConfig;
+
+pub use crate::types::_selected_step::SelectedStep;
 
 pub use crate::types::_parameter::Parameter;
 
@@ -321,11 +335,25 @@ pub use crate::types::_endpoint_status::EndpointStatus;
 
 pub use crate::types::_model::Model;
 
+pub use crate::types::_deployment_recommendation::DeploymentRecommendation;
+
+pub use crate::types::_real_time_inference_recommendation::RealTimeInferenceRecommendation;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
 pub use crate::types::_inference_execution_config::InferenceExecutionConfig;
 
 pub use crate::types::_inference_execution_mode::InferenceExecutionMode;
 
 pub use crate::types::_container_definition::ContainerDefinition;
+
+pub use crate::types::_model_data_source::ModelDataSource;
+
+pub use crate::types::_s3_model_data_source::S3ModelDataSource;
+
+pub use crate::types::_model_compression_type::ModelCompressionType;
+
+pub use crate::types::_s3_model_data_type::S3ModelDataType;
 
 pub use crate::types::_multi_model_config::MultiModelConfig;
 
@@ -389,6 +417,8 @@ pub use crate::types::_instance_group::InstanceGroup;
 
 pub use crate::types::_output_data_config::OutputDataConfig;
 
+pub use crate::types::_output_compression_type::OutputCompressionType;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_shuffle_config::ShuffleConfig;
@@ -414,6 +444,8 @@ pub use crate::types::_hyper_parameter_algorithm_specification::HyperParameterAl
 pub use crate::types::_metric_definition::MetricDefinition;
 
 pub use crate::types::_parameter_ranges::ParameterRanges;
+
+pub use crate::types::_auto_parameter::AutoParameter;
 
 pub use crate::types::_categorical_parameter_range::CategoricalParameterRange;
 
@@ -655,6 +687,8 @@ pub use crate::types::_experiment::Experiment;
 
 pub use crate::types::_experiment_source::ExperimentSource;
 
+pub use crate::types::_cross_account_filter_option::CrossAccountFilterOption;
+
 pub use crate::types::_search_sort_order::SearchSortOrder;
 
 pub use crate::types::_search_expression::SearchExpression;
@@ -737,6 +771,12 @@ pub use crate::types::_space_status::SpaceStatus;
 
 pub use crate::types::_space_sort_key::SpaceSortKey;
 
+pub use crate::types::_resource_catalog::ResourceCatalog;
+
+pub use crate::types::_resource_catalog_sort_by::ResourceCatalogSortBy;
+
+pub use crate::types::_resource_catalog_sort_order::ResourceCatalogSortOrder;
+
 pub use crate::types::_project_summary::ProjectSummary;
 
 pub use crate::types::_project_sort_order::ProjectSortOrder;
@@ -750,6 +790,8 @@ pub use crate::types::_pipeline_summary::PipelineSummary;
 pub use crate::types::_sort_pipelines_by::SortPipelinesBy;
 
 pub use crate::types::_pipeline_execution_step::PipelineExecutionStep;
+
+pub use crate::types::_selective_execution_result::SelectiveExecutionResult;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadata;
 
@@ -1199,6 +1241,8 @@ pub use crate::types::_recommendation_job_vpc_config::RecommendationJobVpcConfig
 
 pub use crate::types::_recommendation_job_container_config::RecommendationJobContainerConfig;
 
+pub use crate::types::_recommendation_job_supported_endpoint_type::RecommendationJobSupportedEndpointType;
+
 pub use crate::types::_recommendation_job_payload_config::RecommendationJobPayloadConfig;
 
 pub use crate::types::_endpoint_input_configuration::EndpointInputConfiguration;
@@ -1220,6 +1264,10 @@ pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummary;
 pub use crate::types::_model_variant_status::ModelVariantStatus;
 
 pub use crate::types::_endpoint_metadata::EndpointMetadata;
+
+pub use crate::types::_autotune::Autotune;
+
+pub use crate::types::_autotune_mode::AutotuneMode;
 
 pub use crate::types::_ui_template_info::UiTemplateInfo;
 
@@ -1333,6 +1381,22 @@ pub use crate::types::_framework::Framework;
 
 pub use crate::types::_model_digests::ModelDigests;
 
+pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfigName;
+
+pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
+
+pub use crate::types::_auto_ml_problem_type_resolved_attributes::AutoMlProblemTypeResolvedAttributes;
+
+pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributes;
+
+pub use crate::types::_problem_type::ProblemType;
+
+pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteria;
+
+pub use crate::types::_auto_ml_job_objective::AutoMlJobObjective;
+
+pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifacts;
+
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
 
 pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
@@ -1343,13 +1407,29 @@ pub use crate::types::_model_deploy_config::ModelDeployConfig;
 
 pub use crate::types::_auto_ml_problem_type_config::AutoMlProblemTypeConfig;
 
+pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfig;
+
+pub use crate::types::_time_series_config::TimeSeriesConfig;
+
+pub use crate::types::_time_series_transformations::TimeSeriesTransformations;
+
+pub use crate::types::_aggregation_transformation_value::AggregationTransformationValue;
+
+pub use crate::types::_filling_type::FillingType;
+
+pub use crate::types::_tabular_job_config::TabularJobConfig;
+
+pub use crate::types::_auto_ml_mode::AutoMlMode;
+
+pub use crate::types::_candidate_generation_config::CandidateGenerationConfig;
+
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfig;
+
+pub use crate::types::_auto_ml_algorithm::AutoMlAlgorithm;
+
 pub use crate::types::_text_classification_job_config::TextClassificationJobConfig;
 
-pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteria;
-
 pub use crate::types::_image_classification_job_config::ImageClassificationJobConfig;
-
-pub use crate::types::_auto_ml_job_objective::AutoMlJobObjective;
 
 pub use crate::types::_auto_ml_output_data_config::AutoMlOutputDataConfig;
 
@@ -1365,19 +1445,9 @@ pub use crate::types::_auto_ml_channel_type::AutoMlChannelType;
 
 pub use crate::types::_resolved_attributes::ResolvedAttributes;
 
-pub use crate::types::_problem_type::ProblemType;
-
-pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifacts;
-
 pub use crate::types::_auto_ml_job_config::AutoMlJobConfig;
 
-pub use crate::types::_auto_ml_mode::AutoMlMode;
-
 pub use crate::types::_auto_ml_candidate_generation_config::AutoMlCandidateGenerationConfig;
-
-pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfig;
-
-pub use crate::types::_auto_ml_algorithm::AutoMlAlgorithm;
 
 pub use crate::types::_auto_ml_channel::AutoMlChannel;
 
@@ -1432,6 +1502,8 @@ mod _action_summary;
 mod _additional_inference_specification_definition;
 
 mod _agent_version;
+
+mod _aggregation_transformation_value;
 
 mod _alarm;
 
@@ -1557,7 +1629,13 @@ mod _auto_ml_partial_failure_reason;
 
 mod _auto_ml_problem_type_config;
 
+mod _auto_ml_problem_type_config_name;
+
+mod _auto_ml_problem_type_resolved_attributes;
+
 mod _auto_ml_processing_unit;
+
+mod _auto_ml_resolved_attributes;
 
 mod _auto_ml_security_config;
 
@@ -1569,7 +1647,13 @@ mod _auto_mls3_data_source;
 
 mod _auto_mls3_data_type;
 
+mod _auto_parameter;
+
 mod _auto_rollback_config;
+
+mod _autotune;
+
+mod _autotune_mode;
 
 mod _aws_managed_human_loop_request_source;
 
@@ -1596,6 +1680,8 @@ mod _cache_hit_result;
 mod _callback_step_metadata;
 
 mod _candidate_artifact_locations;
+
+mod _candidate_generation_config;
 
 mod _candidate_properties;
 
@@ -1691,6 +1777,8 @@ mod _continuous_parameter_range_specification;
 
 mod _convergence_detected;
 
+mod _cross_account_filter_option;
+
 mod _custom_image;
 
 mod _data_capture_config;
@@ -1724,6 +1812,8 @@ mod _default_space_settings;
 mod _deployed_image;
 
 mod _deployment_config;
+
+mod _deployment_recommendation;
 
 mod _deployment_stage;
 
@@ -1880,6 +1970,8 @@ mod _file_system_config;
 mod _file_system_data_source;
 
 mod _file_system_type;
+
+mod _filling_type;
 
 mod _filter;
 
@@ -2165,6 +2257,8 @@ mod _model_card_version_summary;
 
 mod _model_client_config;
 
+mod _model_compression_type;
+
 mod _model_configuration;
 
 mod _model_dashboard_endpoint;
@@ -2178,6 +2272,8 @@ mod _model_dashboard_model_card;
 mod _model_dashboard_monitoring_schedule;
 
 mod _model_data_quality;
+
+mod _model_data_source;
 
 mod _model_deploy_config;
 
@@ -2375,11 +2471,15 @@ mod _oidc_member_definition;
 
 mod _online_store_config;
 
+mod _online_store_config_update;
+
 mod _online_store_security_config;
 
 mod _operator;
 
 mod _order_key;
+
+mod _output_compression_type;
 
 mod _output_config;
 
@@ -2531,6 +2631,8 @@ mod _r_studio_server_pro_user_group;
 
 mod _real_time_inference_config;
 
+mod _real_time_inference_recommendation;
+
 mod _recommendation_job_compiled_output_config;
 
 mod _recommendation_job_container_config;
@@ -2549,11 +2651,15 @@ mod _recommendation_job_status;
 
 mod _recommendation_job_stopping_conditions;
 
+mod _recommendation_job_supported_endpoint_type;
+
 mod _recommendation_job_type;
 
 mod _recommendation_job_vpc_config;
 
 mod _recommendation_metrics;
+
+mod _recommendation_status;
 
 mod _recommendation_step_type;
 
@@ -2577,6 +2683,12 @@ mod _repository_auth_config;
 
 mod _resolved_attributes;
 
+mod _resource_catalog;
+
+mod _resource_catalog_sort_by;
+
+mod _resource_catalog_sort_order;
+
 mod _resource_config;
 
 mod _resource_config_for_update;
@@ -2593,6 +2705,8 @@ mod _retention_type;
 
 mod _retry_strategy;
 
+mod _rolling_update_policy;
+
 mod _root_access;
 
 mod _rule_evaluation_status;
@@ -2602,6 +2716,10 @@ mod _s3_data_distribution;
 mod _s3_data_source;
 
 mod _s3_data_type;
+
+mod _s3_model_data_source;
+
+mod _s3_model_data_type;
 
 mod _s3_storage_config;
 
@@ -2620,6 +2738,12 @@ mod _search_sort_order;
 mod _secondary_status;
 
 mod _secondary_status_transition;
+
+mod _selected_step;
+
+mod _selective_execution_config;
+
+mod _selective_execution_result;
 
 mod _service_catalog_provisioned_product_details;
 
@@ -2695,6 +2819,10 @@ mod _suggestion_query;
 
 mod _table_format;
 
+mod _tabular_job_config;
+
+mod _tabular_resolved_attributes;
+
 mod _tag;
 
 mod _target_device;
@@ -2713,7 +2841,13 @@ mod _tensor_board_output_config;
 
 mod _text_classification_job_config;
 
+mod _time_series_config;
+
+mod _time_series_forecasting_job_config;
+
 mod _time_series_forecasting_settings;
+
+mod _time_series_transformations;
 
 mod _traffic_pattern;
 
@@ -2799,6 +2933,10 @@ mod _trial_source;
 
 mod _trial_summary;
 
+mod _ttl_duration;
+
+mod _ttl_duration_unit;
+
 mod _tuning_job_completion_criteria;
 
 mod _tuning_job_step_meta_data;
@@ -2844,6 +2982,8 @@ mod _workforce_status;
 mod _workforce_vpc_config_request;
 
 mod _workforce_vpc_config_response;
+
+mod _workspace_settings;
 
 mod _workteam;
 

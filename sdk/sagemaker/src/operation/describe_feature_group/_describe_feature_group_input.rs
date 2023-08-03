@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupInput {
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
@@ -11,7 +11,7 @@ pub struct DescribeFeatureGroupInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureGroupInput {
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -38,7 +38,7 @@ pub struct DescribeFeatureGroupInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureGroupInputBuilder {
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -46,7 +46,7 @@ impl DescribeFeatureGroupInputBuilder {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

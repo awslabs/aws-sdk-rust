@@ -15,6 +15,10 @@ pub struct ImportResourceSpecification {
     #[doc(hidden)]
     pub custom_vocabulary_import_specification:
         ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
+    /// <p>Specifications for the test set that is imported.</p>
+    #[doc(hidden)]
+    pub test_set_import_resource_specification:
+        ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
 }
 impl ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
@@ -34,6 +38,12 @@ impl ImportResourceSpecification {
         &self,
     ) -> ::std::option::Option<&crate::types::CustomVocabularyImportSpecification> {
         self.custom_vocabulary_import_specification.as_ref()
+    }
+    /// <p>Specifications for the test set that is imported.</p>
+    pub fn test_set_import_resource_specification(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TestSetImportResourceSpecification> {
+        self.test_set_import_resource_specification.as_ref()
     }
 }
 impl ImportResourceSpecification {
@@ -55,6 +65,8 @@ pub struct ImportResourceSpecificationBuilder {
         ::std::option::Option<crate::types::BotLocaleImportSpecification>,
     pub(crate) custom_vocabulary_import_specification:
         ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
+    pub(crate) test_set_import_resource_specification:
+        ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
 }
 impl ImportResourceSpecificationBuilder {
     /// <p>Parameters for importing a bot.</p>
@@ -102,12 +114,29 @@ impl ImportResourceSpecificationBuilder {
         self.custom_vocabulary_import_specification = input;
         self
     }
+    /// <p>Specifications for the test set that is imported.</p>
+    pub fn test_set_import_resource_specification(
+        mut self,
+        input: crate::types::TestSetImportResourceSpecification,
+    ) -> Self {
+        self.test_set_import_resource_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifications for the test set that is imported.</p>
+    pub fn set_test_set_import_resource_specification(
+        mut self,
+        input: ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
+    ) -> Self {
+        self.test_set_import_resource_specification = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ImportResourceSpecification`](crate::types::ImportResourceSpecification).
     pub fn build(self) -> crate::types::ImportResourceSpecification {
         crate::types::ImportResourceSpecification {
             bot_import_specification: self.bot_import_specification,
             bot_locale_import_specification: self.bot_locale_import_specification,
             custom_vocabulary_import_specification: self.custom_vocabulary_import_specification,
+            test_set_import_resource_specification: self.test_set_import_resource_specification,
         }
     }
 }

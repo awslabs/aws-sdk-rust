@@ -91,6 +91,17 @@ impl SearchGroupsFluentBuilder {
     > {
         self.customize_middleware().await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_groups::paginator::SearchGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_groups::paginator::SearchGroupsPaginator {
+        crate::operation::search_groups::paginator::SearchGroupsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,

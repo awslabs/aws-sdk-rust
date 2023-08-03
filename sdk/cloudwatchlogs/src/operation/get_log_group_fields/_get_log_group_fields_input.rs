@@ -8,7 +8,7 @@ pub struct GetLogGroupFieldsInput {
     /// </note>
     #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub time: ::std::option::Option<i64>,
@@ -25,7 +25,7 @@ impl GetLogGroupFieldsInput {
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn time(&self) -> ::std::option::Option<i64> {
         self.time
@@ -76,13 +76,13 @@ impl GetLogGroupFieldsInputBuilder {
         self.log_group_name = input;
         self
     }
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn time(mut self, input: i64) -> Self {
         self.time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn set_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.time = input;

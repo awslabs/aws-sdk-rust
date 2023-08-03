@@ -53,6 +53,7 @@ pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
 
 /// Future returned by [`AsyncSleep`].
 #[non_exhaustive]
+#[must_use]
 pub struct Sleep(Pin<Box<dyn Future<Output = ()> + Send + 'static>>);
 
 impl Debug for Sleep {

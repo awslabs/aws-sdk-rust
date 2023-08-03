@@ -6,6 +6,7 @@ pub use crate::operation::delete_room_skill_parameter::_delete_room_skill_parame
 /// Fluent builder constructing a request to `DeleteRoomSkillParameter`.
 ///
 /// <p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRoomSkillParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

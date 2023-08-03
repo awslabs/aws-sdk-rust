@@ -6,10 +6,10 @@ pub fn ser_list_user_pools_input(
     if let Some(var_1) = &input.next_token {
         object.key("NextToken").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

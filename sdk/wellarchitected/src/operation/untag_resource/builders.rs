@@ -6,7 +6,7 @@ pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceIn
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Deletes specified tags from a resource.</p> <note>
-/// <p>The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+/// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.</p>
 /// </note>
 /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
 /// <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>

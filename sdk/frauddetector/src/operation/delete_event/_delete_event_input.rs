@@ -9,7 +9,7 @@ pub struct DeleteEventInput {
     /// <p>The name of the event type.</p>
     #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     #[doc(hidden)]
     pub delete_audit_history: ::std::option::Option<bool>,
 }
@@ -22,7 +22,7 @@ impl DeleteEventInput {
     pub fn event_type_name(&self) -> ::std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(&self) -> ::std::option::Option<bool> {
         self.delete_audit_history
     }
@@ -71,12 +71,12 @@ impl DeleteEventInputBuilder {
         self.event_type_name = input;
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(mut self, input: bool) -> Self {
         self.delete_audit_history = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_audit_history = input;
         self

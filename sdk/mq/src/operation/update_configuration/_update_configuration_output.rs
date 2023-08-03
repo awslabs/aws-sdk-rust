@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationOutput {
-    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Required. The date and time of the configuration.</p>
     #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The latest revision of the configuration.</p>
     #[doc(hidden)]
     pub latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
-    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    /// <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
+    /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
     #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>>,
     _request_id: Option<String>,
 }
 impl UpdateConfigurationOutput {
-    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -32,7 +32,7 @@ impl UpdateConfigurationOutput {
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -40,11 +40,11 @@ impl UpdateConfigurationOutput {
     pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
-    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    /// <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
+    /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
     pub fn warnings(&self) -> ::std::option::Option<&[crate::types::SanitizationWarning]> {
         self.warnings.as_deref()
     }
@@ -78,12 +78,12 @@ pub struct UpdateConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateConfigurationOutputBuilder {
-    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
@@ -101,12 +101,12 @@ impl UpdateConfigurationOutputBuilder {
         self.created = input;
         self
     }
-    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
@@ -124,12 +124,12 @@ impl UpdateConfigurationOutputBuilder {
         self.latest_revision = input;
         self
     }
-    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    /// <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    /// <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
@@ -138,14 +138,14 @@ impl UpdateConfigurationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
     ///
-    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
+    /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
     pub fn warnings(mut self, input: crate::types::SanitizationWarning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input);
         self.warnings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
+    /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
     pub fn set_warnings(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>>,

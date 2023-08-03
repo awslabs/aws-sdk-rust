@@ -122,6 +122,14 @@ impl ListAnswersInput {
                         );
                     }
                 }
+                if let ::std::option::Option::Some(inner_7) = &_input.question_priority {
+                    {
+                        query.push_kv(
+                            "QuestionPriority",
+                            &::aws_smithy_http::query::fmt_string(&inner_7),
+                        );
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

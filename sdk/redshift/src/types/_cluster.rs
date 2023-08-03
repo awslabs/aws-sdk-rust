@@ -208,6 +208,15 @@ pub struct Cluster {
     #[doc(hidden)]
     pub reserved_node_exchange_status:
         ::std::option::Option<crate::types::ReservedNodeExchangeStatus>,
+    /// <p>The custom domain name associated with the cluster.</p>
+    #[doc(hidden)]
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+    #[doc(hidden)]
+    pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The expiration date for the certificate associated with the custom domain name.</p>
+    #[doc(hidden)]
+    pub custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -480,6 +489,20 @@ impl Cluster {
     ) -> ::std::option::Option<&crate::types::ReservedNodeExchangeStatus> {
         self.reserved_node_exchange_status.as_ref()
     }
+    /// <p>The custom domain name associated with the cluster.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_certificate_arn.as_deref()
+    }
+    /// <p>The expiration date for the certificate associated with the custom domain name.</p>
+    pub fn custom_domain_certificate_expiry_date(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.custom_domain_certificate_expiry_date.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -555,6 +578,10 @@ pub struct ClusterBuilder {
     pub(crate) default_iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_exchange_status:
         ::std::option::Option<crate::types::ReservedNodeExchangeStatus>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_certificate_expiry_date:
+        ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1411,6 +1438,54 @@ impl ClusterBuilder {
         self.reserved_node_exchange_status = input;
         self
     }
+    /// <p>The custom domain name associated with the cluster.</p>
+    pub fn custom_domain_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name associated with the cluster.</p>
+    pub fn set_custom_domain_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+    pub fn custom_domain_certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+    pub fn set_custom_domain_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.custom_domain_certificate_arn = input;
+        self
+    }
+    /// <p>The expiration date for the certificate associated with the custom domain name.</p>
+    pub fn custom_domain_certificate_expiry_date(
+        mut self,
+        input: ::aws_smithy_types::DateTime,
+    ) -> Self {
+        self.custom_domain_certificate_expiry_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expiration date for the certificate associated with the custom domain name.</p>
+    pub fn set_custom_domain_certificate_expiry_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.custom_domain_certificate_expiry_date = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1471,6 +1546,9 @@ impl ClusterBuilder {
             aqua_configuration: self.aqua_configuration,
             default_iam_role_arn: self.default_iam_role_arn,
             reserved_node_exchange_status: self.reserved_node_exchange_status,
+            custom_domain_name: self.custom_domain_name,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
+            custom_domain_certificate_expiry_date: self.custom_domain_certificate_expiry_date,
         }
     }
 }

@@ -47,6 +47,8 @@ pub use crate::types::_sidewalk_update_account::SidewalkUpdateAccount;
 
 pub use crate::types::_trace_content::TraceContent;
 
+pub use crate::types::_multicast_frame_info::MulticastFrameInfo;
+
 pub use crate::types::_log_level::LogLevel;
 
 pub use crate::types::_wireless_device_frame_info::WirelessDeviceFrameInfo;
@@ -476,6 +478,8 @@ mod _message_delivery_status_event_configuration;
 mod _message_delivery_status_resource_type_event_configuration;
 
 mod _message_type;
+
+mod _multicast_frame_info;
 
 mod _multicast_group;
 

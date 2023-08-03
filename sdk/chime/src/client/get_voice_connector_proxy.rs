@@ -7,6 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput) with field(s):
     ///   - [`proxy(Option<Proxy>)`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorProxyError>`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyError)
+    #[deprecated(
+        note = "Replaced by GetVoiceConnectorProxy in the Amazon Chime SDK Voice Namespace"
+    )]
     pub fn get_voice_connector_proxy(
         &self,
     ) -> crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyFluentBuilder

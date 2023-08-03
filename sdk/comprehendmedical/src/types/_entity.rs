@@ -13,7 +13,7 @@ pub struct Entity {
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
-    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p> The segment of input text extracted as this entity.</p>
@@ -45,7 +45,7 @@ impl Entity {
     pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
@@ -124,12 +124,12 @@ impl EntityBuilder {
         self.end_offset = input;
         self
     }
-    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self

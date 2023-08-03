@@ -72,6 +72,15 @@ pub fn ser_rate_based_statement_custom_key(
         )?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.uri_path {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("UriPath").start_object();
+        crate::protocol_serde::shape_rate_limit_uri_path::ser_rate_limit_uri_path(
+            &mut object_18,
+            var_17,
+        )?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -139,6 +148,11 @@ where
                             "LabelNamespace" => {
                                 builder = builder.set_label_namespace(
                                     crate::protocol_serde::shape_rate_limit_label_namespace::de_rate_limit_label_namespace(tokens)?
+                                );
+                            }
+                            "UriPath" => {
+                                builder = builder.set_uri_path(
+                                    crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

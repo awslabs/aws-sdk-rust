@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`status(Option<HealthEventStatus>)`](crate::operation::get_health_event::GetHealthEventOutput::status): <p>The status of a health event.</p>
     ///   - [`percent_of_total_traffic_impacted(Option<f64>)`](crate::operation::get_health_event::GetHealthEventOutput::percent_of_total_traffic_impacted): <p>The impact on total traffic that a health event has.</p>
     ///   - [`impact_type(Option<HealthEventImpactType>)`](crate::operation::get_health_event::GetHealthEventOutput::impact_type): <p>The type of impairment of a specific health event.</p>
+    ///   - [`health_score_threshold(f64)`](crate::operation::get_health_event::GetHealthEventOutput::health_score_threshold): <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
     /// - On failure, responds with [`SdkError<GetHealthEventError>`](crate::operation::get_health_event::GetHealthEventError)
     pub fn get_health_event(
         &self,

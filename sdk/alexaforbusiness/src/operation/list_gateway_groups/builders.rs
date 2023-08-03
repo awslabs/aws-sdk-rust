@@ -6,6 +6,7 @@ pub use crate::operation::list_gateway_groups::_list_gateway_groups_input::ListG
 /// Fluent builder constructing a request to `ListGatewayGroups`.
 ///
 /// <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.</p>
+#[deprecated(note = "Alexa For Business is no longer supported")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGatewayGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

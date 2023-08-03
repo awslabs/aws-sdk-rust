@@ -13,7 +13,7 @@ pub struct DescribeLocationNfsOutput {
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
     #[doc(hidden)]
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
-    /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    /// <p>The mount options that DataSync uses to mount your NFS share.</p>
     #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
     /// <p>The time that the NFS location was created.</p>
@@ -34,7 +34,7 @@ impl DescribeLocationNfsOutput {
     pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
-    /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    /// <p>The mount options that DataSync uses to mount your NFS share.</p>
     pub fn mount_options(&self) -> ::std::option::Option<&crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
@@ -104,12 +104,12 @@ impl DescribeLocationNfsOutputBuilder {
         self.on_prem_config = input;
         self
     }
-    /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    /// <p>The mount options that DataSync uses to mount your NFS share.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+    /// <p>The mount options that DataSync uses to mount your NFS share.</p>
     pub fn set_mount_options(
         mut self,
         input: ::std::option::Option<crate::types::NfsMountOptions>,

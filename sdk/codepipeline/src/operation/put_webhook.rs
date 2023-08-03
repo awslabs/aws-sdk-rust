@@ -185,7 +185,7 @@ pub enum PutWebhookError {
     ),
     /// <p>The specified event filter rule is in an invalid format.</p>
     InvalidWebhookFilterPatternException(crate::types::error::InvalidWebhookFilterPatternException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
+    /// <p>The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),

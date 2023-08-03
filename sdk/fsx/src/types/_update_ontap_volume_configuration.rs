@@ -7,7 +7,7 @@ pub struct UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
     pub junction_path: ::std::option::Option<::std::string::String>,
-    /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
+    /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     #[doc(hidden)]
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Specifies the size of the volume in megabytes.</p>
@@ -32,13 +32,16 @@ pub struct UpdateOntapVolumeConfiguration {
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    #[doc(hidden)]
+    pub snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
 }
 impl UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn junction_path(&self) -> ::std::option::Option<&str> {
         self.junction_path.as_deref()
     }
-    /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
+    /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
@@ -69,6 +72,12 @@ impl UpdateOntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    pub fn snaplock_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
+        self.snaplock_configuration.as_ref()
+    }
 }
 impl UpdateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
@@ -90,6 +99,8 @@ pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
+    pub(crate) snaplock_configuration:
+        ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
 }
 impl UpdateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -108,12 +119,12 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self.junction_path = input;
         self
     }
-    /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
+    /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn security_style(mut self, input: crate::types::SecurityStyle) -> Self {
         self.security_style = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
+    /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn set_security_style(
         mut self,
         input: ::std::option::Option<crate::types::SecurityStyle>,
@@ -194,6 +205,22 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self.copy_tags_to_backups = input;
         self
     }
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    pub fn snaplock_configuration(
+        mut self,
+        input: crate::types::UpdateSnaplockConfiguration,
+    ) -> Self {
+        self.snaplock_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    pub fn set_snaplock_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
+    ) -> Self {
+        self.snaplock_configuration = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOntapVolumeConfiguration {
         crate::types::UpdateOntapVolumeConfiguration {
@@ -204,6 +231,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
             tiering_policy: self.tiering_policy,
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
+            snaplock_configuration: self.snaplock_configuration,
         }
     }
 }

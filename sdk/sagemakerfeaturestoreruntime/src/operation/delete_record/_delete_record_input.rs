@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecordInput {
-    /// <p>The name of the feature group to delete the record from. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
@@ -20,7 +20,7 @@ pub struct DeleteRecordInput {
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInput {
-    /// <p>The name of the feature group to delete the record from. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
@@ -61,7 +61,7 @@ pub struct DeleteRecordInputBuilder {
     pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteRecordInputBuilder {
-    /// <p>The name of the feature group to delete the record from. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn feature_group_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -69,7 +69,7 @@ impl DeleteRecordInputBuilder {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature group to delete the record from. </p>
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
     pub fn set_feature_group_name(
         mut self,
         input: ::std::option::Option<::std::string::String>,

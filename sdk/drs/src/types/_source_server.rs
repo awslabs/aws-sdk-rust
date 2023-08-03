@@ -41,6 +41,9 @@ pub struct SourceServer {
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
     #[doc(hidden)]
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
+    #[doc(hidden)]
+    pub source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl SourceServer {
     /// <p>The ID of the Source Server.</p>
@@ -101,6 +104,10 @@ impl SourceServer {
     pub fn reversed_direction_source_server_arn(&self) -> ::std::option::Option<&str> {
         self.reversed_direction_source_server_arn.as_deref()
     }
+    /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
+    pub fn source_network_id(&self) -> ::std::option::Option<&str> {
+        self.source_network_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -120,6 +127,7 @@ impl ::std::fmt::Debug for SourceServer {
             "reversed_direction_source_server_arn",
             &self.reversed_direction_source_server_arn,
         );
+        formatter.field("source_network_id", &self.source_network_id);
         formatter.finish()
     }
 }
@@ -148,6 +156,7 @@ pub struct SourceServerBuilder {
     pub(crate) source_cloud_properties: ::std::option::Option<crate::types::SourceCloudProperties>,
     pub(crate) replication_direction: ::std::option::Option<crate::types::ReplicationDirection>,
     pub(crate) reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl SourceServerBuilder {
     /// <p>The ID of the Source Server.</p>
@@ -321,6 +330,22 @@ impl SourceServerBuilder {
         self.reversed_direction_source_server_arn = input;
         self
     }
+    /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
+    pub fn source_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_network_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
+    pub fn set_source_network_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
+        self.source_network_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`SourceServer`](crate::types::SourceServer).
     pub fn build(self) -> crate::types::SourceServer {
         crate::types::SourceServer {
@@ -336,6 +361,7 @@ impl SourceServerBuilder {
             source_cloud_properties: self.source_cloud_properties,
             replication_direction: self.replication_direction,
             reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
+            source_network_id: self.source_network_id,
         }
     }
 }
@@ -357,6 +383,7 @@ impl ::std::fmt::Debug for SourceServerBuilder {
             "reversed_direction_source_server_arn",
             &self.reversed_direction_source_server_arn,
         );
+        formatter.field("source_network_id", &self.source_network_id);
         formatter.finish()
     }
 }

@@ -287,12 +287,12 @@ impl CreateIntentFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
-    /// <p>The identifier of the version of the bot associated with this intent.</p>
+    /// <p>The version of the bot associated with this intent.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self

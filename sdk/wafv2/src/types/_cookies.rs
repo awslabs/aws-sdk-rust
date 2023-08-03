@@ -8,16 +8,16 @@
 pub struct Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
     #[doc(hidden)]
     pub match_pattern: ::std::option::Option<crate::types::CookieMatchPattern>,
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     #[doc(hidden)]
     pub match_scope: ::std::option::Option<crate::types::MapMatchScope>,
-    /// <p>What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
+    /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria. </p> </li>
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
@@ -27,7 +27,7 @@ pub struct Cookies {
 impl Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
     pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::CookieMatchPattern> {
         self.match_pattern.as_ref()
     }
@@ -35,10 +35,10 @@ impl Cookies {
     pub fn match_scope(&self) -> ::std::option::Option<&crate::types::MapMatchScope> {
         self.match_scope.as_ref()
     }
-    /// <p>What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
+    /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria. </p> </li>
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
@@ -66,14 +66,14 @@ pub struct CookiesBuilder {
 impl CookiesBuilder {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
     pub fn match_pattern(mut self, input: crate::types::CookieMatchPattern) -> Self {
         self.match_pattern = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
-    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+    /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
     pub fn set_match_pattern(
         mut self,
         input: ::std::option::Option<crate::types::CookieMatchPattern>,
@@ -94,10 +94,10 @@ impl CookiesBuilder {
         self.match_scope = input;
         self
     }
-    /// <p>What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
+    /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria. </p> </li>
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
@@ -105,10 +105,10 @@ impl CookiesBuilder {
         self.oversize_handling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
+    /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li> <p> <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria. </p> </li>
+    /// <li> <p> <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria. </p> </li>
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>

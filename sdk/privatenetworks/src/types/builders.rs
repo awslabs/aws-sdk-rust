@@ -11,6 +11,10 @@ pub use crate::types::_network_resource_definition::NetworkResourceDefinitionBui
 
 pub use crate::types::_network_resource::NetworkResourceBuilder;
 
+pub use crate::types::_commitment_information::CommitmentInformationBuilder;
+
+pub use crate::types::_commitment_configuration::CommitmentConfigurationBuilder;
+
 pub use crate::types::_return_information::ReturnInformationBuilder;
 
 pub use crate::types::_address::AddressBuilder;
@@ -18,6 +22,8 @@ pub use crate::types::_address::AddressBuilder;
 pub use crate::types::_position::PositionBuilder;
 
 pub use crate::types::_order::OrderBuilder;
+
+pub use crate::types::_ordered_resource_definition::OrderedResourceDefinitionBuilder;
 
 pub use crate::types::_tracking_information::TrackingInformationBuilder;
 

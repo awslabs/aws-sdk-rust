@@ -1375,6 +1375,47 @@ impl From<crate::operation::list_imports::ListImportsError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_accounts::ListManagedAccountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_accounts::ListManagedAccountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_managed_accounts::ListManagedAccountsError> for Error {
+    fn from(err: crate::operation::list_managed_accounts::ListManagedAccountsError) -> Self {
+        match err {
+            crate::operation::list_managed_accounts::ListManagedAccountsError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::list_managed_accounts::ListManagedAccountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_managed_accounts::ListManagedAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_source_server_actions::ListSourceServerActionsError,
             R,
         >,
@@ -1581,6 +1622,50 @@ impl From<crate::operation::mark_as_archived::MarkAsArchivedError> for Error {
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
+            crate::operation::pause_replication::PauseReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::pause_replication::PauseReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::pause_replication::PauseReplicationError> for Error {
+    fn from(err: crate::operation::pause_replication::PauseReplicationError) -> Self {
+        match err {
+            crate::operation::pause_replication::PauseReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::pause_replication::PauseReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::pause_replication::PauseReplicationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::pause_replication::PauseReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::pause_replication::PauseReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::pause_replication::PauseReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_source_server_action::PutSourceServerActionError,
             R,
         >,
@@ -1747,6 +1832,50 @@ impl From<crate::operation::remove_template_action::RemoveTemplateActionError> f
             crate::operation::remove_template_action::RemoveTemplateActionError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::remove_template_action::RemoveTemplateActionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::remove_template_action::RemoveTemplateActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_replication::ResumeReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_replication::ResumeReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resume_replication::ResumeReplicationError> for Error {
+    fn from(err: crate::operation::resume_replication::ResumeReplicationError) -> Self {
+        match err {
+            crate::operation::resume_replication::ResumeReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::resume_replication::ResumeReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::resume_replication::ResumeReplicationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::resume_replication::ResumeReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::resume_replication::ResumeReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::resume_replication::ResumeReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2019,6 +2148,50 @@ impl From<crate::operation::start_test::StartTestError> for Error {
             crate::operation::start_test::StartTestError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication::StopReplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication::StopReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
+                            .clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_replication::StopReplicationError> for Error {
+    fn from(err: crate::operation::stop_replication::StopReplicationError) -> Self {
+        match err {
+            crate::operation::stop_replication::StopReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_replication::StopReplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_replication::StopReplicationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::stop_replication::StopReplicationError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::stop_replication::StopReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_replication::StopReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
