@@ -63,7 +63,7 @@ mod tests {
         let request_time = UNIX_EPOCH + Duration::from_secs(1624036048);
         let interceptor = TestParamsSetterInterceptor::new(
             move |_: &mut BeforeTransmitInterceptorContextMut<'_>, cfg: &mut ConfigBag| {
-                cfg.set_request_time(request_time);
+                cfg.interceptor_state().set_request_time(request_time);
             },
         );
         interceptor

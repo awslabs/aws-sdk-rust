@@ -110,7 +110,7 @@ mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
-    use aws_smithy_types::config_bag::ConfigBag;
+    use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_smithy_types::type_erasure::TypeErasedBox;
 
@@ -138,14 +138,15 @@ mod tests {
     fn test_overridden_ua() {
         let mut context = context();
 
-        let mut config = ConfigBag::base();
-        config.put(AwsUserAgent::for_tests());
-        config.put(ApiMetadata::new("unused", "unused"));
+        let mut layer = Layer::new("test");
+        layer.put(AwsUserAgent::for_tests());
+        layer.put(ApiMetadata::new("unused", "unused"));
+        let mut cfg = ConfigBag::of_layers(vec![layer]);
 
         let interceptor = UserAgentInterceptor::new();
         let mut ctx = Into::into(&mut context);
         interceptor
-            .modify_before_signing(&mut ctx, &mut config)
+            .modify_before_signing(&mut ctx, &mut cfg)
             .unwrap();
 
         let header = expect_header(&context, "user-agent");
@@ -163,8 +164,9 @@ mod tests {
         let mut context = context();
 
         let api_metadata = ApiMetadata::new("some-service", "some-version");
-        let mut config = ConfigBag::base();
-        config.put(api_metadata.clone());
+        let mut layer = Layer::new("test");
+        layer.put(api_metadata.clone());
+        let mut config = ConfigBag::of_layers(vec![layer]);
 
         let interceptor = UserAgentInterceptor::new();
         let mut ctx = Into::into(&mut context);
@@ -192,9 +194,10 @@ mod tests {
         let mut context = context();
 
         let api_metadata = ApiMetadata::new("some-service", "some-version");
-        let mut config = ConfigBag::base();
-        config.put(api_metadata);
-        config.put(AppName::new("my_awesome_app").unwrap());
+        let mut layer = Layer::new("test");
+        layer.put(api_metadata);
+        layer.put(AppName::new("my_awesome_app").unwrap());
+        let mut config = ConfigBag::of_layers(vec![layer]);
 
         let interceptor = UserAgentInterceptor::new();
         let mut ctx = Into::into(&mut context);

@@ -100,7 +100,7 @@ pub(super) fn orchestrate_endpoint(
     apply_endpoint(request, &endpoint, endpoint_prefix)?;
 
     // Make the endpoint config available to interceptors
-    cfg.put(endpoint);
+    cfg.interceptor_state().put(endpoint);
     Ok(())
 }
 

@@ -166,7 +166,7 @@ mod tests {
     use crate::request_info::RequestPairs;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
-    use aws_smithy_types::config_bag::ConfigBag;
+    use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_smithy_types::type_erasure::TypeErasedBox;
@@ -190,13 +190,14 @@ mod tests {
         context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
 
-        let mut config = ConfigBag::base();
-        config.put(RetryConfig::standard());
-        config.put(
+        let mut layer = Layer::new("test");
+        layer.put(RetryConfig::standard());
+        layer.put(
             TimeoutConfig::builder()
                 .read_timeout(Duration::from_secs(30))
                 .build(),
         );
+        let mut config = ConfigBag::of_layers(vec![layer]);
 
         let _ = context.take_input();
         context.enter_before_transmit_phase();

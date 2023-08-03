@@ -465,7 +465,6 @@ async fn build_provider_chain(
 
 #[cfg(test)]
 mod test {
-
     use crate::profile::credentials::Builder;
     use crate::test_case::TestEnvironment;
 

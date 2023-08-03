@@ -20,6 +20,16 @@ pub enum ShouldAttempt {
     YesAfterDelay(Duration),
 }
 
+#[cfg(feature = "test-util")]
+impl ShouldAttempt {
+    pub fn expect_delay(self) -> Duration {
+        match self {
+            ShouldAttempt::YesAfterDelay(delay) => delay,
+            _ => panic!("Expected this to be the `YesAfterDelay` variant but it was the `{self:?}` variant instead"),
+        }
+    }
+}
+
 pub trait RetryStrategy: Send + Sync + Debug {
     fn should_attempt_initial_request(&self, cfg: &ConfigBag) -> Result<ShouldAttempt, BoxError>;
 
@@ -31,7 +41,7 @@ pub trait RetryStrategy: Send + Sync + Debug {
 }
 
 #[non_exhaustive]
-#[derive(Eq, PartialEq, Debug)]
+#[derive(Clone, Eq, PartialEq, Debug)]
 pub enum RetryReason {
     Error(ErrorKind),
     Explicit(Duration),
@@ -72,10 +82,10 @@ impl RetryClassifiers {
 }
 
 impl ClassifyRetry for RetryClassifiers {
-    fn classify_retry(&self, error: &InterceptorContext) -> Option<RetryReason> {
+    fn classify_retry(&self, ctx: &InterceptorContext) -> Option<RetryReason> {
         // return the first non-None result
         self.inner.iter().find_map(|cr| {
-            let maybe_reason = cr.classify_retry(error);
+            let maybe_reason = cr.classify_retry(ctx);
 
             match maybe_reason.as_ref() {
                 Some(reason) => trace!(

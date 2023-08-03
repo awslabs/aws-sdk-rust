@@ -78,7 +78,7 @@ impl Interceptor for ServiceClockSkewInterceptor {
             }
         };
         let skew = ServiceClockSkew::new(calculate_skew(time_sent, time_received));
-        cfg.put(skew);
+        cfg.interceptor_state().put(skew);
         Ok(())
     }
 }

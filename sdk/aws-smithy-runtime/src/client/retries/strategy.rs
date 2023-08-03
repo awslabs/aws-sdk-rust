@@ -6,7 +6,7 @@
 #[cfg(feature = "test-util")]
 mod fixed_delay;
 mod never;
-mod standard;
+pub(crate) mod standard;
 
 #[cfg(feature = "test-util")]
 pub use fixed_delay::FixedDelayRetryStrategy;

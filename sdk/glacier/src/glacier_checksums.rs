@@ -110,7 +110,7 @@ fn compute_hash_tree(mut hashes: Vec<Digest>) -> Digest {
         "even an empty file will produce a digest. this function assumes that hashes is non-empty"
     );
     while hashes.len() > 1 {
-        let next = hashes.chunks(2).into_iter().map(|chunk| match *chunk {
+        let next = hashes.chunks(2).map(|chunk| match *chunk {
             [left, right] => {
                 let mut ctx = Context::new(&SHA256);
                 ctx.update(left.as_ref());

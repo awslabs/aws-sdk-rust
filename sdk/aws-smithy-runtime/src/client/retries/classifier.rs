@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
+use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
 use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryReason};
 use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
 use std::borrow::Cow;
@@ -76,17 +76,17 @@ where
             Ok(_) => return None,
             Err(err) => err,
         };
-        // Check that the error is an operation error
-        let error = error.as_operation_error()?;
-        // Downcast the error
-        let error = error.downcast_ref::<SdkError<E>>()?;
+
         match error {
-            SdkError::TimeoutError(_) => Some(RetryReason::Error(ErrorKind::TransientError)),
-            SdkError::ResponseError { .. } => Some(RetryReason::Error(ErrorKind::TransientError)),
-            SdkError::DispatchFailure(err) if (err.is_timeout() || err.is_io()) => {
+            OrchestratorError::Response { .. } | OrchestratorError::Timeout { .. } => {
                 Some(RetryReason::Error(ErrorKind::TransientError))
             }
-            SdkError::DispatchFailure(err) => err.is_other().map(RetryReason::Error),
+            OrchestratorError::Connector { err } if err.is_timeout() || err.is_io() => {
+                Some(RetryReason::Error(ErrorKind::TransientError))
+            }
+            OrchestratorError::Connector { err } if err.is_other().is_some() => {
+                err.is_other().map(RetryReason::Error)
+            }
             _ => None,
         }
     }
@@ -152,8 +152,6 @@ mod test {
         HttpStatusCodeClassifier, ModeledAsRetryableClassifier,
     };
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::operation;
-    use aws_smithy_http::result::SdkError;
     use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
     use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
     use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryReason};
@@ -242,11 +240,10 @@ mod test {
     #[test]
     fn classify_response_error() {
         let policy = SmithyErrorClassifier::<UnmodeledError>::new();
-        let test_response = http::Response::new("OK").map(SdkBody::from);
-        let err: SdkError<UnmodeledError> =
-            SdkError::response_error(UnmodeledError, operation::Response::new(test_response));
         let mut ctx = InterceptorContext::new(TypeErasedBox::new("doesntmatter"));
-        ctx.set_output_or_error(Err(OrchestratorError::operation(TypeErasedError::new(err))));
+        ctx.set_output_or_error(Err(OrchestratorError::response(
+            "I am a response error".into(),
+        )));
         assert_eq!(
             policy.classify_retry(&ctx),
             Some(RetryReason::Error(ErrorKind::TransientError)),
@@ -256,9 +253,10 @@ mod test {
     #[test]
     fn test_timeout_error() {
         let policy = SmithyErrorClassifier::<UnmodeledError>::new();
-        let err: SdkError<UnmodeledError> = SdkError::timeout_error("blah");
         let mut ctx = InterceptorContext::new(TypeErasedBox::new("doesntmatter"));
-        ctx.set_output_or_error(Err(OrchestratorError::operation(TypeErasedError::new(err))));
+        ctx.set_output_or_error(Err(OrchestratorError::timeout(
+            "I am a timeout error".into(),
+        )));
         assert_eq!(
             policy.classify_retry(&ctx),
             Some(RetryReason::Error(ErrorKind::TransientError)),

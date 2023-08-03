@@ -9,6 +9,7 @@
 //! with the following properties:
 //! 1. A new layer of configuration may be applied onto an existing configuration structure without modifying it or taking ownership.
 //! 2. No lifetime shenanigans to deal with
+mod storable;
 mod typeid_map;
 
 use crate::config_bag::typeid_map::TypeIdMap;
@@ -18,17 +19,18 @@ use std::borrow::Cow;
 use std::fmt::{Debug, Formatter};
 use std::iter::Rev;
 use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
-use std::slice;
+use std::ops::Deref;
 use std::slice::Iter;
 use std::sync::Arc;
+
+pub use storable::{AppendItemIter, Storable, Store, StoreAppend, StoreReplace};
 
 /// Layered Configuration Structure
 ///
 /// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
 #[must_use]
 pub struct ConfigBag {
-    head: Layer,
+    interceptor_state: Layer,
     tail: Vec<FrozenLayer>,
 }
 
@@ -81,100 +83,6 @@ impl<T: Default> Default for Value<T> {
 pub struct Layer {
     name: Cow<'static, str>,
     props: TypeIdMap<TypeErasedBox>,
-}
-
-/// Trait defining how types can be stored and loaded from the config bag
-pub trait Store: Sized + Send + Sync + 'static {
-    /// Denote the returned type when loaded from the config bag
-    type ReturnedType<'a>: Send + Sync;
-    /// Denote the stored type when stored into the config bag
-    type StoredType: Send + Sync + Debug;
-
-    /// Create a returned type from an iterable of items
-    fn merge_iter(iter: ItemIter<'_, Self>) -> Self::ReturnedType<'_>;
-}
-
-/// Store an item in the config bag by replacing the existing value
-#[non_exhaustive]
-pub struct StoreReplace<U>(PhantomData<U>);
-impl<U> Debug for StoreReplace<U> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StoreReplace")
-    }
-}
-
-/// Store an item in the config bag by effectively appending it to a list
-#[non_exhaustive]
-pub struct StoreAppend<U>(PhantomData<U>);
-impl<U> Debug for StoreAppend<U> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StoreAppend")
-    }
-}
-
-/// Trait that marks the implementing types as able to be stored in the config bag
-pub trait Storable: Send + Sync + Debug + 'static {
-    /// Specify how an item is stored in the config bag, e.g. [`StoreReplace`] and [`StoreAppend`]
-    type Storer: Store;
-}
-
-impl<U: Send + Sync + Debug + 'static> Store for StoreReplace<U> {
-    type ReturnedType<'a> = Option<&'a U>;
-    type StoredType = Value<U>;
-
-    fn merge_iter(mut iter: ItemIter<'_, Self>) -> Self::ReturnedType<'_> {
-        iter.next().and_then(|item| match item {
-            Value::Set(item) => Some(item),
-            Value::ExplicitlyUnset(_) => None,
-        })
-    }
-}
-
-impl<U: Send + Sync + Debug + 'static> Store for StoreAppend<U> {
-    type ReturnedType<'a> = AppendItemIter<'a, U>;
-    type StoredType = Value<Vec<U>>;
-
-    fn merge_iter(iter: ItemIter<'_, Self>) -> Self::ReturnedType<'_> {
-        AppendItemIter {
-            inner: iter,
-            cur: None,
-        }
-    }
-}
-
-/// Iterator of items returned by [`StoreAppend`]
-pub struct AppendItemIter<'a, U> {
-    inner: ItemIter<'a, StoreAppend<U>>,
-    cur: Option<Rev<slice::Iter<'a, U>>>,
-}
-impl<'a, U> Debug for AppendItemIter<'a, U> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AppendItemIter")
-    }
-}
-
-impl<'a, U: 'a> Iterator for AppendItemIter<'a, U>
-where
-    U: Send + Sync + Debug + 'static,
-{
-    type Item = &'a U;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        if let Some(buf) = &mut self.cur {
-            match buf.next() {
-                Some(item) => return Some(item),
-                None => self.cur = None,
-            }
-        }
-        match self.inner.next() {
-            None => None,
-            Some(Value::Set(u)) => {
-                self.cur = Some(u.iter().rev());
-                self.next()
-            }
-            Some(Value::ExplicitlyUnset(_)) => None,
-        }
-    }
 }
 
 impl Debug for Layer {
@@ -269,20 +177,25 @@ impl Layer {
 
     /// This can only be used for types that use [`StoreAppend`]
     /// ```
-    /// use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend, StoreReplace};
-    /// let mut bag = ConfigBag::base();
+    /// use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreAppend, StoreReplace};
+    /// let mut layer_1 = Layer::new("example");
     /// #[derive(Debug, PartialEq, Eq)]
     /// struct Interceptor(&'static str);
     /// impl Storable for Interceptor {
     ///     type Storer = StoreAppend<Interceptor>;
     /// }
     ///
-    /// bag.store_append(Interceptor("123"));
-    /// bag.store_append(Interceptor("456"));
+    /// layer_1.store_append(Interceptor("321"));
+    /// layer_1.store_append(Interceptor("654"));
+    ///
+    /// let mut layer_2 = Layer::new("second layer");
+    /// layer_2.store_append(Interceptor("987"));
+    ///
+    /// let bag = ConfigBag::of_layers(vec![layer_1, layer_2]);
     ///
     /// assert_eq!(
     ///     bag.load::<Interceptor>().collect::<Vec<_>>(),
-    ///     vec![&Interceptor("456"), &Interceptor("123")]
+    ///     vec![&Interceptor("987"), &Interceptor("654"), &Interceptor("321")]
     /// );
     /// ```
     pub fn store_append<T>(&mut self, item: T) -> &mut Self
@@ -294,6 +207,17 @@ impl Layer {
             v @ Value::ExplicitlyUnset(_) => *v = Value::Set(vec![item]),
         }
         self
+    }
+
+    /// Clears the value of type `T` from the config bag
+    ///
+    /// This internally marks the item of type `T` as cleared as opposed to wiping it out from the
+    /// config bag.
+    pub fn clear<T>(&mut self)
+    where
+        T: Storable<Storer = StoreAppend<T>>,
+    {
+        self.put_directly::<StoreAppend<T>>(Value::ExplicitlyUnset(type_name::<T>()));
     }
 
     /// Retrieves the value of type `T` from this layer if exists
@@ -334,21 +258,6 @@ impl FrozenLayer {
     }
 }
 
-// TODO(refactor of configbag): consider removing these Deref impls—they exist to keep existing code compiling
-impl Deref for ConfigBag {
-    type Target = Layer;
-
-    fn deref(&self) -> &Self::Target {
-        &self.head
-    }
-}
-
-impl DerefMut for ConfigBag {
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.head
-    }
-}
-
 impl ConfigBag {
     /// Create a new config bag "base".
     ///
@@ -357,38 +266,34 @@ impl ConfigBag {
     /// of configuration may then be "frozen" (made immutable) by calling [`ConfigBag::freeze`].
     pub fn base() -> Self {
         ConfigBag {
-            head: Layer {
-                name: Cow::Borrowed("base"),
+            interceptor_state: Layer {
+                name: Cow::Borrowed("interceptor_state"),
                 props: Default::default(),
             },
             tail: vec![],
         }
     }
 
-    pub fn push_layer(&mut self, layer: &FrozenLayer) -> &mut Self {
-        if !self.head.empty() {
-            self.freeze_head();
+    pub fn of_layers(layers: Vec<Layer>) -> Self {
+        let mut bag = ConfigBag::base();
+        for layer in layers {
+            bag.push_layer(layer);
         }
-        self.tail.push(layer.clone());
+        bag
+    }
+
+    pub fn push_layer(&mut self, layer: Layer) -> &mut Self {
+        self.tail.push(layer.freeze());
         self
     }
 
-    fn freeze_head(&mut self) {
-        let new_head = Layer::new("scratch");
-        let old_head = std::mem::replace(&mut self.head, new_head);
-        self.tail.push(old_head.freeze());
+    pub fn push_shared_layer(&mut self, layer: FrozenLayer) -> &mut Self {
+        self.tail.push(layer);
+        self
     }
 
-    /// Clears the value of type `T` from the config bag
-    ///
-    /// This internally marks the item of type `T` as cleared as opposed to wiping it out from the
-    /// config bag.
-    pub fn clear<T>(&mut self)
-    where
-        T: Storable<Storer = StoreAppend<T>>,
-    {
-        self.head
-            .put_directly::<StoreAppend<T>>(Value::ExplicitlyUnset(type_name::<T>()));
+    pub fn interceptor_state(&mut self) -> &mut Layer {
+        &mut self.interceptor_state
     }
 
     /// Load a value (or values) of type `T` depending on how `T` implements [`Storable`]
@@ -410,19 +315,19 @@ impl ConfigBag {
         // this code looks weird to satisfy the borrow checker—we can't keep the result of `get_mut`
         // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately
         // store, the value, then pull it right back
-        if matches!(self.head.get_mut::<StoreReplace<T>>(), None) {
+        if matches!(self.interceptor_state.get_mut::<StoreReplace<T>>(), None) {
             let new_item = match self.tail.iter().find_map(|b| b.load::<T>()) {
                 Some(item) => item.clone(),
                 None => return None,
             };
-            self.store_put(new_item);
+            self.interceptor_state.store_put(new_item);
             self.get_mut()
         } else if matches!(
-            self.head.get::<StoreReplace<T>>(),
+            self.interceptor_state.get::<StoreReplace<T>>(),
             Some(Value::ExplicitlyUnset(_))
         ) {
             None
-        } else if let Some(Value::Set(t)) = self.head.get_mut::<StoreReplace<T>>() {
+        } else if let Some(Value::Set(t)) = self.interceptor_state.get_mut::<StoreReplace<T>>() {
             Some(t)
         } else {
             unreachable!()
@@ -457,7 +362,7 @@ impl ConfigBag {
         // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately
         // store, the value, then pull it right back
         if self.get_mut::<T>().is_none() {
-            self.store_put((default)());
+            self.interceptor_state.store_put((default)());
             return self
                 .get_mut()
                 .expect("item was just stored in the top layer");
@@ -491,10 +396,13 @@ impl ConfigBag {
     ) -> ConfigBag {
         let mut new_layer = Layer::new(name);
         next(&mut new_layer);
-        let ConfigBag { head, mut tail } = self;
+        let ConfigBag {
+            interceptor_state: head,
+            mut tail,
+        } = self;
         tail.push(head.freeze());
         ConfigBag {
-            head: new_layer,
+            interceptor_state: new_layer,
             tail,
         }
     }
@@ -518,7 +426,7 @@ impl ConfigBag {
 
     fn layers(&self) -> BagIter<'_> {
         BagIter {
-            head: Some(&self.head),
+            head: Some(&self.interceptor_state),
             tail: self.tail.iter().rev(),
         }
     }
@@ -599,7 +507,7 @@ mod test {
         let mut base_bag = ConfigBag::base()
             .with_fn("a", layer_a)
             .with_fn("b", layer_b);
-        base_bag.put(Prop3);
+        base_bag.interceptor_state().put(Prop3);
         assert!(base_bag.get::<Prop1>().is_some());
 
         #[derive(Debug)]
@@ -640,27 +548,29 @@ mod test {
         assert_eq!(operation_config.get::<SigningName>().unwrap().0, "s3");
 
         let mut open_bag = operation_config.with_fn("my_custom_info", |_bag: &mut Layer| {});
-        open_bag.put("foo");
+        open_bag.interceptor_state().put("foo");
 
         assert_eq!(open_bag.layers().count(), 4);
     }
 
     #[test]
     fn store_append() {
-        let mut bag = ConfigBag::base();
+        let mut layer = Layer::new("test");
         #[derive(Debug, PartialEq, Eq)]
         struct Interceptor(&'static str);
         impl Storable for Interceptor {
             type Storer = StoreAppend<Interceptor>;
         }
 
-        bag.clear::<Interceptor>();
+        layer.clear::<Interceptor>();
         // you can only call store_append because interceptor is marked with a vec
-        bag.store_append(Interceptor("123"));
-        bag.store_append(Interceptor("456"));
+        layer.store_append(Interceptor("123"));
+        layer.store_append(Interceptor("456"));
 
-        let mut bag = bag.add_layer("next");
-        bag.store_append(Interceptor("789"));
+        let mut second_layer = Layer::new("next");
+        second_layer.store_append(Interceptor("789"));
+
+        let mut bag = ConfigBag::of_layers(vec![layer, second_layer]);
 
         assert_eq!(
             bag.load::<Interceptor>().collect::<Vec<_>>(),
@@ -671,7 +581,9 @@ mod test {
             ]
         );
 
-        bag.clear::<Interceptor>();
+        let mut final_layer = Layer::new("final");
+        final_layer.clear::<Interceptor>();
+        bag.push_layer(final_layer);
         assert_eq!(bag.load::<Interceptor>().count(), 0);
     }
 
@@ -684,12 +596,13 @@ mod test {
         }
         let mut expected = vec![];
         let mut bag = ConfigBag::base();
-        for layer in 0..100 {
-            bag = bag.add_layer(format!("{}", layer));
+        for layer_idx in 0..100 {
+            let mut layer = Layer::new(format!("{}", layer_idx));
             for item in 0..100 {
-                expected.push(TestItem(layer, item));
-                bag.store_append(TestItem(layer, item));
+                expected.push(TestItem(layer_idx, item));
+                layer.store_append(TestItem(layer_idx, item));
             }
+            bag.push_layer(layer);
         }
         expected.reverse();
         assert_eq!(
@@ -718,12 +631,17 @@ mod test {
 
         let mut bag_1 = ConfigBag::base();
         let mut bag_2 = ConfigBag::base();
-        bag_1.push_layer(&layer_1).push_layer(&layer_2);
-        bag_2.push_layer(&layer_2).push_layer(&layer_1);
+        bag_1
+            .push_shared_layer(layer_1.clone())
+            .push_shared_layer(layer_2.clone());
+        bag_2.push_shared_layer(layer_2).push_shared_layer(layer_1);
 
         // bags have same layers but in different orders
         assert_eq!(bag_1.load::<Foo>(), Some(&Foo(1)));
         assert_eq!(bag_2.load::<Foo>(), Some(&Foo(0)));
+
+        bag_1.interceptor_state().put(Foo(3));
+        assert_eq!(bag_1.load::<Foo>(), Some(&Foo(3)));
     }
 
     #[test]
@@ -749,7 +667,7 @@ mod test {
         let new_ref = bag.load::<Foo>().unwrap();
         assert_eq!(new_ref, &Foo(2));
 
-        bag.unset::<Foo>();
+        bag.interceptor_state().unset::<Foo>();
         // if it was unset, we can't clone the current one, that would be wrong
         assert_eq!(bag.get_mut::<Foo>(), None);
         assert_eq!(bag.get_mut_or_default::<Foo>(), &Foo(0));

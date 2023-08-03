@@ -506,6 +506,7 @@ mod tests {
     use super::*;
     use aws_credential_types::Credentials;
     use aws_sigv4::http_request::SigningSettings;
+    use aws_smithy_types::config_bag::Layer;
     use aws_types::region::SigningRegion;
     use aws_types::SigningService;
     use std::collections::HashMap;
@@ -556,8 +557,8 @@ mod tests {
 
     #[test]
     fn endpoint_config_overrides_region_and_service() {
-        let mut cfg = ConfigBag::base();
-        cfg.put(SigV4OperationSigningConfig {
+        let mut layer = Layer::new("test");
+        layer.put(SigV4OperationSigningConfig {
             region: Some(SigningRegion::from(Region::new("override-this-region"))),
             service: Some(SigningService::from_static("override-this-service")),
             signing_options: Default::default(),
@@ -577,6 +578,7 @@ mod tests {
         });
         let config = AuthSchemeEndpointConfig::new(Some(&config));
 
+        let cfg = ConfigBag::of_layers(vec![layer]);
         let result =
             SigV4HttpRequestSigner::extract_operation_config(config, &cfg).expect("success");
 
@@ -593,12 +595,13 @@ mod tests {
 
     #[test]
     fn endpoint_config_supports_fallback_when_region_or_service_are_unset() {
-        let mut cfg = ConfigBag::base();
-        cfg.put(SigV4OperationSigningConfig {
+        let mut layer = Layer::new("test");
+        layer.put(SigV4OperationSigningConfig {
             region: Some(SigningRegion::from(Region::new("us-east-1"))),
             service: Some(SigningService::from_static("qldb")),
             signing_options: Default::default(),
         });
+        let cfg = ConfigBag::of_layers(vec![layer]);
         let config = AuthSchemeEndpointConfig::empty();
 
         let result =

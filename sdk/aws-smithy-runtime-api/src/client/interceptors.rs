@@ -959,7 +959,8 @@ mod tests {
         interceptors
             .read_before_transmit(&mut InterceptorContext::new(Input::new(5)), &mut cfg)
             .expect_err("interceptor returns error");
-        cfg.put(disable_interceptor::<PanicInterceptor>("test"));
+        cfg.interceptor_state()
+            .put(disable_interceptor::<PanicInterceptor>("test"));
         assert_eq!(
             interceptors
                 .interceptors()

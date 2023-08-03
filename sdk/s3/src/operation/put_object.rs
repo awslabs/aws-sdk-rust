@@ -206,7 +206,7 @@ impl PutObjectInput {
                 presigning_config.start_time(),
             ));
             props.insert(::aws_sigv4::http_request::SignableBody::UnsignedPayload);
-            let mut config = props
+            let config = props
                 .get_mut::<::aws_sig_auth::signer::OperationSigningConfig>()
                 .expect("signing config added by make_operation()");
             config.signature_type =

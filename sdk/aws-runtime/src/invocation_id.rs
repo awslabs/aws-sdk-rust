@@ -48,7 +48,8 @@ impl Interceptor for InvocationIdInterceptor {
             .map(|gen| gen.generate())
             .transpose()?
             .flatten();
-        cfg.put::<InvocationId>(id.unwrap_or_default());
+        cfg.interceptor_state()
+            .put::<InvocationId>(id.unwrap_or_default());
 
         Ok(())
     }

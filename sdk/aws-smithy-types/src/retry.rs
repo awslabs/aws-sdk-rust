@@ -143,6 +143,7 @@ pub struct RetryConfigBuilder {
     mode: Option<RetryMode>,
     max_attempts: Option<u32>,
     initial_backoff: Option<Duration>,
+    max_backoff: Option<Duration>,
     reconnect_mode: Option<ReconnectMode>,
 }
 
@@ -212,6 +213,18 @@ impl RetryConfigBuilder {
         self
     }
 
+    /// Set the max_backoff duration. This duration should be non-zero.
+    pub fn set_max_backoff(&mut self, max_backoff: Option<Duration>) -> &mut Self {
+        self.max_backoff = max_backoff;
+        self
+    }
+
+    /// Set the max_backoff duration. This duration should be non-zero.
+    pub fn max_backoff(mut self, max_backoff: Duration) -> Self {
+        self.set_max_backoff(Some(max_backoff));
+        self
+    }
+
     /// Merge two builders together. Values from `other` will only be used as a fallback for values
     /// from `self` Useful for merging configs from different sources together when you want to
     /// handle "precedence" per value instead of at the config level
@@ -233,6 +246,7 @@ impl RetryConfigBuilder {
             mode: self.mode.or(other.mode),
             max_attempts: self.max_attempts.or(other.max_attempts),
             initial_backoff: self.initial_backoff.or(other.initial_backoff),
+            max_backoff: self.max_backoff.or(other.max_backoff),
             reconnect_mode: self.reconnect_mode.or(other.reconnect_mode),
         }
     }
@@ -248,6 +262,7 @@ impl RetryConfigBuilder {
             reconnect_mode: self
                 .reconnect_mode
                 .unwrap_or(ReconnectMode::ReconnectOnTransientError),
+            max_backoff: self.max_backoff.unwrap_or_else(|| Duration::from_secs(20)),
         }
     }
 }
@@ -259,6 +274,7 @@ pub struct RetryConfig {
     mode: RetryMode,
     max_attempts: u32,
     initial_backoff: Duration,
+    max_backoff: Duration,
     reconnect_mode: ReconnectMode,
 }
 
@@ -286,6 +302,7 @@ impl RetryConfig {
             max_attempts: 3,
             initial_backoff: Duration::from_secs(1),
             reconnect_mode: ReconnectMode::ReconnectOnTransientError,
+            max_backoff: Duration::from_secs(20),
         }
     }
 

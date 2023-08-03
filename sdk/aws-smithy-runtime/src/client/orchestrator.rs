@@ -115,7 +115,7 @@ fn apply_configuration(
     runtime_plugins: &RuntimePlugins,
 ) -> Result<(), BoxError> {
     runtime_plugins.apply_client_configuration(cfg, interceptors.client_interceptors_mut())?;
-    continue_on_err!([ctx] =>interceptors.client_read_before_execution(ctx, cfg));
+    continue_on_err!([ctx] => interceptors.client_read_before_execution(ctx, cfg));
     runtime_plugins
         .apply_operation_configuration(cfg, interceptors.operation_interceptors_mut())?;
     continue_on_err!([ctx] => interceptors.operation_read_before_execution(ctx, cfg));
@@ -139,7 +139,7 @@ async fn try_op(
     {
         let request_serializer = cfg.request_serializer();
         let input = ctx.take_input().expect("input set at this point");
-        let request = halt_on_err!([ctx] => request_serializer.serialize_input(input, cfg));
+        let request = halt_on_err!([ctx] => request_serializer.serialize_input(input, cfg).map_err(OrchestratorError::other));
         ctx.set_request(request);
     }
 
@@ -150,7 +150,8 @@ async fn try_op(
         let loaded_body = halt_on_err!([ctx] => ByteStream::new(body).collect().await).into_bytes();
         *ctx.request_mut().as_mut().expect("set above").body_mut() =
             SdkBody::from(loaded_body.clone());
-        cfg.set_loaded_request_body(LoadedRequestBody::Loaded(loaded_body));
+        cfg.interceptor_state()
+            .set_loaded_request_body(LoadedRequestBody::Loaded(loaded_body));
     }
 
     // Before transmit
@@ -170,10 +171,10 @@ async fn try_op(
         // No, this request shouldn't be sent
         Ok(ShouldAttempt::No) => {
             let err: BoxError = "the retry strategy indicates that an initial request shouldn't be made, but it didn't specify why".into();
-            halt!([ctx] => err);
+            halt!([ctx] => OrchestratorError::other(err));
         }
         // No, we shouldn't make a request because...
-        Err(err) => halt!([ctx] => err),
+        Err(err) => halt!([ctx] => OrchestratorError::other(err)),
         Ok(ShouldAttempt::YesAfterDelay(_)) => {
             unreachable!("Delaying the initial request is currently unsupported. If this feature is important to you, please file an issue in GitHub.")
         }
@@ -182,7 +183,7 @@ async fn try_op(
     // Save a request checkpoint before we make the request. This will allow us to "rewind"
     // the request in the case of retry attempts.
     ctx.save_checkpoint();
-    for i in 0usize.. {
+    for i in 1usize.. {
         debug!("beginning attempt #{i}");
         // Break from the loop if we can't rewind the request's state. This will always succeed the
         // first time, but will fail on subsequent iterations if the request body wasn't retryable.
@@ -191,7 +192,7 @@ async fn try_op(
             break;
         }
         // Track which attempt we're currently on.
-        cfg.put::<RequestAttempts>(i.into());
+        cfg.interceptor_state().put::<RequestAttempts>(i.into());
         let attempt_timeout_config = cfg.maybe_timeout_config(TimeoutKind::OperationAttempt);
         let maybe_timeout = async {
             try_attempt(ctx, cfg, interceptors, stop_point).await;
@@ -200,19 +201,21 @@ async fn try_op(
         }
         .maybe_timeout_with_config(attempt_timeout_config)
         .await
-        .map_err(OrchestratorError::other);
+        .map_err(|err| OrchestratorError::timeout(err.into_source().unwrap()));
 
         // We continue when encountering a timeout error. The retry classifier will decide what to do with it.
         continue_on_err!([ctx] => maybe_timeout);
 
         let retry_strategy = cfg.retry_strategy();
+
         // If we got a retry strategy from the bag, ask it what to do.
         // If no strategy was set, we won't retry.
-        let should_attempt = halt_on_err!(
-            [ctx] => retry_strategy
-                .map(|rs| rs.should_attempt_retry(ctx, cfg))
-                .unwrap_or(Ok(ShouldAttempt::No)
-        ));
+        let should_attempt = match retry_strategy {
+            Some(retry_strategy) => halt_on_err!(
+                [ctx] => retry_strategy.should_attempt_retry(ctx, cfg).map_err(OrchestratorError::other)
+            ),
+            None => ShouldAttempt::No,
+        };
         match should_attempt {
             // Yes, let's retry the request
             ShouldAttempt::Yes => continue,
@@ -240,11 +243,11 @@ async fn try_attempt(
     stop_point: StopPoint,
 ) {
     halt_on_err!([ctx] => interceptors.read_before_attempt(ctx, cfg));
-    halt_on_err!([ctx] => orchestrate_endpoint(ctx, cfg));
+    halt_on_err!([ctx] => orchestrate_endpoint(ctx, cfg).map_err(OrchestratorError::other));
     halt_on_err!([ctx] => interceptors.modify_before_signing(ctx, cfg));
     halt_on_err!([ctx] => interceptors.read_before_signing(ctx, cfg));
 
-    halt_on_err!([ctx] => orchestrate_auth(ctx, cfg).await);
+    halt_on_err!([ctx] => orchestrate_auth(ctx, cfg).await.map_err(OrchestratorError::other));
 
     halt_on_err!([ctx] => interceptors.read_after_signing(ctx, cfg));
     halt_on_err!([ctx] => interceptors.modify_before_transmit(ctx, cfg));
@@ -260,7 +263,12 @@ async fn try_attempt(
     ctx.enter_transmit_phase();
     let call_result = halt_on_err!([ctx] => {
         let request = ctx.take_request().expect("set during serialization");
-        cfg.connection().call(request).await
+        cfg.connection().call(request).await.map_err(|err| {
+            match err.downcast() {
+                Ok(connector_error) => OrchestratorError::connector(*connector_error),
+                Err(box_err) => OrchestratorError::other(box_err)
+            }
+        })
     });
     ctx.set_response(call_result);
     ctx.enter_before_deserialization_phase();
@@ -278,7 +286,7 @@ async fn try_attempt(
             None => read_body(response)
                 .instrument(debug_span!("read_body"))
                 .await
-                .map_err(OrchestratorError::other)
+                .map_err(OrchestratorError::response)
                 .and_then(|_| response_deserializer.deserialize_nonstreaming(response)),
         }
     }
@@ -338,7 +346,7 @@ mod tests {
     };
     use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, OrchestratorError};
     use aws_smithy_runtime_api::client::runtime_plugin::{BoxError, RuntimePlugin, RuntimePlugins};
-    use aws_smithy_types::config_bag::ConfigBag;
+    use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
     use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
     use http::StatusCode;
     use std::sync::atomic::{AtomicBool, Ordering};
@@ -367,11 +375,8 @@ mod tests {
     struct TestOperationRuntimePlugin;
 
     impl RuntimePlugin for TestOperationRuntimePlugin {
-        fn configure(
-            &self,
-            cfg: &mut ConfigBag,
-            _interceptors: &mut InterceptorRegistrar,
-        ) -> Result<(), BoxError> {
+        fn config(&self) -> Option<FrozenLayer> {
+            let mut cfg = Layer::new("test operation");
             cfg.set_request_serializer(new_request_serializer());
             cfg.set_response_deserializer(new_response_deserializer());
             cfg.set_retry_strategy(NeverRetryStrategy::new());
@@ -379,7 +384,7 @@ mod tests {
             cfg.set_endpoint_resolver_params(StaticUriEndpointResolverParams::new().into());
             cfg.set_connection(OkConnector::new());
 
-            Ok(())
+            Some(cfg.freeze())
         }
     }
 
@@ -416,14 +421,8 @@ mod tests {
             struct FailingInterceptorsClientRuntimePlugin;
 
             impl RuntimePlugin for FailingInterceptorsClientRuntimePlugin {
-                fn configure(
-                    &self,
-                    _cfg: &mut ConfigBag,
-                    interceptors: &mut InterceptorRegistrar,
-                ) -> Result<(), BoxError> {
+                fn interceptors(&self, interceptors: &mut InterceptorRegistrar) {
                     interceptors.register(SharedInterceptor::new(FailingInterceptorA));
-
-                    Ok(())
                 }
             }
 
@@ -431,15 +430,9 @@ mod tests {
             struct FailingInterceptorsOperationRuntimePlugin;
 
             impl RuntimePlugin for FailingInterceptorsOperationRuntimePlugin {
-                fn configure(
-                    &self,
-                    _cfg: &mut ConfigBag,
-                    interceptors: &mut InterceptorRegistrar,
-                ) -> Result<(), BoxError> {
+                fn interceptors(&self, interceptors: &mut InterceptorRegistrar) {
                     interceptors.register(SharedInterceptor::new(FailingInterceptorB));
                     interceptors.register(SharedInterceptor::new(FailingInterceptorC));
-
-                    Ok(())
                 }
             }
 
@@ -447,7 +440,7 @@ mod tests {
             let runtime_plugins = RuntimePlugins::new()
                 .with_client_plugin(FailingInterceptorsClientRuntimePlugin)
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin)
+                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
                 .with_operation_plugin(FailingInterceptorsOperationRuntimePlugin);
             let actual = invoke(input, &runtime_plugins)
                 .await
@@ -702,22 +695,16 @@ mod tests {
             struct InterceptorsTestOperationRuntimePlugin;
 
             impl RuntimePlugin for InterceptorsTestOperationRuntimePlugin {
-                fn configure(
-                    &self,
-                    _cfg: &mut ConfigBag,
-                    interceptors: &mut InterceptorRegistrar,
-                ) -> Result<(), BoxError> {
+                fn interceptors(&self, interceptors: &mut InterceptorRegistrar) {
                     interceptors.register(SharedInterceptor::new(OriginInterceptor));
                     interceptors.register(SharedInterceptor::new(DestinationInterceptor));
-
-                    Ok(())
                 }
             }
 
             let input = TypeErasedBox::new(Box::new(()));
             let runtime_plugins = RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin)
+                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
                 .with_operation_plugin(InterceptorsTestOperationRuntimePlugin);
             let actual = invoke(input, &runtime_plugins)
                 .await
@@ -965,7 +952,7 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin)
+                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
         };
 
         // StopPoint::None should result in a response getting set since orchestration doesn't stop
@@ -1043,15 +1030,14 @@ mod tests {
             interceptor: TestInterceptor,
         }
         impl RuntimePlugin for TestInterceptorRuntimePlugin {
-            fn configure(
-                &self,
-                cfg: &mut ConfigBag,
-                interceptors: &mut InterceptorRegistrar,
-            ) -> Result<(), BoxError> {
-                cfg.put(self.interceptor.clone());
+            fn config(&self) -> Option<FrozenLayer> {
+                let mut layer = Layer::new("test");
+                layer.put(self.interceptor.clone());
+                Some(layer.freeze())
+            }
 
+            fn interceptors(&self, interceptors: &mut InterceptorRegistrar) {
                 interceptors.register(SharedInterceptor::new(self.interceptor.clone()));
-                Ok(())
             }
         }
 
@@ -1059,7 +1045,7 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin)
+                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
                 .with_operation_plugin(TestInterceptorRuntimePlugin {
                     interceptor: interceptor.clone(),
                 })
