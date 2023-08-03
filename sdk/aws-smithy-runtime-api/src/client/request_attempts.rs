@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
+
 #[derive(Debug, Clone, Copy)]
 pub struct RequestAttempts {
     attempts: usize,
@@ -17,6 +19,10 @@ impl RequestAttempts {
     pub fn attempts(&self) -> usize {
         self.attempts
     }
+}
+
+impl Storable for RequestAttempts {
+    type Storer = StoreReplace<Self>;
 }
 
 impl From<usize> for RequestAttempts {

@@ -4,7 +4,7 @@
  */
 
 use crate::client::interceptors::context::InterceptorContext;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt::Debug;
 use std::time::Duration;
 use tracing::trace;
@@ -37,6 +37,33 @@ pub trait RetryStrategy: Send + Sync + Debug {
         context: &InterceptorContext,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError>;
+}
+
+#[derive(Debug)]
+pub struct DynRetryStrategy(Box<dyn RetryStrategy>);
+
+impl DynRetryStrategy {
+    pub fn new(retry_strategy: impl RetryStrategy + 'static) -> Self {
+        Self(Box::new(retry_strategy))
+    }
+}
+
+impl RetryStrategy for DynRetryStrategy {
+    fn should_attempt_initial_request(&self, cfg: &ConfigBag) -> Result<ShouldAttempt, BoxError> {
+        self.0.should_attempt_initial_request(cfg)
+    }
+
+    fn should_attempt_retry(
+        &self,
+        context: &InterceptorContext,
+        cfg: &ConfigBag,
+    ) -> Result<ShouldAttempt, BoxError> {
+        self.0.should_attempt_retry(context, cfg)
+    }
+}
+
+impl Storable for DynRetryStrategy {
+    type Storer = StoreReplace<Self>;
 }
 
 #[non_exhaustive]
@@ -78,6 +105,10 @@ impl RetryClassifiers {
 
     // TODO(https://github.com/awslabs/smithy-rs/issues/2632) make a map function so users can front-run or second-guess the classifier's decision
     // pub fn map_classifiers(mut self, fun: Fn() -> RetryClassifiers)
+}
+
+impl Storable for RetryClassifiers {
+    type Storer = StoreReplace<Self>;
 }
 
 impl ClassifyRetry for RetryClassifiers {

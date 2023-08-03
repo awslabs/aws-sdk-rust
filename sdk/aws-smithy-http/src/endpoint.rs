@@ -124,6 +124,10 @@ impl EndpointPrefix {
     }
 }
 
+impl Storable for EndpointPrefix {
+    type Storer = StoreReplace<Self>;
+}
+
 /// Apply `endpoint` to `uri`
 ///
 /// This method mutates `uri` by setting the `endpoint` on it

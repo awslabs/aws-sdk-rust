@@ -119,7 +119,7 @@ impl RetryStrategy for StandardRetryStrategy {
         let output_or_error = ctx.output_or_error().expect(
             "This must never be called without reaching the point where the result exists.",
         );
-        let token_bucket = cfg.get::<TokenBucket>();
+        let token_bucket = cfg.load::<TokenBucket>();
         if output_or_error.is_ok() {
             tracing::debug!("request succeeded, no retry necessary");
             if let Some(tb) = token_bucket {
@@ -138,7 +138,7 @@ impl RetryStrategy for StandardRetryStrategy {
 
         // Check if we're out of attempts
         let request_attempts = cfg
-            .get::<RequestAttempts>()
+            .load::<RequestAttempts>()
             .expect("at least one request attempt is made before any retry is attempted")
             .attempts();
         if request_attempts >= self.max_attempts {
@@ -247,7 +247,7 @@ mod tests {
         layer.set_retry_classifiers(
             RetryClassifiers::new().with_classifier(AlwaysRetry(error_kind)),
         );
-        layer.put(RequestAttempts::new(current_request_attempts));
+        layer.store_put(RequestAttempts::new(current_request_attempts));
         let cfg = ConfigBag::of_layers(vec![layer]);
 
         (ctx, cfg)
@@ -374,16 +374,16 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(TokenBucket::default());
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::default());
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 495);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(2));
@@ -391,7 +391,7 @@ mod tests {
 
         ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
 
-        cfg.interceptor_state().put(RequestAttempts::new(3));
+        cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
         assert_eq!(token_bucket.available_permits(), 495);
@@ -404,22 +404,22 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(3);
-        cfg.interceptor_state().put(TokenBucket::default());
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::default());
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 495);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(2));
         assert_eq!(token_bucket.available_permits(), 490);
 
-        cfg.interceptor_state().put(RequestAttempts::new(3));
+        cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
         assert_eq!(token_bucket.available_permits(), 490);
@@ -432,16 +432,16 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(TokenBucket::new(5));
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::new(5));
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 0);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
         assert_eq!(token_bucket.available_permits(), 0);
@@ -457,16 +457,16 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(TokenBucket::new(100));
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::new(100));
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 90);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
@@ -474,7 +474,7 @@ mod tests {
 
         ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
 
-        cfg.interceptor_state().put(RequestAttempts::new(3));
+        cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
 
@@ -489,8 +489,9 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(usize::MAX);
-        cfg.interceptor_state().put(TokenBucket::new(PERMIT_COUNT));
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state()
+            .store_put(TokenBucket::new(PERMIT_COUNT));
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
         let mut attempt = 1;
 
@@ -501,7 +502,8 @@ mod tests {
                 panic!("This test should have completed by now (drain)");
             }
 
-            cfg.interceptor_state().put(RequestAttempts::new(attempt));
+            cfg.interceptor_state()
+                .store_put(RequestAttempts::new(attempt));
             let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
             assert!(matches!(should_retry, ShouldAttempt::YesAfterDelay(_)));
             attempt += 1;
@@ -519,7 +521,8 @@ mod tests {
                 panic!("This test should have completed by now (fillup)");
             }
 
-            cfg.interceptor_state().put(RequestAttempts::new(attempt));
+            cfg.interceptor_state()
+                .store_put(RequestAttempts::new(attempt));
             let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
             assert_eq!(no_retry, ShouldAttempt::No);
             attempt += 1;
@@ -536,34 +539,34 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(TokenBucket::default());
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::default());
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 495);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(2));
         assert_eq!(token_bucket.available_permits(), 490);
 
-        cfg.interceptor_state().put(RequestAttempts::new(3));
+        cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(4));
         assert_eq!(token_bucket.available_permits(), 485);
 
-        cfg.interceptor_state().put(RequestAttempts::new(4));
+        cfg.interceptor_state().store_put(RequestAttempts::new(4));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(8));
         assert_eq!(token_bucket.available_permits(), 480);
 
-        cfg.interceptor_state().put(RequestAttempts::new(5));
+        cfg.interceptor_state().store_put(RequestAttempts::new(5));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
         assert_eq!(token_bucket.available_permits(), 480);
@@ -578,34 +581,34 @@ mod tests {
             .with_max_attempts(5)
             .with_initial_backoff(Duration::from_secs(1))
             .with_max_backoff(Duration::from_secs(3));
-        cfg.interceptor_state().put(TokenBucket::default());
-        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
+        cfg.interceptor_state().store_put(TokenBucket::default());
+        let token_bucket = cfg.load::<TokenBucket>().unwrap().clone();
 
-        cfg.interceptor_state().put(RequestAttempts::new(1));
+        cfg.interceptor_state().store_put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 495);
 
-        cfg.interceptor_state().put(RequestAttempts::new(2));
+        cfg.interceptor_state().store_put(RequestAttempts::new(2));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(2));
         assert_eq!(token_bucket.available_permits(), 490);
 
-        cfg.interceptor_state().put(RequestAttempts::new(3));
+        cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(3));
         assert_eq!(token_bucket.available_permits(), 485);
 
-        cfg.interceptor_state().put(RequestAttempts::new(4));
+        cfg.interceptor_state().store_put(RequestAttempts::new(4));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         let dur = should_retry.expect_delay();
         assert_eq!(dur, Duration::from_secs(3));
         assert_eq!(token_bucket.available_permits(), 480);
 
-        cfg.interceptor_state().put(RequestAttempts::new(5));
+        cfg.interceptor_state().store_put(RequestAttempts::new(5));
         let no_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
         assert_eq!(no_retry, ShouldAttempt::No);
         assert_eq!(token_bucket.available_permits(), 480);

@@ -11,9 +11,10 @@ use crate::client::interceptors::context::{
     BeforeTransmitInterceptorContextRef, FinalizerInterceptorContextMut,
     FinalizerInterceptorContextRef, InterceptorContext,
 };
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend};
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend, StoreReplace};
 use aws_smithy_types::error::display::DisplayErrorContext;
 use context::{Error, Input, Output};
+use std::fmt;
 use std::fmt::{Debug, Formatter};
 use std::marker::PhantomData;
 use std::ops::Deref;
@@ -597,7 +598,7 @@ impl SharedInterceptor {
         Self {
             interceptor: Arc::new(interceptor),
             check_enabled: Arc::new(|conf: &ConfigBag| {
-                conf.get::<DisableInterceptor<T>>().is_none()
+                conf.load::<DisableInterceptor<T>>().is_none()
             }),
         }
     }
@@ -720,6 +721,13 @@ pub struct DisableInterceptor<T> {
     _t: PhantomData<T>,
     #[allow(unused)]
     cause: &'static str,
+}
+
+impl<T> Storable for DisableInterceptor<T>
+where
+    T: fmt::Debug + Send + Sync + 'static,
+{
+    type Storer = StoreReplace<Self>;
 }
 
 /// Disable an interceptor with a given cause
@@ -961,7 +969,7 @@ mod tests {
             .read_before_transmit(&mut InterceptorContext::new(Input::new(5)), &mut cfg)
             .expect_err("interceptor returns error");
         cfg.interceptor_state()
-            .put(disable_interceptor::<PanicInterceptor>("test"));
+            .store_put(disable_interceptor::<PanicInterceptor>("test"));
         assert_eq!(
             interceptors
                 .interceptors()

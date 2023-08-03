@@ -4,6 +4,7 @@
  */
 //! Smithy Endpoint Types
 
+use crate::config_bag::{Storable, StoreReplace};
 use crate::Document;
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -51,6 +52,10 @@ impl Endpoint {
     pub fn builder() -> Builder {
         Builder::new()
     }
+}
+
+impl Storable for Endpoint {
+    type Storer = StoreReplace<Self>;
 }
 
 #[derive(Debug, Clone)]

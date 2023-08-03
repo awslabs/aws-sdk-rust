@@ -43,7 +43,7 @@ impl RequestInfoInterceptor {
         cfg: &ConfigBag,
     ) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
         let request_attempts = cfg
-            .get::<RequestAttempts>()
+            .load::<RequestAttempts>()
             .map(|r_a| r_a.attempts())
             .unwrap_or(0);
         let request_attempts = request_attempts.to_string();
@@ -54,7 +54,7 @@ impl RequestInfoInterceptor {
         &self,
         cfg: &ConfigBag,
     ) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
-        if let Some(retry_config) = cfg.get::<RetryConfig>() {
+        if let Some(retry_config) = cfg.load::<RetryConfig>() {
             let max_attempts = retry_config.max_attempts().to_string();
             Some((Cow::Borrowed("max"), Cow::Owned(max_attempts)))
         } else {
@@ -63,9 +63,9 @@ impl RequestInfoInterceptor {
     }
 
     fn build_ttl_pair(&self, cfg: &ConfigBag) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
-        let timeout_config = cfg.get::<TimeoutConfig>()?;
+        let timeout_config = cfg.load::<TimeoutConfig>()?;
         let socket_read = timeout_config.read_timeout()?;
-        let estimated_skew: Duration = cfg.get::<ServiceClockSkew>().cloned()?.into();
+        let estimated_skew: Duration = cfg.load::<ServiceClockSkew>().cloned()?.into();
         let current_time = SystemTime::now();
         let ttl = current_time.checked_add(socket_read + estimated_skew)?;
         let mut timestamp = DateTime::from(ttl);
@@ -191,8 +191,8 @@ mod tests {
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
 
         let mut layer = Layer::new("test");
-        layer.put(RetryConfig::standard());
-        layer.put(
+        layer.store_put(RetryConfig::standard());
+        layer.store_put(
             TimeoutConfig::builder()
                 .read_timeout(Duration::from_secs(30))
                 .build(),

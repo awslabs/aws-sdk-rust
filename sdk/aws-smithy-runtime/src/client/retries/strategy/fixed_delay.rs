@@ -53,8 +53,8 @@ impl RetryStrategy for FixedDelayRetryStrategy {
         }
 
         // Check if we're out of attempts
-        let request_attempts: &RequestAttempts = cfg
-            .get()
+        let request_attempts = cfg
+            .load::<RequestAttempts>()
             .expect("at least one request attempt is made before any retry is attempted");
         if request_attempts.attempts() >= self.max_attempts as usize {
             tracing::trace!(
@@ -66,7 +66,7 @@ impl RetryStrategy for FixedDelayRetryStrategy {
         }
 
         let retry_classifiers = cfg
-            .get::<RetryClassifiers>()
+            .load::<RetryClassifiers>()
             .expect("a retry classifier is set");
         let retry_reason = retry_classifiers.classify_retry(ctx);
 

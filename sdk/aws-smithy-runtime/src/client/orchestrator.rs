@@ -20,7 +20,7 @@ use aws_smithy_runtime_api::client::interceptors::context::{
 };
 use aws_smithy_runtime_api::client::interceptors::Interceptors;
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, HttpResponse, LoadedRequestBody, OrchestratorError,
+    ConfigBagAccessors, HttpResponse, LoadedRequestBody, OrchestratorError, RequestSerializer,
 };
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::ShouldAttempt;
@@ -198,7 +198,8 @@ async fn try_op(
             break;
         }
         // Track which attempt we're currently on.
-        cfg.interceptor_state().put::<RequestAttempts>(i.into());
+        cfg.interceptor_state()
+            .store_put::<RequestAttempts>(i.into());
         let attempt_timeout_config = cfg.maybe_timeout_config(TimeoutKind::OperationAttempt);
         let maybe_timeout = async {
             try_attempt(ctx, cfg, interceptors, stop_point).await;
@@ -346,6 +347,10 @@ mod tests {
     use aws_smithy_runtime_api::client::interceptors::{
         Interceptor, InterceptorRegistrar, SharedInterceptor,
     };
+    use aws_smithy_runtime_api::client::orchestrator::{
+        DynConnection, DynEndpointResolver, DynResponseDeserializer, SharedRequestSerializer,
+    };
+    use aws_smithy_runtime_api::client::retries::DynRetryStrategy;
     use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, RuntimePlugins};
     use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
     use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
@@ -377,12 +382,16 @@ mod tests {
     impl RuntimePlugin for TestOperationRuntimePlugin {
         fn config(&self) -> Option<FrozenLayer> {
             let mut cfg = Layer::new("test operation");
-            cfg.set_request_serializer(new_request_serializer());
-            cfg.set_response_deserializer(new_response_deserializer());
-            cfg.set_retry_strategy(NeverRetryStrategy::new());
-            cfg.set_endpoint_resolver(StaticUriEndpointResolver::http_localhost(8080));
+            cfg.set_request_serializer(SharedRequestSerializer::new(new_request_serializer()));
+            cfg.set_response_deserializer(
+                DynResponseDeserializer::new(new_response_deserializer()),
+            );
+            cfg.set_retry_strategy(DynRetryStrategy::new(NeverRetryStrategy::new()));
+            cfg.set_endpoint_resolver(DynEndpointResolver::new(
+                StaticUriEndpointResolver::http_localhost(8080),
+            ));
             cfg.set_endpoint_resolver_params(StaticUriEndpointResolverParams::new().into());
-            cfg.set_connection(OkConnector::new());
+            cfg.set_connection(DynConnection::new(OkConnector::new()));
 
             Some(cfg.freeze())
         }
@@ -1030,12 +1039,6 @@ mod tests {
             interceptor: TestInterceptor,
         }
         impl RuntimePlugin for TestInterceptorRuntimePlugin {
-            fn config(&self) -> Option<FrozenLayer> {
-                let mut layer = Layer::new("test");
-                layer.put(self.interceptor.clone());
-                Some(layer.freeze())
-            }
-
             fn interceptors(&self, interceptors: &mut InterceptorRegistrar) {
                 interceptors.register(SharedInterceptor::new(self.interceptor.clone()));
             }

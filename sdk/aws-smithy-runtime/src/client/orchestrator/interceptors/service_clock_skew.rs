@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeDeserializationInterceptorContextMut;
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use std::time::{Duration, SystemTime};
@@ -25,6 +25,10 @@ impl ServiceClockSkew {
     pub fn skew(&self) -> Duration {
         self.inner
     }
+}
+
+impl Storable for ServiceClockSkew {
+    type Storer = StoreReplace<Self>;
 }
 
 impl From<ServiceClockSkew> for Duration {
@@ -78,7 +82,7 @@ impl Interceptor for ServiceClockSkewInterceptor {
             }
         };
         let skew = ServiceClockSkew::new(calculate_skew(time_sent, time_received));
-        cfg.interceptor_state().put(skew);
+        cfg.interceptor_state().store_put(skew);
         Ok(())
     }
 }

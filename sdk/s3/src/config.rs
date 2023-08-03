@@ -40,9 +40,9 @@ pub struct Config {
     #[allow(missing_docs)] // documentation missing in model
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    pub(crate) use_dual_stack: ::std::option::Option<::std::primitive::bool>,
+    pub(crate) use_dual_stack: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
-    pub(crate) use_fips: ::std::option::Option<::std::primitive::bool>,
+    pub(crate) use_fips: ::std::option::Option<bool>,
     http_connector: Option<::aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: ::std::option::Option<::aws_types::region::Region>,
     pub(crate) credentials_cache: ::aws_credential_types::cache::SharedCredentialsCache,
@@ -137,8 +137,8 @@ pub struct Builder {
     time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
     app_name: ::std::option::Option<::aws_types::app_name::AppName>,
     endpoint_url: ::std::option::Option<::std::string::String>,
-    use_dual_stack: ::std::option::Option<::std::primitive::bool>,
-    use_fips: ::std::option::Option<::std::primitive::bool>,
+    use_dual_stack: ::std::option::Option<bool>,
+    use_fips: ::std::option::Option<bool>,
     http_connector: Option<::aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: ::std::option::Option<::aws_types::region::Region>,
     credentials_provider:
@@ -464,25 +464,22 @@ impl Builder {
         self
     }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
-    pub fn use_dual_stack(mut self, use_dual_stack: impl Into<::std::primitive::bool>) -> Self {
+    pub fn use_dual_stack(mut self, use_dual_stack: impl Into<bool>) -> Self {
         self.set_use_dual_stack(Some(use_dual_stack.into()));
         self
     }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
-    pub fn set_use_dual_stack(
-        &mut self,
-        use_dual_stack: Option<::std::primitive::bool>,
-    ) -> &mut Self {
+    pub fn set_use_dual_stack(&mut self, use_dual_stack: Option<bool>) -> &mut Self {
         self.use_dual_stack = use_dual_stack;
         self
     }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
-    pub fn use_fips(mut self, use_fips: impl Into<::std::primitive::bool>) -> Self {
+    pub fn use_fips(mut self, use_fips: impl Into<bool>) -> Self {
         self.set_use_fips(Some(use_fips.into()));
         self
     }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
-    pub fn set_use_fips(&mut self, use_fips: Option<::std::primitive::bool>) -> &mut Self {
+    pub fn set_use_fips(&mut self, use_fips: Option<bool>) -> &mut Self {
         self.use_fips = use_fips;
         self
     }

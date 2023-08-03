@@ -5,6 +5,7 @@
 
 use aws_smithy_http::middleware::MapRequest;
 use aws_smithy_http::operation::Request;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_types::app_name::AppName;
 use aws_types::build_metadata::{OsFamily, BUILD_METADATA};
 use aws_types::os_shim_internal::Env;
@@ -211,6 +212,10 @@ impl AwsUserAgent {
     }
 }
 
+impl Storable for AwsUserAgent {
+    type Storer = StoreReplace<Self>;
+}
+
 #[derive(Clone, Copy, Debug)]
 struct SdkMetadata {
     name: &'static str,
@@ -244,6 +249,10 @@ impl fmt::Display for ApiMetadata {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "api/{}/{}", self.service_id, self.version)
     }
+}
+
+impl Storable for ApiMetadata {
+    type Storer = StoreReplace<Self>;
 }
 
 /// Error for when an user agent metadata doesn't meet character requirements.

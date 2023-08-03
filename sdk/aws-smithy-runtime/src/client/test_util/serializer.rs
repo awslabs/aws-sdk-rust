@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
 use aws_smithy_runtime_api::client::orchestrator::{
-    ConfigBagAccessors, HttpRequest, RequestSerializer,
+    ConfigBagAccessors, HttpRequest, RequestSerializer, SharedRequestSerializer,
 };
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
@@ -52,9 +52,9 @@ impl RequestSerializer for CannedRequestSerializer {
 impl RuntimePlugin for CannedRequestSerializer {
     fn config(&self) -> Option<FrozenLayer> {
         let mut cfg = Layer::new("CannedRequest");
-        cfg.set_request_serializer(Self {
+        cfg.set_request_serializer(SharedRequestSerializer::new(Self {
             inner: Mutex::new(self.take()),
-        });
+        }));
         Some(cfg.freeze())
     }
 }

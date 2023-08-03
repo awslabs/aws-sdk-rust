@@ -25,29 +25,6 @@ use std::sync::Arc;
 
 pub use storable::{AppendItemIter, Storable, Store, StoreAppend, StoreReplace};
 
-/// Layered Configuration Structure
-///
-/// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
-#[must_use]
-pub struct ConfigBag {
-    interceptor_state: Layer,
-    tail: Vec<FrozenLayer>,
-}
-
-impl Debug for ConfigBag {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        struct Layers<'a>(&'a ConfigBag);
-        impl Debug for Layers<'_> {
-            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-                f.debug_list().entries(self.0.layers()).finish()
-            }
-        }
-        f.debug_struct("ConfigBag")
-            .field("layers", &Layers(self))
-            .finish()
-    }
-}
-
 /// [`FrozenLayer`] is the "locked" form of [`Layer`].
 ///
 /// [`ConfigBag`] contains a ordered collection of [`FrozenLayer`]
@@ -282,16 +259,6 @@ impl Layer {
         self
     }
 
-    /// Insert `value` into the bag
-    ///
-    /// NOTE: This method exists for legacy reasons to allow storing values that are not `Storeable`
-    ///
-    /// The implementation assumes that the type is [`StoreReplace`].
-    pub fn put<T: Send + Sync + Debug + 'static>(&mut self, value: T) -> &mut Self {
-        self.put_directly::<StoreReplace<T>>(Value::Set(value));
-        self
-    }
-
     /// Stores `item` of type `T` into the config bag, overriding a previous value of the same type
     pub fn store_put<T>(&mut self, item: T) -> &mut Self
     where
@@ -398,6 +365,29 @@ impl FrozenLayer {
     }
 }
 
+/// Layered Configuration Structure
+///
+/// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
+#[must_use]
+pub struct ConfigBag {
+    interceptor_state: Layer,
+    tail: Vec<FrozenLayer>,
+}
+
+impl Debug for ConfigBag {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        struct Layers<'a>(&'a ConfigBag);
+        impl Debug for Layers<'_> {
+            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+                f.debug_list().entries(self.0.layers()).finish()
+            }
+        }
+        f.debug_struct("ConfigBag")
+            .field("layers", &Layers(self))
+            .finish()
+    }
+}
+
 impl ConfigBag {
     /// Create a new config bag "base".
     ///
@@ -439,12 +429,6 @@ impl ConfigBag {
     /// Load a value (or values) of type `T` depending on how `T` implements [`Storable`]
     pub fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_> {
         self.sourced_get::<T::Storer>()
-    }
-
-    /// Retrieve the value of type `T` from the bag if exists
-    pub fn get<T: Send + Sync + Debug + 'static>(&self) -> Option<&T> {
-        let out = self.sourced_get::<StoreReplace<T>>();
-        out
     }
 
     /// Return a mutable reference to `T` if it is stored in the top layer of the bag
@@ -631,40 +615,52 @@ mod test {
     fn layered_property_bag() {
         #[derive(Debug)]
         struct Prop1;
+        impl Storable for Prop1 {
+            type Storer = StoreReplace<Self>;
+        }
         #[derive(Debug)]
         struct Prop2;
+        impl Storable for Prop2 {
+            type Storer = StoreReplace<Self>;
+        }
         let layer_a = |bag: &mut Layer| {
-            bag.put(Prop1);
+            bag.store_put(Prop1);
         };
 
         let layer_b = |bag: &mut Layer| {
-            bag.put(Prop2);
+            bag.store_put(Prop2);
         };
 
         #[derive(Debug)]
         struct Prop3;
+        impl Storable for Prop3 {
+            type Storer = StoreReplace<Self>;
+        }
 
         let mut base_bag = ConfigBag::base()
             .with_fn("a", layer_a)
             .with_fn("b", layer_b);
-        base_bag.interceptor_state().put(Prop3);
-        assert!(base_bag.get::<Prop1>().is_some());
+        base_bag.interceptor_state().store_put(Prop3);
+        assert!(base_bag.load::<Prop1>().is_some());
 
         #[derive(Debug)]
         struct Prop4;
+        impl Storable for Prop4 {
+            type Storer = StoreReplace<Self>;
+        }
 
         let layer_c = |bag: &mut Layer| {
-            bag.put(Prop4);
+            bag.store_put(Prop4);
             bag.unset::<Prop3>();
         };
 
         let final_bag = base_bag.with_fn("c", layer_c);
 
-        assert!(final_bag.get::<Prop4>().is_some());
-        assert!(final_bag.get::<Prop1>().is_some());
-        assert!(final_bag.get::<Prop2>().is_some());
+        assert!(final_bag.load::<Prop4>().is_some());
+        assert!(final_bag.load::<Prop1>().is_some());
+        assert!(final_bag.load::<Prop2>().is_some());
         // we unset prop3
-        assert!(final_bag.get::<Prop3>().is_none());
+        assert!(final_bag.load::<Prop3>().is_none());
         println!("{:#?}", final_bag);
     }
 
@@ -673,22 +669,33 @@ mod test {
         let bag = ConfigBag::base();
         #[derive(Debug)]
         struct Region(&'static str);
+        impl Storable for Region {
+            type Storer = StoreReplace<Self>;
+        }
         let bag = bag.with_fn("service config", |layer: &mut Layer| {
-            layer.put(Region("asdf"));
+            layer.store_put(Region("asdf"));
         });
 
-        assert_eq!(bag.get::<Region>().unwrap().0, "asdf");
+        assert_eq!(bag.load::<Region>().unwrap().0, "asdf");
 
         #[derive(Debug)]
         struct SigningName(&'static str);
+        impl Storable for SigningName {
+            type Storer = StoreReplace<Self>;
+        }
         let operation_config = bag.with_fn("operation", |layer: &mut Layer| {
-            layer.put(SigningName("s3"));
+            layer.store_put(SigningName("s3"));
         });
 
-        assert_eq!(operation_config.get::<SigningName>().unwrap().0, "s3");
+        assert_eq!(operation_config.load::<SigningName>().unwrap().0, "s3");
 
+        #[derive(Debug)]
+        struct Prop;
+        impl Storable for Prop {
+            type Storer = StoreReplace<Self>;
+        }
         let mut open_bag = operation_config.with_fn("my_custom_info", |_bag: &mut Layer| {});
-        open_bag.interceptor_state().put("foo");
+        open_bag.interceptor_state().store_put(Prop);
 
         assert_eq!(open_bag.layers().count(), 4);
     }
@@ -780,7 +787,7 @@ mod test {
         assert_eq!(bag_1.load::<Foo>(), Some(&Foo(1)));
         assert_eq!(bag_2.load::<Foo>(), Some(&Foo(0)));
 
-        bag_1.interceptor_state().put(Foo(3));
+        bag_1.interceptor_state().store_put(Foo(3));
         assert_eq!(bag_1.load::<Foo>(), Some(&Foo(3)));
     }
 
@@ -796,7 +803,7 @@ mod test {
         assert_eq!(bag.get_mut::<Foo>(), None);
         assert_eq!(bag.get_mut_or_default::<Foo>(), &Foo(0));
         bag.get_mut_or_default::<Foo>().0 += 1;
-        assert_eq!(bag.get::<Foo>(), Some(&Foo(1)));
+        assert_eq!(bag.load::<Foo>(), Some(&Foo(1)));
 
         let old_ref = bag.load::<Foo>().unwrap();
         assert_eq!(old_ref, &Foo(1));

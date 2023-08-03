@@ -11,7 +11,8 @@ use aws_smithy_runtime_api::client::auth::option_resolver::{
     StaticAuthOptionResolver, StaticAuthOptionResolverParams,
 };
 use aws_smithy_runtime_api::client::auth::{
-    AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpAuthSchemes, HttpRequestSigner,
+    AuthSchemeEndpointConfig, AuthSchemeId, DynAuthOptionResolver, HttpAuthScheme, HttpAuthSchemes,
+    HttpRequestSigner,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, HttpRequest};
@@ -43,9 +44,9 @@ impl AnonymousAuthRuntimePlugin {
     pub fn new() -> Self {
         let mut cfg = Layer::new("AnonymousAuth");
         cfg.set_auth_option_resolver_params(StaticAuthOptionResolverParams::new().into());
-        cfg.set_auth_option_resolver(StaticAuthOptionResolver::new(vec![
-            ANONYMOUS_AUTH_SCHEME_ID,
-        ]));
+        cfg.set_auth_option_resolver(DynAuthOptionResolver::new(StaticAuthOptionResolver::new(
+            vec![ANONYMOUS_AUTH_SCHEME_ID],
+        )));
         cfg.set_identity_resolvers(
             IdentityResolvers::builder()
                 .identity_resolver(ANONYMOUS_AUTH_SCHEME_ID, AnonymousIdentityResolver::new())

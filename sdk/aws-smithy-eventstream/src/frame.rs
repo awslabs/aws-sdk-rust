@@ -55,6 +55,10 @@ impl DeferredSignerSender {
     }
 }
 
+impl Storable for DeferredSignerSender {
+    type Storer = StoreReplace<Self>;
+}
+
 /// Deferred event stream signer to allow a signer to be wired up later.
 ///
 /// HTTP request signing takes place after serialization, and the event stream
@@ -389,6 +393,7 @@ mod value {
     }
 }
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 pub use value::HeaderValue;
 
 /// Event Stream header.

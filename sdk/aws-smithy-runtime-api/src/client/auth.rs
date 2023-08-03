@@ -6,7 +6,7 @@
 use crate::box_error::BoxError;
 use crate::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use crate::client::orchestrator::HttpRequest;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_types::Document;
 use std::borrow::Cow;
@@ -55,6 +55,10 @@ impl AuthOptionResolverParams {
     }
 }
 
+impl Storable for AuthOptionResolverParams {
+    type Storer = StoreReplace<Self>;
+}
+
 pub trait AuthOptionResolver: Send + Sync + fmt::Debug {
     fn resolve_auth_options(
         &self,
@@ -62,12 +66,25 @@ pub trait AuthOptionResolver: Send + Sync + fmt::Debug {
     ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError>;
 }
 
-impl AuthOptionResolver for Box<dyn AuthOptionResolver> {
+#[derive(Debug)]
+pub struct DynAuthOptionResolver(Box<dyn AuthOptionResolver>);
+
+impl DynAuthOptionResolver {
+    pub fn new(auth_option_resolver: impl AuthOptionResolver + 'static) -> Self {
+        Self(Box::new(auth_option_resolver))
+    }
+}
+
+impl Storable for DynAuthOptionResolver {
+    type Storer = StoreReplace<Self>;
+}
+
+impl AuthOptionResolver for DynAuthOptionResolver {
     fn resolve_auth_options(
         &self,
         params: &AuthOptionResolverParams,
     ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError> {
-        (**self).resolve_auth_options(params)
+        (*self.0).resolve_auth_options(params)
     }
 }
 
@@ -92,6 +109,10 @@ impl HttpAuthSchemes {
             .find(|scheme| scheme.0 == scheme_id)
             .map(|scheme| &*scheme.1)
     }
+}
+
+impl Storable for HttpAuthSchemes {
+    type Storer = StoreReplace<Self>;
 }
 
 pub trait HttpAuthScheme: Send + Sync + fmt::Debug {

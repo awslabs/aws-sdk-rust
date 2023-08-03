@@ -4,16 +4,18 @@
  */
 
 use crate::box_error::BoxError;
-use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
+use crate::client::auth::{
+    AuthOptionResolver, AuthOptionResolverParams, DynAuthOptionResolver, HttpAuthSchemes,
+};
 use crate::client::identity::IdentityResolvers;
 use crate::client::interceptors::context::{Error, Input, Output};
-use crate::client::retries::RetryClassifiers;
 use crate::client::retries::RetryStrategy;
+use crate::client::retries::{DynRetryStrategy, RetryClassifiers};
 use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_types::config_bag::{ConfigBag, Layer};
+use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use bytes::Bytes;
@@ -37,6 +39,25 @@ pub trait RequestSerializer: Send + Sync + fmt::Debug {
     fn serialize_input(&self, input: Input, cfg: &mut ConfigBag) -> Result<HttpRequest, BoxError>;
 }
 
+#[derive(Clone, Debug)]
+pub struct SharedRequestSerializer(Arc<dyn RequestSerializer>);
+
+impl SharedRequestSerializer {
+    pub fn new(serializer: impl RequestSerializer + 'static) -> Self {
+        Self(Arc::new(serializer))
+    }
+}
+
+impl RequestSerializer for SharedRequestSerializer {
+    fn serialize_input(&self, input: Input, cfg: &mut ConfigBag) -> Result<HttpRequest, BoxError> {
+        self.0.serialize_input(input, cfg)
+    }
+}
+
+impl Storable for SharedRequestSerializer {
+    type Storer = StoreReplace<Self>;
+}
+
 pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
     fn deserialize_streaming(
         &self,
@@ -52,14 +73,56 @@ pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
     ) -> Result<Output, OrchestratorError<Error>>;
 }
 
+#[derive(Debug)]
+pub struct DynResponseDeserializer(Box<dyn ResponseDeserializer>);
+
+impl DynResponseDeserializer {
+    pub fn new(serializer: impl ResponseDeserializer + 'static) -> Self {
+        Self(Box::new(serializer))
+    }
+}
+
+impl ResponseDeserializer for DynResponseDeserializer {
+    fn deserialize_nonstreaming(
+        &self,
+        response: &HttpResponse,
+    ) -> Result<Output, OrchestratorError<Error>> {
+        self.0.deserialize_nonstreaming(response)
+    }
+
+    fn deserialize_streaming(
+        &self,
+        response: &mut HttpResponse,
+    ) -> Option<Result<Output, OrchestratorError<Error>>> {
+        self.0.deserialize_streaming(response)
+    }
+}
+
+impl Storable for DynResponseDeserializer {
+    type Storer = StoreReplace<Self>;
+}
+
 pub trait Connection: Send + Sync + fmt::Debug {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse>;
 }
 
-impl Connection for Box<dyn Connection> {
-    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
-        (**self).call(request)
+#[derive(Debug)]
+pub struct DynConnection(Box<dyn Connection>);
+
+impl DynConnection {
+    pub fn new(connection: impl Connection + 'static) -> Self {
+        Self(Box::new(connection))
     }
+}
+
+impl Connection for DynConnection {
+    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
+        (*self.0).call(request)
+    }
+}
+
+impl Storable for DynConnection {
+    type Storer = StoreReplace<Self>;
 }
 
 #[derive(Debug)]
@@ -75,8 +138,31 @@ impl EndpointResolverParams {
     }
 }
 
+impl Storable for EndpointResolverParams {
+    type Storer = StoreReplace<Self>;
+}
+
 pub trait EndpointResolver: Send + Sync + fmt::Debug {
     fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError>;
+}
+
+#[derive(Debug)]
+pub struct DynEndpointResolver(Box<dyn EndpointResolver>);
+
+impl DynEndpointResolver {
+    pub fn new(endpoint_resolver: impl EndpointResolver + 'static) -> Self {
+        Self(Box::new(endpoint_resolver))
+    }
+}
+
+impl EndpointResolver for DynEndpointResolver {
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError> {
+        self.0.resolve_endpoint(params)
+    }
+}
+
+impl Storable for DynEndpointResolver {
+    type Storer = StoreReplace<Self>;
 }
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
@@ -99,39 +185,68 @@ pub enum LoadedRequestBody {
     Loaded(Bytes),
 }
 
-pub trait Settable {
-    fn layer(&mut self) -> &mut Layer;
-    fn put<T: Send + Sync + Debug + 'static>(&mut self, value: T) {
-        self.layer().put(value);
-    }
+impl Storable for LoadedRequestBody {
+    type Storer = StoreReplace<Self>;
 }
 
-pub trait Gettable {
-    fn config_bag(&self) -> &ConfigBag;
-    fn get<T: Send + Sync + Debug + 'static>(&self) -> Option<&T> {
-        self.config_bag().get::<T>()
-    }
-}
+// Place traits in a private module so that they can be used in the public API without being a part of the public API.
+mod internal {
+    use aws_smithy_types::config_bag::{
+        ConfigBag, FrozenLayer, Layer, Storable, Store, StoreReplace,
+    };
+    use std::fmt::Debug;
 
-impl Settable for Layer {
-    fn layer(&mut self) -> &mut Layer {
-        self
-    }
-}
+    pub trait Settable {
+        fn unset<T: Send + Sync + Clone + Debug + 'static>(&mut self);
 
-impl Gettable for ConfigBag {
-    fn config_bag(&self) -> &ConfigBag {
-        self
+        fn store_put<T>(&mut self, value: T)
+        where
+            T: Storable<Storer = StoreReplace<T>>;
+    }
+
+    impl Settable for Layer {
+        fn unset<T: Send + Sync + Clone + Debug + 'static>(&mut self) {
+            Layer::unset::<T>(self);
+        }
+
+        fn store_put<T>(&mut self, value: T)
+        where
+            T: Storable<Storer = StoreReplace<T>>,
+        {
+            Layer::store_put(self, value);
+        }
+    }
+
+    pub trait Gettable {
+        fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_>;
+    }
+
+    impl Gettable for ConfigBag {
+        fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_> {
+            ConfigBag::load::<T>(self)
+        }
+    }
+
+    impl Gettable for Layer {
+        fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_> {
+            Layer::load::<T>(self)
+        }
+    }
+
+    impl Gettable for FrozenLayer {
+        fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_> {
+            Layer::load::<T>(self)
+        }
     }
 }
+use internal::{Gettable, Settable};
 
 pub trait ConfigBagAccessors {
     fn auth_option_resolver_params(&self) -> &AuthOptionResolverParams
     where
         Self: Gettable,
     {
-        self.config_bag()
-            .get::<AuthOptionResolverParams>()
+        self.load::<AuthOptionResolverParams>()
             .expect("auth option resolver params must be set")
     }
     fn set_auth_option_resolver_params(
@@ -140,32 +255,29 @@ pub trait ConfigBagAccessors {
     ) where
         Self: Settable,
     {
-        self.put::<AuthOptionResolverParams>(auth_option_resolver_params);
+        self.store_put::<AuthOptionResolverParams>(auth_option_resolver_params);
     }
 
     fn auth_option_resolver(&self) -> &dyn AuthOptionResolver
     where
         Self: Gettable,
     {
-        &**self
-            .config_bag()
-            .get::<Box<dyn AuthOptionResolver>>()
+        self.load::<DynAuthOptionResolver>()
             .expect("an auth option resolver must be set")
     }
 
-    fn set_auth_option_resolver(&mut self, auth_option_resolver: impl AuthOptionResolver + 'static)
+    fn set_auth_option_resolver(&mut self, auth_option_resolver: DynAuthOptionResolver)
     where
         Self: Settable,
     {
-        self.put::<Box<dyn AuthOptionResolver>>(Box::new(auth_option_resolver));
+        self.store_put::<DynAuthOptionResolver>(auth_option_resolver);
     }
 
     fn endpoint_resolver_params(&self) -> &EndpointResolverParams
     where
         Self: Gettable,
     {
-        self.config_bag()
-            .get::<EndpointResolverParams>()
+        self.load::<EndpointResolverParams>()
             .expect("endpoint resolver params must be set")
     }
 
@@ -173,32 +285,29 @@ pub trait ConfigBagAccessors {
     where
         Self: Settable,
     {
-        self.put::<EndpointResolverParams>(endpoint_resolver_params);
+        self.store_put::<EndpointResolverParams>(endpoint_resolver_params);
     }
 
     fn endpoint_resolver(&self) -> &dyn EndpointResolver
     where
         Self: Gettable,
     {
-        &**self
-            .config_bag()
-            .get::<Box<dyn EndpointResolver>>()
+        self.load::<DynEndpointResolver>()
             .expect("an endpoint resolver must be set")
     }
 
-    fn set_endpoint_resolver(&mut self, endpoint_resolver: impl EndpointResolver + 'static)
+    fn set_endpoint_resolver(&mut self, endpoint_resolver: DynEndpointResolver)
     where
         Self: Settable,
     {
-        self.put::<Box<dyn EndpointResolver>>(Box::new(endpoint_resolver));
+        self.store_put::<DynEndpointResolver>(endpoint_resolver);
     }
 
     fn identity_resolvers(&self) -> &IdentityResolvers
     where
         Self: Gettable,
     {
-        self.config_bag()
-            .get::<IdentityResolvers>()
+        self.load::<IdentityResolvers>()
             .expect("identity resolvers must be configured")
     }
 
@@ -206,127 +315,120 @@ pub trait ConfigBagAccessors {
     where
         Self: Settable,
     {
-        self.put::<IdentityResolvers>(identity_resolvers);
+        self.store_put::<IdentityResolvers>(identity_resolvers);
     }
 
     fn connection(&self) -> &dyn Connection
     where
         Self: Gettable,
     {
-        &**self
-            .config_bag()
-            .get::<Box<dyn Connection>>()
-            .expect("missing connector")
+        self.load::<DynConnection>().expect("missing connector")
     }
 
-    fn set_connection(&mut self, connection: impl Connection + 'static)
+    fn set_connection(&mut self, connection: DynConnection)
     where
         Self: Settable,
     {
-        self.put::<Box<dyn Connection>>(Box::new(connection));
+        self.store_put::<DynConnection>(connection);
     }
 
     fn http_auth_schemes(&self) -> &HttpAuthSchemes
     where
         Self: Gettable,
     {
-        self.config_bag()
-            .get::<HttpAuthSchemes>()
+        self.load::<HttpAuthSchemes>()
             .expect("auth schemes must be set")
     }
     fn set_http_auth_schemes(&mut self, http_auth_schemes: HttpAuthSchemes)
     where
         Self: Settable,
     {
-        self.put::<HttpAuthSchemes>(http_auth_schemes);
+        self.store_put::<HttpAuthSchemes>(http_auth_schemes);
     }
 
-    fn request_serializer(&self) -> Arc<dyn RequestSerializer>
+    fn request_serializer(&self) -> SharedRequestSerializer
     where
         Self: Gettable,
     {
-        self.get::<Arc<dyn RequestSerializer>>()
+        self.load::<SharedRequestSerializer>()
             .expect("missing request serializer")
             .clone()
     }
-    fn set_request_serializer(&mut self, request_serializer: impl RequestSerializer + 'static)
+    fn set_request_serializer(&mut self, request_serializer: SharedRequestSerializer)
     where
         Self: Settable,
     {
-        self.put::<Arc<dyn RequestSerializer>>(Arc::new(request_serializer));
+        self.store_put::<SharedRequestSerializer>(request_serializer);
     }
 
     fn response_deserializer(&self) -> &dyn ResponseDeserializer
     where
         Self: Gettable,
     {
-        &**self
-            .get::<Box<dyn ResponseDeserializer>>()
+        self.load::<DynResponseDeserializer>()
             .expect("missing response deserializer")
     }
-    fn set_response_deserializer(
-        &mut self,
-        response_deserializer: impl ResponseDeserializer + 'static,
-    ) where
+    fn set_response_deserializer(&mut self, response_deserializer: DynResponseDeserializer)
+    where
         Self: Settable,
     {
-        self.put::<Box<dyn ResponseDeserializer>>(Box::new(response_deserializer));
+        self.store_put::<DynResponseDeserializer>(response_deserializer);
     }
 
     fn retry_classifiers(&self) -> &RetryClassifiers
     where
         Self: Gettable,
     {
-        self.get::<RetryClassifiers>()
+        self.load::<RetryClassifiers>()
             .expect("retry classifiers must be set")
     }
     fn set_retry_classifiers(&mut self, retry_classifiers: RetryClassifiers)
     where
         Self: Settable,
     {
-        self.put::<RetryClassifiers>(retry_classifiers);
+        self.store_put::<RetryClassifiers>(retry_classifiers);
     }
 
     fn retry_strategy(&self) -> Option<&dyn RetryStrategy>
     where
         Self: Gettable,
     {
-        self.get::<Box<dyn RetryStrategy>>().map(|rs| &**rs)
+        self.load::<DynRetryStrategy>().map(|rs| rs as _)
     }
-    fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static)
+    fn set_retry_strategy(&mut self, retry_strategy: DynRetryStrategy)
     where
         Self: Settable,
     {
-        self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
+        self.store_put::<DynRetryStrategy>(retry_strategy);
     }
 
     fn request_time(&self) -> Option<SharedTimeSource>
     where
         Self: Gettable,
     {
-        self.get::<SharedTimeSource>().cloned()
+        self.load::<SharedTimeSource>().cloned()
     }
     fn set_request_time(&mut self, time_source: impl TimeSource + 'static)
     where
         Self: Settable,
     {
-        self.put::<SharedTimeSource>(SharedTimeSource::new(time_source));
+        self.store_put::<SharedTimeSource>(SharedTimeSource::new(time_source));
     }
 
     fn sleep_impl(&self) -> Option<SharedAsyncSleep>
     where
         Self: Gettable,
     {
-        self.get::<SharedAsyncSleep>().cloned()
+        self.load::<SharedAsyncSleep>().cloned()
     }
     fn set_sleep_impl(&mut self, async_sleep: Option<SharedAsyncSleep>)
     where
         Self: Settable,
     {
         if let Some(sleep_impl) = async_sleep {
-            self.put::<SharedAsyncSleep>(sleep_impl);
+            self.store_put::<SharedAsyncSleep>(sleep_impl);
         } else {
-            self.layer().unset::<SharedAsyncSleep>();
+            self.unset::<SharedAsyncSleep>();
         }
     }
 
@@ -334,17 +436,18 @@ pub trait ConfigBagAccessors {
     where
         Self: Gettable,
     {
-        self.get::<LoadedRequestBody>().unwrap_or(&NOT_NEEDED)
+        self.load::<LoadedRequestBody>().unwrap_or(&NOT_NEEDED)
     }
     fn set_loaded_request_body(&mut self, loaded_request_body: LoadedRequestBody)
     where
         Self: Settable,
     {
-        self.put::<LoadedRequestBody>(loaded_request_body);
+        self.store_put::<LoadedRequestBody>(loaded_request_body);
     }
 }
 
 const NOT_NEEDED: LoadedRequestBody = LoadedRequestBody::NotNeeded;
 
 impl ConfigBagAccessors for ConfigBag {}
+impl ConfigBagAccessors for FrozenLayer {}
 impl ConfigBagAccessors for Layer {}

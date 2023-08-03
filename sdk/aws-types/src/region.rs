@@ -82,3 +82,7 @@ impl SigningRegion {
         SigningRegion(Cow::Borrowed(region))
     }
 }
+
+impl Storable for SigningRegion {
+    type Storer = StoreReplace<Self>;
+}

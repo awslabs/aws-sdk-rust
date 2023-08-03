@@ -25,6 +25,7 @@ pub mod sdk_config;
 pub use aws_smithy_client::http_connector;
 pub use sdk_config::SdkConfig;
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::borrow::Cow;
 
 /// The name of the service used to sign this request
@@ -55,4 +56,8 @@ impl From<&'static str> for SigningService {
     fn from(service: &'static str) -> Self {
         Self::from_static(service)
     }
+}
+
+impl Storable for SigningService {
+    type Storer = StoreReplace<Self>;
 }
