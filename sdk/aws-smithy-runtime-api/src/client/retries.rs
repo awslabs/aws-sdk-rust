@@ -4,7 +4,7 @@
  */
 
 use crate::client::interceptors::context::InterceptorContext;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt::Debug;
 use std::time::Duration;
 use tracing::trace;
@@ -30,40 +30,48 @@ impl ShouldAttempt {
 }
 
 pub trait RetryStrategy: Send + Sync + Debug {
-    fn should_attempt_initial_request(&self, cfg: &ConfigBag) -> Result<ShouldAttempt, BoxError>;
+    fn should_attempt_initial_request(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<ShouldAttempt, BoxError>;
 
     fn should_attempt_retry(
         &self,
         context: &InterceptorContext,
+        runtime_components: &RuntimeComponents,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError>;
 }
 
-#[derive(Debug)]
-pub struct DynRetryStrategy(Box<dyn RetryStrategy>);
+#[derive(Clone, Debug)]
+pub struct SharedRetryStrategy(Arc<dyn RetryStrategy>);
 
-impl DynRetryStrategy {
+impl SharedRetryStrategy {
     pub fn new(retry_strategy: impl RetryStrategy + 'static) -> Self {
-        Self(Box::new(retry_strategy))
+        Self(Arc::new(retry_strategy))
     }
 }
 
-impl RetryStrategy for DynRetryStrategy {
-    fn should_attempt_initial_request(&self, cfg: &ConfigBag) -> Result<ShouldAttempt, BoxError> {
-        self.0.should_attempt_initial_request(cfg)
+impl RetryStrategy for SharedRetryStrategy {
+    fn should_attempt_initial_request(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<ShouldAttempt, BoxError> {
+        self.0
+            .should_attempt_initial_request(runtime_components, cfg)
     }
 
     fn should_attempt_retry(
         &self,
         context: &InterceptorContext,
+        runtime_components: &RuntimeComponents,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError> {
-        self.0.should_attempt_retry(context, cfg)
+        self.0
+            .should_attempt_retry(context, runtime_components, cfg)
     }
-}
-
-impl Storable for DynRetryStrategy {
-    type Storer = StoreReplace<Self>;
 }
 
 #[non_exhaustive]
@@ -83,9 +91,9 @@ pub trait ClassifyRetry: Send + Sync + Debug {
     fn name(&self) -> &'static str;
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct RetryClassifiers {
-    inner: Vec<Box<dyn ClassifyRetry>>,
+    inner: Vec<Arc<dyn ClassifyRetry>>,
 }
 
 impl RetryClassifiers {
@@ -98,17 +106,12 @@ impl RetryClassifiers {
     }
 
     pub fn with_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
-        self.inner.push(Box::new(retry_classifier));
-
+        self.inner.push(Arc::new(retry_classifier));
         self
     }
 
     // TODO(https://github.com/awslabs/smithy-rs/issues/2632) make a map function so users can front-run or second-guess the classifier's decision
     // pub fn map_classifiers(mut self, fun: Fn() -> RetryClassifiers)
-}
-
-impl Storable for RetryClassifiers {
-    type Storer = StoreReplace<Self>;
 }
 
 impl ClassifyRetry for RetryClassifiers {
@@ -160,5 +163,7 @@ mod test_util {
 }
 
 use crate::box_error::BoxError;
+use crate::client::runtime_components::RuntimeComponents;
+use std::sync::Arc;
 #[cfg(feature = "test-util")]
 pub use test_util::AlwaysRetry;

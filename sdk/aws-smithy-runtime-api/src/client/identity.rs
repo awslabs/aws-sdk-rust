@@ -5,7 +5,7 @@
 
 use crate::client::auth::AuthSchemeId;
 use crate::client::orchestrator::Future;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend, StoreReplace};
+use aws_smithy_types::config_bag::ConfigBag;
 use std::any::Any;
 use std::fmt;
 use std::fmt::Debug;
@@ -64,36 +64,6 @@ impl ConfiguredIdentityResolver {
     /// Returns the identity resolver.
     pub(crate) fn identity_resolver(&self) -> SharedIdentityResolver {
         self.identity_resolver.clone()
-    }
-}
-
-impl Storable for ConfiguredIdentityResolver {
-    type Storer = StoreAppend<Self>;
-}
-
-#[derive(Clone, Debug, Default)]
-pub struct IdentityResolvers {
-    identity_resolvers: Vec<ConfiguredIdentityResolver>,
-}
-
-impl Storable for IdentityResolvers {
-    type Storer = StoreReplace<IdentityResolvers>;
-}
-
-impl IdentityResolvers {
-    pub(crate) fn new<'a>(resolvers: impl Iterator<Item = &'a ConfiguredIdentityResolver>) -> Self {
-        let identity_resolvers: Vec<_> = resolvers.cloned().collect();
-        if identity_resolvers.is_empty() {
-            tracing::warn!("no identity resolvers available for this request");
-        }
-        Self { identity_resolvers }
-    }
-
-    pub fn identity_resolver(&self, scheme_id: AuthSchemeId) -> Option<SharedIdentityResolver> {
-        self.identity_resolvers
-            .iter()
-            .find(|pair| pair.scheme_id() == scheme_id)
-            .map(|pair| pair.identity_resolver())
     }
 }
 

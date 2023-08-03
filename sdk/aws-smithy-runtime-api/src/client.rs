@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+pub mod runtime_components;
+
 /// Client orchestrator configuration accessors for the [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag).
 pub mod config_bag_accessors;
 

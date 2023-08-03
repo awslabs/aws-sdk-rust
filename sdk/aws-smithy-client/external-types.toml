@@ -23,7 +23,7 @@ allowed_external_types = [
     "tokio::io::async_write::AsyncWrite",
 
 
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `test-utils` feature
+    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `test-util` feature
     "bytes::bytes::Bytes",
     "serde::ser::Serialize",
     "serde::de::Deserialize",

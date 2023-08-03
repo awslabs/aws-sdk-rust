@@ -5,12 +5,12 @@
 
 use aws_smithy_http::connection::{CaptureSmithyConnection, ConnectionMetadata};
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeDeserializationInterceptorContextMut, BeforeTransmitInterceptorContextMut,
 };
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryReason};
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::retry::{ErrorKind, ReconnectMode, RetryConfig};
 use std::fmt;
@@ -43,6 +43,7 @@ impl Interceptor for ConnectionPoisoningInterceptor {
     fn modify_before_transmit(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let capture_smithy_connection = CaptureSmithyConnectionWrapper::new();
@@ -58,6 +59,7 @@ impl Interceptor for ConnectionPoisoningInterceptor {
     fn modify_before_deserialization(
         &self,
         context: &mut BeforeDeserializationInterceptorContextMut<'_>,
+        runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let reconnect_mode = cfg
@@ -65,7 +67,9 @@ impl Interceptor for ConnectionPoisoningInterceptor {
             .map(RetryConfig::reconnect_mode)
             .unwrap_or(ReconnectMode::ReconnectOnTransientError);
         let captured_connection = cfg.load::<CaptureSmithyConnectionWrapper>().cloned();
-        let retry_classifiers = cfg.retry_classifiers();
+        let retry_classifiers = runtime_components
+            .retry_classifiers()
+            .ok_or("retry classifiers are required for connection poisoning to work")?;
 
         let error_is_transient = retry_classifiers
             .classify_retry(context.into_inner())

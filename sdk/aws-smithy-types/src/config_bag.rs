@@ -119,7 +119,7 @@ impl CloneableLayer {
 
     /// Removes `T` from this bag
     pub fn unset<T: Send + Sync + Clone + Debug + 'static>(&mut self) -> &mut Self {
-        self.0.unset::<T>();
+        self.put_directly_cloneable::<StoreReplace<T>>(Value::ExplicitlyUnset(type_name::<T>()));
         self
     }
 
@@ -850,6 +850,10 @@ mod test {
         layer_1.store_put(TestStr(expected_str.to_owned()));
         let layer_1_cloned = layer_1.clone();
         assert_eq!(expected_str, &layer_1_cloned.load::<TestStr>().unwrap().0);
+
+        // Should still be cloneable after unsetting a field
+        layer_1.unset::<TestStr>();
+        assert!(layer_1.try_clone().unwrap().load::<TestStr>().is_none());
 
         #[derive(Clone, Debug)]
         struct Rope(String);

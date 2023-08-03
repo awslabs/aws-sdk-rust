@@ -8,6 +8,7 @@
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt;
 
@@ -34,41 +35,11 @@ where
     fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         (self.f)(context, cfg);
 
         Ok(())
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
-    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-    use aws_smithy_types::type_erasure::TypedBox;
-    use std::time::{Duration, UNIX_EPOCH};
-
-    #[test]
-    fn set_test_request_time() {
-        let mut cfg = ConfigBag::base();
-        let mut ctx = InterceptorContext::new(TypedBox::new("anything").erase());
-        ctx.enter_serialization_phase();
-        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
-        let _ = ctx.take_input();
-        ctx.enter_before_transmit_phase();
-        let mut ctx = Into::into(&mut ctx);
-        let request_time = UNIX_EPOCH + Duration::from_secs(1624036048);
-        let interceptor = TestParamsSetterInterceptor::new(
-            move |_: &mut BeforeTransmitInterceptorContextMut<'_>, cfg: &mut ConfigBag| {
-                cfg.interceptor_state().set_request_time(request_time);
-            },
-        );
-        interceptor
-            .modify_before_signing(&mut ctx, &mut cfg)
-            .unwrap();
-        assert_eq!(cfg.request_time().unwrap().now(), request_time);
     }
 }

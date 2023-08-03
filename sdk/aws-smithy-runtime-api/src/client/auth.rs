@@ -4,9 +4,10 @@
  */
 
 use crate::box_error::BoxError;
-use crate::client::identity::{Identity, IdentityResolvers, SharedIdentityResolver};
+use crate::client::identity::{Identity, SharedIdentityResolver};
 use crate::client::orchestrator::HttpRequest;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend, StoreReplace};
+use crate::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_types::Document;
 use std::borrow::Cow;
@@ -66,20 +67,16 @@ pub trait AuthOptionResolver: Send + Sync + fmt::Debug {
     ) -> Result<Cow<'_, [AuthSchemeId]>, BoxError>;
 }
 
-#[derive(Debug)]
-pub struct DynAuthOptionResolver(Box<dyn AuthOptionResolver>);
+#[derive(Clone, Debug)]
+pub struct SharedAuthOptionResolver(Arc<dyn AuthOptionResolver>);
 
-impl DynAuthOptionResolver {
+impl SharedAuthOptionResolver {
     pub fn new(auth_option_resolver: impl AuthOptionResolver + 'static) -> Self {
-        Self(Box::new(auth_option_resolver))
+        Self(Arc::new(auth_option_resolver))
     }
 }
 
-impl Storable for DynAuthOptionResolver {
-    type Storer = StoreReplace<Self>;
-}
-
-impl AuthOptionResolver for DynAuthOptionResolver {
+impl AuthOptionResolver for SharedAuthOptionResolver {
     fn resolve_auth_options(
         &self,
         params: &AuthOptionResolverParams,
@@ -93,7 +90,7 @@ pub trait HttpAuthScheme: Send + Sync + fmt::Debug {
 
     fn identity_resolver(
         &self,
-        identity_resolvers: &IdentityResolvers,
+        identity_resolvers: &dyn GetIdentityResolver,
     ) -> Option<SharedIdentityResolver>;
 
     fn request_signer(&self) -> &dyn HttpRequestSigner;
@@ -117,7 +114,7 @@ impl HttpAuthScheme for SharedHttpAuthScheme {
 
     fn identity_resolver(
         &self,
-        identity_resolvers: &IdentityResolvers,
+        identity_resolvers: &dyn GetIdentityResolver,
     ) -> Option<SharedIdentityResolver> {
         self.0.identity_resolver(identity_resolvers)
     }
@@ -125,10 +122,6 @@ impl HttpAuthScheme for SharedHttpAuthScheme {
     fn request_signer(&self) -> &dyn HttpRequestSigner {
         self.0.request_signer()
     }
-}
-
-impl Storable for SharedHttpAuthScheme {
-    type Storer = StoreAppend<Self>;
 }
 
 pub trait HttpRequestSigner: Send + Sync + fmt::Debug {
@@ -140,6 +133,7 @@ pub trait HttpRequestSigner: Send + Sync + fmt::Debug {
         request: &mut HttpRequest,
         identity: &Identity,
         auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
+        runtime_components: &RuntimeComponents,
         config_bag: &ConfigBag,
     ) -> Result<(), BoxError>;
 }
@@ -164,54 +158,5 @@ impl<'a> AuthSchemeEndpointConfig<'a> {
 
     pub fn config(&self) -> Option<&'a Document> {
         self.0
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use aws_smithy_types::config_bag::{ConfigBag, Layer};
-
-    #[test]
-    fn test_shared_http_auth_scheme_configuration() {
-        #[derive(Debug)]
-        struct TestHttpAuthScheme(&'static str);
-        impl HttpAuthScheme for TestHttpAuthScheme {
-            fn scheme_id(&self) -> AuthSchemeId {
-                AuthSchemeId::new(self.0)
-            }
-
-            fn identity_resolver(&self, _: &IdentityResolvers) -> Option<SharedIdentityResolver> {
-                unreachable!("this shouldn't get called in this test")
-            }
-
-            fn request_signer(&self) -> &dyn HttpRequestSigner {
-                unreachable!("this shouldn't get called in this test")
-            }
-        }
-
-        let mut config_bag = ConfigBag::base();
-
-        let mut layer = Layer::new("first");
-        layer.store_append(SharedHttpAuthScheme::new(TestHttpAuthScheme("scheme_1")));
-        config_bag.push_layer(layer);
-
-        let mut layer = Layer::new("second");
-        layer.store_append(SharedHttpAuthScheme::new(TestHttpAuthScheme("scheme_2")));
-        layer.store_append(SharedHttpAuthScheme::new(TestHttpAuthScheme("scheme_3")));
-        config_bag.push_layer(layer);
-
-        let auth_schemes = config_bag.load::<SharedHttpAuthScheme>();
-        let encountered_scheme_ids: Vec<AuthSchemeId> =
-            auth_schemes.map(|s| s.scheme_id()).collect();
-
-        assert_eq!(
-            vec![
-                AuthSchemeId::new("scheme_3"),
-                AuthSchemeId::new("scheme_2"),
-                AuthSchemeId::new("scheme_1")
-            ],
-            encountered_scheme_ids
-        );
     }
 }

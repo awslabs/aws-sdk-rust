@@ -8,6 +8,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::retry::RetryConfig;
@@ -89,6 +90,7 @@ impl Interceptor for RequestInfoInterceptor {
     fn modify_before_transmit(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let mut pairs = RequestPairs::new();
@@ -166,6 +168,7 @@ mod tests {
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
     use aws_smithy_runtime_api::client::interceptors::Interceptor;
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
@@ -186,6 +189,7 @@ mod tests {
 
     #[test]
     fn test_request_pairs_for_initial_attempt() {
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut context = InterceptorContext::new(TypeErasedBox::doesnt_matter());
         context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
@@ -204,7 +208,7 @@ mod tests {
         let interceptor = RequestInfoInterceptor::new();
         let mut ctx = (&mut context).into();
         interceptor
-            .modify_before_transmit(&mut ctx, &mut config)
+            .modify_before_transmit(&mut ctx, &rc, &mut config)
             .unwrap();
 
         assert_eq!(

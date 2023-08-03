@@ -71,8 +71,8 @@ impl Config {
         self.timeout_config.as_ref()
     }
     /// Return time source used for this service.
-    pub fn time_source(&self) -> ::aws_smithy_async::time::SharedTimeSource {
-        self.time_source.clone()
+    pub fn time_source(&self) -> ::std::option::Option<::aws_smithy_async::time::SharedTimeSource> {
+        ::std::option::Option::Some(self.time_source.clone())
     }
     /// Returns the name of the app that is using the client, if it was provided.
     ///

@@ -11,6 +11,7 @@ use http::{HeaderName, HeaderValue};
 use std::fmt::Debug;
 use uuid::Uuid;
 
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 #[cfg(feature = "test-util")]
 pub use test_util::{NoInvocationIdGenerator, PredefinedInvocationIdGenerator};
 
@@ -61,6 +62,7 @@ impl Interceptor for InvocationIdInterceptor {
     fn modify_before_retry_loop(
         &self,
         _ctx: &mut BeforeTransmitInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let id = cfg
@@ -77,6 +79,7 @@ impl Interceptor for InvocationIdInterceptor {
     fn modify_before_transmit(
         &self,
         ctx: &mut BeforeTransmitInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let headers = ctx.request_mut().headers_mut();
@@ -184,6 +187,7 @@ mod tests {
         BeforeTransmitInterceptorContextMut, InterceptorContext,
     };
     use aws_smithy_runtime_api::client::interceptors::Interceptor;
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::ConfigBag;
     use aws_smithy_types::type_erasure::TypeErasedBox;
     use http::HeaderValue;
@@ -197,6 +201,7 @@ mod tests {
 
     #[test]
     fn test_id_is_generated_and_set() {
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut ctx = InterceptorContext::new(TypeErasedBox::doesnt_matter());
         ctx.enter_serialization_phase();
         ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
@@ -207,10 +212,10 @@ mod tests {
         let interceptor = InvocationIdInterceptor::new();
         let mut ctx = Into::into(&mut ctx);
         interceptor
-            .modify_before_retry_loop(&mut ctx, &mut cfg)
+            .modify_before_retry_loop(&mut ctx, &rc, &mut cfg)
             .unwrap();
         interceptor
-            .modify_before_transmit(&mut ctx, &mut cfg)
+            .modify_before_transmit(&mut ctx, &rc, &mut cfg)
             .unwrap();
 
         let expected = cfg.load::<InvocationId>().expect("invocation ID was set");

@@ -14,6 +14,7 @@ use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{
     EndpointResolver, EndpointResolverParams, Future, HttpRequest,
 };
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use http::header::HeaderName;
@@ -103,6 +104,7 @@ where
 
 pub(super) async fn orchestrate_endpoint(
     ctx: &mut InterceptorContext,
+    runtime_components: &RuntimeComponents,
     cfg: &mut ConfigBag,
 ) -> Result<(), BoxError> {
     trace!("orchestrating endpoint resolution");
@@ -111,8 +113,10 @@ pub(super) async fn orchestrate_endpoint(
     let endpoint_prefix = cfg.load::<EndpointPrefix>();
     let request = ctx.request_mut().expect("set during serialization");
 
-    let endpoint_resolver = cfg.endpoint_resolver();
-    let endpoint = endpoint_resolver.resolve_endpoint(params).await?;
+    let endpoint = runtime_components
+        .endpoint_resolver()
+        .resolve_endpoint(params)
+        .await?;
     apply_endpoint(request, &endpoint, endpoint_prefix)?;
 
     // Make the endpoint config available to interceptors

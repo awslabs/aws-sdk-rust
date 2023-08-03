@@ -114,23 +114,19 @@ pub trait EndpointResolver: Send + Sync + fmt::Debug {
     fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint>;
 }
 
-#[derive(Debug)]
-pub struct DynEndpointResolver(Box<dyn EndpointResolver>);
+#[derive(Clone, Debug)]
+pub struct SharedEndpointResolver(Arc<dyn EndpointResolver>);
 
-impl DynEndpointResolver {
+impl SharedEndpointResolver {
     pub fn new(endpoint_resolver: impl EndpointResolver + 'static) -> Self {
-        Self(Box::new(endpoint_resolver))
+        Self(Arc::new(endpoint_resolver))
     }
 }
 
-impl EndpointResolver for DynEndpointResolver {
+impl EndpointResolver for SharedEndpointResolver {
     fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint> {
         self.0.resolve_endpoint(params)
     }
-}
-
-impl Storable for DynEndpointResolver {
-    type Storer = StoreReplace<Self>;
 }
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.

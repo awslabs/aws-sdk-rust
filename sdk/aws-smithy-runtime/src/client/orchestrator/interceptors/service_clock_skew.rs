@@ -6,6 +6,7 @@
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeDeserializationInterceptorContextMut;
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
@@ -68,6 +69,7 @@ impl Interceptor for ServiceClockSkewInterceptor {
     fn modify_before_deserialization(
         &self,
         ctx: &mut BeforeDeserializationInterceptorContextMut<'_>,
+        _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let time_received = DateTime::from(SystemTime::now());

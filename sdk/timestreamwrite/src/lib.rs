@@ -108,7 +108,8 @@ async fn resolve_endpoint(
         .await
         .map_err(|e| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("failed to call describe_endpoints", e))?;
     let endpoint = describe_endpoints.endpoints().unwrap().get(0).unwrap();
-    let expiry = client.conf().time_source().now() + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
+    let expiry = client.conf().time_source().expect("checked when ep discovery was enabled").now()
+        + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
     Ok((
         ::aws_smithy_types::endpoint::Endpoint::builder()
             .url(format!("https://{}", endpoint.address().unwrap()))
@@ -126,7 +127,7 @@ impl Client {
     ) -> ::std::result::Result<(Self, crate::endpoint_discovery::ReloadEndpoint), ::aws_smithy_http::endpoint::ResolveEndpointError> {
         let mut new_conf = self.conf().clone();
         let sleep = self.conf().sleep_impl().expect("sleep impl must be provided");
-        let time = self.conf().time_source();
+        let time = self.conf().time_source().expect("time source must be provided");
         let (resolver, reloader) = crate::endpoint_discovery::create_cache(
             move || {
                 let client = self.clone();

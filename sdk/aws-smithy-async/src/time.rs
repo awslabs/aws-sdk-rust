@@ -4,7 +4,6 @@
  */
 
 //! Time source abstraction to support WASM and testing
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::fmt::Debug;
 use std::sync::Arc;
 use std::time::SystemTime;
@@ -86,8 +85,4 @@ impl TimeSource for SharedTimeSource {
     fn now(&self) -> SystemTime {
         self.0.now()
     }
-}
-
-impl Storable for SharedTimeSource {
-    type Storer = StoreReplace<SharedTimeSource>;
 }

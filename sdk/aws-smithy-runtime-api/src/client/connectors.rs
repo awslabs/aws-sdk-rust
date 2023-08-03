@@ -4,28 +4,24 @@
  */
 
 use crate::client::orchestrator::{BoxFuture, HttpRequest, HttpResponse};
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::fmt;
+use std::sync::Arc;
 
 pub trait Connector: Send + Sync + fmt::Debug {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse>;
 }
 
-#[derive(Debug)]
-pub struct DynConnector(Box<dyn Connector>);
+#[derive(Clone, Debug)]
+pub struct SharedConnector(Arc<dyn Connector>);
 
-impl DynConnector {
+impl SharedConnector {
     pub fn new(connection: impl Connector + 'static) -> Self {
-        Self(Box::new(connection))
+        Self(Arc::new(connection))
     }
 }
 
-impl Connector for DynConnector {
+impl Connector for SharedConnector {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         (*self.0).call(request)
     }
-}
-
-impl Storable for DynConnector {
-    type Storer = StoreReplace<Self>;
 }

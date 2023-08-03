@@ -10,13 +10,14 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner, SharedHttpAuthScheme,
 };
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
-use aws_smithy_runtime_api::client::identity::{
-    Identity, IdentityResolvers, SharedIdentityResolver,
-};
+use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::runtime_components::{
+    GetIdentityResolver, RuntimeComponents, RuntimeComponentsBuilder,
+};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
+use aws_smithy_types::config_bag::ConfigBag;
+use std::borrow::Cow;
 
 pub const NO_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("no_auth");
 
@@ -26,7 +27,7 @@ pub const NO_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("no_auth");
 /// a Smithy `@optionalAuth` trait.
 #[non_exhaustive]
 #[derive(Debug)]
-pub struct NoAuthRuntimePlugin(FrozenLayer);
+pub struct NoAuthRuntimePlugin(RuntimeComponentsBuilder);
 
 impl Default for NoAuthRuntimePlugin {
     fn default() -> Self {
@@ -36,19 +37,20 @@ impl Default for NoAuthRuntimePlugin {
 
 impl NoAuthRuntimePlugin {
     pub fn new() -> Self {
-        let mut cfg = Layer::new("NoAuth");
-        cfg.push_identity_resolver(
-            NO_AUTH_SCHEME_ID,
-            SharedIdentityResolver::new(NoAuthIdentityResolver::new()),
-        );
-        cfg.push_http_auth_scheme(SharedHttpAuthScheme::new(NoAuthScheme::new()));
-        Self(cfg.freeze())
+        Self(
+            RuntimeComponentsBuilder::new("NoAuthRuntimePlugin")
+                .with_identity_resolver(
+                    NO_AUTH_SCHEME_ID,
+                    SharedIdentityResolver::new(NoAuthIdentityResolver::new()),
+                )
+                .with_http_auth_scheme(SharedHttpAuthScheme::new(NoAuthScheme::new())),
+        )
     }
 }
 
 impl RuntimePlugin for NoAuthRuntimePlugin {
-    fn config(&self) -> Option<FrozenLayer> {
-        Some(self.0.clone())
+    fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+        Cow::Borrowed(&self.0)
     }
 }
 
@@ -72,6 +74,7 @@ impl HttpRequestSigner for NoAuthSigner {
         _request: &mut HttpRequest,
         _identity: &Identity,
         _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
+        _runtime_components: &RuntimeComponents,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         Ok(())
@@ -85,7 +88,7 @@ impl HttpAuthScheme for NoAuthScheme {
 
     fn identity_resolver(
         &self,
-        identity_resolvers: &IdentityResolvers,
+        identity_resolvers: &dyn GetIdentityResolver,
     ) -> Option<SharedIdentityResolver> {
         identity_resolvers.identity_resolver(NO_AUTH_SCHEME_ID)
     }

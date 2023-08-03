@@ -6,8 +6,8 @@
 use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_client::SdkError;
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
+use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::timeout::TimeoutConfig;
 use pin_project_lite::pin_project;
@@ -109,14 +109,14 @@ pub(super) struct MaybeTimeoutConfig {
     timeout_kind: TimeoutKind,
 }
 
-pub(super) trait ProvideMaybeTimeoutConfig {
-    fn maybe_timeout_config(&self, timeout_kind: TimeoutKind) -> MaybeTimeoutConfig;
-}
-
-impl ProvideMaybeTimeoutConfig for ConfigBag {
-    fn maybe_timeout_config(&self, timeout_kind: TimeoutKind) -> MaybeTimeoutConfig {
-        if let Some(timeout_config) = self.load::<TimeoutConfig>() {
-            let sleep_impl = self.sleep_impl();
+impl MaybeTimeoutConfig {
+    pub(super) fn new(
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+        timeout_kind: TimeoutKind,
+    ) -> MaybeTimeoutConfig {
+        if let Some(timeout_config) = cfg.load::<TimeoutConfig>() {
+            let sleep_impl = runtime_components.sleep_impl();
             let timeout = match (sleep_impl.as_ref(), timeout_kind) {
                 (None, _) => None,
                 (Some(_), TimeoutKind::Operation) => timeout_config.operation_timeout(),
@@ -142,23 +142,14 @@ impl ProvideMaybeTimeoutConfig for ConfigBag {
 /// Trait to conveniently wrap a future with an optional timeout.
 pub(super) trait MaybeTimeout<T>: Sized {
     /// Wraps a future in a timeout if one is set.
-    fn maybe_timeout_with_config(
-        self,
-        timeout_config: MaybeTimeoutConfig,
-    ) -> MaybeTimeoutFuture<Self>;
-
-    /// Wraps a future in a timeout if one is set.
-    fn maybe_timeout(self, cfg: &ConfigBag, kind: TimeoutKind) -> MaybeTimeoutFuture<Self>;
+    fn maybe_timeout(self, timeout_config: MaybeTimeoutConfig) -> MaybeTimeoutFuture<Self>;
 }
 
 impl<T> MaybeTimeout<T> for T
 where
     T: Future,
 {
-    fn maybe_timeout_with_config(
-        self,
-        timeout_config: MaybeTimeoutConfig,
-    ) -> MaybeTimeoutFuture<Self> {
+    fn maybe_timeout(self, timeout_config: MaybeTimeoutConfig) -> MaybeTimeoutFuture<Self> {
         match timeout_config {
             MaybeTimeoutConfig {
                 sleep_impl: Some(sleep_impl),
@@ -172,22 +163,18 @@ where
             _ => MaybeTimeoutFuture::NoTimeout { future: self },
         }
     }
-
-    fn maybe_timeout(self, cfg: &ConfigBag, kind: TimeoutKind) -> MaybeTimeoutFuture<Self> {
-        self.maybe_timeout_with_config(cfg.maybe_timeout_config(kind))
-    }
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::client::timeout::{MaybeTimeout, TimeoutKind};
+    use super::*;
     use aws_smithy_async::assert_elapsed;
     use aws_smithy_async::future::never::Never;
     use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, TokioSleep};
     use aws_smithy_http::result::SdkError;
-    use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
     use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
-    use aws_smithy_types::config_bag::{ConfigBag, Layer};
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_types::config_bag::{CloneableLayer, ConfigBag};
     use aws_smithy_types::timeout::TimeoutConfig;
     use std::time::Duration;
 
@@ -203,14 +190,19 @@ mod tests {
         let now = tokio::time::Instant::now();
         tokio::time::pause();
 
-        let mut cfg = ConfigBag::base();
-        let mut timeout_config = Layer::new("timeout");
-        timeout_config.store_put(TimeoutConfig::builder().build());
-        timeout_config.set_sleep_impl(Some(sleep_impl));
-        cfg.push_layer(timeout_config);
+        let runtime_components = RuntimeComponentsBuilder::for_tests()
+            .with_sleep_impl(Some(sleep_impl))
+            .build()
+            .unwrap();
 
+        let mut timeout_config = CloneableLayer::new("timeout");
+        timeout_config.store_put(TimeoutConfig::builder().build());
+        let cfg = ConfigBag::of_layers(vec![timeout_config.into()]);
+
+        let maybe_timeout =
+            MaybeTimeoutConfig::new(&runtime_components, &cfg, TimeoutKind::Operation);
         underlying_future
-            .maybe_timeout(&cfg, TimeoutKind::Operation)
+            .maybe_timeout(maybe_timeout)
             .await
             .expect("success");
 
@@ -229,19 +221,21 @@ mod tests {
         let now = tokio::time::Instant::now();
         tokio::time::pause();
 
-        let mut cfg = ConfigBag::base();
-        let mut timeout_config = Layer::new("timeout");
+        let runtime_components = RuntimeComponentsBuilder::for_tests()
+            .with_sleep_impl(Some(sleep_impl))
+            .build()
+            .unwrap();
+        let mut timeout_config = CloneableLayer::new("timeout");
         timeout_config.store_put(
             TimeoutConfig::builder()
                 .operation_timeout(Duration::from_millis(250))
                 .build(),
         );
-        timeout_config.set_sleep_impl(Some(sleep_impl));
-        cfg.push_layer(timeout_config);
+        let cfg = ConfigBag::of_layers(vec![timeout_config.into()]);
 
-        let result = underlying_future
-            .maybe_timeout(&cfg, TimeoutKind::Operation)
-            .await;
+        let maybe_timeout =
+            MaybeTimeoutConfig::new(&runtime_components, &cfg, TimeoutKind::Operation);
+        let result = underlying_future.maybe_timeout(maybe_timeout).await;
         let err = result.expect_err("should have timed out");
 
         assert_eq!(format!("{:?}", err), "TimeoutError(TimeoutError { source: MaybeTimeoutError { kind: Operation, duration: 250ms } })");
