@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::box_error::BoxError;
 use crate::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use crate::client::orchestrator::{BoxError, HttpRequest};
+use crate::client::orchestrator::HttpRequest;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_types::Document;

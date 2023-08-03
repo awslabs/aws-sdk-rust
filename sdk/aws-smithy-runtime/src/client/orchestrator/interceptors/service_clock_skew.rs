@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::client::interceptors::{
-    BeforeDeserializationInterceptorContextMut, BoxError, Interceptor,
-};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeDeserializationInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;

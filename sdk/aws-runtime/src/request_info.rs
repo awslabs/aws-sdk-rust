@@ -4,9 +4,9 @@
  */
 
 use aws_smithy_runtime::client::orchestrator::interceptors::ServiceClockSkew;
-use aws_smithy_runtime_api::client::interceptors::{
-    BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
-};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
@@ -164,7 +164,8 @@ mod tests {
     use super::RequestInfoInterceptor;
     use crate::request_info::RequestPairs;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::Interceptor;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;

@@ -5,7 +5,7 @@
 
 #[derive(Debug)]
 #[non_exhaustive]
-pub enum Phase {
+pub(crate) enum Phase {
     /// Represents the phase of an operation prior to serialization.
     BeforeSerialization,
     /// Represents the phase of an operation where the request is serialized.
@@ -23,31 +23,31 @@ pub enum Phase {
 }
 
 impl Phase {
-    pub fn is_before_serialization(&self) -> bool {
+    pub(crate) fn is_before_serialization(&self) -> bool {
         matches!(self, Self::BeforeSerialization)
     }
 
-    pub fn is_serialization(&self) -> bool {
+    pub(crate) fn is_serialization(&self) -> bool {
         matches!(self, Self::Serialization)
     }
 
-    pub fn is_before_transmit(&self) -> bool {
+    pub(crate) fn is_before_transmit(&self) -> bool {
         matches!(self, Self::BeforeTransmit)
     }
 
-    pub fn is_transmit(&self) -> bool {
+    pub(crate) fn is_transmit(&self) -> bool {
         matches!(self, Self::Transmit)
     }
 
-    pub fn is_before_deserialization(&self) -> bool {
+    pub(crate) fn is_before_deserialization(&self) -> bool {
         matches!(self, Self::BeforeDeserialization)
     }
 
-    pub fn is_deserialization(&self) -> bool {
+    pub(crate) fn is_deserialization(&self) -> bool {
         matches!(self, Self::Deserialization)
     }
 
-    pub fn is_after_deserialization(&self) -> bool {
+    pub(crate) fn is_after_deserialization(&self) -> bool {
         matches!(self, Self::AfterDeserialization)
     }
 }

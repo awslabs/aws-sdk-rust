@@ -5,6 +5,7 @@
 
 //! Errors related to Smithy interceptors
 
+use crate::box_error::BoxError;
 use std::fmt;
 
 macro_rules! interceptor_error_fn {
@@ -29,9 +30,6 @@ macro_rules! interceptor_error_fn {
         }
     }
 }
-
-/// A generic error that behaves itself in async contexts
-pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 
 /// An error related to Smithy interceptors.
 #[derive(Debug)]

@@ -8,11 +8,12 @@ use aws_sigv4::http_request::{
     sign, PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignableBody,
     SignableRequest, SignatureLocation, SigningParams, SigningSettings, UriPathNormalizationMode,
 };
+use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpRequest};
+use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, HttpRequest};
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion};

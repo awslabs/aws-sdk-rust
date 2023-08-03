@@ -4,9 +4,9 @@
  */
 
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_runtime_api::client::interceptors::{
-    BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
-};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::error::Error as StdError;

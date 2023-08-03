@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
 use aws_smithy_runtime_api::client::orchestrator::{
     ConfigBagAccessors, HttpRequest, RequestSerializer,
 };
-use aws_smithy_runtime_api::client::runtime_plugin::{BoxError, RuntimePlugin};
+use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
 use std::sync::Mutex;
 

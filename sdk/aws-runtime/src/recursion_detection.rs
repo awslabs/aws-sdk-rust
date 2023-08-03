@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::client::interceptors::{
-    BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
-};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
 use http::HeaderValue;
@@ -74,7 +74,7 @@ mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_protocol_test::{assert_ok, validate_headers};
-    use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
     use aws_smithy_types::type_erasure::TypeErasedBox;
     use aws_types::os_shim_internal::Env;
     use http::HeaderValue;

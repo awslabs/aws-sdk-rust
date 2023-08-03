@@ -113,6 +113,12 @@ impl Clone for CloneableLayer {
     }
 }
 
+impl From<CloneableLayer> for Layer {
+    fn from(cloneable_layer: CloneableLayer) -> Layer {
+        cloneable_layer.0
+    }
+}
+
 // We need to "override" the mutable methods to encode the information that an item being stored
 // implements `Clone`. For the immutable methods, they can just be delegated via the `Deref` trait.
 impl CloneableLayer {

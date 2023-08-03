@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::box_error::BoxError;
 use crate::client::interceptors::InterceptorRegistrar;
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer};
 use std::fmt::Debug;
 use std::sync::Arc;
-
-pub type BoxError = Box<dyn std::error::Error + Send + Sync>;
 
 /// RuntimePlugin Trait
 ///

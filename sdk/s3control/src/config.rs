@@ -706,15 +706,8 @@ pub use ::aws_types::app_name::AppName;
 
 pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 
-/// Retry configuration
-///
-/// These are re-exported from `aws-smithy-types` for convenience.
-pub mod retry {
-    pub use ::aws_smithy_types::retry::{RetryConfig, RetryConfigBuilder, RetryMode};
-}
-/// Timeout configuration
-///
-/// These are re-exported from `aws-smithy-types` for convenience.
-pub mod timeout {
-    pub use ::aws_smithy_types::timeout::{TimeoutConfig, TimeoutConfigBuilder};
-}
+/// Retry configuration.
+pub mod retry;
+
+/// Timeout configuration.
+pub mod timeout;

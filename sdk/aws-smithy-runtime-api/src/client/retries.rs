@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::client::interceptors::InterceptorContext;
-use crate::client::orchestrator::BoxError;
+use crate::client::interceptors::context::InterceptorContext;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt::Debug;
 use std::time::Duration;
@@ -108,7 +107,7 @@ impl ClassifyRetry for RetryClassifiers {
 #[cfg(feature = "test-util")]
 mod test_util {
     use super::{ClassifyRetry, ErrorKind, RetryReason};
-    use crate::client::interceptors::InterceptorContext;
+    use crate::client::interceptors::context::InterceptorContext;
     use tracing::trace;
 
     /// A retry classifier for testing purposes. This classifier always returns
@@ -129,5 +128,6 @@ mod test_util {
     }
 }
 
+use crate::box_error::BoxError;
 #[cfg(feature = "test-util")]
 pub use test_util::AlwaysRetry;

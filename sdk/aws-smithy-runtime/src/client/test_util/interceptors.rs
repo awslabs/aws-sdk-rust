@@ -5,9 +5,9 @@
 
 // TODO(enableNewSmithyRuntimeCleanup): Delete this file once test helpers on `CustomizableOperation` have been removed
 
-use aws_smithy_runtime_api::client::interceptors::{
-    BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
-};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
+use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt;
 
@@ -46,7 +46,7 @@ where
 mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
     use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
     use aws_smithy_types::type_erasure::TypedBox;
     use std::time::{Duration, UNIX_EPOCH};

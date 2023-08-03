@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::BoxError;
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::retries::{RetryStrategy, ShouldAttempt};
 use aws_smithy_types::config_bag::ConfigBag;
 

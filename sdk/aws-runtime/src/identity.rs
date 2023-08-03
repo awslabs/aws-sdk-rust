@@ -6,8 +6,9 @@
 /// Credentials-based identity support.
 pub mod credentials {
     use aws_credential_types::cache::SharedCredentialsCache;
+    use aws_smithy_runtime_api::box_error::BoxError;
     use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver};
-    use aws_smithy_runtime_api::client::orchestrator::{BoxError, Future};
+    use aws_smithy_runtime_api::client::orchestrator::Future;
     use aws_smithy_types::config_bag::ConfigBag;
 
     /// Smithy identity resolver for AWS credentials.

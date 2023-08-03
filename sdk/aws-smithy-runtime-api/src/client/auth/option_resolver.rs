@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::box_error::BoxError;
 use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, AuthSchemeId};
-use crate::client::orchestrator::BoxError;
 use std::borrow::Cow;
 
 /// New-type around a `Vec<HttpAuthOption>` that implements `AuthOptionResolver`.

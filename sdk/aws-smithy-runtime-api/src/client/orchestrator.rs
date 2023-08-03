@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::box_error::BoxError;
 use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
 use crate::client::identity::IdentityResolvers;
 use crate::client::interceptors::context::{Error, Input, Output};
@@ -29,7 +30,6 @@ pub use error::OrchestratorError;
 
 pub type HttpRequest = http::Request<SdkBody>;
 pub type HttpResponse = http::Response<SdkBody>;
-pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>> + Send>>;
 pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 

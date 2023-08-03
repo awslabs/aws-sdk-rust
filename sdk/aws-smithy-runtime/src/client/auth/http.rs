@@ -4,6 +4,7 @@
  */
 
 use aws_smithy_http::query_writer::QueryWriter;
+use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::http::{
     HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID, HTTP_BEARER_AUTH_SCHEME_ID,
     HTTP_DIGEST_AUTH_SCHEME_ID,
@@ -13,7 +14,7 @@ use aws_smithy_runtime_api::client::auth::{
 };
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpRequest};
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::base64::encode;
 use aws_smithy_types::config_bag::ConfigBag;
 use http::header::HeaderName;

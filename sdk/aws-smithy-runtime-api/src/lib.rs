@@ -13,6 +13,9 @@
 
 //! Basic types for the new smithy client orchestrator.
 
+/// A boxed error that is `Send` and `Sync`.
+pub mod box_error;
+
 /// Smithy runtime for client orchestration.
 pub mod client;
 

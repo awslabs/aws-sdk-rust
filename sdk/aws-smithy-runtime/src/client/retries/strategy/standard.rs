@@ -7,13 +7,14 @@ use crate::client::retries::strategy::standard::ReleaseResult::{
     APermitWasReleased, NoPermitWasReleased,
 };
 use crate::client::retries::token_bucket::TokenBucket;
-use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors};
+use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
 use aws_smithy_runtime_api::client::retries::{
     ClassifyRetry, RetryReason, RetryStrategy, ShouldAttempt,
 };
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::retry::RetryConfig;
 use std::sync::Mutex;
 use std::time::Duration;
@@ -30,6 +31,10 @@ pub struct StandardRetryStrategy {
     max_attempts: usize,
     max_backoff: Duration,
     retry_permit: Mutex<Option<OwnedSemaphorePermit>>,
+}
+
+impl Storable for StandardRetryStrategy {
+    type Storer = StoreReplace<Self>;
 }
 
 impl StandardRetryStrategy {
@@ -205,14 +210,12 @@ fn calculate_exponential_backoff(base: f64, initial_backoff: f64, retry_attempts
 
 #[cfg(test)]
 mod tests {
-    use super::{calculate_exponential_backoff, ShouldAttempt, StandardRetryStrategy};
-    use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
+    use super::*;
     use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, OrchestratorError};
-    use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
     use aws_smithy_runtime_api::client::retries::{
         AlwaysRetry, ClassifyRetry, RetryClassifiers, RetryReason, RetryStrategy,
     };
-    use aws_smithy_types::config_bag::{ConfigBag, Layer};
+    use aws_smithy_types::config_bag::Layer;
     use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
     use aws_smithy_types::type_erasure::TypeErasedBox;
     use std::fmt;

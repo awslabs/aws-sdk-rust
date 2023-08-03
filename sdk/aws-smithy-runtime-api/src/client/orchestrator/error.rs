@@ -70,7 +70,7 @@ impl<E: Debug> OrchestratorError<E> {
     }
 
     /// Convert the `OrchestratorError` into an [`SdkError`].
-    pub fn into_sdk_error(
+    pub(crate) fn into_sdk_error(
         self,
         phase: &Phase,
         response: Option<HttpResponse>,
