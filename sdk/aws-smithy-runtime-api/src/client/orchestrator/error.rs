@@ -13,7 +13,7 @@ use std::fmt::Debug;
 
 #[derive(Debug)]
 #[non_exhaustive]
-pub enum OrchestratorError<E: Debug> {
+pub enum OrchestratorError<E> {
     /// An error occurred within an interceptor.
     Interceptor { err: InterceptorError },
     /// An error returned by a service.

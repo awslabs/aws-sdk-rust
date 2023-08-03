@@ -85,8 +85,7 @@ macro_rules! declare_known_method {
 
 macro_rules! declare_wrapper {
     (($ref_struct_name:ident $mut_struct_name:ident)$($tt:tt)+) => {
-        pub struct $ref_struct_name<'a, I = Input, O = Output, E = Error>
-        where E: Debug {
+        pub struct $ref_struct_name<'a, I = Input, O = Output, E = Error> {
             inner: &'a InterceptorContext<I, O, E>,
         }
 
@@ -101,8 +100,7 @@ macro_rules! declare_wrapper {
             declare_ref_wrapper_methods!($($tt)+);
         }
 
-        pub struct $mut_struct_name<'a, I = Input, O = Output, E = Error>
-        where E: Debug {
+        pub struct $mut_struct_name<'a, I = Input, O = Output, E = Error> {
             inner: &'a mut InterceptorContext<I, O, E>,
         }
 
@@ -170,10 +168,7 @@ declare_wrapper!(
 // time. Consider updating the macros to support these last two if you're looking for a challenge.
 // - Zelda
 
-pub struct FinalizerInterceptorContextRef<'a, I = Input, O = Output, E = Error>
-where
-    E: Debug,
-{
+pub struct FinalizerInterceptorContextRef<'a, I = Input, O = Output, E = Error> {
     inner: &'a InterceptorContext<I, O, E>,
 }
 
@@ -203,10 +198,7 @@ impl<'a, I, O, E: Debug> FinalizerInterceptorContextRef<'a, I, O, E> {
     }
 }
 
-pub struct FinalizerInterceptorContextMut<'a, I = Input, O = Output, E = Error>
-where
-    E: Debug,
-{
+pub struct FinalizerInterceptorContextMut<'a, I = Input, O = Output, E = Error> {
     inner: &'a mut InterceptorContext<I, O, E>,
 }
 

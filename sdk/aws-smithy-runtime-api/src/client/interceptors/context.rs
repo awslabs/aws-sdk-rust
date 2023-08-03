@@ -36,6 +36,7 @@ use aws_smithy_http::result::SdkError;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
 use phase::Phase;
+use std::fmt::Debug;
 use std::{fmt, mem};
 use tracing::{debug, error, trace};
 
@@ -53,10 +54,7 @@ type Response = HttpResponse;
 /// context in the [`Phase::BeforeSerialization`] phase won't have a `request` yet since the input hasn't been
 /// serialized at that point. But once it gets into the [`Phase::BeforeTransmit`] phase, the `request` will be set.
 #[derive(Debug)]
-pub struct InterceptorContext<I = Input, O = Output, E = Error>
-where
-    E: fmt::Debug,
-{
+pub struct InterceptorContext<I = Input, O = Output, E = Error> {
     pub(crate) input: Option<I>,
     pub(crate) output_or_error: Option<Result<O, OrchestratorError<E>>>,
     pub(crate) request: Option<Request>,
@@ -81,10 +79,7 @@ impl InterceptorContext<Input, Output, Error> {
     }
 }
 
-impl<I, O, E> InterceptorContext<I, O, E>
-where
-    E: fmt::Debug,
-{
+impl<I, O, E: Debug> InterceptorContext<I, O, E> {
     /// Decomposes the context into its constituent parts.
     #[doc(hidden)]
     #[allow(clippy::type_complexity)]
