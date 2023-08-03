@@ -16,6 +16,7 @@ use aws_smithy_types::Document;
 use std::borrow::Cow;
 use std::error::Error as StdError;
 use std::fmt;
+use tracing::trace;
 
 #[derive(Debug)]
 enum AuthOrchestrationError {
@@ -71,7 +72,7 @@ pub(super) async fn orchestrate_auth(
     let auth_options = cfg.auth_option_resolver().resolve_auth_options(params)?;
     let identity_resolvers = cfg.identity_resolvers();
 
-    tracing::trace!(
+    trace!(
         auth_option_resolver_params = ?params,
         auth_options = ?auth_options,
         identity_resolvers = ?identity_resolvers,
@@ -82,13 +83,24 @@ pub(super) async fn orchestrate_auth(
         if let Some(auth_scheme) = cfg.http_auth_schemes().scheme(scheme_id) {
             if let Some(identity_resolver) = auth_scheme.identity_resolver(&identity_resolvers) {
                 let request_signer = auth_scheme.request_signer();
+                trace!(
+                    auth_scheme = ?auth_scheme,
+                    identity_resolver = ?identity_resolver,
+                    request_signer = ?request_signer,
+                    "resolved auth scheme, identity resolver, and signing implementation"
+                );
+
                 let endpoint = cfg
                     .load::<Endpoint>()
                     .expect("endpoint added to config bag by endpoint orchestrator");
                 let auth_scheme_endpoint_config =
                     extract_endpoint_auth_scheme_config(endpoint, scheme_id)?;
+                trace!(auth_scheme_endpoint_config = ?auth_scheme_endpoint_config, "extracted auth scheme endpoint config");
 
                 let identity = identity_resolver.resolve_identity(cfg).await?;
+                trace!(identity = ?identity, "resolved identity");
+
+                trace!("signing request");
                 let request = ctx.request_mut().expect("set during serialization");
                 request_signer.sign_request(
                     request,

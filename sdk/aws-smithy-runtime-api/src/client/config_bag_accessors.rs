@@ -7,13 +7,13 @@ use crate::client::auth::{
     AuthOptionResolver, AuthOptionResolverParams, AuthSchemeId, DynAuthOptionResolver,
     SharedHttpAuthScheme,
 };
+use crate::client::connectors::{Connector, DynConnector};
 use crate::client::identity::{
     ConfiguredIdentityResolver, IdentityResolvers, SharedIdentityResolver,
 };
 use crate::client::orchestrator::{
-    Connection, DynConnection, DynEndpointResolver, DynResponseDeserializer, EndpointResolver,
-    EndpointResolverParams, LoadedRequestBody, ResponseDeserializer, SharedRequestSerializer,
-    NOT_NEEDED,
+    DynEndpointResolver, DynResponseDeserializer, EndpointResolver, EndpointResolverParams,
+    LoadedRequestBody, ResponseDeserializer, SharedRequestSerializer, NOT_NEEDED,
 };
 use crate::client::retries::{DynRetryStrategy, RetryClassifiers, RetryStrategy};
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
@@ -133,6 +133,7 @@ mod internal {
         }
     }
 }
+
 use internal::{CloneableSettable, Gettable, Settable};
 
 pub trait ConfigBagAccessors {
@@ -219,18 +220,18 @@ pub trait ConfigBagAccessors {
         ));
     }
 
-    fn connection(&self) -> &dyn Connection
+    fn connector(&self) -> &dyn Connector
     where
         Self: Gettable,
     {
-        self.load::<DynConnection>().expect("missing connector")
+        self.load::<DynConnector>().expect("missing connector")
     }
 
-    fn set_connection(&mut self, connection: DynConnection)
+    fn set_connector(&mut self, connection: DynConnector)
     where
         Self: Settable,
     {
-        self.store_put::<DynConnection>(connection);
+        self.store_put::<DynConnector>(connection);
     }
 
     /// Returns the configured HTTP auth schemes.

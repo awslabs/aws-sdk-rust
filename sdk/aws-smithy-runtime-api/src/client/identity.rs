@@ -7,6 +7,7 @@ use crate::client::auth::AuthSchemeId;
 use crate::client::orchestrator::Future;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend, StoreReplace};
 use std::any::Any;
+use std::fmt;
 use std::fmt::Debug;
 use std::sync::Arc;
 use std::time::SystemTime;
@@ -96,26 +97,41 @@ impl IdentityResolvers {
     }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 pub struct Identity {
     data: Arc<dyn Any + Send + Sync>,
+    #[allow(clippy::type_complexity)]
+    data_debug: Arc<dyn (Fn(&Arc<dyn Any + Send + Sync>) -> &dyn Debug) + Send + Sync>,
     expiration: Option<SystemTime>,
 }
 
 impl Identity {
-    pub fn new(data: impl Any + Send + Sync, expiration: Option<SystemTime>) -> Self {
+    pub fn new<T>(data: T, expiration: Option<SystemTime>) -> Self
+    where
+        T: Any + Debug + Send + Sync,
+    {
         Self {
             data: Arc::new(data),
+            data_debug: Arc::new(|d| d.downcast_ref::<T>().expect("type-checked") as _),
             expiration,
         }
     }
 
-    pub fn data<T: 'static>(&self) -> Option<&T> {
+    pub fn data<T: Any + Debug + Send + Sync + 'static>(&self) -> Option<&T> {
         self.data.downcast_ref()
     }
 
     pub fn expiration(&self) -> Option<&SystemTime> {
         self.expiration.as_ref()
+    }
+}
+
+impl fmt::Debug for Identity {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("Identity")
+            .field("data", (self.data_debug)(&self.data))
+            .field("expiration", &self.expiration)
+            .finish()
     }
 }
 

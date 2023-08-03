@@ -673,6 +673,11 @@ macro_rules! interceptor_impl_fn {
             ctx: &mut InterceptorContext,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
+            tracing::trace!(concat!(
+                "running `",
+                stringify!($interceptor),
+                "` interceptors"
+            ));
             let mut result: Result<(), BoxError> = Ok(());
             let mut ctx = ctx.into();
             for interceptor in self.interceptors() {
@@ -774,6 +779,7 @@ impl Interceptors {
         ctx: &InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `client_read_before_execution` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let ctx: BeforeSerializationInterceptorContextRef<'_> = ctx.into();
         for interceptor in self.client_interceptors() {
@@ -794,6 +800,7 @@ impl Interceptors {
         ctx: &InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `operation_read_before_execution` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let ctx: BeforeSerializationInterceptorContextRef<'_> = ctx.into();
         for interceptor in self.operation_interceptors() {
@@ -829,6 +836,7 @@ impl Interceptors {
         ctx: &mut InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `modify_before_attempt_completion` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
         for interceptor in self.interceptors() {
@@ -850,6 +858,7 @@ impl Interceptors {
         ctx: &InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `read_after_attempt` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
         for interceptor in self.interceptors() {
@@ -870,6 +879,7 @@ impl Interceptors {
         ctx: &mut InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `modify_before_completion` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
         for interceptor in self.interceptors() {
@@ -890,6 +900,7 @@ impl Interceptors {
         ctx: &InterceptorContext<Input, Output, Error>,
         cfg: &mut ConfigBag,
     ) -> Result<(), InterceptorError> {
+        tracing::trace!("running `read_after_execution` interceptors");
         let mut result: Result<(), BoxError> = Ok(());
         let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
         for interceptor in self.interceptors() {

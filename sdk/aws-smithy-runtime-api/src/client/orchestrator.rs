@@ -12,7 +12,6 @@ use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use bytes::Bytes;
 use std::fmt;
-use std::fmt::Debug;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
 use std::sync::Arc;
@@ -91,29 +90,6 @@ impl ResponseDeserializer for DynResponseDeserializer {
 }
 
 impl Storable for DynResponseDeserializer {
-    type Storer = StoreReplace<Self>;
-}
-
-pub trait Connection: Send + Sync + fmt::Debug {
-    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse>;
-}
-
-#[derive(Debug)]
-pub struct DynConnection(Box<dyn Connection>);
-
-impl DynConnection {
-    pub fn new(connection: impl Connection + 'static) -> Self {
-        Self(Box::new(connection))
-    }
-}
-
-impl Connection for DynConnection {
-    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
-        (*self.0).call(request)
-    }
-}
-
-impl Storable for DynConnection {
     type Storer = StoreReplace<Self>;
 }
 

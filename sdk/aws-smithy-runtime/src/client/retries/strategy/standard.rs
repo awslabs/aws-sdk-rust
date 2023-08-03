@@ -241,7 +241,7 @@ impl RetryStrategy for StandardRetryStrategy {
         debug!(
             "attempt #{request_attempts} failed with {:?}; retrying after {:?}",
             retry_reason.expect("the match statement above ensures this is not None"),
-            backoff
+            backoff,
         );
 
         Ok(ShouldAttempt::YesAfterDelay(backoff))

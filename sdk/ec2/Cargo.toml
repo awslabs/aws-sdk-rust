@@ -54,10 +54,6 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-smithy-query"
 version = "0.0.0-smithy-rs-head"
 
-[dependencies.aws-smithy-runtime]
-path = "../aws-smithy-runtime"
-version = "0.0.0-smithy-rs-head"
-
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.0.0-smithy-rs-head"

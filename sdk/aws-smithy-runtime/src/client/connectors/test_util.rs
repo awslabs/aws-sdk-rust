@@ -9,9 +9,8 @@ use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
-use aws_smithy_runtime_api::client::orchestrator::{
-    BoxFuture, Connection, HttpRequest, HttpResponse,
-};
+use aws_smithy_runtime_api::client::connectors::Connector;
+use aws_smithy_runtime_api::client::orchestrator::{BoxFuture, HttpRequest, HttpResponse};
 use http::header::{HeaderName, CONTENT_TYPE};
 use std::fmt::Debug;
 use std::ops::Deref;
@@ -182,7 +181,7 @@ impl ValidateRequest {
     }
 }
 
-/// TestConnection for use as a [`Connection`].
+/// TestConnection for use as a [`Connector`].
 ///
 /// A basic test connection. It will:
 /// - Respond to requests with a preloaded series of responses
@@ -223,7 +222,7 @@ impl TestConnection {
     }
 }
 
-impl Connection for TestConnection {
+impl Connector for TestConnection {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         let (res, simulated_latency) = if let Some(event) = self.data.lock().unwrap().pop() {
             self.requests.lock().unwrap().push(ValidateRequest {

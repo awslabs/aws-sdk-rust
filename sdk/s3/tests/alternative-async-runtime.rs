@@ -20,6 +20,9 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::Debug;
 use std::time::{Duration, Instant};
 
+#[cfg(aws_sdk_orchestrator_mode)]
+use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+
 #[derive(Debug)]
 struct SmolSleep;
 
@@ -33,6 +36,9 @@ impl AsyncSleep for SmolSleep {
 
 #[test]
 fn test_smol_runtime_timeouts() {
+    #[cfg(aws_sdk_orchestrator_mode)]
+    let _guard = capture_test_logs();
+
     if let Err(err) = smol::block_on(async { timeout_test(SharedAsyncSleep::new(SmolSleep)).await })
     {
         println!("{err}");
@@ -42,6 +48,9 @@ fn test_smol_runtime_timeouts() {
 
 #[test]
 fn test_smol_runtime_retry() {
+    #[cfg(aws_sdk_orchestrator_mode)]
+    let _guard = capture_test_logs();
+
     if let Err(err) = smol::block_on(async { retry_test(SharedAsyncSleep::new(SmolSleep)).await }) {
         println!("{err}");
         panic!();
@@ -59,6 +68,9 @@ impl AsyncSleep for AsyncStdSleep {
 
 #[test]
 fn test_async_std_runtime_timeouts() {
+    #[cfg(aws_sdk_orchestrator_mode)]
+    let _guard = capture_test_logs();
+
     if let Err(err) = async_std::task::block_on(async {
         timeout_test(SharedAsyncSleep::new(AsyncStdSleep)).await
     }) {
@@ -69,6 +81,9 @@ fn test_async_std_runtime_timeouts() {
 
 #[test]
 fn test_async_std_runtime_retry() {
+    #[cfg(aws_sdk_orchestrator_mode)]
+    let _guard = capture_test_logs();
+
     if let Err(err) =
         async_std::task::block_on(async { retry_test(SharedAsyncSleep::new(AsyncStdSleep)).await })
     {
@@ -137,7 +152,7 @@ async fn retry_test(sleep_impl: SharedAsyncSleep) -> Result<(), Box<dyn std::err
         .region(Region::new("us-east-2"))
         .http_connector(conn.clone())
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
-        .retry_config(RetryConfig::standard())
+        .retry_config(RetryConfig::standard().with_max_attempts(3))
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_attempt_timeout(Duration::from_secs_f64(0.1))

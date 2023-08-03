@@ -136,6 +136,8 @@ pub(crate) struct Metadata {
     name: String,
 }
 
+// TODO(enableNewSmithyRuntimeCleanup): Replace Tee, capture_test_logs, and Rx with
+// the implementations added to aws_smithy_runtime::test_util::capture_test_logs
 struct Tee<W> {
     buf: Arc<Mutex<Vec<u8>>>,
     quiet: bool,

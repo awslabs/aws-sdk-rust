@@ -56,19 +56,27 @@ macro_rules! halt_on_err {
 macro_rules! continue_on_err {
     ([$ctx:ident] => $expr:expr) => {
         if let Err(err) = $expr {
-            debug!("encountered orchestrator error; continuing");
+            debug!(err = ?err, "encountered orchestrator error; continuing");
             $ctx.fail(err.into());
         }
     };
 }
 
 pub async fn invoke(
+    service_name: &str,
+    operation_name: &str,
     input: Input,
     runtime_plugins: &RuntimePlugins,
 ) -> Result<Output, SdkError<Error, HttpResponse>> {
-    invoke_with_stop_point(input, runtime_plugins, StopPoint::None)
-        .await?
-        .finalize()
+    invoke_with_stop_point(
+        service_name,
+        operation_name,
+        input,
+        runtime_plugins,
+        StopPoint::None,
+    )
+    .await?
+    .finalize()
 }
 
 /// Allows for returning early at different points during orchestration.
@@ -82,32 +90,38 @@ pub enum StopPoint {
     BeforeTransmit,
 }
 
-#[tracing::instrument(skip_all, name = "invoke")]
 pub async fn invoke_with_stop_point(
+    service_name: &str,
+    operation_name: &str,
     input: Input,
     runtime_plugins: &RuntimePlugins,
     stop_point: StopPoint,
 ) -> Result<InterceptorContext, SdkError<Error, HttpResponse>> {
-    let mut cfg = ConfigBag::base();
-    let cfg = &mut cfg;
+    async move {
+        let mut cfg = ConfigBag::base();
+        let cfg = &mut cfg;
 
-    let mut interceptors = Interceptors::new();
-    let mut ctx = InterceptorContext::new(input);
+        let mut interceptors = Interceptors::new();
+        let mut ctx = InterceptorContext::new(input);
 
-    if let Err(err) = apply_configuration(&mut ctx, cfg, &mut interceptors, runtime_plugins) {
-        return Err(SdkError::construction_failure(err));
-    }
-    let operation_timeout_config = cfg.maybe_timeout_config(TimeoutKind::Operation);
-    async {
-        // If running the pre-execution interceptors failed, then we skip running the op and run the
-        // final interceptors instead.
-        if !ctx.is_failed() {
-            try_op(&mut ctx, cfg, &interceptors, stop_point).await;
+        if let Err(err) = apply_configuration(&mut ctx, cfg, &mut interceptors, runtime_plugins) {
+            return Err(SdkError::construction_failure(err));
         }
-        finally_op(&mut ctx, cfg, &interceptors).await;
-        Ok(ctx)
+        let operation_timeout_config = cfg.maybe_timeout_config(TimeoutKind::Operation);
+        trace!(operation_timeout_config = ?operation_timeout_config);
+        async {
+            // If running the pre-execution interceptors failed, then we skip running the op and run the
+            // final interceptors instead.
+            if !ctx.is_failed() {
+                try_op(&mut ctx, cfg, &interceptors, stop_point).await;
+            }
+            finally_op(&mut ctx, cfg, &interceptors).await;
+            Ok(ctx)
+        }
+        .maybe_timeout_with_config(operation_timeout_config)
+        .await
     }
-    .maybe_timeout_with_config(operation_timeout_config)
+    .instrument(debug_span!("invoke", service = %service_name, operation = %operation_name))
     .await
 }
 
@@ -123,6 +137,7 @@ fn apply_configuration(
 ) -> Result<(), BoxError> {
     runtime_plugins.apply_client_configuration(cfg, interceptors.client_interceptors_mut())?;
     continue_on_err!([ctx] => interceptors.client_read_before_execution(ctx, cfg));
+
     runtime_plugins
         .apply_operation_configuration(cfg, interceptors.operation_interceptors_mut())?;
     continue_on_err!([ctx] => interceptors.operation_read_before_execution(ctx, cfg));
@@ -144,6 +159,7 @@ async fn try_op(
     // Serialization
     ctx.enter_serialization_phase();
     {
+        let _span = debug_span!("serialization").entered();
         let request_serializer = cfg.request_serializer();
         let input = ctx.take_input().expect("input set at this point");
         let request = halt_on_err!([ctx] => request_serializer.serialize_input(input, cfg).map_err(OrchestratorError::other));
@@ -152,6 +168,7 @@ async fn try_op(
 
     // Load the request body into memory if configured to do so
     if let LoadedRequestBody::Requested = cfg.loaded_request_body() {
+        debug!("loading request body into memory");
         let mut body = SdkBody::taken();
         mem::swap(&mut body, ctx.request_mut().expect("set above").body_mut());
         let loaded_body = halt_on_err!([ctx] => ByteStream::new(body).collect().await).into_bytes();
@@ -196,9 +213,9 @@ async fn try_op(
     ctx.save_checkpoint();
     let mut retry_delay = None;
     for i in 1u32.. {
-        debug!("beginning attempt #{i}");
         // Break from the loop if we can't rewind the request's state. This will always succeed the
         // first time, but will fail on subsequent iterations if the request body wasn't retryable.
+        trace!("checking if context can be rewound for attempt #{i}");
         if let RewindResult::Impossible = ctx.rewind(cfg) {
             debug!("request cannot be retried since the request body cannot be cloned");
             break;
@@ -206,13 +223,15 @@ async fn try_op(
         // Track which attempt we're currently on.
         cfg.interceptor_state()
             .store_put::<RequestAttempts>(i.into());
+        // Backoff time should not be included in the attempt timeout
+        if let Some((delay, sleep)) = retry_delay.take() {
+            debug!("delaying for {delay:?}");
+            sleep.await;
+        }
         let attempt_timeout_config = cfg.maybe_timeout_config(TimeoutKind::OperationAttempt);
+        trace!(attempt_timeout_config = ?attempt_timeout_config);
         let maybe_timeout = async {
-            // We must await this here or else timeouts won't work as expected
-            if let Some(delay) = retry_delay.take() {
-                delay.await;
-            }
-
+            debug!("beginning attempt #{i}");
             try_attempt(ctx, cfg, interceptors, stop_point).await;
             finally_attempt(ctx, cfg, interceptors).await;
             Result::<_, SdkError<Error, HttpResponse>>::Ok(())
@@ -246,7 +265,7 @@ async fn try_op(
                 let sleep_impl = halt_on_err!([ctx] => cfg.sleep_impl().ok_or(OrchestratorError::other(
                     "the retry strategy requested a delay before sending the retry request, but no 'async sleep' implementation was set"
                 )));
-                retry_delay = Some(sleep_impl.sleep(delay));
+                retry_delay = Some((delay, sleep_impl.sleep(delay)));
                 continue;
             }
         }
@@ -261,7 +280,9 @@ async fn try_attempt(
     stop_point: StopPoint,
 ) {
     halt_on_err!([ctx] => interceptors.read_before_attempt(ctx, cfg));
+
     halt_on_err!([ctx] => orchestrate_endpoint(ctx, cfg).await.map_err(OrchestratorError::other));
+
     halt_on_err!([ctx] => interceptors.modify_before_signing(ctx, cfg));
     halt_on_err!([ctx] => interceptors.read_before_signing(ctx, cfg));
 
@@ -273,23 +294,25 @@ async fn try_attempt(
 
     // Return early if a stop point is set for before transmit
     if let StopPoint::BeforeTransmit = stop_point {
+        debug!("ending orchestration early because the stop point is `BeforeTransmit`");
         return;
     }
 
     // The connection consumes the request but we need to keep a copy of it
     // within the interceptor context, so we clone it here.
     ctx.enter_transmit_phase();
-    let call_result = halt_on_err!([ctx] => {
+    let response = halt_on_err!([ctx] => {
         let request = ctx.take_request().expect("set during serialization");
-        cfg.connection().call(request).await.map_err(|err| {
+        trace!(request = ?request, "transmitting request");
+        cfg.connector().call(request).await.map_err(|err| {
             match err.downcast() {
                 Ok(connector_error) => OrchestratorError::connector(*connector_error),
                 Err(box_err) => OrchestratorError::other(box_err)
             }
         })
     });
-    trace!(response = ?call_result, "received response from service");
-    ctx.set_response(call_result);
+    trace!(response = ?response, "received response from service");
+    ctx.set_response(response);
     ctx.enter_before_deserialization_phase();
 
     halt_on_err!([ctx] => interceptors.read_after_transmit(ctx, cfg));
@@ -300,16 +323,25 @@ async fn try_attempt(
     let output_or_error = async {
         let response = ctx.response_mut().expect("set during transmit");
         let response_deserializer = cfg.response_deserializer();
-        match response_deserializer.deserialize_streaming(response) {
+        let maybe_deserialized = {
+            let _span = debug_span!("deserialize_streaming").entered();
+            response_deserializer.deserialize_streaming(response)
+        };
+        match maybe_deserialized {
             Some(output_or_error) => output_or_error,
             None => read_body(response)
                 .instrument(debug_span!("read_body"))
                 .await
                 .map_err(OrchestratorError::response)
-                .and_then(|_| response_deserializer.deserialize_nonstreaming(response)),
+                .and_then(|_| {
+                    let _span = debug_span!("deserialize_nonstreaming").entered();
+                    response_deserializer.deserialize_nonstreaming(response)
+                }),
         }
     }
+    .instrument(debug_span!("deserialization"))
     .await;
+    trace!(output_or_error = ?output_or_error);
     ctx.set_output_or_error(output_or_error);
 
     ctx.enter_after_deserialization_phase();
@@ -336,19 +368,21 @@ async fn finally_op(
     continue_on_err!([ctx] => interceptors.read_after_execution(ctx, cfg));
 }
 
-#[cfg(all(test, feature = "test-util", feature = "anonymous-auth"))]
+#[cfg(all(test, feature = "test-util"))]
 mod tests {
     use super::*;
-    use crate::client::auth::no_auth::NoAuthRuntimePlugin;
+    use crate::client::auth::no_auth::{NoAuthRuntimePlugin, NO_AUTH_SCHEME_ID};
     use crate::client::orchestrator::endpoints::{
         StaticUriEndpointResolver, StaticUriEndpointResolverParams,
     };
     use crate::client::retries::strategy::NeverRetryStrategy;
     use crate::client::test_util::{
-        connector::OkConnector, deserializer::CannedResponseDeserializer,
-        serializer::CannedRequestSerializer,
+        deserializer::CannedResponseDeserializer, serializer::CannedRequestSerializer,
     };
     use ::http::{Request, Response, StatusCode};
+    use aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver;
+    use aws_smithy_runtime_api::client::auth::{AuthOptionResolverParams, DynAuthOptionResolver};
+    use aws_smithy_runtime_api::client::connectors::{Connector, DynConnector};
     use aws_smithy_runtime_api::client::interceptors::context::{
         AfterDeserializationInterceptorContextRef, BeforeDeserializationInterceptorContextMut,
         BeforeDeserializationInterceptorContextRef, BeforeSerializationInterceptorContextMut,
@@ -360,7 +394,8 @@ mod tests {
         Interceptor, InterceptorRegistrar, SharedInterceptor,
     };
     use aws_smithy_runtime_api::client::orchestrator::{
-        DynConnection, DynEndpointResolver, DynResponseDeserializer, SharedRequestSerializer,
+        BoxFuture, DynEndpointResolver, DynResponseDeserializer, Future, HttpRequest,
+        SharedRequestSerializer,
     };
     use aws_smithy_runtime_api::client::retries::DynRetryStrategy;
     use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, RuntimePlugins};
@@ -388,6 +423,24 @@ mod tests {
         )
     }
 
+    #[derive(Debug, Default)]
+    struct OkConnector {}
+
+    impl OkConnector {
+        fn new() -> Self {
+            Self::default()
+        }
+    }
+
+    impl Connector for OkConnector {
+        fn call(&self, _request: HttpRequest) -> BoxFuture<HttpResponse> {
+            Box::pin(Future::ready(Ok(::http::Response::builder()
+                .status(200)
+                .body(SdkBody::empty())
+                .expect("OK response is valid"))))
+        }
+    }
+
     #[derive(Debug)]
     struct TestOperationRuntimePlugin;
 
@@ -403,7 +456,11 @@ mod tests {
                 StaticUriEndpointResolver::http_localhost(8080),
             ));
             cfg.set_endpoint_resolver_params(StaticUriEndpointResolverParams::new().into());
-            cfg.set_connection(DynConnection::new(OkConnector::new()));
+            cfg.set_connector(DynConnector::new(OkConnector::new()));
+            cfg.set_auth_option_resolver_params(AuthOptionResolverParams::new("idontcare"));
+            cfg.set_auth_option_resolver(DynAuthOptionResolver::new(
+                StaticAuthOptionResolver::new(vec![NO_AUTH_SCHEME_ID]),
+            ));
 
             Some(cfg.freeze())
         }
@@ -463,7 +520,7 @@ mod tests {
                 .with_operation_plugin(TestOperationRuntimePlugin)
                 .with_operation_plugin(NoAuthRuntimePlugin::new())
                 .with_operation_plugin(FailingInterceptorsOperationRuntimePlugin);
-            let actual = invoke(input, &runtime_plugins)
+            let actual = invoke("test", "test", input, &runtime_plugins)
                 .await
                 .expect_err("should error");
             let actual = format!("{:?}", actual);
@@ -725,9 +782,9 @@ mod tests {
             let input = TypeErasedBox::new(Box::new(()));
             let runtime_plugins = RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePlugin::new())
                 .with_operation_plugin(InterceptorsTestOperationRuntimePlugin);
-            let actual = invoke(input, &runtime_plugins)
+            let actual = invoke("test", "test", input, &runtime_plugins)
                 .await
                 .expect_err("should error");
             let actual = format!("{:?}", actual);
@@ -973,11 +1030,13 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePlugin::new())
         };
 
         // StopPoint::None should result in a response getting set since orchestration doesn't stop
         let context = invoke_with_stop_point(
+            "test",
+            "test",
             TypedBox::new(()).erase(),
             &runtime_plugins(),
             StopPoint::None,
@@ -988,6 +1047,8 @@ mod tests {
 
         // StopPoint::BeforeTransmit will exit right before sending the request, so there should be no response
         let context = invoke_with_stop_point(
+            "test",
+            "test",
             TypedBox::new(()).erase(),
             &runtime_plugins(),
             StopPoint::BeforeTransmit,
@@ -1060,7 +1121,7 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin)
-                .with_operation_plugin(AnonymousAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePlugin::new())
                 .with_operation_plugin(TestInterceptorRuntimePlugin {
                     interceptor: interceptor.clone(),
                 })
@@ -1068,6 +1129,8 @@ mod tests {
 
         // StopPoint::BeforeTransmit will exit right before sending the request, so there should be no response
         let context = invoke_with_stop_point(
+            "test",
+            "test",
             TypedBox::new(()).erase(),
             &runtime_plugins(),
             StopPoint::BeforeTransmit,

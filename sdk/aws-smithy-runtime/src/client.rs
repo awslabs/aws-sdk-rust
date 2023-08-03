@@ -5,8 +5,14 @@
 
 pub mod auth;
 
-/// Smithy connector runtime plugins
-pub mod connections;
+/// Smithy code related to connectors and connections.
+///
+/// A "connector" manages one or more "connections", handles connection timeouts, re-establishes
+/// connections, etc.
+///
+/// "Connections" refers to the actual transport layer implementation of the connector.
+/// By default, the orchestrator uses a connector provided by `hyper`.
+pub mod connectors;
 
 /// The client orchestrator implementation
 pub mod orchestrator;

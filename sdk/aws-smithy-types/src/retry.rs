@@ -301,6 +301,10 @@ pub enum ReconnectMode {
     ReuseAllConnections,
 }
 
+impl Storable for ReconnectMode {
+    type Storer = StoreReplace<ReconnectMode>;
+}
+
 impl RetryConfig {
     /// Creates a default `RetryConfig` with `RetryMode::Standard` and max attempts of three.
     pub fn standard() -> Self {

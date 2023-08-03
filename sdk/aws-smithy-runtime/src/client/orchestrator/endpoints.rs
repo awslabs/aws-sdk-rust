@@ -20,6 +20,7 @@ use http::header::HeaderName;
 use http::{HeaderValue, Uri};
 use std::fmt::Debug;
 use std::str::FromStr;
+use tracing::trace;
 
 #[derive(Debug, Clone)]
 pub struct StaticUriEndpointResolver {
@@ -104,6 +105,8 @@ pub(super) async fn orchestrate_endpoint(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
 ) -> Result<(), BoxError> {
+    trace!("orchestrating endpoint resolution");
+
     let params = cfg.endpoint_resolver_params();
     let endpoint_prefix = cfg.load::<EndpointPrefix>();
     let request = ctx.request_mut().expect("set during serialization");

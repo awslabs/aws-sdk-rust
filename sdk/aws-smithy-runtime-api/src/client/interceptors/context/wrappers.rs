@@ -158,6 +158,16 @@ declare_wrapper!(
     (response: Response)
 );
 
+impl<'a, I, O, E: Debug> BeforeDeserializationInterceptorContextMut<'a, I, O, E> {
+    #[doc(hidden)]
+    /// Downgrade this helper struct, returning the underlying InterceptorContext. There's no good
+    /// reason to use this unless you're writing tests or you have to interact with an API that
+    /// doesn't support the helper structs.
+    pub fn into_inner(&mut self) -> &'_ mut InterceptorContext<I, O, E> {
+        self.inner
+    }
+}
+
 declare_wrapper!(
     (AfterDeserializationInterceptorContextRef readonly)
     (input: I)

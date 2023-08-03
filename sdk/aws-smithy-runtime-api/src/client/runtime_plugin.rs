@@ -70,6 +70,7 @@ impl RuntimePlugins {
         cfg: &mut ConfigBag,
         interceptors: &mut InterceptorRegistrar,
     ) -> Result<(), BoxError> {
+        tracing::trace!("applying client runtime plugins");
         for plugin in self.client_plugins.iter() {
             if let Some(layer) = plugin.config() {
                 cfg.push_shared_layer(layer);
@@ -85,6 +86,7 @@ impl RuntimePlugins {
         cfg: &mut ConfigBag,
         interceptors: &mut InterceptorRegistrar,
     ) -> Result<(), BoxError> {
+        tracing::trace!("applying operation runtime plugins");
         for plugin in self.operation_plugins.iter() {
             if let Some(layer) = plugin.config() {
                 cfg.push_shared_layer(layer);
