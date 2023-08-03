@@ -17,7 +17,12 @@ use std::time::Duration;
 use std::time::SystemTime;
 use std::time::UNIX_EPOCH;
 
+#[cfg(all(aws_sdk_unstable, feature = "serde-deserialize"))]
+mod de;
 mod format;
+#[cfg(all(aws_sdk_unstable, feature = "serde-serialize"))]
+mod ser;
+
 pub use self::format::DateTimeFormatError;
 pub use self::format::DateTimeParseError;
 
@@ -51,8 +56,8 @@ const NANOS_PER_SECOND_U32: u32 = 1_000_000_000;
 /// [`time`](https://crates.io/crates/time) or [`chrono`](https://crates.io/crates/chrono).
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub struct DateTime {
-    seconds: i64,
-    subsecond_nanos: u32,
+    pub(crate) seconds: i64,
+    pub(crate) subsecond_nanos: u32,
 }
 
 /* ANCHOR_END: date_time */
